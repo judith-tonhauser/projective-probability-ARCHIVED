@@ -1,1 +1,30 @@
-Goal: to investigate the hypothesis that the projectivity of content is influenced by the prior probability of the event described by the content; we test this hypothesis for the content of the complement of attitude predicates and control for the extent to which the content of the complement is entailed.
+Goal: to investigate the hypothesis that the projectivity of content is influenced by the prior probability of the event described by the content. We test this hypothesis for the content of the complement of attitude predicates and control for the extent to which the content of the complement is entailed.
+
+Prior probability:
+  - Events described by sentences like "Mary is pregnant" have a prior probability.
+  - The prior probability is context-dependent and may also be speaker-dependent.
+  - We assess prior probability in context, by presenting sentences to be assessed in different contexts.
+      High prior probability context: "Mary just walked into an OBGYN's office. Mary is pregnant"
+      Low prior probability context: "Mary is a 8-year old girl. Mary is pregnant."
+      OTHER KIND OF CONTEXT?
+  - DO WE NEED TO NORM PRIOR PROBABILITY, OR JUST ASSESS PRIOR PROBABILITY AS PART OF THE EXPERIMENT?
+      
+Pre-test #1: Entailment
+  - Background: Entailment is typically considered to be a binary property of the content of the complement of attitude predicates. Schlenker (2010), however, noted that whether the content of the complement of "announce" is entailed depends on the attitude holder. Swanson (2012) doesn't take the content of the complement of "establish" to be entailed. Furthermore, in the literature on (presupposition) projection, some authors make a distinction between entailed and non-entailed content, maintaining that when the projectivity of non-entailed content is pseudo-projection (i.e., not covered under the analysis that accounts for the projectivity of entailed content).
+  - Goal: identify the extent to which the content of the clausal complement of the attitude predicates is entailed
+  - Materials: Atomic sentences with different attitude predicates and 3 clausal complements per predicate
+  - Response task: Deniability test 
+      Bill: "Steve discovered that Marge is pregnant, but she's not."
+      Is Bill contradicting himself? yes/no
+
+Main experiment:
+  - Materials:
+        Part A: Context + clausal complements, to assess the prior probability of the event described
+          E.g., "Mary is a 45 year old CEO / Mary just walked into an OBGYN's office / Mary 
+        Part B: Context + oolar questions formed from attitude sentences, to assess the projectivity of the content of the complement
+  - Response tasks:
+        Part A: How likely <the speaker> is it that <content of clausal complement>?
+        Part B: Is <the speaker> certain that <content of clausal complement>?
+  - Analysis: Logistic mixed effects regression model: projectivity ~ probability * entailed 
+  
+

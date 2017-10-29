@@ -2,7 +2,7 @@
 
 ## Goal
 
-To investigate the hypothesis that the projectivity of content is influenced by the prior probability of the event described by the content. To achieve this goal, we manipulate the prior probability of events. We investigate the hypothesis for the content of the complement of attitude predicates and control for whether/the extent to which the content of the complement is entailed, to also explore how the extent to which the complement is entailed interacts with the effect of prior probability on projectivity.
+To investigate the hypothesis that the projectivity of content is influenced by the prior probability of the event described by the clause that conveys the content: higher probability results in higher projectivity. To achieve this goal, we manipulate the prior probability of events described by clauses. To investigate the hypothesis, we rely on a particular kind of projective content, namely the content of the complement of attitude predicates. Here, we also control for whether/the extent to which the content of the complement is entailed, to also explore how the extent to which the complement is entailed interacts with the effect of prior probability on projectivity.
 
 ## Prior and posterior probability of eventualities
 

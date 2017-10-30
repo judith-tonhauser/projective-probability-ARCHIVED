@@ -7,7 +7,7 @@ To investigate the hypothesis that the projectivity of content is influenced by 
 ## Prior and posterior probability of eventualities
 
 - Eventualities are described by sentences like "Mary is pregnant”.
-- Interlocutors (in a discourse) have prior belief (probability) distributions over eventualities: e.g., the prior belief (probability) of the eventuality described by “Mary is pregnant” is an interlocutor’s belief that this state holds (at the topic time) before considering some evidence (e.g., hearing a sentence that describes the eventuality).
+- Interlocutors (in a discourse) have prior probability (belief) distributions over eventualities: e.g., the prior probability of the eventuality described by “Mary is pregnant” is an interlocutor’s subjective belief that this state holds (at the topic time) before considering some evidence (e.g., hearing a sentence that describes the eventuality). 
 - The prior probability distribution (or: prior) of an eventuality is context-dependent: e.g., the state of Mary being pregnant is lower if Mary is an 8-year old girl than if Mary is a 25-year old woman.
 - The prior of an eventuality may also be interlocutor-dependent: e.g., A’s knowledge about Mary may make A assign a higher prior to the state of Mary being pregnant than B’s knowledge about Mary.
 - In this experiment, we use context to control the prior of eventualities: e.g., Context 1 is a high probability context for the state of Mary being pregnant, whereas Context 2 is a low probability context for the same state.	

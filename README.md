@@ -11,8 +11,8 @@ To investigate the hypothesis that the projectivity of content is influenced by 
 - The prior probability distribution (or: prior) of an eventuality is context-dependent: e.g., the state of Mary being pregnant is lower if Mary is an 8-year old girl than if Mary is a 25-year old woman.
 - The prior of an eventuality may also be interlocutor-dependent: e.g., A’s knowledge about Mary may make A assign a higher prior to the state of Mary being pregnant than B’s knowledge about Mary.
 - In this experiment, we use context to control the prior of eventualities: e.g., Context 1 is a high probability context for the state of Mary being pregnant, whereas Context 2 is a low probability context for the same state.	
-	Context 1: Mary just walked into an OBGYN’s office.
-	Context 2: Mary is a 6-year old girl.
+	- Context 1: Mary just walked into an OBGYN’s office.
+	- Context 2: Mary is a 6-year old girl.
 - In this experiment, we are interested in the posterior probability distribution that listeners (the relevant interlocutors) have for eventualities after taking into account the relevant evidence, which is i) the context, and ii) the utterance (in that context) of a sentence that describes the eventuality.
 - The uttered sentences are polar questions in which an attitude predicate (with a third person subject) embeds a clause that describes the relevant eventuality. The attitude predicates differ on two dimensions: i) the extent to which the content of the clausal complement is entailed, and ii) the extent to which the content of the clausal complement is projective. (These two dimensions are not independent: more projective complements are also more likely to be entailed.)
 - Thus, more specifically, the posterior probability distribution that listeners have for eventualities depends on i) the context, and ii) two properties of the attitude predicate of the uttered sentence. 
@@ -29,19 +29,19 @@ Thus, exploring the extent to which different attitude predicates entail the con
 - With respect to projectivity, entailment is also relevant because some authors take only entailed meanings to project (or to be presuppositions). Non-entailed meanings that speakers are taken to be committed to are considered a completely different phenomenon (e.g., Anand & Hacquard 2014: “illusion of factivity” and “illusion of projection”). Including attitude predicates that differ in the extent to which the clausal complement is entailed will thus also allow us to explore whether the extent to which the projectivity of the complement is influenced by the prior of the eventuality described by the complement differs with the extent to which the clausal complement is entailed (i.e., we ask: is there an interaction between prior probability and entailment).
 
 ## Three separate experiments
-	- entailment 
-	- prior
-	- projectivity
+- entailment 
+- prior
+- projectivity
 
 ## Linear mixed-effects model we want to run
 
-	projectivity ~ prior * entailment + (1 | participant)
+	projectivity ~ prior * entailment + (1 + prior * entailment | participant) + (1 + prior | item)
 
 where
-	- projectivity: individual participants’ projectivity ratings between 0 and 1, of utterance in contexts that manipulates the prior probability of the eventuality described by the content of the complement 
-	- prior: prior probability distribution of the eventuality when it is described by a main clause in contexts that manipulate the prior probability of the eventuality, this distribution is collected in a separate experiment
+- projectivity: individual participants’ projectivity ratings between 0 and 1, of utterance in contexts that manipulates the prior probability of the eventuality described by the content of the complement 
+- prior: prior probability distribution of the eventuality when it is described by a main clause in contexts that manipulate the prior probability of the eventuality, this distribution is collected in a separate experiment
 		[is this possible, or do we just take the mean prior probability?]
-	- entailment: mean rating (between 0 and 1) about the extent to which the content of the clausal complement of the attitude predicate is entailed, these ratings are collected in a separate experiment
+- entailment: mean rating (between 0 and 1) about the extent to which the content of the clausal complement of the attitude predicate is entailed, these ratings are collected in a separate experiment
 
 Motivation for including interaction term: We hypothesize that projectivity is predicted by the prior. According to classical analyses of presuppositions, non-entailed complements do not project, they at best give the “illusion of projection”. We, however, hypothesize that the projectivity of non-entailed complements will be influenced by the prior, too. We include the interaction term because we want to identify whether the prior’s influence on the projectivity of the complement differs for entailed and non-entailed complements. 
 

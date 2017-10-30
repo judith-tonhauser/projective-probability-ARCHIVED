@@ -35,7 +35,7 @@ Thus, exploring the extent to which different attitude predicates entail the con
 
 ## Linear mixed-effects model we want to run
 
-	projectivity ~ prior * entailment + (1 + prior * entailment | participant) + (1 + prior | item)
+	projectivity ~ prior * entailment + (1 + prior * entailment | participant) + (1 + prior | predicate)
 
 where
 - projectivity: individual participants’ projectivity ratings between 0 and 1, of utterance in contexts that manipulates the prior probability of the eventuality described by the content of the complement 

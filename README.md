@@ -86,67 +86,67 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 
 - Goal: to identify the extent to which participants take the speaker to be committed to the content of the clausal complement of an attitude predicate realized in a polar question and uttered in a context.
 - Response task: “certain that” diagnostic	
-	Context 1: Mary just walked into an OBGYN’s office.
-	Context 2: Mary is a 6-year old girl.
-	Bill: Did Sue discover that Mary is pregnant?
-	Is Bill certain that Mary is pregnant?
-	Response on a slider from 0/no to 1/yes
+	- Context 1: Mary just walked into an OBGYN’s office.
+	- Context 2: Mary is a 6-year old girl.
+	- Bill: Did Sue discover that Mary is pregnant?
+	- Is Bill certain that Mary is pregnant?
+	- Response on a slider from 0/no to 1/yes
 - Materials: 20 polar questions formed from sentences with attitude predicates that embed a clausal complement, in context
 	==> 800 stimuli (20 predicates x 20 complements x 2 contexts)
 - Each participant rates the projectivity of the content of the clausal complement for each attitude predicate with a unique clausal complement in a unique context.
 
 ## Stimuli:
 	
-20 predicates (and reasons for inclusion): 9 projective, 7 non-projective, 4 somewhat projective
-	- annoyed (variability paper, classical emotive, highest projectivity)
-	- know (variability paper, classical trigger, highly projective in variability paper, database: 1.5)
-	- discover (variability paper, classical trigger, high projectivity but some variability)
-	- establish (variability paper, lowest projectivity; Swanson 2012: entailed but not projective)
-	- confess (variability paper, 2nd lowest projectivity, “falsely confessed”, Swanson 2012: not entailed)
-	- reveal (variability paper, 3rd lowest projectivity)
-	- see (variability paper, sensory factive, highly projective, more variability than “annoyed”, database: 2.2)
-	- hear (sensory factive, database: 1.2)
-	——— 8 (mostly projective)
-	- announce (Schlenker 2010 “part-time trigger”, database: 1, variable projectivity)
-	- inform Sam (pair with “announce” in Schlenker 2010, same meaning but entails and presupposes complement)
-	- be right that (compared with “know” in much research: entails complement but no presupposition)
-	- think (classical non-trigger, doesn’t entail or presuppose complement, database: -0.5)
-	——— 4 (2 non-projective, 1 projective, 1 somewhat projective)
-	- acknowledge (assertive, A&H 2014: “illusion of factivity”, i.e., non-veridical and non-factive)
-	- admit (assertive, A&H 2014: “illusion of factivity”, i.e., non-veridical and non-factive, database: 1)
-	- confirm (assertive, A&H 2014: “illusion of factivity”, i.e., non-veridical and non-factive)
-	——— 3 (3 somewhat projective)
-	- prove (A&H 2014: non-veridical (even though at first appear to be) and non-factive, database: 0.5)
-	- demonstrate (A&H 2014: non-veridical (even though at first appear to be) and non-factive)
-	——— 2 (2 non-projective)
-	- pretend (lowest in database: -1.5) DIFFICULT TO PRETEND THINGS?
-		[perhaps replace with imagine, database: -0.3]
-	- say (A&H 2012: neither veridical nor factive, database: 0.8)
-	- suggest (database: 2nd lowest, -0.8)
-	——— 3 (3 non-projective)
+**20 predicates (and reasons for inclusion): 9 projective, 7 non-projective, 4 somewhat projective**
+- annoyed (variability paper, classical emotive, highest projectivity)
+- know (variability paper, classical trigger, highly projective in variability paper, database: 1.5)
+- discover (variability paper, classical trigger, high projectivity but some variability)
+- establish (variability paper, lowest projectivity; Swanson 2012: entailed but not projective)
+- confess (variability paper, 2nd lowest projectivity, “falsely confessed”, Swanson 2012: not entailed)
+- reveal (variability paper, 3rd lowest projectivity)
+- see (variability paper, sensory factive, highly projective, more variability than “annoyed”, database: 2.2)
+- hear (sensory factive, database: 1.2)
+——— 8 (mostly projective)
+- announce (Schlenker 2010 “part-time trigger”, database: 1, variable projectivity)
+- inform Sam (pair with “announce” in Schlenker 2010, same meaning but entails and presupposes complement)
+- be right that (compared with “know” in much research: entails complement but no presupposition)
+- think (classical non-trigger, doesn’t entail or presuppose complement, database: -0.5)
+——— 4 (2 non-projective, 1 projective, 1 somewhat projective)
+- acknowledge (assertive, A&H 2014: “illusion of factivity”, i.e., non-veridical and non-factive)
+- admit (assertive, A&H 2014: “illusion of factivity”, i.e., non-veridical and non-factive, database: 1)
+- confirm (assertive, A&H 2014: “illusion of factivity”, i.e., non-veridical and non-factive)
+——— 3 (3 somewhat projective)
+- prove (A&H 2014: non-veridical (even though at first appear to be) and non-factive, database: 0.5)
+- demonstrate (A&H 2014: non-veridical (even though at first appear to be) and non-factive)
+——— 2 (2 non-projective)
+- pretend (lowest in database: -1.5) DIFFICULT TO PRETEND THINGS?
+[perhaps replace with imagine, database: -0.3]
+- say (A&H 2012: neither veridical nor factive, database: 0.8)
+- suggest (database: 2nd lowest, -0.8)
+——— 3 (3 non-projective)
 
 ## 20 eventualities (described by main or embedded clauses) and two contexts each
-	[10 women’s names / 10 men’s names]
-	- Mary is pregnant (Mary is a 6-year old girl / Mary just walked into Planned Parenthood)
-	- Josie went on vacation to France (Josie doesn’t have a passport / Josie loves France)
-	- Emma gained weight (Emma is on a strict diet / Emma is a 4-month old baby)
-	- Olivia slept in (Olivia has two small children / Olivia is a bar tender)
-	- Sophia got a tattoo (Sophia is a high end fashion model / Sophia is a hipster)
-	- Mia got drunk last night (Mia is a nun / Mia is a college student)
-	- Isabella ate a steak (Isabella is a vegetarian / Isabella is from Argentina)
-	- Emily bought a car (Emily is broke / Emily has been saving for a year)
-	- Grace visited her sister (Emily hates her sister / Emily loves her sister)
-	- Zoe calculated the tip (Zoe is 2 years old / Zoe is a math major)
-	- Danny ate the cupcake (Danny is a diabetic / Danny has frosting on his face)
-	- Frank got a cat (Frank is allergic to cats / Frank has always wanted a pet)
-	- Jackson ran 10 miles (Jackson is overweight / Jackson is training for a marathon)
-	- Jayden rented a car (Jayden doesn’t have a driver’s license / Jayden’s car is in the shop)
-	- Tony had a drink (Tony has been sober for 20 years / Tony went to a bar)
-	- Josh learned to ride a bike (Josh is a 5-year old boy / Josh is a 75-year old man)
-	- Owen shoveled snow (Owen lives in Chicago / Owen lives in New Orleans)
-	- Julian danced salsa (Julian is from Germany / Julian is from Cuba)
-	- Jon walked to work (Jon lives 2 blocks away from his work / Jon lives 10 miles away from his work)
-	- Charley speaks Spanish (Charley lives in Korea / Charley lives in Mexico)
+**10 women’s names / 10 men’s names**
+- Mary is pregnant (Mary is a 6-year old girl / Mary just walked into Planned Parenthood)
+- Josie went on vacation to France (Josie doesn’t have a passport / Josie loves France)
+- Emma gained weight (Emma is on a strict diet / Emma is a 4-month old baby)
+- Olivia slept in (Olivia has two small children / Olivia is a bar tender)
+- Sophia got a tattoo (Sophia is a high end fashion model / Sophia is a hipster)
+- Mia got drunk last night (Mia is a nun / Mia is a college student)
+- Isabella ate a steak (Isabella is a vegetarian / Isabella is from Argentina)
+- Emily bought a car (Emily is broke / Emily has been saving for a year)
+- Grace visited her sister (Emily hates her sister / Emily loves her sister)
+- Zoe calculated the tip (Zoe is 2 years old / Zoe is a math major)
+- Danny ate the cupcake (Danny is a diabetic / Danny has frosting on his face)
+- Frank got a cat (Frank is allergic to cats / Frank has always wanted a pet)
+- Jackson ran 10 miles (Jackson is overweight / Jackson is training for a marathon)
+- Jayden rented a car (Jayden doesn’t have a driver’s license / Jayden’s car is in the shop)
+- Tony had a drink (Tony has been sober for 20 years / Tony went to a bar)
+- Josh learned to ride a bike (Josh is a 5-year old boy / Josh is a 75-year old man)
+- Owen shoveled snow (Owen lives in Chicago / Owen lives in New Orleans)
+- Julian danced salsa (Julian is from Germany / Julian is from Cuba)
+- Jon walked to work (Jon lives 2 blocks away from his work / Jon lives 10 miles away from his work)
+- Charley speaks Spanish (Charley lives in Korea / Charley lives in Mexico)
 
 
 

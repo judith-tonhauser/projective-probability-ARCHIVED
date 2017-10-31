@@ -112,40 +112,26 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 
 | Predicate  | reason for inclusion  | projective?   | veridical?  |
 |---|---|---|---|
-|  annoyed |  variability paper, classical emotive, highest projectivity |  [x] |   |
-|  know  |  variability paper, classical trigger, highly projective in variability paper, database: 1.5 |   |   |
-|  discover |  variability paper, classical trigger, high projectivity but some variability |   |   |
-|  establish  | variability paper, lowest projectivity; Swanson 2012: entailed but not projective  |   |   |
-|  confess | variability paper, 2nd lowest projectivity, "€œfalsely confessed"€, Swanson 2012: not entailed  |   |   |
-|  reveal  | variability paper, 3rd lowest projectivity  |   |   |
-|  see | variability paper, sensory factive, highly projective, more variability than "€œannoyed"€, database: 2.2  |   |   |
-|  hear | sensory factive, database: 1.2  |   |   |
+|  annoyed |  variability paper, classical emotive, highest projectivity |  yes | yes   |
+|  know  |  variability paper, classical trigger, highly projective in variability paper, database: 1.5 | yes  | yes  |
+|  discover |  variability paper, classical trigger, high projectivity but some variability | yes  | yes  |
+|  establish  | variability paper, lowest projectivity; Swanson 2012: entailed but not projective  |  yes    |  yes    |
+|  confess | variability paper, 2nd lowest projectivity, "€œfalsely confessed"€, Swanson 2012: not entailed  |  yes    |  yes    |
+|  reveal  | variability paper, 3rd lowest projectivity  |   yes   | yes   |
+|  see | variability paper, sensory factive, highly projective, more variability than "€œannoyed"€, database: 2.2  |   yes   |  yes    |
+|  hear | sensory factive, database: 1.2  |  yes    |  yes    |
 |  announce | Schlenker 2010 "€œpart-time trigger"€, database: 1, variable projectivity  |   |   |
-|  inform Sam |  pair with "€œannounce"€ in Schlenker 2010, same meaning but entails and presupposes complement |   |   |
-|  be right that |  compared with "€œknow"€ in much research: entails complement but no presupposition |   |   |
-| think  | classical non-trigger, doesn't entail or presuppose complement, database: -0.5   |   |   |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
-
-"€”"€”"€” 4 (2 non-projective, 1 projective, 1 somewhat projective)
-- acknowledge (assertive, A&H 2014: "€œillusion of factivity"€, i.e., non-veridical and non-factive)
-- admit (assertive, A&H 2014: "€œillusion of factivity"€, i.e., non-veridical and non-factive, database: 1)
-- confirm (assertive, A&H 2014: "€œillusion of factivity"€, i.e., non-veridical and non-factive)
-"€”"€”"€” 3 (3 somewhat projective)
-- prove (A&H 2014: non-veridical (even though at first appear to be) and non-factive, database: 0.5)
-- demonstrate (A&H 2014: non-veridical (even though at first appear to be) and non-factive)
-"€”"€”"€” 2 (2 non-projective)
-- pretend (lowest in database: -1.5) DIFFICULT TO PRETEND THINGS?
-[perhaps replace with imagine, database: -0.3]
-- say (A&H 2012: neither veridical nor factive, database: 0.8)
-- suggest (database: 2nd lowest, -0.8)
-"€”"€”"€” 3 (3 non-projective)
+|  inform Sam |  pair with "€œannounce"€ in Schlenker 2010, same meaning but entails and presupposes complement |  yes    |  yes    |
+|  be right that |  compared with "€œknow"€ in much research: entails complement but no presupposition |  no |   |
+| think  | classical non-trigger, doesn't entail or presuppose complement, database: -0.5   |  no  |  no  |
+|  acknowledge |  assertive, A&H 2014: "€œillusion of factivity"€, i.e., non-veridical and non-factive |   |   |
+|  admit | assertive, A&H 2014: "€œillusion of factivity"€, i.e., non-veridical and non-factive, database: 1  |   |   |
+|  confirm |  assertive, A&H 2014: "€œillusion of factivity"€, i.e., non-veridical and non-factive |   |   |
+|  prove |  A&H 2014: non-veridical (even though at first appear to be) and non-factive, database: 0.5 |   |   |
+|  demonstrate | A&H 2014: non-veridical (even though at first appear to be) and non-factive  |   |   |
+|  pretend |  lowest in database: -1.5 |  no | no  |
+|  say | A&H 2012: neither veridical nor factive, database: 0.8  |   |   |
+|  suggest  |  database: 2nd lowest, -0.8  |   |   |
 
 **projectivity: 9 projective, 7 non-projective, 4 somewhat projective
 

@@ -110,6 +110,10 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 	
 **20 predicates**
 
+- 7 predicates (at the top) that are clearly projective and veridical (yes/yes)
+- 4 predicates (at the bottom) that are clearly not projective and not veridical (no/no)
+
+
 | Predicate  | reason for inclusion  | projective?   | veridical?  |
 |---|---|---|---|
 |  annoyed |  variability paper, classical emotive, highest projectivity |  yes | yes   |
@@ -132,11 +136,6 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 |  say | A&H 2012: neither veridical nor factive, database: 0.8  | no  | no  |
 | think  | classical non-trigger, doesn't entail or presuppose complement, database: -0.5   |  no  |  no  |
 |  suggest  |  database: 2nd lowest, -0.8  |  no | no  |
-
-Currently:
-- 7 predicates (at the top) that are clearly projective and veridical (yes/yes)
-- 4 predicates (at the bottom) that are clearly not projective and not veridical (no/no)
-
 
 ## 20 eventualities (described by main or embedded clauses) and two facts about the world each
 **10 women's names / 10 men's names**

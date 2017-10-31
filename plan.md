@@ -123,9 +123,9 @@ Explanation for table:
 
 Currently in table:
 
-	- 7 predicates (at the top) that are clearly projective and veridical (yes/yes)
-	- 4 predicates (at the bottom) that are clearly not projective and not veridical (no/no)
-	- 
+- 7 predicates (at the top) that are clearly projective and veridical (yes/yes)
+- 4 predicates (at the bottom) that are clearly not projective and not veridical (no/no)
+- 
 
 
 | Predicate  | reason for inclusion  | projective?   | veridical?  |

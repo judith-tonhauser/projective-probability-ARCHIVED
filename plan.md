@@ -108,30 +108,30 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 
 ## Stimuli:
 	
-**20 predicates (and reasons for inclusion)**
+**20 predicates**
 
 | Predicate  | reason for inclusion  | projective?   | veridical?  |
 |---|---|---|---|
 |  annoyed |  variability paper, classical emotive, highest projectivity |  yes | yes   |
 |  know  |  variability paper, classical trigger, highly projective in variability paper, database: 1.5 | yes  | yes  |
 |  discover |  variability paper, classical trigger, high projectivity but some variability | yes  | yes  |
-|  establish  | variability paper, lowest projectivity; Swanson 2012: entailed but not projective  |  yes    |  yes    |
-|  confess | variability paper, 2nd lowest projectivity, "Äúfalsely confessed"Äù, Swanson 2012: not entailed  |  yes    |  yes    |
-|  reveal  | variability paper, 3rd lowest projectivity  |   yes   | yes   |
+|  establish  | variability paper, lowest projectivity (0.4); Swanson 2012: entailed but not projective  |  yes?    |  yes    |
+|  confess | variability paper, 2nd lowest projectivity (0.7), "Äúfalsely confessed"Äù, Swanson 2012: not entailed  |  yes    |  ?    |
+|  reveal  | variability paper, 3rd lowest projectivity (0.8)  |   yes   | yes   |
 |  see | variability paper, sensory factive, highly projective, more variability than "Äúannoyed"Äù, database: 2.2  |   yes   |  yes    |
 |  hear | sensory factive, database: 1.2  |  yes    |  yes    |
-|  announce | Schlenker 2010 "Äúpart-time trigger"Äù, database: 1, variable projectivity  |   |   |
-|  inform Sam |  pair with "Äúannounce"Äù in Schlenker 2010, same meaning but entails and presupposes complement |  yes    |  yes    |
-|  be right that |  compared with "Äúknow"Äù in much research: entails complement but no presupposition |  no |   |
+|  announce | Schlenker 2010 "part-time trigger", database: 1, variable projectivity  | ?  | ?  |
+|  inform Sam |  pair with "announce" in Schlenker 2010, same meaning but entails and presupposes complement |  yes    |  yes    |
+|  be right that |  compared with "know"ù in much research: entails complement but no presupposition |  no |  yes |
 | think  | classical non-trigger, doesn't entail or presuppose complement, database: -0.5   |  no  |  no  |
-|  acknowledge |  assertive, A&H 2014: "Äúillusion of factivity"Äù, i.e., non-veridical and non-factive |   |   |
-|  admit | assertive, A&H 2014: "Äúillusion of factivity"Äù, i.e., non-veridical and non-factive, database: 1  |   |   |
-|  confirm |  assertive, A&H 2014: "Äúillusion of factivity"Äù, i.e., non-veridical and non-factive |   |   |
+|  acknowledge |  assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive | ?  | ?  |
+|  admit | assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive, database: 1  |  ? | ?  |
+|  confirm |  assertive, A&H 2014: "illusion of factivity"Äù, i.e., non-veridical and non-factive | ?  | ? |
 |  prove |  A&H 2014: non-veridical (even though at first appear to be) and non-factive, database: 0.5 |   |   |
-|  demonstrate | A&H 2014: non-veridical (even though at first appear to be) and non-factive  |   |   |
+|  demonstrate | A&H 2014: non-veridical (even though at first appear to be) and non-factive  |  ? | ?  |
 |  pretend |  lowest in database: -1.5 |  no | no  |
-|  say | A&H 2012: neither veridical nor factive, database: 0.8  |   |   |
-|  suggest  |  database: 2nd lowest, -0.8  |   |   |
+|  say | A&H 2012: neither veridical nor factive, database: 0.8  | ?  | ?  |
+|  suggest  |  database: 2nd lowest, -0.8  |  no | no  |
 
 **projectivity: 9 projective, 7 non-projective, 4 somewhat projective
 

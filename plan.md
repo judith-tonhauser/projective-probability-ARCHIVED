@@ -123,9 +123,9 @@ Explanation for table:
 
 Currently in table:
 - 7 predicates that are clearly projective and veridical (yes/yes)
-- 4 predicates that are clearly not projective and not veridical (no/no)
+- 6 predicates that are not projective and not veridical (no/no)
 - 5 predicates that are (probably) projective but (probably) not veridical (yes(?)/no(?))
-
+- 1 predicate that is (probably) not projective but veridical (no/yes)
 
 | Predicate  | reason for inclusion  | projective?   | veridical?  |
 |---|---|---|---|
@@ -140,6 +140,8 @@ Currently in table:
 |  say | A&H 2012: neither veridical nor factive, database: 0.8  | no  | no  |
 | think  | classical non-trigger, doesn't entail or presuppose complement, database: -0.5   |  no  |  no  |
 |  suggest  |  database: 2nd lowest, -0.8  |  no | no  |
+|  prove |  A&H 2014: non-veridical (even though at first appear to be) and non-factive, database: 0.5 |  no? | no?  |
+|  demonstrate | A&H 2014: non-veridical (even though at first appear to be) and non-factive  |  no? | no  |
 |  confess | variability paper, 2nd lowest projectivity (0.7), "falsely confessed", Swanson 2012: not entailed  |  yes    |  no    |
 |  announce | Schlenker 2010 "part-time trigger", database: 1, variable projectivity  | yes?  | no |
 |  acknowledge |  assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive | yes?  | no  |
@@ -147,8 +149,6 @@ Currently in table:
 |  confirm |  assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive | yes?  | no |
 |  establish  | variability paper, lowest projectivity (0.4); Swanson 2012: entailed but not projective  |  yes?    |  yes    |
 |  be right that |  compared with "know" in much research: entails complement but no presupposition |  no |  yes |
-|  prove |  A&H 2014: non-veridical (even though at first appear to be) and non-factive, database: 0.5 |  no? | no?  |
-|  demonstrate | A&H 2014: non-veridical (even though at first appear to be) and non-factive  |  yes? | no?  |
 
 
 ## 20 eventualities (described by main or embedded clauses) and two facts about the world each

@@ -39,27 +39,11 @@ Thus, exploring the extent to which the content of the complement of different a
 2. entailment 
 3. projectivity
 
-## Linear mixed-effects model we want to run
-
-	projectivity ~ prior * entailment + (1 + prior * entailment | participant) + (1 + prior | predicate)
-
-where
-- projectivity: individual participants' projectivity ratings between 0 and 1, of utterances given facts about the world that manipulates the prior probability of the eventuality described by the content of the complement 
-- prior: mean prior probability rating (between 0 and 1) of the eventuality when it is described by a main clause given facts about the world that manipulate the prior probability of the eventuality; we collect this prior ratings in a separate experiment 
-- entailment: mean veridicality rating (between 0 and 1), i.e., the extent to which the content of the clausal complement of the attitude predicate is entailed, these ratings are collected in a separate experiment
-
-Motivation for including interaction term: We hypothesize that projectivity is predicted by the prior. According to classical analyses of presuppositions, non-entailed complements do not project, they at best give the "Äúillusion of projection"Äù. We, however, hypothesize that the projectivity of non-entailed complements will be influenced by the prior, too. We include the interaction term because we want to identify whether the prior's influence on the projectivity of the complement differs for entailed and non-entailed complements. 
-
-[Perhaps also include as fixed or random effects: tense of attitude predicate?]
-
-## Materials
-- 20 attitude predicates (cross-balancing for projectivity and veridicality)
-- 20 non-gradable, non-subjective eventualities (as described by main clauses)
-- 2 facts about the world per eventuality (one in which the eventuality has a higher prior probability, though not at ceiling, and one in which the eventuality has a lower prior probability, though not at floor)
-
 ## Prior probability experiment
 
 - Goal: to identify readers' prior probabilities of the eventualities described by main clauses, given a fact about the world
+- The eventualities should be non-gradable and non-subjective (JD FILL IN WHY, PLEASE)
+- For each eventuality, we 2 facts about the world: one in which the eventuality has a higher prior probability, though not at ceiling, and one in which the eventuality has a lower prior probability, though not at floor. (We need to avoid eventualities being too likely or too unlikely because a) if they are too likely, then people might argue that the facts of the world entail the content of the clause describing the eventuality, and b) if they are too unlikely, then participants might give wonky projectivity ratings.)
 - Response task: Participants assess the likeliness of the eventuality described by a main clause, given a fact about the world
 	- Fact: Mary just walked into Planned Parenthood.
 	  
@@ -68,15 +52,16 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 	  
 	  How likely is it that Mary is pregnant?
 - Response on slider from 0/very unlikely to 1/very likely
-- For each eventuality, we calculate the mean likeliness, i.e., the mean prior probability: the higher the mean likeliness, the higher the prior probability of the eventuality.
 - Materials: 20 atomic main clauses that lexicalize the eventualities, presented with one of two facts each, i.e., 40 stimuli total
 - Each participant rates the likeliness of 20 unique eventualities, given a fact about the world.
 - We want at least 20 ratings per eventuality/fact combination.
+- Analysis: For each eventuality, we calculate the mean likeliness, i.e., the mean prior probability: the higher the mean likeliness, the higher the prior probability of the eventuality. We select those eventualities for which the two facts result in a relatively high (though not at ceiling) prior and a relatively low (though not at floor) prior.
 
 ## Entailment experiment
 
 - Goal: to identify the extent to which the content of the clausal complement of an (unembedded) attitude predicate is entailed
 - The clausal complements are the 20 clauses for which we established facts in the prior probability experiment that result in the eventualities described by these clauses to have a higher versus a lower prior.
+- The attitude predicates are categorized by their veridicality and the projectivity of the content of their complement. [DO WE NEED TO HAVE ALL FOUR COMBINATIONS EQUALLY OFTEN? SEE TABLE BELOW]
 - Response task: Given the standard definition of entailment (see above), we need a task that probes the extent to which the attitude sentence can be true and the content of the clausal complement false, i.e., the extent to which the content of the clausal complement is not entailed by the attitude sentence. 
 - Contradiction task: 
 	
@@ -84,11 +69,12 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 	
 	Does Bill sound like he is contradicting himself?
 - Response on slider from 0/no to 1/yes
-- For each predicate, we calculate the mean contradiction rating: the higher the mean contradiction rating, the more veridical the predicate is.
 - Materials: atomic sentences with 20 attitude predicates, 20 clausal complements per predicate 
 	
 	==> 400 stimuli total 
 - Each participant sees each attitude predicate with a unique clausal complement. If we want 10 ratings per combination, we need 4,000 ratings total.
+- For each predicate, we calculate the mean contradiction rating: the higher the mean contradiction rating, the more veridical the predicate is.
+- Results: We expect to find that contradictoriness is not a binary but a gradient property. This would not mean that "entailment" (the technical term from semantics is gradient), but that a predicate whose clausal complement is not entailed may be more or less "veridical" (if we re-define "veridicality" as a gradient property).
 
 ## Projectivity experiment
 
@@ -100,11 +86,33 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 	
 	  Is Bill certain that Mary is pregnant?
 - Response on a slider from 0/no to 1/yes
-- For each predicate/clause/fact triple, we calculate the mean certainty rating: the higher the mean certainty rating, the higher the projectivity of the content of the clausal complement.
 - Materials: 20 polar questions formed from sentences with attitude predicates that embed a clausal complement, given a fact
 
 ==> 800 stimuli (20 predicates x 20 complements x 2 facts)
 - Each participant rates the projectivity of the content of the clausal complement for each attitude predicate with a unique clausal complement given a unique fact.
+- For each predicate/clause/fact triple, we calculate the mean certainty rating: the higher the mean certainty rating, the higher the projectivity of the content of the clausal complement.
+
+## Linear mixed-effects model we want to fit to results of projectivity experiment
+
+	projectivity ~ prior * entailment + (1 + prior * entailment | participant) + (1 + prior | predicate)
+
+where
+- projectivity: individual participants' projectivity ratings between 0 and 1, of utterances given facts about the world that manipulates the prior probability of the eventuality described by the content of the complement 
+- prior: mean prior probability rating (between 0 and 1) of the eventuality when it is described by a main clause given facts about the world that manipulate the prior probability of the eventuality
+- entailment: mean contradictoriness rating (between 0 and 1), i.e., the extent to which the predicate is veridical
+
+Motivation for including interaction term: We hypothesize that projectivity is predicted by the prior. According to classical analyses of presuppositions, non-entailed complements do not project, they at best give the "Äúillusion of projection"Äù. We, however, hypothesize that the projectivity of non-entailed complements will be influenced by the prior, too. We include the interaction term because we hypothesize that for less veridical predicates the predicate itself exerts less control over whether the speaker is taken to be committed to the content of the complement than for more strongly veridical predicates. 
+
+[Perhaps also include as fixed or random effects: tense of attitude predicate?]
+
+## Results and discussion
+
+- We expect to find:
+	- significant main effect of "prior": complement clauses that describe eventualities with a higher prior are more highly projective than complement clauses that describe eventualities with a lower prior
+	- significant main effect of "entailment": complement clauses of more veridical predicates are more highly projective than complement clauses of less veridical predicates
+	- significant interaction: the effect of the prior is stronger with less veridical predicates than with more veridical predicates
+
+- NEED TO RELATE THIS TO A THEORETICAL PREDICTION: at-issueness theory of projection, conventional theory of projection, etc.
 
 ## Stimuli:
 	
@@ -152,21 +160,21 @@ Explanation for table:
 |  be right that |  compared with "know" in much research: entails complement but no presupposition |  no |  yes |
 
 
-## 20 eventualities (described by main or embedded clauses) and two facts about the world each
+## 20 (non-gradable, non-subjective) eventualities (described by main or embedded clauses) and two facts about the world each
 **10 women's names / 10 men's names**
-- Mary is pregnant (Mary is a 6-year old girl / Mary just walked into Planned Parenthood)
+- Mary is pregnant (Mary is a high school student / Mary just walked into Planned Parenthood)
 - Josie went on vacation to France (Josie doesn't have a passport / Josie loves France)
-- Emma gained weight (Emma is on a strict diet / Emma is a 4-month old baby)
-- Olivia slept in (Olivia has two small children / Olivia is a bar tender)
+- Emma gained a pound (Emma is on a very strict diet / Emma is a toddler)
+- Olivia slept until noon (Olivia has two small children / Olivia is a bar tender)
 - Sophia got a tattoo (Sophia is a high end fashion model / Sophia is a hipster)
-- Mia got drunk last night (Mia is a nun / Mia is a college student)
+- Mia drank 4 cocktails last night (Mia is a nun / Mia is a college student)
 - Isabella ate a steak (Isabella is a vegetarian / Isabella is from Argentina)
 - Emily bought a car (Emily is broke / Emily has been saving for a year)
 - Grace visited her sister (Emily hates her sister / Emily loves her sister)
-- Zoe calculated the tip (Zoe is 2 years old / Zoe is a math major)
+- Zoe calculated the tip (Zoe is 5 years old / Zoe is a math major)
 - Danny ate the cupcake (Danny is a diabetic / Danny has frosting on his face)
 - Frank got a cat (Frank is allergic to cats / Frank has always wanted a pet)
-- Jackson ran 10 miles (Jackson is overweight / Jackson is training for a marathon)
+- Jackson ran 10 miles (Jackson is obese / Jackson is training for a marathon)
 - Jayden rented a car (Jayden doesn't have a driver's license / Jayden's car is in the shop)
 - Tony had a drink (Tony has been sober for 20 years / Tony went to a bar)
 - Josh learned to ride a bike (Josh is a 5-year old boy / Josh is a 75-year old man)

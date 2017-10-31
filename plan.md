@@ -122,9 +122,9 @@ Explanation for table:
 	- "no?": complement is not entailed in the strictest sense, but may be taken to be
 
 Currently in table:
-- 7 predicates that are clearly projective and veridical (yes/yes)
+- 6 predicates that are clearly projective and veridical (yes/yes)
 - 6 predicates that are not projective and not veridical (no/no)
-- 5 predicates that are (probably) projective but (probably) not veridical (yes(?)/no(?))
+- 6 predicates that are (probably) projective but (probably) not veridical (yes(?)/no(?))
 - 1 predicate that is (probably) not projective but veridical (no/yes)
 
 | Predicate  | reason for inclusion  | projective?   | veridical?  |
@@ -135,7 +135,6 @@ Currently in table:
 |  reveal  | variability paper, 3rd lowest projectivity (0.8)  |   yes   | yes   |
 |  see | variability paper, sensory factive, highly projective, more variability than "annoyed", database: 2.2  |   yes   |  yes    |
 |  hear | sensory factive, database: 1.2  |  yes    |  yes    |
-|  inform Sam |  pair with "announce" in Schlenker 2010, same meaning but entails and presupposes complement |  yes    |  yes    |
 |  pretend |  lowest in database: -1.5 |  no | no  |
 |  say | A&H 2012: neither veridical nor factive, database: 0.8  | no  | no  |
 | think  | classical non-trigger, doesn't entail or presuppose complement, database: -0.5   |  no  |  no  |
@@ -143,6 +142,7 @@ Currently in table:
 |  prove |  A&H 2014: non-veridical (even though at first appear to be) and non-factive, database: 0.5 |  no? | no?  |
 |  demonstrate | A&H 2014: non-veridical (even though at first appear to be) and non-factive  |  no? | no  |
 |  confess | variability paper, 2nd lowest projectivity (0.7), "falsely confessed", Swanson 2012: not entailed  |  yes    |  no    |
+|  inform Sam |  Schlenker 2010 pairs with "announce" and claims same meaning but factive and veridical; however: "falsely inform" |  yes    |  no?    |
 |  announce | Schlenker 2010 "part-time trigger", database: 1, variable projectivity  | yes?  | no |
 |  acknowledge |  assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive | yes?  | no  |
 |  admit | assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive, database: 1  |  yes? | no  |

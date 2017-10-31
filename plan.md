@@ -37,7 +37,7 @@ Thus, exploring the extent to which the content of the complement of different a
 ## Three separate experiments
 1. prior
 2. entailment 
-3 projectivity
+3. projectivity
 
 ## Linear mixed-effects model we want to run
 
@@ -62,8 +62,10 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 - Goal: to identify readers' prior probabilities of the eventualities described by main clauses, given a fact about the world
 - Response task: Participants assess the likeliness of the eventuality described by a main clause, given a fact about the world
 	- Fact: Mary just walked into Planned Parenthood.
+	  
 	  How likely is it that Mary is pregnant?
 	- Fact: Mary is in high school.
+	  
 	  How likely is it that Mary is pregnant?
 - Response on slider from 0/very unlikely to 1/very likely
 - For each eventuality, we calculate the mean likeliness, i.e., the mean prior probability

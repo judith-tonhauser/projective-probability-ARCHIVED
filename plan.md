@@ -11,7 +11,7 @@ The projective content that we use to investigate the hypothesis is the content 
 ## Prior and posterior probability of eventualities
 
 - Eventualities are described by sentences like "Mary is pregnant".
-- Interlocutors (in a discourse) have prior probability (belief) distributions over eventualities: e.g., the prior probability of the eventuality described by "Mary is pregnant"€ is an interlocutor's subjective belief that this state holds (at the topic time) before considering some evidence (e.g., hearing a sentence that describes the eventuality). 
+- Interlocutors (in a discourse) have prior probability (belief) distributions over eventualities: e.g., the prior probability of the eventuality described by "Mary is pregnant" is an interlocutor's subjective belief that this state holds (at the topic time) before considering some evidence (e.g., hearing a sentence that describes the eventuality). 
 - The prior probability (or: prior) of an eventuality depends on world knowledge: e.g., the state of Mary being pregnant is lower if Mary is an 8-year old girl (and the interlocutor whose prior we are concerned with is aware of this) than if Mary is a 25-year old woman (and the interlocutor whose prior we are concerned with is aware of this).
 - In this experiment, we control the prior of eventualities by presenting information about the world, in the form of 'facts': e.g., given Fact 1, the state of Mary being pregnant has a higher probability than given Fact 2. 
 	
@@ -29,37 +29,46 @@ The projective content that we use to investigate the hypothesis is the content 
 - In semantics, entailment is typically considered to be a binary, categorical relationship.
 - For attitude predicates, however, some remarks have been made that suggest that whether content of the clausal complement is entailed may not be categorical or, even if it is categorical, may not always be straightforwardly determined. In particular, some predicates that at first appear to be veridical (i.e., entail the content of the complement) are not so, on closer inspection.
 	- Schlenker (2010:139) about "€œannounce"€: "€œin some contexts, it does not entail the truth of its complement; in other contexts, it entails and presupposes the truth of its complement."€ For instance, he suggested that whether the content of the complement of "announce" is judged to be entailed depends on who the attitude holder is; e.g., "€œMary announced that she is pregnant"€ seems to be judged to entail that Mary is pregnant if Mary is a sane, adult woman but not if Mary is 8 years old.
-	- Sudo (2012): Ph.D. thesis supposedly argues that some triggers don't entail the presupposition (haven't worked through this)
-	- Swanson (2012) doesn't take the content of the complement of "establish" to be entailed though other speakers might argue that "€œThe detective established that Margret didn't kill James"€ entails that Margret didn't kill James.
-Thus, exploring the extent to which different attitude predicates entail the content of the complement is an interesting question of its own.
+	- Sudo (2012): Ph.D. thesis supposedly argued that some triggers don't entail the presupposition (haven't worked through this)
+	- Swanson (2012) didn't take the content of the complement of "establish" to be entailed though other speakers might argue that "€œThe detective established that Margret didn't kill James"€ entails that Margret didn't kill James.
+Thus, exploring the extent to which the content of the complement of different attitude predicates is entailed is an interesting question of its own.
 - With respect to projectivity, entailment is also relevant because some authors take only entailed meanings to project (or to be presuppositions). Non-entailed meanings that speakers are taken to be committed to are considered a completely different phenomenon (e.g., Anand & Hacquard 2014: "€œillusion of factivity"€ and "€œillusion of projection"€). Including attitude predicates that differ in the extent to which the clausal complement is entailed will thus also allow us to explore whether the extent to which the projectivity of the complement is influenced by the prior of the eventuality described by the complement differs with the extent to which the clausal complement is entailed (i.e., we ask: is there an interaction between prior probability and entailment).
 
 ## Three separate experiments
-- entailment 
-- prior
-- projectivity
+1. prior
+2. entailment 
+3 projectivity
 
 ## Linear mixed-effects model we want to run
 
 	projectivity ~ prior * entailment + (1 + prior * entailment | participant) + (1 + prior | predicate)
 
 where
-- projectivity: individual participants"€™ projectivity ratings between 0 and 1, of utterance in contexts that manipulates the prior probability of the eventuality described by the content of the complement 
-- prior: prior probability distribution of the eventuality when it is described by a main clause in contexts that manipulate the prior probability of the eventuality, this distribution is collected in a separate experiment
-		[is this possible, or do we just take the mean prior probability?]
-- entailment: mean rating (between 0 and 1) about the extent to which the content of the clausal complement of the attitude predicate is entailed, these ratings are collected in a separate experiment
+- projectivity: individual participants' projectivity ratings between 0 and 1, of utterances given facts about the world that manipulates the prior probability of the eventuality described by the content of the complement 
+- prior: mean prior probability rating (between 0 and 1) of the eventuality when it is described by a main clause given facts about the world that manipulate the prior probability of the eventuality; we collect this prior ratings in a separate experiment 
+- entailment: mean veridicality rating (between 0 and 1), i.e., the extent to which the content of the clausal complement of the attitude predicate is entailed, these ratings are collected in a separate experiment
 
 Motivation for including interaction term: We hypothesize that projectivity is predicted by the prior. According to classical analyses of presuppositions, non-entailed complements do not project, they at best give the "€œillusion of projection"€. We, however, hypothesize that the projectivity of non-entailed complements will be influenced by the prior, too. We include the interaction term because we want to identify whether the prior's influence on the projectivity of the complement differs for entailed and non-entailed complements. 
 
-[We had talked about getting prior and projectivity ratings in the same experiment, but I now worry that participants"€™ prior ratings may be influenced by their projectivity ratings, and vice versa. On the other hand, I did not worry about this in the at-issue/projectivity rating, so why do I worry now? An advantage of running 2 pre-tests (entailment, prior) and then a main projectivity experiment is that we can include more predicates.] 
-
-[Perhaps also include as fixed effects: tense of attitude predicate?]
+[Perhaps also include as fixed or random effects: tense of attitude predicate?]
 
 ## Materials
+- 20 attitude predicates (cross-balancing for projectivity and veridicality)
+- 20 non-gradable, non-subjective eventualities (as described by main clauses)
+- 2 facts about the world per eventuality (one in which the eventuality has a higher prior probability, though not at ceiling, and one in which the eventuality has a lower prior probability, though not at floor)
 
-	- 20 attitude predicates
-	- 20 eventualities / clauses that describe these eventualities
-	- 2 contexts per eventuality (one higher and one lower probability; it's OK if not at ceiling/bottom and there's a mix of probabilitities across the eventuality/contexts pairings)
+## Prior probability experiment
+
+- Goal: to identify readers' prior probabilities of the eventualities described by main clauses, given a fact about the world
+- Response task: Participants assess the likeliness of the eventuality described by a main clause, given a fact about the world
+	- Fact: Mary just walked into Planned Parenthood.
+	  How likely is it that Mary is pregnant?
+	- Fact: Mary is in high school.
+	  How likely is it that Mary is pregnant?
+- Response on slider from 0/very unlikely to 1/very likely
+- For each eventuality, we calculate the mean likeliness, i.e., the mean prior probability
+- Materials: 20 atomic main clauses that lexicalize the eventualities, presented with one of two facts each, i.e., 40 stimuli total
+- Each participant rates the likeliness of 20 unique eventualities, given a fact about the world
 
 ## Entailment experiment
 
@@ -75,18 +84,6 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 - Each participant sees each attitude predicate with a unique clausal complement
 (If we want 10 judgments per combination, we"€™d need 4,000 judgments)
 
-## Prior probability distribution experiment
-
-- Goal: to identify the prior probability distribution of the eventuality described by a main clause in a context.
-- Response task: Participants assess the prior probability of the eventuality described by a main clause in a context.
-	Context 1: Mary just walked into an OBGYN's office.
-	Context 2: Mary is a 6-year old girl.
-	How likely is it that Mary is pregnant?
-	Response on slider from 0/very unlikely to 1/highly likely
-- For each event, we calculate the mean likeliness / the prior probability distribution [see my question above]
-- Materials: 20 atomic main clauses that lexicalize the eventualities, presented in one of two contexts
-	==> 40 stimuli total
-- Each participant rates the prior for 20 unique eventualities in one context 
 
 ## Projectivity experiment
 

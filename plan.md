@@ -112,7 +112,7 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 
 | Predicate  | reason for inclusion  | projective?   | veridical?  |
 |---|---|---|---|
-|  annoyed |  variability paper, classical emotive, highest projectivity |  &#xf2bc; |   |
+|  annoyed |  variability paper, classical emotive, highest projectivity |  [x] |   |
 |  know  |  variability paper, classical trigger, highly projective in variability paper, database: 1.5 |   |   |
 |  discover |  variability paper, classical trigger, high projectivity but some variability |   |   |
 |  establish  | variability paper, lowest projectivity; Swanson 2012: entailed but not projective  |   |   |

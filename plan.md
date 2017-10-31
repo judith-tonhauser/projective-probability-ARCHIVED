@@ -110,8 +110,20 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 	
 **20 predicates**
 
+Explanation for table:
+- Projectivity column: 
+	- "yes":  predicate is generally taken to be factive or we have evidence that it is
+	- "no": predicate is generally taken to be non-factive or we have evidence that it is
+	- "yes?": evidence is shaky but the complement may be projective
+	- "no?": evidence is shaky but the complement doesn't look projective
+- Entailment column:
+	- "yes": complement is entailed
+	- "no": complement is not entailed
+	- "no?": complement is not entailed in the strictest sense, but may be taken to be
+
 - 7 predicates (at the top) that are clearly projective and veridical (yes/yes)
 - 4 predicates (at the bottom) that are clearly not projective and not veridical (no/no)
+- 
 
 
 | Predicate  | reason for inclusion  | projective?   | veridical?  |
@@ -120,18 +132,18 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 |  know  |  variability paper, classical trigger, highly projective in variability paper, database: 1.5 | yes  | yes  |
 |  discover |  variability paper, classical trigger, high projectivity but some variability | yes  | yes  |
 |  reveal  | variability paper, 3rd lowest projectivity (0.8)  |   yes   | yes   |
-|  see | variability paper, sensory factive, highly projective, more variability than "annoyed"Äù, database: 2.2  |   yes   |  yes    |
+|  see | variability paper, sensory factive, highly projective, more variability than "annoyed", database: 2.2  |   yes   |  yes    |
 |  hear | sensory factive, database: 1.2  |  yes    |  yes    |
 |  inform Sam |  pair with "announce" in Schlenker 2010, same meaning but entails and presupposes complement |  yes    |  yes    |
+|  confess | variability paper, 2nd lowest projectivity (0.7), "falsely confessed", Swanson 2012: not entailed  |  yes    |  no    |
 |  establish  | variability paper, lowest projectivity (0.4); Swanson 2012: entailed but not projective  |  yes?    |  yes    |
-|  confess | variability paper, 2nd lowest projectivity (0.7), "falsely confessed", Swanson 2012: not entailed  |  yes    |  ?    |
 |  be right that |  compared with "know" in much research: entails complement but no presupposition |  no |  yes |
-|  announce | Schlenker 2010 "part-time trigger", database: 1, variable projectivity  | ?  | ?  |
-|  acknowledge |  assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive | ?  | ?  |
-|  admit | assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive, database: 1  |  ? | ?  |
-|  confirm |  assertive, A&H 2014: "illusion of factivity"Äù, i.e., non-veridical and non-factive | ?  | ? |
-|  prove |  A&H 2014: non-veridical (even though at first appear to be) and non-factive, database: 0.5 |   |   |
-|  demonstrate | A&H 2014: non-veridical (even though at first appear to be) and non-factive  |  ? | ?  |
+|  announce | Schlenker 2010 "part-time trigger", database: 1, variable projectivity  | yes?  | no? |
+|  acknowledge |  assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive | yes?  | ?  |
+|  admit | assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive, database: 1  |  yes? | ?  |
+|  confirm |  assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive | ?  | ? |
+|  prove |  A&H 2014: non-veridical (even though at first appear to be) and non-factive, database: 0.5 |  no? | no?  |
+|  demonstrate | A&H 2014: non-veridical (even though at first appear to be) and non-factive  |  yes? | no?  |
 |  pretend |  lowest in database: -1.5 |  no | no  |
 |  say | A&H 2012: neither veridical nor factive, database: 0.8  | no  | no  |
 | think  | classical non-trigger, doesn't entail or presuppose complement, database: -0.5   |  no  |  no  |

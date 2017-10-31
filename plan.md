@@ -19,7 +19,7 @@ The projective content that we use to investigate the hypothesis is the content 
 	
 	- Fact 2: Mary is a 6-year old girl.
 	
-- In this experiment, we are interested in the posterior probability distribution that listeners (the relevant interlocutors) have for eventualities after taking into account the relevant evidence, which are i) facts about the world, and ii) utterance (in that context) of a sentence that describes the eventuality (including the speaker's choice of attitude predicate).
+- In this experiment, we are interested in the posterior probability distribution that listeners (the relevant interlocutors) have for eventualities after taking into account the relevant evidence, which are i) facts about the world, and ii) utterance (in given a fact) of a sentence that describes the eventuality (including the speaker's choice of attitude predicate).
 - The uttered sentences are polar questions in which an attitude predicate (with a third person subject) embeds a clause that describes the relevant eventuality. The attitude predicates differ on two dimensions: i) the extent to which the content of the clausal complement is entailed, and ii) the extent to which the content of the clausal complement is projective. (These two dimensions are not independent: more projective complements are also more likely to be entailed.)
 - Thus, more specifically, the posterior probability distribution that listeners have for eventualities depends on i) facts about the world, and ii) two properties of the attitude predicate of the uttered sentence. 
 
@@ -64,7 +64,7 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 	- Fact: Mary just walked into Planned Parenthood.
 	  
 	  How likely is it that Mary is pregnant?
-	- Fact: Mary is in high school.
+	- Fact: Mary is a high school student.
 	  
 	  How likely is it that Mary is pregnant?
 - Response on slider from 0/very unlikely to 1/very likely
@@ -76,6 +76,7 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 ## Entailment experiment
 
 - Goal: to identify the extent to which the content of the clausal complement of an (unembedded) attitude predicate is entailed
+- The clausal complements are the 20 clauses for which we established facts in the prior probability experiment that result in the eventualities described by these clauses to have a higher versus a lower prior.
 - Response task: Given the standard definition of entailment (see above), we need a task that probes the extent to which the attitude sentence can be true and the content of the clausal complement false, i.e., the extent to which the content of the clausal complement is not entailed by the attitude sentence. 
 - Contradiction task: 
 	
@@ -84,30 +85,54 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 	Does Bill sound like he is contradicting himself?
 - Response on slider from 0/no to 1/yes
 - For each predicate, we calculate the mean contradiction rating: the higher the mean contradiction rating, the more veridical the predicate is.
-- Materials: atomic sentences with 20 attitude predicates, 20 clausal complements per predicate (namely those 20 clauses for which we established facts in the prior probability experiment that result in the eventualities described by these clauses to have a higher versus a lower prior)
+- Materials: atomic sentences with 20 attitude predicates, 20 clausal complements per predicate 
 	
 	==> 400 stimuli total 
 - Each participant sees each attitude predicate with a unique clausal complement. If we want 10 ratings per combination, we need 4,000 ratings total.
 
-
 ## Projectivity experiment
 
-- Goal: to identify the extent to which participants take the speaker to be committed to the content of the clausal complement of an attitude predicate realized in a polar question and uttered in a context.
-- Response task: "Äúcertain that"Äù diagnostic	
-	- Context 1: Mary just walked into an OBGYN's office.
-	- Context 2: Mary is a 6-year old girl.
-	- Bill: Did Sue discover that Mary is pregnant?
-	- Is Bill certain that Mary is pregnant?
-	- Response on a slider from 0/no to 1/yes
-- Materials: 20 polar questions formed from sentences with attitude predicates that embed a clausal complement, in context
-	==> 800 stimuli (20 predicates x 20 complements x 2 contexts)
-- Each participant rates the projectivity of the content of the clausal complement for each attitude predicate with a unique clausal complement in a unique context.
+- Goal: to identify the extent to which participants take the speaker to be committed to the content of the clausal complement of an attitude predicate realized in a polar question, given a fact about the world.
+- Response task: "certain that" diagnostic (from Journal of Semantics paper)
+	- Fact: Mary just walked into Planned Parenthood.
+	  
+	  Bill: Did Sue discover that Mary is pregnant?
+	
+	  Is Bill certain that Mary is pregnant?
+- Response on a slider from 0/no to 1/yes
+- For each predicate/clause/fact triple, we calculate the mean certainty rating: the higher the mean certainty rating, the higher the projectivity of the content of the clausal complement.
+- Materials: 20 polar questions formed from sentences with attitude predicates that embed a clausal complement, given a fact
+
+==> 800 stimuli (20 predicates x 20 complements x 2 facts)
+- Each participant rates the projectivity of the content of the clausal complement for each attitude predicate with a unique clausal complement given a unique fact.
 
 ## Stimuli:
 	
-**20 predicates (and reasons for inclusion): 9 projective, 7 non-projective, 4 somewhat projective**
-- annoyed (variability paper, classical emotive, highest projectivity)
-- know (variability paper, classical trigger, highly projective in variability paper, database: 1.5)
+**20 predicates (and reasons for inclusion)**
+
+| Predicate  | reason for inclusion  | projective?   | veridical?  |
+|---|---|---|---|
+|  annoyed |  variability paper, classical emotive, highest projectivity |   |   |
+|  know  |  variability paper, classical trigger, highly projective in variability paper, database: 1.5 |   |   |
+|  discover |  variability paper, classical trigger, high projectivity but some variability |   |   |
+|  establish  | variability paper, lowest projectivity; Swanson 2012: entailed but not projective  |   |   |
+|  confess | variability paper, 2nd lowest projectivity, "Äúfalsely confessed"Äù, Swanson 2012: not entailed  |   |   |
+|  reveal  | variability paper, 3rd lowest projectivity  |   |   |
+|  see | variability paper, sensory factive, highly projective, more variability than "Äúannoyed"Äù, database: 2.2  |   |   |
+|  hear | sensory factive, database: 1.2  |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+
 - discover (variability paper, classical trigger, high projectivity but some variability)
 - establish (variability paper, lowest projectivity; Swanson 2012: entailed but not projective)
 - confess (variability paper, 2nd lowest projectivity, "Äúfalsely confessed"Äù, Swanson 2012: not entailed)
@@ -133,7 +158,9 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 - suggest (database: 2nd lowest, -0.8)
 "Äî"Äî"Äî 3 (3 non-projective)
 
-## 20 eventualities (described by main or embedded clauses) and two contexts each
+**projectivity: 9 projective, 7 non-projective, 4 somewhat projective
+
+## 20 eventualities (described by main or embedded clauses) and two facts about the world each
 **10 women's names / 10 men's names**
 - Mary is pregnant (Mary is a 6-year old girl / Mary just walked into Planned Parenthood)
 - Josie went on vacation to France (Josie doesn't have a passport / Josie loves France)

@@ -68,23 +68,26 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 	  
 	  How likely is it that Mary is pregnant?
 - Response on slider from 0/very unlikely to 1/very likely
-- For each eventuality, we calculate the mean likeliness, i.e., the mean prior probability
+- For each eventuality, we calculate the mean likeliness, i.e., the mean prior probability: the higher the mean likeliness, the higher the prior probability of the eventuality.
 - Materials: 20 atomic main clauses that lexicalize the eventualities, presented with one of two facts each, i.e., 40 stimuli total
-- Each participant rates the likeliness of 20 unique eventualities, given a fact about the world
+- Each participant rates the likeliness of 20 unique eventualities, given a fact about the world.
+- We want at least 20 ratings per eventuality/fact combination.
 
 ## Entailment experiment
 
 - Goal: to identify the extent to which the content of the clausal complement of an (unembedded) attitude predicate is entailed
 - Response task: Given the standard definition of entailment (see above), we need a task that probes the extent to which the attitude sentence can be true and the content of the clausal complement false, i.e., the extent to which the content of the clausal complement is not entailed by the attitude sentence. 
 - Contradiction task: 
-	- Bill: Steve believes/announced/discovered/knows that Marge is pregnant, but I know that she isn't. 
-	- Does Bill sound like he is contradicting himself?
-	- Response on slider from 0/no to 1/yes
-- For each predicate, we calculate the mean entailment rating, and use that in the model we want to run.
-- Materials: atomic sentences with 20 attitude predicates, 20 clausal complements per predicate
+	
+	Bill: Steve believes/announced/discovered/knows that Marge is pregnant, but I know that she isn't. 
+	
+	Does Bill sound like he is contradicting himself?
+- Response on slider from 0/no to 1/yes
+- For each predicate, we calculate the mean contradiction rating: the higher the mean contradiction rating, the more veridical the predicate is.
+- Materials: atomic sentences with 20 attitude predicates, 20 clausal complements per predicate (namely those 20 clauses for which we established facts in the prior probability experiment that result in the eventualities described by these clauses to have a higher versus a lower prior)
+	
 	==> 400 stimuli total 
-- Each participant sees each attitude predicate with a unique clausal complement
-(If we want 10 judgments per combination, we"€™d need 4,000 judgments)
+- Each participant sees each attitude predicate with a unique clausal complement. If we want 10 ratings per combination, we need 4,000 ratings total.
 
 
 ## Projectivity experiment

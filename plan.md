@@ -124,7 +124,7 @@ Explanation for table:
 Currently in table:
 - 7 predicates that are clearly projective and veridical (yes/yes)
 - 4 predicates that are clearly not projective and not veridical (no/no)
-- 
+- predicates that are (probably) projective but not veridical (yes(?)/no)
 
 
 | Predicate  | reason for inclusion  | projective?   | veridical?  |
@@ -141,12 +141,12 @@ Currently in table:
 | think  | classical non-trigger, doesn't entail or presuppose complement, database: -0.5   |  no  |  no  |
 |  suggest  |  database: 2nd lowest, -0.8  |  no | no  |
 |  confess | variability paper, 2nd lowest projectivity (0.7), "falsely confessed", Swanson 2012: not entailed  |  yes    |  no    |
-|  establish  | variability paper, lowest projectivity (0.4); Swanson 2012: entailed but not projective  |  yes?    |  yes    |
-|  be right that |  compared with "know" in much research: entails complement but no presupposition |  no |  yes |
-|  announce | Schlenker 2010 "part-time trigger", database: 1, variable projectivity  | yes?  | no? |
+|  announce | Schlenker 2010 "part-time trigger", database: 1, variable projectivity  | yes?  | no |
 |  acknowledge |  assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive | yes?  | ?  |
 |  admit | assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive, database: 1  |  yes? | ?  |
 |  confirm |  assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive | ?  | ? |
+|  establish  | variability paper, lowest projectivity (0.4); Swanson 2012: entailed but not projective  |  yes?    |  yes    |
+|  be right that |  compared with "know" in much research: entails complement but no presupposition |  no |  yes |
 |  prove |  A&H 2014: non-veridical (even though at first appear to be) and non-factive, database: 0.5 |  no? | no?  |
 |  demonstrate | A&H 2014: non-veridical (even though at first appear to be) and non-factive  |  yes? | no?  |
 

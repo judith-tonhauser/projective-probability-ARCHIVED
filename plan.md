@@ -118,19 +118,19 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 |  reveal  | variability paper, 3rd lowest projectivity (0.8)  |   yes   | yes   |
 |  see | variability paper, sensory factive, highly projective, more variability than "annoyed"Äù, database: 2.2  |   yes   |  yes    |
 |  hear | sensory factive, database: 1.2  |  yes    |  yes    |
+|  inform Sam |  pair with "announce" in Schlenker 2010, same meaning but entails and presupposes complement |  yes    |  yes    |
 |  establish  | variability paper, lowest projectivity (0.4); Swanson 2012: entailed but not projective  |  yes?    |  yes    |
 |  confess | variability paper, 2nd lowest projectivity (0.7), "falsely confessed", Swanson 2012: not entailed  |  yes    |  ?    |
-|  announce | Schlenker 2010 "part-time trigger", database: 1, variable projectivity  | ?  | ?  |
-|  inform Sam |  pair with "announce" in Schlenker 2010, same meaning but entails and presupposes complement |  yes    |  yes    |
 |  be right that |  compared with "know" in much research: entails complement but no presupposition |  no |  yes |
-| think  | classical non-trigger, doesn't entail or presuppose complement, database: -0.5   |  no  |  no  |
+|  announce | Schlenker 2010 "part-time trigger", database: 1, variable projectivity  | ?  | ?  |
 |  acknowledge |  assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive | ?  | ?  |
 |  admit | assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive, database: 1  |  ? | ?  |
 |  confirm |  assertive, A&H 2014: "illusion of factivity"Äù, i.e., non-veridical and non-factive | ?  | ? |
 |  prove |  A&H 2014: non-veridical (even though at first appear to be) and non-factive, database: 0.5 |   |   |
 |  demonstrate | A&H 2014: non-veridical (even though at first appear to be) and non-factive  |  ? | ?  |
 |  pretend |  lowest in database: -1.5 |  no | no  |
-|  say | A&H 2012: neither veridical nor factive, database: 0.8  | ?  | ?  |
+|  say | A&H 2012: neither veridical nor factive, database: 0.8  | no  | no  |
+| think  | classical non-trigger, doesn't entail or presuppose complement, database: -0.5   |  no  |  no  |
 |  suggest  |  database: 2nd lowest, -0.8  |  no | no  |
 
 **projectivity: 9 projective, 7 non-projective, 4 somewhat projective

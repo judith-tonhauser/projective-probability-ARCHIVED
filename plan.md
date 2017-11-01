@@ -65,12 +65,12 @@ The projective content that we use to investigate the hypothesis is the content 
 - We want at least 20 ratings per eventuality/fact combination.
 - Analysis: For each eventuality, we calculate the mean likeliness, which we take to be the mean prior probability: the higher the mean likeliness, the higher the prior probability of the eventuality. In the projectivity experiment, we use those eventualities for which the two facts result in a relatively high (though not at ceiling) prior and a relatively low (though not at floor) prior.
 
-## Entailment experiment
+## Veridicality experiment
 
-- Goal: to identify the extent to which the content of the clausal complement of an (unembedded) attitude predicate is entailed
+- Goal: to identify the extent to which the content of the clausal complement follows from an unembedded sentence with an attitude predicate. 
 - The clausal complements are the 20 clauses for which we established facts in the prior probability experiment that result in the eventualities described by these clauses to have a higher versus a lower prior.
-- The attitude predicates are categorized by their veridicality and the projectivity of the content of their complement. [DO WE NEED TO HAVE ALL FOUR COMBINATIONS EQUALLY OFTEN? SEE TABLE BELOW]
-- Response task: Given the standard definition of entailment (see above), we need a task that probes the extent to which the attitude sentence can be true and the content of the clausal complement false, i.e., the extent to which the content of the clausal complement is not entailed by the attitude sentence. 
+- The attitude predicates are categorized by their veridicality and the projectivity of the content of their complement. [**DO WE NEED TO HAVE ALL FOUR COMBINATIONS EQUALLY OFTEN? SEE TABLE BELOW**]
+- Response task: Given the standard definition of entailment (see above), we need a task that probes the extent to which the attitude sentence can be true and the content of the clausal complement false, i.e., the extent to which the truth of the content of the clausal complement follows from the attitude sentence. 
 - Contradiction task: 
 	
 	Bill: Steve believes/announced/discovered/knows that Marge is pregnant, but I know that she isn't. 
@@ -81,8 +81,8 @@ The projective content that we use to investigate the hypothesis is the content 
 	
 	==> 400 stimuli total 
 - Each participant sees each attitude predicate with a unique clausal complement. If we want 10 ratings per combination, we need 4,000 ratings total.
-- For each predicate, we calculate the mean contradiction rating: the higher the mean contradiction rating, the more veridical the predicate is.
-- Results: We expect to find that contradictoriness is not a binary but a gradient property. This would not mean that "entailment" (the technical term from semantics is gradient), but that a predicate whose clausal complement is not entailed may be more or less "veridical" (if we re-define "veridicality" as a gradient property).
+- For each predicate, we calculate the mean contradiction rating, which we take to be the mean veridicality rating of the predicate: the higher the mean contradiction rating, the more veridical the predicate is.
+- Results: We expect to find that predicates that entail their clausal complement are highly veridical and that veridicality is a gradient property. As a consequence, predicates that do not entail their clausal complement may differ in how veridical they are. Predicates that are more highly veridical may be more highly projective.
 
 ## Projectivity experiment
 
@@ -97,10 +97,9 @@ The projective content that we use to investigate the hypothesis is the content 
 - Materials: 20 polar questions formed from sentences with attitude predicates that embed a clausal complement, given a fact
 
 ==> 800 stimuli (20 predicates x 20 complements x 2 facts)
-- Each participant rates the projectivity of the content of the clausal complement for each attitude predicate with a unique clausal complement given a unique fact.
-- For each predicate/clause/fact triple, we calculate the mean certainty rating: the higher the mean certainty rating, the higher the projectivity of the content of the clausal complement.
+- Each participant rates the extent to which the speaker is certain of the content of the clausal complement. We assume that the extent to which the speaker is taken to be certain about the content is the extent to which the content projects (as in prior research).
 
-## Linear mixed-effects model we want to fit to results of projectivity experiment
+## Linear mixed-effects model we want to fit
 
 	projectivity ~ prior * entailment + (1 + prior * entailment | participant) + (1 + prior | predicate)
 

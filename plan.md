@@ -147,13 +147,14 @@ Explanation for table:
 - Veridicality column:
 	- "yes": complement is entailed
 	- "no": complement is not entailed and veridicality is low
-	- "no?": complement is not entailed but veridicality is high [some of these are just guesses; we don't have data]
+	- "no?": complement is not entailed but veridicality is high **[some of these are just guesses; we don't have data]**
 
 20 predicates currently in table (from top to bottom):
-- 6 predicates that are clearly projective and veridical (yes/yes)
+- 6 predicates that are projective and veridical (yes/yes)
 - 1 predicate ("establish") that is probably projective and veridical (yes?/yes)
-- 6 predicates that are (probably) not projective and (probably) not veridical (no(?)/no(?))
-- 6 predicates that are (probably) projective but (probably) not veridical (yes(?)/no(?))
+- 3 predicates that are not projective and not veridical (no/no)
+- 3 predicates that are probably not projective and probably not veridical (no(?)/no(?))
+- 6 predicates that are (probably) projective and (probably) not veridical (yes(?)/no(?))
 - 1 predicate that is (probably) not projective but veridical (no/yes)
 
 | Predicate  | reason for inclusion  | projective?   | veridical?  |
@@ -182,7 +183,7 @@ Explanation for table:
 
 ## 20 (non-gradable, non-subjective) eventualities (described by main or embedded clauses) and two facts about the world each
 **10 women's names / 10 men's names**
-- Mary is pregnant (Mary is a high school student / Mary just walked into Planned Parenthood)
+- Mary is pregnant (Mary is a middle school student / Mary just walked into Planned Parenthood)
 - Josie went on vacation to France (Josie doesn't have a passport / Josie loves France)
 - Emma gained a pound (Emma is on a very strict diet / Emma is a toddler)
 - Olivia slept until noon (Olivia has two small children / Olivia is a bar tender)

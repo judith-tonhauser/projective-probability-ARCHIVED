@@ -104,7 +104,7 @@ The projective content that we use to investigate the hypothesis is the content 
 	projectivity ~ prior * veridicality + (1 + prior * veridicality | participant) + (1 + prior | predicate)
 
 where
-- projectivity: individual participants' projectivity ratings between 0 and 1, of utterances given facts about the world that manipulates the prior probability of the eventuality described by the content of the complement 
+- projectivity: individual participants' projectivity ratings, of a clause that describes an eventuality, given a fact 
 - prior: mean prior probability rating of the eventuality given a fact
 - veridicality: mean veridicality rating of the predicate
 

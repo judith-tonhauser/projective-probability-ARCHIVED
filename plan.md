@@ -53,19 +53,17 @@ The projective content that we use to investigate the hypothesis is the content 
 
 - Goal: to identify readers' prior probabilities of the eventualities described by main clauses, given a fact about the world
 - The eventualities should be non-gradable and non-subjective (**JD FILL IN WHY, PLEASE**)
-- For each eventuality, we 2 facts about the world: one in which the eventuality has a higher prior probability, though not at ceiling, and one in which the eventuality has a lower prior probability, though not at floor. (We need to avoid eventualities being too likely or too unlikely because a) if they are too likely, then people might argue that the facts of the world entail the content of the clause describing the eventuality, and b) if they are too unlikely, then participants might give wonky projectivity ratings.)
+- For each eventuality, we identify its prior given one of 2 facts about the world: one fact in which the eventuality has a higher prior probability, though not at ceiling, and one in which the eventuality has a lower prior probability, though not at floor. 
+- We need to avoid eventualities being too likely or too unlikely because a) if they are too likely, then people might argue that the facts of the world entail the content of the clause describing the eventuality, and b) if they are too unlikely, then participants might give wonky projectivity ratings.
 - Response task: Participants assess the likeliness of the eventuality described by a main clause, given a fact about the world
 	- Fact: Mary just walked into Planned Parenthood.
-	  
-	  How likely is it that Mary is pregnant?
-	- Fact: Mary is a high school student.
 	  
 	  How likely is it that Mary is pregnant?
 - Response on slider from 0/very unlikely to 1/very likely
 - Materials: 20 atomic main clauses that lexicalize the eventualities, presented with one of two facts each, i.e., 40 stimuli total
 - Each participant rates the likeliness of 20 unique eventualities, given a fact about the world.
 - We want at least 20 ratings per eventuality/fact combination.
-- Analysis: For each eventuality, we calculate the mean likeliness, i.e., the mean prior probability: the higher the mean likeliness, the higher the prior probability of the eventuality. We select those eventualities for which the two facts result in a relatively high (though not at ceiling) prior and a relatively low (though not at floor) prior.
+- Analysis: For each eventuality, we calculate the mean likeliness, which we take to be the mean prior probability: the higher the mean likeliness, the higher the prior probability of the eventuality. In the projectivity experiment, we use those eventualities for which the two facts result in a relatively high (though not at ceiling) prior and a relatively low (though not at floor) prior.
 
 ## Entailment experiment
 

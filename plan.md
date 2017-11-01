@@ -1,8 +1,18 @@
 # Projective probability
 
-## Goal
+## Background and motivation
+- General hypothesis: The projectivity of some content is not due to conventional specification but rather derived from the conventional meanings of sentences and general principles of rational conversation.
+	- Simons et al 2010, Beaver et al 2017: Utterance content projects iff it is not at-issue. (Projectivity Principle)
+	- Tonhauser, Beaver & Degen JoS: Utterance content projects to the extent that it is not at-issue. (Gradient Projectivity Principle)
+ - To identify whether utterance content is at-issue, we have to identify the Question Under Discussion addressed by the utterance. What, for instance, are factors that influence whether a speaker who utters "Joyce didn't discover that the foundation was cracked" does so with the assumption that the foundation is cracked (i.e., the QUD is whether Joyce discovered it) or with the assumption that there was a discovery but it is not clear what that discovery amounted to (i.e., the QUD is what was discovered). 
+ - Previous research suggests listeners can rely on prosody to constrain speaker's QUDs of utterances (Cummins & Rohde 2015, Tonhauser 2016, Stevens et al. 2017). 
+ - Tonhauser et al JoS showed that projectivity is predicted by at-issueness, the expression that projective content is associated with and world knowledge about the eventuality described by the clause that lexicalizes the projective content.
+ 	- Taylor Mahler's QP1 investigates the hypothesis that listeners can rely on contextual cues to the QUD, to identify whether content projects.
+	- The project described here investigates the hypothesis that listeners take world knowledge about the prior of eventualities into consideration to identify whether speaker's are committed to the contents of clauses that describe the eventualities
 
-To investigate the hypothesis that the projectivity of clausal content is influenced by the prior probability of the event described by the clause that conveys the content: higher probability of the event results in higher projectivity of the content. 
+## Research hypothesis
+
+Our goal in this project is to investigate the hypothesis that the projectivity of clausal content is influenced by the prior probability of the event described by the clause that conveys the content: higher probability of the event results in higher projectivity of the content. 
 
 To investigate the hypothesis, we manipulate the prior probability of events described by clauses and investigate the projectivity of the content of those clauses.  This project follows up on the finding reported in our Journal of Semantics paper that (what we called) 'lexical content' is a predictor of projectivity. 
 
@@ -114,7 +124,7 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 
 - NEED TO RELATE THIS TO A THEORETICAL PREDICTION: at-issueness theory of projection, conventional theory of projection, etc.
 
-## Stimuli:
+## Stimuli
 	
 **20 predicates**
 

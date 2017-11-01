@@ -130,8 +130,9 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 	- significant interaction: the effect of the prior is stronger with less veridical predicates than with more veridical predicates
 
 - Given these findings, we can argue:
-	- To identify speaker commitment, listeners take into consideration the prior of the eventuality: either how likely they take the eventuality to be, or how likely the speaker is to take the eventuality to be. **Am I right that we can't tell the difference*?  
-- NEED TO RELATE THIS TO A THEORETICAL PREDICTION: at-issueness theory of projection, conventional theory of projection, etc.
+	- To identify speaker commitment, listeners take into consideration the prior of the eventuality: either how likely they take the eventuality to be, or how likely the speaker is to take the eventuality to be. **Am I right that we can't tell the difference?**  
+	- Theoretical models of projectivity need to incorporate these priors.
+	- Speakers may be taken to be committed to a particular content, even if that content is not entailed content. This raises the question of whether entailed and non-entailed projective content should receive distinct analyses. We argue that not. 
 
 ## Stimuli
 	
@@ -143,10 +144,10 @@ Explanation for table:
 	- "no": predicate is generally taken to be non-factive or we have evidence that it is
 	- "yes?": evidence is shaky but the complement may be projective
 	- "no?": evidence is shaky but the complement doesn't look projective
-- Entailment column:
+- Veridicality column:
 	- "yes": complement is entailed
-	- "no": complement is clearly not entailed
-	- "no?": complement is not entailed in the strictest sense, but may be taken to be
+	- "no": complement is not entailed and veridicality is low
+	- "no?": complement is not entailed but veridicality is high [some of these are just guesses; we don't have data]
 
 20 predicates currently in table (from top to bottom):
 - 6 predicates that are clearly projective and veridical (yes/yes)
@@ -170,12 +171,12 @@ Explanation for table:
 |  prove |  A&H 2014: non-veridical (even though at first appear to be) and non-factive, database: 0.5 |  no? | no?  |
 |  demonstrate | A&H 2014: non-veridical (even though at first appear to be) and non-factive  |  no? | no?  |
 |  say | A&H 2012: neither veridical nor factive, database: 0.8  | no?  | no  |
-|  confess | variability paper, 2nd lowest projectivity (0.7), "falsely confessed", Swanson 2012: not entailed  |  yes    |  no    |
+|  confess | variability paper, 2nd lowest projectivity (0.7), "falsely confessed", Swanson 2012: not entailed  |  yes    |  no?    |
 |  inform Sam |  Schlenker 2010 pairs with "announce" and claims same meaning but factive and veridical; however: "falsely inform" |  yes  |  no?  |
-|  announce | Schlenker 2010 "part-time trigger", database: 1, variable projectivity  | yes?  | no |
-|  acknowledge |  assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive | yes?  | no  |
-|  admit | assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive, database: 1  |  yes? | no  |
-|  confirm |  assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive | yes?  | no |
+|  announce | Schlenker 2010 "part-time trigger", database: 1, variable projectivity  | yes?  | no? |
+|  acknowledge |  assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive | yes?  | no?  |
+|  admit | assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive, database: 1  |  yes? | no?  |
+|  confirm |  assertive, A&H 2014: "illusion of factivity", i.e., non-veridical and non-factive | yes?  | no? |
 |  be right that |  compared with "know" in much research: entails complement but no presupposition |  no |  yes |
 
 

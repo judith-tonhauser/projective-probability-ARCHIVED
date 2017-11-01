@@ -113,7 +113,7 @@ where
 Sample CSV file in long format:
 
 | Participant  | Eventuality  | Fact  | Prior of eventuality given fact | Veridicality of predicate | Projectivity rating  |
-|---|---|---|---|
+|---|---|---|---|---|---|
 |  1 | ev1 | fact1 | 0.8 | 0.9 | 0.7 |
 |  1 | ev1 | fact2 | 0.8 | 0.9 | 0.5 |
 

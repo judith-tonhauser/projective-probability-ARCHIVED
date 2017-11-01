@@ -34,25 +34,25 @@ The projective content that we use to investigate the hypothesis is the content 
 ## Background on entailment
 
 - Entailment is a relationship between two sentences, or between a sentence and a proposition: sentence A entails sentence/proposition B iff every situation in which A is true is a situation in which B is true. In other words, "entailment" is defined as a context-independent, binary, categorical relationship (and we do not intend to change that).
-- However, for some attitude predicates, remarks have been made to the extent that the content of the clausal complement may be felt to follow from unembedded sentences in many though not all contexts. Schlenker (2010:139) about "announce": "Äúin some contexts, it does not entail the truth of its complement; in other contexts, it entails and presupposes the truth of its complement."Äù For instance, he suggested that whether the content of the complement of "announce" is judged to be entailed depends on who the attitude holder is; e.g., "ÄúMary announced that she is pregnant"Äù seems to be judged to entail that Mary is pregnant if Mary is a sane, adult woman but not if Mary is 8 years old.
-- Anand & Hacquard 2014 suggest that there are predicates that at first glance seem veridical (i.e., entail the content of the complement), but really are not, on closer inspection. Similarly, Swanson (2012) didn't take the content of the complement of "establish" to be entailed though other speakers might argue that "ÄúThe detective established that Margret didn't kill James"Äù entails that Margret didn't kill James.
+- However, for some attitude predicates, remarks have been made to the extent that the content of the clausal complement may be felt to follow from unembedded sentences in many though not all contexts. Schlenker (2010:139) about "announce": "in some contexts, it does not entail the truth of its complement; in other contexts, it entails and presupposes the truth of its complement."Äù For instance, he suggested that whether the content of the complement of "announce" is judged to be entailed depends on who the attitude holder is; e.g., "Mary announced that she is pregnant" seems to be judged to entail that Mary is pregnant if Mary is a sane, adult woman but not if Mary is 8 years old.
+- Anand & Hacquard 2014 suggest that there are predicates that at first glance seem veridical (i.e., entail the content of the complement), but really are not, on closer inspection. Similarly, Swanson (2012) didn't take the content of the complement of "establish" to be entailed though other speakers might argue that "ÄúThe detective established that Margret didn't kill James" entails that Margret didn't kill James.
 - Haven't worked through this: Sudo (2012): Ph.D. thesis supposedly argued that some triggers don't entail the presupposition.
 - So, for semanticists, finding one situation in which the content of the clausal complement does not follow from an unembedded sentence with an attitude predicate or realizing that one can say "a falsely predicate p" (which implies that p is not true) is sufficient to say that the predicate does not entail the content of the complement.
 - For naive language users, however, predicates may differ in the extent to which the content of the clausal complement is taken to follow from unembedded sentences with the predicate. We take "veridicality" to be a possibly gradient notion and define it as the extent to which the content of the clausal complement follows from unembedded sentences with the predicate. Exploring the veridicality of different attitude predicates is an interesting project of its own: 
 	- Is veridicality a gradient property? 
 	- Are predicates that entail the content of the clausal complement highly veridical? 
-- Some authors assume that only entailed meanings are presuppositions: non-entailed meanings that speakers are taken to be committed to are considered a completely different phenomenon (e.g., Anand & Hacquard 2014: "Äúillusion of factivity"Äù and "Äúillusion of projection"Äù). 
+- Some authors assume that only entailed meanings are presuppositions: non-entailed meanings that speakers are taken to be committed to are considered a completely different phenomenon (e.g., Anand & Hacquard 2014: "Äúillusion of factivity" and "illusion of projection"). 
 - In our experiments, we explore whether the extent to which the projectivity of the complement is influenced by the prior of the eventuality described by the complement differs with the extent to which the clausal complement veridical (i.e., we ask: is there an interaction between prior probability and veridicality?).
 
 ## Three separate experiments
-1. prior
-2. entailment 
+1. prior probability
+2. veridicality 
 3. projectivity
 
 ## Prior probability experiment
 
 - Goal: to identify readers' prior probabilities of the eventualities described by main clauses, given a fact about the world
-- The eventualities should be non-gradable and non-subjective (JD FILL IN WHY, PLEASE)
+- The eventualities should be non-gradable and non-subjective (**JD FILL IN WHY, PLEASE**)
 - For each eventuality, we 2 facts about the world: one in which the eventuality has a higher prior probability, though not at ceiling, and one in which the eventuality has a lower prior probability, though not at floor. (We need to avoid eventualities being too likely or too unlikely because a) if they are too likely, then people might argue that the facts of the world entail the content of the clause describing the eventuality, and b) if they are too unlikely, then participants might give wonky projectivity ratings.)
 - Response task: Participants assess the likeliness of the eventuality described by a main clause, given a fact about the world
 	- Fact: Mary just walked into Planned Parenthood.

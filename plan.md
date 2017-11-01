@@ -101,12 +101,12 @@ The projective content that we use to investigate the hypothesis is the content 
 
 ## Linear mixed-effects model we want to fit
 
-	projectivity ~ prior * entailment + (1 + prior * entailment | participant) + (1 + prior | predicate)
+	projectivity ~ prior * veridicality + (1 + prior * veridicality | participant) + (1 + prior | predicate)
 
 where
 - projectivity: individual participants' projectivity ratings between 0 and 1, of utterances given facts about the world that manipulates the prior probability of the eventuality described by the content of the complement 
-- prior: mean prior probability rating (between 0 and 1) of the eventuality when it is described by a main clause given facts about the world that manipulate the prior probability of the eventuality
-- entailment: mean contradictoriness rating (between 0 and 1), i.e., the extent to which the predicate is veridical
+- prior: mean prior probability rating of the eventuality given a fact
+- veridicality: mean veridicality rating of the predicate
 
 Motivation for including interaction term: We hypothesize that projectivity is predicted by the prior. According to classical analyses of presuppositions, non-entailed complements do not project, they at best give the "Äúillusion of projection"Äù. We, however, hypothesize that the projectivity of non-entailed complements will be influenced by the prior, too. We include the interaction term because we hypothesize that for less veridical predicates the predicate itself exerts less control over whether the speaker is taken to be committed to the content of the complement than for more strongly veridical predicates. 
 

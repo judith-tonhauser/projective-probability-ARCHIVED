@@ -87,12 +87,11 @@ The projective content that we use to investigate the hypothesis is the content 
 ## Projectivity experiment
 
 - Goal: to identify the extent to which participants take the speaker to be committed to the content of the clausal complement of an attitude predicate realized in a polar question, given a fact about the world.
-- Response task: "certain that" diagnostic (from Journal of Semantics paper)
-	- Fact: Mary just walked into Planned Parenthood.
-	  
-	  Bill: Did Sue discover that Mary is pregnant?
-	
-	  Is Bill certain that Mary is pregnant?
+- Response task: Participants are instructed to consider the fact about the world, which the speaker is also aware of. **better: Tell participants that the speaker knows that $fact$?**
+	- "certain that" diagnostic (from Journal of Semantics paper)
+		- Fact: Mary just walked into Planned Parenthood.
+	  	- Bill: Did Sue discover that Mary is pregnant?
+		- Is Bill certain that Mary is pregnant?
 - Response on a slider from 0/no to 1/yes
 - Materials: 20 polar questions formed from sentences with attitude predicates that embed a clausal complement, given a fact
 
@@ -119,7 +118,7 @@ Sample CSV file in long format:
 
 ** end question by JT **
 
-Motivation for including interaction term: We hypothesize that projectivity is predicted by the prior. According to classical analyses of presuppositions, non-entailed complements do not project, they at best give the "illusion of projection"Äù. We, however, hypothesize that the projectivity of non-entailed complements will be influenced by the prior, too. We include the interaction term because we hypothesize that for less veridical predicates the predicate itself exerts less control over whether the speaker is taken to be committed to the content of the complement than for more strongly veridical predicates. 
+Motivation for including interaction term: We hypothesize that projectivity is predicted by the prior. According to classical analyses of presuppositions, non-entailed complements do not project, they at best give the "illusion of projection". We, however, hypothesize that the projectivity of non-entailed complements will be influenced by the prior, too. We include the interaction term because we hypothesize that for less veridical predicates the predicate itself exerts less control over whether the speaker is taken to be committed to the content of the complement than for more strongly veridical predicates. 
 
 [Perhaps also include as fixed or random effects: tense of attitude predicate?]
 
@@ -127,9 +126,11 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 
 - We expect to find:
 	- significant main effect of "prior": complement clauses that describe eventualities with a higher prior are more highly projective than complement clauses that describe eventualities with a lower prior
-	- significant main effect of "entailment": complement clauses of more veridical predicates are more highly projective than complement clauses of less veridical predicates
+	- significant main effect of "veridicality": complement clauses of more veridical predicates are more highly projective than complement clauses of less veridical predicates
 	- significant interaction: the effect of the prior is stronger with less veridical predicates than with more veridical predicates
 
+- Given these findings, we can argue:
+	- To identify speaker commitment, listeners take into consideration the prior of the eventuality: either how likely they take the eventuality to be, or how likely the speaker is to take the eventuality to be. **Am I right that we can't tell the difference*?  
 - NEED TO RELATE THIS TO A THEORETICAL PREDICTION: at-issueness theory of projection, conventional theory of projection, etc.
 
 ## Stimuli

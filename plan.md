@@ -115,7 +115,9 @@ Sample CSV file in long format:
 | Participant  | Eventuality  | Fact  | Prior of eventuality given fact | Veridicality of predicate | Projectivity rating  |
 |---|---|---|---|---|---|
 |  1 | ev1 | fact1 | 0.8 | 0.9 | 0.7 |
-|  1 | ev1 | fact2 | 0.8 | 0.9 | 0.5 |
+|  1 | ev1 | fact2 | 0.2 | 0.9 | 0.5 |
+
+** end question by JT **
 
 Motivation for including interaction term: We hypothesize that projectivity is predicted by the prior. According to classical analyses of presuppositions, non-entailed complements do not project, they at best give the "Äúillusion of projection"Äù. We, however, hypothesize that the projectivity of non-entailed complements will be influenced by the prior, too. We include the interaction term because we hypothesize that for less veridical predicates the predicate itself exerts less control over whether the speaker is taken to be committed to the content of the complement than for more strongly veridical predicates. 
 

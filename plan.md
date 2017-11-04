@@ -103,14 +103,12 @@ The projective content that we use to investigate the hypothesis is the content 
 
 ## Linear mixed-effects model we want to fit
 
-	projectivity ~ prior * veridicality + (1 + prior * veridicality | participant) + (1 + prior | predicate)
+	projectivity ~ prior * veridicality + (1 + prior * veridicality | participant) + (1 + prior | predicate) + (1 + veridicality | fact)
 
 where
 - projectivity: individual participants' projectivity ratings, of a clause that describes an eventuality, given a fact 
 - prior: mean prior probability rating of the eventuality given a fact
 - veridicality: mean veridicality rating of the predicate
-
-**What I don't understand yet: How does the model know to predict the projectivity of a content/eventuality given a fact from the prior GIVEN THAT FACT rather than from the prior of the eventuality GIVEN EITHER FACT?**
 
 Sample CSV file in long format:
 
@@ -119,9 +117,13 @@ Sample CSV file in long format:
 |  1 | ev1 | fact1 | 0.8 | 0.9 | 0.7 |
 |  1 | ev1 | fact2 | 0.2 | 0.9 | 0.5 |
 
-** end question by JT **
 
 Motivation for including interaction term: We hypothesize that projectivity is predicted by the prior. According to classical analyses of presuppositions, non-entailed complements do not project, they at best give the "illusion of projection". We, however, hypothesize that the projectivity of non-entailed complements will be influenced by the prior, too. We include the interaction term because we hypothesize that for less veridical predicates the predicate itself exerts less control over whether the speaker is taken to be committed to the content of the complement than for more strongly veridical predicates. 
+
+Motivation for random effects:
+- (1 + prior * veridicality | participant) -- to account for individual participant noise in overall ratings and in individual participant noise in fixed effects of interest
+- (1 +  prior | predicate) -- to account for individual predicate noise in overall ratings and in individual predicate noise in prior effect
+- (1 + veridicality | fact) -- to account for individual fact noise in overall ratings and in individual fact noise in effect of veridicality
 
 [Perhaps also include as fixed or random effects: tense of attitude predicate?]
 

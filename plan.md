@@ -126,6 +126,7 @@ Motivation for random effects:
 - (1 + veridicality | fact) -- to account for individual fact noise in overall ratings and in individual fact noise in effect of veridicality **[JD asks: is this doppelt gemoppelt with previous random effect?]**
 
 [Perhaps also include as fixed or random effects: tense of attitude predicate?]
+[Perhaps also include as fixed effect: length of complement in number of words]
 
 ## Results and discussion
 

@@ -8,7 +8,7 @@ var list1 = [
     item : "2H",
     fact: "Josie loves France.",
     prompt: "How likely is it that Josie went on vacation to France?"
-    }
+    },
     {
     item : "3L", 
     fact: "Emma is on a very strict diet.",
@@ -18,7 +18,7 @@ var list1 = [
     item : "4H",
     fact: "Olivia is a bar tender.",
     prompt: "How likely is it that Olivia slept until noon?"
-    }
+    },
     {
     item : "5L", 
     fact: "Sophia is a high end fashion model.",
@@ -28,7 +28,7 @@ var list1 = [
     item : "6H",
     fact: "Mia is a college student.",
     prompt: "How likely is it that Mia drank 2 cocktails last night?"
-    }
+    },
     {
     item : "7L", 
     fact: "Isabella is a vegetarian.",
@@ -38,7 +38,7 @@ var list1 = [
     item : "8H",
     fact: "Emily has been saving for a year.",
     prompt: "How likely is it that Emily bought a car yesterday?"
-    }
+    },
     {
     item : "9L", 
     fact: "Grace hates her sister.",
@@ -48,7 +48,7 @@ var list1 = [
     item : "10H",
     fact: "Zoe is a math major.",
     prompt: "How likely is it that Zoe calculated the tip?"
-    }
+    },
     {
     item : "11L", 
     fact: "Danny is a diabetic.",
@@ -58,7 +58,7 @@ var list1 = [
     item : "12H",
     fact: "Frank has always wanted a pet.",
     prompt: "How likely is it that Frank got a cat?"
-    }
+    },
     {
     item : "13L", 
     fact: "Jackson is obese.",
@@ -68,7 +68,7 @@ var list1 = [
     item : "14H",
     fact: "Jayden's car is in the shop.",
     prompt: "How likely is it that Jayden rented a car?"
-    }
+    },
     {
     item : "15L", 
     fact: "Tony has been sober for 20 years.",
@@ -78,7 +78,7 @@ var list1 = [
     item : "16H",
     fact: "Josh is a 5-year old boy.",
     prompt: "How likely is it that Josh learned to ride a bike yesterday?"
-    }
+    },
     {
     item : "17L", 
     fact: "Owen lives in New Orleans.",
@@ -88,7 +88,7 @@ var list1 = [
     item : "18H",
     fact: "Julian is from Cuba.",
     prompt: "How likely is it that Julian dances salsa?"
-    }
+    },
     {
     item : "19L", 
     fact: "Jon lives 10 miles away from his work.",
@@ -111,7 +111,7 @@ var list2 = [
     item : "2L",
     fact: "Josie doesn't have a passport.",
     prompt: "How likely is it that Josie went on vacation to France?"
-    }
+    },
     {
     item : "3H", 
     fact: "Emma is a toddler.",
@@ -121,7 +121,7 @@ var list2 = [
     item : "4L",
     fact: "Olivia has two small children.",
     prompt: "How likely is it that Olivia slept until noon?"
-    }
+    },
     {
     item : "5H", 
     fact: "Sophia is a hipster.",
@@ -131,7 +131,7 @@ var list2 = [
     item : "6L",
     fact: "Mia is a nun.",
     prompt: "How likely is it that Mia drank 2 cocktails last night?"
-    }
+    },
     {
     item : "7H", 
     fact: "Isabella is from Argentina.",
@@ -141,7 +141,7 @@ var list2 = [
     item : "8L",
     fact: "Emily never has any money.",
     prompt: "How likely is it that Emily bought a car yesterday?"
-    }
+    },
     {
     item : "9H", 
     fact: "Grace loves her sister.",
@@ -151,7 +151,7 @@ var list2 = [
     item : "10L",
     fact: "Zoe is 5 years old.",
     prompt: "How likely is it that Zoe calculated the tip?"
-    }
+    },
     {
     item : "11H", 
     fact: "Danny has frosting on his face.",
@@ -161,7 +161,7 @@ var list2 = [
     item : "12L",
     fact: "Frank is allergic to cats.",
     prompt: "How likely is it that Frank got a cat?"
-    }
+    },
     {
     item : "13H", 
     fact: "Jackson is training for a marathon.",
@@ -171,7 +171,7 @@ var list2 = [
     item : "14L",
     fact: "Jayden doesn't have a driver's license.",
     prompt: "How likely is it that Jayden rented a car?"
-    }
+    },
     {
     item : "15H", 
     fact: "Tony went to a bar.",
@@ -181,7 +181,7 @@ var list2 = [
     item : "16L",
     fact: "Josh is a 75-year old man.",
     prompt: "How likely is it that Josh learned to ride a bike yesterday?"
-    }
+    },
     {
     item : "17H", 
     fact: "Owen lives in Chicago.",
@@ -191,7 +191,7 @@ var list2 = [
     item : "18L",
     fact: "Julian is from Germany.",
     prompt: "How likely is it that Julian dances salsa?"
-    }
+    },
     {
     item : "19H", 
     fact: "Jon lives 2 blocks away from his work.",

@@ -169,7 +169,6 @@ Explanation for table:
 |  discover |  variability paper, classical trigger, high projectivity but some variability | yes  | yes  |
 |  reveal  | variability paper, 3rd lowest projectivity (0.8)  |   yes   | yes   |
 |  see | variability paper, sensory factive, highly projective, more variability than "annoyed", database: 2.2  |   yes   |  yes    |
-|  hear | sensory factive, database: 1.2  |  yes    |  yes    |
 |  establish  | variability paper, lowest projectivity (0.4); Swanson 2012: entailed but not projective  |  yes?    |  yes    |
 |  pretend |  lowest in database: -1.5 |  no | no  |
 | think  | classical non-trigger, doesn't entail or presuppose complement, database: -0.5   |  no  |  no  |
@@ -177,6 +176,7 @@ Explanation for table:
 |  prove |  A&H 2014: non-veridical (even though at first appear to be) and non-factive, database: 0.5 |  no? | no?  |
 |  demonstrate | A&H 2014: non-veridical (even though at first appear to be) and non-factive  |  no? | no?  |
 |  say | A&H 2012: neither veridical nor factive, database: 0.8  | no?  | no  |
+|  hear | sensory factive, database: 1.2  |  yes    |  no    |
 |  confess | variability paper, 2nd lowest projectivity (0.7), "falsely confessed", Swanson 2012: not entailed  |  yes    |  no?    |
 |  inform Sam |  Schlenker 2010 pairs with "announce" and claims same meaning but factive and veridical; however: "falsely inform" |  yes  |  no?  |
 |  announce | Schlenker 2010 "part-time trigger", database: 1, variable projectivity  | yes?  | no? |

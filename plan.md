@@ -52,7 +52,7 @@ The projective content that we use to investigate the hypothesis is the content 
 ## Prior probability experiment
 
 - Goal: to identify readers' prior probabilities of the eventualities described by main clauses, given a fact about the world
-- The eventualities should be non-gradable and non-subjective (**JD FILL IN WHY, PLEASE**)
+- The eventualities should be non-gradable and non-subjective, in order to avoid variability in judgments that are due to uncertainty about thresholds or about what counts as X for the speaker.
 - For each eventuality, we identify its prior given one of 2 facts about the world: one fact in which the eventuality has a higher prior probability, though not at ceiling, and one in which the eventuality has a lower prior probability, though not at floor. 
 - We need to avoid eventualities being too likely or too unlikely because a) if they are too likely, then people might argue that the facts of the world entail the content of the clause describing the eventuality, and b) if they are too unlikely, then participants might give wonky projectivity ratings.
 - Response task: Participants assess the likeliness of the eventuality described by a main clause, given a fact about the world
@@ -80,14 +80,14 @@ The projective content that we use to investigate the hypothesis is the content 
 - Materials: atomic sentences with 20 attitude predicates, 20 clausal complements per predicate 
 	
 	==> 400 stimuli total 
-- Each participant sees each attitude predicate with a unique clausal complement. If we want 10 ratings per combination, we need 4,000 ratings total.
+- Each participant sees each attitude predicate with a unique clausal complement. If we want 10 ratings per combination, we need 4,000 ratings total. [**JD says: we should probably go with 20 ratings per combination, see Simmons et al 2011. But question of what counts as a "cell" in this design**]
 - For each predicate, we calculate the mean contradiction rating, which we take to be the mean veridicality rating of the predicate: the higher the mean contradiction rating, the more veridical the predicate is.
 - Results: We expect to find that predicates that entail their clausal complement are highly veridical and that veridicality is a gradient property. As a consequence, predicates that do not entail their clausal complement may differ in how veridical they are. Predicates that are more highly veridical may be more highly projective.
 
 ## Projectivity experiment
 
 - Goal: to identify the extent to which participants take the speaker to be committed to the content of the clausal complement of an attitude predicate realized in a polar question, given a fact about the world.
-- Response task: Participants are instructed to consider the fact about the world, which the speaker is also aware of. **better: Tell participants that the speaker knows that $fact$?**
+- Response task: Participants are instructed to consider the fact about the world, which the speaker is also aware of. **better: Tell participants that the speaker knows that $fact$?** **JD says: I like the "John knows that $fact$" version. How does this work with individual-level predicates?**
 	- "certain that" diagnostic (from Journal of Semantics paper)
 		- Fact: Mary just walked into Planned Parenthood.
 	  	- Bill: Did Sue discover that Mary is pregnant?
@@ -187,7 +187,7 @@ Explanation for table:
 
 Stimuli naming: e.g., 1H (event 1 with fact that gives high prior), 1L (event 1 with fact that gives low prior)
 
-1. Mary is pregnant (Mary is a middle school student / Mary just walked into Planned Parenthood)
+1. Mary is pregnant (Mary is a middle school student / **Mary just walked into Planned Parenthood**)
 2. Josie went on vacation to France (Josie doesn't have a passport / Josie loves France)
 3. Emma gained a pound last week (Emma is on a very strict diet / Emma is a toddler)
 4. Olivia slept until noon (Olivia has two small children / Olivia is a bar tender)
@@ -195,13 +195,13 @@ Stimuli naming: e.g., 1H (event 1 with fact that gives high prior), 1L (event 1 
 6. Mia drank 2 cocktails last night (Mia is a nun / Mia is a college student)
 7. Isabella ate a steak (Isabella is a vegetarian / Isabella is from Argentina)
 8. Emily bought a car yesterday (Emily never has any money / Emily has been saving for a year)
-9. Grace visited her sister (Emily hates her sister / Emily loves her sister)
+9. Grace visited her sister **(Emily hates her sister / Emily loves her sister)**
 10. Zoe calculated the tip (Zoe is 5 years old / Zoe is a math major)
-11. Danny ate the cupcake (Danny is a diabetic / Danny has frosting on his face)
+11. Danny ate the cupcake (Danny is a diabetic / **Danny has frosting on his face**)
 12. Frank got a cat (Frank is allergic to cats / Frank has always wanted a pet)
 13. Jackson ran 10 miles (Jackson is obese / Jackson is training for a marathon)
-14. Jayden rented a car (Jayden doesn't have a driver's license / Jayden's car is in the shop)
-15. Tony had a drink last night (Tony has been sober for 20 years / Tony went to a bar)
+14. Jayden rented a car (Jayden doesn't have a driver's license / **Jayden's car is in the shop**)
+15. Tony had a drink last night (Tony has been sober for 20 years / **Tony went to a bar**)
 16. Josh learned to ride a bike yesterday (Josh is a 5-year old boy / Josh is a 75-year old man)
 17. Owen shoveled snow last winter (Owen lives in Chicago / Owen lives in New Orleans)
 18. Julian dances salsa (Julian is from Germany / Julian is from Cuba)

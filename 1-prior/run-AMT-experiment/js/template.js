@@ -53,20 +53,17 @@ function make_slides(f) {
     /* trial information for this block
      (the variable 'stim' will change between each of these values,
       and for each of these, present_handle will be run.) */
-    present : [
-      {subject: "dog", object: "ball"},
-      {subject: "cat", object: "windowsill"},
-      {subject: "bird", object: "shiny object"},
-    ],
+    present : exp.all_stims,
 
     //this gets run only at the beginning of the block
     present_handle : function(stim) {
+      this.trial_start = Date.now();
       $(".err").hide();
 
       this.stim = stim; //I like to store this information in the slide so I can record it later.
 
 
-      $(".prompt").html("Fact:" + stim.fact \n stim.prompt);
+      $(".prompt").html("Fact:" + stim.fact + "\n" + stim.prompt);
       this.init_sliders();
       exp.sliderPost = null; //erase current slider value
     },
@@ -91,7 +88,11 @@ function make_slides(f) {
 
     log_responses : function() {
       exp.data_trials.push({
-        "trial_type" : "one_slider",
+        "slide_number_in_experiment" : exp.phase,
+        "fact" : this.stim.fact,
+        "prompt" : this.stim.prompt,
+        "item" : this.stim.item,
+        "rt" : Date.now() - _s.trial_start,
         "response" : exp.sliderPost
       });
     }
@@ -296,6 +297,7 @@ function init() {
   exp.trials = [];
   exp.catch_trials = [];
   exp.all_stims = _.shuffle(_.shuffle([list1,list2])[0]); //can randomize between subject conditions here
+  console.log(exp.all_stims);
   exp.system = {
       Browser : BrowserDetect.browser,
       OS : BrowserDetect.OS,

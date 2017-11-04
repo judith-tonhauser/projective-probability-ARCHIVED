@@ -155,11 +155,11 @@ Explanation for table:
 	- "no?": complement is not entailed but veridicality is high **[some of these are just guesses; we don't have data]**
 
 20 predicates currently in table (from top to bottom):
-- 6 predicates that are projective and veridical (yes/yes)
+- 5 predicates that are projective and veridical (yes/yes)
 - 1 predicate ("establish") that is probably projective and veridical (yes?/yes)
 - 3 predicates that are not projective and not veridical (no/no)
 - 3 predicates that are probably not projective and probably not veridical (no(?)/no(?))
-- 6 predicates that are (probably) projective and (probably) not veridical (yes(?)/no(?))
+- 7 predicates that are (probably) projective and (probably) not veridical (yes(?)/no(?))
 - 1 predicate that is (probably) not projective but veridical (no/yes)
 
 | Predicate  | reason for inclusion  | projective?   | veridical?  |

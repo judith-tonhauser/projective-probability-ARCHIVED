@@ -34,14 +34,14 @@ The projective content that we use to investigate the hypothesis is the content 
 ## Background on entailment
 
 - Entailment is a relationship between two sentences, or between a sentence and a proposition: sentence A entails sentence/proposition B iff every situation in which A is true is a situation in which B is true. In other words, "entailment" is defined as a context-independent, binary, categorical relationship (and we do not intend to change that).
-- However, for some attitude predicates, remarks have been made to the extent that the content of the clausal complement may be felt to follow from unembedded sentences in many though not all contexts. Schlenker (2010:139) about "announce": "in some contexts, it does not entail the truth of its complement; in other contexts, it entails and presupposes the truth of its complement."€ For instance, he suggested that whether the content of the complement of "announce" is judged to be entailed depends on who the attitude holder is; e.g., "Mary announced that she is pregnant" seems to be judged to entail that Mary is pregnant if Mary is a sane, adult woman but not if Mary is 8 years old.
-- Anand & Hacquard 2014 suggest that there are predicates that at first glance seem veridical (i.e., entail the content of the complement), but really are not, on closer inspection. Similarly, Swanson (2012) didn't take the content of the complement of "establish" to be entailed though other speakers might argue that "€œThe detective established that Margret didn't kill James" entails that Margret didn't kill James.
+- However, for some attitude predicates, remarks have been made to the extent that the content of the clausal complement may be felt to follow from unembedded sentences in many though not all contexts. Schlenker (2010:139) about "announce": "in some contexts, it does not entail the truth of its complement; in other contexts, it entails and presupposes the truth of its complement."â‚¬Â For instance, he suggested that whether the content of the complement of "announce" is judged to be entailed depends on who the attitude holder is; e.g., "Mary announced that she is pregnant" seems to be judged to entail that Mary is pregnant if Mary is a sane, adult woman but not if Mary is 8 years old.
+- Anand & Hacquard 2014 suggest that there are predicates that at first glance seem veridical (i.e., entail the content of the complement), but really are not, on closer inspection. Similarly, Swanson (2012) didn't take the content of the complement of "establish" to be entailed though other speakers might argue that "â‚¬Å“The detective established that Margret didn't kill James" entails that Margret didn't kill James.
 - Haven't worked through this: Sudo (2012): Ph.D. thesis supposedly argued that some triggers don't entail the presupposition.
 - So, for semanticists, finding one situation in which the content of the clausal complement does not follow from an unembedded sentence with an attitude predicate or realizing that one can say "a falsely predicate p" (which implies that p is not true) is sufficient to say that the predicate does not entail the content of the complement.
 - For naive language users, however, predicates may differ in the extent to which the content of the clausal complement is taken to follow from unembedded sentences with the predicate. We take "veridicality" to be a possibly gradient notion and define it as the extent to which the content of the clausal complement follows from unembedded sentences with the predicate. Exploring the veridicality of different attitude predicates is an interesting project of its own: 
 	- Is veridicality a gradient property? 
 	- Are predicates that entail the content of the clausal complement highly veridical? 
-- Some authors assume that only entailed meanings are presuppositions: non-entailed meanings that speakers are taken to be committed to are considered a completely different phenomenon (e.g., Anand & Hacquard 2014: "€œillusion of factivity" and "illusion of projection"). 
+- Some authors assume that only entailed meanings are presuppositions: non-entailed meanings that speakers are taken to be committed to are considered a completely different phenomenon (e.g., Anand & Hacquard 2014: "â‚¬Å“illusion of factivity" and "illusion of projection"). 
 - In our experiments, we explore whether the extent to which the projectivity of the complement is influenced by the prior of the eventuality described by the complement differs with the extent to which the clausal complement veridical (i.e., we ask: is there an interaction between prior probability and veridicality?).
 
 ## Three separate experiments
@@ -80,7 +80,7 @@ The projective content that we use to investigate the hypothesis is the content 
 - Materials: atomic sentences with 20 attitude predicates, 20 clausal complements per predicate 
 	
 	==> 400 stimuli total 
-- Each participant sees each attitude predicate with a unique clausal complement. If we want 10 ratings per combination, we need 4,000 ratings total. [**JD says: we should probably go with 20 ratings per combination, see Simmons et al 2011. But question of what counts as a "cell" in this design**]
+- Each participant sees each attitude predicate with a unique clausal complement. If we want 10 ratings per combination, we need 4,000 ratings total. 
 - For each predicate, we calculate the mean contradiction rating, which we take to be the mean veridicality rating of the predicate: the higher the mean contradiction rating, the more veridical the predicate is.
 - Results: We expect to find that predicates that entail their clausal complement are highly veridical and that veridicality is a gradient property. As a consequence, predicates that do not entail their clausal complement may differ in how veridical they are. Predicates that are more highly veridical may be more highly projective.
 
@@ -96,6 +96,8 @@ The projective content that we use to investigate the hypothesis is the content 
 - Materials: 20 polar questions formed from sentences with attitude predicates that embed a clausal complement, given a fact
 
 ==> 800 stimuli (20 predicates x 20 complements x 2 facts)
+==> 16,000 judgments = 800 stimuli x 20 judgments per combination
+
 - Each participant rates the extent to which the speaker is certain of the content of the clausal complement. We assume that the extent to which the speaker is taken to be certain about the content is the extent to which the content projects (as in prior research).
 
 ## Linear mixed-effects model we want to fit

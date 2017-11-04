@@ -96,6 +96,7 @@ The projective content that we use to investigate the hypothesis is the content 
 - Materials: 20 polar questions formed from sentences with attitude predicates that embed a clausal complement, given a fact
 
 ==> 800 stimuli (20 predicates x 20 complements x 2 facts)
+
 ==> 16,000 judgments = 800 stimuli x 20 judgments per combination
 
 - Each participant rates the extent to which the speaker is certain of the content of the clausal complement. We assume that the extent to which the speaker is taken to be certain about the content is the extent to which the content projects (as in prior research).

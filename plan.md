@@ -123,7 +123,7 @@ Motivation for including interaction term: We hypothesize that projectivity is p
 Motivation for random effects:
 - (1 + prior * veridicality | participant) -- to account for individual participant noise in overall ratings and in individual participant noise in fixed effects of interest
 - (1 +  prior | predicate) -- to account for individual predicate noise in overall ratings and in individual predicate noise in prior effect
-- (1 + veridicality | fact) -- to account for individual fact noise in overall ratings and in individual fact noise in effect of veridicality
+- (1 + veridicality | fact) -- to account for individual fact noise in overall ratings and in individual fact noise in effect of veridicality **[JD asks: is this doppelt gemoppelt with previous random effect?]**
 
 [Perhaps also include as fixed or random effects: tense of attitude predicate?]
 

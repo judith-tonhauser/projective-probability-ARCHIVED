@@ -99,7 +99,7 @@ var list1 = [
     fact: "Charley lives in Mexico.",
     prompt: "How likely is it that Charley speaks Spanish?"
     }
-]
+];
 
 var list2 = [
     {
@@ -202,4 +202,4 @@ var list2 = [
     fact: "Charley lives in Korea.",
     prompt: "How likely is it that Charley speaks Spanish?"
     }
-]
+];

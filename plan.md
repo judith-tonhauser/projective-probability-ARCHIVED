@@ -182,27 +182,31 @@ Explanation for table:
 
 
 ## 20 (non-gradable, non-subjective) eventualities (described by main or embedded clauses) and two facts about the world each
+
 **10 women's names / 10 men's names**
-- Mary is pregnant (Mary is a middle school student / Mary just walked into Planned Parenthood)
-- Josie went on vacation to France (Josie doesn't have a passport / Josie loves France)
-- Emma gained a pound (Emma is on a very strict diet / Emma is a toddler)
-- Olivia slept until noon (Olivia has two small children / Olivia is a bar tender)
-- Sophia got a tattoo (Sophia is a high end fashion model / Sophia is a hipster)
-- Mia drank 4 cocktails last night (Mia is a nun / Mia is a college student)
-- Isabella ate a steak (Isabella is a vegetarian / Isabella is from Argentina)
-- Emily bought a car (Emily is broke / Emily has been saving for a year)
-- Grace visited her sister (Emily hates her sister / Emily loves her sister)
-- Zoe calculated the tip (Zoe is 5 years old / Zoe is a math major)
-- Danny ate the cupcake (Danny is a diabetic / Danny has frosting on his face)
-- Frank got a cat (Frank is allergic to cats / Frank has always wanted a pet)
-- Jackson ran 10 miles (Jackson is obese / Jackson is training for a marathon)
-- Jayden rented a car (Jayden doesn't have a driver's license / Jayden's car is in the shop)
-- Tony had a drink (Tony has been sober for 20 years / Tony went to a bar)
-- Josh learned to ride a bike (Josh is a 5-year old boy / Josh is a 75-year old man)
-- Owen shoveled snow (Owen lives in Chicago / Owen lives in New Orleans)
-- Julian danced salsa (Julian is from Germany / Julian is from Cuba)
-- Jon walked to work (Jon lives 2 blocks away from his work / Jon lives 10 miles away from his work)
-- Charley speaks Spanish (Charley lives in Korea / Charley lives in Mexico)
+
+Stimuli naming: e.g., 1H (event 1 with fact that gives high prior), 1L (event 1 with fact that gives low prior)
+
+1. Mary is pregnant (Mary is a middle school student / Mary just walked into Planned Parenthood)
+2. Josie went on vacation to France (Josie doesn't have a passport / Josie loves France)
+3. Emma gained a pound (Emma is on a very strict diet / Emma is a toddler)
+4. Olivia slept until noon (Olivia has two small children / Olivia is a bar tender)
+5. Sophia got a tattoo (Sophia is a high end fashion model / Sophia is a hipster)
+6. Mia drank 4 cocktails last night (Mia is a nun / Mia is a college student)
+7. Isabella ate a steak (Isabella is a vegetarian / Isabella is from Argentina)
+8. Emily bought a car (Emily is broke / Emily has been saving for a year)
+9. Grace visited her sister (Emily hates her sister / Emily loves her sister)
+10. Zoe calculated the tip (Zoe is 5 years old / Zoe is a math major)
+11. Danny ate the cupcake (Danny is a diabetic / Danny has frosting on his face)
+12. Frank got a cat (Frank is allergic to cats / Frank has always wanted a pet)
+13. Jackson ran 10 miles (Jackson is obese / Jackson is training for a marathon)
+14. Jayden rented a car (Jayden doesn't have a driver's license / Jayden's car is in the shop)
+15. Tony had a drink (Tony has been sober for 20 years / Tony went to a bar)
+16. Josh learned to ride a bike (Josh is a 5-year old boy / Josh is a 75-year old man)
+17. Owen shoveled snow (Owen lives in Chicago / Owen lives in New Orleans)
+18. Julian danced salsa (Julian is from Germany / Julian is from Cuba)
+19. Jon walked to work (Jon lives 2 blocks away from his work / Jon lives 10 miles away from his work)
+20. Charley speaks Spanish (Charley lives in Korea / Charley lives in Mexico)
 
 
 

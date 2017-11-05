@@ -39,14 +39,14 @@ The projective content that we use to investigate the hypothesis is the content 
 ## Background on entailment
 
 - Entailment is a relationship between two sentences, or between a sentence and a proposition: sentence A entails sentence/proposition B iff every situation in which A is true is a situation in which B is true. In other words, "entailment" is defined as a context-independent, binary, categorical relationship (and we do not intend to change that).
-- However, for some attitude predicates, remarks have been made to the extent that the content of the clausal complement may be felt to follow from unembedded sentences in many though not all contexts. Schlenker (2010:139) about "announce": "in some contexts, it does not entail the truth of its complement; in other contexts, it entails and presupposes the truth of its complement."€ For instance, he suggested that whether the content of the complement of "announce" is judged to be entailed depends on who the attitude holder is; e.g., "Mary announced that she is pregnant" seems to be judged to entail that Mary is pregnant if Mary is a sane, adult woman but not if Mary is 8 years old.
+- However, for some attitude predicates, remarks have been made to the extent that the content of the clausal complement may be felt to follow from unembedded sentences in many though not all contexts. Schlenker (2010:139) about "announce": "in some contexts, it does not entail the truth of its complement; in other contexts, it entails and presupposes the truth of its complement.". For instance, he suggested that whether the content of the complement of "announce" is judged to be entailed depends on who the attitude holder is; e.g., "Mary announced that she is pregnant" seems to be judged to entail that Mary is pregnant if Mary is a sane, adult woman but not if Mary is 8 years old.
 - Anand & Hacquard 2014 suggest that there are predicates that at first glance seem veridical (i.e., entail the content of the complement), but really are not, on closer inspection. Similarly, Swanson (2012) didn't take the content of the complement of "establish" to be entailed though other speakers might argue that "€œThe detective established that Margret didn't kill James" entails that Margret didn't kill James.
 - Haven't worked through this: Sudo (2012): Ph.D. thesis supposedly argued that some triggers don't entail the presupposition.
 - So, for semanticists, finding one situation in which the content of the clausal complement does not follow from an unembedded sentence with an attitude predicate or realizing that one can say "a falsely predicate p" (which implies that p is not true) is sufficient to say that the predicate does not entail the content of the complement.
 - For naive language users, however, predicates may differ in the extent to which the content of the clausal complement is taken to follow from unembedded sentences with the predicate. We take "veridicality" to be a possibly gradient notion and define it as the extent to which the content of the clausal complement follows from unembedded sentences with the predicate. Exploring the veridicality of different attitude predicates is an interesting project of its own: 
 	- Is veridicality a gradient property? 
 	- Are predicates that entail the content of the clausal complement highly veridical? 
-- Some authors assume that only entailed meanings are presuppositions: non-entailed meanings that speakers are taken to be committed to are considered a completely different phenomenon (e.g., Anand & Hacquard 2014: "€œillusion of factivity" and "illusion of projection"). 
+- Some authors assume that only entailed meanings are presuppositions: non-entailed meanings that speakers are taken to be committed to are considered a completely different phenomenon (e.g., Anand & Hacquard 2014: "illusion of factivity" and "illusion of projection"). 
 - In our experiments, we explore whether the extent to which the projectivity of the complement is influenced by the prior of the eventuality described by the complement differs with the extent to which the clausal complement veridical (i.e., we ask: is there an interaction between prior probability and veridicality?).
 
 ## Three separate experiments
@@ -59,9 +59,10 @@ The projective content that we use to investigate the hypothesis is the content 
 - Goal: to identify readers' prior probabilities of the eventualities described by main clauses, given a fact about the world
 - The eventualities should be non-gradable and non-subjective, in order to avoid variability in judgments that are due to uncertainty about thresholds or about what counts as X for the speaker.
 - For each eventuality, we identify its prior given one of 2 facts about the world: one fact in which the eventuality has a higher prior probability, though not at ceiling, and one in which the eventuality has a lower prior probability, though not at floor. 
-- We need to avoid eventualities being too likely or too unlikely because a) if they are too likely, then people might argue that the facts of the world entail the content of the clause describing the eventuality, and b) if they are too unlikely, then participants might give wonky projectivity ratings.
+- We need to avoid eventualities being too likely or too unlikely, given their two facts, because a) if they are too likely, then people might argue that the facts of the world entail the content of the clause describing the eventuality, and b) if they are too unlikely, then participants might give wonky projectivity ratings.
+- We have chosen facts that either describe permanent properties of individuals (e.g., being German) or at least not punctual ones (e.g., taking a prenatal yoga class) rather than punctual ones (e.g., just walked into Planned Parenthood).
 - Response task: Participants assess the likeliness of the eventuality described by a main clause, given a fact about the world
-	- Fact: Mary just walked into Planned Parenthood.
+	- Fact: Mary is taking a prenatal yoga class.
 	  
 	  How likely is it that Mary is pregnant?
 - Response on slider from 0/very unlikely to 1/very likely
@@ -74,7 +75,7 @@ The projective content that we use to investigate the hypothesis is the content 
 
 - Goal: to identify the extent to which the content of the clausal complement follows from an unembedded sentence with an attitude predicate. 
 - The clausal complements are the 20 clauses for which we established facts in the prior probability experiment that result in the eventualities described by these clauses to have a higher versus a lower prior.
-- The attitude predicates are categorized by their veridicality and the projectivity of the content of their complement. [**DO WE NEED TO HAVE ALL FOUR COMBINATIONS EQUALLY OFTEN? SEE TABLE BELOW**]
+- The attitude predicates are categorized by their veridicality and the projectivity of the content of their complement. Our goal (for now) is to include 20 attitude predicates of which roughly half entail the content of the complement (i.e., are highly veridical) and roughly half are of low or lower veridicality. The predicates are also such that the content of the clausal complement of roughly half is projective and of roughly half is not projective. (Not all four possible combinations are equally represented however.) A difficulty in establishing which predicates fall into which group is that projectivity and veridicality have not been empirically tested for many of them.
 - Response task: Given the standard definition of entailment (see above), we need a task that probes the extent to which the attitude sentence can be true and the content of the clausal complement false, i.e., the extent to which the truth of the content of the clausal complement follows from the attitude sentence. 
 - Contradiction task: 
 	
@@ -88,11 +89,12 @@ The projective content that we use to investigate the hypothesis is the content 
 - Each participant sees each attitude predicate with a unique clausal complement. If we want 10 ratings per combination, we need 4,000 ratings total. 
 - For each predicate, we calculate the mean contradiction rating, which we take to be the mean veridicality rating of the predicate: the higher the mean contradiction rating, the more veridical the predicate is.
 - Results: We expect to find that predicates that entail their clausal complement are highly veridical and that veridicality is a gradient property. As a consequence, predicates that do not entail their clausal complement may differ in how veridical they are. Predicates that are more highly veridical may be more highly projective.
+- Assumption: Predicates that entail the content of the complement have very high veridicality ratings, and predicates that entail the content of the complement have a range of veridicality ratings. Contradictoriness can therefore be used to make claims both about entailment (a binary property) and about veridicality (a gradient property).
 
 ## Projectivity experiment
 
 - Goal: to identify the extent to which participants take the speaker to be committed to the content of the clausal complement of an attitude predicate realized in a polar question, given a fact about the world.
-- Response task: Participants are instructed to consider the fact about the world, which the speaker is also aware of. **better: Tell participants that the speaker knows that $fact$?** **JD says: I like the "John knows that $fact$" version. How does this work with individual-level predicates?**
+- Response task: Participants are told that speaker knows $fact$, thereby implying to the participant that the fact is true. Participants are instructed to consider the fact about the world, which the speaker is also aware of. **better: Tell participants that the speaker knows that $fact$?** **JD says: I like the "John knows that $fact$" version. How does this work with individual-level predicates?**
 	- "certain that" diagnostic (from Journal of Semantics paper)
 		- Fact: Mary just walked into Planned Parenthood.
 	  	- Bill: Did Sue discover that Mary is pregnant?

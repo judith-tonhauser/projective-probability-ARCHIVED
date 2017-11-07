@@ -94,9 +94,9 @@ The projective content that we use to investigate the hypothesis is the content 
 ## Projectivity experiment
 
 - Goal: to identify the extent to which participants take the speaker to be committed to the content of the clausal complement of an attitude predicate realized in a polar question, given a fact about the world.
-- Response task: Participants are told that speaker knows $fact$, thereby implying to the participant that the fact is true. Participants are instructed to consider the fact about the world, which the speaker is also aware of. **better: Tell participants that the speaker knows that $fact$?** **JD says: I like the "John knows that $fact$" version. How does this work with individual-level predicates?**
+- Response task: Participants are told that speaker knows $fact$, thereby also conveying to **the participant** that the fact is true. 
 	- "certain that" diagnostic (from Journal of Semantics paper)
-		- Fact: Mary just walked into Planned Parenthood.
+		- Bill knows that Mary just walked into Planned Parenthood.
 	  	- Bill: Did Sue discover that Mary is pregnant?
 		- Is Bill certain that Mary is pregnant?
 - Response on a slider from 0/no to 1/yes

@@ -196,25 +196,27 @@ Explanation for table:
 
 ## 20 (non-gradable, non-subjective) eventualities (described by main or embedded clauses) and two facts about the world each
 
+The facts are non-punctual eventualities so that knowing them (projectivity experiment) is not implausible.
+
 **10 women's names / 10 men's names**
 
 Stimuli naming: e.g., 1H (event 1 with fact that gives high prior), 1L (event 1 with fact that gives low prior)
 
-1. Mary is pregnant (Mary is a middle school student / Mary is participating in a prenatal yoga course)
+1. Mary is pregnant (Mary is a middle school student / Mary is taking a prenatal yoga course)
 2. Josie went on vacation to France (Josie doesn't have a passport / Josie loves France)
-3. Emma gained a pound last week (Emma is on a very strict diet / Emma is a toddler)
-4. Olivia slept until noon (Olivia has two small children / Olivia is a bar tender)
+3. Emma gained a pound last week (Emma is on a strict diet / Emma is a toddler)
+4. Olivia slept until noon today (Olivia has two small children / Olivia is a bar tender)
 5. Sophia got a tattoo (Sophia is a high end fashion model / Sophia is a hipster)
 6. Mia drank 2 cocktails last night (Mia is a nun / Mia is a college student)
 7. Isabella ate a steak (Isabella is a vegetarian / Isabella is from Argentina)
 8. Emily bought a car yesterday (Emily never has any money / Emily has been saving for a year)
 9. Grace visited her sister (Grace hates her sister / Grace loves her sister)
 10. Zoe calculated the tip (Zoe is 5 years old / Zoe is a math major)
-11. Danny ate the cupcake (Danny is a diabetic / Danny loves cake)
+11. Danny ate the last cupcake (Danny is a diabetic / Danny loves cake)
 12. Frank got a cat (Frank is allergic to cats / Frank has always wanted a pet)
 13. Jackson ran 10 miles (Jackson is obese / Jackson is training for a marathon)
 14. Jayden rented a car (Jayden doesn't have a driver's license / Jayden's car is in the shop)
-15. Tony had a drink last night (Tony has been sober for 20 years / Tony was partying with his friends last night)
+15. Tony had a drink last night (Tony has been sober for 20 years / Tony was partying last night)
 16. Josh learned to ride a bike yesterday (Josh is a 5-year old boy / Josh is a 75-year old man)
 17. Owen shoveled snow last winter (Owen lives in Chicago / Owen lives in New Orleans)
 18. Julian dances salsa (Julian is from Germany / Julian is from Cuba)

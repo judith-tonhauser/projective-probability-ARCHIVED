@@ -208,7 +208,7 @@ Stimuli naming: e.g., 1H (event 1 with fact that gives high prior), 1L (event 1 
 4. Olivia slept until noon today (Olivia has two small children / Olivia is a bar tender)
 5. Sophia got a tattoo (Sophia is a high end fashion model / Sophia is a hipster)
 6. Mia drank 2 cocktails last night (Mia is a nun / Mia is a college student)
-7. Isabella ate a steak (Isabella is a vegetarian / Isabella is from Argentina)
+7. Isabella ate a steak on Sunday (Isabella is a vegetarian / Isabella is from Argentina)
 8. Emily bought a car yesterday (Emily never has any money / Emily has been saving for a year)
 9. Grace visited her sister (Grace hates her sister / Grace loves her sister)
 10. Zoe calculated the tip (Zoe is 5 years old / Zoe is a math major)
@@ -223,6 +223,9 @@ Stimuli naming: e.g., 1H (event 1 with fact that gives high prior), 1L (event 1 
 19. Jon walks to work (Jon lives 10 miles away from his work / Jon lives 2 blocks away from his work)
 20. Charley speaks Spanish (Charley lives in Korea / Charley lives in Mexico)
 
+Fillers, to assess whether participants are paying attention:
+F1. Barry lives in Europe (Fact: Barry lives in Germany)
+F2. Tammy speaks Italian and Greek (Fact: Tammy is a snake)
 
 
 

@@ -217,10 +217,10 @@ Stimuli naming: e.g., 1H (event 1 with fact that gives high prior), 1L (event 1 
 13. Jackson ran 10 miles (Jackson is obese / Jackson is training for a marathon)
 14. Jayden rented a car (Jayden doesn't have a driver's license / Jayden's car is in the shop)
 15. Tony had a drink last night (Tony has been sober for 20 years / Tony was partying last night)
-16. Josh learned to ride a bike yesterday (Josh is a 5-year old boy / Josh is a 75-year old man)
-17. Owen shoveled snow last winter (Owen lives in Chicago / Owen lives in New Orleans)
+16. Josh learned to ride a bike yesterday (Josh is a 75-year old man / Josh is a 5-year old boy)
+17. Owen shoveled snow last winter (Owen lives in New Orleans / Owen lives in Chicago)
 18. Julian dances salsa (Julian is from Germany / Julian is from Cuba)
-19. Jon walks to work (Jon lives 2 blocks away from his work / Jon lives 10 miles away from his work)
+19. Jon walks to work (Jon lives 10 miles away from his work / Jon lives 2 blocks away from his work)
 20. Charley speaks Spanish (Charley lives in Korea / Charley lives in Mexico)
 
 

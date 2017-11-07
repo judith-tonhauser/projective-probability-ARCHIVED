@@ -143,7 +143,7 @@ Motivation for random effects:
 	- significant interaction: the effect of the prior is stronger with less veridical predicates than with more veridical predicates
 
 - Given these findings, we can argue:
-	- To identify speaker commitment, listeners take into consideration the prior of the eventuality: either how likely they take the eventuality to be, or how likely the speaker is to take the eventuality to be. **Am I right that we can't tell the difference?**  
+	- To identify speaker commitment, listeners take into consideration the prior of the eventuality: either how likely they take the eventuality to be, or how likely the speaker is to take the eventuality to be. At this point, we cannot tell the difference because we are not distinguishing between the listeners'/participants' epistemic state and properties and the speaker's epistemic state and properties. In future research, it would be good to explore how speaker commitment interacts with differences between what the listener believes about the world and what the speaker believes about the world. E.g., speaker (who is known to be a white Southener) says "Did Bill discover that Trump is making America great again?", and participant is black man from New York. 
 	- Theoretical models of projectivity need to incorporate these priors.
 	- Speakers may be taken to be committed to a particular content, even if that content is not entailed content. This raises the question of whether entailed and non-entailed projective content should receive distinct analyses. We argue that not. 
 
@@ -200,7 +200,7 @@ Explanation for table:
 
 Stimuli naming: e.g., 1H (event 1 with fact that gives high prior), 1L (event 1 with fact that gives low prior)
 
-1. Mary is pregnant (Mary is a middle school student / **Mary just walked into Planned Parenthood**)
+1. Mary is pregnant (Mary is a middle school student / Mary is participating in a prenatal yoga course)
 2. Josie went on vacation to France (Josie doesn't have a passport / Josie loves France)
 3. Emma gained a pound last week (Emma is on a very strict diet / Emma is a toddler)
 4. Olivia slept until noon (Olivia has two small children / Olivia is a bar tender)
@@ -208,7 +208,7 @@ Stimuli naming: e.g., 1H (event 1 with fact that gives high prior), 1L (event 1 
 6. Mia drank 2 cocktails last night (Mia is a nun / Mia is a college student)
 7. Isabella ate a steak (Isabella is a vegetarian / Isabella is from Argentina)
 8. Emily bought a car yesterday (Emily never has any money / Emily has been saving for a year)
-9. Grace visited her sister **(Emily hates her sister / Emily loves her sister)**
+9. Grace visited her sister (Grace hates her sister / Grace loves her sister)
 10. Zoe calculated the tip (Zoe is 5 years old / Zoe is a math major)
 11. Danny ate the cupcake (Danny is a diabetic / **Danny has frosting on his face**)
 12. Frank got a cat (Frank is allergic to cats / Frank has always wanted a pet)

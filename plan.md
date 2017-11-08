@@ -202,10 +202,10 @@ The facts are non-punctual eventualities so that knowing them (projectivity expe
 
 Stimuli naming: e.g., 1H (event 1 with fact that gives high prior), 1L (event 1 with fact that gives low prior)
 
-1. Mary is pregnant (Mary is a middle school student / Mary is taking a prenatal yoga course)
+1. Mary is pregnant (Mary is a middle school student / Mary is taking a prenatal yoga class)
 2. Josie went on vacation to France (Josie doesn't have a passport / Josie loves France)
-3. Emma gained a pound last week (Emma is on a strict diet / Emma is a toddler)
-4. Olivia slept until noon today (Olivia has two small children / Olivia is a bar tender)
+3. Emma gained a pound last week (Emma is on a very strict diet / Emma is a toddler)
+4. Olivia sleeps until noon (Olivia has two small children / Olivia is a bar tender)
 5. Sophia got a tattoo (Sophia is a high end fashion model / Sophia is a hipster)
 6. Mia drank 2 cocktails last night (Mia is a nun / Mia is a college student)
 7. Isabella ate a steak on Sunday (Isabella is a vegetarian / Isabella is from Argentina)
@@ -216,16 +216,16 @@ Stimuli naming: e.g., 1H (event 1 with fact that gives high prior), 1L (event 1 
 12. Frank got a cat (Frank is allergic to cats / Frank has always wanted a pet)
 13. Jackson ran 10 miles (Jackson is obese / Jackson is training for a marathon)
 14. Jayden rented a car (Jayden doesn't have a driver's license / Jayden's car is in the shop)
-15. Tony had a drink last night (Tony has been sober for 20 years / Tony was partying last night)
+15. Tony had a drink last night (Tony has been sober for 20 years / Tony really likes to party with his friends)
 16. Josh learned to ride a bike yesterday (Josh is a 75-year old man / Josh is a 5-year old boy)
 17. Owen shoveled snow last winter (Owen lives in New Orleans / Owen lives in Chicago)
-18. Julian dances salsa (Julian is from Germany / Julian is from Cuba)
-19. Jon walks to work (Jon lives 10 miles away from his work / Jon lives 2 blocks away from his work)
+18. Julian dances salsa (Julian is German / Julian is Cuban)
+19. Jon walks to work (Jon lives 10 miles away from work / Jon lives 2 blocks away from work)
 20. Charley speaks Spanish (Charley lives in Korea / Charley lives in Mexico)
 
 Fillers, to assess whether participants are paying attention:
 F1. Barry lives in Europe (Fact: Barry lives in Germany)
-F2. Tammy speaks Italian and Greek (Fact: Tammy is a snake)
+F2. Tammy speaks Italian and Greek (Fact: Tammy is a rabbit)
 
 
 

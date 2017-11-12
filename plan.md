@@ -224,8 +224,14 @@ Stimuli naming: e.g., 1H (event 1 with fact that gives high prior), 1L (event 1 
 20. Charley speaks Spanish (Charley lives in Korea / Charley lives in Mexico)
 
 Fillers, to assess whether participants are paying attention:
+
 F1. Barry lives in Europe (Fact: Barry lives in Germany)
+
 F2. Tammy speaks Italian and Greek (Fact: Tammy is a rabbit)
+
+Evaluation after running prior pilot with 10 participants:
+- The two fillers seem to work well, responses at ceiling for F1 and at floor for F2 for 8 of the 10 participants. 1 participant gave middling responses for both (not paying attention?), 1 participant gave floor responses for F1 (not paying attention?). No changes to fillers.
+- For all stimuli, except #3, the H and L facts produced responses where the H was higher than the L. For stimulus #3, the H and L responses were close together (H: 0.43, L: 0.42; Emma gained a pound last week (Emma is on a very strict diet / Emma is a toddler)). I changed this stimulus to the one listed above.
 
 
 

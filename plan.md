@@ -204,8 +204,8 @@ Stimuli naming: e.g., 1H (event 1 with fact that gives high prior), 1L (event 1 
 
 1. Mary is pregnant (Mary is a middle school student / Mary is taking a prenatal yoga class)
 2. Josie went on vacation to France (Josie doesn't have a passport / Josie loves France)
-3. Emma gained a pound last week (Emma is on a very strict diet / Emma is a toddler)
-4. Olivia sleeps until noon (Olivia has two small children / Olivia is a bar tender)
+3. Emma studied on Saturday morning (Emma is in first grade / Emma is in law school)
+4. Olivia sleeps until noon (Olivia has two small children / Olivia works the third shift)
 5. Sophia got a tattoo (Sophia is a high end fashion model / Sophia is a hipster)
 6. Mia drank 2 cocktails last night (Mia is a nun / Mia is a college student)
 7. Isabella ate a steak on Sunday (Isabella is a vegetarian / Isabella is from Argentina)
@@ -227,9 +227,10 @@ Fillers, to assess whether participants are paying attention:
 F1. Barry lives in Europe (Fact: Barry lives in Germany)  
 F2. Tammy speaks Italian and Greek (Fact: Tammy is a rabbit)  
 
-Evaluation after running prior pilot with 10 participants:
+Evaluation after running prior pilot with 10 participants on a Friday evening:
 - The two fillers seem to work well, responses at ceiling for F1 and at floor for F2 for 8 of the 10 participants. 1 participant gave middling responses for both (not paying attention?), 1 participant gave floor responses for F1 (not paying attention?). No changes to fillers.
-- For all stimuli, except #3, the H and L facts produced responses where the H was higher than the L. For stimulus #3, the H and L responses were close together (H: 0.43, L: 0.42; Emma gained a pound last week (Emma is on a very strict diet / Emma is a toddler)). I changed this stimulus to the one listed above.
+- For all stimuli, except #3, the H and L facts produced responses where the H was higher than the L. For stimulus #3, the H and L responses were close together (H: 0.43, L: 0.42; Emma gained a pound last week (Emma is on a very strict diet / Emma is a toddler)). I changed this stimulus to the one listed above. Since 4H was also decidedly lower than other H stimuli (0.34; Olivia sleeps until noon (H: Olivia is a bar tender)), I also changed that one.
+- One Turker commented that 35 cents would be enough payment (we paid 55 cents), but the mean completion time was 5.44 minutes and the median completion time was 4.20 minutes, so I left the 55 cents payment (for a 4 minute-long experiment).
 
 
 

@@ -223,7 +223,7 @@ Stimuli naming: e.g., 1H (event 1 with fact that gives high prior), 1L (event 1 
 19. Jon walks to work (Jon lives 10 miles away from work / Jon lives 2 blocks away from work)
 20. Charley speaks Spanish (Charley lives in Korea / Charley lives in Mexico)
 
-Fillers, to assess whether participants are paying attention:
+Fillers, to assess whether participants are paying attention:  
 F1. Barry lives in Europe (Fact: Barry lives in Germany)  
 F2. Tammy speaks Italian and Greek (Fact: Tammy is a rabbit)  
 

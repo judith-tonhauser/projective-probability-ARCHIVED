@@ -202,7 +202,7 @@ function make_slides(f) {
 /// init ///
 function init() {
 
-  var names = _.shuffle([
+  var speaker_names = _.shuffle([
     {
       "name":"James",
       "gender":"M"
@@ -283,6 +283,89 @@ function init() {
       "name":"Kenneth",
       "gender":"M"
     },
+    {
+      "name":"Jennifer",
+      "gender":"F"
+    },
+    {
+      "name":"Elizabeth",
+      "gender":"F"
+    },
+    {
+      "name":"Linda",
+      "gender":"F"
+    },
+    {
+      "name":"Emily",
+      "gender":"F"
+    },
+//    {
+//      "name":"Susan",
+//      "gender":"F"
+//    },
+//     {
+//       "name":"Margaret",
+//       "gender":"F"
+//     },
+    {
+      "name":"Jessica",
+      "gender":"F"
+    },
+    {
+      "name":"Dorothy",
+      "gender":"F"
+    },
+//     {
+//       "name":"Sarah",
+//       "gender":"F"
+//     },
+    {
+      "name":"Karen",
+      "gender":"F"
+    },
+    {
+      "name":"Nancy",
+      "gender":"F"
+    },
+//     {
+//       "name":"Betty",
+//       "gender":"F"
+//     },
+    {
+      "name":"Lisa",
+      "gender":"F"
+    },
+    {
+      "name":"Sandra",
+      "gender":"F"
+    },
+//     {
+//       "name":"Helen",
+//       "gender":"F"
+//     },
+    {
+      "name":"Ashley",
+      "gender":"F"
+    },
+    {
+      "name":"Donna",
+      "gender":"F"
+    },
+    {
+      "name":"Kimberly",
+      "gender":"F"
+    },
+    {
+      "name":"Carol",
+      "gender":"F"
+    },
+    {
+      "name":"Michelle",
+      "gender":"F"
+    }];
+
+
+var subject_names = _.shuffle([
 //    {
 //      "name":"Andrew",
 //      "gender":"M"
@@ -407,86 +490,6 @@ function init() {
 //      "name":"Mary",
 //      "gender":"F"
 //    },
-    {
-      "name":"Jennifer",
-      "gender":"F"
-    },
-    {
-      "name":"Elizabeth",
-      "gender":"F"
-    },
-    {
-      "name":"Linda",
-      "gender":"F"
-    },
-    {
-      "name":"Emily",
-      "gender":"F"
-    },
-//    {
-//      "name":"Susan",
-//      "gender":"F"
-//    },
-//     {
-//       "name":"Margaret",
-//       "gender":"F"
-//     },
-    {
-      "name":"Jessica",
-      "gender":"F"
-    },
-    {
-      "name":"Dorothy",
-      "gender":"F"
-    },
-//     {
-//       "name":"Sarah",
-//       "gender":"F"
-//     },
-    {
-      "name":"Karen",
-      "gender":"F"
-    },
-    {
-      "name":"Nancy",
-      "gender":"F"
-    },
-//     {
-//       "name":"Betty",
-//       "gender":"F"
-//     },
-    {
-      "name":"Lisa",
-      "gender":"F"
-    },
-    {
-      "name":"Sandra",
-      "gender":"F"
-    },
-//     {
-//       "name":"Helen",
-//       "gender":"F"
-//     },
-    {
-      "name":"Ashley",
-      "gender":"F"
-    },
-    {
-      "name":"Donna",
-      "gender":"F"
-    },
-    {
-      "name":"Kimberly",
-      "gender":"F"
-    },
-    {
-      "name":"Carol",
-      "gender":"F"
-    },
-    {
-      "name":"Michelle",
-      "gender":"F"
-    },
     {
       "name":"Emily",
       "gender":"F"
@@ -1220,11 +1223,11 @@ var items_content_mapping = {
     //get item
     var item = items[i];
 	//get a speaker
-    var name_data = names[i];
+    var name_data = speaker_names[i];
     var name = name_data.name;
     var gender = name_data.gender;
     //get another speaker
-    var name_data2 = names[i+1];
+    var name_data2 = subject_names[i];
     var name2 = name_data2.name;
     var gender2 = name_data2.gender;
     

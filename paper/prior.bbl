@@ -1,0 +1,22 @@
+\newcommand{\noopsort}[1]{}\newcommand{\SortNoop}[1]{}
+\begin{thebibliography}{3}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[Hothorn et~al.(2008)Hothorn, Bretz, and Westfall]{tukey}
+Hothorn, Torsten, Frank Bretz, and Peter Westfall. 2008.
+\newblock Simultaneous inference in general parametric models.
+\newblock {\em Biometrical Journal\/} 50(3):346--363.
+
+\bibitem[{R Core Team}(2016)]{r}
+{R Core Team}. 2016.
+\newblock {\em R: A Language and Environment for Statistical Computing\/}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria.
+
+\bibitem[Tonhauser et~al.(ms)Tonhauser, Beaver, and Degen]{tbd-variability}
+Tonhauser, Judith, David Beaver, and Judith Degen. ms.
+\newblock Variability in the information-structural status of projective
+  content.
+\newblock Manuscript in preparation, The Ohio State University, University of
+  Texas at Austin.
+
+\end{thebibliography}

@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: prior.aux
+The style file: cslipubs-natbib.bst
+Database file #1: bibliography.bib
+You've used 3 entries,
+            2811 wiz_defined-function locations,
+            640 strings with 5178 characters,
+and the built_in function-call counts, 1272 in all, are:
+= -- 120
+> -- 73
+< -- 1
++ -- 24
+- -- 21
+* -- 106
+:= -- 250
+add.period$ -- 12
+call.type$ -- 3
+change.case$ -- 21
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 49
+empty$ -- 75
+format.name$ -- 24
+if$ -- 238
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 1
+newline$ -- 20
+num.names$ -- 12
+pop$ -- 15
+preamble$ -- 2
+purify$ -- 19
+quote$ -- 0
+skip$ -- 33
+stack$ -- 0
+substring$ -- 58
+swap$ -- 7
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 27
+warning$ -- 0
+while$ -- 11
+width$ -- 0
+write$ -- 42

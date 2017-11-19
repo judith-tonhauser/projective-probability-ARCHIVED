@@ -365,6 +365,23 @@ function init() {
     }]);
 
 
+var female_subject_names = _.shuffle([
+      {
+        "name":"Emily",
+        "gender":"F"}
+      ]);
+
+var male_subject_names = _.shuffle([
+//    {
+//      "name":"Andrew",
+//      "gender":"M"
+//    },
+    {
+      "name":"Edward",
+      "gender":"M"
+    }]);
+
+
 var subject_names = _.shuffle([
 //    {
 //      "name":"Andrew",
@@ -1227,7 +1244,7 @@ var items_content_mapping = {
     var name = name_data.name;
     var gender = name_data.gender;
     //get another speaker
-    var name_data2 = subject_names[i];
+    var name_data2 = items[i].gender == "m" ? female_subject_names[i] : male_subject_names[i];
     var name2 = name_data2.name;
     var gender2 = name_data2.gender;
     

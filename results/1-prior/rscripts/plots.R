@@ -1,5 +1,6 @@
 # created by jdegen, 03/19/2014
 
+# setwd("/Users/titlis/cogsci/projects/stanford/projects/projective-probability/results/1-prior/")
 setwd('/Users/judith/Documents/current-research-topics/NSF-NAI/prop-att-experiments/1factive-verbs/2-ProjAI/results')
 source('rscripts/helpers.R')
 library(grid)
@@ -8,7 +9,8 @@ library(plyr)
 library(scales)
 
 # load cleaned, melded data file
-load("data/cd.RData") 
+# load("data/cd.RData")
+load("data/cd.rds")
 
 str(cd$ResponseNew)
 cd$ResponseNew <- as.numeric(cd$ResponseNew)

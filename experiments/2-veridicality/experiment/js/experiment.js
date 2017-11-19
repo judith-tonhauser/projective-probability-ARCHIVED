@@ -362,7 +362,7 @@ function init() {
     {
       "name":"Michelle",
       "gender":"F"
-    }];
+    }]);
 
 
 var subject_names = _.shuffle([

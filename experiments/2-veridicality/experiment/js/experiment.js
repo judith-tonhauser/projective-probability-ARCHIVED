@@ -48,7 +48,11 @@ function make_slides(f) {
 	  this.init_sliders();
       exp.sliderPost = null;	 
       console.log(this.stim);    
-      var utterance = "<strong>"+this.stim.name + ":</strong> \"<i>"+this.stim.name2 + " " + this.stim.utterance+"</i>\""
+      if (this.stim.trigger_class == "control") {
+      	var utterance = "<strong>"+this.stim.name + ":</strong> \"<i>"+this.stim.utterance+"</i>\"";
+      } else {
+      	var utterance = "<strong>"+this.stim.name + ":</strong> \"<i>"+this.stim.name2 + " " + this.stim.utterance+"</i>\"";
+      }
       // var utterance = "<p>"+this.stim.name + ": \"<i>"+this.stim.utterance+"</i>\"</p>" +"<p>"+this.stim.name2 + ": \"<i>Are you sure?</i>\"</p>"+this.stim.name + ": \"<i>Yes, I'm sure that "+this.stim.question+".</i>\""
 	  $(".sentence").html(utterance);
 	  var question = "";
@@ -86,84 +90,15 @@ function make_slides(f) {
    	  "content": this.stim.question,
    	  "speakerGender": this.stim.gender,
    	  "subjectGender": this.stim.gender2,
+   	  "speakerName": this.stim.name,
+   	  "subjectName": this.stim.name2,
+   	  "trigger_class": this.stim.trigger_class,   	  
       "response" : exp.sliderPost,
       "rt" : Date.now() - this.stim.trial_start
       });
     }
   }); 
   
-  slides.instructions2 = slide({
-    name : "instructions2",
-    start : function() {
-    $('.bar').css('width', ( (100*(exp.phase)/exp.nQs) + "%"));    	    	
-    	var inst2 = "That was the first half! ";
-    	if (exp.stims_block2[0].block == "ai") {
-    		inst2 = inst2 + "Now you'll answer questions about what the people at the party are asking about."
-    	} else {
-    		inst2 = inst2 + "Now you'll answer questions about what the people at the party are certain about."    		
-    		}
-    	$("#inst2").html(inst2);
-    },
-    button : function() {
-      exp.go(); //use exp.go() if and only if there is no "present" data.
-    }
-  });   
-  
-  slides.block2 = slide({
-    name : "block2",
-    present : exp.stims_block2,
-    start : function() {
-    $('.bar').css('width', ( (100*(exp.phase)/exp.nQs) + "%"));    	    	
-      $(".err").hide();
-    },
-    present_handle : function(stim) {
-      this.stim = stim;
-    	this.stim.trial_start = Date.now();      
-        $(".err").hide();    	
-	  this.init_sliders();
-      exp.sliderPost = null;	      
-      var utterance = this.stim.name + " asks: \"<strong><i>"+this.stim.utterance+"</i></strong>\""
-	  $(".sentence").html(utterance);
-	  var question = "";
-	  console.log(this.stim.block);	  
-	  if (this.stim.block == "ai") {
-	  		question = "Is "+this.stim.name+" asking whether "+this.stim.question+"?";
-	  } else {
-	  		question = "Is "+this.stim.name+" certain that "+this.stim.question+"?";	  	
-	  	}
-	  $(".question").html(question);	  
-    },
-
-    button : function() {
-    	console.log(exp.sliderPost);
-      if (exp.sliderPost != null) {
-        this.log_responses();
-        _stream.apply(this); //use exp.go() if and only if there is no "present" data.
-      } else {
-        $(".err").show();
-      }
-    },
-    init_sliders : function() {
-      utils.make_slider("#single_slider2", function(event, ui) {
-        exp.sliderPost = ui.value;
-      });
-    },
-    log_responses : function() {
-      exp.data_trials.push({
-      "block" : "block2",
-      "question_type" : this.stim.block,     
-   	  "slide_number_in_experiment" : exp.phase,
-   	  "short_trigger": this.stim.short_trigger,   	  
-   	  "trigger": this.stim.trigger,
-   	  //"content": this.stim.content,
-   	  "content": this.stim.question,
-      "response" : exp.sliderPost,
-      "rt" : Date.now() - this.stim.trial_start
-      });
-    }
-  });        
- 
-
   slides.questionaire =  slide({
     name : "questionaire",
     submit : function(e){
@@ -1264,26 +1199,44 @@ var items_content_mapping = {
   	"be_right_that": getContent("be_right_that")
   	};
   	
-//   function makeStim(i) {
-//     //get item
-//     var item = items[i];
-// 	//get a name to be speaker
-//     var name_data = speaker_names[i];
-//     var name = name_data.name;
-//     var gender = name_data.gender;
-//     //get another name to be subject
-//     var name_data2 = items[i].gender == "m" ? female_subject_names[i] : male_subject_names[i];
-//     var name2 = name_data2.name;
-//     var gender2 = name_data2.gender;
-//     
-//     // get content
-//     var trigger_cont = trigger_contents[item.trigger];
-//     var trigger = item.trigger;
-//     var short_trigger = trigger;
-//     if (trigger.indexOf("MC") != -1) {
-//     	short_trigger = "MC";
-//     	}
-  
+
+control_items = [
+	{
+		"item_id" : "control_good1",
+		"short_trigger" : "control_good",
+		"utterance" : "Zack believes that I am married, but I am actually single.",
+		"content" : "I am married, but I am actually single."
+	},
+	{
+		"item_id" : "control_bad1",
+		"short_trigger" : "control_bad",
+		"utterance" : "Dana is both heavier and lighter than I am.",
+		"content" : "Dana is both heavier and lighter than I am."
+	}
+];
+
+  function makeControlStim(i) {
+    //get item
+    var item = control_items[i];
+	//get a name to be speaker
+    var name_data = speaker_names[i];
+    var name = name_data.name;
+    var gender = name_data.gender;
+
+    return {
+	  "name": name,
+	  "name2": "NA",
+	  "gender": gender,	
+	  "gender2": "NA",  
+	  "trigger": item.short_trigger,
+	  "short_trigger": item.short_trigger,	  
+	  "trigger_class": "control",
+      "content": item.item_id,
+      "utterance": item.utterance,
+      "question": item.content
+    }
+  }
+
   function makeStim(i) {
     //get item
     var item = items[i];
@@ -1333,6 +1286,13 @@ var items_content_mapping = {
 	exp.stims_block1.push(jQuery.extend(true, {}, stim));
 //	exp.stims_block2.push(jQuery.extend(true, {}, stim));	
   }  
+
+  for (var j=0; j<control_items.length; j++) {
+  	var stim = makeControlStim(j);
+//    exp.stims_block1.push(makeStim(i));
+	exp.stims_block1.push(jQuery.extend(true, {}, stim));
+//	exp.stims_block2.push(jQuery.extend(true, {}, stim));	
+  }    
   
 console.log(exp.stims_block1);
 //console.log(exp.stims_block2);   
@@ -1387,10 +1347,10 @@ console.log(exp.stims_block1);
   //make corresponding slides:
   exp.slides = make_slides(exp);
 
-//  exp.nQs = utils.get_exp_length(); //this does not work if there are stacks of stims (but does work for an experiment with this structure)
+ exp.nQs = utils.get_exp_length(); //this does not work if there are stacks of stims (but does work for an experiment with this structure)
                     //relies on structure and slides being defined
                     
-   exp.nQs = 2 + 20 + 1; 
+   // exp.nQs = 2 + 20 + 1; 
   $(".nQs").html(exp.nQs);
 
   $('.slide').hide(); //hide everything

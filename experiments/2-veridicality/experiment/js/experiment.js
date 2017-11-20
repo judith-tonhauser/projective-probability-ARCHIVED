@@ -78,13 +78,14 @@ function make_slides(f) {
     },
     log_responses : function() {
       exp.data_trials.push({
-      "block" : "block1",
-      "question_type" : this.stim.block,      
+      //"block" : "block1",
+      //"question_type" : this.stim.block,      
    	  "slide_number_in_experiment" : exp.phase,
-   	  "short_trigger": this.stim.short_trigger,
-   	  "trigger": this.stim.trigger,
-   	  "content": this.stim.content,
-   	  "trigger_class": this.stim.trigger_class,
+   	  "verb": this.stim.trigger,
+   	  "contentNr": this.stim.content,
+   	  "content": this.stim.question,
+   	  "speakerGender": this.stim.gender,
+   	  "subjectGender": this.stim.gender2,
       "response" : exp.sliderPost,
       "rt" : Date.now() - this.stim.trial_start
       });
@@ -154,8 +155,8 @@ function make_slides(f) {
    	  "slide_number_in_experiment" : exp.phase,
    	  "short_trigger": this.stim.short_trigger,   	  
    	  "trigger": this.stim.trigger,
-   	  "content": this.stim.content,
-   	  "trigger_class": this.stim.trigger_class,
+   	  //"content": this.stim.content,
+   	  "content": this.stim.question,
       "response" : exp.sliderPost,
       "rt" : Date.now() - this.stim.trial_start
       });
@@ -202,7 +203,7 @@ function make_slides(f) {
 /// init ///
 function init() {
 
-  var speaker_names = _.shuffle([
+var speaker_names = _.shuffle([
     {
       "name":"James",
       "gender":"M"
@@ -227,18 +228,18 @@ function init() {
       "name":"David",
       "gender":"M"
     },
-//    {
-//      "name":"Richard",
-//      "gender":"M"
-//    },
-    {
-      "name":"Joseph",
-      "gender":"M"
-    },
-    {
-      "name":"Charles",
-      "gender":"M"
-    },
+   {
+     "name":"Richard",
+     "gender":"M"
+   },
+ //    {
+//       "name":"Joseph",
+//       "gender":"M"
+//     },
+//     {
+//       "name":"Charles",
+//       "gender":"M"
+//     },
     {
       "name":"Thomas",
       "gender":"M"
@@ -247,10 +248,10 @@ function init() {
       "name":"Christopher",
       "gender":"M"
     },
-    {
-      "name":"Daniel",
-      "gender":"M"
-    },
+ //    {
+//       "name":"Daniel",
+//       "gender":"M"
+//     },
     {
       "name":"Matthew",
       "gender":"M"
@@ -259,18 +260,18 @@ function init() {
 //      "name":"Donald",
 //      "gender":"M"
 //    },
-    {
-      "name":"Anthony",
-      "gender":"M"
-    },
+//     {
+//       "name":"Anthony",
+//       "gender":"M"
+//     },
     {
       "name":"Paul",
       "gender":"M"
     },
-//    {
-//      "name":"Mark",
-//      "gender":"M"
-//    },
+   {
+     "name":"Mark",
+     "gender":"M"
+   },
     {
       "name":"George",
       "gender":"M"
@@ -295,18 +296,18 @@ function init() {
       "name":"Linda",
       "gender":"F"
     },
-    {
-      "name":"Emily",
-      "gender":"F"
-    },
-//    {
-//      "name":"Susan",
-//      "gender":"F"
-//    },
 //     {
-//       "name":"Margaret",
+//       "name":"Emily",
 //       "gender":"F"
 //     },
+   {
+     "name":"Susan",
+     "gender":"F"
+   },
+    {
+      "name":"Margaret",
+      "gender":"F"
+    },
     {
       "name":"Jessica",
       "gender":"F"
@@ -315,10 +316,10 @@ function init() {
       "name":"Dorothy",
       "gender":"F"
     },
-//     {
-//       "name":"Sarah",
-//       "gender":"F"
-//     },
+    {
+      "name":"Sarah",
+      "gender":"F"
+    },
     {
       "name":"Karen",
       "gender":"F"
@@ -327,10 +328,10 @@ function init() {
       "name":"Nancy",
       "gender":"F"
     },
-//     {
-//       "name":"Betty",
-//       "gender":"F"
-//     },
+    {
+      "name":"Betty",
+      "gender":"F"
+    },
     {
       "name":"Lisa",
       "gender":"F"
@@ -339,10 +340,10 @@ function init() {
       "name":"Sandra",
       "gender":"F"
     },
-//     {
-//       "name":"Helen",
-//       "gender":"F"
-//     },
+    {
+      "name":"Helen",
+      "gender":"F"
+    },
     {
       "name":"Ashley",
       "gender":"F"
@@ -366,163 +367,26 @@ function init() {
 
 
 var female_subject_names = _.shuffle([
-      {
-        "name":"Emily",
-        "gender":"F"}
-      ]);
-
-var male_subject_names = _.shuffle([
-//    {
-//      "name":"Andrew",
-//      "gender":"M"
-//    },
-    {
-      "name":"Edward",
-      "gender":"M"
-    }]);
-
-
-var subject_names = _.shuffle([
-//    {
-//      "name":"Andrew",
-//      "gender":"M"
-//    },
-    {
-      "name":"Edward",
-      "gender":"M"
-    },
-    {
-      "name":"Joshua",
-      "gender":"M"
-    },
-    {
-      "name":"Brian",
-      "gender":"M"
-    },
-    {
-      "name":"Kevin",
-      "gender":"M"
-    },
-    {
-      "name":"Ronald",
-      "gender":"M"
-    },
-    {
-      "name":"Timothy",
-      "gender":"M"
-    },
-    {
-      "name":"Jason",
-      "gender":"M"
-    },
-    {
-      "name":"Jeffrey",
-      "gender":"M"
-    },
-    {
-      "name":"Gary",
-      "gender":"M"
-    },
-    {
-      "name":"Ryan",
-      "gender":"M"
-    },
-    {
-      "name":"Nicholas",
-      "gender":"M"
-    },
-    {
-      "name":"Eric",
-      "gender":"M"
-    },
-    {
-      "name":"Jacob",
-      "gender":"M"
-    },
-    {
-      "name":"Jonathan",
-      "gender":"M"
-    },
-    {
-      "name":"Larry",
-      "gender":"M"
-    },
-//    {
-//      "name":"Frank",
-//      "gender":"M"
-//    },
-    {
-      "name":"Scott",
-      "gender":"M"
-    },
-    {
-      "name":"Justin",
-      "gender":"M"
-    },
-    {
-      "name":"Brandon",
-      "gender":"M"
-    },
-    {
-      "name":"Raymond",
-      "gender":"M"
-    },
-    {
-      "name":"Gregory",
-      "gender":"M"
-    },
-    {
-      "name":"Samuel",
-      "gender":"M"
-    },
-    {
-      "name":"Benjamin",
-      "gender":"M"
-    },
-    {
-      "name":"Patrick",
-      "gender":"M"
-    },
-//    {
-//      "name":"Jack",
-//      "gender":"M"
-//    },
-    {
-      "name":"Dennis",
-      "gender":"M"
-    },
-    {
-      "name":"Jerry",
-      "gender":"M"
-    },
-    {
-      "name":"Alexander",
-      "gender":"M"
-    },
-    {
-      "name":"Tyler",
-      "gender":"M"
-    },
+//       {
+//         "name":"Emily",
+//         "gender":"F"
+//       },
 //    {
 //      "name":"Mary",
 //      "gender":"F"
 //    },
     {
-      "name":"Emily",
+      "name":"Amanda",
       "gender":"F"
     },
-//     {
-//       "name":"Amanda",
-//       "gender":"F"
-//     },
     {
       "name":"Melissa",
       "gender":"F"
     },
-    {
-      "name":"Deborah",
-      "gender":"F"
-    },
+//     {
+//       "name":"Deborah",
+//       "gender":"F"
+//     },
     {
       "name":"Laura",
       "gender":"F"
@@ -551,10 +415,10 @@ var subject_names = _.shuffle([
       "name":"Ruth",
       "gender":"F"
     },
-//    {
-//      "name":"Anna",
-//      "gender":"F"
-//    },
+   {
+     "name":"Anna",
+     "gender":"F"
+   },
     {
       "name":"Shirley",
       "gender":"F"
@@ -575,10 +439,10 @@ var subject_names = _.shuffle([
       "name":"Brenda",
       "gender":"F"
     },
- //    {
-//       "name":"Catherine",
-//       "gender":"F"
-//     },
+    {
+      "name":"Catherine",
+      "gender":"F"
+    },
     {
       "name":"Nicole",
       "gender":"F"
@@ -587,11 +451,11 @@ var subject_names = _.shuffle([
       "name":"Christina",
       "gender":"F"
     },
-//     {
-//       "name":"Janet",
-//       "gender":"F"
-//     },
-//     {
+    {
+      "name":"Janet",
+      "gender":"F"
+    },
+ //    {
 //       "name":"Samantha",
 //       "gender":"F"
 //     },
@@ -611,19 +475,143 @@ var subject_names = _.shuffle([
       "name":"Diane",
       "gender":"F"
     },
-//     {
-//       "name":"Joyce",
-//       "gender":"F"
-//     },
     {
-      "name":"Julie",
+      "name":"Joyce",
       "gender":"F"
     },
     {
-      "name":"Emma",
+      "name":"Julie",
       "gender":"F"
     }
-  ]);
+//     {
+//       "name":"Emma",
+//       "gender":"F"
+//     }   
+]);
+
+var male_subject_names = _.shuffle([
+   {
+     "name":"Andrew",
+     "gender":"M"
+   },
+    {
+      "name":"Edward",
+      "gender":"M"
+    },
+ //    {
+//       "name":"Joshua",
+//       "gender":"M"
+//     },
+    {
+      "name":"Brian",
+      "gender":"M"
+    },
+    {
+      "name":"Kevin",
+      "gender":"M"
+    },
+    {
+      "name":"Ronald",
+      "gender":"M"
+    },
+    {
+      "name":"Timothy",
+      "gender":"M"
+    },
+ //    {
+//       "name":"Jason",
+//       "gender":"M"
+//     },
+    {
+      "name":"Jeffrey",
+      "gender":"M"
+    },
+    {
+      "name":"Gary",
+      "gender":"M"
+    },
+    {
+      "name":"Ryan",
+      "gender":"M"
+    },
+    {
+      "name":"Nicholas",
+      "gender":"M"
+    },
+    {
+      "name":"Eric",
+      "gender":"M"
+    },
+    {
+      "name":"Jacob",
+      "gender":"M"
+    },
+  //   {
+//       "name":"Jonathan",
+//       "gender":"M"
+//     },
+    {
+      "name":"Larry",
+      "gender":"M"
+    },
+//    {
+//      "name":"Frank",
+//      "gender":"M"
+//    },
+    {
+      "name":"Scott",
+      "gender":"M"
+    },
+    {
+      "name":"Justin",
+      "gender":"M"
+    },
+    {
+      "name":"Brandon",
+      "gender":"M"
+    },
+    {
+      "name":"Raymond",
+      "gender":"M"
+    },
+    {
+      "name":"Gregory",
+      "gender":"M"
+    },
+ //    {
+//       "name":"Samuel",
+//       "gender":"M"
+//     },
+    {
+      "name":"Benjamin",
+      "gender":"M"
+    },
+    {
+      "name":"Patrick",
+      "gender":"M"
+    },
+//    {
+//      "name":"Jack",
+//      "gender":"M"
+//    },
+//     {
+//       "name":"Dennis",
+//       "gender":"M"
+//     },
+    {
+      "name":"Jerry",
+      "gender":"M"
+    },
+    {
+      "name":"Alexander",
+      "gender":"M"
+    },
+    {
+      "name":"Tyler",
+      "gender":"M"
+    }
+    ]);
+
 
 var items = _.shuffle([ 
    {
@@ -710,444 +698,484 @@ var items = _.shuffle([
 
  var contents = {
  "1": {
-  "annoyed":"is annoyed that Mary is pregnant, but I know that Mary isn't.",
-  "know":"knows that Mary is pregnant, but I know that Mary isn't.",
-  "discover":"discovered that Mary is pregnant, but I know that Mary isn't.",
-  "reveal":"revealed that Mary is pregnant, but I know that Mary isn't.",
-  "see" :"saw that Mary is pregnant, but I know that Mary isn't.",
-  "establish":"established that Mary is pregnant, but I know that Mary isn't.",
-  "pretend":"pretended that Mary is pregnant, but I know that Mary isn't.",
-  "think":"thinks that Mary is pregnant, but I know that Mary isn't.",
-  "suggest":"suggested that Mary is pregnant, but I know that Mary isn't.",
-  "prove":"proved that Mary is pregnant, but I know that Mary isn't.",
-  "demonstrate":"demonstrated that Mary is pregnant, but I know that Mary isn't.",
-  "say":"said that Mary is pregnant, but I know that Mary isn't.",
-  "hear":"heard that Mary is pregnant, but I know that Mary isn't.",
-  "confess":"confessed that Mary is pregnant, but I know that Mary isn't.",
-  "inform_Sam":"informed Sam that Mary is pregnant, but I know that Mary isn't.",
-  "announce":"announced that Mary is pregnant, but I know that Mary isn't.",
-  "acknowledge":"acknowledged that Mary is pregnant, but I know that Mary isn't.",
-  "admit":"admitted that Mary is pregnant, but I know that Mary isn't.",
-  "confirm":"confirmed that Mary is pregnant, but I know that Mary isn't.",
-  "be_right_that":"is right that that Mary is pregnant, but I know that Mary isn't."
+  "gender":"f",
+  "content":"Mary is pregnant",
+  "annoyed":"is annoyed that Mary is pregnant, but I know that she isn't.",
+  "know":"knows that Mary is pregnant, but I know that she isn't.",
+  "discover":"discovered that Mary is pregnant, but I know that she isn't.",
+  "reveal":"revealed that Mary is pregnant, but I know that she isn't.",
+  "see" :"saw that Mary is pregnant, but I know that she isn't.",
+  "establish":"established that Mary is pregnant, but I know that she isn't.",
+  "pretend":"pretended that Mary is pregnant, but I know that she isn't.",
+  "think":"thinks that Mary is pregnant, but I know that she isn't.",
+  "suggest":"suggested that Mary is pregnant, but I know that she isn't.",
+  "prove":"proved that Mary is pregnant, but I know that she isn't.",
+  "demonstrate":"demonstrated that Mary is pregnant, but I know that she isn't.",
+  "say":"said that Mary is pregnant, but I know that she isn't.",
+  "hear":"heard that Mary is pregnant, but I know that she isn't.",
+  "confess":"confessed that Mary is pregnant, but I know that she isn't.",
+  "inform_Sam":"informed Sam that Mary is pregnant, but I know that she isn't.",
+  "announce":"announced that Mary is pregnant, but I know that she isn't.",
+  "acknowledge":"acknowledged that Mary is pregnant, but I know that she isn't.",
+  "admit":"admitted that Mary is pregnant, but I know that she isn't.",
+  "confirm":"confirmed that Mary is pregnant, but I know that she isn't.",
+  "be_right_that":"is right that Mary is pregnant, but I know that she isn't."
   },
   "2": {
-  "annoyed":"is annoyed that Josie went on vacation to France, but I know that Josie didn't.",
-  "know":"knows that Josie went on vacation to France, but I know that Josie didn't.",
-  "discover":"discovered that Josie went on vacation to France, but I know that Josie didn't.",
-  "reveal":"revealed that Josie went on vacation to France, but I know that Josie didn't.",
-  "see" :"saw that Josie went on vacation to France, but I know that Josie didn't.",
-  "establish":"established that Josie went on vacation to France, but I know that Josie didn't.",
-  "pretend":"pretended that Josie went on vacation to France, but I know that Josie didn't.",
-  "think":"thinks that Josie went on vacation to France, but I know that Josie didn't.",
-  "suggest":"suggested that Josie went on vacation to France, but I know that Josie didn't.",
-  "prove":"proved that Josie went on vacation to France, but I know that Josie didn't.",
-  "demonstrate":"demonstrated that Josie went on vacation to France, but I know that Josie didn't.",
-  "say":"said that Josie went on vacation to France, but I know that Josie didn't.",
-  "hear":"heard that Josie went on vacation to France, but I know that Josie didn't.",
-  "confess":"confessed that Josie went on vacation to France, but I know that Josie didn't.",
-  "inform_Sam":"informed Sam that Josie went on vacation to France, but I know that Josie didn't.",
-  "announce":"announced that Josie went on vacation to France, but I know that Josie didn't.",
-  "acknowledge":"acknowledged that Josie went on vacation to France, but I know that Josie didn't.",
-  "admit":"admitted that Josie went on vacation to France, but I know that Josie didn't.",
-  "confirm":"confirmed that Josie went on vacation to France, but I know that Josie didn't.",
-  "be_right_that":"is right that that Josie went on vacation to France, but I know that Josie didn't."
+  "gender":"f",
+  "content":"Josie went on vacation to France",
+  "annoyed":"is annoyed that Josie went on vacation to France, but I know that she didn't.",
+  "know":"knows that Josie went on vacation to France, but I know that she didn't.",
+  "discover":"discovered that Josie went on vacation to France, but I know that she didn't.",
+  "reveal":"revealed that Josie went on vacation to France, but I know that she didn't.",
+  "see" :"saw that Josie went on vacation to France, but I know that she didn't.",
+  "establish":"established that Josie went on vacation to France, but I know that she didn't.",
+  "pretend":"pretended that Josie went on vacation to France, but I know that she didn't.",
+  "think":"thinks that Josie went on vacation to France, but I know that she didn't.",
+  "suggest":"suggested that Josie went on vacation to France, but I know that she didn't.",
+  "prove":"proved that Josie went on vacation to France, but I know that she didn't.",
+  "demonstrate":"demonstrated that Josie went on vacation to France, but I know that she didn't.",
+  "say":"said that Josie went on vacation to France, but I know that she didn't.",
+  "hear":"heard that Josie went on vacation to France, but I know that she didn't.",
+  "confess":"confessed that Josie went on vacation to France, but I know that she didn't.",
+  "inform_Sam":"informed Sam that Josie went on vacation to France, but I know that she didn't.",
+  "announce":"announced that Josie went on vacation to France, but I know that she didn't.",
+  "acknowledge":"acknowledged that Josie went on vacation to France, but I know that she didn't.",
+  "admit":"admitted that Josie went on vacation to France, but I know that she didn't.",
+  "confirm":"confirmed that Josie went on vacation to France, but I know that she didn't.",
+  "be_right_that":"is right that Josie went on vacation to France, but I know that she didn't."
   },
   "3": {
-  "annoyed":"is annoyed that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "know":"knows that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "discover":"discovered that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "reveal":"revealed that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "see" :"saw that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "establish":"established that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "pretend":"pretended that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "think":"thinks that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "suggest":"suggested that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "prove":"proved that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "demonstrate":"demonstrated that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "say":"said that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "hear":"heard that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "confess":"confessed that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "inform_Sam":"informed Sam that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "announce":"announced that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "acknowledge":"acknowledged that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "admit":"admitted that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "confirm":"confirmed that Emma studied on Saturday morning, but I know that Emma didn't.",
-  "be_right_that":"is right that that Emma studied on Saturday morning, but I know that Emma didn't."
+  "gender":"f",
+  "content":"Emma studied on Saturday morning",
+  "annoyed":"is annoyed that Emma studied on Saturday morning, but I know that she didn't.",
+  "know":"knows that Emma studied on Saturday morning, but I know that she didn't.",
+  "discover":"discovered that Emma studied on Saturday morning, but I know that she didn't.",
+  "reveal":"revealed that Emma studied on Saturday morning, but I know that she didn't.",
+  "see" :"saw that Emma studied on Saturday morning, but I know that she didn't.",
+  "establish":"established that Emma studied on Saturday morning, but I know that she didn't.",
+  "pretend":"pretended that Emma studied on Saturday morning, but I know that she didn't.",
+  "think":"thinks that Emma studied on Saturday morning, but I know that she didn't.",
+  "suggest":"suggested that Emma studied on Saturday morning, but I know that she didn't.",
+  "prove":"proved that Emma studied on Saturday morning, but I know that she didn't.",
+  "demonstrate":"demonstrated that Emma studied on Saturday morning, but I know that she didn't.",
+  "say":"said that Emma studied on Saturday morning, but I know that she didn't.",
+  "hear":"heard that Emma studied on Saturday morning, but I know that she didn't.",
+  "confess":"confessed that Emma studied on Saturday morning, but I know that she didn't.",
+  "inform_Sam":"informed Sam that Emma studied on Saturday morning, but I know that she didn't.",
+  "announce":"announced that Emma studied on Saturday morning, but I know that she didn't.",
+  "acknowledge":"acknowledged that Emma studied on Saturday morning, but I know that she didn't.",
+  "admit":"admitted that Emma studied on Saturday morning, but I know that she didn't.",
+  "confirm":"confirmed that Emma studied on Saturday morning, but I know that she didn't.",
+  "be_right_that":"is right that Emma studied on Saturday morning, but I know that she didn't."
   },
   "4": {
-  "annoyed":"is annoyed that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "know":"knows that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "discover":"discovered that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "reveal":"revealed that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "see" :"saw that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "establish":"established that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "pretend":"pretended that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "think":"thinks that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "suggest":"suggested that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "prove":"proved that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "demonstrate":"demonstrated that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "say":"said that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "hear":"heard that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "confess":"confessed that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "inform_Sam":"informed Sam that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "announce":"announced that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "acknowledge":"acknowledged that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "admit":"admitted that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "confirm":"confirmed that Olivia sleeps until noon, but I know that Olivia doesn't.",
-  "be_right_that":"is right that that Olivia sleeps until noon, but I know that Olivia doesn't."
+  "gender":"f",
+  "content":"Olivia sleeps until noon",
+  "annoyed":"is annoyed that Olivia sleeps until noon, but I know that she doesn't.",
+  "know":"knows that Olivia sleeps until noon, but I know that she doesn't.",
+  "discover":"discovered that Olivia sleeps until noon, but I know that she doesn't.",
+  "reveal":"revealed that Olivia sleeps until noon, but I know that she doesn't.",
+  "see" :"saw that Olivia sleeps until noon, but I know that she doesn't.",
+  "establish":"established that Olivia sleeps until noon, but I know that she doesn't.",
+  "pretend":"pretended that Olivia sleeps until noon, but I know that she doesn't.",
+  "think":"thinks that Olivia sleeps until noon, but I know that she doesn't.",
+  "suggest":"suggested that Olivia sleeps until noon, but I know that she doesn't.",
+  "prove":"proved that Olivia sleeps until noon, but I know that she doesn't.",
+  "demonstrate":"demonstrated that Olivia sleeps until noon, but I know that she doesn't.",
+  "say":"said that Olivia sleeps until noon, but I know that she doesn't.",
+  "hear":"heard that Olivia sleeps until noon, but I know that she doesn't.",
+  "confess":"confessed that Olivia sleeps until noon, but I know that she doesn't.",
+  "inform_Sam":"informed Sam that Olivia sleeps until noon, but I know that she doesn't.",
+  "announce":"announced that Olivia sleeps until noon, but I know that she doesn't.",
+  "acknowledge":"acknowledged that Olivia sleeps until noon, but I know that she doesn't.",
+  "admit":"admitted that Olivia sleeps until noon, but I know that she doesn't.",
+  "confirm":"confirmed that Olivia sleeps until noon, but I know that she doesn't.",
+  "be_right_that":"is right that Olivia sleeps until noon, but I know that she doesn't."
   },
   "5": {
-  "annoyed":"is annoyed that Sophia got a tattoo, but I know that Sophia didn't.",
-  "know":"knows that Sophia got a tattoo, but I know that Sophia didn't.",
-  "discover":"discovered that Sophia got a tattoo, but I know that Sophia didn't.",
-  "reveal":"revealed that Sophia got a tattoo, but I know that Sophia didn't.",
-  "see" :"saw that Sophia got a tattoo, but I know that Sophia didn't.",
-  "establish":"established that Sophia got a tattoo, but I know that Sophia didn't.",
-  "pretend":"pretended that Sophia got a tattoo, but I know that Sophia didn't.",
-  "think":"thinks that Sophia got a tattoo, but I know that Sophia didn't.",
-  "suggest":"suggested that Sophia got a tattoo, but I know that Sophia didn't.",
-  "prove":"proved that Sophia got a tattoo, but I know that Sophia didn't.",
-  "demonstrate":"demonstrated that Sophia got a tattoo, but I know that Sophia didn't.",
-  "say":"said that Sophia got a tattoo, but I know that Sophia didn't.",
-  "hear":"heard that Sophia got a tattoo, but I know that Sophia didn't.",
-  "confess":"confessed that Sophia got a tattoo, but I know that Sophia didn't.",
-  "inform_Sam":"informed Sam that Sophia got a tattoo, but I know that Sophia didn't.",
-  "announce":"announced that Sophia got a tattoo, but I know that Sophia didn't.",
-  "acknowledge":"acknowledged that Sophia got a tattoo, but I know that Sophia didn't.",
-  "admit":"admitted that Sophia got a tattoo, but I know that Sophia didn't.",
-  "confirm":"confirmed that Sophia got a tattoo, but I know that Sophia didn't.",
-  "be_right_that":"is right that that Sophia got a tattoo, but I know that Sophia didn't."
+  "gender":"f",
+  "content":"Sophia got a tattoo",
+  "annoyed":"is annoyed that Sophia got a tattoo, but I know that she didn't.",
+  "know":"knows that Sophia got a tattoo, but I know that she didn't.",
+  "discover":"discovered that Sophia got a tattoo, but I know that she didn't.",
+  "reveal":"revealed that Sophia got a tattoo, but I know that she didn't.",
+  "see" :"saw that Sophia got a tattoo, but I know that she didn't.",
+  "establish":"established that Sophia got a tattoo, but I know that she didn't.",
+  "pretend":"pretended that Sophia got a tattoo, but I know that she didn't.",
+  "think":"thinks that Sophia got a tattoo, but I know that she didn't.",
+  "suggest":"suggested that Sophia got a tattoo, but I know that she didn't.",
+  "prove":"proved that Sophia got a tattoo, but I know that she didn't.",
+  "demonstrate":"demonstrated that Sophia got a tattoo, but I know that she didn't.",
+  "say":"said that Sophia got a tattoo, but I know that she didn't.",
+  "hear":"heard that Sophia got a tattoo, but I know that she didn't.",
+  "confess":"confessed that Sophia got a tattoo, but I know that she didn't.",
+  "inform_Sam":"informed Sam that Sophia got a tattoo, but I know that she didn't.",
+  "announce":"announced that Sophia got a tattoo, but I know that she didn't.",
+  "acknowledge":"acknowledged that Sophia got a tattoo, but I know that she didn't.",
+  "admit":"admitted that Sophia got a tattoo, but I know that she didn't.",
+  "confirm":"confirmed that Sophia got a tattoo, but I know that she didn't.",
+  "be_right_that":"is right that Sophia got a tattoo, but I know that she didn't."
   },
   "6": {
-  "annoyed":"is annoyed that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "know":"knows that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "discover":"discovered that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "reveal":"revealed that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "see" :"saw that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "establish":"established that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "pretend":"pretended that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "think":"thinks that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "suggest":"suggested that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "prove":"proved that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "demonstrate":"demonstrated that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "say":"said that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "hear":"heard that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "confess":"confessed that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "inform_Sam":"informed Sam that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "announce":"announced that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "acknowledge":"acknowledged that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "admit":"admitted that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "confirm":"confirmed that Mia drank 2 cocktails last night, but I know that Mia  didn't.",
-  "be_right_that":"is right that that Mia drank 2 cocktails last night, but I know that Mia  didn't."
+  "gender":"f",
+  "content":"Mia drank 2 cocktails last night",
+  "annoyed":"is annoyed that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "know":"knows that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "discover":"discovered that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "reveal":"revealed that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "see" :"saw that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "establish":"established that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "pretend":"pretended that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "think":"thinks that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "suggest":"suggested that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "prove":"proved that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "demonstrate":"demonstrated that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "say":"said that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "hear":"heard that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "confess":"confessed that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "inform_Sam":"informed Sam that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "announce":"announced that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "acknowledge":"acknowledged that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "admit":"admitted that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "confirm":"confirmed that Mia drank 2 cocktails last night, but I know that she didn't.",
+  "be_right_that":"is right that Mia drank 2 cocktails last night, but I know that she didn't."
   },
   "7": {
-  "annoyed":"is annoyed that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "know":"knows that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "discover":"discovered that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "reveal":"revealed that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "see" :"saw that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "establish":"established that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "pretend":"pretended that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "think":"thinks that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "suggest":"suggested that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "prove":"proved that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "demonstrate":"demonstrated that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "say":"said that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "hear":"heard that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "confess":"confessed that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "inform_Sam":"informed Sam that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "announce":"announced that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "acknowledge":"acknowledged that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "admit":"admitted that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "confirm":"confirmed that Isabella ate a steak on Sunday, but I know that Isabella  didn't.",
-  "be_right_that":"is right that Isabella ate a steak on Sunday, but I know that Isabella  didn't."
+  "gender":"f",
+  "content":"Isabella ate a steak on Sunday",
+  "annoyed":"is annoyed that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "know":"knows that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "discover":"discovered that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "reveal":"revealed that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "see" :"saw that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "establish":"established that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "pretend":"pretended that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "think":"thinks that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "suggest":"suggested that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "prove":"proved that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "demonstrate":"demonstrated that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "say":"said that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "hear":"heard that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "confess":"confessed that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "inform_Sam":"informed Sam that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "announce":"announced that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "acknowledge":"acknowledged that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "admit":"admitted that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "confirm":"confirmed that Isabella ate a steak on Sunday, but I know that she didn't.",
+  "be_right_that":"is right that Isabella ate a steak on Sunday, but I know that she didn't."
   },
   "8": {
-  "annoyed":"is annoyed that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "know":"knows that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "discover":"discovered that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "reveal":"revealed that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "see" :"saw that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "establish":"established that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "pretend":"pretended that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "think":"thinks that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "suggest":"suggested that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "prove":"proved that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "demonstrate":"demonstrated that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "say":"said that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "hear":"heard that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "confess":"confessed that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "inform_Sam":"informed Sam that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "announce":"announced that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "acknowledge":"acknowledged that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "admit":"admitted that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "confirm":"confirmed that Emily bought a car yesterday, but I know that Emily  didn't.",
-  "be_right_that":"is right that Emily bought a car yesterday, but I know that Emily  didn't."
+  "gender":"f",
+  "content":"Emily bought a car yesterday",
+  "annoyed":"is annoyed that Emily bought a car yesterday, but I know that she didn't.",
+  "know":"knows that Emily bought a car yesterday, but I know that she didn't.",
+  "discover":"discovered that Emily bought a car yesterday, but I know that she didn't.",
+  "reveal":"revealed that Emily bought a car yesterday, but I know that she didn't.",
+  "see" :"saw that Emily bought a car yesterday, but I know that she didn't.",
+  "establish":"established that Emily bought a car yesterday, but I know that she didn't.",
+  "pretend":"pretended that Emily bought a car yesterday, but I know that she didn't.",
+  "think":"thinks that Emily bought a car yesterday, but I know that she didn't.",
+  "suggest":"suggested that Emily bought a car yesterday, but I know that she didn't.",
+  "prove":"proved that Emily bought a car yesterday, but I know that she didn't.",
+  "demonstrate":"demonstrated that Emily bought a car yesterday, but I know that she didn't.",
+  "say":"said that Emily bought a car yesterday, but I know that she didn't.",
+  "hear":"heard that Emily bought a car yesterday, but I know that she didn't.",
+  "confess":"confessed that Emily bought a car yesterday, but I know that she didn't.",
+  "inform_Sam":"informed Sam that Emily bought a car yesterday, but I know that she didn't.",
+  "announce":"announced that Emily bought a car yesterday, but I know that she didn't.",
+  "acknowledge":"acknowledged that Emily bought a car yesterday, but I know that she didn't.",
+  "admit":"admitted that Emily bought a car yesterday, but I know that she didn't.",
+  "confirm":"confirmed that Emily bought a car yesterday, but I know that she didn't.",
+  "be_right_that":"is right that Emily bought a car yesterday, but I know that she didn't."
   },
   "9": {
-  "annoyed":"is annoyed that Grace visited her sister, but I know that Grace  didn't.",
-  "know":"knows that Grace visited her sister, but I know that Grace  didn't.",
-  "discover":"discovered that Grace visited her sister, but I know that Grace  didn't.",
-  "reveal":"revealed that Grace visited her sister, but I know that Grace  didn't.",
-  "see" :"saw that Grace visited her sister, but I know that Grace  didn't.",
-  "establish":"established that Grace visited her sister, but I know that Grace  didn't.",
-  "pretend":"pretended that Grace visited her sister, but I know that Grace  didn't.",
-  "think":"thinks that Grace visited her sister, but I know that Grace  didn't.",
-  "suggest":"suggested that Grace visited her sister, but I know that Grace  didn't.",
-  "prove":"proved that Grace visited her sister, but I know that Grace  didn't.",
-  "demonstrate":"demonstrated that Grace visited her sister, but I know that Grace  didn't.",
-  "say":"said that Grace visited her sister, but I know that Grace  didn't.",
-  "hear":"heard that Grace visited her sister, but I know that Grace  didn't.",
-  "confess":"confessed that Grace visited her sister, but I know that Grace  didn't.",
-  "inform_Sam":"informed Sam that Grace visited her sister, but I know that Grace  didn't.",
-  "announce":"announced that Grace visited her sister, but I know that Grace  didn't.",
-  "acknowledge":"acknowledged that Grace visited her sister, but I know that Grace  didn't.",
-  "admit":"admitted that Grace visited her sister, but I know that Grace  didn't.",
-  "confirm":"confirmed that Grace visited her sister, but I know that Grace  didn't.",
-  "be_right_that":"is right that Grace visited her sister, but I know that Grace  didn't."
+  "gender":"f",
+  "content":"Grace visited her sister",
+  "annoyed":"is annoyed that Grace visited her sister, but I know that she didn't.",
+  "know":"knows that Grace visited her sister, but I know that she didn't.",
+  "discover":"discovered that Grace visited her sister, but I know that she didn't.",
+  "reveal":"revealed that Grace visited her sister, but I know that she didn't.",
+  "see" :"saw that Grace visited her sister, but I know that she didn't.",
+  "establish":"established that Grace visited her sister, but I know that she didn't.",
+  "pretend":"pretended that Grace visited her sister, but I know that she didn't.",
+  "think":"thinks that Grace visited her sister, but I know that she didn't.",
+  "suggest":"suggested that Grace visited her sister, but I know that she didn't.",
+  "prove":"proved that Grace visited her sister, but I know that she didn't.",
+  "demonstrate":"demonstrated that Grace visited her sister, but I know that she didn't.",
+  "say":"said that Grace visited her sister, but I know that she didn't.",
+  "hear":"heard that Grace visited her sister, but I know that she didn't.",
+  "confess":"confessed that Grace visited her sister, but I know that she didn't.",
+  "inform_Sam":"informed Sam that Grace visited her sister, but I know that she didn't.",
+  "announce":"announced that Grace visited her sister, but I know that she didn't.",
+  "acknowledge":"acknowledged that Grace visited her sister, but I know that she didn't.",
+  "admit":"admitted that Grace visited her sister, but I know that she didn't.",
+  "confirm":"confirmed that Grace visited her sister, but I know that she didn't.",
+  "be_right_that":"is right that Grace visited her sister, but I know that she didn't."
   },
   "10": {
-  "annoyed":"is annoyed that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "know":"knows that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "discover":"discovered that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "reveal":"revealed that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "see" :"saw that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "establish":"established that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "pretend":"pretended that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "think":"thinks that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "suggest":"suggested that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "prove":"proved that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "demonstrate":"demonstrated that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "say":"said that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "hear":"heard that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "confess":"confessed that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "inform_Sam":"informed Sam that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "announce":"announced that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "acknowledge":"acknowledged that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "admit":"admitted that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "confirm":"confirmed that Zoe calculated the tip, but I know that Zoe  didn't.",
-  "be_right_that":"is right that Zoe calculated the tip, but I know that Zoe  didn't."
+  "gender":"f",
+  "content":"Zoe calculated the tip",
+  "annoyed":"is annoyed that Zoe calculated the tip, but I know that she didn't.",
+  "know":"knows that Zoe calculated the tip, but I know that she didn't.",
+  "discover":"discovered that Zoe calculated the tip, but I know that she didn't.",
+  "reveal":"revealed that Zoe calculated the tip, but I know that she didn't.",
+  "see" :"saw that Zoe calculated the tip, but I know that she didn't.",
+  "establish":"established that Zoe calculated the tip, but I know that she didn't.",
+  "pretend":"pretended that Zoe calculated the tip, but I know that she didn't.",
+  "think":"thinks that Zoe calculated the tip, but I know that she didn't.",
+  "suggest":"suggested that Zoe calculated the tip, but I know that she didn't.",
+  "prove":"proved that Zoe calculated the tip, but I know that she didn't.",
+  "demonstrate":"demonstrated that Zoe calculated the tip, but I know that she didn't.",
+  "say":"said that Zoe calculated the tip, but I know that she didn't.",
+  "hear":"heard that Zoe calculated the tip, but I know that she didn't.",
+  "confess":"confessed that Zoe calculated the tip, but I know that she didn't.",
+  "inform_Sam":"informed Sam that Zoe calculated the tip, but I know that she didn't.",
+  "announce":"announced that Zoe calculated the tip, but I know that she didn't.",
+  "acknowledge":"acknowledged that Zoe calculated the tip, but I know that she didn't.",
+  "admit":"admitted that Zoe calculated the tip, but I know that she didn't.",
+  "confirm":"confirmed that Zoe calculated the tip, but I know that she didn't.",
+  "be_right_that":"is right that Zoe calculated the tip, but I know that she didn't."
   },
   "11": {
-  "annoyed":"is annoyed that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "know":"knows that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "discover":"discovered that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "reveal":"revealed that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "see" :"saw that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "establish":"established that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "pretend":"pretended that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "think":"thinks that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "suggest":"suggested that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "prove":"proved that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "demonstrate":"demonstrated that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "say":"said that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "hear":"heard that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "confess":"confessed that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "inform_Sam":"informed Sam that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "announce":"announced that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "acknowledge":"acknowledged that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "admit":"admitted that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "confirm":"confirmed that Danny ate the last cupcake, but I know that Danny  didn't.",
-  "be_right_that":"is right that that Danny ate the last cupcake, but I know that Danny  didn't."
+  "gender":"m",
+  "content":"Danny ate the last cupcake",
+  "annoyed":"is annoyed that Danny ate the last cupcake, but I know that he didn't.",
+  "know":"knows that Danny ate the last cupcake, but I know that he didn't.",
+  "discover":"discovered that Danny ate the last cupcake, but I know that he didn't.",
+  "reveal":"revealed that Danny ate the last cupcake, but I know that he didn't.",
+  "see" :"saw that Danny ate the last cupcake, but I know that he didn't.",
+  "establish":"established that Danny ate the last cupcake, but I know that he didn't.",
+  "pretend":"pretended that Danny ate the last cupcake, but I know that he didn't.",
+  "think":"thinks that Danny ate the last cupcake, but I know that he didn't.",
+  "suggest":"suggested that Danny ate the last cupcake, but I know that he didn't.",
+  "prove":"proved that Danny ate the last cupcake, but I know that he didn't.",
+  "demonstrate":"demonstrated that Danny ate the last cupcake, but I know that he didn't.",
+  "say":"said that Danny ate the last cupcake, but I know that he didn't.",
+  "hear":"heard that Danny ate the last cupcake, but I know that he didn't.",
+  "confess":"confessed that Danny ate the last cupcake, but I know that he didn't.",
+  "inform_Sam":"informed Sam that Danny ate the last cupcake, but I know that he didn't.",
+  "announce":"announced that Danny ate the last cupcake, but I know that he didn't.",
+  "acknowledge":"acknowledged that Danny ate the last cupcake, but I know that he didn't.",
+  "admit":"admitted that Danny ate the last cupcake, but I know that he didn't.",
+  "confirm":"confirmed that Danny ate the last cupcake, but I know that he didn't.",
+  "be_right_that":"is right that Danny ate the last cupcake, but I know that he didn't."
   },
   "12": {
-  "annoyed":"is annoyed that Frank got a cat, but I know that Frank   didn't.",
-  "know":"knows that Frank got a cat, but I know that Frank   didn't.",
-  "discover":"discovered that Frank got a cat, but I know that Frank   didn't.",
-  "reveal":"revealed that Frank got a cat, but I know that Frank   didn't.",
-  "see" :"saw that Frank got a cat, but I know that Frank   didn't.",
-  "establish":"established that Frank got a cat, but I know that Frank   didn't.",
-  "pretend":"pretended that Frank got a cat, but I know that Frank   didn't.",
-  "think":"thinks that Frank got a cat, but I know that Frank   didn't.",
-  "suggest":"suggested that Frank got a cat, but I know that Frank   didn't.",
-  "prove":"proved that Frank got a cat, but I know that Frank   didn't.",
-  "demonstrate":"demonstrated that Frank got a cat, but I know that Frank   didn't.",
-  "say":"said that Frank got a cat, but I know that Frank   didn't.",
-  "hear":"heard that Frank got a cat, but I know that Frank   didn't.",
-  "confess":"confessed that Frank got a cat, but I know that Frank   didn't.",
-  "inform_Sam":"informed Sam that Frank got a cat, but I know that Frank   didn't.",
-  "announce":"announced that Frank got a cat, but I know that Frank   didn't.",
-  "acknowledge":"acknowledged that Frank got a cat, but I know that Frank   didn't.",
-  "admit":"admitted that Frank got a cat, but I know that Frank   didn't.",
-  "confirm":"confirmed that Frank got a cat, but I know that Frank   didn't.",
-  "be_right_that":"is right that Frank got a cat, but I know that Frank   didn't."
+  "gender":"m",
+  "content":"Frank got a cat",
+  "annoyed":"is annoyed that Frank got a cat, but I know that he didn't.",
+  "know":"knows that Frank got a cat, but I know that he didn't.",
+  "discover":"discovered that Frank got a cat, but I know that he didn't.",
+  "reveal":"revealed that Frank got a cat, but I know that he didn't.",
+  "see" :"saw that Frank got a cat, but I know that he didn't.",
+  "establish":"established that Frank got a cat, but I know that he didn't.",
+  "pretend":"pretended that Frank got a cat, but I know that he didn't.",
+  "think":"thinks that Frank got a cat, but I know that he didn't.",
+  "suggest":"suggested that Frank got a cat, but I know that he didn't.",
+  "prove":"proved that Frank got a cat, but I know that he didn't.",
+  "demonstrate":"demonstrated that Frank got a cat, but I know that he didn't.",
+  "say":"said that Frank got a cat, but I know that he didn't.",
+  "hear":"heard that Frank got a cat, but I know that he didn't.",
+  "confess":"confessed that Frank got a cat, but I know that he didn't.",
+  "inform_Sam":"informed Sam that Frank got a cat, but I know that he didn't.",
+  "announce":"announced that Frank got a cat, but I know that he didn't.",
+  "acknowledge":"acknowledged that Frank got a cat, but I know that he didn't.",
+  "admit":"admitted that Frank got a cat, but I know that he didn't.",
+  "confirm":"confirmed that Frank got a cat, but I know that he didn't.",
+  "be_right_that":"is right that Frank got a cat, but I know that he didn't."
   },
   "13": {
-  "annoyed":"is annoyed that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "know":"knows that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "discover":"discovered that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "reveal":"revealed that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "see" :"saw that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "establish":"established that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "pretend":"pretended that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "think":"thinks that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "suggest":"suggested that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "prove":"proved that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "demonstrate":"demonstrated that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "say":"said that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "hear":"heard that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "confess":"confessed that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "inform_Sam":"informed Sam that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "announce":"announced that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "acknowledge":"acknowledged that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "admit":"admitted that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "confirm":"confirmed that Jackson ran 10 miles, but I know that Jackson   didn't.",
-  "be_right_that":"is right that that Jackson ran 10 miles, but I know that Jackson   didn't."
+  "gender":"m",
+  "content":"Jackson ran 10 miles",
+  "annoyed":"is annoyed that Jackson ran 10 miles, but I know that he didn't.",
+  "know":"knows that Jackson ran 10 miles, but I know that he didn't.",
+  "discover":"discovered that Jackson ran 10 miles, but I know that he didn't.",
+  "reveal":"revealed that Jackson ran 10 miles, but I know that he didn't.",
+  "see" :"saw that Jackson ran 10 miles, but I know that he didn't.",
+  "establish":"established that Jackson ran 10 miles, but I know that he didn't.",
+  "pretend":"pretended that Jackson ran 10 miles, but I know that he didn't.",
+  "think":"thinks that Jackson ran 10 miles, but I know that he didn't.",
+  "suggest":"suggested that Jackson ran 10 miles, but I know that he didn't.",
+  "prove":"proved that Jackson ran 10 miles, but I know that he didn't.",
+  "demonstrate":"demonstrated that Jackson ran 10 miles, but I know that he didn't.",
+  "say":"said that Jackson ran 10 miles, but I know that he didn't.",
+  "hear":"heard that Jackson ran 10 miles, but I know that he didn't.",
+  "confess":"confessed that Jackson ran 10 miles, but I know that he didn't.",
+  "inform_Sam":"informed Sam that Jackson ran 10 miles, but I know that he didn't.",
+  "announce":"announced that Jackson ran 10 miles, but I know that he didn't.",
+  "acknowledge":"acknowledged that Jackson ran 10 miles, but I know that he didn't.",
+  "admit":"admitted that Jackson ran 10 miles, but I know that he didn't.",
+  "confirm":"confirmed that Jackson ran 10 miles, but I know that he didn't.",
+  "be_right_that":"is right that Jackson ran 10 miles, but I know that he didn't."
   },
   "14": {
-  "annoyed":"is annoyed that Jayden rented a car, but I know that Jayden   didn't.",
-  "know":"knows that Jayden rented a car, but I know that Jayden   didn't.",
-  "discover":"discovered that Jayden rented a car, but I know that Jayden   didn't.",
-  "reveal":"revealed that Jayden rented a car, but I know that Jayden   didn't.",
-  "see" :"saw that Jayden rented a car, but I know that Jayden   didn't.",
-  "establish":"established that Jayden rented a car, but I know that Jayden   didn't.",
-  "pretend":"pretended that Jayden rented a car, but I know that Jayden   didn't.",
-  "think":"thinks that Jayden rented a car, but I know that Jayden   didn't.",
-  "suggest":"suggested that Jayden rented a car, but I know that Jayden   didn't.",
-  "prove":"proved that Jayden rented a car, but I know that Jayden   didn't.",
-  "demonstrate":"demonstrated that Jayden rented a car, but I know that Jayden   didn't.",
-  "say":"said that Jayden rented a car, but I know that Jayden   didn't.",
-  "hear":"heard that Jayden rented a car, but I know that Jayden   didn't.",
-  "confess":"confessed that Jayden rented a car, but I know that Jayden   didn't.",
-  "inform_Sam":"informed Sam that Jayden rented a car, but I know that Jayden   didn't.",
-  "announce":"announced that Jayden rented a car, but I know that Jayden   didn't.",
-  "acknowledge":"acknowledged that Jayden rented a car, but I know that Jayden   didn't.",
-  "admit":"admitted that Jayden rented a car, but I know that Jayden   didn't.",
-  "confirm":"confirmed that Jayden rented a car, but I know that Jayden   didn't.",
-  "be_right_that":"is right that Jayden rented a car, but I know that Jayden   didn't."
+  "gender":"m",
+  "content":"Jayden rented a car",
+  "annoyed":"is annoyed that Jayden rented a car, but I know that he didn't.",
+  "know":"knows that Jayden rented a car, but I know that he didn't.",
+  "discover":"discovered that Jayden rented a car, but I know that he didn't.",
+  "reveal":"revealed that Jayden rented a car, but I know that he didn't.",
+  "see" :"saw that Jayden rented a car, but I know that he didn't.",
+  "establish":"established that Jayden rented a car, but I know that he didn't.",
+  "pretend":"pretended that Jayden rented a car, but I know that he didn't.",
+  "think":"thinks that Jayden rented a car, but I know that he didn't.",
+  "suggest":"suggested that Jayden rented a car, but I know that he didn't.",
+  "prove":"proved that Jayden rented a car, but I know that he didn't.",
+  "demonstrate":"demonstrated that Jayden rented a car, but I know that he didn't.",
+  "say":"said that Jayden rented a car, but I know that he didn't.",
+  "hear":"heard that Jayden rented a car, but I know that he didn't.",
+  "confess":"confessed that Jayden rented a car, but I know that he didn't.",
+  "inform_Sam":"informed Sam that Jayden rented a car, but I know that he didn't.",
+  "announce":"announced that Jayden rented a car, but I know that he didn't.",
+  "acknowledge":"acknowledged that Jayden rented a car, but I know that he didn't.",
+  "admit":"admitted that Jayden rented a car, but I know that he didn't.",
+  "confirm":"confirmed that Jayden rented a car, but I know that he didn't.",
+  "be_right_that":"is right that Jayden rented a car, but I know that he didn't."
   },
   "15": {
-  "annoyed":"is annoyed that Tony had a drink last night, but I know that Tony   didn't.",
-  "know":"knows that Tony had a drink last night, but I know that Tony   didn't.",
-  "discover":"discovered that Tony had a drink last night, but I know that Tony   didn't.",
-  "reveal":"revealed that Tony had a drink last night, but I know that Tony   didn't.",
-  "see" :"saw that Tony had a drink last night, but I know that Tony   didn't.",
-  "establish":"established that Tony had a drink last night, but I know that Tony   didn't.",
-  "pretend":"pretended that Tony had a drink last night, but I know that Tony   didn't.",
-  "think":"thinks that Tony had a drink last night, but I know that Tony   didn't.",
-  "suggest":"suggested that Tony had a drink last night, but I know that Tony   didn't.",
-  "prove":"proved that Tony had a drink last night, but I know that Tony   didn't.",
-  "demonstrate":"demonstrated that Tony had a drink last night, but I know that Tony   didn't.",
-  "say":"said that Tony had a drink last night, but I know that Tony   didn't.",
-  "hear":"heard that Tony had a drink last night, but I know that Tony   didn't.",
-  "confess":"confessed that Tony had a drink last night, but I know that Tony   didn't.",
-  "inform_Sam":"informed Sam that Tony had a drink last night, but I know that Tony   didn't.",
-  "announce":"announced that Tony had a drink last night, but I know that Tony   didn't.",
-  "acknowledge":"acknowledged that Tony had a drink last night, but I know that Tony   didn't.",
-  "admit":"admitted that Tony had a drink last night, but I know that Tony   didn't.",
-  "confirm":"confirmed that Tony had a drink last night, but I know that Tony   didn't.",
-  "be_right_that":"is right that Tony had a drink last night, but I know that Tony   didn't."
+  "gender":"m",
+  "content":"Tony had a drink last night",
+  "annoyed":"is annoyed that Tony had a drink last night, but I know that he didn't.",
+  "know":"knows that Tony had a drink last night, but I know that he didn't.",
+  "discover":"discovered that Tony had a drink last night, but I know that he didn't.",
+  "reveal":"revealed that Tony had a drink last night, but I know that he didn't.",
+  "see" :"saw that Tony had a drink last night, but I know that he didn't.",
+  "establish":"established that Tony had a drink last night, but I know that he didn't.",
+  "pretend":"pretended that Tony had a drink last night, but I know that he didn't.",
+  "think":"thinks that Tony had a drink last night, but I know that he didn't.",
+  "suggest":"suggested that Tony had a drink last night, but I know that he didn't.",
+  "prove":"proved that Tony had a drink last night, but I know that he didn't.",
+  "demonstrate":"demonstrated that Tony had a drink last night, but I know that he didn't.",
+  "say":"said that Tony had a drink last night, but I know that he didn't.",
+  "hear":"heard that Tony had a drink last night, but I know that he didn't.",
+  "confess":"confessed that Tony had a drink last night, but I know that he didn't.",
+  "inform_Sam":"informed Sam that Tony had a drink last night, but I know that he didn't.",
+  "announce":"announced that Tony had a drink last night, but I know that he didn't.",
+  "acknowledge":"acknowledged that Tony had a drink last night, but I know that he didn't.",
+  "admit":"admitted that Tony had a drink last night, but I know that he didn't.",
+  "confirm":"confirmed that Tony had a drink last night, but I know that he didn't.",
+  "be_right_that":"is right that Tony had a drink last night, but I know that he didn't."
   },
   "16": {
-  "annoyed":"is annoyed that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "know":"knows that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "discover":"discovered that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "reveal":"revealed that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "see" :"saw that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "establish":"established that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "pretend":"pretended that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "think":"thinks that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "suggest":"suggested that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "prove":"proved that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "demonstrate":"demonstrated that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "say":"said that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "hear":"heard that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "confess":"confessed that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "inform_Sam":"informed Sam that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "announce":"announced that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "acknowledge":"acknowledged that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "admit":"admitted that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "confirm":"confirmed that Josh learned to ride a bike yesterday, but I know that Josh   didn't. ",
-  "be_right_that":"is right that that Josh learned to ride a bike yesterday, but I know that Josh   didn't. "
+  "gender":"m",
+  "content":"Josh learned to ride a bike yesterday",
+  "annoyed":"is annoyed that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "know":"knows that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "discover":"discovered that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "reveal":"revealed that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "see" :"saw that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "establish":"established that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "pretend":"pretended that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "think":"thinks that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "suggest":"suggested that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "prove":"proved that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "demonstrate":"demonstrated that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "say":"said that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "hear":"heard that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "confess":"confessed that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "inform_Sam":"informed Sam that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "announce":"announced that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "acknowledge":"acknowledged that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "admit":"admitted that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "confirm":"confirmed that Josh learned to ride a bike yesterday, but I know that he didn't.",
+  "be_right_that":"is right that Josh learned to ride a bike yesterday, but I know that he didn't."
   },
   "17": {
-  "annoyed":"is annoyed that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "know":"knows that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "discover":"discovered that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "reveal":"revealed that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "see" :"saw that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "establish":"established that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "pretend":"pretended that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "think":"thinks that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "suggest":"suggested that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "prove":"proved that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "demonstrate":"demonstrated that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "say":"said that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "hear":"heard that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "confess":"confessed that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "inform_Sam":"informed Sam that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "announce":"announced that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "acknowledge":"acknowledged that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "admit":"admitted that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "confirm":"confirmed that Owen shoveled snow last winter, but I know that Owen   didn't. ",
-  "be_right_that":"is right that Owen shoveled snow last winter, but I know that Owen   didn't. "
+  "gender":"m",
+  "content":"Owen shoveled snow last winter",
+  "annoyed":"is annoyed that Owen shoveled snow last winter, but I know that he didn't.",
+  "know":"knows that Owen shoveled snow last winter, but I know that he didn't.",
+  "discover":"discovered that Owen shoveled snow last winter, but I know that he didn't.",
+  "reveal":"revealed that Owen shoveled snow last winter, but I know that he didn't.",
+  "see" :"saw that Owen shoveled snow last winter, but I know that he didn't.",
+  "establish":"established that Owen shoveled snow last winter, but I know that he didn't.",
+  "pretend":"pretended that Owen shoveled snow last winter, but I know that he didn't.",
+  "think":"thinks that Owen shoveled snow last winter, but I know that he didn't.",
+  "suggest":"suggested that Owen shoveled snow last winter, but I know that he didn't.",
+  "prove":"proved that Owen shoveled snow last winter, but I know that he didn't.",
+  "demonstrate":"demonstrated that Owen shoveled snow last winter, but I know that he didn't.",
+  "say":"said that Owen shoveled snow last winter, but I know that he didn't.",
+  "hear":"heard that Owen shoveled snow last winter, but I know that he didn't.",
+  "confess":"confessed that Owen shoveled snow last winter, but I know that he didn't.",
+  "inform_Sam":"informed Sam that Owen shoveled snow last winter, but I know that he didn't.",
+  "announce":"announced that Owen shoveled snow last winter, but I know that he didn't.",
+  "acknowledge":"acknowledged that Owen shoveled snow last winter, but I know that he didn't.",
+  "admit":"admitted that Owen shoveled snow last winter, but I know that he didn't.",
+  "confirm":"confirmed that Owen shoveled snow last winter, but I know that he didn't.",
+  "be_right_that":"is right that Owen shoveled snow last winter, but I know that he didn't."
   },
   "18": {
-  "annoyed":"is annoyed that Julian dances salsa, but I know that Julian   doesn't. ",
-  "know":"knows that Julian dances salsa, but I know that Julian   doesn't. ",
-  "discover":"discovered that Julian dances salsa, but I know that Julian   doesn't. ",
-  "reveal":"revealed that Julian dances salsa, but I know that Julian   doesn't. ",
-  "see" :"saw that Julian dances salsa, but I know that Julian   doesn't. ",
-  "establish":"established that Julian dances salsa, but I know that Julian   doesn't. ",
-  "pretend":"pretended that Julian dances salsa, but I know that Julian   doesn't. ",
-  "think":"thinks that Julian dances salsa, but I know that Julian   doesn't. ",
-  "suggest":"suggested that Julian dances salsa, but I know that Julian   doesn't. ",
-  "prove":"proved that Julian dances salsa, but I know that Julian   doesn't. ",
-  "demonstrate":"demonstrated that Julian dances salsa, but I know that Julian   doesn't. ",
-  "say":"said that Julian dances salsa, but I know that Julian   doesn't. ",
-  "hear":"heard that Julian dances salsa, but I know that Julian   doesn't. ",
-  "confess":"confessed that Julian dances salsa, but I know that Julian   doesn't. ",
-  "inform_Sam":"informed Sam that Julian dances salsa, but I know that Julian   doesn't. ",
-  "announce":"announced that Julian dances salsa, but I know that Julian   doesn't. ",
-  "acknowledge":"acknowledged that Julian dances salsa, but I know that Julian   doesn't. ",
-  "admit":"admitted that Julian dances salsa, but I know that Julian   doesn't. ",
-  "confirm":"confirmed that Julian dances salsa, but I know that Julian   doesn't. ",
-  "be_right_that":"is right that Julian dances salsa, but I know that Julian   doesn't. "
+  "gender":"m",
+  "content":"Julian dances salsa",
+  "annoyed":"is annoyed that Julian dances salsa, but I know that he doesn't.",
+  "know":"knows that Julian dances salsa, but I know that he doesn't.",
+  "discover":"discovered that Julian dances salsa, but I know that he doesn't.",
+  "reveal":"revealed that Julian dances salsa, but I know that he doesn't.",
+  "see" :"saw that Julian dances salsa, but I know that he doesn't.",
+  "establish":"established that Julian dances salsa, but I know that he doesn't.",
+  "pretend":"pretended that Julian dances salsa, but I know that he doesn't.",
+  "think":"thinks that Julian dances salsa, but I know that he doesn't.",
+  "suggest":"suggested that Julian dances salsa, but I know that he doesn't.",
+  "prove":"proved that Julian dances salsa, but I know that he doesn't.",
+  "demonstrate":"demonstrated that Julian dances salsa, but I know that he doesn't.",
+  "say":"said that Julian dances salsa, but I know that he doesn't.",
+  "hear":"heard that Julian dances salsa, but I know that he doesn't.",
+  "confess":"confessed that Julian dances salsa, but I know that he doesn't.",
+  "inform_Sam":"informed Sam that Julian dances salsa, but I know that he doesn't.",
+  "announce":"announced that Julian dances salsa, but I know that he doesn't.",
+  "acknowledge":"acknowledged that Julian dances salsa, but I know that he doesn't.",
+  "admit":"admitted that Julian dances salsa, but I know that he doesn't.",
+  "confirm":"confirmed that Julian dances salsa, but I know that he doesn't.",
+  "be_right_that":"is right that Julian dances salsa, but I know that he doesn't."
   },
   "19": {
-  "annoyed":"is annoyed that Jon walks to work, but I know that Jon   doesn't. ",
-  "know":"knows that Jon walks to work, but I know that Jon   doesn't. ",
-  "discover":"discovered that Jon walks to work, but I know that Jon   doesn't. ",
-  "reveal":"revealed that Jon walks to work, but I know that Jon   doesn't. ",
-  "see" :"saw that Jon walks to work, but I know that Jon   doesn't. ",
-  "establish":"established that Jon walks to work, but I know that Jon   doesn't. ",
-  "pretend":"pretended that Jon walks to work, but I know that Jon   doesn't. ",
-  "think":"thinks that Jon walks to work, but I know that Jon   doesn't. ",
-  "suggest":"suggested that Jon walks to work, but I know that Jon   doesn't. ",
-  "prove":"proved that Jon walks to work, but I know that Jon   doesn't. ",
-  "demonstrate":"demonstrated that Jon walks to work, but I know that Jon   doesn't. ",
-  "say":"said that Jon walks to work, but I know that Jon   doesn't. ",
-  "hear":"heard that Jon walks to work, but I know that Jon   doesn't. ",
-  "confess":"confessed that Jon walks to work, but I know that Jon   doesn't. ",
-  "inform_Sam":"informed Sam that Jon walks to work, but I know that Jon   doesn't. ",
-  "announce":"announced that Jon walks to work, but I know that Jon   doesn't. ",
-  "acknowledge":"acknowledged that Jon walks to work, but I know that Jon   doesn't. ",
-  "admit":"admitted that Jon walks to work, but I know that Jon   doesn't. ",
-  "confirm":"confirmed that Jon walks to work, but I know that Jon   doesn't. ",
-  "be_right_that":"is right that Jon walks to work, but I know that Jon   doesn't. "
+  "gender":"m",
+  "content":"Jon walks to work",
+  "annoyed":"is annoyed that Jon walks to work, but I know that he doesn't.",
+  "know":"knows that Jon walks to work, but I know that he doesn't.",
+  "discover":"discovered that Jon walks to work, but I know that he doesn't.",
+  "reveal":"revealed that Jon walks to work, but I know that he doesn't.",
+  "see" :"saw that Jon walks to work, but I know that he doesn't.",
+  "establish":"established that Jon walks to work, but I know that he doesn't.",
+  "pretend":"pretended that Jon walks to work, but I know that he doesn't.",
+  "think":"thinks that Jon walks to work, but I know that he doesn't.",
+  "suggest":"suggested that Jon walks to work, but I know that he doesn't.",
+  "prove":"proved that Jon walks to work, but I know that he doesn't.",
+  "demonstrate":"demonstrated that Jon walks to work, but I know that he doesn't.",
+  "say":"said that Jon walks to work, but I know that he doesn't.",
+  "hear":"heard that Jon walks to work, but I know that he doesn't.",
+  "confess":"confessed that Jon walks to work, but I know that he doesn't.",
+  "inform_Sam":"informed Sam that Jon walks to work, but I know that he doesn't.",
+  "announce":"announced that Jon walks to work, but I know that he doesn't.",
+  "acknowledge":"acknowledged that Jon walks to work, but I know that he doesn't.",
+  "admit":"admitted that Jon walks to work, but I know that he doesn't.",
+  "confirm":"confirmed that Jon walks to work, but I know that he doesn't.",
+  "be_right_that":"is right that Jon walks to work, but I know that he doesn't."
   },
   "20": {
-  "annoyed":"is annoyed that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "know":"knows that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "discover":"discovered that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "reveal":"revealed that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "see" :"saw that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "establish":"established that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "pretend":"pretended that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "think":"thinks that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "suggest":"suggested that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "prove":"proved that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "demonstrate":"demonstrated that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "say":"said that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "hear":"heard that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "confess":"confessed that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "inform_Sam":"informed Sam that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "announce":"announced that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "acknowledge":"acknowledged that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "admit":"admitte that Charley speaks Spanish, but I know that Charley   doesn't. d",
-  "confirm":"confirmed that Charley speaks Spanish, but I know that Charley   doesn't. ",
-  "be_right_that":"is right that Charley speaks Spanish, but I know that Charley   doesn't. "
+  "gender":"m",
+  "content":"Charley speaks Spanish",
+  "annoyed":"is annoyed that Charley speaks Spanish, but I know that he doesn't.",
+  "know":"knows that Charley speaks Spanish, but I know that he doesn't.",
+  "discover":"discovered that Charley speaks Spanish, but I know that he doesn't.",
+  "reveal":"revealed that Charley speaks Spanish, but I know that he doesn't.",
+  "see" :"saw that Charley speaks Spanish, but I know that he doesn't.",
+  "establish":"established that Charley speaks Spanish, but I know that he doesn't.",
+  "pretend":"pretended that Charley speaks Spanish, but I know that he doesn't.",
+  "think":"thinks that Charley speaks Spanish, but I know that he doesn't.",
+  "suggest":"suggested that Charley speaks Spanish, but I know that he doesn't.",
+  "prove":"proved that Charley speaks Spanish, but I know that he doesn't.",
+  "demonstrate":"demonstrated that Charley speaks Spanish, but I know that he doesn't.",
+  "say":"said that Charley speaks Spanish, but I know that he doesn't.",
+  "hear":"heard that Charley speaks Spanish, but I know that he doesn't.",
+  "confess":"confessed that Charley speaks Spanish, but I know that he doesn't.",
+  "inform_Sam":"informed Sam that Charley speaks Spanish, but I know that he doesn't.",
+  "announce":"announced that Charley speaks Spanish, but I know that he doesn't.",
+  "acknowledge":"acknowledged that Charley speaks Spanish, but I know that he doesn't.",
+  "admit":"admitte that Charley speaks Spanish, but I know that he doesn't. d",
+  "confirm":"confirmed that Charley speaks Spanish, but I know that he doesn't.",
+  "be_right_that":"is right that Charley speaks Spanish, but I know that he doesn't."
   }
 };
   
@@ -1235,34 +1263,55 @@ var items_content_mapping = {
   	"confirm": getContent("confirm"),
   	"be_right_that": getContent("be_right_that")
   	};
+  	
+//   function makeStim(i) {
+//     //get item
+//     var item = items[i];
+// 	//get a name to be speaker
+//     var name_data = speaker_names[i];
+//     var name = name_data.name;
+//     var gender = name_data.gender;
+//     //get another name to be subject
+//     var name_data2 = items[i].gender == "m" ? female_subject_names[i] : male_subject_names[i];
+//     var name2 = name_data2.name;
+//     var gender2 = name_data2.gender;
+//     
+//     // get content
+//     var trigger_cont = trigger_contents[item.trigger];
+//     var trigger = item.trigger;
+//     var short_trigger = trigger;
+//     if (trigger.indexOf("MC") != -1) {
+//     	short_trigger = "MC";
+//     	}
   
   function makeStim(i) {
     //get item
     var item = items[i];
-	//get a speaker
+	//get a name to be speaker
     var name_data = speaker_names[i];
     var name = name_data.name;
     var gender = name_data.gender;
-    //get another speaker
-    var name_data2 = items[i].gender == "m" ? female_subject_names[i] : male_subject_names[i];
-    var name2 = name_data2.name;
-    var gender2 = name_data2.gender;
     
     // get content
     var trigger_cont = trigger_contents[item.trigger];
     var trigger = item.trigger;
     var short_trigger = trigger;
-    if (trigger.indexOf("MC") != -1) {
-    	short_trigger = "MC";
-    	}
-//	console.log("short_trigger: "+short_trigger);
+    	
+
+//   console.log("short_trigger: "+short_trigger);
 //	console.log("trigger: "+trigger);
-//    console.log("trigger_cont: "+trigger_cont);
+	console.log(trigger_cont);
+//  console.log("trigger_cont: "+trigger_cont);
 //    console.log("utterance: "+contents[trigger_cont][short_trigger]);    
 //    console.log(contents[trigger_cont]);    
     var utterance = contents[trigger_cont][short_trigger];
-    var question = contents[trigger_cont].question;   
-//    console.log(contents[trigger_cont]); 
+    var question = contents[trigger_cont].content; 
+//   console.log(contents[trigger_cont]);
+//    console.log(question) 
+    //get another name to be subject
+    var name_data2 = contents[trigger_cont].gender == "m" ? female_subject_names[i] : male_subject_names[i];
+    var name2 = name_data2.name;
+    var gender2 = name_data2.gender;
     return {
 	  "name": name,
 	  "name2": name2,

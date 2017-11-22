@@ -107,9 +107,10 @@ function make_slides(f) {
         language : $("#language").val(),
 //        enjoyment : $("#enjoyment").val(),
 //        asses : $('input[name="assess"]:checked').val(),
-        american : $('input[name="ame"]:checked').val(),
+		american : $("#american").val(),
+        //american : $('input[name="american"]:checked').val(),
         age : $("#age").val(),
-//        gender : $("#gender").val(),
+        gender : $("#gender").val(),
 //        education : $("#education").val(),
         comments : $("#comments").val(),
       };
@@ -1108,7 +1109,7 @@ var items = _.shuffle([
   "inform_Sam":"informed Sam that Charley speaks Spanish, but I know that he doesn't.",
   "announce":"announced that Charley speaks Spanish, but I know that he doesn't.",
   "acknowledge":"acknowledged that Charley speaks Spanish, but I know that he doesn't.",
-  "admit":"admitte that Charley speaks Spanish, but I know that he doesn't. d",
+  "admit":"admitte that Charley speaks Spanish, but I know that he doesn't.",
   "confirm":"confirmed that Charley speaks Spanish, but I know that he doesn't.",
   "be_right_that":"is right that Charley speaks Spanish, but I know that he doesn't."
   }
@@ -1204,14 +1205,50 @@ control_items = [
 	{
 		"item_id" : "control_good1",
 		"short_trigger" : "control_good",
-		"utterance" : "Zack believes that I am married, but I am actually single.",
-		"content" : "I am married, but I am actually single."
+		"utterance" : "Zack believes that I'm married, but I'm actually single.",
+		"content" : "Zack believes that I'm married, but I'm actually single"
+	},
+	{
+		"item_id" : "control_good2",
+		"short_trigger" : "control_good",
+		"utterance" : "Tara wants me to cook for her and I'm a terrific cook.",
+		"content" : "Tara wants me to cook for her and I'm a terrific cook"
+	},
+	{
+		"item_id" : "control_good3",
+		"short_trigger" : "control_good",
+		"utterance" : "Frederick is both smarter and taller than I am.",
+		"content" : "Frederick is both smarter and taller than I am"
+	},
+	{
+		"item_id" : "control_good4",
+		"short_trigger" : "control_good",
+		"utterance" : "Vanessa is really good at math, but I'm not.",
+		"content" : "Vanessa is really good at math, but I'm not"
 	},
 	{
 		"item_id" : "control_bad1",
 		"short_trigger" : "control_bad",
-		"utterance" : "Dana is both heavier and lighter than I am.",
-		"content" : "Dana is both heavier and lighter than I am."
+		"utterance" : "Dana has never smoked in her life and she stopped smoking recently.",
+		"content" : "Dana has never smoked in her life and she stopped smoking recently"
+	},
+	{
+		"item_id" : "control_bad2",
+		"short_trigger" : "control_bad",
+		"utterance" : "Hendrick's car is completely red and his car is not red.",
+		"content" : "Hendrick's car is completely red and his car is not red"
+	},
+	{
+		"item_id" : "control_bad3",
+		"short_trigger" : "control_bad",
+		"utterance" : "Madison laughed loudly and she didn't laugh.",
+		"content" : "Madison laughed loudly and she didn't laugh"
+	},
+	{
+		"item_id" : "control_bad4",
+		"short_trigger" : "control_bad",
+		"utterance" : "Sebastian lives in the USA and has never been to the USA.",
+		"content" : "Sebastian lives in the USA and has never been to the USA"
 	}
 ];
 

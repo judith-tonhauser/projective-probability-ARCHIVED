@@ -244,6 +244,21 @@ ggplot(agr_verb, aes(x=verb, y=Mean)) +
   xlab("Predicate")
 ggsave("../graphs/veridicality-means-byitem.pdf",height=4,width=8)
 
+agr_content = t %>%
+  group_by(content) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh)
+
+ggplot(agr_content, aes(x=content, y=Mean)) + 
+  geom_point(color="black", size=4) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax)) +
+  theme(axis.text.x = element_text(size = 12, angle = 75, hjust = 1)) +
+  scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  ylab("Contradictoriness rating")+
+  xlab("Content")
+ggsave("../graphs/veridicality-means-bycontent.pdf",height=8,width=6)
+
+
 # veridicality rating by participant
 means = aggregate(projective~short_trigger, data=t.proj, FUN="mean")
 mean_proj$YMin = mean_proj$projective - aggregate(projective~short_trigger, data=t.proj, FUN="ci.low")$projective

@@ -260,6 +260,7 @@ t$workerid <- as.factor(t$workerid)
 model = lmer(response ~ verb + (1|workerid), data=t, REML=F)
 summary(model)
 
-comparison = lsmeansLT(model, pairwise~verb)
+comparison = lsmeans(model, pairwise~verb)
+options(max.print=10000)
 comparison
 

@@ -16,7 +16,7 @@ mean(d$Answer.time_in_minutes) #5.6
 median(d$Answer.time_in_minutes) #4.7
 
 d = d %>%
-  dplyr::select(workerid,rt,subjectGender,speakerGender,content,verb,contentNr,trigger_class,response,slide_number_in_experiment,age,language,american,gender,comments,Answer.time_in_minutes)
+  select(workerid,rt,subjectGender,speakerGender,content,verb,contentNr,trigger_class,response,slide_number_in_experiment,age,language,american,gender,comments,Answer.time_in_minutes)
 nrow(d) #8400
 
 # look at Turkers' comments
@@ -224,6 +224,25 @@ ggplot(t, aes(x=verb, y=response)) +
   ylab("Contradictoriness rating")+
   xlab("Predicate")
 ggsave(f="graphs/boxplot-veridicality.pdf",height=4,width=6.5)
+
+agr_verb = t %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh)
+
+agr_subj = t %>%
+  group_by(content, verb) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh)
+
+ggplot(agr_verb, aes(x=verb, y=Mean)) + 
+  geom_point(color="black", size=4) +
+  geom_point(data=agr_subj, aes(color=content)) +
+  theme(axis.text.x = element_text(size = 12, angle = 75, hjust = 1)) +
+  scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  ylab("Contradictoriness rating")+
+  xlab("Predicate")
+ggsave("../graphs/veridicality-means-byitem.pdf",height=4,width=8)
 
 # veridicality rating by participant
 means = aggregate(projective~short_trigger, data=t.proj, FUN="mean")

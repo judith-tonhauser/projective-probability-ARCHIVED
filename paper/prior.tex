@@ -112,10 +112,6 @@
 \begin{abstract}
 abstract
 \end{abstract}
-
-%\tableofcontents
-
-%\newpage
 			
 \section{Introduction}\label{s1}
 
@@ -172,7 +168,7 @@ The 40 target stimuli were distributed across two lists of 20 target stimuli eac
 
 \paragraph{Procedure.} Participants were randomly assigned to a list. They were told that they would read a fact about the world and were asked to assess how likely a particular event was, given the fact. The 22 stimuli were presented in random order to each participant. On each trial, participants read the fact and the corresponding response question, which was formed from {\em How likely is it that\ldots ?} with the sentence describing the event realizing the embedded clause of the question. Participants gave their response on a slider marked `impossible' at one end (coded as 0) and `definitely' at the other (coded as 1), as shown in \figref{f-trial-exp1}. 
 
-\begin{figure}[h!]
+\begin{figure}[h]
 \begin{center}
 \fbox{\includegraphics[width=8cm]{figures/exp1-trial}}
 \end{center}
@@ -184,11 +180,13 @@ After completing the experiment, participants filled out a short optional survey
 \paragraph{Data exclusion.}
 Prior to analysis, the data from 8 participants who did not self-identify as native speakers of American English were excluded. For the remaining 87 participants, we inspected their responses to the two control stimuli (the group means were .86 for (\ref{control1}) and .03 for (\ref{control2})). 19 participants gave responses lower than .8 to (\ref{control1}) or responses higher than .2 to (\ref{control2}), suggesting that these participants did not attend to the task or interpreted the task differently. The data from these 19 participants were also excluded, leaving data from 68 participants (ages 21-75; median: 36; 31 female, 37 male).  
 
+
+
 \subsubsection{Results and discussion}
 
 As expected, likeliness ratings of events were influenced by facts about the world: overall, the mean likeliness rating for events presented with facts that make the event more likely was .7 (sd = .21) and the mean likeliness rating for events presented with facts that make the event less likely was .16 (sd = .17). Figure \ref{f-priors} shows the likeliness rating for the 20 events given facts that make the events more likely (brown dots) and facts that make the events less likely (blue dots). Mean likeliness ratings for each of the 40 fact/event pairs are shown as black dots. Error bars indicate 95\% confidence intervals.
 
-\begin{figure}[h!]
+\begin{figure}
 \centering
 
 \includegraphics[width=.8\paperwidth]{../results/1-prior/graphs/target-ratings}
@@ -272,6 +270,45 @@ Prior to analysis, the data from 14 participants who did not self-identify as na
 \caption{Veridicality by predicate (top panel) and by participant (bottom panel)}
 \label{fig:f-proj-1a}
 \end{figure}
+
+Pairwise comparison
+
+
+\begin{table}[h!]
+\begin{center}
+\begin{tiny}
+\begin{tabular}{l l l l l l l l l l l l l l l l l l l l l }
+\toprule
+
+ &   \rot{pretend} & \rot{suggest} & \rot{think} &  \rot{hear} &  \rot{say} & \rot{inform} & \rot{announce} & \rot{annoyed} & \rot{confess} & \rot{reveal} & \rot{acknowledge} & \rot{admit} & \rot{establish}  & \rot{demonstrate}  & \rot{discover}  & \rot{confirm}  & \rot{see}  & \rot{know}  & \rot{prove}  & \rot{be-right}  \\
+\midrule
+pretend  & -- & ns & ns & ns & .001 & *** & *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** \\ 
+suggest  & ns & -- & ns & ns & .007 & 0001 &  *** & ***  & ***  &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** \\ 
+think  & ns & ns & -- & ns & .02 & .0002 &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** \\ 
+hear  &  &  &  & -- & .06 & .001 & .0001 &  ***  &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** \\ 
+say  &  &  &  & & -- & ns & ns & .0008 & .0003 &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** &  *** \\ 
+inform  &  &  &  &  &  & -- & & & & & & & & & & & & & & \\ 
+announce  & & & & & & & & & & & & & & & & & & & & \\ 
+annoyed  & & & & & & & & & & & & & & & & & & & & \\ 
+confess  & & & & & & & & & & & & & & & & & & & & \\ 
+reveal  & & & & & & & & & & & & & & & & & & & & \\ 
+acknowledge  & & & & & & & & & & & & & & & & & & & & \\ 
+admit  & & & & & & & & & & & & & & & & & & & & \\ 
+establish  & & & & & & & & & & & & & & & & & & & & \\ 
+demonstrate  & & & & & & & & & & & & & & & & & & & & \\ 
+discover  & & & & & & & & & & & & & & & & & & & & \\ 
+confirm  & & & & & & & & & & & & & & & & & & & & \\ 
+see  & & & & & & & & & & & & & & & & & & & & \\ 
+know  & & & & & & & & & & & & & & & & & & & & \\ 
+prove  & & & & & & & & & & & & & & & & & & & & \\ 
+be-right  & & & & & & & & & & & & & & & & & & & & \\ 
+\bottomrule
+\end{tabular}
+ \end{tiny}
+\end{center}
+\end{table}
+
+
 
 \subsection{Interim summary}
 

@@ -250,3 +250,16 @@ ggplot(variances, aes(x=reorder(workerid,VeriMean),y=VeriMean)) +
   ylab("Mean veridicality rating")
 ggsave("graphs/veridicality-subjmeans.pdf",height=3,width=6.5)
 
+## pairwise comparison to see which predicates differ from one another
+library(lsmeans)
+library(lme4)
+str(t$response)
+str(t$verb)
+str(t$workerid)
+t$workerid <- as.factor(t$workerid)
+model = lmer(response ~ verb + (1|workerid), data=t, REML=F)
+summary(model)
+
+comparison = lsmeansLT(model, pairwise~verb)
+comparison
+

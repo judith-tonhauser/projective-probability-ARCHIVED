@@ -1435,12 +1435,13 @@ control_items = [
 	  "trigger_class": "control",
       "content": item.item_id,
       "fact": item.fact,
+      "fact_type": "NA",
       "utterance": item.utterance,
       "question": item.content
     }
   }
 
-  function makeStim(i) {
+  function makeStim(i, factType) {
     //get item
     var item = items[i];
 	//get a name to be speaker
@@ -1454,7 +1455,7 @@ control_items = [
     var short_trigger = trigger;
     
     // get fact for that content
-    var	factType = content_facts[trigger_cont];
+    // var	factType = content_facts[trigger_cont];
     	
 console.log(trigger_cont+" "+factType);
 
@@ -1485,6 +1486,7 @@ console.log(trigger_cont+" "+factType);
 	  "short_trigger": short_trigger,	  
 	  "trigger_class": item.trigger_class,
 	  "fact": fact,
+	  "fact_type": factType,
       "content": trigger_cont,
       "utterance": utterance,
       "question": question
@@ -1493,7 +1495,7 @@ console.log(trigger_cont+" "+factType);
   exp.stims_block1 = [];
 //   exp.stims_block2 = []; 
   for (var i=0; i<items.length; i++) {
-  	var stim = makeStim(i);
+  	var stim = i < items.length/2 ? makeStim(i,"factL") : makeStim(i, "factH");
 //    exp.stims_block1.push(makeStim(i));
 	exp.stims_block1.push(jQuery.extend(true, {}, stim));
 //	exp.stims_block2.push(jQuery.extend(true, {}, stim));	

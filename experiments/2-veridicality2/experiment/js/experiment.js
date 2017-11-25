@@ -15,24 +15,68 @@ function make_slides(f) {
     }
   });
   
-  slides.instructions1 = slide({
-    name : "instructions1",
+  slides.i1 = slide({
+    name : "i1",
     start : function() {
     $('.bar').css('width', ( (100*(exp.phase)/exp.nQs) + "%"));    	
-    	var inst1 = "";
-//    	console.log(block_order);
-    	if (exp.stims_block1[0].block == "ai") {
-    		inst1 = inst1 + "First you'll answer questions about what the people at the party are asking about."
-    	} else {
-    		inst1 = inst1 + "First you'll answer questions about what the people at the party are certain about."    		
-    		}
-    	$("#inst1").html(inst1);
     },
     button : function() {
       exp.go(); //use exp.go() if and only if there is no "present" data.
     }
   }); 
      
+  slides.practice1 = slide({
+    name : "practice1",
+    start : function() {
+    $(".err").hide();
+    $("#practice_err1").hide();
+    $('.bar').css('width', ( (100*(exp.phase)/exp.nQs) + "%"));     
+    this.init_sliders();
+    exp.sliderPost = null;  
+    },  
+    init_sliders : function() {
+      utils.make_slider("#single_pslider1", function(event, ui) {
+        exp.sliderPost = ui.value;
+      });
+    },    
+    button : function() {
+      if (exp.sliderPost == null) {
+         $(".err").show();
+      } else {
+        if (exp.sliderPost < .5) {
+          $(".err").hide();
+          $("#practice_err1").show();
+        } else {
+        exp.go(); //use exp.go() if and only if there is no "present" data.
+      }}}
+  });
+
+  slides.practice2 = slide({
+    name : "practice2",
+    start : function() {
+    $(".err").hide();
+    $("#practice_err2").hide();
+    $('.bar').css('width', ( (100*(exp.phase)/exp.nQs) + "%"));     
+    this.init_sliders();
+    exp.sliderPost = null;  
+    },  
+    init_sliders : function() {
+      utils.make_slider("#single_pslider2", function(event, ui) {
+        exp.sliderPost = ui.value;
+      });
+    },    
+    button : function() {
+      if (exp.sliderPost == null) {
+         $(".err").show();
+      } else {
+        if (exp.sliderPost > .5) {
+          $(".err").hide();
+          $("#practice_err2").show();
+        } else {
+        exp.go(); //use exp.go() if and only if there is no "present" data.
+      }}}
+  });  
+
 
   slides.block1 = slide({
     name : "block1",
@@ -1378,7 +1422,7 @@ console.log(exp.stims_block1);
       screenUW: exp.width
     };
   //blocks of the experiment:
-  exp.structure=["i0", "block1", 'questionaire', 'finished'];
+  exp.structure=["i0", "practice1", "practice2", "i1", "block1", 'questionaire', 'finished'];
   
   exp.data_trials = [];
   //make corresponding slides:

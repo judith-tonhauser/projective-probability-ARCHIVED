@@ -39,16 +39,20 @@
   <noscript>This task requires JavaScript.</noscript>
 
   <div class="slide" id="i0" > 
-  <p class="block-text" id="instruct-text"><br><br>You will read short utterances by a person and are asked what the person is certain about. For example:</p>
-
-<b>Bill:</b> <i>"Patty likes hockey. Is Drew is aware that Patty lives in Canada?"</i>
+  <p class="block-text" id="instruct-text"><br><br> Imagine you are at a party. You walk into the kitchen and overhear somebody ask somebody else a question. In addition to the question, we also tell you a fact, as in this example:</p> 
+<br>
+<b>Fact (which Bill knows):</b> Patty loves hockey.
 <br>
 <br>
-<p class="block-text" id="instruct-text">Is Bill certain that Patty lives in Canada? </p>
+<b>Bill asks:</b> <i>"Does Drew believe that Patty lives in Canada?"</i>
+<br>
+<br>
+<br>
+<p class="block-text" id="instruct-text">We ask you: Given the fact about Patty and given what Bill says, is he certain that Patty lives in Canada? </p>
 
 <p class="block-text" id="instruct-text">You give your response on a sliding scale from 'definitely not certain' to 'definitely certain'.</p> 
 
-<p class="block-text" id="instruct-text">There are a total of 28 items. The task will take about 5 minutes and you will be paid 75 cents.</p>
+<p class="block-text" id="instruct-text">There are a total of 26 items. The task will take about 5 minutes and you will be paid 75 cents.</p>
 
 <p class="block-text" id="instruct-text">We have included some items for which we already know the answer. If you are paying attention, you are sure to get those right! At the end of the task, we will ask you four short questions about you and your language use. You will be paid no matter what you answer there, so please answer truthfully.</p>
 
@@ -105,10 +109,12 @@ complete. <br> </p>
  <div class="slide" id="block1">
   <br> 
   	<br>
-  	<!-- <p class="debby">{{}}</p> <br> --> 
-	<p class="sentence">{{}}</p> <br> <br>	
-	<p class="question">{{}}</p><br>
-
+  		<p class="utterance">{{}}</p> 
+	<p class="sentence">{{}}</p> 
+	<br> 
+	<br>
+	<br>	
+	<p class="question">{{}}</p>
     <table id="slider_table" class="slider_table">
     <tr><td class="left"><h4>definitely not certain</h3></td><td colspan="2"><div id="single_slider" class="slider"></div></td><td class="right"><h4>definitely certain</h3></td></tr>
       <!-- 
@@ -137,8 +143,8 @@ complete. <br> </p>
 
       <p align="left">Age: <input type="text" id="age"/></p>
       
-      <p align="left">Native Language: <input type="text" id="language"/></p>
-      <label>(the language(s) spoken at home when you were a child)</label>
+      <p align="left">Native language(s) (spoken at home when you were a child): <input type="text" id="language"/></p>
+      <!-- <label>(the language(s) spoken at home when you were a child)</label> -->
 
       <p align="left">If English is your native language, is it AMERICAN English, as opposed to e.g., INDIAN or AUSTRALIAN English?</p>
       <select id="american">
@@ -147,13 +153,12 @@ complete. <br> </p>
         <label><option value="1" >No</option></label>
       </select>
       
-      <!-- 
-<p class="info">Answering these questions is optional, but will help us understand your answers.</p>
+      <p class="info"></p>
       <p>Did you read the instructions and do you think you did the HIT correctly?</p>
       <label><input type="radio"  name="assess" value="No"/>No</label>
       <label><input type="radio"  name="assess" value="Yes"/>Yes</label>
       <label><input type="radio"  name="assess" value="Confused"/>I was confused</label>
- -->
+
 
       <!-- 
 <p>Were there any problems or bugs in the experiment?</p>

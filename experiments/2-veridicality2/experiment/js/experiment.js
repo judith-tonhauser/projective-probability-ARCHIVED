@@ -150,7 +150,7 @@ function make_slides(f) {
       exp.subj_data = {
         language : $("#language").val(),
 //        enjoyment : $("#enjoyment").val(),
-//        asses : $('input[name="assess"]:checked').val(),
+        asses : $('input[name="assess"]:checked').val(),
 		american : $("#american").val(),
         //american : $('input[name="american"]:checked').val(),
         age : $("#age").val(),

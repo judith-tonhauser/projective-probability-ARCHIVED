@@ -39,10 +39,17 @@
   <noscript>This task requires JavaScript.</noscript>
 
   <div class="slide" id="i0" > 
-  <p class="block-text" id="instruct-text"><br><br>You will read sentences uttered by a person and will rate, on a sliding scale from 'definitely no' to 'definitely yes', whether the person's utterance is contradictory. Let's start with some examples! </p>
-
-
+  <p class="block-text" id="instruct-text"><br><br>You will read sentences uttered by a person and will rate, on a sliding scale from 'definitely no' to 'definitely yes', whether the person's utterance is contradictory. 
+  
 <br>
+<br>
+There are 28 items total. The HIT will take about 5 minutes and pays 75 cents. At the end of the HIT, we will ask you four short questions about you and your language use. You will be paid no matter what you answer there, so please answer truthfully.
+<br>
+<br>
+
+Let's start with some examples! </p>
+
+
 <br>
 
     <button id="start_button" type="button">Start Experiment</button>
@@ -53,10 +60,12 @@
 
  <div class="slide" id="practice1">
   <br> 
-  <p class="block-text" id="instruct-text">
-<b>Bill:</b> <i>"Drew is aware that Patty lives in Canada, but she doesn't."</i></p>
+  
+<b>Bill:</b> <i>"Drew is aware that Patty lives in Canada, but she doesn't."</i>
 
-  <p class="block-text" id="instruct-text">Is Bob's utterance contradictory? </p>
+<br>
+<br>
+  <p>Is Bill's utterance contradictory? </p>
 
     <table id="slider_table" class="slider_table">
     <tr><td class="left"><h4>definitely no</h3></td><td colspan="2"><div id="single_pslider1" class="slider"></div></td><td class="right"><h4>definitely yes</h3></td></tr>
@@ -64,7 +73,7 @@
     
     <button onclick="_s.button()">Next</button>
   <p class="err">Please adjust the slider before continuing.</p>  
-  <p id="practice_err1">Actually, Bill seems to think both that Patty lives in Canada and that she doesn't. This is contradictory. Please adjust the slider accordingly.</p>  
+  <p id="practice_err1">Actually, Bill is contradicting himself: He seems to think both that Patty lives in Canada and that she doesn't. Please adjust the slider accordingly.</p>  
 </div>
 
 
@@ -74,10 +83,10 @@
     Great! Let's do another one.
   </p>
     <br>
-    <p class="block-text" id="instruct-text">
-<b>Bill:</b> <i>"Drew thinks that Patty lives in Canada, but she doesn't."</i></p>
-
-  <p class="block-text" id="instruct-text">Is Bob's utterance contradictory? </p>
+    <p>
+<b>Bob:</b> <i>"Drew thinks that Patty lives in Canada, but she doesn't."</i></p>
+<br>
+  <p>Is Bob's utterance contradictory? </p>
 
     <table id="slider_table" class="slider_table">
     <tr><td class="left"><h4>definitely no</h3></td><td colspan="2"><div id="single_pslider2" class="slider"></div></td><td class="right"><h4>definitely yes</h3></td></tr>
@@ -85,15 +94,15 @@
 
     <button onclick="_s.button()">Next</button>
   <p class="err">Please adjust the slider before continuing.</p>  
-  <p id="practice_err2">Actually, Drew thinks that Patty lives in Canada and Bob thinks that she lives somewhere else. They differ in opinion, but Bob isn't contradicting himself. Please adjust the slider accordingly.</p>  
+  <p id="practice_err2">Actually, this is not contradictory: Drew thinks that Patty lives in Canada and Bob thinks that she lives somewhere else. Drew and Bob differ in opinion, but Bob isn't contradicting himself. Please adjust the slider accordingly.</p>  
 </div>
 
 
 <div class="slide" id="i1">
   <br> 
-<p class="block-text" id="instruct-text">Great, you're ready to go! There are a total of 28 items. The HIT will take about 5 minutes.</p>
+<p class="block-text" id="instruct-text">Great, you're ready to go!</p>
 
-<p class="block-text" id="instruct-text">We have included some items for which we already know the answer. If you are paying attention, you are sure to get those right. At the end of the HIT, we will ask you four short questions about you and your language use. You will be paid no matter what you answer there, so please answer truthfully.</p>
+<p class="block-text" id="instruct-text">We have included some items for which we already know the answer. If you are paying attention, you are sure to get those right.</p>
 
 <p class="block-text" id="instruct-text">
 Thank you!  
@@ -136,8 +145,10 @@ Thank you!
 
       <p align="left">Age: <input type="text" id="age"/></p>
       
-      <p align="left">Native Language: <input type="text" id="language"/></p>
+      <p align="left">Native Language(s) (spoken at home when you were a child): <input type="text" id="language"/></p>
+<!-- 
       <label>(the language(s) spoken at home when you were a child)</label>
+ -->
 
       <p align="left">If English is your native language, is it AMERICAN English, as opposed to e.g., INDIAN or AUSTRALIAN English?</p>
       <select id="american">
@@ -146,6 +157,13 @@ Thank you!
         <label><option value="1" >No</option></label>
       </select>
 
+<p class="info"></p>
+      <p>Do you think you did the HIT correctly?</p>
+      <label><input type="radio"  name="assess" value="No"/>No</label>
+      <label><input type="radio"  name="assess" value="Yes"/>Yes</label>
+      <label><input type="radio"  name="assess" value="Confused"/>I was confused</label>
+
+ 
 <p align="left">We would be interested in any comments you have about this experiment, including what you think is a fair price for the work you did:</p>
       <textarea id="comments" rows="3" cols="50"></textarea>
       <br/>

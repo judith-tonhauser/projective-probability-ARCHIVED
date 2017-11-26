@@ -53,9 +53,12 @@ function make_slides(f) {
 //       } else {
 //       	var utterance = "<strong>"+this.stim.name+":</strong> \"<i>"+this.stim.fact+". "+ this.stim.utterance+"</i>\"";
 //       }
-      var utterance = "<strong>"+this.stim.name+":</strong> \"<i>"+this.stim.fact+". "+ this.stim.utterance+"</i>\"";
+      var utterance = "<strong> Fact (which "+this.stim.name+" knows):</strong> "+this.stim.fact+".";
       // var utterance = "<p>"+this.stim.name + ": \"<i>"+this.stim.utterance+"</i>\"</p>" +"<p>"+this.stim.name2 + ": \"<i>Are you sure?</i>\"</p>"+this.stim.name + ": \"<i>Yes, I'm sure that "+this.stim.question+".</i>\""
-	  $(".sentence").html(utterance);
+      //var sentence = "<strong>Fact (which"+this.stim.name+"knows):</strong> \"<i>"+this.stim.fact+"."</i>\"";
+      var sentence = "<strong>"+this.stim.name+" asks:</strong> \"<i>"+ this.stim.utterance+"</i>\"";
+	  $(".sentence").html(sentence);
+	  $(".utterance").html(utterance);
 	  var question = "";
 	  question = "Is "+this.stim.name+" certain that "+this.stim.question+"?";
 	  // console.log(this.stim.block);
@@ -107,7 +110,7 @@ function make_slides(f) {
       exp.subj_data = {
         language : $("#language").val(),
 //        enjoyment : $("#enjoyment").val(),
-//        asses : $('input[name="assess"]:checked').val(),
+        assess : $('input[name="assess"]:checked').val(),
 		american : $("#american").val(),
         //american : $('input[name="american"]:checked').val(),
         age : $("#age").val(),
@@ -1378,28 +1381,28 @@ control_items = [
 		"short_trigger" : "control",
 		"utterance" : "Is Zack single?",
 		"content" : "Zack is single",
-		"fact" : "Brady introduced me to your neighbor Zack yesterday"
+		"fact" : "Zack hangs out with his buddies on Sunday nights"
 	},
 	{
 		"item_id" : "control2",
 		"short_trigger" : "control",
 		"utterance" : "Is Mary's aunt sick?",
 		"content" : "Mary's aunt is sick",
-		"fact" : "Mary has been visiting her aunt a lot"
+		"fact" : "Mary visited her aunt on Sunday"
 	},
 	{
 		"item_id" : "control3",
 		"short_trigger" : "control",
 		"utterance" : "Does Todd still live at home?",
 		"content" : "Todd still lives at home",
-		"fact" : "I ran into Todd and Simone at the mall yesterday"
+		"fact" : "Todd likes to eat microwave meals"
 	},
 	{
 		"item_id" : "control4",
 		"short_trigger" : "control",
-		"utterance" : "Is Vanessa good at it?",
+		"utterance" : "Is Vanessa good at math?",
 		"content" : "Vanessa is good at math",
-		"fact" : "I'm really bad at math"
+		"fact" : "Vanessa won a prize at school"
 	},
 	{
 		"item_id" : "control5",
@@ -1413,7 +1416,7 @@ control_items = [
 		"short_trigger" : "control",
 		"utterance" : "Was Hendrick's car expensive?",
 		"content" : "Hendrick's car was expensive",
-		"fact" : "Hendrick and his wife just bought new cars"
+		"fact" : "Hendrick and his wife just bought cars"
 	}
 ];
 

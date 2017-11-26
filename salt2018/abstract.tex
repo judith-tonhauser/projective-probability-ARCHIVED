@@ -8,6 +8,7 @@
 \usepackage{amsfonts}
 \usepackage{natbib}
 %\usepackage{qtree}
+\usepackage{enumitem}
 
 \def\bad{{\leavevmode\llap{*}}}
 \def\marginal{{\leavevmode\llap{?}}}
@@ -18,6 +19,8 @@
 \setlength{\parindent}{0in}
 \setlength{\parskip}{0ex}
 
+\usepackage{titlesec}
+\titleformat*{\section}{\bfseries\normalsize}
  
 \setlength{\bibsep}{0mm}
 
@@ -42,22 +45,68 @@
 %The main text should be at most 2 pages (US Letter or A4) in length, including examples, with an optional 3rd page for references or also large graphs, tables, pictures and figures.
  
 \begin{center}
-{\large \bf The influence of lexical meaning and prior belief on projectivity}
+{\large \bf On the projectivity of entailed and non-entailed content}
 \end{center}
 
-This paper argues that listeners' prior beliefs about events and 
+This paper provides experimental evidence that entailed and non-entailed content may be projective, and that the projectivity of both types of content is influenced by the prior probability of the event described by the content. These findings challenge lexicalist analyses of presuppositions and provide support for analyses of projectivity that are not limited to entailed content.
 
-%% {\bf Selected references}
-%% \begin{small} xxx
-%% \end{small}
+{\bf Presuppositions versus non-entailed projective content} 
 
+The content of the clausal complement in (\ref{embedded}), that Kim is hungry, is projective since a speaker who utters one of the variants in (\ref{embedded}) may be taken to be committed to this content even though the clause occurs in a polar question (e.g., \citealt{ccmg90,brst-salt10}). How does this content come to be projective? The answers differ radically for {\em discover} versus {\em announce}. Whereas the content of the complement of {\em discover} is typically taken to be projective because it is a presupposition (e.g., \citealt{heim83,vds92}), the content of the complement of {\em announce} is not analyzed as a presupposition because it is not entailed by the atomic sentence in (\ref{unembedded}), in contrast to the content of the complement of {\em discover}. Thus, whereas {\em discover} is considered to be factive (i.e., both entails and presupposes the content of its complement), {\em announce} is merely a ``part-time trigger'' (\citealt[139]{schlenker10}) that gives rise to the ``illusion of factivity'' (\citealt[76]{anand-hacquard2014}).
 
+\vspace*{-.2cm}
+\begin{exe}
+\ex
+\begin{xlist}
+\ex\label{embedded} Did Sandy \{discover / announce\} that Kim is hungry?
+\ex\label{unembedded} Sandy \{discovered / announced\} that Kim is hungry.
+\end{xlist}
+\end{exe}
+\vspace*{-.2cm}
+
+Lexicalist analyses of presuppositions are restricted to entailed content because the presupposed content is treated as a condition on felicitous use of the sentence. If the content of the complement of (\ref{unembedded}) was presupposed by both {\em discover} and {\em announce}, such analyses would wrongly predict that `Kim is hungry' follows from both variants in (\ref{unembedded}). Analyses of projective content that do not assume lexical specification of projectivity attribute projectivity to, e.g., at-issueness or other pragmatic factors (e.g., \citealt{brst-salt10,brst-ar,abrusan2011,abrusan2013}). So the question of whether there is a categorical difference in the projectivity of entailed and non-entailed content will illuminate what a proper analysis of projectivity looks like.
+
+Veridicality is gradient notion: entailed are `highly veridical'
+
+In all experiments participants were recruited on Amazon's Mechanical Turk platform (300 in veridicality, ).
+
+{\bf Exp.~1: Veridicality} 
+
+This experiment was designed to identify the veridicality of 20 clause-embedding predicates: 7 are typically taken to entail the content of the complement ({\em be annoyed, know, discover, reveal, see, establish, be right}), 5 are typically taken to not entail the content of the complement ({\em pretend, think suggest, say, hear}), and the remaining 8 are typically taken to not entail the content of the complement even though they may sometimes appear to ({\em prove, demonstrate, confess, inform, announce, acknowledge, admit, confirm}; see e.g., \citealt{schlenker10,swanson2012,anand-hacquard2014}). 
+
+\underline{Materials and procedure.} Each of the 20 predicates was paired with 20 clauses, for a total of 400 sentences. Participants were presented with 20 of these sentences (one for each predicate), uttered by a named speaker, and a continuation that denied the truth of the clausal complement, as shown in (\ref{stim-veri}).
+\vspace*{-.2cm}
+\begin{exe}
+\ex\label{stim-veri} {\bf Carol:} Sandra \{discovered / announced / suggested\} that Julian dances salsa, but he doesn't. 
+\end{exe}
+\vspace*{-.2cm}
+On each trial, participants were asked whether the speaker's utterance was contradictory. They gave their response on a slider labeled `definitely no' on one and and `definitely yes' on the other. The higher the response, the more veridical the predicate.
+
+\underline{Results and discussion.} Results are based on responses by xxx self-identified native speakers of American English who gave good responses to 8 clearly contradictory and non-contradictory controls. SEE FIGURE FOR VERIDICALITY 
+
+{\bf Exp.~2: Projectivity}
+
+This experiment was designed to explore the extent to which the content of the clausal complement of the same 20 predicates as in Exp.~1 projects from a polar question: 6 of the predicates are typically taken to be factive / presupposition triggers ({\em be annoyed, know, discover, reveal, see, inform}), 5?? are typically not taken to be factive / ps triggers ({\em pretend, think, suggest, say, HEAR??}), and the remaining XX?? predicates are part-time triggers or give rise to the illusion of factivity ({\em establish, prove, demonstrate, announce, acknowledge, admit, confirm}).
+
+\underline{Materials and procedure.} The target stimuli were polar question variants of the 400 sentences of Exp.~1 (without the continuations). Participants were presented with 20 of these polar questions (one for each predicate), uttered by a named speaker, as shown in (\ref{stim-project}). Each polar question was presented with a fact. There were two facts for each complement clause, such that the event described by the complement clause was more likely given one fact than the other. (The other fact for the event of Julian dancing salsa was `Julian is from Cuba'. The event/fact1/fact2 triples were established in a separate norming study.
+\vspace*{-.2cm}
+\begin{exe}
+\ex\label{stim-project} {\bf Fact (which Carol knows):} Julian is from Germany.  \\ 
+{\bf Carol:} Did Sandra \{discover / announce / suggest\} that Julian dances salsa?
+\end{exe}
+\vspace*{-.2cm}
+On each trial, participants were asked whether the speaker is certain of the content of the clausal complement (e.g., Is Carol certain that Julian dances salsa?) They gave their response on a slider labeled `no' on one and and `yes' on the other. The higher the response, the more projective the content.
+
+\underline{Results and discussion.} Results are based on responses by xxx self-identified native speakers of American English who gave good responses to 6 clearly non-projective controls.  SEE FIGURE FOR PROJECTIVITY 
+
+{\bf Conclusions.}
 
 \newpage
 
-\nocite{wagner10}
 
+\begin{small}
 \bibliographystyle{/Users/tonhauser.1/Library/Latex/cslipubs-natbib}
 \bibliography{/Users/tonhauser.1/Documents/bibliography}
+\end{small}
 
 \end{document}

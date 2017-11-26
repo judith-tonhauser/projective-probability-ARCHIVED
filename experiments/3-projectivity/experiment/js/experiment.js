@@ -111,10 +111,12 @@ function make_slides(f) {
         language : $("#language").val(),
 //        enjoyment : $("#enjoyment").val(),
         assess : $('input[name="assess"]:checked').val(),
-		american : $("#american").val(),
+		american : $('input[name="american"]:checked').val(),
+		gender : $('input[name="gender"]:checked').val(),
+		//american : $("#american").val(),
         //american : $('input[name="american"]:checked').val(),
         age : $("#age").val(),
-        gender : $("#gender").val(),
+        //gender : $("#gender").val(),
 //        education : $("#education").val(),
         comments : $("#comments").val(),
       };
@@ -1379,9 +1381,9 @@ control_items = [
 	{
 		"item_id" : "control1",
 		"short_trigger" : "control",
-		"utterance" : "Is Zack single?",
-		"content" : "Zack is single",
-		"fact" : "Zack hangs out with his buddies on Sunday nights"
+		"utterance" : "Is Zack coming to the meeting tomorrow?",
+		"content" : "Zack is coming to the meeting tomorrow",
+		"fact" : "Zack is a member of the golf club"
 	},
 	{
 		"item_id" : "control2",
@@ -1393,9 +1395,9 @@ control_items = [
 	{
 		"item_id" : "control3",
 		"short_trigger" : "control",
-		"utterance" : "Does Todd still live at home?",
-		"content" : "Todd still lives at home",
-		"fact" : "Todd likes to eat microwave meals"
+		"utterance" : "Did Todd play football in high school?",
+		"content" : "Todd played football in high school",
+		"fact" : "Todd goes to the gym 3 times a week"
 	},
 	{
 		"item_id" : "control4",
@@ -1409,14 +1411,14 @@ control_items = [
 		"short_trigger" : "control",
 		"utterance" : "Did Madison have a baby?",
 		"content" : "Madison had a baby",
-		"fact" : "Trish sent Madison some flowers"
+		"fact" : "Trish sent Madison a card"
 	},
 	{
 		"item_id" : "control6",
 		"short_trigger" : "control",
 		"utterance" : "Was Hendrick's car expensive?",
 		"content" : "Hendrick's car was expensive",
-		"fact" : "Hendrick and his wife just bought cars"
+		"fact" : "Hendrick just bought a car"
 	}
 ];
 

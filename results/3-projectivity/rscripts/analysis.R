@@ -749,3 +749,10 @@ comparison
 # be_right_that - know        -0.048125 0.03818901 1520  -1.260  0.9995
 # 
 # P value adjustment: tukey method for comparing a family of 20 estimates 
+
+
+
+### JD's CODE ###
+m = lmer(response ~ fact_type + verb + (1+fact_type|workerid) + (1|content),data=t)
+
+table(t$fact_type, t$verb)

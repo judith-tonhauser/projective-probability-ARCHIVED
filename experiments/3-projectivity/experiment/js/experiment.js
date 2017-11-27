@@ -93,6 +93,10 @@ function make_slides(f) {
    	  "contentNr": this.stim.content,
    	  "content": this.stim.question,
    	  "speakerGender": this.stim.gender,
+   	  "fact": this.stim.fact,
+   	  "fact_type": this.stim.fact_type,
+   	  "utterance": this.stim.utterance,
+      "question": this.stim.content,
    	  "subjectGender": this.stim.gender2,
    	  "speakerName": this.stim.name,
    	  "subjectName": this.stim.name2,
@@ -1475,6 +1479,7 @@ console.log(trigger_cont+" "+factType);
     var utterance = contents[trigger_cont][short_trigger];
     var question = contents[trigger_cont].content; 
     var fact = facts[trigger_cont][factType];
+    var factType = factType;
     console.log(fact)
 //   console.log(contents[trigger_cont]);
 //    console.log(question) 

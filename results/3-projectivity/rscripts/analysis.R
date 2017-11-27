@@ -183,11 +183,12 @@ ggplot(means, aes(x=verb, y=response)) +
   #geom_point(color="black", size=4) +
   #geom_point(data=agr_subj, aes(color=content)) +
   geom_point(aes(color = fact_type)) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
   theme(axis.text.x = element_text(size = 12, angle = 75, hjust = 1)) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
   ylab("Mean certainty rating") +
   xlab("Predicate")
-ggsave(f="graphs/boxplot-projectivity-by-predicate-and-facttype.pdf",height=4,width=6.5)
+ggsave("graphs/boxplot-projectivity-by-predicate-and-facttype.pdf",height=4,width=6.5)
 
 
 

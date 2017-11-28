@@ -8,42 +8,45 @@ theme_set(theme_bw())
 
 # load raw data
 d = read.csv("experiment.csv")
-nrow(d) #520 = 20 participants x 26 items
+nrow(d) #7800 = 300 participants x 26 items
 names(d)
 length(unique(d$workerid)) #300 participants
 
-table(d$trigger_class)
-
-mean(d$Answer.time_in_minutes) #5.6
-median(d$Answer.time_in_minutes) #4.7
+mean(d$Answer.time_in_minutes) #7.1
+median(d$Answer.time_in_minutes) #6
 
 d = d %>%
   select(workerid,rt,subjectGender,speakerGender,content,verb,fact,fact_type,contentNr,trigger_class,response,slide_number_in_experiment,age,language,assess,american,gender,comments,Answer.time_in_minutes)
-nrow(d) #8400
+nrow(d) #7800
 
 # look at Turkers' comments
 unique(d$comments)
 
+# look at whether Turkers thought they understood the task
+table(d$assess)
+
 # age and gender info
-length(which(is.na(d$age))) #56 missing values, i.e., 2 Turkers didn't provide information
-table(d$age) #19-73
-median(d$age,na.rm=TRUE) #35 (of the 298 Turkers that provide age information)
+length(which(is.na(d$age))) #0 missing values
+table(d$age) #21-72
+median(d$age,na.rm=TRUE) #36
 table(d$gender)
-#127 female, 169 male, 2 other, 2 didn't provide info
+#145 female, 154 male
 
 ### exclude non-American English speakers
 length(unique(d$workerid)) #300
 length(which(is.na(d$language))) #no missing responses
 table(d$language) 
-d <- subset(d, (d$language != "Chinese " & d$language != "Russian" & d$language != "Russian " & d$language != "Telugu"))
+d <- subset(d, (d$language != "Russian" & d$language != "Ukrainian" & d$language != "Arabic" & d$language != "chinese" & d$language != "hungarian" & d$language != "spanish"))
 d = droplevels(d)
-length(unique(d$workerid)) #296 (4 Turkers excluded)
+length(unique(d$workerid)) #294 (6 Turkers excluded)
 
-length(which(is.na(d$american))) #0 (everybody responded)
+table(d$gender)
+length(which(is.na(d$american))) #78 (3 people didn't respond)
 table(d$american) 
-d <- subset(d, d$american == "0")
+# coding error in HTML file: m=yes, f=no
+d <- subset(d, d$american == "m")
 d = droplevels(d)
-length(unique(d$workerid)) #286 (10 Turkers excluded, 14 excluded in total for language reasons)
+length(unique(d$workerid)) #279 (15 Turkers excluded, 21 excluded in total for language reasons)
 
 ## exclude Turkers based on fillers
 names(d)
@@ -53,10 +56,10 @@ table(d$verb)
 # make control data subset
 c <- subset(d, d$verb == "control")
 c <- droplevels(c)
-nrow(c) #120 / 6 controls = 20 Turkers
+nrow(c) #1674 / 6 controls = 279 Turkers
 
 # group mean on controls
-round(mean(c$response),2) #.19
+round(mean(c$response),2) #.21
 
 ggplot(c, aes(x=workerid,y=response)) +
   geom_point(aes(colour = content),position=position_jitter(h=.01,w=0.02)) +
@@ -64,91 +67,87 @@ ggplot(c, aes(x=workerid,y=response)) +
   scale_y_continuous(breaks = pretty(c.bad$response, n = 10)) +
   ylab("Responses") +
   xlab("Participant")
+ggsave(f="graphs/raw-responses-to-controls.pdf",height=4,width=6.5)
 
 # group means on individual controls
 means = aggregate(response ~ contentNr, data=c, FUN="mean")
 means
-# contentNr response
-# 1  control1    0.166
-# 2  control2    0.173
-# 3  control3    0.198
-# 4  control4    0.182
-# 5  control5    0.211
-# 6  control6    0.227
+# contentNr  response
+# 1  control1 0.1883154
+# 2  control2 0.1845878
+# 3  control3 0.1760932
+# 4  control4 0.2450538
+# 5  control5 0.1895341
+# 6  control6 0.2565950
 
-# Turkers with response means on controls more than 3sd above group mean
+# Turkers with response means on controls more than 1.5sd above group mean
 c.means = aggregate(response~workerid, data=c, FUN="mean")
 c.means$YMin = c.means$response - aggregate(response~workerid, data=c, FUN="ci.low")$response
 c.means$YMax = c.means$response + aggregate(response~workerid, data=c, FUN="ci.high")$response
 c.means
 
-c.g <- c.means[c.means$response > (mean(c.means$response) + 3*sd(c.means$response)),]
+c.g <- c.means[c.means$response > (mean(c.means$response) + 1.5*sd(c.means$response)),]
 c.g
-unique(length(c.g$workerid)) #6 Turkers gave high responses
-mean(c.g$response) #.76
+unique(length(c.g$workerid)) #26 Turkers gave high responses
+mean(c.g$response) #.6
 
 # how many unique Turkers did badly on the controls?
-outliers <- subset(c, c$workerid %in% c.g$workerid | c$workerid %in% c.b$workerid)
+outliers <- subset(c, c$workerid %in% c.g$workerid)
 outliers = droplevels(outliers)
-nrow(outliers) #88 / 8 control items = 11 Turkers
-table(outliers$workerid)
+nrow(outliers) #156 / 6 control items = 26 Turkers
+table(outliers$response)
 
 # look at the responses to the controls that these "outlier" Turkers did
-# outliers to noncontradictory items (0)
-outliers.g <- subset(c.good, c.good$workerid %in% c.g$workerid)
-outliers.g = droplevels(outliers.g)
-nrow(outliers.g) #24 / 4 control items = 6 Turkers
-table(outliers.g$workerid)
 
-ggplot(outliers.g, aes(x=workerid,y=response)) +
+ggplot(outliers, aes(x=workerid,y=response)) +
   geom_point(aes(colour = contentNr)) +
   geom_text(aes(label=workerid), vjust = 1, cex= 5,position=position_jitter(h=.01,w=0.02)) +
   #geom_text(aes(label=response), vjust = 2.5, cex= 5) +
   scale_y_continuous(breaks = pretty(outliers.g$response, n = 10)) +
   ylab("Responses") +
   xlab("Participants")
-# responses here are supposed to be low (noncontradictory) but these 6 Turkers
-# gave consistently high responses across the control items
+ggsave(f="graphs/raw-responses-to-controls-by-outliers.pdf",height=6,width=10)
 
-# outliers to contradictory items (1)
-outliers.b <- subset(c.bad, c.bad$workerid %in% c.b$workerid)
-outliers.b = droplevels(outliers.b)
-nrow(outliers.b) #28 / 4 control items = 7 Turkers
-table(outliers.b$workerid)
+# mean response by outliers
+o.means = aggregate(response~workerid, data=outliers, FUN="mean")
+o.means$YMin = o.means$response - aggregate(response~workerid, data=outliers, FUN="ci.low")$response
+o.means$YMax = o.means$response + aggregate(response~workerid, data=outliers, FUN="ci.high")$response
+o.means
 
-ggplot(outliers.b, aes(x=workerid,y=response)) +
-  geom_point(aes(colour = contentNr)) +
+ggplot(o.means, aes(x=workerid,y=response)) +
   geom_text(aes(label=workerid), vjust = 1, cex= 5,position=position_jitter(h=.01,w=0.02)) +
   #geom_text(aes(label=response), vjust = 2.5, cex= 5) +
-  scale_y_continuous(breaks = pretty(outliers.b$response, n = 10)) +
+  scale_y_continuous(breaks = pretty(outliers.g$response, n = 10)) +
   ylab("Responses") +
   xlab("Participants")
-# responses here are supposed to be high (contradictory) but these 7 Turkers
-# gave consistently low responses across the control items 
+ggsave(f="graphs/mean-responses-to-controls-by-outliers.pdf",height=6,width=10)
+
+# responses here are supposed to be low but these Turkers
+# gave consistently high responses across the control items
 
 # exclude the 11 Turkers identified above
 d <- subset(d, !(d$workerid %in% outliers$workerid))
 d <- droplevels(d)
-length(unique(d$workerid)) #275 Turkers remain (186 - 11)
+length(unique(d$workerid)) #253 Turkers remain (279 - 26)
 
 # clean data = cd
 cd = d
 write.csv(cd, "data/cd.csv")
-nrow(cd) #7700 / 28 items = 275 participants
+nrow(cd) #6578 / 20 items = 253 participants
 
 # age info
-table(cd$age) #19-73
-length(which(is.na(cd$age))) #28 missing values
-median(cd$age,na.rm=TRUE) #35 (of the 270 Turkers that provide age information)
+table(cd$age) #21-72
+length(which(is.na(cd$age))) #0 missing values
+median(cd$age,na.rm=TRUE) #37
 table(cd$gender)
-#119 female, 153 male, 2 other, 1 didn't provide info
+#124 female, 128 male
 
 # target data (20 items per Turker)
 names(cd)
 table(cd$verb)
 t <- subset(cd, cd$verb != "control")
 t <- droplevels(t)
-nrow(t) #400 / 20 Turkers = 20 target items
+nrow(t) #5060 / 20 items = 253 Turkers
 table(t$verb,t$content)
 
 names(t)
@@ -190,7 +189,7 @@ ggplot(means, aes(x=verb, y=response)) +
   xlab("Predicate")
 ggsave("graphs/boxplot-projectivity-by-predicate-and-facttype.pdf",height=4,width=6.5)
 
-
+##############################
 
 agr_verb = t %>%
   group_by(verb) %>%
@@ -753,6 +752,7 @@ comparison
 
 
 ### JD's CODE ###
+library(languageR)
 m = lmer(response ~ fact_type + verb + (1+fact_type|workerid) + (1|content),data=t)
-
+m
 table(t$fact_type, t$verb)

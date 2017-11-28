@@ -1,28 +1,43 @@
-
-\documentclass[12pt]{article}
+\documentclass[12pt,fleqn]{article}
 \usepackage[margin=1in,top=1in,bottom=1in]{geometry}
-\usepackage[dvips]{graphics}
-\usepackage{txfonts}
-%\usepackage[spanish]{babel}
-\usepackage{gb4e}
-\usepackage{amsfonts}
-\usepackage{natbib}
-%\usepackage{qtree}
+\usepackage{mathtools}
+\usepackage{longtable}
 \usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[dvips]{graphics}
+\usepackage[table]{xcolor}
+\usepackage{amssymb}
+\usepackage{subfig}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{pdflscape}
 
-\def\bad{{\leavevmode\llap{*}}}
-\def\marginal{{\leavevmode\llap{?}}}
-\def\verymarginal{{\leavevmode\llap{??}}}
-\def\swmarginal{{\leavevmode\llap{4}}}
-\def\infelic{{\leavevmode\llap{\#}}}
+\usepackage[normalem]{ulem}
 
-\setlength{\parindent}{0in}
-\setlength{\parskip}{0ex}
+\usepackage{multicol}
+\usepackage{txfonts}
+%\usepackage{amsfonts}
+\usepackage{natbib}
+
+\usepackage{gb4e}
+%\usepackage{/Users/judith/Library/Latex/drs}
+%\usepackage{/Users/judith/Library/Latex/avm}
+\usepackage[all]{xy}
+\usepackage{rotating}
+\usepackage{tipa}
+\usepackage{multirow}
+\usepackage{authblk}
+\usepackage{adjustbox}
+\usepackage{array}
 
 \usepackage{titlesec}
-\titleformat*{\section}{\bfseries\normalsize}
+\titleformat*{\section}{\bfseries\footnotesize}
  
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0ex}
+
 \setlength{\bibsep}{0mm}
+\bibpunct[:]{(}{)}{;}{a}{,}{,}
 
 
 \newcommand{\yi}{\'{\symbol{16}}}
@@ -48,71 +63,76 @@
 {\large \bf On the projectivity of entailed and non-entailed content}
 \end{center}
 
-This paper provides experimental evidence from American English utterances with 20 clause-embedding predicates that i) the content of entailed and non-entailed clausal complements may be projective and ii) the projectivity of both types of content is influenced by the prior probability of the event described by the clause. These findings challenge analyses of projective content that are limited to entailed content (e.g., \citealt{heim83,vds92}) and motivate a unified analysis of projectivity according to which listeners integrate multiple sources of information, some conventional and some non-conventional, in identifying what speakers are committed to (e.g., \citealt{brst-salt10,brst-ar,abrusan2011,abrusan2013,tbd-variability}). 
+This paper provides experimental evidence from English utterances with clause-embedding predicates that i) the content of entailed and non-entailed clausal complements may be projective, ii) the projectivity of both types of content is influenced by the prior probability of the event described by the clause, and iii) that (gradient) veridicality is a better predictor of projectivity than (binary) entailment. These findings challenge analyses of projective content that are limited to entailed content (e.g., \citealt{heim83,vds92}) and motivate a unified analysis of projectivity according to which listeners integrate multiple sources of information, some conventional and some non-conventional, in determining what speakers are committed to (e.g., \citealt{brst-salt10,brst-ar,abrusan2011,abrusan2013,tbd-variability}). 
 
 {\bf Presuppositions versus non-entailed projective content} 
 
-The content of the clausal complement in (\ref{embedded}), that Kim is hungry, is projective since a speaker who utters one of the variants in (\ref{embedded}) may be taken to be committed to this content even though the clause occurs in a polar question (e.g., \citealt{ccmg90,brst-salt10}). The question of how does this content comes to be projective is given radically different answers for {\em discover} vs.\ {\em announce}. Whereas the content of the complement of {\em discover} is typically taken to be projective because it is a presupposition (e.g., \citealt{heim83,vds92}), the content of the complement of {\em announce} is not analyzed as a presupposition because it is not entailed by the atomic sentence in (\ref{unembedded}), in contrast to the content of the complement of {\em discover}. Thus, whereas {\em discover} is considered to be a factive predicate (i.e., it both entails and presupposes the content of its complement), {\em announce} is merely a ``part-time trigger'' (\citealt[139]{schlenker10}) that gives rise to the ``illusion of factivity'' (\citealt[76]{anand-hacquard2014}).
+The content of the clausal complement in (\ref{embedded}), that Julian dances salsa, is `projective': a speaker who utters one of the variants in (\ref{embedded}) may be taken to be committed to this content even though the clause occurs in a polar question (e.g., \citealt{ccmg90,brst-salt10}). The question of how this content comes to be projective is traditionally given a radically different answer for {\em discover} vs.\ {\em announce}. Whereas the content of the complement of {\em discover} is typically taken to be projective because it is a presupposition (e.g., \citealt{heim83,vds92}), the content of the complement of {\em announce} is not analyzed as a presupposition because it is not entailed by the atomic sentence in (\ref{unembedded}), in contrast to the content of the complement of {\em discover}. Thus, whereas {\em discover} is considered to be a factive predicate (i.e., it both entails and presupposes the content of its complement), {\em announce} is merely a ``part-time trigger'' (\citealt[139]{schlenker10}) that gives rise to the ``illusion of factivity'' (\citealt[76]{anand-hacquard2014}).
 
 \vspace*{-.2cm}
 \begin{exe}
 \ex
 \begin{xlist}
-\ex\label{embedded} Did Sandy \{discover / announce\} that Kim is hungry?
-\ex\label{unembedded} Sandy \{discovered / announced\} that Kim is hungry.
+\ex\label{embedded} Did Sandy \{discover / announce\} that Julian dances salsa?
+\ex\label{unembedded} Sandy \{discovered / announced\} that Julian dances salsa.
 \end{xlist}
 \end{exe}
 \vspace*{-.2cm}
 
-Presuppositions are standardly analyzed as conventionally specified conditions on the felicitous use of utterances with presupposition triggers. Such lexicalist analyses predict that presuppositions follow from utterances with presupposition triggers (modulo accommodation), regardless of whether the trigger is embedded under an entailment-canceling operator, as in (\ref{embedded}), or occurs in an atomic sentence, as in (\ref{unembedded}). Consequently, lexicalist analyses of projectivity are necessarily restricted to entailed content. ABRUSAN?? An analysis of projectivity that does not rely on conventional specification, but e.g., on at-issueness is not restricted to entailed content. (e.g., \citealt{brst-salt10,brst-ar,abrusan2011,abrusan2013}). Thus, the question of whether entailed and non-entailed content differs in projectivity will help decide between theories. Paper has two goals: show that non-entailed content can be projective and show that same factors influence projectivity of entailed and non-entailed content. Ultimately, we want to do this with other properties that have been shown to influence projectivity, like prosody (\citealt{cummins-rohde2015,tonhauser-salt26}) and at-issueness (\citealt{tbd-variability}), but here we do it with a property that has not yet been explore for projectivity, namely the prior probability of the event described by the clause.
+This paper provides experimental evidence that suggests that it is empirically inadequate to analyze the projectivity of entailed and non-entailed content in fundamentally different ways. 
 
-This paper presents the findings an experiment designed to explore a) the extent to which non-entailed content is projective and b) the extent to which the projectivity of entailed and non-entailed content is influenced by the prior probability of the event described by the projective content. 
+{\bf Factors that influence the projectivity of projective content}
 
-This paper provides empirical evidence in support of a unified analysis of the projectivity of entailed and non-entailed content.
+The projectivity of (entailed) projective content is variable (e.g., \citealt{karttunen71b,kadmon01,tbd-variability}) and influenced by several conventional and non-conventional factors, incl.\ syntax (e.g., \citealt{potts05}), context (e.g., \citealt{beaver-belly}), prosody (e.g., \citealt{cummins-rohde2015,tonhauser-salt26}) and at-issueness (e.g., \citealt{tbd-variability}). We examined the influence of two novel factors on the projectivity of the content of the clausal complement of predicates: the prior probability of the event described by the embedded clause and the veridicality of the clause-embedding predicate. (Participants were recruited on Amazon's Mechanical Turk platform.)
 
+\vspace*{.7ex}
 
+\underline{Norming study \#1 (n=68):} We measured the prior probabilities of 20 events described by English clauses (e.g., {\em Julian dances salsa}) given one of two facts about the world for each event: one fact made the event more likely than the other fact (e.g., {\em Julian is Cuban} vs.\ {\em Julian is German}). The mean prior probability of the events was .7 (sd = .21) when presented with facts that made the events more likely and .16 (sd = .17) when presented with facts that make the events less likely.
 
-Veridicality is gradient notion: entailed are `highly veridical'
+\vspace*{.7ex}
 
-In all experiments participants were recruited on Amazon's Mechanical Turk platform (300 in veridicality, ).
-
-{\bf Exp.~1: Veridicality} 
-
-This experiment was designed to identify the veridicality of 20 clause-embedding predicates: 7 are typically taken to entail the content of the complement ({\em be annoyed, know, discover, reveal, see, establish, be right}), 5 are typically taken to not entail the content of the complement ({\em pretend, think suggest, say, hear}), and the remaining 8 are typically taken to not entail the content of the complement even though they may sometimes appear to ({\em prove, demonstrate, confess, inform, announce, acknowledge, admit, confirm}; see e.g., \citealt{schlenker10,swanson2012,anand-hacquard2014}). 
-
-\underline{Materials and procedure.} Each of the 20 predicates was paired with 20 clauses, for a total of 400 sentences. Participants were presented with 20 of these sentences (one for each predicate), uttered by a named speaker, and a continuation that denied the truth of the clausal complement, as shown in (\ref{stim-veri}).
+\underline{Norming study \#2 (n=271):} Veridicality was defined as the extent to which sentences like (\ref{stim-veri}) were judged to be contradictory (e.g., for (\ref{stim-veri}): Is Carol's utterance contradictory?). Responses were given on a sliding scale from `definitely no' to `definitely yes'. 
 \vspace*{-.2cm}
 \begin{exe}
 \ex\label{stim-veri} {\bf Carol:} Sandra \{discovered / announced / suggested\} that Julian dances salsa, but he doesn't. 
 \end{exe}
 \vspace*{-.2cm}
-On each trial, participants were asked whether the speaker's utterance was contradictory. They gave their response on a slider labeled `definitely no' on one and and `definitely yes' on the other. The higher the response, the more veridical the predicate.
+The veridicality of 20 clause-embedding predicates was tested: 7 are typically taken to entail the content of the complement (E: {\em be annoyed, know, discover, reveal, see, establish, be right}), 5 are typically taken to not entail the content of the complement (NE: {\em pretend, think suggest, say, hear}), and the remaining 8 are typically taken to not entail the content of the complement even though they may sometimes appear to (V: {\em prove, demonstrate, confess, inform, announce, acknowledge, admit, confirm}); see e.g., \citealt{schlenker10,swanson2012,anand-hacquard2014}. Each predicate was paired with the 20 clauses that describe the aforementioned events. As shown in Fig.~\ref{f-veridicality}, predicates in the NE class are least veridical, as expected, but predicates in the E class are not uniformly highly veridical and instead form a veridicality gradient with predicates in the V class.
 
-\underline{Results and discussion.} Results are based on responses by xxx self-identified native speakers of American English who gave good responses to 8 clearly contradictory and non-contradictory controls. SEE FIGURE FOR VERIDICALITY 
+{\bf Experiment: Projectivity}
 
-{\bf Exp.~2: Projectivity}
+This experiment explored the influence of prior probability and veridicality on the projectivity of the contents of clausal complements. Of the 20 predicates, 7 are typically taken to be factive ({\em be annoyed, know, discover, reveal, see, hear, inform}), 7 are typically taken to not be factive ({\em be right, pretend, think, suggest, say, prove, demonstrate}), and the remaining 6 predicates have been suggested to be ``part-time triggers'' or to give rise to the ``illusion of factivity'' ({\em establish,  confess, announce, acknowledge, admit, confirm}; see references above).
 
-This experiment was designed to explore the extent to which the content of the clausal complement of the same 20 predicates as in Exp.~1 projects from a polar question: 6 of the predicates are typically taken to be factive / presupposition triggers ({\em be annoyed, know, discover, reveal, see, inform}), 5?? are typically not taken to be factive / ps triggers ({\em pretend, think, suggest, say, HEAR??}), and the remaining XX?? predicates are part-time triggers or give rise to the illusion of factivity ({\em establish, prove, demonstrate, announce, acknowledge, admit, confirm}).
-
-\underline{Materials and procedure.} The target stimuli were polar question variants of the 400 sentences of Exp.~1 (without the continuations). Participants were presented with 20 of these polar questions (one for each predicate), uttered by a named speaker, as shown in (\ref{stim-project}). Each polar question was presented with a fact. There were two facts for each complement clause, such that the event described by the complement clause was more likely given one fact than the other. (The other fact for the event of Julian dancing salsa was `Julian is from Cuba'. The event/fact1/fact2 triples were established in a separate norming study.
+\underline{Materials and procedure.} Polar questions were formed from one of the 20 predicates paired with one of the 20 event-describing complement clauses. Participants were presented with 20 polar questions (one for each predicate), uttered by a named speaker, as shown in (\ref{stim-project}). Each polar question was presented with one of the two facts for the event described by clausal complement. Participants were asked to assess whether the speaker was certain of the content of the clausal complement and gave their responses on a sliding scale from `no' to `yes'. 
 \vspace*{-.2cm}
 \begin{exe}
-\ex\label{stim-project} {\bf Fact (which Carol knows):} Julian is from Germany.  \\ 
+\ex\label{stim-project} {\bf Fact (which Carol knows):} Julian is German.  \\ 
 {\bf Carol:} Did Sandra \{discover / announce / suggest\} that Julian dances salsa?
 \end{exe}
 \vspace*{-.2cm}
-On each trial, participants were asked whether the speaker is certain of the content of the clausal complement (e.g., Is Carol certain that Julian dances salsa?) They gave their response on a slider labeled `no' on one and and `yes' on the other. The higher the response, the more projective the content.
 
-\underline{Results and discussion.} Results are based on responses by xxx self-identified native speakers of American English who gave good responses to 6 clearly non-projective controls.  SEE FIGURE FOR PROJECTIVITY 
+\underline{Results (n=XX) and discussion.} 
 
-{\bf Conclusions.}
+{\bf Theoretical implications}
+
+Presuppositions are standardly analyzed as conventionally specified conditions on the felicitous use of utterances with presupposition triggers. Such lexicalist analyses predict that presuppositions follow from utterances with presupposition triggers (modulo accommodation), regardless of whether the trigger is embedded under an entailment-canceling operator, as in (\ref{embedded}), or occurs in an atomic sentence, as in (\ref{unembedded}). Consequently, lexicalist analyses of projectivity are necessarily restricted to entailed content. ABRUSAN?? An analysis of projectivity that does not rely on conventional specification, but e.g., on at-issueness is not restricted to entailed content. (e.g., \citealt{brst-salt10,brst-ar,abrusan2011,abrusan2013}). Thus, the question of whether entailed and non-entailed content differs in projectivity will help decide between theories. 
+
 
 \newpage
 
+\begin{figure}[h!]
+\centering
 
-\begin{small}
+\includegraphics[width=.6\paperwidth]{../results/2-veridicality2/graphs/boxplot-veridicality}
+
+\caption{Boxplot of contradictoriness ratings by predicate, collapsing across complement clauses. Grey dots indicate means and notches indicate medians.}
+\label{f-veridicality}
+\end{figure}
+
+
+\begin{scriptsize}
 \bibliographystyle{/Users/tonhauser.1/Library/Latex/cslipubs-natbib}
 \bibliography{/Users/tonhauser.1/Documents/bibliography}
-\end{small}
+\end{scriptsize}
 
 \end{document}

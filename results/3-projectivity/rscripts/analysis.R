@@ -286,6 +286,7 @@ ggplot(means, aes(x=PriorMean, y=Mean, color=VeridicalityGroup)) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
   ylab("Mean certainty rating") +
   xlab("Prior event probability") 
+ggsave("../graphs/means-projectivity-by-predicate-veridicality-prior.pdf",height=5,width=6.5)
 
 means = t %>%
   group_by(PriorMean,fact_type) %>%

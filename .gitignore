@@ -10,6 +10,7 @@
 *.bbl
 *.blg
 *.log
+*.DS_Store
 *.out
 *.synctex.gz
 *.aux

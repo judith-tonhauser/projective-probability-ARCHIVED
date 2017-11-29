@@ -1,3 +1,4 @@
+*/salt2018/abstract.pdf
 */paper/prior.synctex.gz
 */paper/prior.pdf
 */paper/prior.log
@@ -9,6 +10,7 @@
 *.bbl
 *.blg
 *.log
+*.out
 *.synctex.gz
 *.aux
 *.synctex.gz

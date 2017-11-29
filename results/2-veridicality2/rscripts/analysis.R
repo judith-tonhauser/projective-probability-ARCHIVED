@@ -1,11 +1,13 @@
-setwd('/Users/tonhauser.1/Documents/current-research-topics/NSF-NAI/prop-att-experiments/7-prior-probability/Git-projective-probability/results/2-veridicality2/')
-source('rscripts/helpers.R')
+# setwd('/Users/tonhauser.1/Documents/current-research-topics/NSF-NAI/prop-att-experiments/7-prior-probability/Git-projective-probability/results/2-veridicality2/')
+# source('rscripts/helpers.R')
+source('helpers.R')
 
 # load required packages
 library(tidyverse)
 library(dichromat)
 theme_set(theme_bw())
 
+## NO NEED TO RUN THIS BIT IF YOU JUST WANT TO LOAD CLEANED DATA. SEARCH FOR "END" ##
 # load raw data
 d = read.csv("experiment.csv")
 nrow(d) #8400 = 300 participants x 28 items
@@ -192,7 +194,7 @@ length(unique(d$workerid)) #271 Turkers remain (184 - 13)
 
 # clean data = cd
 cd = d
-write.csv(cd, "data/cd.csv")
+write.csv(cd, "../data/cd.csv")
 nrow(cd) #7588 / 28 items = 271 participants
 
 # age info
@@ -201,6 +203,10 @@ length(which(is.na(cd$age))) #0 missing values
 median(cd$age,na.rm=TRUE) #36
 table(cd$gender)
 #130 female, 140 male, 1 other
+
+## END -- LOAD CLEANED DATA FOR ANALYSIS HERE
+
+cd = read.csv("../data/cd.csv")
 
 # target data (20 items per Turker)
 names(cd)
@@ -218,10 +224,14 @@ t$verb <- gsub("annoyed","be_annoyed",t$verb)
 
 
 # mean veridicality of the verbs
-means = aggregate(response~verb, data=t, FUN="mean")
-means$YMin = means$response - aggregate(response~verb, data=t, FUN="ci.low")$response
-means$YMax = means$response + aggregate(response~verb, data=t, FUN="ci.high")$response
+means = t %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
+  select(verb,Mean,YMin,YMax)
 means
+
+write.csv(means, file="../data/veridicality_means.csv",row.names=F,quote=F)
 
 t$verb <-factor(t$verb, levels=means[order(means$response), "verb"])
 

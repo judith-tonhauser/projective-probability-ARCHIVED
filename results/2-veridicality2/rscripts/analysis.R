@@ -229,21 +229,26 @@ means = t %>%
   summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
   select(verb,Mean,YMin,YMax)
-means
+means = as.data.frame(means)
 
 write.csv(means, file="../data/veridicality_means.csv",row.names=F,quote=F)
 
-t$verb <-factor(t$verb, levels=means[order(means$response), "verb"])
+t$verb <-factor(t$verb, levels=means[order(means$Mean), "verb"])
+
+library(RColorBrewer)
+cols = data.frame(V=levels(t$verb))
+cols$VeridicalityGroup = as.factor(ifelse(cols$V %in% c("be_annoyed", "know", "discover", "reveal", "see", "establish", "be_right"), "E", ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NE", "V")))
+cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
 
 ggplot(t, aes(x=verb, y=response)) + 
   geom_boxplot(width=0.2,position=position_dodge(.9)) +
   stat_summary(fun.y=mean, geom="point", color="black",fill="gray70", shape=21, size=3,position=position_dodge(.9)) +
-  theme(text = element_text(size=12)) +
-  theme(axis.text.x = element_text(size = 12, angle = 75, hjust = 1)) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
   ylab("Contradictoriness rating")+
-  xlab("Predicate")
-ggsave(f="graphs/boxplot-veridicality.pdf",height=4,width=6.5)
+  xlab("Predicate") +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))
+ggsave("../graphs/boxplot-veridicality.pdf",height=3.5,width=6.5)
+
 
 agr_verb = t %>%
   group_by(verb) %>%

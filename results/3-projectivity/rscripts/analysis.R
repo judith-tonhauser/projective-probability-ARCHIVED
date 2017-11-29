@@ -1,5 +1,5 @@
 # JT starts here
-setwd('/Users/tonhauser.1/Documents/current-research-topics/NSF-NAI/prop-att-experiments/7-prior-probability/Git-projective-probability/results/3-projectivity/')
+# setwd('/Users/tonhauser.1/Documents/current-research-topics/NSF-NAI/prop-att-experiments/7-prior-probability/Git-projective-probability/results/3-projectivity/')
 source('rscripts/helpers.R')
 
 # JD starts here
@@ -9,6 +9,7 @@ source('helpers.R')
 library(tidyverse)
 library(dichromat)
 library(forcats)
+library(RColorBrewer)
 theme_set(theme_bw())
 
 ## DON'T RUN THIS BIT IF YOU ONLY WANT TO LOAD CLEANED DATA -- SEARCH FOR "END" ##
@@ -143,18 +144,15 @@ nrow(cd) #6578 / 20 items = 253 participants
 
 ## END -- START RUNNING AFTER THIS TO LOAD ONLY CLEANED DATA ##
 ## JT
-cd = read.csv("data/cd.csv")
+cd = read.csv("../data/cd.csv")
 
 # load veridicality means
-vmeans = read.csv("../2-veridicality2/data/veridicality_means.csv")
+vmeans = read.csv("../../2-veridicality2/data/veridicality_means.csv")
 colnames(vmeans) = c("verb","VeridicalityMean","VeridicalityCILow","VeridicalityCIHigh")
 
 # load prior means
-pmeans = read.csv("../1-prior/data/prior_means.csv")
+pmeans = read.csv("../../1-prior/data/prior_means.csv")
 pmeans$fact = gsub(".","",as.character(pmeans$fact),fixed=T)
-
-## JD
-cd = read.csv("../data/cd.csv")
 
 # load veridicality means
 vmeans = read.csv("../../2-veridicality2/data/veridicality_means.csv")
@@ -200,7 +198,6 @@ means = t %>%
   group_by(verb) %>%
   summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(as.factor(verb),Mean))
-# means = as.data.frame(means)
 
 t$Verb <-factor(t$verb, levels=levels(means$Verb))
 
@@ -214,23 +211,30 @@ ggplot(t, aes(x=Verb, y=response)) +
   xlab("Predicate")
 ggsave("../graphs/boxplot-projectivity.pdf",height=4,width=6.5)
 
+# SALT paper plot:
 means = t %>%
   group_by(verb, fact_type, VeridicalityMean) %>%
   summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
   ungroup() %>%
   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(verb,Mean))
-means
 
-ggplot(means, aes(x=Verb, y=Mean, color=fact_type)) + 
+cols = data.frame(V=levels(means$Verb))
+cols$VeridicalityGroup = as.factor(ifelse(cols$V %in% c("be_annoyed", "know", "discover", "reveal", "see", "establish", "be_right"), "E", ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NE", "V")))
+cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
+
+ggplot(means, aes(x=Verb, y=Mean, color=fact_type))+#, alpha=VeridicalityMean)) + 
   #geom_point(color="black", size=4) +
   #geom_point(data=agr_subj, aes(color=content)) +
   geom_point() +
   geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
-  theme(axis.text.x = element_text(size = 12, angle = 75, hjust = 1)) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_color_manual(name="Prior probability\nof eventuality", breaks=c("factH","factL"),labels=c("high", "low"), values=brewer.pal(2,
+"Dark2")) +
+  scale_alpha(range = c(.3,1)) +
   ylab("Mean certainty rating") +
-  xlab("Predicate")
-ggsave("../graphs/boxplot-projectivity-by-predicate-and-facttype.pdf",height=4,width=6.5)
+  xlab("Predicate") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top")
+ggsave("../graphs/means-projectivity-by-predicate-and-facttype.pdf",height=3,width=7)
 
 means = means %>%
   mutate(Verb = fct_reorder(verb,VeridicalityMean))
@@ -543,18 +547,19 @@ library(languageR)
 centered = cbind(t, myCenter(t[,c("fact_type","VeridicalityMean","PriorMean")]))
 contrasts(t$fact_type)
 
-# analysis with categorical fact type
+# analysis with categorical fact type (dispreferred because of information loss in treating prior probability as simply "high" vs "low")
 m = lmer(response ~ cfact_type * cVeridicalityMean + (1+cfact_type|workerid) + (1+cVeridicalityMean|content) + (1+cfact_type|verb),data=centered)
 summary(m) # main effects of fact type, but no veridicality effect nor interaction (with this random effects structure -- without random verb effects, there's a veridicality effect)
 table(t$fact_type, t$verb)
 
 ranef(m)
 
-# analysis with continuous prior probability of eventuality
-m = lmer(response ~ cPriorMean * cVeridicalityMean + (1+cPriorMean|workerid) + (1+cPriorMean|content) + (1+cPriorMean|verb),data=centered)
+# analysis with continuous prior probability of eventuality (reported in SALT paper)
+library(lmerTest)
+m = lmer(response ~ cPriorMean * cVeridicalityMean + (1+cPriorMean|workerid) + (1+cPriorMean|content) + (1+cPriorMean|verb) + (1|fact),data=centered)
 summary(m) 
 
-### now lets look at projective contents only 
+### now lets look at projective contents only (also reported in SALT paper)
 p = droplevels(subset(t,t$verb != "pretend" & t$verb != "be_right" & t$verb != "suggest" & t$verb != "say" & t$verb != "prove" & t$verb != "think" & t$verb != "confirm" & t$verb != "establish" & t$verb != "demonstrate"))
 nrow(p) #2783 / 11 projective predicates = 253 Turkers
 table(p$verb)
@@ -571,7 +576,7 @@ m = lmer(response ~ cfact_type * cVeridicalityMean + (1+cfact_type|workerid) + (
 summary(m) #main effect of prior, but not of veridicality or interaction
 
 # predict projectivity from veridicality of verb, continuous prior probability of eventuality
-m = lmer(response ~ cPriorMean * cVeridicalityMean + (1+cfact_type|workerid) + (1+cPriorMean|content) + (1+cPriorMean|verb),data=cp)
-summary(m) #main effect of prior, but not of veridicality or interaction
+m = lmer(response ~ cPriorMean * cVeridicalityMean + (1+cPriorMean|workerid) + (1+cPriorMean|content) + (1+cPriorMean|verb) + (1|fact),data=cp)
+summary(m)  #main effect of prior, but not of veridicality or interaction
 
 

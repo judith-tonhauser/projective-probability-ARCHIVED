@@ -253,7 +253,8 @@ ggsave("../graphs/boxplot-projectivity-by-predicate-and-content.pdf",height=4,wi
 means = t %>%
   group_by(verb, fact_type, content, PriorMean) %>%
   summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
-  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh)
+  ungroup() %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, verb = fct_reorder(verb,Mean))
 means
 
 ggplot(means, aes(x=PriorMean, y=Mean, color=verb)) + 
@@ -266,6 +267,7 @@ ggplot(means, aes(x=PriorMean, y=Mean, color=verb)) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
   ylab("Mean certainty rating") +
   xlab("Prior event probability") 
+ggsave("../graphs/means-projectivity-by-predicate-content-prior.pdf",height=5,width=6.5)
 
 means = t %>%
   mutate(VeridicalityGroup = cut_number(VeridicalityMean,3,labels=c("low","mid","high"))) %>%
@@ -300,18 +302,26 @@ ggplot(means, aes(x=PriorMean, y=Mean, color=fact_type)) +
   # geom_line(aes(group=content)) +
   # geom_smooth(aes(group=VeridicalityGroup),method="lm",se=F) +
   # geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
-  scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  xlim(0.05,.9) +
+  ylim(0.05,.9) +
   ylab("Mean certainty rating") +
   xlab("Prior event probability") 
-ggsave("../graphs/means-projectivity-by-prior.pdf",height=4,width=6.5)
+ggsave("../graphs/means-projectivity-by-prior.pdf",height=4,width=5.5)
 
 ### MIXED EFFECTS ANALYSIS ###
 library(lme4)
-centered = cbind(t, myCenter(t[,c("fact_type","VeridicalityMean")]))
+centered = cbind(t, myCenter(t[,c("fact_type","VeridicalityMean","PriorMean")]))
 contrasts(t$fact_type)
 
+# analysis with categorical fact type
 m = lmer(response ~ cfact_type * cVeridicalityMean + (1+cfact_type|workerid) + (1+cVeridicalityMean|content) + (1+cfact_type|verb),data=centered)
 summary(m) # main effects of fact type, but no veridicality effect nor interaction (with this random effects structure -- without random verb effects, there's a veridicality effect)
 table(t$fact_type, t$verb)
 
 ranef(m)
+
+# analysis with continuous prior probability of eventuality
+m = lmer(response ~ cPriorMean * cVeridicalityMean + (1+cPriorMean|workerid) + (1+cPriorMean|content) + (1+cPriorMean|verb),data=centered)
+summary(m) # main effects of fact type, but no veridicality effect nor interaction (with this random effects structure -- without random verb effects, there's a veridicality effect)
+
+

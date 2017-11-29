@@ -322,6 +322,6 @@ ranef(m)
 
 # analysis with continuous prior probability of eventuality
 m = lmer(response ~ cPriorMean * cVeridicalityMean + (1+cPriorMean|workerid) + (1+cPriorMean|content) + (1+cPriorMean|verb),data=centered)
-summary(m) # main effects of fact type, but no veridicality effect nor interaction (with this random effects structure -- without random verb effects, there's a veridicality effect)
+summary(m) 
 
 

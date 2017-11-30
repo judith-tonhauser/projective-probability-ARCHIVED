@@ -1,6 +1,6 @@
 # JT starts here
 # setwd('/Users/tonhauser.1/Documents/current-research-topics/NSF-NAI/prop-att-experiments/7-prior-probability/Git-projective-probability/results/3-projectivity/')
-source('rscripts/helpers.R')
+#source('rscripts/helpers.R')
 
 # JD starts here
 source('helpers.R')
@@ -164,8 +164,6 @@ pmeans = read.csv("../../1-prior/data/prior_means.csv")
 pmeans$fact = gsub(".","",as.character(pmeans$fact),fixed=T)
 pmeans
 
-### JD and JT start here
-
 # change cd verb names to match veridicality names
 cd = cd %>%
   mutate(verb=recode(verb, annoyed = "be_annoyed", be_right_that = "be_right", inform_Sam = "inform"))
@@ -220,7 +218,10 @@ means = t %>%
 
 cols = data.frame(V=levels(means$Verb))
 cols$VeridicalityGroup = as.factor(ifelse(cols$V %in% c("be_annoyed", "know", "discover", "reveal", "see", "establish", "be_right"), "E", ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NE", "V")))
-cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
+#cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
+cols$Colors =  ifelse(cols$VeridicalityGroup == "E", "blue", 
+                      ifelse(cols$VeridicalityGroup == "NE", "brown", "green"))
+
 
 ggplot(means, aes(x=Verb, y=Mean, color=fact_type))+#, alpha=VeridicalityMean)) + 
   #geom_point(color="black", size=4) +
@@ -228,8 +229,8 @@ ggplot(means, aes(x=Verb, y=Mean, color=fact_type))+#, alpha=VeridicalityMean)) 
   geom_point() +
   geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
-  scale_color_manual(name="Prior probability\nof eventuality", breaks=c("factH","factL"),labels=c("high", "low"), values=brewer.pal(2,
-"Dark2")) +
+  scale_color_manual(name="Prior probability\nof eventuality", breaks=c("factH","factL"),labels=c("high", "low"), 
+                     values=brewer.pal(2,"Dark2")) +
   scale_alpha(range = c(.3,1)) +
   ylab("Mean certainty rating") +
   xlab("Predicate") +

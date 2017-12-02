@@ -50,6 +50,8 @@
 \setlength{\bibsep}{0mm}
 \bibpunct[:]{(}{)}{,}{a}{}{,}
 
+\newcommand{\citepos}[1]{\citeauthor{#1}'s \citeyear{#1}}
+
 \newcommand{\6}{\mbox{$[\hspace*{-.6mm}[$}} 
 \newcommand{\9}{\mbox{$]\hspace*{-.6mm}]$}}
 \newcommand{\sem}[2]{\6#1\9$^{#2}$}
@@ -63,7 +65,7 @@
 {\large \bf Prior probabilities and the projectivity of entailed and non-entailed content}
 \end{center}
 
-This paper explores the influence of two novel factors on the projectivity of the contents of clausal complements of 20 English clause-embedding predicates: the prior probability of the event described by the clausal complement and the veridicality of the clause-embedding predicate. Our experimental findings show that i) veridicality is a gradient property and does not clearly distinguish clausal complements assumed to be entailed vs.\ non-entailed, ii) the content of clausal complements that are (assumed to be) entailed and non-entailed may be projective, iii) projectivity of the clausal content is influenced by the prior probability of the event described by the clause, and iv) veridicality is not a predictor of projectivity. These findings raise important questions for the relationship between projectivity and veridicality/entailment, and motivate analyses according to which listeners integrate multiple sources of information, some conventional and some non-conventional, in determining what speakers are committed to (e.g., \citealt{brst-salt10,brst-ar,abrusan2011,abrusan2016,tbd-variability}). 
+This paper explores the influence of two novel factors on the projectivity of the contents of clausal complements of 20 English clause-embedding predicates: the prior probability of the event described by the clausal complement and the veridicality of the clause-embedding predicate. Our experimental findings show that i) veridicality is a gradient property that does not distinguish clausal complements assumed to be entailed vs.\ non-entailed, ii) the content of clausal complements that are (assumed to be) entailed and non-entailed may be projective, iii) the projectivity of the content of the clausal complement is influenced by the prior probability of the event described by the clause, and iv) veridicality is not a predictor of projectivity. These findings raise important questions for the relationship between projectivity and entailment, and motivate analyses of projectivity according to which listeners integrate multiple sources of information, some conventional and some non-conventional, in determining what speakers are committed to (e.g., \citealt{brst-salt10,brst-ar,abrusan2011,abrusan2016,tbd-variability}). 
 
 {\bf Presuppositions versus non-entailed projective content} 
 
@@ -80,31 +82,27 @@ The content of the clausal complement in (\ref{embedded}), that Julian dances sa
 \end{exe}
 \vspace*{-.2cm}
 
-This paper addresses the question of whether distinguishing presuppositions and other projective inferences by whether the inference is entailed by the atomic sentence is empirically motivated. 
+This paper addresses the question of whether it is empirically motivated to distinguish presuppositions and other projective inferences by whether the inference is an entailment of atomic sentences.
 
 {\bf Factors that influence the projectivity of projective content}
 
 The projectivity of (entailed) projective content is variable (e.g., \citealt{karttunen71b,kadmon01,tbd-variability}) and influenced by several conventional and non-conventional factors, incl.\ syntax (e.g., \citealt{potts05}), context (e.g., \citealt{beaver-belly}), prosody (e.g., \citealt{cummins-rohde2015,tonhauser-salt26}) and at-issueness (e.g., \citealt{tbd-variability}). We examined the influence of two novel factors on the projectivity of the content of the clausal complements: the prior probability of the event described by the clausal complement and the veridicality of the clause-embedding predicate. English-speaking participants were recruited on Amazon's Mechanical Turk platform.
 
-\vspace*{.7ex}
-
 \underline{Norming study \#1 (n=95):} We measured the prior probabilities of 20 events described by English clauses (e.g., {\em Julian dances salsa}) given one of two facts about the world for each event: one fact made the event more likely than the other fact (e.g., {\em Julian is Cuban} vs.\ {\em Julian is German}). The mean prior probability of the events was .7 (sd = .21) when presented with facts that made the events more likely and .16 (sd = .17) when presented with facts that make the events less likely.
 
-\vspace*{.7ex}
-
-\underline{Norming study \#2 (n=300):} Veridicality was defined as the extent to which sentences like (\ref{stim-veri}) were judged to be contradictory (e.g., for (\ref{stim-veri}): Is Carol's utterance contradictory?). Responses were given on a sliding scale from `definitely no' to `definitely yes'. 
+\underline{Norming study \#2 (n=300):} Veridicality was defined as the extent to which sentences like (\ref{stim-veri}) were judged to be contradictory; see, e.g., \citepos{ccmg90} diagnostic for entailment. Responses were given on a sliding scale from `definitely no' to `definitely yes'. 
 \vspace*{-.2cm}
 \begin{exe}
 \ex\label{stim-veri} {\bf Carol:} Sandra \{discovered / announced / suggested\} that Julian dances salsa, but he doesn't. 
 \end{exe}
 \vspace*{-.2cm}
-The veridicality of 20 clause-embedding predicates was tested: 7 are typically taken to entail the content of the complement (E: {\em be annoyed, know, discover, reveal, see, establish, be right}), 5 are typically taken to not entail the content of the complement (NE: {\em pretend, think, suggest, say, hear}), and the remaining 8 are typically taken to not entail the content of the complement even though they may sometimes appear to (V: {\em prove, demonstrate, confess, inform, announce, acknowledge, admit, confirm}); see e.g., \citealt{schlenker10,swanson2012,anand-hacquard2014}. Each predicate was paired with the 20 clauses that describe the aforementioned events. As shown in Fig.~\ref{f-veridicality}, predicates in the NE class are least veridical, as expected, but predicates in the E class are not uniformly highly veridical and instead form a veridicality gradient with predicates in the V class. Thus, contrary to standard assumptions (e.g., \citealt[20]{ccmg90}), the diagnostic in (\ref{stim-veri}) does not categorically distinguished entailed and non-entailed clausal complements.
+The veridicality of 20 clause-embedding predicates was tested: 7 are typically taken to entail the complement (E: {\em be annoyed, know, discover, reveal, see, establish, be right}), 5 are typically taken to not entail the complement (NE: {\em pretend, think, suggest, say, hear}), and the remaining 8 are typically taken to not entail the content of the complement even though they may sometimes appear to (V: {\em prove, demonstrate, confess, inform, announce, acknowledge, admit, confirm}); see e.g., \citealt{schlenker10,swanson2012,anand-hacquard2014}. Each predicate was paired with the 20 event-describing clauses. As shown in Fig.~\ref{f-veridicality}, NE predicates are least veridical, as expected, but E predicates are not uniformly highly veridical and instead form a veridicality gradient with V predicates. Thus, contrary to standard assumptions, the diagnostic in (\ref{stim-veri}) does not categorically distinguish entailed and non-entailed clausal complements.
 
 {\bf Experiment: Projectivity}
 
-This experiment explored the influence of prior probability and veridicality on the projectivity of the contents of clausal complements. Of the aforementioned 20 predicates, 6 are typically taken to be factive ({\em be annoyed, know, discover, reveal, see, hear}), 7 are typically taken to not be factive ({\em be right, pretend, think, suggest, say, prove, demonstrate}), and the remaining 7 predicates have been suggested to be ``part-time triggers'' or to give rise to the ``illusion of factivity'' ({\em establish,  confess, announce, acknowledge, admit, confirm, inform}); see references above.
+This experiment explored the influence of prior probability and veridicality on the projectivity of the contents of clausal complements. Of the aforementioned 20 predicates, 6 are typically taken to be factive ({\em be annoyed, know, discover, reveal, see, hear}), 7 are typically taken to be non-factive ({\em be right, pretend, think, suggest, say, prove, demonstrate}), and the remaining 7 predicates have been suggested to be ``part-time triggers'' or to give rise to the ``illusion of factivity'' ({\em establish,  confess, announce, acknowledge, admit, confirm, inform}); see references above.
 
-\underline{Materials and procedure.} 400 polar questions were formed from the 20 predicates paired with the 20 event-describing complement clauses. Participants were presented with 20 polar questions (one for each predicate), uttered by a named speaker, as shown in (\ref{stim-project}). Each polar question was presented with one of the two facts for the event described by clausal complement. Participants were asked to assess whether the speaker is certain of the content of the clausal complement (e.g., \emph{Is Carol certain that Julian dances salsa?}) and gave their responses on a sliding scale from `no' to `yes'. 
+\underline{Materials and procedure.} 400 polar questions were formed from the 20 predicates and the 20 event-describing clauses. Participants were presented with 20 polar questions (one for each predicate), as shown in (\ref{stim-project}). Each polar question was presented with one of the two facts for the event described by clausal complement. Participants were asked to assess whether the speaker is certain of the content of the clausal complement (e.g., \emph{Is Carol certain that Julian dances salsa?}) and gave their responses on a sliding scale from `no' to `yes'. 
 \vspace*{-.2cm}
 \begin{exe}
 \ex\label{stim-project} {\bf Fact (which Carol knows):} Julian is German.  \\ 
@@ -112,11 +110,11 @@ This experiment explored the influence of prior probability and veridicality on 
 \end{exe}
 \vspace*{-.2cm}
 
-\underline{Results (n=300).}  Mean projectivity ratings are shown in Fig.~\ref{f-projectivity}. Replicating \citealt{tbd-variability}, we observe a large degree of variability in projectivity across predicates. Contents that describe a priori more likely events were judged to be more projective than those that described a priori less likely events ($\beta$ = .34, $SE$ = .03, $t$ = 10.6, $p <$ .0001), as revealed by a mixed effects linear regression predicting projectivity rating from fixed effects of mean prior probability (from norming study \#1), mean veridicality rating (from norming study \#2), and their interaction, as well as from random effects for participant, verb, clausal complement, and fact. Neither the main effect of veridicality nor its interaction with prior reached significance ($p >$ .26). This was true whether the analysis was conducted on the full dataset or only on projective contents (starting with {\em announce}).
+\underline{Results (n=300).}  Mean projectivity ratings are shown in Fig.~\ref{f-projectivity}. Replicating \citealt{tbd-variability}, we observe variability in projectivity. Contents that describe more likely events were judged to be more projective than those that described less likely events ($\beta$ = .34, $SE$ = .03, $t$ = 10.6, $p <$ .0001), as revealed by a mixed effects linear regression predicting projectivity rating from fixed effects of mean prior probability (norming study \#1), mean veridicality rating (norming study \#2), and their interaction, as well as random effects for participant, verb, clausal complement, and fact. Neither veridicality nor its interaction with prior reached significance ($p >$ .26). This was true whether the analysis was conducted on the full dataset or only on projective contents (starting with {\em announce}).
 
 {\bf Discussion and theoretical implications}
 
-Although projectivity is influenced by the lexical meaning of clause-embedding predicates (e.g., \citealt{karttunen71b,tbd-variability}), our findings do not support the assumption that entailment determines the empirical purview of analyses of projection. For instance, even though the veridicality of {\em reveal, be annoyed} and {\em confess} is statistically indistinguishable, the content of the complement of {\em be annoyed} is significantly more projective than that of {\em reveal} or {\em confess}. Our findings are instead compatible with analyses of projection that are not restricted to entailed content and according to which listeners integrate multiple sources of information, including prior event probabilities, in determining what speakers are committed to (see references above). Which lexical meaning properties of predicates influence projectivity is a pressing question for future research. 
+Although projectivity is influenced by the lexical meaning of clause-embedding predicates (e.g., \citealt{karttunen71b,tbd-variability}), our findings do not support the assumption that entailment determines the empirical purview of analyses of projection. For instance, even though the veridicality of {\em reveal, be annoyed} and {\em confess} is statistically indistinguishable, the content of the complement of {\em be annoyed} is significantly more projective than that of {\em reveal} or {\em confess}. Our findings are compatible with analyses of projection that are not restricted to entailed content and according to which listeners integrate multiple sources of information, including prior event probabilities, in determining what speakers are committed to. Which lexical meaning properties of predicates influence projectivity is a pressing question for future research. 
  
 
 %\newpage

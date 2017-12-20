@@ -660,8 +660,8 @@ ggplot(means, aes(y=Mean, x=PriorMean, color=gender))+#, alpha=VeridicalityMean)
   # geom_bar(stat="identity",position=dodge) +
   # geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25,position=dodge) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
-  scale_color_manual(name="Prior probability\nof eventuality", breaks=c("factH","factL"),labels=c("high", "low"), 
-                     values=brewer.pal(2,"Dark2")) +
+  # scale_color_manual(name="Prior probability\nof eventuality", breaks=c("factH","factL"),labels=c("high", "low"), 
+                     # values=brewer.pal(2,"Dark2")) +
   scale_alpha(range = c(.3,1)) +
   ylab("Mean certainty rating") +
   xlab("Prior probability of eventuality") +

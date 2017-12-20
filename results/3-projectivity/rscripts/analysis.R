@@ -638,9 +638,38 @@ ggplot(means, aes(y=Mean, x=fact_type, fill=gender))+#, alpha=VeridicalityMean))
   ylab("Mean certainty rating") +
   xlab("Fact type") +
   facet_grid(speakerGender~subjectGender) + 
+  ggtitle("Rows: speaker gender -- Columns: attitude holder gender") +
   #ggtitle(title="Rows: speaker gender; Columns: participant gender") +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top") 
 ggsave("../graphs/subjectandspeakergender-collapsed.pdf")
+
+
+means = t %>%
+  group_by(PriorMean, subjectGender, speakerGender, gender) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  ungroup() %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
+  filter(!is.na(gender)) %>%
+  droplevels()
+dodge = position_dodge(.9)
+
+ggplot(means, aes(y=Mean, x=PriorMean, color=gender))+#, alpha=VeridicalityMean)) + 
+  geom_point() +
+  geom_smooth(method="lm") +
+  #geom_point(data=agr_subj, aes(color=content)) +
+  # geom_bar(stat="identity",position=dodge) +
+  # geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25,position=dodge) +
+  scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_color_manual(name="Prior probability\nof eventuality", breaks=c("factH","factL"),labels=c("high", "low"), 
+                     values=brewer.pal(2,"Dark2")) +
+  scale_alpha(range = c(.3,1)) +
+  ylab("Mean certainty rating") +
+  xlab("Prior probability of eventuality") +
+  facet_grid(speakerGender~subjectGender) + 
+  ggtitle("Rows: speaker gender -- Columns: attitude holder gender") +
+  #ggtitle(title="Rows: speaker gender; Columns: participant gender") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top") 
+ggsave("../graphs/subjectandspeakergender-collapsed-continuuous.pdf")
 
 ### MIXED EFFECTS ANALYSIS ###
 library(lme4)

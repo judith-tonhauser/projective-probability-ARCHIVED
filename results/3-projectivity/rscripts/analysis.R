@@ -701,7 +701,8 @@ ggsave("../graphs/subjectgender-collapsed-continuuous.pdf")
 
 
 means = t %>%
-  group_by(fact_type, subjectGender, gender, age) %>%
+  mutate(BinnedAge = cut_interval(age, n=3)) %>%
+  group_by(fact_type, subjectGender, gender, BinnedAge) %>%
   summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
   ungroup() %>%
   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
@@ -709,12 +710,11 @@ means = t %>%
   droplevels()
 dodge = position_dodge(.9)
 
-ggplot(means, aes(y=Mean, x=age, color=gender))+#, alpha=VeridicalityMean)) + 
+ggplot(means, aes(y=Mean, x=BinnedAge, color=gender))+#, alpha=VeridicalityMean)) + 
   geom_point() +
-  geom_smooth(method="lm") +
   #geom_point(data=agr_subj, aes(color=content)) +
   # geom_bar(stat="identity",position=dodge) +
-  # geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25,position=dodge) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
   # scale_color_manual(name="Prior probability\nof eventuality", breaks=c("factH","factL"),labels=c("high", "low"), 
   # values=brewer.pal(2,"Dark2")) +

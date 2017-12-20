@@ -558,7 +558,7 @@ cols$Colors =  ifelse(cols$VeridicalityGroup == "E", "blue",
                       ifelse(cols$VeridicalityGroup == "NE", "brown", "green"))
 
 
-ggplot(means, aes(x=Verb, y=Mean, color=fact_type))+#, alpha=VeridicalityMean)) + 
+ggplot(means, aes(x=Verb, y=Mean, color=fact_type, shape=speakerGender))+#, alpha=VeridicalityMean)) + 
   #geom_point(color="black", size=4) +
   #geom_point(data=agr_subj, aes(color=content)) +
   geom_point() +
@@ -569,7 +569,6 @@ ggplot(means, aes(x=Verb, y=Mean, color=fact_type))+#, alpha=VeridicalityMean)) 
   scale_alpha(range = c(.3,1)) +
   ylab("Mean certainty rating") +
   xlab("Predicate") +
-  facet_wrap(~speakerGender) +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top")
 ggsave("../graphs/speakergender.pdf")
 

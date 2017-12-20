@@ -626,7 +626,7 @@ means = t %>%
   droplevels()
 dodge = position_dodge(.9)
 
-ggplot(means, aes(y=Mean, x=fact_type, fill=subjectGender))+#, alpha=VeridicalityMean)) + 
+ggplot(means, aes(y=Mean, x=fact_type, fill=gender))+#, alpha=VeridicalityMean)) + 
   #geom_point(color="black", size=4) +
   #geom_point(data=agr_subj, aes(color=content)) +
   geom_bar(stat="identity",position=dodge) +
@@ -637,7 +637,7 @@ ggplot(means, aes(y=Mean, x=fact_type, fill=subjectGender))+#, alpha=Veridicalit
   scale_alpha(range = c(.3,1)) +
   ylab("Mean certainty rating") +
   xlab("Fact type") +
-  facet_grid(speakerGender~gender) + 
+  facet_grid(speakerGender~subjectGender) + 
   #ggtitle(title="Rows: speaker gender; Columns: participant gender") +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top") 
 ggsave("../graphs/subjectandspeakergender-collapsed.pdf")

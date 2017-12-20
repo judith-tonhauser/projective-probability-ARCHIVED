@@ -542,6 +542,38 @@ comparison
 # 
 # P value adjustment: tukey method for comparing a family of 20 estimates
 
+## EXPLORATORY GENDER ANALYSIS
+
+# SALT paper plot:
+means = t %>%
+  group_by(verb, fact_type, VeridicalityMean, speakerGender) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  ungroup() %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(verb,Mean))
+
+cols = data.frame(V=levels(means$Verb))
+cols$VeridicalityGroup = as.factor(ifelse(cols$V %in% c("be_annoyed", "know", "discover", "reveal", "see", "establish", "be_right"), "E", ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NE", "V")))
+#cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
+cols$Colors =  ifelse(cols$VeridicalityGroup == "E", "blue", 
+                      ifelse(cols$VeridicalityGroup == "NE", "brown", "green"))
+
+
+ggplot(means, aes(x=Verb, y=Mean, color=fact_type))+#, alpha=VeridicalityMean)) + 
+  #geom_point(color="black", size=4) +
+  #geom_point(data=agr_subj, aes(color=content)) +
+  geom_point() +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
+  scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_color_manual(name="Prior probability\nof eventuality", breaks=c("factH","factL"),labels=c("high", "low"), 
+                     values=brewer.pal(2,"Dark2")) +
+  scale_alpha(range = c(.3,1)) +
+  ylab("Mean certainty rating") +
+  xlab("Predicate") +
+  facet_wrap(~speakerGender) +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top")
+ggsave("../graphs/speakergender.pdf")
+
+
 ### MIXED EFFECTS ANALYSIS ###
 library(lme4)
 library(languageR)

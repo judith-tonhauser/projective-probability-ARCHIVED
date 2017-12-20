@@ -573,7 +573,7 @@ ggsave("../graphs/speakergender.pdf")
 
 
 means = t %>%
-  group_by(fact_type, speakerGender) %>%
+  group_by(fact_type, speakerGender, gender) %>%
   summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
   ungroup() %>%
   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh)
@@ -589,7 +589,8 @@ ggplot(means, aes(y=Mean, x=fact_type, fill=speakerGender))+#, alpha=Veridicalit
                      values=brewer.pal(2,"Dark2")) +
   scale_alpha(range = c(.3,1)) +
   ylab("Mean certainty rating") +
-  xlab("Predicate") +
+  xlab("Fact type") +
+  facet_wrap(~gender) +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top")
 ggsave("../graphs/speakergender-collapsed.pdf")
 

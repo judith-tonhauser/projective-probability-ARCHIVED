@@ -1,11 +1,6 @@
 \newcommand{\noopsort}[1]{}\newcommand{\SortNoop}[1]{}
-\begin{thebibliography}{12}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
-
-\bibitem[Abusch(2010)]{abusch10}
-Abusch, Dorit. 2010.
-\newblock Presupposition triggering from alternatives.
-\newblock {\em Journal of Semantics\/} 27:37--80.
 
 \bibitem[Anand and Hacquard(2014)]{anand-hacquard2014}
 Anand, Pranav and Valentine Hacquard. 2014.
@@ -23,11 +18,6 @@ Hothorn, Torsten, Frank Bretz, and Peter Westfall. 2008.
 \newblock Simultaneous inference in general parametric models.
 \newblock {\em Biometrical Journal\/} 50(3):346--363.
 
-\bibitem[Karttunen(1971)]{karttunen71b}
-Karttunen, Lauri. 1971.
-\newblock Some observations on factivity.
-\newblock {\em Papers in Linguistics\/} 4:55--69.
-
 \bibitem[{R Core Team}(2016)]{r}
 {R Core Team}. 2016.
 \newblock {\em R: A Language and Environment for Statistical Computing\/}.
@@ -41,34 +31,34 @@ Schlenker, Philippe. 2010.
 \bibitem[Simons(2001)]{simons01}
 Simons, Mandy. 2001.
 \newblock On the conversational basis of some presuppositions.
-\newblock In {\em Proceedings of {Semantics and Linguistics Theory (SALT)
-  XI}\/}, pages 431--448. Ithaca, NY: CLC Publications.
+\newblock In {\em Semantics and Linguistics Theory (SALT) XI\/}, pages
+  431--448. Ithaca, NY: CLC Publications.
 
 \bibitem[Simons et~al.(2017)Simons, Beaver, Roberts, and
   Tonhauser]{best-question}
 Simons, Mandy, David Beaver, Craige Roberts, and Judith Tonhauser. 2017.
 \newblock The {B}est {Q}uestion: Explaining the projection behavior of factive
   verbs.
-\newblock {\em Discourse Processes\/} 3.
+\newblock {\em Discourse Processes\/} 3:187--206.
 
-\bibitem[Smith and Hall(2011)]{smith-hall11}
-Smith, {E.\ Allyn} and Kathleen~Currie Hall. 2011.
-\newblock Projection diversity: {E}xperimental evidence.
-\newblock In {\em Proceedings of the 2011 {ESSLLI} Workshop on Projective
-  Content\/}, pages 156--170.
+\bibitem[Simons et~al.(2010)Simons, Tonhauser, Beaver, and
+  Roberts]{brst-salt10}
+Simons, Mandy, Judith Tonhauser, David Beaver, and Craige Roberts. 2010.
+\newblock What projects and why.
+\newblock In {\em Semantics and Linguistic Theory (SALT) XXI\/}, pages
+  309--327. Ithaca, NY: CLC Publications.
 
-\bibitem[Tonhauser et~al.(ms)Tonhauser, Beaver, and Degen]{tbd-variability}
-Tonhauser, Judith, David Beaver, and Judith Degen. ms.
-\newblock Variability in the information-structural status of projective
-  content.
-\newblock Manuscript in preparation, The Ohio State University, University of
-  Texas at Austin.
+\bibitem[Swanson(2012)]{swanson2012}
+Swanson, Eric. 2012.
+\newblock Propositional attitudes.
+\newblock In {\em Semantics: An International Handbook of Natural Language
+  Meaning\/}, vol.~2, pages 1538--1561. Berlin: Mouton de Gruyter.
 
-\bibitem[Xue and Onea(2011)]{xue-onea11}
-Xue, Jingyang and Edgar Onea. 2011.
-\newblock Correlation between projective meaning and at-issueness: {A}n
-  empirical study.
-\newblock In {\em Proceedings of the 2011 {ESSLLI} Workshop on Projective
-  Content\/}, pages 171--184.
+\bibitem[Tonhauser et~al.(accepted)Tonhauser, Beaver, and
+  Degen]{tbd-variability}
+Tonhauser, Judith, David Beaver, and Judith Degen. accepted.
+\newblock How projective is projective content? {G}radience in projectivity and
+  at-issueness.
+\newblock Accepted for publication in {\em Journal of Semantics}.
 
 \end{thebibliography}

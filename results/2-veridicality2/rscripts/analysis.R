@@ -1,4 +1,4 @@
-# setwd('/Users/tonhauser.1/Documents/current-research-topics/NSF-NAI/prop-att-experiments/7-prior-probability/Git-projective-probability/results/2-veridicality2/')
+#setwd('/Users/tonhauser.1/Documents/current-research-topics/NSF-NAI/prop-att-experiments/7-prior-probability/Git-projective-probability/results/2-veridicality2/')
 # source('rscripts/helpers.R')
 source('helpers.R')
 
@@ -285,6 +285,7 @@ ggplot(agr_content, aes(x=content, y=Mean)) +
   xlab("Content")
 ggsave("graphs/veridicality-means-bycontent.pdf",height=8,width=6)
 
+summary(t)
 # veridicality rating by participant
 variances = t %>%
   group_by(workerid) %>%
@@ -304,6 +305,63 @@ ggplot(variances, aes(x=reorder(workerid,VeriMean),y=VeriMean)) +
   xlab("Participant") +
   ylab("Mean veridicality rating")
 ggsave("graphs/veridicality-subjmeans.pdf",height=3,width=6.5)
+
+# veridicality rating by age (continous)
+means = t %>%
+  group_by(age) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  ungroup() %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) #%>%
+#filter(!is.na(gender)) %>%
+#droplevels()
+dodge = position_dodge(.9)
+
+ggplot(means, aes(y=Mean, x=age))+#, alpha=VeridicalityMean)) + 
+  geom_point() +
+  #geom_point(data=agr_subj, aes(color=content)) +
+  # geom_bar(stat="identity",position=dodge) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
+  scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  geom_smooth(method='lm') +
+  # scale_color_manual(name="Prior probability\nof eventuality", breaks=c("factH","factL"),labels=c("high", "low"), 
+  # values=brewer.pal(2,"Dark2")) +
+  scale_alpha(range = c(.3,1)) +
+  ylab("Mean veridicality rating") +
+  xlab("Participant age") +
+  #facet_grid(fact_type~subjectGender) + 
+  #ggtitle("Columns: attitude holder gender") +
+  #ggtitle(title="Rows: speaker gender; Columns: participant gender") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top") 
+ggsave("../graphs/age-continuuous-collapsed.pdf")
+
+# veridicality rating by participant gender
+means = t %>%
+  group_by(gender) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  ungroup() %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
+  filter(!is.na(gender)) %>%
+  droplevels()
+dodge = position_dodge(.9)
+
+means
+
+ggplot(means, aes(y=Mean, x=gender))+#, alpha=VeridicalityMean)) + 
+  geom_point() +
+  #geom_point(data=agr_subj, aes(color=content)) +
+  # geom_bar(stat="identity",position=dodge) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
+  scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  # scale_color_manual(name="Prior probability\nof eventuality", breaks=c("factH","factL"),labels=c("high", "low"), 
+  # values=brewer.pal(2,"Dark2")) +
+  scale_alpha(range = c(.3,1)) +
+  ylab("Mean veridicality rating") +
+  xlab("Participant gender") +
+  #facet_grid(fact_type~subjectGender) + 
+  #ggtitle("Columns: attitude holder gender") +
+  #ggtitle(title="Rows: speaker gender; Columns: participant gender") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top") 
+ggsave("../graphs/gender-collapsed.pdf")
 
 ## pairwise comparison to see which predicates differ from one another
 library(lsmeans)

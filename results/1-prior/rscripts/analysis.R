@@ -7,6 +7,9 @@ library(forcats)
 library(dichromat)
 theme_set(theme_bw())
 
+## NO NEED TO RUN THIS FIRST BIT IF YOU JUST WANT TO LOAD CLEAN DATA. 
+## SEARCH FOR "load clean data for analysis"
+
 # load raw data
 d = read.csv("../experiment.csv")
 nrow(d) #2090 (95 participants x 22 items)
@@ -43,16 +46,16 @@ length(unique(d$workerid)) #87 total
 ## how often was each list completed?
 table(d$list)
 
-## exclude Turkers based on fillers
+## exclude Turkers based on the two control stimuli
 table(d$item)
 
 # make relevant subsets
-# filler 1
+# filler/control 1 (high responses expected)
 d.f1 <- subset(d, d$item == "F1")
 d.f1 <- droplevels(d.f1)
 nrow(d.f1) #87
 
-# filler 2
+# filler/control 2 (low responses expected)
 d.f2 <- subset(d, d$item == "F2")
 d.f2 <- droplevels(d.f2)
 nrow(d.f2) #87
@@ -73,7 +76,7 @@ ggplot(d.f12, aes(x=workerid,y=response)) +
   scale_y_continuous(breaks = pretty(d.f12$response, n = 10)) +
   ylab("Responses to fillers") +
   xlab("Participant")
-ggsave(f="graphs/filler-ratings.pdf",height=4,width=20)
+ggsave(f="../graphs/filler-ratings.pdf",height=4,width=20)
 
 # Turkers who gave responses to F1 lower than .8
 f1 <- d.f1[d.f1$response < .8,]
@@ -88,7 +91,7 @@ ggplot(f1, aes(x=workerid,y=response)) +
   ylab("Responses to filler 1") +
   xlab("Participants who gave bad responses (expected high)")
 
-# Turkers who gave responses to F2 higher than .1
+# Turkers who gave responses to F2 higher than .2
 f2 <- d.f2[d.f2$response > .2,]
 nrow(f2) #3
 
@@ -110,7 +113,7 @@ ggplot(f, aes(x=workerid,y=response)) +
   scale_y_continuous(breaks = pretty(f$response, n = 10)) +
   ylab("Responses to fillers") +
   xlab("Participants who gave bad responses (red/F1 expected high, blue/F2 expected low)")
-ggsave(f="graphs/bad-filler-ratings.pdf",height=4,width=20)
+ggsave(f="../graphs/bad-filler-ratings.pdf",height=4,width=20)
 
 length(unique(f$workerid)) #19 Turkers
 
@@ -128,17 +131,18 @@ ggplot(filler, aes(x=workerid,y=response)) +
   scale_y_continuous(breaks = pretty(filler$response, n = 10)) +
   ylab("Responses to fillers") +
   xlab("'Good' Participant")
-ggsave(f="graphs/filler-ratings-good-participants.pdf",height=4,width=20)
+ggsave(f="../graphs/filler-ratings-good-participants.pdf",height=4,width=20)
 
 # clean data = cd
 cd = d
-saveRDS(cd, file="../data/cd.rds")
+write.csv(cd, file = "../data/cd.csv")
 head(cd)
 nrow(cd) #1496 / 22 items = 68 participants
+view(cd)
 
-# read cleaned data
-cd = readRDS("../data/cd.rds")
-
+# load clean data for analysis
+cd <- read.csv(file="../data/cd.csv", header=TRUE, sep=",")
+nrow(cd) #1496
 
 # age info
 table(cd$age) #21-75
@@ -146,10 +150,29 @@ median(cd$age) #36
 table(cd$gender)
 #31 female, 37 male
 
+# look at responses to fillers in clean data
+# filler/control 1 (high responses expected)
+cd.f1 <- subset(cd, cd$item == "F1")
+cd.f1 <- droplevels(cd.f1)
+nrow(cd.f1) #68
+
+# filler/control 2 (low responses expected)
+cd.f2 <- subset(cd, cd$item == "F2")
+cd.f2 <- droplevels(cd.f2)
+nrow(cd.f2) #87
+
+# group mean on filler 1
+round(mean(cd.f1$response),2) #.99
+round(sd(cd.f1$response),2) #.01
+
+# group mean on filler 2
+round(mean(cd.f2$response),2) #.01
+round(sd(cd.f2$response),2) #.01
+
 # target data
-target <- subset(d, d$item != "F1" & d$item != "F2" & d$workerid != "1")
+target <- subset(cd, cd$item != "F1" & cd$item != "F2")
 target <- droplevels(target)
-nrow(target)
+nrow(target) #1360 = 68 participants x 20 items
 table(target$item)
 
 # mean responses and standard deviations of responses to H and L items
@@ -179,9 +202,14 @@ means = aggregate(response~item+itemType+eventItemNr, data=target, FUN="mean")
 means$YMin = means$response - aggregate(response~item+itemType+eventItemNr, data=target, FUN="ci.low")$response
 means$YMax = means$response + aggregate(response~item+itemType+eventItemNr, data=target, FUN="ci.high")$response
 means
+View(means)
 
-table(target$item) #32 or 35 responses for each item
-table(target$event) #67 responses for each event (32 + 35)
+sd = aggregate(response~item+itemType+eventItemNr, data=target, FUN="sd")
+sd
+View(sd)
+
+table(target$item) #33 or 35 responses for each item
+table(target$event) #68 responses for each event (33 + 35)
 print(unique(target$eventItemNr))
 
 target$eventItemNr  = factor(target$eventItemNr, 
@@ -211,15 +239,16 @@ ggplot(target, aes(x=eventItemNr,y=response)) +
   geom_point(data = means, size = 3) +
   geom_errorbar(data = means, aes(ymin=YMin, ymax=YMax)) +
   geom_point(alpha = 0.1) +
+  scale_y_continuous(breaks = seq(0,1,by = .2)) +
   #geom_text(aes(label=workerid), vjust = 1, cex= 5)+
   scale_color_manual(values=c("#E69F00", "#56B4E9")) +
   #, "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7"))
   theme(axis.text.x = element_text(size = 12, angle = 75, hjust = 1)) +
   theme(axis.title=element_text(size=14)) +
   theme(legend.position="none") +
-  ylab("Likeliness ratings") +
-  xlab("Events") 
-ggsave(f="graphs/target-ratings.pdf",height=8,width=10)
+  ylab("Likeliness rating") +
+  xlab("Event") 
+ggsave(f="../graphs/target-ratings.pdf",height=8,width=10)
 
 means = target %>%
   group_by(event,itemType,fact) %>%
@@ -227,3 +256,4 @@ means = target %>%
   ungroup() %>%
   mutate(itemType = paste("fact",itemType,sep=""))
 write.csv(means,file="../data/prior_means.csv",row.names=F,quote=F)
+

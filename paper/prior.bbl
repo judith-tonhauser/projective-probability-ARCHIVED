@@ -1,5 +1,5 @@
 \newcommand{\noopsort}[1]{}\newcommand{\SortNoop}[1]{}
-\begin{thebibliography}{10}
+\begin{thebibliography}{12}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[Anand and Hacquard(2014)]{anand-hacquard2014}
@@ -7,6 +7,11 @@ Anand, Pranav and Valentine Hacquard. 2014.
 \newblock Factivity, belief and discourse.
 \newblock In {\em The Art and Craft of Semantics: A Festschrift for Irene
   Heim\/}, pages 69--90. MIT Working Papers in Linguistics.
+
+\bibitem[Bates et~al.(2015)Bates, M{\"a}chler, Bolker, and Walker]{bates2015}
+Bates, Douglas, Martin M{\"a}chler, Ben Bolker, and Steve Walker. 2015.
+\newblock Fitting linear mixed-effects models using {lme4}.
+\newblock {\em Journal of Statistical Software\/} 67(1):1--48.
 
 \bibitem[Chierchia and McConnell-Ginet(1990)]{ccmg90}
 Chierchia, Gennaro and Sally McConnell-Ginet. 1990.
@@ -17,6 +22,11 @@ Chierchia, Gennaro and Sally McConnell-Ginet. 1990.
 Hothorn, Torsten, Frank Bretz, and Peter Westfall. 2008.
 \newblock Simultaneous inference in general parametric models.
 \newblock {\em Biometrical Journal\/} 50(3):346--363.
+
+\bibitem[Karttunen(1971)]{karttunen71b}
+Karttunen, Lauri. 1971.
+\newblock Some observations on factivity.
+\newblock {\em Papers in Linguistics\/} 4:55--69.
 
 \bibitem[{R Core Team}(2016)]{r}
 {R Core Team}. 2016.

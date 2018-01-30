@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  29 JAN 2018 13:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  30 JAN 2018 12:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1076,53 +1076,58 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@loff=\dimen318
 \@vwid@roff=\dimen319
 ))
-(./prior.aux)
+(./prior.aux
+
+LaTeX Warning: Label `f-trial-exp3' multiply defined.
+
+)
 \openout1 = `prior.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 111.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 111
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 109.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 109
 .
  (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 111.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 111
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 109.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 109
 .
+
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 111.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 111
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 109.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 109
 .
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 111.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 111.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 109.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 109.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 111.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 111.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 109.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 109.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 111.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 109.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/ot1txr.fd
@@ -1163,7 +1168,7 @@ File: ot1txr.fd 2000/12/15 v3.1
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box87
-Package hyperref Info: Link coloring OFF on input line 111.
+Package hyperref Info: Link coloring OFF on input line 109.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1172,9 +1177,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count194
 )
-LaTeX Info: Redefining \ref on input line 111.
-LaTeX Info: Redefining \pageref on input line 111.
-LaTeX Info: Redefining \nameref on input line 111.
+LaTeX Info: Redefining \ref on input line 109.
+LaTeX Info: Redefining \pageref on input line 109.
+LaTeX Info: Redefining \nameref on input line 109.
 
 (./prior.out) (./prior.out)
 \@outlinefile=\write5
@@ -1217,146 +1222,250 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+txsya on input line 111.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 109.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 111.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 109.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 111.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 109.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 111.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 109.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-Package xypdf Info: Line width: 0.61319pt on input line 111.
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 113.
+Package xypdf Info: Line width: 0.61319pt on input line 109.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 111.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 113.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 111.
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <6> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 113.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 111.
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 127.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 125.
  [1
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OT1+txtt on input line 183
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+LaTeX Font Info:    Try loading font information for OT1+txtt on input line 207
 .
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/ot1txtt.fd
 File: ot1txtt.fd 2000/12/15 v3.1
-) [2] [3]
-<figures/exp1-trial.pdf, id=149, 424.84683pt x 186.76585pt>
-File: figures/exp1-trial.pdf Graphic file (type pdf)
+) [3]
 
-<use figures/exp1-trial.pdf>
-Package pdftex.def Info: figures/exp1-trial.pdf used on input line 225.
-(pdftex.def)             Requested size: 227.62204pt x 100.06265pt.
+LaTeX Warning: Reference `s-norming-prior' on page 4 undefined on input line 24
+5.
 
-<../results/1-prior/graphs/target-ratings.pdf, id=155, 722.7pt x 578.16pt>
-File: ../results/1-prior/graphs/target-ratings.pdf Graphic file (type pdf)
+[4] <figures/contradictory-trial.pdf, id=196, 685.60236pt x 301.75826pt>
+File: figures/contradictory-trial.pdf Graphic file (type pdf)
 
-<use ../results/1-prior/graphs/target-ratings.pdf>
-Package pdftex.def Info: ../results/1-prior/graphs/target-ratings.pdf used on i
-nput line 243.
-(pdftex.def)             Requested size: 491.43787pt x 393.15242pt.
-
-Overfull \hbox (21.68285pt too wide) in paragraph at lines 243--244
- [][] 
- []
-
-[4 <./figures/exp1-trial.pdf>] [5 <../results/1-prior/graphs/target-ratings.pdf
->]
-Overfull \hbox (1.05035pt too wide) in paragraph at lines 280--281
- []\OT1/txr/bx/n/10.95 Materials[] \OT1/txr/m/n/10.95 Whether the con-tent of t
-he clausal com-ple-ment was en-tailed was tested for 20 clause-embedding
- []
-
-[6] <figures/exp2-trial.pdf, id=221, 697.96477pt x 312.27576pt>
-File: figures/exp2-trial.pdf Graphic file (type pdf)
-
-<use figures/exp2-trial.pdf>
-Package pdftex.def Info: figures/exp2-trial.pdf used on input line 318.
-(pdftex.def)             Requested size: 284.52756pt x 127.30484pt.
- [7 <./figures/exp2-trial.pdf, page is rotated 90 degrees>]
-<../results/2-veridicality2/graphs/boxplot-veridicality.pdf, id=264, 469.755pt 
+<use figures/contradictory-trial.pdf>
+Package pdftex.def Info: figures/contradictory-trial.pdf used on input line 281
+.
+(pdftex.def)             Requested size: 284.52756pt x 125.23193pt.
+ [5 <./figures/contradictory-trial.pdf, page is rotated 90 degrees>]
+<../results/2-veridicality2/graphs/boxplot-veridicality.pdf, id=238, 469.755pt 
 x 252.945pt>
 File: ../results/2-veridicality2/graphs/boxplot-veridicality.pdf Graphic file (
 type pdf)
  <use ../results/2-veridicality2/graphs/boxplot-veridicality.pdf>
 Package pdftex.def Info: ../results/2-veridicality2/graphs/boxplot-veridicality
-.pdf used on input line 346.
+.pdf used on input line 309.
 (pdftex.def)             Requested size: 491.43787pt x 264.61974pt.
 
-Overfull \hbox (21.68285pt too wide) in paragraph at lines 346--347
+Overfull \hbox (21.68285pt too wide) in paragraph at lines 309--310
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[8] [9 <../results/2-veridicality2/graphs/boxplot-veridicality.pdf>] [10
+[6] [7 <../results/2-veridicality2/graphs/boxplot-veridicality.pdf>] [8
 
 ]
-[11
+<../results/2-veridicality2/graphs/veridicality-subjmeans.pdf, id=276, 469.755p
+t x 216.81pt>
+File: ../results/2-veridicality2/graphs/veridicality-subjmeans.pdf Graphic file
+ (type pdf)
+
+<use ../results/2-veridicality2/graphs/veridicality-subjmeans.pdf>
+Package pdftex.def Info: ../results/2-veridicality2/graphs/veridicality-subjmea
+ns.pdf used on input line 363.
+(pdftex.def)             Requested size: 491.43787pt x 226.81691pt.
+
+Overfull \hbox (27.15782pt too wide) in paragraph at lines 363--364
+ [][] 
+ []
+
+
+<../results/2-veridicality2/graphs/veridicality-entailing-subjmeans.pdf, id=277
+, 469.755pt x 216.81pt>
+File: ../results/2-veridicality2/graphs/veridicality-entailing-subjmeans.pdf Gr
+aphic file (type pdf)
+
+<use ../results/2-veridicality2/graphs/veridicality-entailing-subjmeans.pdf>
+Package pdftex.def Info: ../results/2-veridicality2/graphs/veridicality-entaili
+ng-subjmeans.pdf used on input line 367.
+(pdftex.def)             Requested size: 491.43787pt x 226.81691pt.
+
+Overfull \hbox (27.15782pt too wide) in paragraph at lines 367--368
+ [][] 
+ []
+
+
+Overfull \hbox (0.3057pt too wide) in paragraph at lines 377--378
+[]\OT1/txr/m/n/10.95 Contradictoriness di-ag-nos-tic for en-tail-ment dis-tin-g
+uishes non-entailing pred-i-cates from en-tail-ing pred-
+ []
+
+[9
+
+ <../results/2-veridicality2/graphs/veridicality-subjmeans.pdf> <../results/2-v
+eridicality2/graphs/veridicality-entailing-subjmeans.pdf>]
+
+LaTeX Warning: Reference `s-norming-prior' on page 10 undefined on input line 3
+91.
+
+[10]
+File: figures/contradictory-trial.pdf Graphic file (type pdf)
+ <use figures/contradictory-trial.pdf>
+Package pdftex.def Info: figures/contradictory-trial.pdf used on input line 429
+.
+(pdftex.def)             Requested size: 284.52756pt x 125.23193pt.
+ [11]
+File: ../results/2-veridicality2/graphs/boxplot-veridicality.pdf Graphic file (
+type pdf)
+
+<use ../results/2-veridicality2/graphs/boxplot-veridicality.pdf>
+Package pdftex.def Info: ../results/2-veridicality2/graphs/boxplot-veridicality
+.pdf used on input line 457.
+(pdftex.def)             Requested size: 491.43787pt x 264.61974pt.
+
+Overfull \hbox (21.68285pt too wide) in paragraph at lines 457--458
+ [][] 
+ []
+
+[12] [13
 
 ]
-<../results/2-veridicality/graphs/veridicality-subjmeans.pdf, id=305, 469.755pt
- x 216.81pt>
-File: ../results/2-veridicality/graphs/veridicality-subjmeans.pdf Graphic file 
-(type pdf)
- <use ../results/2-veridicality/graphs/veridicality-subjmeans.pdf>
-Package pdftex.def Info: ../results/2-veridicality/graphs/veridicality-subjmean
-s.pdf used on input line 599.
-(pdftex.def)             Requested size: 341.43306pt x 157.58516pt.
+File: ../results/2-veridicality2/graphs/veridicality-subjmeans.pdf Graphic file
+ (type pdf)
+ <use ../results/2-veridicality2/graphs/veridicality-subjmeans.pdf>
+Package pdftex.def Info: ../results/2-veridicality2/graphs/veridicality-subjmea
+ns.pdf used on input line 505.
+(pdftex.def)             Requested size: 491.43787pt x 226.81691pt.
 
+Overfull \hbox (27.15782pt too wide) in paragraph at lines 505--506
+ [][] 
+ []
 
-LaTeX Warning: Reference `s-norming' on page 12 undefined on input line 627.
+File: ../results/2-veridicality2/graphs/veridicality-entailing-subjmeans.pdf Gr
+aphic file (type pdf)
+<use ../results/2-veridicality2/graphs/veridicality-entailing-subjmeans.pdf>
+Package pdftex.def Info: ../results/2-veridicality2/graphs/veridicality-entaili
+ng-subjmeans.pdf used on input line 509.
+(pdftex.def)             Requested size: 491.43787pt x 226.81691pt.
 
-[12 <../results/2-veridicality/graphs/veridicality-subjmeans.pdf>] [13]
-(./prior.bbl) [14
+Overfull \hbox (27.15782pt too wide) in paragraph at lines 509--510
+ [][] 
+ []
+
+[14
+
+] [15] <figures/proj-trial.pdf, id=385, 501.34344pt x 335.59871pt>
+File: figures/proj-trial.pdf Graphic file (type pdf)
+
+<use figures/proj-trial.pdf>
+Package pdftex.def Info: figures/proj-trial.pdf used on input line 564.
+(pdftex.def)             Requested size: 284.52756pt x 190.4688pt.
+ [16 <./figures/proj-trial.pdf>]
+<../results/3-projectivity/graphs/means-projectivity-by-predicate-and-facttype.
+pdf, id=407, 505.89pt x 289.08pt>
+File: ../results/3-projectivity/graphs/means-projectivity-by-predicate-and-fact
+type.pdf Graphic file (type pdf)
+
+<use ../results/3-projectivity/graphs/means-projectivity-by-predicate-and-factt
+ype.pdf>
+Package pdftex.def Info: ../results/3-projectivity/graphs/means-projectivity-by
+-predicate-and-facttype.pdf used on input line 582.
+(pdftex.def)             Requested size: 491.43787pt x 280.8263pt.
+
+Overfull \hbox (21.68285pt too wide) in paragraph at lines 582--583
+ [][] 
+ []
+
+[17 <../results/3-projectivity/graphs/means-projectivity-by-predicate-and-factt
+ype.pdf>] [18] <figures/exp1-trial.pdf, id=445, 424.84683pt x 186.76585pt>
+File: figures/exp1-trial.pdf Graphic file (type pdf)
+
+<use figures/exp1-trial.pdf>
+Package pdftex.def Info: figures/exp1-trial.pdf used on input line 651.
+(pdftex.def)             Requested size: 227.62204pt x 100.06265pt.
+ [19 <./figures/exp1-trial.pdf>]
+<../results/1-prior/graphs/target-ratings.pdf, id=476, 722.7pt x 578.16pt>
+File: ../results/1-prior/graphs/target-ratings.pdf Graphic file (type pdf)
+
+<use ../results/1-prior/graphs/target-ratings.pdf>
+Package pdftex.def Info: ../results/1-prior/graphs/target-ratings.pdf used on i
+nput line 669.
+(pdftex.def)             Requested size: 491.43787pt x 393.15242pt.
+
+Overfull \hbox (21.68285pt too wide) in paragraph at lines 669--670
+ [][] 
+ []
+
+[20] [21 <../results/1-prior/graphs/target-ratings.pdf>] [22] (./prior.bbl)
+[23
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 662.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 662.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 741.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 741.
  (./prior.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 662.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 662.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 741.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 741.
 Package rerunfilecheck Info: File `prior.out' has not changed.
-(rerunfilecheck)             Checksum: E63358B699B65B2A2E5B88A5CB1C8B06;1000.
+(rerunfilecheck)             Checksum: 6DEA42B8B6D368D306AE290EEACE3415;1554.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 662.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 741.
  ) 
 Here is how much of TeX's memory you used:
- 24594 strings out of 493014
- 420291 string characters out of 6133351
- 550925 words of memory out of 5000000
- 27485 multiletter control sequences out of 15000+600000
- 58042 words of font info for 148 fonts, out of 8000000 for 9000
+ 24713 strings out of 493014
+ 422496 string characters out of 6133351
+ 552637 words of memory out of 5000000
+ 27532 multiletter control sequences out of 15000+600000
+ 60225 words of font info for 152 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,77p,3237b,726s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
+ 55i,12n,87p,3237b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
 st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
+, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
 , replaced by a fixed one
@@ -1368,18 +1477,17 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/20
-16/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2016/texm
-f-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2016/texmf-dist/
-fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
-ype1/public/txfonts/txtt.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/ur
-w/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/ut
-mbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on prior.pdf (14 pages, 245036 bytes).
+live/2016/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2016/texmf-dist
+/fonts/type1/public/txfonts/txtt.pfb></usr/local/texlive/2016/texmf-dist/fonts/
+type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/
+times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utm
+r8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on prior.pdf (23 pages, 319538 bytes).
 PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
- 360 compressed objects within 4 object streams
- 107 named destinations out of 1000 (max. 500000)
- 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 603 PDF objects out of 1000 (max. 8388607)
+ 542 compressed objects within 6 object streams
+ 173 named destinations out of 1000 (max. 500000)
+ 245 words of extra memory for PDF output out of 10000 (max. 10000000)
 

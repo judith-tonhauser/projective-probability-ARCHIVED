@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  30 JAN 2018 12:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  30 JAN 2018 13:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1411,34 +1411,39 @@ Overfull \hbox (21.68285pt too wide) in paragraph at lines 582--583
  []
 
 [17 <../results/3-projectivity/graphs/means-projectivity-by-predicate-and-factt
-ype.pdf>] [18] <figures/exp1-trial.pdf, id=445, 424.84683pt x 186.76585pt>
+ype.pdf>] [18
+
+] [19
+
+]
+<figures/exp1-trial.pdf, id=451, 424.84683pt x 186.76585pt>
 File: figures/exp1-trial.pdf Graphic file (type pdf)
 
 <use figures/exp1-trial.pdf>
-Package pdftex.def Info: figures/exp1-trial.pdf used on input line 651.
+Package pdftex.def Info: figures/exp1-trial.pdf used on input line 686.
 (pdftex.def)             Requested size: 227.62204pt x 100.06265pt.
- [19 <./figures/exp1-trial.pdf>]
-<../results/1-prior/graphs/target-ratings.pdf, id=476, 722.7pt x 578.16pt>
+ [20 <./figures/exp1-trial.pdf>]
+<../results/1-prior/graphs/target-ratings.pdf, id=481, 722.7pt x 578.16pt>
 File: ../results/1-prior/graphs/target-ratings.pdf Graphic file (type pdf)
 
 <use ../results/1-prior/graphs/target-ratings.pdf>
 Package pdftex.def Info: ../results/1-prior/graphs/target-ratings.pdf used on i
-nput line 669.
+nput line 704.
 (pdftex.def)             Requested size: 491.43787pt x 393.15242pt.
 
-Overfull \hbox (21.68285pt too wide) in paragraph at lines 669--670
+Overfull \hbox (21.68285pt too wide) in paragraph at lines 704--705
  [][] 
  []
 
-[20] [21 <../results/1-prior/graphs/target-ratings.pdf>] [22] (./prior.bbl)
-[23
+[21] [22 <../results/1-prior/graphs/target-ratings.pdf>] [23] (./prior.bbl)
+[24
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 741.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 741.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 776.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 776.
  (./prior.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 741.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 741.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 776.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 776.
 Package rerunfilecheck Info: File `prior.out' has not changed.
 (rerunfilecheck)             Checksum: 6DEA42B8B6D368D306AE290EEACE3415;1554.
 
@@ -1448,13 +1453,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 741.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 776.
  ) 
 Here is how much of TeX's memory you used:
- 24713 strings out of 493014
- 422496 string characters out of 6133351
- 552637 words of memory out of 5000000
- 27532 multiletter control sequences out of 15000+600000
+ 24716 strings out of 493014
+ 422536 string characters out of 6133351
+ 553063 words of memory out of 5000000
+ 27533 multiletter control sequences out of 15000+600000
  60225 words of font info for 152 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,87p,3237b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1484,10 +1489,10 @@ mf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2016/texmf-dist
 type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/
 times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utm
 r8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on prior.pdf (23 pages, 319538 bytes).
+Output written on prior.pdf (24 pages, 321252 bytes).
 PDF statistics:
- 603 PDF objects out of 1000 (max. 8388607)
- 542 compressed objects within 6 object streams
- 173 named destinations out of 1000 (max. 500000)
+ 609 PDF objects out of 1000 (max. 8388607)
+ 547 compressed objects within 6 object streams
+ 175 named destinations out of 1000 (max. 500000)
  245 words of extra memory for PDF output out of 10000 (max. 10000000)
 

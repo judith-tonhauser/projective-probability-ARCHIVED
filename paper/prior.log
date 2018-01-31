@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  30 JAN 2018 13:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  31 JAN 2018 13:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1262,116 +1262,122 @@ LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
  [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-LaTeX Font Info:    Try loading font information for OT1+txtt on input line 207
+LaTeX Font Info:    Try loading font information for OT1+txtt on input line 229
 .
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/ot1txtt.fd
 File: ot1txtt.fd 2000/12/15 v3.1
-) [3]
+) [3] [4]
 
-LaTeX Warning: Reference `s-norming-prior' on page 4 undefined on input line 24
-5.
+LaTeX Warning: Reference `s-norming-prior' on page 5 undefined on input line 26
+7.
 
-[4] <figures/contradictory-trial.pdf, id=196, 685.60236pt x 301.75826pt>
+[5] <figures/contradictory-trial.pdf, id=209, 685.60236pt x 301.75826pt>
 File: figures/contradictory-trial.pdf Graphic file (type pdf)
 
 <use figures/contradictory-trial.pdf>
-Package pdftex.def Info: figures/contradictory-trial.pdf used on input line 281
+Package pdftex.def Info: figures/contradictory-trial.pdf used on input line 303
 .
 (pdftex.def)             Requested size: 284.52756pt x 125.23193pt.
- [5 <./figures/contradictory-trial.pdf, page is rotated 90 degrees>]
-<../results/2-veridicality2/graphs/boxplot-veridicality.pdf, id=238, 469.755pt 
+ [6 <./figures/contradictory-trial.pdf, page is rotated 90 degrees>]
+<../results/2-veridicality2/graphs/boxplot-veridicality.pdf, id=251, 469.755pt 
 x 252.945pt>
 File: ../results/2-veridicality2/graphs/boxplot-veridicality.pdf Graphic file (
 type pdf)
  <use ../results/2-veridicality2/graphs/boxplot-veridicality.pdf>
 Package pdftex.def Info: ../results/2-veridicality2/graphs/boxplot-veridicality
-.pdf used on input line 309.
+.pdf used on input line 331.
 (pdftex.def)             Requested size: 491.43787pt x 264.61974pt.
 
-Overfull \hbox (21.68285pt too wide) in paragraph at lines 309--310
+Overfull \hbox (21.68285pt too wide) in paragraph at lines 331--332
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6] [7 <../results/2-veridicality2/graphs/boxplot-veridicality.pdf>] [8
+[7] [8 <../results/2-veridicality2/graphs/boxplot-veridicality.pdf>] [9
 
 ]
-<../results/2-veridicality2/graphs/veridicality-subjmeans.pdf, id=276, 469.755p
+<../results/2-veridicality2/graphs/veridicality-subjmeans.pdf, id=289, 469.755p
 t x 216.81pt>
 File: ../results/2-veridicality2/graphs/veridicality-subjmeans.pdf Graphic file
  (type pdf)
 
 <use ../results/2-veridicality2/graphs/veridicality-subjmeans.pdf>
 Package pdftex.def Info: ../results/2-veridicality2/graphs/veridicality-subjmea
-ns.pdf used on input line 363.
+ns.pdf used on input line 385.
 (pdftex.def)             Requested size: 491.43787pt x 226.81691pt.
 
-Overfull \hbox (27.15782pt too wide) in paragraph at lines 363--364
+Overfull \hbox (27.15782pt too wide) in paragraph at lines 385--386
  [][] 
  []
 
 
-<../results/2-veridicality2/graphs/veridicality-entailing-subjmeans.pdf, id=277
+<../results/2-veridicality2/graphs/veridicality-entailing-subjmeans.pdf, id=290
 , 469.755pt x 216.81pt>
 File: ../results/2-veridicality2/graphs/veridicality-entailing-subjmeans.pdf Gr
 aphic file (type pdf)
 
 <use ../results/2-veridicality2/graphs/veridicality-entailing-subjmeans.pdf>
 Package pdftex.def Info: ../results/2-veridicality2/graphs/veridicality-entaili
-ng-subjmeans.pdf used on input line 367.
+ng-subjmeans.pdf used on input line 389.
 (pdftex.def)             Requested size: 491.43787pt x 226.81691pt.
 
-Overfull \hbox (27.15782pt too wide) in paragraph at lines 367--368
+Overfull \hbox (27.15782pt too wide) in paragraph at lines 389--390
  [][] 
  []
 
 
-Overfull \hbox (0.3057pt too wide) in paragraph at lines 377--378
+Overfull \hbox (0.3057pt too wide) in paragraph at lines 399--400
 []\OT1/txr/m/n/10.95 Contradictoriness di-ag-nos-tic for en-tail-ment dis-tin-g
 uishes non-entailing pred-i-cates from en-tail-ing pred-
  []
 
-[9
+[10
 
  <../results/2-veridicality2/graphs/veridicality-subjmeans.pdf> <../results/2-v
-eridicality2/graphs/veridicality-entailing-subjmeans.pdf>]
+eridicality2/graphs/veridicality-entailing-subjmeans.pdf>] [11]
 
-LaTeX Warning: Reference `s-norming-prior' on page 10 undefined on input line 3
-91.
+LaTeX Warning: Reference `s-norming-prior' on page 12 undefined on input line 4
+53.
 
-[10]
 File: figures/contradictory-trial.pdf Graphic file (type pdf)
- <use figures/contradictory-trial.pdf>
-Package pdftex.def Info: figures/contradictory-trial.pdf used on input line 429
+<use figures/contradictory-trial.pdf>
+Package pdftex.def Info: figures/contradictory-trial.pdf used on input line 491
 .
 (pdftex.def)             Requested size: 284.52756pt x 125.23193pt.
- [11]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12]
 File: ../results/2-veridicality2/graphs/boxplot-veridicality.pdf Graphic file (
 type pdf)
-
-<use ../results/2-veridicality2/graphs/boxplot-veridicality.pdf>
+ <use ../results/2-veridicality2/graphs/boxplot-veridicality.pdf>
 Package pdftex.def Info: ../results/2-veridicality2/graphs/boxplot-veridicality
-.pdf used on input line 457.
+.pdf used on input line 519.
 (pdftex.def)             Requested size: 491.43787pt x 264.61974pt.
 
-Overfull \hbox (21.68285pt too wide) in paragraph at lines 457--458
+Overfull \hbox (21.68285pt too wide) in paragraph at lines 519--520
  [][] 
  []
 
-[12] [13
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13] [14] [15
 
 ]
 File: ../results/2-veridicality2/graphs/veridicality-subjmeans.pdf Graphic file
  (type pdf)
- <use ../results/2-veridicality2/graphs/veridicality-subjmeans.pdf>
+
+<use ../results/2-veridicality2/graphs/veridicality-subjmeans.pdf>
 Package pdftex.def Info: ../results/2-veridicality2/graphs/veridicality-subjmea
-ns.pdf used on input line 505.
+ns.pdf used on input line 567.
 (pdftex.def)             Requested size: 491.43787pt x 226.81691pt.
 
-Overfull \hbox (27.15782pt too wide) in paragraph at lines 505--506
+Overfull \hbox (27.15782pt too wide) in paragraph at lines 567--568
  [][] 
  []
 
@@ -1379,71 +1385,71 @@ File: ../results/2-veridicality2/graphs/veridicality-entailing-subjmeans.pdf Gr
 aphic file (type pdf)
 <use ../results/2-veridicality2/graphs/veridicality-entailing-subjmeans.pdf>
 Package pdftex.def Info: ../results/2-veridicality2/graphs/veridicality-entaili
-ng-subjmeans.pdf used on input line 509.
+ng-subjmeans.pdf used on input line 571.
 (pdftex.def)             Requested size: 491.43787pt x 226.81691pt.
 
-Overfull \hbox (27.15782pt too wide) in paragraph at lines 509--510
+Overfull \hbox (27.15782pt too wide) in paragraph at lines 571--572
  [][] 
  []
 
-[14
+[16
 
-] [15] <figures/proj-trial.pdf, id=385, 501.34344pt x 335.59871pt>
+] [17] <figures/proj-trial.pdf, id=404, 501.34344pt x 335.59871pt>
 File: figures/proj-trial.pdf Graphic file (type pdf)
 
 <use figures/proj-trial.pdf>
-Package pdftex.def Info: figures/proj-trial.pdf used on input line 564.
+Package pdftex.def Info: figures/proj-trial.pdf used on input line 626.
 (pdftex.def)             Requested size: 284.52756pt x 190.4688pt.
- [16 <./figures/proj-trial.pdf>]
+ [18 <./figures/proj-trial.pdf>]
 <../results/3-projectivity/graphs/means-projectivity-by-predicate-and-facttype.
-pdf, id=407, 505.89pt x 289.08pt>
+pdf, id=425, 505.89pt x 289.08pt>
 File: ../results/3-projectivity/graphs/means-projectivity-by-predicate-and-fact
 type.pdf Graphic file (type pdf)
 
 <use ../results/3-projectivity/graphs/means-projectivity-by-predicate-and-factt
 ype.pdf>
 Package pdftex.def Info: ../results/3-projectivity/graphs/means-projectivity-by
--predicate-and-facttype.pdf used on input line 582.
+-predicate-and-facttype.pdf used on input line 644.
 (pdftex.def)             Requested size: 491.43787pt x 280.8263pt.
 
-Overfull \hbox (21.68285pt too wide) in paragraph at lines 582--583
+Overfull \hbox (21.68285pt too wide) in paragraph at lines 644--645
  [][] 
  []
 
-[17 <../results/3-projectivity/graphs/means-projectivity-by-predicate-and-factt
-ype.pdf>] [18
+[19 <../results/3-projectivity/graphs/means-projectivity-by-predicate-and-factt
+ype.pdf>] [20
 
-] [19
+] [21
 
 ]
-<figures/exp1-trial.pdf, id=451, 424.84683pt x 186.76585pt>
+<figures/exp1-trial.pdf, id=469, 424.84683pt x 186.76585pt>
 File: figures/exp1-trial.pdf Graphic file (type pdf)
 
 <use figures/exp1-trial.pdf>
-Package pdftex.def Info: figures/exp1-trial.pdf used on input line 686.
+Package pdftex.def Info: figures/exp1-trial.pdf used on input line 751.
 (pdftex.def)             Requested size: 227.62204pt x 100.06265pt.
- [20 <./figures/exp1-trial.pdf>]
-<../results/1-prior/graphs/target-ratings.pdf, id=481, 722.7pt x 578.16pt>
+ [22 <./figures/exp1-trial.pdf>]
+<../results/1-prior/graphs/target-ratings.pdf, id=499, 722.7pt x 578.16pt>
 File: ../results/1-prior/graphs/target-ratings.pdf Graphic file (type pdf)
 
 <use ../results/1-prior/graphs/target-ratings.pdf>
 Package pdftex.def Info: ../results/1-prior/graphs/target-ratings.pdf used on i
-nput line 704.
+nput line 769.
 (pdftex.def)             Requested size: 491.43787pt x 393.15242pt.
 
-Overfull \hbox (21.68285pt too wide) in paragraph at lines 704--705
+Overfull \hbox (21.68285pt too wide) in paragraph at lines 769--770
  [][] 
  []
 
-[21] [22 <../results/1-prior/graphs/target-ratings.pdf>] [23] (./prior.bbl)
-[24
+[23] [24 <../results/1-prior/graphs/target-ratings.pdf>] [25] (./prior.bbl)
+[26
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 776.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 776.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 841.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 841.
  (./prior.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 776.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 776.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 841.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 841.
 Package rerunfilecheck Info: File `prior.out' has not changed.
 (rerunfilecheck)             Checksum: 6DEA42B8B6D368D306AE290EEACE3415;1554.
 
@@ -1453,13 +1459,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 776.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 841.
  ) 
 Here is how much of TeX's memory you used:
- 24716 strings out of 493014
- 422536 string characters out of 6133351
- 553063 words of memory out of 5000000
- 27533 multiletter control sequences out of 15000+600000
+ 24730 strings out of 493014
+ 422717 string characters out of 6133351
+ 553120 words of memory out of 5000000
+ 27540 multiletter control sequences out of 15000+600000
  60225 words of font info for 152 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,87p,3237b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1482,17 +1488,18 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2016/tex
-mf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2016/texmf-dist
-/fonts/type1/public/txfonts/txtt.pfb></usr/local/texlive/2016/texmf-dist/fonts/
-type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/
-times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utm
-r8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on prior.pdf (24 pages, 321252 bytes).
+live/2016/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2016/texmf-dist
+/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2016/texmf-dist/fonts/
+type1/public/txfonts/txtt.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/u
+rw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/u
+tmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
+></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on prior.pdf (26 pages, 329488 bytes).
 PDF statistics:
- 609 PDF objects out of 1000 (max. 8388607)
- 547 compressed objects within 6 object streams
- 175 named destinations out of 1000 (max. 500000)
+ 633 PDF objects out of 1000 (max. 8388607)
+ 568 compressed objects within 6 object streams
+ 182 named destinations out of 1000 (max. 500000)
  245 words of extra memory for PDF output out of 10000 (max. 10000000)
 

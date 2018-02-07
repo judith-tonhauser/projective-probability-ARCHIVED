@@ -1,5 +1,5 @@
 \newcommand{\noopsort}[1]{}\newcommand{\SortNoop}[1]{}
-\begin{thebibliography}{17}
+\begin{thebibliography}{18}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[Anand and Hacquard(2014)]{anand-hacquard2014}
@@ -63,6 +63,12 @@ Simons, Mandy. 2001.
 \newblock On the conversational basis of some presuppositions.
 \newblock In {\em Semantics and Linguistics Theory (SALT) XI\/}, pages
   431--448. Ithaca, NY: CLC Publications.
+
+\bibitem[Simons(2003)]{simons2003}
+Simons, Mandy. 2003.
+\newblock Presupposition and accommodation: {U}nderstanding the stalnakarian
+  picture.
+\newblock {\em Philosophical Studies\/} 112:251--278.
 
 \bibitem[Simons et~al.(2017)Simons, Beaver, Roberts, and
   Tonhauser]{best-question}

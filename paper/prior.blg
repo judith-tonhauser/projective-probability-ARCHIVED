@@ -3,44 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: prior.aux
 The style file: cslipubs-natbib.bst
 Database file #1: bibliography.bib
-You've used 14 entries,
+Warning--I didn't find a database entry for "vds88"
+You've used 17 entries,
             2811 wiz_defined-function locations,
-            709 strings with 6626 characters,
-and the built_in function-call counts, 6784 in all, are:
-= -- 649
-> -- 303
-< -- 14
-+ -- 105
-- -- 87
-* -- 509
-:= -- 1195
-add.period$ -- 60
-call.type$ -- 14
-change.case$ -- 104
-chr.to.int$ -- 14
-cite$ -- 14
-duplicate$ -- 299
-empty$ -- 511
-format.name$ -- 105
-if$ -- 1410
+            725 strings with 6942 characters,
+and the built_in function-call counts, 7868 in all, are:
+= -- 749
+> -- 336
+< -- 17
++ -- 117
+- -- 96
+* -- 572
+:= -- 1400
+add.period$ -- 72
+call.type$ -- 17
+change.case$ -- 120
+chr.to.int$ -- 17
+cite$ -- 17
+duplicate$ -- 353
+empty$ -- 609
+format.name$ -- 117
+if$ -- 1632
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 14
-newline$ -- 75
-num.names$ -- 56
-pop$ -- 94
+missing$ -- 19
+newline$ -- 90
+num.names$ -- 68
+pop$ -- 115
 preamble$ -- 2
-purify$ -- 85
+purify$ -- 100
 quote$ -- 0
-skip$ -- 236
+skip$ -- 279
 stack$ -- 0
-substring$ -- 389
-swap$ -- 67
+substring$ -- 443
+swap$ -- 70
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 120
+type$ -- 141
 warning$ -- 0
-while$ -- 58
+while$ -- 68
 width$ -- 0
-write$ -- 188
+write$ -- 225
+(There was 1 warning)

@@ -1,5 +1,5 @@
 \newcommand{\noopsort}[1]{}\newcommand{\SortNoop}[1]{}
-\begin{thebibliography}{14}
+\begin{thebibliography}{17}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[Anand and Hacquard(2014)]{anand-hacquard2014}
@@ -13,10 +13,20 @@ Bates, Douglas, Martin M{\"a}chler, Ben Bolker, and Steve Walker. 2015.
 \newblock Fitting linear mixed-effects models using {lme4}.
 \newblock {\em Journal of Statistical Software\/} 67(1):1--48.
 
+\bibitem[Beaver(2001)]{beaver01}
+Beaver, David. 2001.
+\newblock {\em Presupposition and Assertion in Dynamic Semantics\/}.
+\newblock Stanford, CA: CSLI Publications.
+
 \bibitem[Chierchia and McConnell-Ginet(1990)]{ccmg90}
 Chierchia, Gennaro and Sally McConnell-Ginet. 1990.
 \newblock {\em Meaning and Grammar\/}.
 \newblock Cambridge, MA: MIT Press.
+
+\bibitem[Gazdar(1979)]{gazdar79a}
+Gazdar, Gerald. 1979.
+\newblock {\em Pragmatics: Implicature, Presuppositions, and Logical Form\/}.
+\newblock New York: Academic Press.
 
 \bibitem[Hothorn et~al.(2008)Hothorn, Bretz, and Westfall]{tukey}
 Hothorn, Torsten, Frank Bretz, and Peter Westfall. 2008.
@@ -80,5 +90,10 @@ Tonhauser, Judith, David Beaver, and Judith Degen. accepted.
 \newblock How projective is projective content? {G}radience in projectivity and
   at-issueness.
 \newblock Accepted for publication in {\em Journal of Semantics}.
+
+\bibitem[van~der Sandt(1992)]{vds92}
+van~der Sandt, Rob. 1992.
+\newblock Presupposition projection as anaphora resolution.
+\newblock {\em Journal of Semantics\/} 9:333--377.
 
 \end{thebibliography}

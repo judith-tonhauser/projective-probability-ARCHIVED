@@ -1,21 +1,15 @@
-salt2018/abstract.pdf
-paper/prior.synctex.gz
-paper/prior.pdf
-paper/prior.log
-salt2018/abstract.synctex.gz
-salt2018/abstract.pdf
-salt2018/abstract.log
+# Latex files
+# .pdf .aux .toc .bbl . blg .synctex.gz
+**.pdf
+**.synctex.gz
+**.log
+**.aux
+**.toc
+**.bbl
+**.blg
+
+# Other files */node_modules/
 *.RData
-*/node_modules/
-*.bbl
-*.blg
-*.log
-*.DS_Store
-*.out
-*.synctex.gz
-*.aux
-*.synctex.gz
-*.toc
 *.config
 *.input
 *.properties

@@ -4,45 +4,45 @@ The top-level auxiliary file: prior.aux
 The style file: cslipubs-natbib.bst
 Database file #1: bibliography.bib
 Warning--I didn't find a database entry for "vds88"
-You've used 18 entries,
+You've used 19 entries,
             2811 wiz_defined-function locations,
-            731 strings with 7053 characters,
-and the built_in function-call counts, 8272 in all, are:
-= -- 791
-> -- 347
-< -- 18
-+ -- 121
-- -- 99
-* -- 599
-:= -- 1477
-add.period$ -- 76
-call.type$ -- 18
-change.case$ -- 126
-chr.to.int$ -- 18
-cite$ -- 18
-duplicate$ -- 371
-empty$ -- 641
-format.name$ -- 121
-if$ -- 1714
+            737 strings with 7232 characters,
+and the built_in function-call counts, 8859 in all, are:
+= -- 846
+> -- 369
+< -- 20
++ -- 128
+- -- 105
+* -- 639
+:= -- 1572
+add.period$ -- 80
+call.type$ -- 19
+change.case$ -- 134
+chr.to.int$ -- 19
+cite$ -- 19
+duplicate$ -- 402
+empty$ -- 689
+format.name$ -- 128
+if$ -- 1844
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 20
-newline$ -- 95
-num.names$ -- 72
-pop$ -- 118
+missing$ -- 21
+newline$ -- 100
+num.names$ -- 78
+pop$ -- 127
 preamble$ -- 2
-purify$ -- 105
+purify$ -- 110
 quote$ -- 0
-skip$ -- 292
+skip$ -- 316
 stack$ -- 0
-substring$ -- 475
-swap$ -- 71
-text.length$ -- 5
+substring$ -- 514
+swap$ -- 82
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 150
+type$ -- 159
 warning$ -- 0
-while$ -- 72
+while$ -- 78
 width$ -- 0
-write$ -- 238
+write$ -- 251
 (There was 1 warning)

@@ -1,5 +1,5 @@
 \newcommand{\noopsort}[1]{}\newcommand{\SortNoop}[1]{}
-\begin{thebibliography}{18}
+\begin{thebibliography}{19}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[Anand and Hacquard(2014)]{anand-hacquard2014}
@@ -27,6 +27,12 @@ Chierchia, Gennaro and Sally McConnell-Ginet. 1990.
 Gazdar, Gerald. 1979.
 \newblock {\em Pragmatics: Implicature, Presuppositions, and Logical Form\/}.
 \newblock New York: Academic Press.
+
+\bibitem[Heim(1983)]{heim83}
+Heim, Irene. 1983.
+\newblock On the projection problem for presuppositions.
+\newblock In M.~Barlow, D.~Flickinger, and M.~Westcoat, eds., {\em {West Coast
+  Conference on Formal Linguistics (WCCFL)} 2\/}, pages 114--125.
 
 \bibitem[Hothorn et~al.(2008)Hothorn, Bretz, and Westfall]{tukey}
 Hothorn, Torsten, Frank Bretz, and Peter Westfall. 2008.

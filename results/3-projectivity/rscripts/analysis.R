@@ -144,7 +144,7 @@ cd = d
 write.csv(cd, "../data/cd.csv")
 nrow(cd) #6552 / 26 items = 252 participants
 
-# load clean clean data for analysis
+# load clean data for analysis
 cd = read.csv("../data/cd.csv")
 nrow(cd) #6552
 
@@ -201,6 +201,38 @@ ggplot(t, aes(x=Verb, y=response)) +
   ylab("Certainty rating")+
   xlab("Predicate")
 ggsave("../graphs/boxplot-projectivity.pdf",height=4,width=6.5)
+
+# mean projectivity by mean veridicality
+head(t)
+means = t %>%
+  group_by(verb, VeridicalityMean) %>%
+  summarize(ProjectionMean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  ungroup() %>%
+  mutate(YMin = ProjectionMean - CILow, YMax = ProjectionMean + CIHigh, Verb = fct_reorder(verb,ProjectionMean))
+View(means)
+
+cols = data.frame(V=levels(means$Verb))
+cols$VeridicalityGroup = as.factor(ifelse(cols$V %in% c("be_annoyed", "know", "discover", "reveal", "see", "establish", "be_right"), "E", ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NE", "V")))
+#cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
+cols$Colors =  ifelse(cols$VeridicalityGroup == "E", "blue", 
+                      ifelse(cols$VeridicalityGroup == "NE", "brown", "black"))
+
+
+ggplot(means, aes(x=ProjectionMean, y=VeridicalityMean))+#, alpha=VeridicalityMean)) + 
+  #geom_point(color="black", size=4) +
+  #geom_point(data=agr_subj, aes(color=content)) +
+  geom_point() +
+  geom_text(aes(label=Verb),hjust=.5, vjust=1) +
+  #geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
+  scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  #scale_color_manual(name="Prior probability\nof eventuality", breaks=c("factH","factL"),labels=c("high", "low"), 
+                     #values=brewer.pal(2,"Dark2")) +
+  scale_alpha(range = c(.3,1)) +
+  #theme(legend.position="top") +
+  ylab("Mean projectivity rating") +
+  xlab("Mean contradictoriness rating") +
+  #theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top")
+ggsave("../graphs/mean-projectivity-by-mean-contradictoriness.pdf",height=4,width=7)
 
 # SALT paper plot:
 means = t %>%

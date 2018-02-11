@@ -1,12 +1,15 @@
 # Latex files
 # .pdf .aux .toc .bbl . blg .synctex.gz
-**.pdf
-**.synctex.gz
-**.log
-**.aux
-**.toc
-**.bbl
-**.blg
+paper/prior.pdf
+paper/prior.synctex.gz
+paper/prior.log
+paper/prior.aux
+paper/prior.toc
+paper/prior.bbl
+paper/prior.blg
+
+# SALT 2018 submission
+/salt2018
 
 # Other files */node_modules/
 *.RData

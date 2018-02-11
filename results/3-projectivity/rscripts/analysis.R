@@ -218,7 +218,7 @@ cols$Colors =  ifelse(cols$VeridicalityGroup == "E", "blue",
                       ifelse(cols$VeridicalityGroup == "NE", "brown", "black"))
 
 
-ggplot(means, aes(x=ProjectionMean, y=VeridicalityMean))+#, alpha=VeridicalityMean)) + 
+ggplot(means, aes(x=VeridicalityMean, y=ProjectionMean))+#, alpha=VeridicalityMean)) + 
   #geom_point(color="black", size=4) +
   #geom_point(data=agr_subj, aes(color=content)) +
   geom_point() +
@@ -229,7 +229,7 @@ ggplot(means, aes(x=ProjectionMean, y=VeridicalityMean))+#, alpha=VeridicalityMe
                      #values=brewer.pal(2,"Dark2")) +
   scale_alpha(range = c(.3,1)) +
   #theme(legend.position="top") +
-  ylab("Mean projectivity rating") +
+  ylab("Mean certainty rating") +
   xlab("Mean contradictoriness rating") +
   #theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top")
 ggsave("../graphs/mean-projectivity-by-mean-contradictoriness.pdf",height=4,width=7)

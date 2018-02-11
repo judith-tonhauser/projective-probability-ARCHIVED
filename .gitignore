@@ -12,6 +12,9 @@ paper/prior.blg
 # SALT 2018 submission
 /salt2018
 
+# MIT talk outline
+/mit2018
+
 # Other files */node_modules/
 *.RData
 *.config

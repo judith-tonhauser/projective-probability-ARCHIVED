@@ -105,7 +105,7 @@ means
 means = aggregate(response ~ contentNr, data=c.good, FUN="mean")
 means
 #contentNr   response
-#1 control_good1 0.16964413 "Zack believes that I'm married, but I'm actually single"
+#1 control_good1 0.16964413 
 #2 control_good2 0.05313167
 #3 control_good3 0.05120996
 #4 control_good4 0.05811388
@@ -214,7 +214,6 @@ means = t %>%
   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
   select(verb,Mean,YMin,YMax)
 means = as.data.frame(means)
-View(means)
 
 write.csv(means, file="../data/veridicality_means.csv",row.names=F,quote=F)
 
@@ -231,10 +230,10 @@ ggplot(t, aes(x=verb, y=response)) +
   geom_boxplot(width=0.2,position=position_dodge(.9)) +
   stat_summary(fun.y=mean, geom="point", color="black",fill="gray70", shape=21, size=3,position=position_dodge(.9)) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
-  ylab("Contradictoriness rating")+
+  ylab("Follows rating")+
   xlab("Predicate") +
   theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))
-ggsave("../graphs/boxplot-veridicality.pdf",height=3.5,width=6.5)
+ggsave("../graphs/boxplot-inference.pdf",height=3.5,width=6.5)
 
 # plot of contradictoriness by predicate and complement clauses
 agr_verb = t %>%

@@ -1267,8 +1267,8 @@ control_items = [
 	{
 		"item_id" : "control_good4",
 		"short_trigger" : "control_good",
-		"utterance" : "Vanessa dared to lock the door.",
-		"content" : "Vanessa locked the door"
+		"utterance" : "Vanessa happened to look into the mirror.",
+		"content" : "Vanessa looked into the mirror"
 	},
 	{
 		"item_id" : "control_bad1",
@@ -1285,7 +1285,7 @@ control_items = [
 	{
 		"item_id" : "control_bad3",
 		"short_trigger" : "control_bad",
-		"utterance" : "Madison tried in vain to close the window.",
+		"utterance" : "Madison was unsuccessful in closing the window.",
 		"content" : "Madison closed the window"
 	},
 	{

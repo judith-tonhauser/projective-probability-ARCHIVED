@@ -184,7 +184,52 @@ table(t$verb,t$content)
 names(t)
 table(t$trigger_class)
 
-# mean projectivity of the predicates by verb and fact_type
+# projectivity of complement of "discover" by complement prior
+discover <- droplevels(subset(cd, cd$verb == "discover"))
+nrow(discover) #252 = 1 rating per 252 Turkers
+names(discover)
+table(discover$content) #7-19 ratings per complement (20 complements)
+head(discover)
+discover$EventFact <- paste(discover$event, discover$fact_type, sep="-")
+head(discover)
+table(discover$EventFact) #2-10 ratings per complement/fact pairing
+head(table)
+
+str(discover$EventFact)
+discover$EventFact <- as.factor(discover$EventFact)
+
+means = discover %>%
+  group_by(EventFact,PriorMean) %>%
+  summarize(ProjMean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  ungroup() %>%
+  mutate(YMin = ProjMean - CILow, YMax = ProjMean + CIHigh)
+  #mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Compl = fct_reorder(Mean))
+View(means)
+
+means$EventFact <- factor(means$EventFact, levels=means[order(means$PriorMean), "EventFact"])
+
+model <- lm(ProjMean ~ PriorMean, data = means)
+summary(model)
+
+ggplot(means, aes(x=PriorMean, y=ProjMean)) + 
+  #geom_point(color="black", size=4) +
+  #geom_point(data=agr_subj, aes(color=content)) +
+  geom_point() +
+  geom_smooth(method="lm") +
+  labs(title = paste("Adj R2 = ",signif(summary(model)$adj.r.squared, 5),
+                     "Intercept =",signif(model$coef[[1]],5 ),
+                     " Slope =",signif(model$coef[[2]], 5),
+                     " P =",signif(summary(model)$coef[2,4], 5))) +
+  #geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
+  scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  #scale_alpha(range = c(.3,1)) +
+  #theme(legend.position="top") +
+  ylab("Mean projectivity rating of complement/fact") +
+  xlab("Mean prior probability of event/fact") +
+  #theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top")
+ggsave("../graphs/discover-mean-projectivity-by-mean-prior.pdf",height=4,width=7)
+
+# mean projectivity of the predicates by verb
 means = t %>%
   group_by(verb) %>%
   summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%

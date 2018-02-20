@@ -207,6 +207,20 @@ t$verb <- gsub("be_right_that","be_right",t$verb)
 t$verb <- gsub("inform_Sam","inform",t$verb)
 t$verb <- gsub("annoyed","be_annoyed",t$verb)
 
+t$item <- paste(t$verb,t$content,sep="-")
+table(t$item)
+
+# mean contradictoriness by item
+means = t %>%
+  group_by(item) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
+  select(item,Mean,YMin,YMax)
+means = as.data.frame(means)
+
+write.csv(means, file="../data/veridicality_item_means.csv",row.names=F,quote=F)
+
+
 # boxplot of contradictoriness by predicate, collapsing over complement clauses
 means = t %>%
   group_by(verb) %>%

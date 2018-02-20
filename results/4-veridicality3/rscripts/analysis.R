@@ -583,15 +583,16 @@ comparison
 
 ### Correlation between the two measures of entailment
 
-# load contradictoriness means
+# load contradictoriness means by verb
 cmeans = read.csv("../../2-veridicality2/data/veridicality_means.csv")
 colnames(cmeans) = c("verb","ContradictorinessMean","ContradictorinessCILow","ContradictorinessCIHigh")
-cmeans
+head(cmeans)
+nrow(cmeans) #20 verbs
 
-# merge contradictoriness means into target data
+# merge contradictoriness item means into target data
 t = left_join(t,cmeans,by=c("verb"))
 head(t)
-table(t$verb)
+nrow(t)
 
 means = t %>%
   group_by(verb, ContradictorinessMean) %>%
@@ -615,8 +616,52 @@ ggplot(means, aes(x=InferenceMean, y=ContradictorinessMean)) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
   #scale_alpha(range = c(.3,1)) +
   #theme(legend.position="top") +
-  ylab("Contradictoriness rating mean") +
-  xlab("Inference rating mean") +
+  ylab("Item mean contradictoriness rating") +
+  xlab("Item mean inference rating") +
   #theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top")
   ggsave("../graphs/mean-inference-by-mean-contradictoriness.pdf",height=4,width=9)
+
+# load contradictoriness item means
+cItemMeans = read.csv("../../2-veridicality2/data/veridicality_item_means.csv")
+colnames(cItemMeans) = c("item","ContradictorinessMean","ContradictorinessCILow","ContradictorinessCIHigh")
+head(cItemMeans)
+nrow(cItemMeans) #400 items (20 verbs x 20 complement clauses)
+
+# create item for inference strength data
+t$item <- paste(t$verb,t$content,sep="-")
+table(t$item)
+
+# merge contradictoriness item means into target data
+t = left_join(t,cItemMeans,by=c("item"))
+head(t)
+nrow(t)
+names(t)
+table(t$item)
+
+means = t %>%
+  group_by(item, ContradictorinessMean) %>%
+  summarize(InferenceMean = mean(response), InferenceCILow = ci.low(response), InferenceCIHigh = ci.high(response)) %>%
+  ungroup() %>%
+  mutate(InferenceYMin = InferenceMean - InferenceCILow, InferenceYMax = InferenceMean + InferenceCIHigh, Item = fct_reorder(item,InferenceMean))
+View(means)
+
+model <- lm(ContradictorinessMean ~ InferenceMean, data = means)
+summary(model)
+
+ggplot(means, aes(x=InferenceMean, y=ContradictorinessMean)) + 
+  geom_point() +
+  #geom_text(aes(label=item),hjust=0,vjust=0) +
+  geom_smooth(method="lm") +
+  labs(title = paste("Adj R2 = ",signif(summary(model)$adj.r.squared, 5),
+                     "Intercept =",signif(model$coef[[1]],5 ),
+                     " Slope =",signif(model$coef[[2]], 5),
+                     " P =",signif(summary(model)$coef[2,4], 5))) +
+  #geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
+  scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  #scale_alpha(range = c(.3,1)) +
+  #theme(legend.position="top") +
+  ylab("Item mean contradictoriness rating") +
+  xlab("Item mean inference rating") +
+  #theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top")
+  ggsave("../graphs/by-item-mean-inference-by-mean-contradictoriness.pdf",height=4,width=9)
 

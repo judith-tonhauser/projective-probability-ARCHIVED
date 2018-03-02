@@ -617,7 +617,7 @@ ggplot(means, aes(x=InferenceMean, y=ContradictorinessMean)) +
   #scale_alpha(range = c(.3,1)) +
   #theme(legend.position="top") +
   ylab("Item mean contradictoriness rating") +
-  xlab("Item mean inference rating") +
+  xlab("Item mean inference rating") #+
   #theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top")
   ggsave("../graphs/mean-inference-by-mean-contradictoriness.pdf",height=4,width=9)
 
@@ -651,7 +651,8 @@ summary(model)
 ggplot(means, aes(x=InferenceMean, y=ContradictorinessMean)) + 
   geom_point() +
   #geom_text(aes(label=item),hjust=0,vjust=0) +
-  geom_smooth(method="lm") +
+  # geom_smooth(method="lm") +
+  geom_smooth() +
   labs(title = paste("Adj R2 = ",signif(summary(model)$adj.r.squared, 5),
                      "Intercept =",signif(model$coef[[1]],5 ),
                      " Slope =",signif(model$coef[[2]], 5),
@@ -661,7 +662,55 @@ ggplot(means, aes(x=InferenceMean, y=ContradictorinessMean)) +
   #scale_alpha(range = c(.3,1)) +
   #theme(legend.position="top") +
   ylab("Item mean contradictoriness rating") +
-  xlab("Item mean inference rating") +
+  xlab("Item mean inference rating") #+
   #theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top")
-  ggsave("../graphs/by-item-mean-inference-by-mean-contradictoriness.pdf",height=4,width=9)
+ggsave("../graphs/by-item-mean-inference-by-mean-contradictoriness.pdf",height=4,width=9)
 
+# restricted spline analysis
+library(rms)
+nrow(means)
+means$Predicate = sapply(strsplit(as.character(means$Item),"-"), "[", 1)
+means$Content = sapply(strsplit(as.character(means$Item),"-"), "[", 2)
+
+m.0 = lmer(ContradictorinessMean ~ InferenceMean + (1|Predicate) + (1|Content), data=means)
+m.1 = lmer(ContradictorinessMean ~ rcs(InferenceMean, 3) + (1|Predicate) + (1|Content), data=means)
+m.2 = lmer(ContradictorinessMean ~ rcs(InferenceMean, 4) + (1|Predicate) + (1|Content), data=means)
+summary(m.0)
+summary(m.1)
+summary(m.2)
+anova(m.0,m.1)
+anova(m.1,m.2)
+
+m.0 = lm(ContradictorinessMean ~ InferenceMean, data=means)
+m.1 = lm(ContradictorinessMean ~ rcs(InferenceMean, 3), data=means)
+m.2 = lm(ContradictorinessMean ~ rcs(InferenceMean, 4), data=means)
+summary(m.0)
+summary(m.1)
+summary(m.2)
+anova(m.0,m.1)
+anova(m.1,m.2)
+
+means$DataType = "empirical"
+tmp = data.frame(item=means$item,InferenceMean=means$InferenceMean,ContradictorinessMean=fitted(m.1),DataType="fitted_3knots")
+bla = bind_rows(means,tmp)
+tmp = data.frame(item=means$item,InferenceMean=means$InferenceMean,ContradictorinessMean=fitted(m.2),DataType="fitted_4knots")
+bla = bind_rows(bla,tmp)
+tmp = data.frame(item=means$item,InferenceMean=means$InferenceMean,ContradictorinessMean=fitted(m.0),DataType="fitted_linear")
+bla = bind_rows(bla,tmp)
+
+ggplot(bla, aes(x=InferenceMean, y=ContradictorinessMean,color=DataType)) + 
+  geom_point() +
+  #geom_text(aes(label=item),hjust=0,vjust=0) +
+  # geom_smooth(method="lm") +
+  geom_smooth() +
+  labs(title = paste("Adj R2 = ",signif(summary(model)$adj.r.squared, 5),
+                     "Intercept =",signif(model$coef[[1]],5 ),
+                     " Slope =",signif(model$coef[[2]], 5),
+                     " P =",signif(summary(model)$coef[2,4], 5))) +
+  #geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
+  scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  #scale_alpha(range = c(.3,1)) +
+  #theme(legend.position="top") +
+  ylab("Item mean contradictoriness rating") +
+  xlab("Item mean inference rating") #+
+ggsave("../graphs/by-item-mean-inference-by-mean-contradictoriness-predictions.pdf",height=4,width=9)

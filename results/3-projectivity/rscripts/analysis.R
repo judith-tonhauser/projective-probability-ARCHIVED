@@ -216,16 +216,16 @@ ggplot(means, aes(x=PriorMean, y=ProjMean)) +
   #geom_point(data=agr_subj, aes(color=content)) +
   geom_point() +
   geom_smooth(method="lm") +
-  labs(title = paste("Adj R2 = ",signif(summary(model)$adj.r.squared, 5),
-                     "Intercept =",signif(model$coef[[1]],5 ),
-                     " Slope =",signif(model$coef[[2]], 5),
-                     " P =",signif(summary(model)$coef[2,4], 5))) +
+  labs(title = paste("Adj R2 = ",signif(summary(model)$adj.r.squared, 2),
+                     #"Intercept =",signif(model$coef[[1]],5 ),
+                     #" Slope =",signif(model$coef[[2]], 5),
+                     ", p <",".001")) +
   #geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
   #scale_alpha(range = c(.3,1)) +
   #theme(legend.position="top") +
-  ylab("Mean projectivity rating of complement/fact") +
-  xlab("Mean prior probability of event/fact") +
+  ylab("Mean certainty rating of complement/fact") +
+  xlab("Mean prior probability of event/fact (discover)") +
   #theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top")
 ggsave("../graphs/discover-mean-projectivity-by-mean-prior.pdf",height=4,width=7)
 
@@ -306,7 +306,7 @@ ggplot(means, aes(x=Verb, y=Mean, color=fact_type))+#, alpha=VeridicalityMean)) 
   theme(legend.position="top") +
   ylab("Mean certainty rating") +
   xlab("Predicate") +
-  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top")
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) # color=cols$Colors)), legend.position = "top")
 ggsave("../graphs/means-projectivity-by-predicate-and-facttype.pdf",height=4,width=7)
 
 means = means %>%

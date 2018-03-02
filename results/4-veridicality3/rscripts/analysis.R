@@ -207,6 +207,14 @@ t$verb <- gsub("be_right_that","be_right",t$verb)
 t$verb <- gsub("inform_Sam","inform",t$verb)
 t$verb <- gsub("annoyed","be_annoyed",t$verb)
 
+# save target data
+write.csv(t, "../data/t.csv")
+nrow(t) #5580
+
+# load target data for analysis
+t <- read.csv(file="../data/t.csv", header=TRUE, sep=",")
+
+
 # boxplot of inference strength by predicate, collapsing over complement clauses, ordered by mean
 means = t %>%
   group_by(verb) %>%
@@ -590,7 +598,9 @@ head(cmeans)
 nrow(cmeans) #20 verbs
 
 # merge contradictoriness item means into target data
-t = left_join(t,cmeans,by=c("verb"))
+head(t)
+head(cmeans)
+t = merge(t,cmeans,by=c("verb"))
 head(t)
 nrow(t)
 
@@ -623,7 +633,7 @@ ggplot(means, aes(x=InferenceMean, y=ContradictorinessMean)) +
 
 # load contradictoriness item means
 cItemMeans = read.csv("../../2-veridicality2/data/veridicality_item_means.csv")
-colnames(cItemMeans) = c("item","ContradictorinessMean","ContradictorinessCILow","ContradictorinessCIHigh")
+colnames(cItemMeans) = c("item","ContradictorinessItemMean","ContradictorinessItemCILow","ContradictorinessItemCIHigh")
 head(cItemMeans)
 nrow(cItemMeans) #400 items (20 verbs x 20 complement clauses)
 
@@ -632,7 +642,7 @@ t$item <- paste(t$verb,t$content,sep="-")
 table(t$item)
 
 # merge contradictoriness item means into target data
-t = left_join(t,cItemMeans,by=c("item"))
+t = merge(t,cItemMeans,by=c("item"))
 head(t)
 nrow(t)
 names(t)

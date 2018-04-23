@@ -1,4 +1,7 @@
-#setwd("~/Documents/current-research-topics/NSF-NAI/prop-att-experiments/7-prior-probability/Git-projective-probability/results/4-veridicality3/rscripts")
+# Prior probability work
+# 4-veridicality3 -- Inference ratings
+# What is true: Dan knows that Sophia got a tattoo.
+# Does it follow that Sophia got a tattoo?
 
 source('helpers.R')
 
@@ -213,8 +216,10 @@ nrow(t) #5580
 
 # load target data for analysis
 t <- read.csv(file="../data/t.csv", header=TRUE, sep=",")
+head(t)
+str(t$verb)
 
-
+# also used in MIT talk
 # boxplot of inference strength by predicate, collapsing over complement clauses, ordered by mean
 means = t %>%
   group_by(verb) %>%
@@ -222,17 +227,21 @@ means = t %>%
   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
   select(verb,Mean,YMin,YMax)
 means = as.data.frame(means)
+names(means)
 
 write.csv(means, file="../data/inference_means.csv",row.names=F,quote=F)
 
 t$verb <-factor(t$verb, levels=means[order(means$Mean), "verb"])
 
-#library(RColorBrewer)
 cols = data.frame(V=levels(t$verb))
-cols$VeridicalityGroup = as.factor(ifelse(cols$V %in% c("be_annoyed", "know", "discover", "reveal", "see", "establish", "be_right"), "E", ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NE", "V")))
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate","establish"),"VNF","V"))))
 #cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
-cols$Colors =  ifelse(cols$VeridicalityGroup == "E", "blue", 
-                      ifelse(cols$VeridicalityGroup == "NE", "brown", "black"))
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
+                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
+                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
 
 ggplot(t, aes(x=verb, y=response)) + 
   geom_boxplot(width=0.2,position=position_dodge(.9)) +
@@ -240,7 +249,8 @@ ggplot(t, aes(x=verb, y=response)) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
   ylab("Inference rating")+
   xlab("Predicate") +
-  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors))
 ggsave("../graphs/boxplot-inference.pdf",height=3.5,width=6.5)
 
 # boxplot of inference strength by predicate, collapsing over complement clauses, ordered by median

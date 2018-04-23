@@ -1,5 +1,8 @@
-#setwd('/Users/tonhauser.1/Documents/current-research-topics/NSF-NAI/prop-att-experiments/7-prior-probability/Git-projective-probability/results/2-veridicality2/')
-# source('rscripts/helpers.R')
+# Prior probability work
+# 2-veridicality2 -- Contradictoriness ratings
+# Sally: "Dan knows that Sophia got a tattoo, but she didn't."
+# Is Sally's utterance contradictory?
+
 source('helpers.R')
 
 # load required packages
@@ -220,7 +223,7 @@ means = as.data.frame(means)
 
 write.csv(means, file="../data/veridicality_item_means.csv",row.names=F,quote=F)
 
-
+# also used in MIT talk
 # boxplot of contradictoriness by predicate, collapsing over complement clauses
 means = t %>%
   group_by(verb) %>%
@@ -234,12 +237,15 @@ write.csv(means, file="../data/veridicality_means.csv",row.names=F,quote=F)
 
 t$verb <-factor(t$verb, levels=means[order(means$Mean), "verb"])
 
-#library(RColorBrewer)
 cols = data.frame(V=levels(t$verb))
-cols$VeridicalityGroup = as.factor(ifelse(cols$V %in% c("be_annoyed", "know", "discover", "reveal", "see", "establish", "be_right"), "E", ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NE", "V")))
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate","establish"),"VNF","V"))))
 #cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
-cols$Colors =  ifelse(cols$VeridicalityGroup == "E", "blue", 
-                      ifelse(cols$VeridicalityGroup == "NE", "brown", "black"))
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
+                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
+                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
 
 ggplot(t, aes(x=verb, y=response)) + 
   geom_boxplot(width=0.2,position=position_dodge(.9)) +

@@ -1,8 +1,6 @@
-# JT starts here
-# setwd('/Users/tonhauser.1/Documents/current-research-topics/NSF-NAI/prop-att-experiments/7-prior-probability/Git-projective-probability/results/3-projectivity/')
-#source('rscripts/helpers.R')
+# Prior probability work
+# 3-projectivity
 
-# JD starts here
 source('helpers.R')
 
 # load required packages
@@ -246,6 +244,55 @@ ggplot(t, aes(x=Verb, y=response)) +
   ylab("Certainty rating")+
   xlab("Predicate")
 ggsave("../graphs/boxplot-projectivity.pdf",height=4,width=6.5)
+
+# boxplot for MIT 2018 talk 
+# higher event probability only (to show by-predicate and within-predicate variability)
+# mean projectivity of the predicates by verb
+names(t)
+head(t)
+table(t$itemType)
+table(t$verb)
+
+tH <- subset(t, t$itemType == "factH")
+tH <- droplevels(tH)
+nrow(tH)
+head(tH)
+table(tH$verb)
+
+means = tH %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(verb,Mean))
+View(means)
+
+# groups of verbs
+# F (factive): know, discover, reveal, see, be_annoyed
+# NF (non-factive/non-veridical): pretend, think, suggest, say, hear
+# VNF (veridical non-factive): be_right, demonstrate, establish
+# V (apparently veridical/factive): else
+cols = data.frame(V=levels(tH$verb))
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate","establish"),"VNF","V"))))
+#cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
+                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
+                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
+
+tH$verb <-factor(tH$verb, levels=levels(means$Verb))
+
+ggplot(tH, aes(x=verb, y=response)) + 
+  geom_boxplot(width=0.2,position=position_dodge(.9)) +
+  stat_summary(fun.y=mean, geom="point", color="black",fill="gray70", shape=21, size=3,position=position_dodge(.9)) +
+  theme(text = element_text(size=12)) +
+  theme(axis.text.x = element_text(size = 12, angle = 75, hjust = 1)) +
+  scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors)) +
+  ylab("Certainty rating")+
+  xlab("Predicate") 
+ggsave("../graphs/boxplot-projectivity-factH.pdf",height=3.5,width=8)
 
 # mean projectivity by mean veridicality
 head(t)

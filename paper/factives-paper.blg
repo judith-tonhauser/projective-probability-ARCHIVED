@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: factives-paper.aux
+The style file: /Users/tonhauser.1/Library/Latex/cslipubs-natbib.bst
+Database file #1: /Users/tonhauser.1/Documents/bibliography.bib
+Warning--I didn't find a database entry for "vds88"
+You've used 42 entries,
+            2811 wiz_defined-function locations,
+            863 strings with 10064 characters,
+and the built_in function-call counts, 19305 in all, are:
+= -- 1855
+> -- 698
+< -- 52
++ -- 254
+- -- 193
+* -- 1318
+:= -- 3385
+add.period$ -- 179
+call.type$ -- 42
+change.case$ -- 288
+chr.to.int$ -- 41
+cite$ -- 42
+duplicate$ -- 916
+empty$ -- 1590
+format.name$ -- 247
+if$ -- 4076
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 47
+newline$ -- 215
+num.names$ -- 183
+pop$ -- 283
+preamble$ -- 2
+purify$ -- 228
+quote$ -- 0
+skip$ -- 727
+stack$ -- 0
+substring$ -- 1158
+swap$ -- 189
+text.length$ -- 15
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 351
+warning$ -- 0
+while$ -- 177
+width$ -- 0
+write$ -- 551
+(There was 1 warning)

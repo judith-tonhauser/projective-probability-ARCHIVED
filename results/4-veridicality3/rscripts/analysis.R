@@ -63,13 +63,11 @@ table(d$verb)
 
 # make relevant data subsets
 # control_bad: p does not follow (YES = 1)
-c.bad <- subset(d, d$verb == "control_bad")
-c.bad <- droplevels(c.bad)
+c.bad <- droplevels(subset(d, d$verb == "control_bad"))
 nrow(c.bad) #1144 / 4 contradictory controls = 286 Turkers
 
 # control_good: p does follow (NO = 0)
-c.good <- subset(d, d$verb == "control_good")
-c.good <- droplevels(c.good)
+c.good <- droplevels(subset(d, d$verb == "control_good"))
 nrow(c.good) #1144
 
 # all controls
@@ -180,6 +178,14 @@ ggplot(outliers.b, aes(x=workerid,y=response)) +
 d <- subset(d, !(d$workerid %in% outliers$workerid))
 d <- droplevels(d)
 length(unique(d$workerid)) #279 Turkers remain (7 excluded for problems with control items)
+
+# new group means
+c.bad <- droplevels(subset(d, d$verb == "control_bad"))
+nrow(c.bad) #1116 / 4 contradictory controls = 279 Turkers
+c.good <- droplevels(subset(d, d$verb == "control_good"))
+nrow(c.good) #1116
+round(mean(c.bad$response),2) #.04
+round(mean(c.good$response),2) #.95
 
 # clean data = cd
 cd = d

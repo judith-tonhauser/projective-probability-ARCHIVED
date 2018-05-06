@@ -1,0 +1,243 @@
+\newcommand{\noopsort}[1]{}\newcommand{\SortNoop}[1]{}
+\begin{thebibliography}{42}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[Abbott(2006)]{abbott06}
+Abbott, Barbara. 2006.
+\newblock Where have some of the presuppositions gone?
+\newblock In B.~J. Birner and G.~Ward, eds., {\em Drawing the Boundaries of
+  Meaning: {N}eo-Gricean Studies in Pragmatics and Semantics in Honor of
+  Laurence R.\ Horn\/}, pages 1--20. Philadelphia: John Benjamins.
+
+\bibitem[Abrus{\'a}n(2011)]{abrusan2011}
+Abrus{\'a}n, M{\'a}rta. 2011.
+\newblock Predicting the presuppositions of soft triggers.
+\newblock {\em Linguistics \& Philosophy\/} 34:491--535.
+
+\bibitem[Abrus{\'a}n(2013)]{abrusan2013}
+Abrus{\'a}n, M{\'a}rta. 2013.
+\newblock A note on quasi-presuppositions and focus.
+\newblock {\em Journal of Semantics\/} 30:257--265.
+
+\bibitem[Abrus{\'a}n(2016)]{abrusan2016}
+Abrus{\'a}n, M{\'a}rta. 2016.
+\newblock Presupposition cancellation: {E}xplaining the `soft-hard' trigger
+  distinction.
+\newblock {\em Natural Language Semantics\/} 24:165--202.
+
+\bibitem[Abusch(2010)]{abusch10}
+Abusch, Dorit. 2010.
+\newblock Presupposition triggering from alternatives.
+\newblock {\em Journal of Semantics\/} 27:37--80.
+
+\bibitem[Anand and Hacquard(2014)]{anand-hacquard2014}
+Anand, Pranav and Valentine Hacquard. 2014.
+\newblock Factivity, belief and discourse.
+\newblock In {\em The Art and Craft of Semantics: A Festschrift for Irene
+  Heim\/}, pages 69--90. MIT Working Papers in Linguistics.
+
+\bibitem[Beaver(2001)]{beaver01}
+Beaver, David. 2001.
+\newblock {\em Presupposition and Assertion in Dynamic Semantics\/}.
+\newblock Stanford, CA: CSLI Publications.
+
+\bibitem[Beaver and Clark(2008)]{beaver-clark08}
+Beaver, David and Brady Clark. 2008.
+\newblock {\em Sense and Sensitivity: How Focus Determines Meaning\/}.
+\newblock Oxford: Wiley-Blackwell.
+
+\bibitem[Chierchia and McConnell-Ginet(1990)]{ccmg90}
+Chierchia, Gennaro and Sally McConnell-Ginet. 1990.
+\newblock {\em Meaning and Grammar\/}.
+\newblock Cambridge, MA: MIT Press.
+
+\bibitem[de~Marneffe et~al.(2012)de~Marneffe, Manning, and
+  Potts]{demarneffe-etal2012}
+de~Marneffe, Marie-Catherine, {Christopher D.} Manning, and Christopher Potts.
+  2012.
+\newblock Did it happen? {T}he pragmatic complexity of veridicality assessment.
+\newblock {\em Computational Linguistics\/} 38:301--333.
+
+\bibitem[Dj\"arv and Bacovcin(2017)]{djaerv-bacovcin-salt27}
+Dj\"arv, Kajsa and {Hezekiah Akiva} Bacovcin. 2017.
+\newblock Prosodic effects on factive presupposition projection.
+\newblock In {\em Semantics and Linguistic Theory (SALT) XXVII\/}, pages
+  116--133. Ithaca, NY: CLC Publications.
+
+\bibitem[Eckardt(2014)]{eckardt2014}
+Eckardt, Regine. 2014.
+\newblock {\em The semantics of free indirect discourse\/}.
+\newblock Leiden: Brill.
+
+\bibitem[Egr\'e(2008)]{egre2008}
+Egr\'e, Paul. 2008.
+\newblock Question-embedding and factivity.
+\newblock In L.~Lihoreau, ed., {\em Grazer Philosophische Studien\/}, pages
+  85--125. Amsterdam: Rodopi.
+
+\bibitem[Gazdar(1979)]{gazdar79a}
+Gazdar, Gerald. 1979.
+\newblock {\em Pragmatics: Implicature, Presuppositions, and Logical Form\/}.
+\newblock New York: Academic Press.
+
+\bibitem[Geurts and Beaver(2014)]{beaver-geurts-sep}
+Geurts, Bart and David Beaver. 2014.
+\newblock Presupposition.
+\newblock In E.~Zalta, ed., {\em The Stanford Encyclopedia of Philosophy\/}.
+  Stanford University.
+
+\bibitem[Giannakidou(1998)]{giannakidou1998}
+Giannakidou, Anastasia, ed. 1998.
+\newblock {\em Polarity sensitivity as (non)veridical dependency\/}.
+\newblock Dordrecht: John Benjamins.
+
+\bibitem[Hazlett(2010)]{hazlett2010}
+Hazlett, Allan. 2010.
+\newblock The myth of factive verbs.
+\newblock {\em Philosophy and Phenomenological Research\/} 80:497--522.
+
+\bibitem[Heim(1983)]{heim83}
+Heim, Irene. 1983.
+\newblock On the projection problem for presuppositions.
+\newblock In M.~Barlow, D.~Flickinger, and M.~Westcoat, eds., {\em {West Coast
+  Conference on Formal Linguistics (WCCFL)} 2\/}, pages 114--125.
+
+\bibitem[Hothorn et~al.(2008)Hothorn, Bretz, and Westfall]{tukey}
+Hothorn, Torsten, Frank Bretz, and Peter Westfall. 2008.
+\newblock Simultaneous inference in general parametric models.
+\newblock {\em Biometrical Journal\/} 50(3):346--363.
+
+\bibitem[Karttunen(1971)]{karttunen71b}
+Karttunen, Lauri. 1971.
+\newblock Some observations on factivity.
+\newblock {\em Papers in Linguistics\/} 4:55--69.
+
+\bibitem[Karttunen(2016)]{karttunen2016}
+Karttunen, Lauri. 2016.
+\newblock Presupposition: {W}hat went wrong?
+\newblock In {\em Proceedings of {Semantics and Linguistic Theory (SALT)
+  XXVI}\/}, pages 705--731. Ithaca, NY: CLC Publications.
+
+\bibitem[Kiparsky and Kiparsky(1971)]{kiparsky-kiparsky71}
+Kiparsky, Paul and Carol Kiparsky. 1971.
+\newblock Fact.
+\newblock In D.~Steinberg and L.~Jakobovits, eds., {\em Semantics. An
+  Interdisciplinary Reader in Philosophy, Linguistics and Psychology\/}, pages
+  345--369. Cambridge: Cambridge University Press.
+
+\bibitem[Klein(1975)]{klein1975}
+Klein, Ewan. 1975.
+\newblock Two sorts of factive predicates.
+\newblock Pragmatics Microfiche it 1.1. frames B5ÐC14.
+
+\bibitem[Levinson(1983)]{levinson83}
+Levinson, Stephen. 1983.
+\newblock {\em Pragmatics\/}.
+\newblock Cambridge: Cambridge University Press.
+
+\bibitem[Melvold(1991)]{melvold1991}
+Melvold, Janis. 1991.
+\newblock Factivity and definiteness.
+\newblock In L.~Cheng and H.~Demirdache, eds., {\em More Papers on
+  Wh-movement\/}, vol.~5, pages 97--117. MIT Working Papers in Linguistics.
+
+\bibitem[Potts(2005)]{potts05}
+Potts, Christopher. 2005.
+\newblock {\em The {L}ogic of {C}onventional {I}mplicatures\/}.
+\newblock Oxford: OUP.
+
+\bibitem[Prince(1978)]{prince1978}
+Prince, Ellen~F. 1978.
+\newblock A comparison of wh-clefts and {\em it-}clefts in discourse.
+\newblock {\em Language\/} 54:883--906.
+
+\bibitem[{R Core Team}(2016)]{r}
+{R Core Team}. 2016.
+\newblock {\em R: A Language and Environment for Statistical Computing\/}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria.
+
+\bibitem[Reis(1973)]{reis1973}
+Reis, Marga. 1973.
+\newblock Entanglement on factives.
+\newblock {\em Linguistic Inquiry\/} 4:261--271.
+
+\bibitem[Romoli(2015)]{romoli2015}
+Romoli, Jacopo. 2015.
+\newblock The presuppositions of soft triggers are obligatory scalar
+  implicatures.
+\newblock {\em Journal of Semantics\/} 32:173--291.
+
+\bibitem[Schlenker(2003{\natexlab{a}})]{schlenker2003}
+Schlenker, Phillipe. 2003{\natexlab{a}}.
+\newblock The lazy {F}renchman's approach to the subjunctive.
+\newblock In {\em Proceedings of Romance Languages and Linguistic Theory\/},
+  pages 269--309.
+
+\bibitem[Schlenker(2003{\natexlab{b}})]{schlenker03}
+Schlenker, Philippe. 2003{\natexlab{b}}.
+\newblock A plea for monsters.
+\newblock {\em Linguistics \& Philosophy\/} 26:29--120.
+
+\bibitem[Schlenker(2010)]{schlenker10}
+Schlenker, Philippe. 2010.
+\newblock Local contexts and local meanings.
+\newblock {\em Philosophical Studies\/} 151:115--142.
+
+\bibitem[Schultz(2003)]{schultz2003}
+Schultz, Petra. 2003.
+\newblock {\em Factivity: Its Nature and Acquisition\/}.
+\newblock T\"ubingen: Niemeyer.
+
+\bibitem[Simons(2003)]{simons2003}
+Simons, Mandy. 2003.
+\newblock Presupposition and accommodation: {U}nderstanding the stalnakarian
+  picture.
+\newblock {\em Philosophical Studies\/} 112:251--278.
+
+\bibitem[Simons et~al.(2017)Simons, Beaver, Roberts, and
+  Tonhauser]{best-question}
+Simons, Mandy, David Beaver, Craige Roberts, and Judith Tonhauser. 2017.
+\newblock The {B}est {Q}uestion: Explaining the projection behavior of factive
+  verbs.
+\newblock {\em Discourse Processes\/} 3:187--206.
+
+\bibitem[Stalnaker(1974)]{stalnaker74}
+Stalnaker, Robert~C. 1974.
+\newblock Pragmatic presuppositions.
+\newblock In M.~Munitz and P.~Unger, eds., {\em Semantics and Philosophy\/},
+  pages 197--213. New York: New York University Press.
+
+\bibitem[Stevens et~al.(2017)Stevens, {de Marneffe}, Speer, and
+  Tonhauser]{stevens-etal2017}
+Stevens, {Jon Scott}, Marie-Catherine {de Marneffe}, {Shari R.} Speer, and
+  Judith Tonhauser. 2017.
+\newblock Rational use of prosody predicts projectivity in manner adverb
+  utterances.
+\newblock In {\em 39th Annual Meeting of the Cognitive Science Society\/},
+  pages 1144--1149.
+
+\bibitem[Swanson(2012)]{swanson2012}
+Swanson, Eric. 2012.
+\newblock Propositional attitudes.
+\newblock In {\em Semantics: An International Handbook of Natural Language
+  Meaning\/}, vol.~2, pages 1538--1561. Berlin: Mouton de Gruyter.
+
+\bibitem[Tonhauser(2016)]{tonhauser-salt26}
+Tonhauser, Judith. 2016.
+\newblock Prosodic cues to speaker commitment.
+\newblock In {\em Semantics and Linguistic Theory (SALT) XXVI\/}, pages
+  934--960. Ithaca, NY: CLC Publications.
+
+\bibitem[Tonhauser et~al.(in press)Tonhauser, Beaver, and
+  Degen]{tbd-variability}
+Tonhauser, Judith, David Beaver, and Judith Degen. in press.
+\newblock How projective is projective content? {G}radience in projectivity and
+  at-issueness.
+\newblock {\em Journal of Semantics}.
+
+\bibitem[van~der Sandt(1992)]{vds92}
+van~der Sandt, Rob. 1992.
+\newblock Presupposition projection as anaphora resolution.
+\newblock {\em Journal of Semantics\/} 9:333--377.
+
+\end{thebibliography}

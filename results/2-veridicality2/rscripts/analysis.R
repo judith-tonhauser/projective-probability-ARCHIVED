@@ -181,6 +181,14 @@ d <- subset(d, !(d$workerid %in% outliers$workerid))
 d <- droplevels(d)
 length(unique(d$workerid)) #269 Turkers remain (12 excluded for problems with control items)
 
+# new group means
+c.bad <- droplevels(subset(d, d$verb == "control_bad"))
+nrow(c.bad) #1076 / 4 controls = 269 Turkers
+c.good <- droplevels(subset(d, d$verb == "control_good"))
+nrow(c.good) #1076
+round(mean(c.bad$response),2) #.95
+round(mean(c.good$response),2) #.06
+
 # clean data = cd
 cd = d
 write.csv(cd, "../data/cd.csv")
@@ -220,6 +228,7 @@ means = t %>%
   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
   select(item,Mean,YMin,YMax)
 means = as.data.frame(means)
+means
 
 write.csv(means, file="../data/veridicality_item_means.csv",row.names=F,quote=F)
 

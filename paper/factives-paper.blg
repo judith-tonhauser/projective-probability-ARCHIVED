@@ -4,45 +4,45 @@ The top-level auxiliary file: factives-paper.aux
 The style file: /Users/tonhauser.1/Library/Latex/cslipubs-natbib.bst
 Database file #1: /Users/tonhauser.1/Documents/bibliography.bib
 Warning--I didn't find a database entry for "vds88"
-You've used 42 entries,
+You've used 43 entries,
             2811 wiz_defined-function locations,
-            863 strings with 10064 characters,
-and the built_in function-call counts, 19305 in all, are:
-= -- 1855
-> -- 698
-< -- 52
-+ -- 254
-- -- 193
-* -- 1318
-:= -- 3385
-add.period$ -- 179
-call.type$ -- 42
-change.case$ -- 288
-chr.to.int$ -- 41
-cite$ -- 42
-duplicate$ -- 916
-empty$ -- 1590
-format.name$ -- 247
-if$ -- 4076
+            867 strings with 10172 characters,
+and the built_in function-call counts, 19618 in all, are:
+= -- 1887
+> -- 709
+< -- 53
++ -- 258
+- -- 196
+* -- 1336
+:= -- 3452
+add.period$ -- 183
+call.type$ -- 43
+change.case$ -- 293
+chr.to.int$ -- 42
+cite$ -- 43
+duplicate$ -- 932
+empty$ -- 1610
+format.name$ -- 251
+if$ -- 4134
 int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 47
-newline$ -- 215
-num.names$ -- 183
-pop$ -- 283
+newline$ -- 220
+num.names$ -- 187
+pop$ -- 287
 preamble$ -- 2
-purify$ -- 228
+purify$ -- 233
 quote$ -- 0
-skip$ -- 727
+skip$ -- 739
 stack$ -- 0
-substring$ -- 1158
-swap$ -- 189
+substring$ -- 1169
+swap$ -- 190
 text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 351
+type$ -- 360
 warning$ -- 0
-while$ -- 177
+while$ -- 180
 width$ -- 0
-write$ -- 551
+write$ -- 564
 (There was 1 warning)

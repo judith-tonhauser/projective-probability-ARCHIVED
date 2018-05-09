@@ -3,6 +3,10 @@
 # What is true: Dan knows that Sophia got a tattoo.
 # Does it follow that Sophia got a tattoo?
 
+# set working directory to directory of script
+this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
+setwd(this.dir)
+
 source('helpers.R')
 
 # load required packages
@@ -241,9 +245,9 @@ t$verb <-factor(t$verb, levels=means[order(means$Mean), "verb"])
 
 cols = data.frame(V=levels(t$verb))
 cols$VeridicalityGroup = as.factor(
-  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
-         ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NF", 
-                ifelse(cols$V %in% c("be_right","demonstrate","establish"),"VNF","V"))))
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed", "hear"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
 #cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
 cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
                       ifelse(cols$VeridicalityGroup == "NF", "brown", 

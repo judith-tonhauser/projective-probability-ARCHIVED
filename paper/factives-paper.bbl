@@ -1,5 +1,5 @@
 \newcommand{\noopsort}[1]{}\newcommand{\SortNoop}[1]{}
-\begin{thebibliography}{42}
+\begin{thebibliography}{43}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[Abbott(2006)]{abbott06}
@@ -239,5 +239,11 @@ Tonhauser, Judith, David Beaver, and Judith Degen. in press.
 van~der Sandt, Rob. 1992.
 \newblock Presupposition projection as anaphora resolution.
 \newblock {\em Journal of Semantics\/} 9:333--377.
+
+\bibitem[Wyse(2010)]{wyse}
+Wyse, Brendan. 2010.
+\newblock {\em Factive/non-factive predicate recognition within Question
+  Generation systems\/}.
+\newblock Master's thesis, Open University.
 
 \end{thebibliography}

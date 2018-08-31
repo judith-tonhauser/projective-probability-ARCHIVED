@@ -1,5 +1,11 @@
-setwd('/Users/tonhauser.1/Documents/current-research-topics/NSF-NAI/prop-att-experiments/7-prior-probability/Git-projective-probability/results/2-veridicality/')
-source('rscripts/helpers.R')
+# Prior probability work
+# 2-veridicality: contradictoriness ratings
+
+# set working directory to directory of script
+this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
+setwd(this.dir)
+
+source('helpers.R')
 
 # load required packages
 library(tidyverse)
@@ -7,7 +13,7 @@ library(dichromat)
 theme_set(theme_bw())
 
 # load raw data
-d = read.csv("experiment.csv")
+d = read.csv("../experiment.csv")
 nrow(d) #8400 = 300 participants x 28 items
 names(d)
 length(unique(d$workerid)) #300 participants
@@ -189,8 +195,12 @@ length(unique(d$workerid)) #275 Turkers remain (186 - 11)
 
 # clean data = cd
 cd = d
-write.csv(cd, "data/cd.csv")
+write.csv(cd, "../data/cd.csv")
 nrow(cd) #7700 / 28 items = 275 participants
+
+# load clean data for analysis
+cd = read.csv("../data/cd.csv")
+nrow(cd) #7700
 
 # age info
 table(cd$age) #19-73
@@ -223,7 +233,7 @@ ggplot(t, aes(x=verb, y=response)) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
   ylab("Contradictoriness rating")+
   xlab("Predicate")
-ggsave(f="graphs/boxplot-veridicality.pdf",height=4,width=6.5)
+ggsave(f="../graphs/boxplot-veridicality.pdf",height=4,width=8)
 
 agr_verb = t %>%
   group_by(verb) %>%

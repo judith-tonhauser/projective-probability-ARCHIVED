@@ -1,5 +1,9 @@
 # Prior probability work
-# 3-projectivity
+# 3-projectivity: analysis of experiment that tested projectivity with sensitivity to fact
+
+# set working directory to directory of script
+this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
+setwd(this.dir)
 
 source('helpers.R')
 
@@ -304,10 +308,14 @@ means = t %>%
 View(means)
 
 cols = data.frame(V=levels(means$Verb))
-cols$VeridicalityGroup = as.factor(ifelse(cols$V %in% c("be_annoyed", "know", "discover", "reveal", "see", "establish", "be_right"), "E", ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NE", "V")))
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed", "hear"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
 #cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
-cols$Colors =  ifelse(cols$VeridicalityGroup == "E", "blue", 
-                      ifelse(cols$VeridicalityGroup == "NE", "brown", "black"))
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
+                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
+                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
 
 
 ggplot(means, aes(x=VeridicalityMean, y=ProjectionMean))+#, alpha=VeridicalityMean)) + 
@@ -317,7 +325,7 @@ ggplot(means, aes(x=VeridicalityMean, y=ProjectionMean))+#, alpha=VeridicalityMe
   geom_text(aes(label=Verb),hjust=.5, vjust=1) +
   #geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
-  #scale_color_manual(name="Prior probability\nof eventuality", breaks=c("factH","factL"),labels=c("high", "low"), 
+  #scale_color_manual(name="Prior probability\nof content", breaks=c("factH","factL"),labels=c("high", "low"), 
                      #values=brewer.pal(2,"Dark2")) +
   scale_alpha(range = c(.3,1)) +
   #theme(legend.position="top") +
@@ -335,21 +343,26 @@ means = t %>%
 View(means)
 
 cols = data.frame(V=levels(means$Verb))
-cols$VeridicalityGroup = as.factor(ifelse(cols$V %in% c("be_annoyed", "know", "discover", "reveal", "see", "establish", "be_right"), "E", ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NE", "V")))
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed", "hear"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
 #cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
-cols$Colors =  ifelse(cols$VeridicalityGroup == "E", "blue", 
-                      ifelse(cols$VeridicalityGroup == "NE", "brown", "black"))
-
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
+                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
+                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
 
 ggplot(means, aes(x=Verb, y=Mean, color=fact_type))+#, alpha=VeridicalityMean)) + 
   #geom_point(color="black", size=4) +
   #geom_point(data=agr_subj, aes(color=content)) +
   geom_point() +
   geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
-  scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
-  scale_color_manual(name="Prior probability\nof eventuality", breaks=c("factH","factL"),labels=c("high", "low"), 
+  scale_y_continuous(limits = c(-0.05,1.05),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_color_manual(name="Prior probability\nof content", breaks=c("factH","factL"),labels=c("high", "low"), 
                      values=brewer.pal(2,"Dark2")) +
   scale_alpha(range = c(.3,1)) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors)) +
   theme(legend.position="top") +
   ylab("Mean certainty rating") +
   xlab("Predicate") +

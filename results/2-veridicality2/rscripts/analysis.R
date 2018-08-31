@@ -216,6 +216,26 @@ t <- droplevels(t)
 nrow(t) #5380 / 20 = 269 Turkers
 table(t$verb,t$content)
 
+# target data plus good (entailing) controls
+te <- droplevels(subset(cd,cd$verb != "control_good"))
+nrow(te) #6456 / 24 = 279 Turkers
+
+# how many ratings per predicate and per predicate-clause combination?
+names(t)
+tmp <- as.data.frame(table(t$verb))
+min(tmp$Freq) #269
+max(tmp$Freq) 
+mean(tmp$Freq)
+# 269 because 269 Turkers and each Turker saw each predicate once
+
+table(t$content)
+t$predicateClause <- interaction(t$verb,t$content)
+tmp <- as.data.frame(table(t$predicateClause))
+head(tmp)
+min(tmp$Freq) #3
+max(tmp$Freq) #22
+mean(tmp$Freq) #13.45
+
 # change the name of the predicates
 table(t$verb)
 t$verb <- gsub("be_right_that","be_right",t$verb)
@@ -224,6 +244,13 @@ t$verb <- gsub("annoyed","be_annoyed",t$verb)
 
 t$item <- paste(t$verb,t$content,sep="-")
 table(t$item)
+
+# median contradictoriness by verb
+median = t %>%
+  group_by(verb) %>%
+  summarize(Median = median(response)) %>%
+  select(verb,Median)
+median
 
 # mean contradictoriness by item
 means = t %>%
@@ -235,6 +262,7 @@ means = as.data.frame(means)
 means
 
 write.csv(means, file="../data/veridicality_item_means.csv",row.names=F,quote=F)
+
 
 # also used in MIT talk
 # boxplot of contradictoriness by predicate, collapsing over complement clauses
@@ -268,7 +296,7 @@ ggplot(t, aes(x=verb, y=response)) +
   ylab("Contradictoriness rating")+
   xlab("Predicate") +
   theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))
-ggsave("../graphs/boxplot-veridicality.pdf",height=3.5,width=6.5)
+ggsave("../graphs/boxplot-veridicality.pdf",height=4,width=8)
 
 # plot of contradictoriness by predicate and complement clauses
 agr_verb = t %>%
@@ -616,3 +644,243 @@ comparison
 # know - be_right           -0.1008178439 0.02217568 5111  -4.546  0.0010
 # prove - be_right          -0.0809665428 0.02217568 5111  -3.651  0.0352
 
+## pairwise comparison to see which predicates differ from one another
+## including the contradictory control stimuli
+
+library(lsmeans)
+library(lme4)
+
+str(te$response)
+str(te$verb)
+str(te$workerid)
+te$workerid <- as.factor(te$workerid)
+
+means = te %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response)) %>%
+  select(verb,Mean)
+means = as.data.frame(means)
+
+te$verb <-factor(te$verb, levels=means[order(means$Mean), "verb"])
+
+model = lmer(response ~ verb + (1|workerid), data=te, REML=F)
+summary(model)
+
+comparison = lsmeans(model, pairwise~verb,adjust="tukey")
+options(max.print=10000)
+comparison
+
+# $contrasts
+# contrast                         estimate         SE   df t.ratio p.value
+# think - pretend             -0.0459851301 0.02149525 6187  -2.139  0.8546
+# think - hear                -0.0664312268 0.02149525 6187  -3.091  0.1995
+# think - suggest             -0.0847583643 0.02149525 6187  -3.943  0.0133
+# think - say                 -0.1945353160 0.02149525 6187  -9.050  <.0001
+# think - announce            -0.2778438662 0.02149525 6187 -12.926  <.0001
+# think - inform_Sam          -0.2972118959 0.02149525 6187 -13.827  <.0001
+# think - reveal              -0.4565799257 0.02149525 6187 -21.241  <.0001
+# think - annoyed             -0.4630483271 0.02149525 6187 -21.542  <.0001
+# think - acknowledge         -0.4948698885 0.02149525 6187 -23.022  <.0001
+# think - confess             -0.4952788104 0.02149525 6187 -23.041  <.0001
+# think - admit               -0.5370631970 0.02149525 6187 -24.985  <.0001
+# think - demonstrate         -0.5457992565 0.02149525 6187 -25.392  <.0001
+# think - establish           -0.5464684015 0.02149525 6187 -25.423  <.0001
+# think - confirm             -0.5908921933 0.02149525 6187 -27.489  <.0001
+# think - discover            -0.6081412639 0.02149525 6187 -28.292  <.0001
+# think - see                 -0.6419702602 0.02149525 6187 -29.866  <.0001
+# think - know                -0.6611895911 0.02149525 6187 -30.760  <.0001
+# think - prove               -0.6810408922 0.02149525 6187 -31.683  <.0001
+# think - be_right_that       -0.7620074349 0.02149525 6187 -35.450  <.0001
+# think - control_bad         -0.7817286245 0.01699349 6187 -46.002  <.0001
+# pretend - hear              -0.0204460967 0.02149525 6187  -0.951  1.0000
+# pretend - suggest           -0.0387732342 0.02149525 6187  -1.804  0.9690
+# pretend - say               -0.1485501859 0.02149525 6187  -6.911  <.0001
+# pretend - announce          -0.2318587361 0.02149525 6187 -10.787  <.0001
+# pretend - inform_Sam        -0.2512267658 0.02149525 6187 -11.688  <.0001
+# pretend - reveal            -0.4105947955 0.02149525 6187 -19.102  <.0001
+# pretend - annoyed           -0.4170631970 0.02149525 6187 -19.403  <.0001
+# pretend - acknowledge       -0.4488847584 0.02149525 6187 -20.883  <.0001
+# pretend - confess           -0.4492936803 0.02149525 6187 -20.902  <.0001
+# pretend - admit             -0.4910780669 0.02149525 6187 -22.846  <.0001
+# pretend - demonstrate       -0.4998141264 0.02149525 6187 -23.252  <.0001
+# pretend - establish         -0.5004832714 0.02149525 6187 -23.283  <.0001
+# pretend - confirm           -0.5449070632 0.02149525 6187 -25.350  <.0001
+# pretend - discover          -0.5621561338 0.02149525 6187 -26.153  <.0001
+# pretend - see               -0.5959851301 0.02149525 6187 -27.726  <.0001
+# pretend - know              -0.6152044610 0.02149525 6187 -28.620  <.0001
+# pretend - prove             -0.6350557621 0.02149525 6187 -29.544  <.0001
+# pretend - be_right_that     -0.7160223048 0.02149525 6187 -33.311  <.0001
+# pretend - control_bad       -0.7357434944 0.01699349 6187 -43.296  <.0001
+# hear - suggest              -0.0183271375 0.02149525 6187  -0.853  1.0000
+# hear - say                  -0.1281040892 0.02149525 6187  -5.960  <.0001
+# hear - announce             -0.2114126394 0.02149525 6187  -9.835  <.0001
+# hear - inform_Sam           -0.2307806691 0.02149525 6187 -10.736  <.0001
+# hear - reveal               -0.3901486989 0.02149525 6187 -18.150  <.0001
+# hear - annoyed              -0.3966171004 0.02149525 6187 -18.451  <.0001
+# hear - acknowledge          -0.4284386617 0.02149525 6187 -19.932  <.0001
+# hear - confess              -0.4288475836 0.02149525 6187 -19.951  <.0001
+# hear - admit                -0.4706319703 0.02149525 6187 -21.895  <.0001
+# hear - demonstrate          -0.4793680297 0.02149525 6187 -22.301  <.0001
+# hear - establish            -0.4800371747 0.02149525 6187 -22.332  <.0001
+# hear - confirm              -0.5244609665 0.02149525 6187 -24.399  <.0001
+# hear - discover             -0.5417100372 0.02149525 6187 -25.201  <.0001
+# hear - see                  -0.5755390335 0.02149525 6187 -26.775  <.0001
+# hear - know                 -0.5947583643 0.02149525 6187 -27.669  <.0001
+# hear - prove                -0.6146096654 0.02149525 6187 -28.593  <.0001
+# hear - be_right_that        -0.6955762082 0.02149525 6187 -32.360  <.0001
+# hear - control_bad          -0.7152973978 0.01699349 6187 -42.092  <.0001
+# suggest - say               -0.1097769517 0.02149525 6187  -5.107  0.0001
+# suggest - announce          -0.1930855019 0.02149525 6187  -8.983  <.0001
+# suggest - inform_Sam        -0.2124535316 0.02149525 6187  -9.884  <.0001
+# suggest - reveal            -0.3718215613 0.02149525 6187 -17.298  <.0001
+# suggest - annoyed           -0.3782899628 0.02149525 6187 -17.599  <.0001
+# suggest - acknowledge       -0.4101115242 0.02149525 6187 -19.079  <.0001
+# suggest - confess           -0.4105204461 0.02149525 6187 -19.098  <.0001
+# suggest - admit             -0.4523048327 0.02149525 6187 -21.042  <.0001
+# suggest - demonstrate       -0.4610408922 0.02149525 6187 -21.449  <.0001
+# suggest - establish         -0.4617100372 0.02149525 6187 -21.480  <.0001
+# suggest - confirm           -0.5061338290 0.02149525 6187 -23.546  <.0001
+# suggest - discover          -0.5233828996 0.02149525 6187 -24.349  <.0001
+# suggest - see               -0.5572118959 0.02149525 6187 -25.923  <.0001
+# suggest - know              -0.5764312268 0.02149525 6187 -26.817  <.0001
+# suggest - prove             -0.5962825279 0.02149525 6187 -27.740  <.0001
+# suggest - be_right_that     -0.6772490706 0.02149525 6187 -31.507  <.0001
+# suggest - control_bad       -0.6969702602 0.01699349 6187 -41.014  <.0001
+# say - announce              -0.0833085502 0.02149525 6187  -3.876  0.0172
+# say - inform_Sam            -0.1026765799 0.02149525 6187  -4.777  0.0004
+# say - reveal                -0.2620446097 0.02149525 6187 -12.191  <.0001
+# say - annoyed               -0.2685130112 0.02149525 6187 -12.492  <.0001
+# say - acknowledge           -0.3003345725 0.02149525 6187 -13.972  <.0001
+# say - confess               -0.3007434944 0.02149525 6187 -13.991  <.0001
+# say - admit                 -0.3425278810 0.02149525 6187 -15.935  <.0001
+# say - demonstrate           -0.3512639405 0.02149525 6187 -16.341  <.0001
+# say - establish             -0.3519330855 0.02149525 6187 -16.373  <.0001
+# say - confirm               -0.3963568773 0.02149525 6187 -18.439  <.0001
+# say - discover              -0.4136059480 0.02149525 6187 -19.242  <.0001
+# say - see                   -0.4474349442 0.02149525 6187 -20.816  <.0001
+# say - know                  -0.4666542751 0.02149525 6187 -21.710  <.0001
+# say - prove                 -0.4865055762 0.02149525 6187 -22.633  <.0001
+# say - be_right_that         -0.5674721190 0.02149525 6187 -26.400  <.0001
+# say - control_bad           -0.5871933086 0.01699349 6187 -34.554  <.0001
+# announce - inform_Sam       -0.0193680297 0.02149525 6187  -0.901  1.0000
+# announce - reveal           -0.1787360595 0.02149525 6187  -8.315  <.0001
+# announce - annoyed          -0.1852044610 0.02149525 6187  -8.616  <.0001
+# announce - acknowledge      -0.2170260223 0.02149525 6187 -10.096  <.0001
+# announce - confess          -0.2174349442 0.02149525 6187 -10.115  <.0001
+# announce - admit            -0.2592193309 0.02149525 6187 -12.059  <.0001
+# announce - demonstrate      -0.2679553903 0.02149525 6187 -12.466  <.0001
+# announce - establish        -0.2686245353 0.02149525 6187 -12.497  <.0001
+# announce - confirm          -0.3130483271 0.02149525 6187 -14.564  <.0001
+# announce - discover         -0.3302973978 0.02149525 6187 -15.366  <.0001
+# announce - see              -0.3641263941 0.02149525 6187 -16.940  <.0001
+# announce - know             -0.3833457249 0.02149525 6187 -17.834  <.0001
+# announce - prove            -0.4031970260 0.02149525 6187 -18.757  <.0001
+# announce - be_right_that    -0.4841635688 0.02149525 6187 -22.524  <.0001
+# announce - control_bad      -0.5038847584 0.01699349 6187 -29.652  <.0001
+# inform_Sam - reveal         -0.1593680297 0.02149525 6187  -7.414  <.0001
+# inform_Sam - annoyed        -0.1658364312 0.02149525 6187  -7.715  <.0001
+# inform_Sam - acknowledge    -0.1976579926 0.02149525 6187  -9.195  <.0001
+# inform_Sam - confess        -0.1980669145 0.02149525 6187  -9.214  <.0001
+# inform_Sam - admit          -0.2398513011 0.02149525 6187 -11.158  <.0001
+# inform_Sam - demonstrate    -0.2485873606 0.02149525 6187 -11.565  <.0001
+# inform_Sam - establish      -0.2492565056 0.02149525 6187 -11.596  <.0001
+# inform_Sam - confirm        -0.2936802974 0.02149525 6187 -13.663  <.0001
+# inform_Sam - discover       -0.3109293680 0.02149525 6187 -14.465  <.0001
+# inform_Sam - see            -0.3447583643 0.02149525 6187 -16.039  <.0001
+# inform_Sam - know           -0.3639776952 0.02149525 6187 -16.933  <.0001
+# inform_Sam - prove          -0.3838289963 0.02149525 6187 -17.856  <.0001
+# inform_Sam - be_right_that  -0.4647955390 0.02149525 6187 -21.623  <.0001
+# inform_Sam - control_bad    -0.4845167286 0.01699349 6187 -28.512  <.0001
+# reveal - annoyed            -0.0064684015 0.02149525 6187  -0.301  1.0000
+# reveal - acknowledge        -0.0382899628 0.02149525 6187  -1.781  0.9729
+# reveal - confess            -0.0386988848 0.02149525 6187  -1.800  0.9697
+# reveal - admit              -0.0804832714 0.02149525 6187  -3.744  0.0277
+# reveal - demonstrate        -0.0892193309 0.02149525 6187  -4.151  0.0059
+# reveal - establish          -0.0898884758 0.02149525 6187  -4.182  0.0052
+# reveal - confirm            -0.1343122677 0.02149525 6187  -6.248  <.0001
+# reveal - discover           -0.1515613383 0.02149525 6187  -7.051  <.0001
+# reveal - see                -0.1853903346 0.02149525 6187  -8.625  <.0001
+# reveal - know               -0.2046096654 0.02149525 6187  -9.519  <.0001
+# reveal - prove              -0.2244609665 0.02149525 6187 -10.442  <.0001
+# reveal - be_right_that      -0.3054275093 0.02149525 6187 -14.209  <.0001
+# reveal - control_bad        -0.3251486989 0.01699349 6187 -19.134  <.0001
+# annoyed - acknowledge       -0.0318215613 0.02149525 6187  -1.480  0.9970
+# annoyed - confess           -0.0322304833 0.02149525 6187  -1.499  0.9964
+# annoyed - admit             -0.0740148699 0.02149525 6187  -3.443  0.0749
+# annoyed - demonstrate       -0.0827509294 0.02149525 6187  -3.850  0.0189
+# annoyed - establish         -0.0834200743 0.02149525 6187  -3.881  0.0168
+# annoyed - confirm           -0.1278438662 0.02149525 6187  -5.948  <.0001
+# annoyed - discover          -0.1450929368 0.02149525 6187  -6.750  <.0001
+# annoyed - see               -0.1789219331 0.02149525 6187  -8.324  <.0001
+# annoyed - know              -0.1981412639 0.02149525 6187  -9.218  <.0001
+# annoyed - prove             -0.2179925651 0.02149525 6187 -10.141  <.0001
+# annoyed - be_right_that     -0.2989591078 0.02149525 6187 -13.908  <.0001
+# annoyed - control_bad       -0.3186802974 0.01699349 6187 -18.753  <.0001
+# acknowledge - confess       -0.0004089219 0.02149525 6187  -0.019  1.0000
+# acknowledge - admit         -0.0421933086 0.02149525 6187  -1.963  0.9294
+# acknowledge - demonstrate   -0.0509293680 0.02149525 6187  -2.369  0.7085
+# acknowledge - establish     -0.0515985130 0.02149525 6187  -2.400  0.6855
+# acknowledge - confirm       -0.0960223048 0.02149525 6187  -4.467  0.0015
+# acknowledge - discover      -0.1132713755 0.02149525 6187  -5.270  <.0001
+# acknowledge - see           -0.1471003717 0.02149525 6187  -6.843  <.0001
+# acknowledge - know          -0.1663197026 0.02149525 6187  -7.738  <.0001
+# acknowledge - prove         -0.1861710037 0.02149525 6187  -8.661  <.0001
+# acknowledge - be_right_that -0.2671375465 0.02149525 6187 -12.428  <.0001
+# acknowledge - control_bad   -0.2868587361 0.01699349 6187 -16.881  <.0001
+# confess - admit             -0.0417843866 0.02149525 6187  -1.944  0.9354
+# confess - demonstrate       -0.0505204461 0.02149525 6187  -2.350  0.7223
+# confess - establish         -0.0511895911 0.02149525 6187  -2.381  0.6997
+# confess - confirm           -0.0956133829 0.02149525 6187  -4.448  0.0016
+# confess - discover          -0.1128624535 0.02149525 6187  -5.251  <.0001
+# confess - see               -0.1466914498 0.02149525 6187  -6.824  <.0001
+# confess - know              -0.1659107807 0.02149525 6187  -7.718  <.0001
+# confess - prove             -0.1857620818 0.02149525 6187  -8.642  <.0001
+# confess - be_right_that     -0.2667286245 0.02149525 6187 -12.409  <.0001
+# confess - control_bad       -0.2864498141 0.01699349 6187 -16.856  <.0001
+# admit - demonstrate         -0.0087360595 0.02149525 6187  -0.406  1.0000
+# admit - establish           -0.0094052045 0.02149525 6187  -0.438  1.0000
+# admit - confirm             -0.0538289963 0.02149525 6187  -2.504  0.6054
+# admit - discover            -0.0710780669 0.02149525 6187  -3.307  0.1123
+# admit - see                 -0.1049070632 0.02149525 6187  -4.880  0.0002
+# admit - know                -0.1241263941 0.02149525 6187  -5.775  <.0001
+# admit - prove               -0.1439776952 0.02149525 6187  -6.698  <.0001
+# admit - be_right_that       -0.2249442379 0.02149525 6187 -10.465  <.0001
+# admit - control_bad         -0.2446654275 0.01699349 6187 -14.398  <.0001
+# demonstrate - establish     -0.0006691450 0.02149525 6187  -0.031  1.0000
+# demonstrate - confirm       -0.0450929368 0.02149525 6187  -2.098  0.8753
+# demonstrate - discover      -0.0623420074 0.02149525 6187  -2.900  0.3081
+# demonstrate - see           -0.0961710037 0.02149525 6187  -4.474  0.0015
+# demonstrate - know          -0.1153903346 0.02149525 6187  -5.368  <.0001
+# demonstrate - prove         -0.1352416357 0.02149525 6187  -6.292  <.0001
+# demonstrate - be_right_that -0.2162081784 0.02149525 6187 -10.058  <.0001
+# demonstrate - control_bad   -0.2359293680 0.01699349 6187 -13.884  <.0001
+# establish - confirm         -0.0444237918 0.02149525 6187  -2.067  0.8896
+# establish - discover        -0.0616728625 0.02149525 6187  -2.869  0.3287
+# establish - see             -0.0955018587 0.02149525 6187  -4.443  0.0017
+# establish - know            -0.1147211896 0.02149525 6187  -5.337  <.0001
+# establish - prove           -0.1345724907 0.02149525 6187  -6.261  <.0001
+# establish - be_right_that   -0.2155390335 0.02149525 6187 -10.027  <.0001
+# establish - control_bad     -0.2352602230 0.01699349 6187 -13.844  <.0001
+# confirm - discover          -0.0172490706 0.02149525 6187  -0.802  1.0000
+# confirm - see               -0.0510780669 0.02149525 6187  -2.376  0.7035
+# confirm - know              -0.0702973978 0.02149525 6187  -3.270  0.1244
+# confirm - prove             -0.0901486989 0.02149525 6187  -4.194  0.0049
+# confirm - be_right_that     -0.1711152416 0.02149525 6187  -7.961  <.0001
+# confirm - control_bad       -0.1908364312 0.01699349 6187 -11.230  <.0001
+# discover - see              -0.0338289963 0.02149525 6187  -1.574  0.9934
+# discover - know             -0.0530483271 0.02149525 6187  -2.468  0.6339
+# discover - prove            -0.0728996283 0.02149525 6187  -3.391  0.0877
+# discover - be_right_that    -0.1538661710 0.02149525 6187  -7.158  <.0001
+# discover - control_bad      -0.1735873606 0.01699349 6187 -10.215  <.0001
+# see - know                  -0.0192193309 0.02149525 6187  -0.894  1.0000
+# see - prove                 -0.0390706320 0.02149525 6187  -1.818  0.9665
+# see - be_right_that         -0.1200371747 0.02149525 6187  -5.584  <.0001
+# see - control_bad           -0.1397583643 0.01699349 6187  -8.224  <.0001
+# know - prove                -0.0198513011 0.02149525 6187  -0.924  1.0000
+# know - be_right_that        -0.1008178439 0.02149525 6187  -4.690  0.0005
+# know - control_bad          -0.1205390335 0.01699349 6187  -7.093  <.0001
+# prove - be_right_that       -0.0809665428 0.02149525 6187  -3.767  0.0256
+# prove - control_bad         -0.1006877323 0.01699349 6187  -5.925  <.0001
+# be_right_that - control_bad -0.0197211896 0.01699349 6187  -1.161  0.9999
+# 
+# P value adjustment: tukey method for comparing a family of 21 estimates 

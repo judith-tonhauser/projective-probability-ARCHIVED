@@ -155,6 +155,77 @@ table(cd$gender)
 
 nrow(cd) #7358
 
+# are the responses bi-modal, as suspected by Dotlacil and wondered by Katsos?
+names(cd)
+
+means = cd %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(as.factor(verb),Mean))
+options(tibble.print_max = Inf)
+means
+
+cd$verb <-factor(cd$verb, levels=levels(means$Verb))
+
+cols = data.frame(V=levels(cd$verb))
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
+#cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
+                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
+                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
+
+ggplot(cd, aes(x=verb, y=response)) +
+  geom_point(position="jitter") +
+  #geom_boxplot(colour = "grey50") +
+  scale_alpha(range = c(.3,1)) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors)) +
+  ylab("Certainty ratings") +
+  xlab("Predicate") 
+ggsave("../graphs/raw-ratings-by-predicate.pdf",height=6,width=10)
+
+
+# do the responses for each predicate-clause combination differ a lot?
+names(cd)
+t <- droplevels(subset(cd, cd$verb != "MC"))
+nrow(t) #5660 / 20 items = 283 Turkers
+names(t)
+table(t$content)
+
+means = t %>%
+  group_by(verb,content) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(as.factor(verb),Mean))
+options(tibble.print_max = Inf)
+means
+
+t$verb <-factor(t$verb, levels=levels(means$Verb))
+
+cols = data.frame(V=levels(cd$verb))
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
+#cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
+                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
+                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
+
+ggplot(means, aes(x=content, y=Mean)) +
+  geom_point(position="jitter") +
+  #geom_boxplot(colour = "grey50") +
+  scale_alpha(range = c(.3,1)) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors)) +
+  facet_grid(. ~ verb) +
+  ylab("Certainty ratings") +
+  xlab("Predicate") 
+ggsave("../graphs/raw-ratings-by-predicate-and-content.pdf",height=6,width=20)
+
 # median rating by predicates
 medians = cd %>%
   group_by(verb) %>%

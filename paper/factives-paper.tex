@@ -1,12 +1,13 @@
 \documentclass[11pt,fleqn]{article}
 \usepackage[margin=1in,top=1in,bottom=1in]{geometry}
+\usepackage{tikz}
 \usepackage{mathtools}
 \usepackage{longtable}
 \usepackage{enumitem}
 \usepackage{hyperref}
-\usepackage[dvips]{graphics}
-\usepackage[table]{xcolor}
-\usepackage{amssymb}
+%\usepackage[dvips]{graphics}
+%\usepackage[table]{xcolor}
+%\usepackage{amssymb}
 \usepackage{float}
 \usepackage{subfig}
 \usepackage{booktabs}
@@ -97,7 +98,7 @@
 
 \begin{abstract}
 
-A `factive' predicate is standardly defined as one for which the content of the clausal complement is both projective and entailed, such as {\em know} or {\em discover}, whereas it is not both projective and entailed for `non-factive' predicates, like {\em think} or {\em inform}. This paper argues, based on the findings of experiments designed to explore projectivity and entailment with 20 `factive' and `non-factive' English clause-embedding predicates, that `factive' predicates are heterogeneous and that the assumed categorical distinction between `factive' and `non-factive' predicates is not supported empirically. As a consequence, it is not empirically justified for analyses of the projectivity of the content of the complement of clause-embedding predicates to be limited to `factive' predicates (see, e.g., \citealt{heim83,vds92,abrusan2011,abrusan2016,romoli2015} and \citealt{best-question}). We show that no currently available projection analysis accounts for our findings and discuss the implications of our findings for empirically adequate analyses of projection.
+A `factive' predicate is standardly defined as one for which the content of the clausal complement is both projective and entailed, such as {\em know} or {\em discover}, whereas it is not both projective and entailed for `non-factive' predicates, like {\em think} or {\em inform}. This paper argues, based on the findings of experiments designed to explore projectivity and entailment with 20 `factive' and `non-factive' English clause-embedding predicates, that `factive' predicates are heterogeneous, that various `non-factive' predicates pattern empirically like `factive' ones  and that the assumed categorical distinction between `factive' and `non-factive' predicates is not supported empirically. As a consequence, it is not empirically justified for analyses of the projectivity of the content of the complement of clause-embedding predicates to be limited to `factive' predicates (see, e.g., \citealt{heim83,vds92,abrusan2011,abrusan2016,romoli2015} and \citealt{best-question}). We show that no currently available projection analysis accounts for our findings and discuss the implications of our findings for empirically adequate analyses of projection.
 
 \end{abstract}
 			
@@ -136,10 +137,10 @@ In contrast, speakers who utter one of the variants of (\ref{know}) and (\ref{kn
 
 \end{exe}
 
-These differences in the interpretation of sentences with {\em know} and {\em think} are illustrative of a widely-adopted distinction that has been made for a long time among clause-embedding predicates (e.g., \citealt{karttunen71b,kiparsky-kiparsky71}): as defined in (\ref{def}), the content of the complement of so-called `factive' predicates, like {\em know} or {\em discover}, is both entailed and projective, and the content of the complement of `non-factive' predicates, like {\em think} or {\em inform},  is not both entailed and projective. 
+These differences in the interpretation of sentences with {\em know} and {\em think} are illustrative of a widely-adopted distinction that has been made for a long time among clause-embedding predicates (e.g., \citealt{karttunen71b,kiparsky-kiparsky71}): as defined in (\ref{def}), the content of the complement of so-called `factive' predicates, such as {\em know} or {\em discover}, is both entailed and projective, and the content of the complement of `non-factive' predicates, like {\em think} or {\em inform},  is not both entailed and projective. 
 
 \begin{exe}
-\ex\label{def} Let $S$ be an unembedded matrix sentence in which a clause $C$ is the argument of a clause-embedding predicate $P$. The clause-embedding predicate $P$ is {\bf factive} if and only if the content of $C$ is
+\ex\label{def} Let $S$ be an unembedded matrix sentence in which a finite clause $C$ is the argument of a clause-embedding predicate $P$. The clause-embedding predicate $P$ is {\bf factive} if and only if the content of $C$ is
 
 \begin{xlist}
 \ex entailed by the content of $S$ and
@@ -148,7 +149,7 @@ These differences in the interpretation of sentences with {\em know} and {\em th
 Otherwise, the predicate is {\bf non-factive}.
 \end{exe}
 
-Given the definition in (\ref{def}), `factive' predicates are a homogenous class of predicates (the content of the complement is both entailed and projective), but `non-factive' predicates are a heterogeneous class. For a first subset henceforth called `plain non-factives', including {\em think} and {\em pretend}, the content of the complement is neither entailed nor projective, as illustrated in (\ref{think}) and (\ref{think2}) for {\em think}. For a second subset, including {\em be right}, the content of the complement is entailed but not projective; we refer to these predicates as `veridical non-factives'. Thus, the content of (\ref{right}) is generally taken to entail the content of the complement, but speakers who utter one of the family-of-sentences variants in (\ref{right2}) are not taken to be committed to the content of the complement, which means that it is not projective. 
+Given the definition in (\ref{def}), `factive' predicates are a homogenous class of predicates: the content of the complement is both entailed and projective. `Non-factive' predicates, on the other hand, are heterogeneous. For a first subset, henceforth called `plain non-factives', including {\em think} and {\em pretend}, the content of the complement is neither entailed nor projective, as illustrated in (\ref{think}) and (\ref{think2}) for {\em think}. For a second subset, including {\em be right}, the content of the complement is entailed but not projective; we refer to these predicates as `veridical non-factives'. For instance, the content of (\ref{right}) is generally taken to entail the content of the complement, but speakers who utter one of the family-of-sentences variants in (\ref{right2}) are not taken to be committed to the content of the complement, which means that it is not projective. 
 
 \begin{exe}
 \ex\label{right} Sandra is right that that Julian dances salsa.
@@ -180,13 +181,11 @@ Similarly, \citet{spector-egre2015} suggested that it is possible to take a spea
 \end{xlist}
 \end{exe}
 
-Currently available projection analyses do not make predictions about the projectivity of the content of the complement `projective non-factive' predicates because these analyses are all limited in their empirical scope to `factive' predicates. On \citetpos{heim83} analysis, for instance, the content of the complement of `factive' predicates is lexically specified to be a presupposition, which means that the content is required to be part of the common ground of the interlocutors prior to interpretation. The content of the complement of `projective non-factive' predicates does not carry this lexical specification and, as a consequence, the analysis makes no predictions about the projectivity of the content of the complement of `projective non-factive' (or other `non-factive') predicates. On the analyses developed in \citealt{abrusan2011,abrusan2016}, \citealt{romoli2015} and \citealt{best-question}, the projectivity of the content of the complement of `factive' predicates is derived from its status as entailed content: on Abrus\'an's (2011, 2016) analysis, for instance, the entailed content of the complement is, by default, backgrounded and therefore projective, and on \citetpos{best-question} analysis, questions addressed by utterances with `factive' predicates can entail the content of the complement, which is thereby projective. Because the content of the complement of  `projective non-factive' predicates is not entailed, these analyses do not make predictions about the projectivity of this content. 
+Currently available projection analyses do not make predictions about the projectivity of the content of the complement `projective non-factive' predicates because these analyses are all limited in their empirical scope to `factive' predicates. On \citetpos{heim83} analysis, for instance, the content of the complement of `factive' predicates is lexically specified to be a presupposition, which means that the content is required to be part of the common ground of the interlocutors prior to interpretation. The content of the complement of `projective non-factive' predicates does not carry this lexical specification and, as a consequence, the analysis makes no predictions about the projectivity of the content of the complement of `projective non-factive' (or other `non-factive') predicates. On the analyses developed in \citealt{abrusan2011,abrusan2016}, \citealt{romoli2015} and \citealt{best-question}, the projectivity of the content of the complement of `factive' predicates is derived from its status as entailed content: on Abrus\'an's (2011, 2016) analysis, for instance, the entailed content of the complement is, by default, backgrounded and therefore projective; on \citetpos{best-question} analysis, questions addressed by utterances with `factive' predicates can entail the content of the complement, which is thereby projective. Because the content of the complement of  `projective non-factive' predicates is not entailed, these analyses do not make predictions about the projectivity of this content. 
 
-Other authors make predictions about the projectivity of the content of the complement of `projective non-factive' predicates by assimilating them to `factive' predicates. \citet[139]{schlenker10}, for instance, proposed that {\em announce} is a ``part-time presupposition trigger'', namely in contexts in which the content of its complement is entailed, thereby allowing the projectivity of the content of its complement to fall in the empirical purview of projection analyses designed for `factive' predicates.\footnote{\citepos{schlenker10} notion of entailment seems to differ from the standard one that is used in this paper in that \citepos{schlenker10} notion is context-sensitive: for instance, he assumes that ``in some contexts, [{\em announce}, JT\&JD] does not entail the truth of its complement; in other contexts, it entails and presupposes the truth of its complement" (p.139).}  Similarly, \citet[1736]{spector-egre2015} proposed that predicates like {\em tell, predict} and {\em announce}  are ambiguous between a lexical entry on which the content of the complement is entailed and another on which it is not; as a consequence, such `projective non-factive' predicates have ``factive uses'' on which the content of the complement is predicted to be projective. Thus, like the analyses reviewed above, \citetpos{schlenker10} and \citetpos{spector-egre2015} projection analyses are essentially limited to `factive' predicates.
+Other authors make predictions about the projectivity of the content of the complement of `projective non-factive' predicates by assimilating them to `factive' predicates. \citet[139]{schlenker10}, for instance, proposed that {\em announce} is a ``part-time presupposition trigger'', namely in contexts in which the content of its complement is entailed, thereby allowing the projectivity of the content of its complement to fall in the empirical purview of projection analyses designed for `factive' predicates.\footnote{\citepos{schlenker10} notion of entailment is context-sensitive and thereby differs from the standard, context-independent one that is used in this paper. For instance, he assumes that ``in some contexts, [{\em announce}, JT\&JD] does not entail the truth of its complement; in other contexts, it entails and presupposes the truth of its complement" (p.139).}  Similarly, \citet[1736]{spector-egre2015} proposed that predicates like {\em tell, predict} and {\em announce}  are ambiguous between a lexical entry on which the content of the complement is entailed and another on which it is not; as a consequence, such `projective non-factive' predicates have ``factive uses'' on which the content of the complement is predicted to be projective. Thus, like the analyses reviewed above, \citetpos{schlenker10} and \citetpos{spector-egre2015} projection analyses are essentially limited to `factive' predicates.
 
-Limiting the scope of projection analyses to `factive' predicates is empirically justified if `factive' predicates are an empirically well-grounded class of predicates, for instance, if, as defined in (\ref{def}), the content of their complement is both projective and entailed. In this case, alternative analyses may be called on to predict the projectivity of the content of the complement of `projective non-factive' predicates, which is projective but not entailed. However, based on the findings of experiments designed to explore projectivity and entailment with 20 `factive' and `non-factive' English clause-embedding predicates, we argue in this paper that `factive' predicates are heterogeneous and that the assumed categorical distinction between `factive' and `non-factive' predicates as defined in (\ref{def}) is not supported empirically. As a consequence, we argue, it is not empirically justified for projection analyses to be limited to `factive' predicates.
-
-Reason to doubt that `factive' predicates are a homogenous and empirically well-grounded class of predicates comes  from observations about both projectivity and entailment. Regarding projectivity, it has long been recognized that there is variability in the projectivity of the content of the complement of `factive' predicates. \citet{karttunen71b}, for instance, already suggested that the content of the complement of {\em regret} in (\ref{semi-factive}a) is more projective than that of {\em discover} in (\ref{semi-factive}b): 
+The overarching goal of this paper is to identify whether `factive'  and `non-factive' predicates are empirically distinguished by projectivity and entailment, as defined in (\ref{def}), and whether the limitation of projection analyses to `factive' predicates is supported empirically. The prior literature already provides some challenges to this categorical division. Regarding projectivity, it has long been recognized that there is variability in the projectivity of the content of the complement of `factive' predicates. \citet{karttunen71b}, for instance, already suggested that the content of the complement of {\em regret} in (\ref{semi-factive}a) is more projective than that of {\em discover} in (\ref{semi-factive}b): 
 
 
 \begin{exe}
@@ -198,21 +197,23 @@ Reason to doubt that `factive' predicates are a homogenous and empirically well-
 
 \end{xlist}
 \end{exe}
-More recently, \citet*{tbd-variability} showed that there is even more projection variability than previously assumed, including among presumed `factive' predicates. In particular, they found (Exp.~1b) that the content of the complement of {\em be annoyed, be amused, notice, be aware, realize, see, find out} and {\em learn} was more projective than that of {\em reveal}, which in turn was more projective than that of {\em discover}. In addition to by-predicate variability, they also observed by-participant variability, with only relatively few participants taking the content of the complement of `factive' predicates to be highly projective. Given the observed variability in the projectivity of utterance content, including the content of the complement of `factive' predicates, \citet{tbd-variability} argued that projectivity is not a binary, categorical property of utterance content, but rather a gradient one; see also \citealt{demarneffe-etal2018} for evidence based on naturally occurring examples.  
+More recently, \citet*{tbd-variability} showed that there is even more projection variability than previously assumed, including among presumed `factive' predicates. In particular, they found (Exp.~1b) that the content of the complement of {\em be annoyed, be amused, notice, be aware, realize, see, find out} and {\em learn} was more projective than that of {\em reveal}, which in turn was more projective than that of {\em discover}. 
+%In addition to by-predicate variability, they also observed by-participant variability, with only relatively few participants taking the content of the complement of `factive' predicates to be highly projective. Given the observed variability in the projectivity of utterance content, including the content of the complement of `factive' predicates, \citet{tbd-variability} argued that projectivity is not a binary, categorical property of utterance content, but rather a gradient one.
 
-With respect to the definition of `factive' predicates in (\ref{def}), a consequence of projectivity being a gradient property of utterance content is that it is unclear how projective the content of a complement of a predicate needs to be in order for the predicate to be considered `factive'. 
-Furthermore, given that the content of the complement of some `non-factive' predicates is also projective, it is an open question how projective the content of the complement of presumed `factive' predicates is compared to that of presumed `non-factive' predicates. Although \citepos{tbd-variability} experiments were largely limited to `factive' predicates, their Exp.~1b did find that the content of the complement of the `projective non-factive' predicates {\em establish} and {\em confess} was significantly less projective than that of `factive' predicates, albeit still projective when compared to main clause content. Therefore, the first empirical goal of this paper is to systematically explore the projectivity of the content of the complement of a range of English `factive' and `non-factive' predicates. This exploration serves to address the research questions in (\ref{prq}), with the question in (\ref{prq}a) allowing for a comparison with the findings of \citealt{tbd-variability}.
+A consequence of the observed projection variability among `factive' predicates is that it is unclear how projective the content of a complement of a predicate needs to be in order for the predicate to be considered `factive' according to the definition in (\ref{def}). Furthermore, given that the content of the complement of `projective non-factive' predicates is also assumed to be projective, it is an open question how projective the content of the complement of presumed `factive' predicates is compared to that of presumed `non-factive' predicates. Although \citepos{tbd-variability} experiments were largely limited to predicates presumed to be `factive', their Exp.~1b did find that the content of the complement of the `projective non-factive' predicates {\em establish} and {\em confess} was significantly less projective than that of `factive' predicates, albeit still projective when compared to main clause content. In this paper, we systematically explore the projectivity of the content of the complement of a range of English `factive' and `non-factive' predicates, to identify the projection profiles of `factive' and `non-factive' predicates.
 
-\begin{exe}
-\ex\label{prq} Research questions about projectivity
-\begin{xlist}
-\ex How projective is the content of the complement of `factive' predicates?
-\ex How projective is the content of the complement of different kinds of `non-factive' predicates?
-\ex Does projectivity distinguish `factive' from `non-factive' predicates?
-\end{xlist}
-\end{exe}
+%This exploration serves to address the research questions in (\ref{prq}), with the question in (\ref{prq}a) allowing for a comparison with the findings of \citealt{tbd-variability}.
+%
+%\begin{exe}
+%\ex\label{prq} Research questions about projectivity
+%\begin{xlist}
+%\ex How projective is the content of the complement of `factive' predicates?
+%\ex How projective is the content of the complement of different kinds of `non-factive' predicates?
+%\ex Does projectivity distinguish `factive' from `non-factive' predicates?
+%\end{xlist}
+%\end{exe}
 
-Reason to doubt that `factive' predicates are a homogenous and empirically well-grounded class of predicates also comes from observations about entailment. Entailment is a binary, categorical relationship between two contents: given sentences $\phi$ and $\psi$, the content of $\phi$ entails the content of $\psi$ if and only if any world in which the content of $\phi$ is true is also a world in which the content of $\psi$ is true. Given this standard definition of the entailment relationship, if there is just one world in which $\phi$ is true but $\phi$ is false, then the content of $\phi$ does not entail the content of $\psi$.
+Observations about entailment in the prior literature also provide reason to doubt that `factive'  and `non-factive' predicates are empirically distinguished. Entailment is a binary, categorical relationship between two contents: given sentences $\phi$ and $\psi$, the content of $\phi$ entails the content of $\psi$ if and only if every world in which the content of $\phi$ is true is also a world in which the content of $\psi$ is true. Given this standard definition of the entailment relationship, if there is just one world in which $\phi$ is true but $\phi$ is false, then the content of $\phi$ does not entail the content of $\psi$.
 
 For some clause-embedding predicates, there is disagreement in the literature about whether the content of the complement is entailed. \citet[139]{schlenker10}, for example, assumed that the content of the complement of {\em inform} is entailed, i.e., that Mary being pregnant necessarily follows from (\ref{inform}).  
 
@@ -263,10 +264,7 @@ There are, however, also examples that show that the content of the complement d
 \end{xlist}
 
 \end{exe}
-
-For other authors, including \citet{gazdar79a} and \citet{abrusan2011}, examples like (\ref{emotive2}) do not constitute evidence that the content of the complement is not entailed. These authors instead suggested that such examples are cases of free indirect discourse (see, e.g., \citealt{eckardt2014}). Under this proposal, (\ref{emotive2}a), for instance, ``reports an attitude of a subject towards facts as perceived by him'' (\citealt[514]{abrusan2011}). As a consequence, ``the implications of [(\ref{emotive2}a)] do not have to be shared by the speaker''  ({\em ibid.}), which means that the content of the complement does not follow from (\ref{emotive2}a).
-
-Emotive predicates are not the only `factive' predicates that can be used in discourses in which the content of the complement does not follow. Consider the examples in (\ref{fis}) with the cognitive `factive' predicate {\em know} from  \citealt{hazlett2010} and \citealt{abrusan2011}:  it does not follow from (\ref{fis}a) that ulcers are caused by bacterial infection and it does not follow from (\ref{fis}b) that the police are listening to John's phone calls. 
+Emotive predicates are not the only `factive' predicates that can be used in discourses in which the content of the complement does not necessarily follow. Consider the examples in (\ref{fis}) with the cognitive `factive' predicate {\em know} from  \citealt{hazlett2010} and \citealt{abrusan2011}:  it does not follow from (\ref{fis}a) that ulcers are caused by bacterial infection or from (\ref{fis}b) that the police are listening to John's phone calls. 
 
 \begin{exe}
 \ex\label{fis}
@@ -283,24 +281,55 @@ Emotive predicates are not the only `factive' predicates that can be used in dis
 \end{xlist}
 
 \end{exe}
-\citet[515]{abrusan2011} suggested that speakers or writers of examples like (\ref{fis}) ``are understood as reporting a belief or feeling of ``knowledge'' on somebody's part''. Thus, Abrus\'an takes the content of the complement of predicates like {\em know} to be entailed, even in light of examples like those in (\ref{fis}). 
 
-In sum, there is disagreement about whether the content of the complement of predicates presumed to be `factive' is entailed. This disagreement is not empirical: examples like those in (\ref{inform2}) to (\ref{fis}) show that the content of the complement does not necessarily follow from the content of the relevant unembedded matrix sentences. According to the definition of the entailment relation, such examples constitute evidence that the content of the complement is not entailed, which means that, by the definition in (\ref{def}), the relevant predicates are not `factive'. Rather, the disagreement is methodological: some authors take examples like those in (\ref{inform2}) to (\ref{fis}) at face value and conclude that the relevant predicates are not `factive', and others maintain that the relevant predicates are `factive' and relegate such examples to auxiliary explanations, like free indirect discourse. Whether this latter position is empirically justified depends first and foremost on whether entailment distinguishes `factive' (and `veridical non-factive') predicates from `plain non-factive' and `projective non-factive' ones, i.e., whether diagnostics for entailment show that the inference to the content of the complement of `factive' (and `veridical non-factive') predicates is categorically stronger than that of `plain non-factive' and `projective non-factive' ones. If that is the case, then it may be justified to rely on auxiliary explanations to account for examples like those in (\ref{inform2}) to (\ref{fis}). If, however, that is not the case, then the categorical division of predicates into `factive' and `non-factive' ones as defined in (\ref{def}) is further called into question. Therefore, the second empirical goal of this paper is to systematically explore whether the content of the complement of a range of English `factive' and `non-factive' predicates is entailed. This exploration serves to address the research questions in (\ref{erq}):
+In sum, the prior literature on `factive' predicates has provided examples that suggest that the content of the complement is not entailed. In this paper, we systematically explore whether the content of the complement of English `factive' and `non-factive' predicates is entailed, to identify the entailment profiles of `factive' and `non-factive' predicates.\footnote{Some authors, including \citet{gazdar79a} and \citet{abrusan2011}, do not take examples like (\ref{emotive2}) to constitute evidence that the content of the complement is not entailed. These authors instead suggested that such examples are cases of free indirect discourse (see, e.g., \citealt{eckardt2014}). Under this proposal, (\ref{emotive2}a), for instance, ``reports an attitude of a subject towards facts as perceived by him'' (\citealt[514]{abrusan2011}). As a consequence, ``the implications of [(\ref{emotive2}a)] do not have to be shared by the speaker''  ({\em ibid.}), which accounts for the observation that the content of the complement does not follow from (\ref{emotive2}a). Similarly, \citet[515]{abrusan2011} suggested that speakers or writers of examples like (\ref{fis}) ``are understood as reporting a belief or feeling of ``knowledge'' on somebody's part''. Thus, Abrus\'an takes the content of the complement of predicates like {\em know} to be entailed, even in light of examples like those in (\ref{fis}). We discuss these proposals in section \ref{s4} in the context of the findings of our experiments.}
 
-\begin{exe}
-\ex\label{erq} Research questions about entailment
-\begin{xlist}
-\ex Is the content of the complement of `factive' and `veridical non-factive' predicates entailed?
+%Therefore, the second empirical goal of this paper is to systematically explore whether the content of the complement of a range of English `factive' and `non-factive' predicates is entailed. This exploration serves to address the research questions in (\ref{erq}):
+%
+%\begin{exe}
+%\ex\label{erq} Research questions about entailment
+%\begin{xlist}
+%\ex Is the content of the complement of `factive' and `veridical non-factive' predicates entailed?
+%
+%\ex Is the content of the complement of `plain factive' and `projective non-factive' predicates entailed?
+%
+%\ex Does entailment distinguish `factive' and `veridical non-factive' from `plain non-factive' and `projective non-factive' predicates?
+%\end{xlist}
+%\end{exe}
 
-\ex Is the content of the complement of `plain factive' and `projective non-factive' predicates entailed?
+Our explorations of the projection and entailment profiles of English predicates presumed to be `factive' and `non-factive' jointly serve to identify whether `factive' and `non-factive' predicates are empirically distinguished by projectivity and entailment, as defined in (\ref{def}), and whether the limitation of projection analyses to `factive' predicates is justified empirically. 
 
-\ex Does entailment distinguish `factive' and `veridical non-factive' from `plain non-factive' and `projective non-factive' predicates?
-\end{xlist}
-\end{exe}
+Figure \ref{f-assumption}: is the empirical picture really like this, or are non-factive predicates encroaching in various ways on factive ones, challenging the assumed categorical distinction?
 
-The research questions about projectivity in (\ref{prq}) and about entailment in (\ref{erq}) are addressed in this paper on the basis of a series of experiments designed to explore projectivity and entailment with theoretically untrained native speakers of American English. The paper proceeds as follows. In section \ref{s2}, we present the findings of Exp.~1, which was designed to explore the projectivity of the content of the complement of 20 English clause-embedding `factive' and `non-factive' predicates.\footnote{\label{f-github}The
-data and R code for generating the figures and analyses of the experiments reported on in this paper are available at \url{https://github.com/judith-tonhauser/factivity}.}  In section \ref{s3}, two standard diagnostics for entailment are applied in Exps.~2a and 2b, respectively, to the content of the complement of the same 20 clause-embedding predicates. On the basis of the findings from Exps.~1 and 2, we argue in section \ref{s4} that `factive' predicates are heterogeneous and that the assumed categorical distinction between `factive' and `non-factive' predicates is not supported empirically. We argue that it is not empirically justified for projection analyses to be limited to `factive' predicates (see, e.g., \citealt{heim83,vds92,abrusan2011,abrusan2016,romoli2015,best-question}) and show that no currently available projection analysis accounts for our findings. We discuss the implications of our findings for empirically adequate analyses of projection before concluding in section \ref{s5}.
+\begin{figure}[h]
+\center
 
+\begin{tikzpicture}
+
+% x and y axes
+\draw[->] (0,0) -- (7,0);
+\draw[->] (0,0) -- (0,7);
+
+% labels on the axes
+\node at (3.5,-.5) {{\bf projectivity}};
+\node at (-1.7,3.5) {{\bf entailment}};
+\node at (-.5,6) {yes};
+\node at (-.5,1) {no};
+
+% predicates
+\node at (1,1) {{\em think}};
+\node at (1,6) {{\em be right}};
+\node at (5,1) {{\em announce}};
+\node at (6,6) {{\em know}};
+
+\end{tikzpicture}
+
+\caption{POTENTIALLY INCORPORATE A FIGURE LIKE THIS TO SHOW WHAT WE EXPECT GIVEN (\ref{def})}\label{f-assumption}
+\end{figure}
+
+
+The paper proceeds as follows. In section \ref{s2}, we present the findings of Exp.~1, which was designed to explore the projectivity of the content of the complement of 20 English clause-embedding `factive' and `non-factive' predicates.\footnote{\label{f-github}The
+data and R code for generating the figures and analyses of the experiments reported on in this paper are available at \url{https://github.com/judith-tonhauser/factivity}.}  In section \ref{s3}, two standard diagnostics for entailment are applied in Exps.~2a and 2b, respectively, to the content of the complement of the same 20 clause-embedding predicates. On the basis of the findings from Exps.~1 and 2, we argue in section \ref{s4} that `factive' predicates are heterogeneous, that various `non-factive' predicates pattern like `factive' ones on both entailment and projectivity, and that the assumed categorical distinction between `factive' and `non-factive' predicates is not supported empirically. We argue that it is not empirically justified for analyses of the projectivity of the content of the complement of clause-embedding predicates to be limited to `factive' predicates (see, e.g., \citealt{heim83,vds92,abrusan2011,abrusan2016,romoli2015,best-question}) and show that no currently available projection analysis accounts for our findings. We discuss the implications of our findings for empirically adequate analyses of projection before concluding in section \ref{s5}.
 
  %\begin{exe}
 %\ex\label{swan} She confessed that she took the money, but later recanted. It turned out that she had been trying to cover up a friend's mistake. \hfill (adapted from \citealt[1540]{swanson2012})
@@ -1096,6 +1125,10 @@ How reliable and valid are the two diagnostics for entailment of Exps.~2a and 2b
 \jt{I think the first critique that we are going to get is something like this: ``of course the results are not at ceiling/gradient for Exp. 2b, given that you used a gradient response task. things would look different if you only offered a binary choice `contradictory' vs `not contradictory'. I think we should stave this off by running a smaller version of Exp 2b with such a binary response task. If you agree, how to we scale it down? E.g., only run the 20 predicates with 10 clauses but only 100 participants. Or should we run another full experiment with 300 participants?}
 
 \section{Discussion}\label{s4}
+
+This disagreement is not empirical: examples like those in (\ref{inform2}) to (\ref{fis}) show that the content of the complement does not necessarily follow from the content of the relevant unembedded matrix sentences. According to the definition of the entailment relation, such examples constitute evidence that the content of the complement is not entailed, which means that, by the definition in (\ref{def}), the relevant predicates are not `factive'. Rather, the disagreement is methodological: some authors take examples like those in (\ref{inform2}) to (\ref{fis}) at face value and conclude that the relevant predicates are not `factive', and others maintain that the relevant predicates are `factive' and relegate such examples to auxiliary explanations, like free indirect discourse. Whether this latter position is empirically justified depends first and foremost on whether entailment distinguishes `factive' (and `veridical non-factive') predicates from `plain non-factive' and `projective non-factive' ones, i.e., whether diagnostics for entailment show that the inference to the content of the complement of `factive' (and `veridical non-factive') predicates is categorically stronger than that of `plain non-factive' and `projective non-factive' ones. If that is the case, then it may be justified to rely on auxiliary explanations to account for examples like those in (\ref{inform2}) to (\ref{fis}). If, however, that is not the case, then the categorical division of predicates into `factive' and `non-factive' ones as defined in (\ref{def}) is further called into question. 
+
+Burden of proof is on people who want to make these auxiliary assumptions
 
 the results do not support a non-arbitrary division of predicates into those for which the content of the clausal complement projects and those for which it doesn't.  Rather, the findings motivate an utterance-level analysis of projectivity: the speaker of any given utterance is taken to be committed to the content of the clausal complement to a particular degree and the clause-embedding predicate is one factor that influences how projective the content is (see also \citealt{tbd-variability}). Other factors include information structure (e.g., \citealt{cummins-rohde2015,tonhauser-salt26,djaerv-bacovcin-salt27}), at-issueness (\citealt{tbd-variability}) and common ground information (\citealt{gazdar79a,tonhauser-etal-eval}).
 

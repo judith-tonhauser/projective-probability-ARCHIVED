@@ -206,6 +206,14 @@ median(cd$age,na.rm=TRUE) #36
 table(cd$gender)
 #142 female, 137 male
 
+# change the name of the predicates
+table(cd$verb)
+cd$verb <- gsub("be_right_that","be_right",cd$verb)
+cd$verb <- gsub("inform_Sam","inform",cd$verb)
+cd$verb <- gsub("annoyed","be_annoyed",cd$verb)
+cd$verb <- gsub("control_good","entailing C",cd$verb)
+cd$verb <- gsub("control_bad","non-ent. C",cd$verb)
+
 # target data (20 items per Turker)
 names(cd)
 table(cd$verb)
@@ -231,12 +239,6 @@ min(tmp$Freq) #5
 max(tmp$Freq) #24
 mean(tmp$Freq) #13.9
 
-# change the name of the predicates
-table(t$verb)
-t$verb <- gsub("be_right_that","be_right",t$verb)
-t$verb <- gsub("inform_Sam","inform",t$verb)
-t$verb <- gsub("annoyed","be_annoyed",t$verb)
-
 # save target data
 write.csv(t, "../data/t.csv")
 nrow(t) #5580
@@ -248,7 +250,9 @@ str(t$verb)
 
 # also used in MIT talk
 # boxplot of inference strength by predicate, collapsing over complement clauses, ordered by mean
-means = t %>%
+# including the two types of control stimuli
+table(cd$verb)
+means = cd %>%
   group_by(verb) %>%
   summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
@@ -258,19 +262,18 @@ names(means)
 
 write.csv(means, file="../data/inference_means.csv",row.names=F,quote=F)
 
-t$verb <-factor(t$verb, levels=means[order(means$Mean), "verb"])
+cd$verb <-factor(cd$verb, levels=means[order(means$Mean), "verb"])
 
-cols = data.frame(V=levels(t$verb))
+cols = data.frame(V=levels(cd$verb))
 cols$VeridicalityGroup = as.factor(
-  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed", "hear"), "F", 
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
          ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
                 ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
-#cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
 cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
                       ifelse(cols$VeridicalityGroup == "NF", "brown", 
                              ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
 
-ggplot(t, aes(x=verb, y=response)) + 
+ggplot(cd, aes(x=verb, y=response)) + 
   geom_boxplot(width=0.2,position=position_dodge(.9)) +
   stat_summary(fun.y=mean, geom="point", color="black",fill="gray70", shape=21, size=3,position=position_dodge(.9)) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
@@ -281,23 +284,26 @@ ggplot(t, aes(x=verb, y=response)) +
 ggsave("../graphs/boxplot-inference.pdf",height=4,width=8)
 
 # boxplot of inference strength by predicate, collapsing over complement clauses, ordered by median
-means = t %>%
+means = cd %>%
   group_by(verb) %>%
   summarize(Median = median(response), Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
   select(verb,Mean,Median,YMin,YMax)
 means = as.data.frame(means)
 
-t$verb <-factor(t$verb, levels=means[order(means$Median), "verb"])
+cd$verb <-factor(cd$verb, levels=means[order(means$Median), "verb"])
 
-#library(RColorBrewer)
-cols = data.frame(V=levels(t$verb))
-cols$VeridicalityGroup = as.factor(ifelse(cols$V %in% c("be_annoyed", "know", "discover", "reveal", "see", "establish", "be_right"), "E", ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NE", "V")))
+cols = data.frame(V=levels(cd$verb))
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
 #cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
-cols$Colors =  ifelse(cols$VeridicalityGroup == "E", "blue", 
-                      ifelse(cols$VeridicalityGroup == "NE", "brown", "black"))
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
+                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
+                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
 
-ggplot(t, aes(x=verb, y=response)) + 
+ggplot(cd, aes(x=verb, y=response)) + 
   geom_boxplot(width=0.2,position=position_dodge(.9)) +
   stat_summary(fun.y=mean, geom="point", color="black",fill="gray70", shape=21, size=3,position=position_dodge(.9)) +
   scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
@@ -874,7 +880,7 @@ comparison
 
 
 
-### Correlation between the two measures of entailment
+### Correlation between the two measures of entailment -----
 
 # load contradictoriness means by verb
 cmeans = read.csv("../../2-veridicality2/data/veridicality_means.csv")

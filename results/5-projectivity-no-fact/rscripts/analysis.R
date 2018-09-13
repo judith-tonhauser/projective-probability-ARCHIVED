@@ -246,8 +246,8 @@ cd$verb <-factor(cd$verb, levels=levels(means$Verb))
 
 cols = data.frame(V=levels(cd$verb))
 cols$VeridicalityGroup = as.factor(
-  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed", "hear"), "F", 
-         ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NF", 
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
                 ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
 #cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
 cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 

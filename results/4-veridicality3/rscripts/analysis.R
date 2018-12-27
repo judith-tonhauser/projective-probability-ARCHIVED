@@ -217,7 +217,7 @@ cd$verb <- gsub("control_bad","non-ent. C",cd$verb)
 # target data (20 items per Turker)
 names(cd)
 table(cd$verb)
-t <- subset(cd, cd$verb != "control_good" & cd$verb != "control_bad")
+t <- subset(cd, cd$verb != "entailing C" & cd$verb != "non-ent. C")
 t <- droplevels(t)
 nrow(t) #5580 / 20 = 279 Turkers
 table(t$verb,t$content)
@@ -259,6 +259,7 @@ means = cd %>%
   select(verb,Mean,YMin,YMax)
 means = as.data.frame(means)
 names(means)
+View(means)
 
 write.csv(means, file="../data/inference_means.csv",row.names=F,quote=F)
 

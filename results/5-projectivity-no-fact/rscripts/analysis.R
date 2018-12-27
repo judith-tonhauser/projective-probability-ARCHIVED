@@ -12,7 +12,7 @@ library(tidyverse)
 library(dplyr)
 library(dichromat)
 library(forcats)
-library(RColorBrewer)
+library(ggrepel)
 theme_set(theme_bw())
 
 ## NO NEED TO RUN THIS FIRST BIT IF YOU JUST WANT TO LOAD CLEAN DATA. 
@@ -305,20 +305,95 @@ min(tmp$Freq) #5
 max(tmp$Freq) #27
 mean(tmp$Freq) #14.2
 
-# mean projectivity by mean veridicality
+# plot mean projectivity by mean veridicality (2 measures)
 head(t)
 means = t %>%
-  group_by(verb, VeridicalityMean) %>%
-  summarize(ProjectionMean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  group_by(verb) %>%
+  summarize(mean_proj = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
   ungroup() %>%
-  mutate(YMin = ProjectionMean - CILow, YMax = ProjectionMean + CIHigh, Verb = fct_reorder(verb,ProjectionMean))
+  mutate(projMin = mean_proj - CILow, projMax = mean_proj + CIHigh)
 View(means)
 
-cols = data.frame(V=levels(means$Verb))
-cols$VeridicalityGroup = as.factor(ifelse(cols$V %in% c("be_annoyed", "know", "discover", "reveal", "see", "establish", "be_right"), "E", ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NE", "V")))
-#cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
-cols$Colors =  ifelse(cols$VeridicalityGroup == "E", "blue", 
-                      ifelse(cols$VeridicalityGroup == "NE", "brown", "black"))
+# get veridicality means (2 measures)
+infMeans <- read.csv(file="../../4-veridicality3/data/inference_means.csv", header=T, sep=",")
+colnames(infMeans)<- c("verb","mean_inf","infMin","infMax")
+infMeans <- droplevels(subset(infMeans, infMeans$verb != "entailing C" & infMeans$verb != "non-ent. C"))
+View(infMeans)
+
+contrMeans <- read.csv(file="../../2-veridicality2/data/veridicality_means.csv",header=T,sep=",")
+colnames(contrMeans)<- c("verb","mean_contr","contrMin","contrMax")
+contrMeans <- droplevels(subset(contrMeans, contrMeans$verb != "non-contrad. C" & contrMeans$verb != "contradictory C"))
+View(contrMeans)
+
+merged <- cbind(means,infMeans,contrMeans,by="verb")
+merged <- merged[unique(names(merged))]
+View(merged)
+
+cols = data.frame(V=levels(merged$verb))
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
+                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
+                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
+View(cols)
+
+ggplot(merged, aes(x=mean_proj,y=mean_inf)) +
+  geom_text_repel(aes(label=verb),alpha=.8,size=4,color=cols$Colors) +
+  geom_errorbarh(aes(xmin=projMin,xmax=projMax),color="gray50",alpha=.5) +
+  geom_errorbar(aes(ymin=infMin,ymax=infMax),color="gray50",alpha=.5) +
+  geom_point() +
+  theme(legend.position="none") +
+  scale_x_continuous(name ="Mean certainty rating", limits = c(0,1),
+                     breaks=c(0,0.25, 0.50, 0.75, 1.00)) +
+  scale_y_continuous(name ="Mean inference rating", limits = c(0,1),
+                    breaks=c(0,0.25, 0.50, 0.75, 1.00))
+  #ylab("Mean inference rating") 
+ggsave(file="../graphs/projection-by-inference.pdf",width=4.2,height=3.5)
+
+
+ggplot(merged, aes(x=mean_proj,y=mean_contr)) +
+  geom_text_repel(aes(label=verb),alpha=.8,size=4,color=cols$Colors) +
+  geom_errorbarh(aes(xmin=projMin,xmax=projMax),color="gray50",alpha=.5) +
+  geom_errorbar(aes(ymin=contrMin,ymax=contrMax),color="gray50",alpha=.5) +
+  geom_point() +
+  theme(legend.position="none") +
+  scale_x_continuous(name ="Mean certainty rating", limits = c(0,1),
+                     breaks=c(0,0.25, 0.50, 0.75, 1.00)) +
+  scale_y_continuous(name ="Mean contradictoriness rating", limits = c(0,1),
+                   breaks=c(0,0.25, 0.50, 0.75, 1.00))
+  #ylab("Mean contradictoriness rating") 
+ggsave(file="../graphs/projection-by-contradictoriness.pdf",width=4.2,height=3.5)
+
+# plots with binary entailment 
+merged$infEnt <- "no"
+merged$infEnt <- ifelse(merged$verb == "be_right" | merged$verb == "see" | merged$verb == "discover" | 
+                          merged$verb == "know" | merged$verb == "be_annoyed" | merged$verb == "prove" | merged$verb == "confirm","yes","no")
+merged$contrEnt <- "no"
+merged$contrEnt <- ifelse(merged$verb == "be_right","yes","no")
+
+ggplot(merged, aes(x=mean_proj,y=infEnt)) +
+  geom_text_repel(aes(label=verb),alpha=.8,size=4,color=cols$Colors) +
+  geom_errorbarh(aes(xmin=projMin,xmax=projMax,height = .15),color="gray50",alpha=.5) +
+  #geom_errorbar(aes(ymin=infMin,ymax=infMax),color="gray50",alpha=.5) +
+  geom_point() +
+  theme(legend.position="none") +
+  scale_x_continuous(name ="Mean certainty rating", limits = c(0,1),
+                     breaks=c(0,0.25, 0.50, 0.75, 1.00)) +
+  ylab("Entailed") 
+ggsave(file="../graphs/projection-by-inferenceEntailment.pdf",width=4.2,height=3.5)
+
+ggplot(merged, aes(x=mean_proj,y=contrEnt)) +
+  geom_text_repel(aes(label=verb),alpha=.8,size=4,color=cols$Colors) +
+  geom_errorbarh(aes(xmin=projMin,xmax=projMax,height = .15),color="gray50",alpha=.5) +
+  #geom_errorbar(aes(ymin=infMin,ymax=infMax),color="gray50",alpha=.5) +
+  geom_point() +
+  theme(legend.position="none") +
+  scale_x_continuous(name ="Mean certainty rating", limits = c(0,1),
+                     breaks=c(0,0.25, 0.50, 0.75, 1.00)) +
+  ylab("Entailed") 
+ggsave(file="../graphs/projection-by-contradictorinessEntailment.pdf",width=4.2,height=3.5)
 
 
 ### PAIRWISE DIFFERENCES ###

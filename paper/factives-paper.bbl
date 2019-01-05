@@ -14,21 +14,11 @@ Abrus{\'a}n, M{\'a}rta. 2011.
 \newblock Predicting the presuppositions of soft triggers.
 \newblock {\em Linguistics \& Philosophy\/} 34:491--535.
 
-\bibitem[Abrus{\'a}n(2013)]{abrusan2013}
-Abrus{\'a}n, M{\'a}rta. 2013.
-\newblock A note on quasi-presuppositions and focus.
-\newblock {\em Journal of Semantics\/} 30:257--265.
-
 \bibitem[Abrus{\'a}n(2016)]{abrusan2016}
 Abrus{\'a}n, M{\'a}rta. 2016.
 \newblock Presupposition cancellation: {E}xplaining the `soft-hard' trigger
   distinction.
 \newblock {\em Natural Language Semantics\/} 24:165--202.
-
-\bibitem[Abusch(2010)]{abusch10}
-Abusch, Dorit. 2010.
-\newblock Presupposition triggering from alternatives.
-\newblock {\em Journal of Semantics\/} 27:37--80.
 
 \bibitem[Anand and Hacquard(2014)]{anand-hacquard2014}
 Anand, Pranav and Valentine Hacquard. 2014.
@@ -44,11 +34,6 @@ Anderson, Lloyd~B. 1986.
   Linguistic Coding of Epistemology\/}, pages 273--312. New Jersey: Ablex
   Publishing Corporation.
 
-\bibitem[Beaver(2001)]{beaver01}
-Beaver, David. 2001.
-\newblock {\em Presupposition and Assertion in Dynamic Semantics\/}.
-\newblock Stanford, CA: CSLI Publications.
-
 \bibitem[Beaver(2010)]{beaver-belly}
 Beaver, David. 2010.
 \newblock Have you noticed that your belly button lint colour is related to the
@@ -56,11 +41,6 @@ Beaver, David. 2010.
 \newblock In R.~B\"auerle, U.~Reyle, and E.~Zimmermann, eds., {\em
   Presuppositions and Discourse: {Essays Offered to Hans Kamp}\/}, pages
   65--99. Oxford: Elsevier.
-
-\bibitem[Beaver and Clark(2008)]{beaver-clark08}
-Beaver, David and Brady Clark. 2008.
-\newblock {\em Sense and Sensitivity: How Focus Determines Meaning\/}.
-\newblock Oxford: Wiley-Blackwell.
 
 \bibitem[Chierchia and McConnell-Ginet(1990)]{ccmg90}
 Chierchia, Gennaro and Sally McConnell-Ginet. 1990.
@@ -80,12 +60,10 @@ de~Marneffe, Marie-Catherine, {Christopher D.} Manning, and Christopher Potts.
 \newblock Did it happen? {T}he pragmatic complexity of veridicality assessment.
 \newblock {\em Computational Linguistics\/} 38:301--333.
 
-\bibitem[{de Marneffe} et~al.(2018){de Marneffe}, Simons, and
-  Tonhauser]{demarneffe-etal2018}
-{de Marneffe}, Marie-Catherine, Mandy Simons, and Judith Tonhauser. 2018.
-\newblock Factivity in doubt: Clause-embedding predicates in natural discourse.
-\newblock Poster to be presented at {\em {S}inn und {B}edeutung}, Barcelona,
-  September 5-7.
+\bibitem[Degen and Tanenhaus(2015)]{degen-tanenhaus2015}
+Degen, Judith and Michael~K. Tanenhaus. 2015.
+\newblock {Processing scalar implicature A constraint-based approach}.
+\newblock {\em Cognitive Science\/} 39(4):667--710.
 
 \bibitem[Dj\"arv and Bacovcin(2017)]{djaerv-bacovcin-salt27}
 Dj\"arv, Kajsa and {Hezekiah Akiva} Bacovcin. 2017.
@@ -93,10 +71,10 @@ Dj\"arv, Kajsa and {Hezekiah Akiva} Bacovcin. 2017.
 \newblock In {\em Semantics and Linguistic Theory (SALT) XXVII\/}, pages
   116--133. Ithaca, NY: CLC Publications.
 
-\bibitem[Eckardt(2014)]{eckardt2014}
-Eckardt, Regine. 2014.
-\newblock {\em The semantics of free indirect discourse\/}.
-\newblock Leiden: Brill.
+\bibitem[Dj\"arv et~al.(2016)Dj\"arv, Zehr, and Schwarz]{djaerv-etal2016}
+Dj\"arv, Kajsa, J\'er\'emy Zehr, and Florian Schwarz. 2016.
+\newblock Cognitive vs.\ emotive factives: {A}n experimental differentiation.
+\newblock In {\em Proceedings of Sinn und Bedeutung 21\/}, pages 367--385.
 
 \bibitem[Egr\'e(2008)]{egre2008}
 Egr\'e, Paul. 2008.
@@ -104,10 +82,16 @@ Egr\'e, Paul. 2008.
 \newblock In L.~Lihoreau, ed., {\em Grazer Philosophische Studien\/}, pages
   85--125. Amsterdam: Rodopi.
 
-\bibitem[Gazdar(1979)]{gazdar79a}
-Gazdar, Gerald. 1979.
+\bibitem[Gazdar(1979{\natexlab{a}})]{gazdar79a}
+Gazdar, Gerald. 1979{\natexlab{a}}.
 \newblock {\em Pragmatics: Implicature, Presuppositions, and Logical Form\/}.
 \newblock New York: Academic Press.
+
+\bibitem[Gazdar(1979{\natexlab{b}})]{gazdar79b}
+Gazdar, Gerald. 1979{\natexlab{b}}.
+\newblock A solution to the projection problem.
+\newblock In C.-K. Oh and D.~Dineed, eds., {\em Syntax and Semantics 11:
+  Presupposition\/}, pages 57--89. New York: Academic Press.
 
 \bibitem[Giannakidou(1998)]{giannakidou1998}
 Giannakidou, Anastasia, ed. 1998.
@@ -152,6 +136,11 @@ Kiparsky, Paul and Carol Kiparsky. 1971.
 Klein, Ewan. 1975.
 \newblock Two sorts of factive predicates.
 \newblock Pragmatics Microfiche it 1.1. frames B5ÐC14.
+
+\bibitem[Mahler(2019)]{mahler-nels}
+Mahler, Taylor. 2019.
+\newblock Does at-issueness predict projection? it's complicated!
+\newblock In {\em 49th Annual Meeting of the North East Linguistic Society\/}.
 
 \bibitem[Melvold(1991)]{melvold1991}
 Melvold, Janis. 1991.
@@ -232,12 +221,6 @@ Spector, Benjamin and Paul Egr\'e. 2015.
   not necessarily {\em the} answer.
 \newblock {\em Synthese\/} 192:1729--1784.
 
-\bibitem[Stalnaker(1974)]{stalnaker74}
-Stalnaker, Robert~C. 1974.
-\newblock Pragmatic presuppositions.
-\newblock In M.~Munitz and P.~Unger, eds., {\em Semantics and Philosophy\/},
-  pages 197--213. New York: New York University Press.
-
 \bibitem[Stevens et~al.(2017)Stevens, {de Marneffe}, Speer, and
   Tonhauser]{stevens-etal2017}
 Stevens, {Jon Scott}, Marie-Catherine {de Marneffe}, {Shari R.} Speer, and
@@ -246,6 +229,11 @@ Stevens, {Jon Scott}, Marie-Catherine {de Marneffe}, {Shari R.} Speer, and
   utterances.
 \newblock In {\em 39th Annual Meeting of the Cognitive Science Society\/},
   pages 1144--1149.
+
+\bibitem[Sudo(2012)]{sudo-thesis}
+Sudo, Yasutada. 2012.
+\newblock {\em On the semantics of phi-features on pronouns\/}.
+\newblock Ph.D. thesis, MIT.
 
 \bibitem[Swanson(2012)]{swanson2012}
 Swanson, Eric. 2012.
@@ -297,5 +285,17 @@ Xue, Jingyang and Edgar Onea. 2011.
   empirical study.
 \newblock In {\em Proceedings of the 2011 {ESSLLI} Workshop on Projective
   Content\/}, pages 171--184.
+
+\bibitem[Zehr and Schwarz(2016)]{zehr-schwarz2016}
+Zehr, J\'er\'emy and Florian Schwarz. 2016.
+\newblock Entailed vs.\ non-entailed presuppositions: {A}n experimental
+  assessment.
+\newblock In {\em Proceedings of North East Linguistic Society 46\/}, pages
+  319--328.
+
+\bibitem[Zehr and Schwarz(2018)]{zehr-schwarz2018}
+Zehr, J\'er\'emy and Florian Schwarz. 2018.
+\newblock Returning to non-entailed presuppositions again.
+\newblock In {\em Proceedings of Sinn und Bedeutung 22\/}, pages 463--480.
 
 \end{thebibliography}

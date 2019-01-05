@@ -25,6 +25,7 @@ paper/prior.blg
 *.success
 *_invoice.csv
 *.Rhistory
+*.DS_Store
 *.DS_Store*
 *catch_trials.csv
 *subject_information.csv

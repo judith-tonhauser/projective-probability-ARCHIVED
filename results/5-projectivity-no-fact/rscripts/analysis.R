@@ -334,9 +334,9 @@ cols$VeridicalityGroup = as.factor(
   ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
          ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
                 ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
-cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
-                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
-                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid", 
+                      ifelse(cols$VeridicalityGroup == "NF", "gray60", 
+                             ifelse(cols$VeridicalityGroup == "VNF","dodgerblue","tomato1")))
 View(cols)
 
 ggplot(merged, aes(x=mean_proj,y=mean_inf)) +

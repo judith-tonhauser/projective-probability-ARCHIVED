@@ -138,7 +138,7 @@ cd = d
 write.csv(cd, "../data/cd.csv")
 nrow(cd) #7358 / 26 items = 283 participants
 
-# load clean data for analysis
+# load clean data for analysis ----
 cd = read.csv("../data/cd.csv")
 nrow(cd) #7358
 
@@ -305,7 +305,7 @@ min(tmp$Freq) #5
 max(tmp$Freq) #27
 mean(tmp$Freq) #14.2
 
-# plot mean projectivity by mean veridicality (2 measures)
+# plot mean projectivity by mean veridicality (2 measures) ----
 head(t)
 means = t %>%
   group_by(verb) %>%
@@ -316,12 +316,12 @@ View(means)
 
 # get veridicality means (2 measures)
 infMeans <- read.csv(file="../../4-veridicality3/data/inference_means.csv", header=T, sep=",")
-colnames(infMeans)<- c("verb","mean_inf","infMin","infMax")
+colnames(infMeans) <- c("verb","mean_inf","infMin","infMax")
 infMeans <- droplevels(subset(infMeans, infMeans$verb != "entailing C" & infMeans$verb != "non-ent. C"))
 View(infMeans)
 
 contrMeans <- read.csv(file="../../2-veridicality2/data/veridicality_means.csv",header=T,sep=",")
-colnames(contrMeans)<- c("verb","mean_contr","contrMin","contrMax")
+colnames(contrMeans) <- c("verb","mean_contr","contrMin","contrMax")
 contrMeans <- droplevels(subset(contrMeans, contrMeans$verb != "non-contrad. C" & contrMeans$verb != "contradictory C"))
 View(contrMeans)
 

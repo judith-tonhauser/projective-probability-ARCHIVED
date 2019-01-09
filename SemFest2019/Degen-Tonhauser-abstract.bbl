@@ -1,0 +1,92 @@
+\newcommand{\noopsort}[1]{}\newcommand{\SortNoop}[1]{}
+\begin{thebibliography}{15}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[Abrus{\'a}n(2011)]{abrusan2011}
+Abrus{\'a}n, M{\'a}rta. 2011.
+\newblock Predicting the presuppositions of soft triggers.
+\newblock {\em Linguistics \& Philosophy\/} 34:491--535.
+
+\bibitem[Abrus{\'a}n(2016)]{abrusan2016}
+Abrus{\'a}n, M{\'a}rta. 2016.
+\newblock Presupposition cancellation: {E}xplaining the `soft-hard' trigger
+  distinction.
+\newblock {\em Natural Language Semantics\/} 24:165--202.
+
+\bibitem[Anand and Hacquard(2014)]{anand-hacquard2014}
+Anand, Pranav and Valentine Hacquard. 2014.
+\newblock Factivity, belief and discourse.
+\newblock In {\em The Art and Craft of Semantics: A Festschrift for Irene
+  Heim\/}, pages 69--90. MIT Working Papers in Linguistics.
+
+\bibitem[Chierchia and McConnell-Ginet(1990)]{ccmg90}
+Chierchia, Gennaro and Sally McConnell-Ginet. 1990.
+\newblock {\em Meaning and Grammar\/}.
+\newblock Cambridge, MA: MIT Press.
+
+\bibitem[de~Marneffe et~al.(2012)de~Marneffe, Manning, and
+  Potts]{demarneffe-etal2012}
+de~Marneffe, Marie-Catherine, {Christopher D.} Manning, and Christopher Potts.
+  2012.
+\newblock Did it happen? {T}he pragmatic complexity of veridicality assessment.
+\newblock {\em Computational Linguistics\/} 38:301--333.
+
+\bibitem[Gazdar(1979)]{gazdar79a}
+Gazdar, Gerald. 1979.
+\newblock {\em Pragmatics: Implicature, Presuppositions, and Logical Form\/}.
+\newblock New York: Academic Press.
+
+\bibitem[Heim(1983)]{heim83}
+Heim, Irene. 1983.
+\newblock On the projection problem for presuppositions.
+\newblock In M.~Barlow, D.~Flickinger, and M.~Westcoat, eds., {\em {West Coast
+  Conference on Formal Linguistics (WCCFL)} 2\/}, pages 114--125.
+
+\bibitem[Karttunen(1971)]{karttunen71b}
+Karttunen, Lauri. 1971.
+\newblock Some observations on factivity.
+\newblock {\em Papers in Linguistics\/} 4:55--69.
+
+\bibitem[Kiparsky and Kiparsky(1971)]{kiparsky-kiparsky71}
+Kiparsky, Paul and Carol Kiparsky. 1971.
+\newblock Fact.
+\newblock In D.~Steinberg and L.~Jakobovits, eds., {\em Semantics. An
+  Interdisciplinary Reader in Philosophy, Linguistics and Psychology\/}, pages
+  345--369. Cambridge: Cambridge University Press.
+
+\bibitem[Romoli(2015)]{romoli2015}
+Romoli, Jacopo. 2015.
+\newblock The presuppositions of soft triggers are obligatory scalar
+  implicatures.
+\newblock {\em Journal of Semantics\/} 32:173--291.
+
+\bibitem[Schlenker(2010)]{schlenker10}
+Schlenker, Philippe. 2010.
+\newblock Local contexts and local meanings.
+\newblock {\em Philosophical Studies\/} 151:115--142.
+
+\bibitem[Simons et~al.(2017)Simons, Beaver, Roberts, and
+  Tonhauser]{best-question}
+Simons, Mandy, David Beaver, Craige Roberts, and Judith Tonhauser. 2017.
+\newblock The {B}est {Q}uestion: Explaining the projection behavior of factive
+  verbs.
+\newblock {\em Discourse Processes\/} 3:187--206.
+
+\bibitem[Spector and Egr\'e(2015)]{spector-egre2015}
+Spector, Benjamin and Paul Egr\'e. 2015.
+\newblock A uniform semantics for embedding interrogatives: {\em {A}n} answer,
+  not necessarily {\em the} answer.
+\newblock {\em Synthese\/} 192:1729--1784.
+
+\bibitem[Tonhauser et~al.(2018)Tonhauser, Beaver, and Degen]{tbd-variability}
+Tonhauser, Judith, David Beaver, and Judith Degen. 2018.
+\newblock How projective is projective content? {G}radience in projectivity and
+  at-issueness.
+\newblock {\em Journal of Semantics\/} 35:495--542.
+
+\bibitem[van~der Sandt(1992)]{vds92}
+van~der Sandt, Rob. 1992.
+\newblock Presupposition projection as anaphora resolution.
+\newblock {\em Journal of Semantics\/} 9:333--377.
+
+\end{thebibliography}

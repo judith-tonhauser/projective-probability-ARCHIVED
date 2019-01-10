@@ -1,46 +1,46 @@
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Degen-Tonhauser-abstract.aux
-The style file: /Users/tonhauser.1/Library/Latex/cslipubs-natbib.bst
-Database file #1: /Users/tonhauser.1/Documents/bibliography.bib
-You've used 15 entries,
-            2811 wiz_defined-function locations,
-            716 strings with 6957 characters,
-and the built_in function-call counts, 7123 in all, are:
-= -- 686
-> -- 297
-< -- 15
-+ -- 104
-- -- 83
-* -- 539
-:= -- 1276
-add.period$ -- 62
-call.type$ -- 15
-change.case$ -- 105
-chr.to.int$ -- 15
-cite$ -- 15
-duplicate$ -- 307
-empty$ -- 541
-format.name$ -- 106
-if$ -- 1467
+The style file: abbrvnat.bst
+Database file #1: ../bibliography.bib
+You've used 19 entries,
+            2773 wiz_defined-function locations,
+            713 strings with 7290 characters,
+and the built_in function-call counts, 8229 in all, are:
+= -- 739
+> -- 327
+< -- 21
++ -- 115
+- -- 96
+* -- 553
+:= -- 1237
+add.period$ -- 60
+call.type$ -- 19
+change.case$ -- 84
+chr.to.int$ -- 19
+cite$ -- 38
+duplicate$ -- 439
+empty$ -- 790
+format.name$ -- 123
+if$ -- 1805
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 17
-newline$ -- 80
-num.names$ -- 64
-pop$ -- 86
+missing$ -- 20
+newline$ -- 104
+num.names$ -- 83
+pop$ -- 193
 preamble$ -- 2
-purify$ -- 86
+purify$ -- 68
 quote$ -- 0
-skip$ -- 237
+skip$ -- 317
 stack$ -- 0
-substring$ -- 461
-swap$ -- 60
-text.length$ -- 3
+substring$ -- 379
+swap$ -- 62
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 129
+type$ -- 194
 warning$ -- 0
-while$ -- 64
+while$ -- 81
 width$ -- 0
-write$ -- 199
+write$ -- 254

@@ -345,7 +345,7 @@ ggplot(merged, aes(x=mean_proj,y=mean_inf)) +
   geom_errorbar(aes(ymin=infMin,ymax=infMax),color="gray50",alpha=.5) +
   geom_point(color=cols$Colors) +
   theme(legend.position="none") +
-  scale_x_continuous(name ="Mean certainty rating", limits = c(0,1),
+  scale_x_continuous(name ="Mean certainty rating (higher = more projective)", limits = c(0,1),
                      breaks=c(0,0.25, 0.50, 0.75, 1.00)) +
   scale_y_continuous(name ="Mean inference rating", limits = c(0,1),
                     breaks=c(0,0.25, 0.50, 0.75, 1.00))
@@ -377,9 +377,10 @@ ggplot(merged, aes(x=mean_proj,y=infEnt)) +
   geom_text_repel(aes(label=verb),alpha=.8,size=4,color=cols$Colors) +
   geom_errorbarh(aes(xmin=projMin,xmax=projMax,height = .15),color="gray50",alpha=.5) +
   #geom_errorbar(aes(ymin=infMin,ymax=infMax),color="gray50",alpha=.5) +
+  theme(axis.text.y = element_text(angle = 90, hjust = 0.5)) +
   geom_point(color=cols$Colors) +
   theme(legend.position="none") +
-  scale_x_continuous(name ="Mean certainty rating", limits = c(0,1),
+  scale_x_continuous(name ="Mean certainty rating (higher = more projective)", limits = c(0,1),
                      breaks=c(0,0.25, 0.50, 0.75, 1.00)) +
   ylab("Entailed") 
 ggsave(file="../graphs/projection-by-inferenceEntailment.pdf",width=4.2,height=3.5)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  11 JAN 2019 17:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  27 JAN 2019 17:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1145,92 +1145,42 @@ LaTeX Font Info:    Try loading font information for U+txsyc on input line 73.
 File: utxsyc.fd 2000/12/15 v3.1
 )
 Package xypdf Info: Line width: 0.672pt on input line 73.
+ [1
 
-<../paper/figures/categorization.pdf, id=4, 670.08185pt x 701.55159pt>
-File: ../paper/figures/categorization.pdf Graphic file (type pdf)
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<../results/3-projectivity/graphs/means-projectivity-by-predicate-and-facttype.
+pdf, id=14, 433.62pt x 230.8625pt>
+File: ../results/3-projectivity/graphs/means-projectivity-by-predicate-and-fact
+type.pdf Graphic file (type pdf)
 
-<use ../paper/figures/categorization.pdf>
-Package pdftex.def Info: ../paper/figures/categorization.pdf used on input line
- 103.
-(pdftex.def)             Requested size: 165.86226pt x 173.64258pt.
-
-Overfull \hbox (1.44514pt too wide) in paragraph at lines 103--105
- [][] 
- []
-
-
-<../results/5-projectivity-no-fact/graphs/projection-by-inferenceEntailment.pdf
-, id=5, 303.1325pt x 252.945pt>
-File: ../results/5-projectivity-no-fact/graphs/projection-by-inferenceEntailmen
-t.pdf Graphic file (type pdf)
-
-<use ../results/5-projectivity-no-fact/graphs/projection-by-inferenceEntailment
-.pdf>
-Package pdftex.def Info: ../results/5-projectivity-no-fact/graphs/projection-by
--inferenceEntailment.pdf used on input line 108.
-(pdftex.def)             Requested size: 184.29036pt x 153.77904pt.
-
-Overfull \hbox (43.36243pt too wide) in paragraph at lines 108--110
- [][] 
- []
-
-
-Underfull \hbox (badness 1394) in paragraph at lines 116--118
-\OT1/txr/m/n/12 `factive' and `non-
- []
-
-
-Underfull \hbox (badness 6792) in paragraph at lines 116--118
-\OT1/txr/m/n/12 factive' pred-i-cates.
- []
-
-
-Underfull \hbox (badness 1742) in paragraph at lines 116--118
-\OT1/txr/m/n/12 factives' is pro-jec-
- []
-
-
-Underfull \hbox (badness 1762) in paragraph at lines 116--118
-\OT1/txr/m/n/12 also dis-cuss is-sues
- []
-
-
-Underfull \hbox (badness 1769) in paragraph at lines 116--118
-\OT1/txr/m/n/12 ag-nos-tics and sug-
- []
-
-
-Underfull \hbox (badness 3168) in paragraph at lines 116--118
-\OT1/txr/m/n/12 con-sider the prag-
- []
-
-[1
-
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../pape
-r/figures/categorization.pdf> <../results/5-projectivity-no-fact/graphs/project
-ion-by-inferenceEntailment.pdf>] (./Tonhauser-Degen-abstract.bbl
-Missing character: There is no Ð in font txr!
-) [2]
+<use ../results/3-projectivity/graphs/means-projectivity-by-predicate-and-factt
+ype.pdf>
+Package pdftex.def Info: ../results/3-projectivity/graphs/means-projectivity-by
+-predicate-and-facttype.pdf used on input line 151.
+(pdftex.def)             Requested size: 307.14749pt x 163.53658pt.
+ [2 <../results/3-projectivity/graphs/means-projectivity-by-predicate-and-factt
+ype.pdf>] (./Tonhauser-Degen-abstract.bbl) [3]
 (./Tonhauser-Degen-abstract.aux) ) 
 Here is how much of TeX's memory you used:
- 21089 strings out of 493014
- 367053 string characters out of 6133351
- 459732 words of memory out of 5000000
- 24134 multiletter control sequences out of 15000+600000
- 24137 words of font info for 71 fonts, out of 8000000 for 9000
+ 21072 strings out of 493014
+ 366556 string characters out of 6133351
+ 460702 words of memory out of 5000000
+ 24120 multiletter control sequences out of 15000+600000
+ 23897 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,8n,77p,3256b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,6n,77p,3256b,355s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc
 /dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/txfon
 ts/rtxb.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/txfonts/rtxi
 .pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/20
-16/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Tonhauser-Degen-abstract.pdf (2 pages, 82117 bytes).
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texm
+f-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Tonhauser-Degen-abstract.pdf (3 pages, 68978 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 53 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

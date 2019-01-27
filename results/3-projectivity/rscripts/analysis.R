@@ -146,27 +146,37 @@ cd = d
 write.csv(cd, "../data/cd.csv")
 nrow(cd) #6552 / 26 items = 252 participants
 
-# load clean data for analysis
+# load clean data for analysis ----
 cd = read.csv("../data/cd.csv")
 nrow(cd) #6552
 
-# load contradictoriness means
-vmeans = read.csv("../../2-veridicality2/data/veridicality_means.csv")
-colnames(vmeans) = c("verb","VeridicalityMean","VeridicalityCILow","VeridicalityCIHigh")
-vmeans
-
+# # load contradictoriness means
+# vmeans = read.csv("../../2-veridicality2/data/veridicality_means.csv")
+# colnames(vmeans) = c("verb","VeridicalityMean","VeridicalityCILow","VeridicalityCIHigh")
+# vmeans
+# 
 # load prior means
 pmeans = read.csv("../../1-prior/data/prior_means.csv")
 pmeans$fact = gsub(".","",as.character(pmeans$fact),fixed=T)
 pmeans
+head(pmeans)
 
 # change cd verb names to match veridicality names
 cd = cd %>%
   mutate(verb=recode(verb, annoyed = "be_annoyed", be_right_that = "be_right", inform_Sam = "inform"))
 
 # merge contradictoriness means into cd
-cd = left_join(cd,vmeans,by=c("verb"))
+# cd = left_join(cd,vmeans,by=c("verb"))
 cd = left_join(cd,pmeans,by=c("fact"))
+
+head(cd)
+View(cd)
+
+# mean of non-projecting controls
+table(cd$verb)
+mean(cd[cd$verb == "control",]$response) #.17
+ci.low(cd[cd$verb == "control",]$response) #.01
+ci.high(cd[cd$verb == "control",]$response) #.01
 
 # age info
 table(cd$age) #21-72
@@ -185,6 +195,45 @@ table(t$verb,t$content)
 
 names(t)
 table(t$trigger_class)
+
+head(t)
+View(t)
+
+# mean projectivity by complement prior, including non-projecting controls
+means = cd %>%
+  group_by(verb, fact_type) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  ungroup() %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(verb,Mean))
+View(means)
+
+cols = data.frame(V=levels(means$Verb))
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
+#cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
+                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
+                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
+
+ggplot(means, aes(x=Verb, y=Mean, color=fact_type)) + 
+  geom_point() +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
+  scale_y_continuous(limits = c(-0.05,1.05),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_color_manual(name="Prior event probability", breaks=c("factH","factL"),labels=c("high", "low"), 
+                     values=brewer.pal(2,"Dark2")) +
+  geom_point(aes(x=1, y=0.16), colour="black") +
+  geom_errorbar(aes(x=1,ymin=.01,ymax=.01),width = .25,color="black") +
+  scale_alpha(range = c(.3,1)) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors)) +
+  theme(legend.position = c(0.2, 0.8)) +
+  ylab("Mean certainty rating") +
+  xlab("Predicate") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) # color=cols$Colors)), legend.position = "top")
+ggsave("../graphs/means-projectivity-by-predicate-and-facttype.pdf",height=3.2,width=6)
+
 
 # projectivity of complement of "discover" by complement prior
 discover <- droplevels(subset(cd, cd$verb == "discover"))
@@ -334,40 +383,6 @@ ggplot(means, aes(x=VeridicalityMean, y=ProjectionMean))+#, alpha=VeridicalityMe
   #theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top")
 ggsave("../graphs/mean-projectivity-by-mean-contradictoriness.pdf",height=4,width=7)
 
-# SALT paper plot:
-means = t %>%
-  group_by(verb, fact_type, VeridicalityMean) %>%
-  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
-  ungroup() %>%
-  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(verb,Mean))
-View(means)
-
-cols = data.frame(V=levels(means$Verb))
-cols$VeridicalityGroup = as.factor(
-  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed", "hear"), "F", 
-         ifelse(cols$V %in% c("pretend", "think", "suggest", "say", "hear"), "NF", 
-                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
-#cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
-cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
-                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
-                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
-
-ggplot(means, aes(x=Verb, y=Mean, color=fact_type))+#, alpha=VeridicalityMean)) + 
-  #geom_point(color="black", size=4) +
-  #geom_point(data=agr_subj, aes(color=content)) +
-  geom_point() +
-  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
-  scale_y_continuous(limits = c(-0.05,1.05),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
-  scale_color_manual(name="Prior probability\nof content", breaks=c("factH","factL"),labels=c("high", "low"), 
-                     values=brewer.pal(2,"Dark2")) +
-  scale_alpha(range = c(.3,1)) +
-  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
-                                                                 color=cols$Colors)) +
-  theme(legend.position="top") +
-  ylab("Mean certainty rating") +
-  xlab("Predicate") +
-  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) # color=cols$Colors)), legend.position = "top")
-ggsave("../graphs/means-projectivity-by-predicate-and-facttype.pdf",height=4,width=7)
 
 means = means %>%
   mutate(Verb = fct_reorder(verb,VeridicalityMean))

@@ -246,18 +246,24 @@ t$workerid <- as.factor(t$workerid)
 t$itemType <- relevel(t$itemType, ref="factL")
 t$verb <- relevel(t$verb, ref="pretend")
 
+# make item variable
+t$item = as.factor(paste(t$verb, t$content, t$fact))
+table(t$item)
+
+contrasts(t$verb)
 # no interaction
 # models with more complex random effects structures did not converge?!?
 # + (1+verb|workerid) + (1|content) + (1|fact)
-model = lmer(response ~ itemType + verb + (1|workerid), data=t, REML=F)
-summary(model)
+model.1 = lmer(response ~ itemType + verb + (1+itemType|workerid) + (1|item), data=t, REML=F)
+summary(model.1)
 
 # with interaction
 # models with more complex random effects structures did not converge?!?
 # + (1+verb|workerid) + (1|content) + (1|fact)
-model = lmer(response ~ itemType * verb + (1|workerid), data=t, REML=F)
+model.2 = lmer(response ~ itemType * verb + (1|workerid), data=t, REML=F)
 summary(model)
 
+anova(model.1,model.2)
 
 ################### nothing below here relevant for XPRAG abstract #########
 

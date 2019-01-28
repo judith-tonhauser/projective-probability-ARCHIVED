@@ -3,46 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Tonhauser-Degen-abstract.aux
 The style file: /Users/tonhauser.1/Library/Latex/cslipubs-natbib.bst
 Database file #1: ../bibliography.bib
-Warning--I didn't find a database entry for "bates2015"
-You've used 18 entries,
+You've used 11 entries,
             2811 wiz_defined-function locations,
-            732 strings with 7148 characters,
-and the built_in function-call counts, 8673 in all, are:
-= -- 841
-> -- 317
-< -- 23
-+ -- 109
-- -- 89
-* -- 610
-:= -- 1511
-add.period$ -- 77
-call.type$ -- 18
-change.case$ -- 127
-chr.to.int$ -- 18
-cite$ -- 18
-duplicate$ -- 400
-empty$ -- 705
-format.name$ -- 111
-if$ -- 1838
+            693 strings with 6406 characters,
+and the built_in function-call counts, 5503 in all, are:
+= -- 537
+> -- 232
+< -- 11
++ -- 79
+- -- 66
+* -- 421
+:= -- 977
+add.period$ -- 46
+call.type$ -- 11
+change.case$ -- 82
+chr.to.int$ -- 11
+cite$ -- 11
+duplicate$ -- 235
+empty$ -- 411
+format.name$ -- 81
+if$ -- 1141
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 21
-newline$ -- 95
-num.names$ -- 76
-pop$ -- 116
+missing$ -- 11
+newline$ -- 60
+num.names$ -- 46
+pop$ -- 61
 preamble$ -- 2
-purify$ -- 100
+purify$ -- 65
 quote$ -- 0
-skip$ -- 320
+skip$ -- 178
 stack$ -- 0
-substring$ -- 562
-swap$ -- 86
-text.length$ -- 8
+substring$ -- 377
+swap$ -- 49
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 153
+type$ -- 99
 warning$ -- 0
-while$ -- 78
+while$ -- 49
 width$ -- 0
-write$ -- 242
-(There was 1 warning)
+write$ -- 149

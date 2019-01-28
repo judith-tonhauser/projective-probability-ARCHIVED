@@ -1,4 +1,10 @@
-# setwd('/Users/tonhauser.1/Documents/current-research-topics/NSF-NAI/prop-att-experiments/7-prior-probability/Git-projective-probability/results/1-prior/')
+# Prior probability work
+# 1-prior: analysis of experiment that measured prior given one of two facts
+
+# set working directory to directory of script
+this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)
+setwd(this.dir)
+
 source('helpers.R')
 
 # load required packages
@@ -79,6 +85,7 @@ ggplot(d.f12, aes(x=workerid,y=response)) +
 ggsave(f="../graphs/filler-ratings.pdf",height=4,width=20)
 
 # Turkers who gave responses to F1 lower than .8
+# this is a bit arbitrary, I don't remember how we came to this number
 f1 <- d.f1[d.f1$response < .8,]
 f1
 nrow(f1) #17
@@ -140,7 +147,7 @@ head(cd)
 nrow(cd) #1496 / 22 items = 68 participants
 view(cd)
 
-# load clean data for analysis
+# load clean data for analysis ----
 cd <- read.csv(file="../data/cd.csv", header=TRUE, sep=",")
 nrow(cd) #1496
 
@@ -188,6 +195,29 @@ sd.HL
 names(target)
 table(target$prompt)
 
+# plot for XPRAG abstract (content identified only by number)
+means = aggregate(response~item+itemType+itemNr, data=target, FUN="mean")
+means$YMin = means$response - aggregate(response~item+itemType+itemNr, data=target, FUN="ci.low")$response
+means$YMax = means$response + aggregate(response~item+itemType+itemNr, data=target, FUN="ci.high")$response
+means
+
+ggplot(target, aes(x=itemNr,y=response)) +
+  geom_point(aes(colour = itemType)) +
+  geom_point(data = means, size = 3) +
+  geom_errorbar(data = means, aes(ymin=YMin, ymax=YMax)) +
+  geom_point(alpha = 0.1) +
+  scale_y_continuous(breaks = seq(0,1,by = .2)) +
+  #geom_text(aes(label=workerid), vjust = 1, cex= 5)+
+  #scale_color_manual(values=c("#E69F00", "#56B4E9")) +
+  #, "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7"))
+  theme(axis.text.x = element_text(size = 12, angle = 75, hjust = 1)) +
+  theme(axis.title=element_text(size=14)) +
+  theme(legend.position="none") +
+  ylab("Mean prior probability \n rating by fact") +
+  xlab("Content (identified by number for space reasons)") 
+ggsave(f="../graphs/target-ratings.pdf",height=3.2,width=6)
+
+# plot that also displays content 
 target$event <- target$prompt
 target$event <- gsub("How likely is it that","",target$event)
 target$event <- gsub("\\?","",target$event)
@@ -234,7 +264,8 @@ target$eventItemNr  = factor(target$eventItemNr,
                                       "19:  Jon walks to work",                    
                                       "20:  Charley speaks Spanish"))
 
-ggplot(target, aes(x=eventItemNr,y=response)) +
+
+ggplot(target, aes(x=itemNr,y=response)) +
   geom_point(aes(colour = itemType)) +
   geom_point(data = means, size = 3) +
   geom_errorbar(data = means, aes(ymin=YMin, ymax=YMax)) +

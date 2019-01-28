@@ -7,7 +7,7 @@
 \usepackage[dvips]{graphics}
 \usepackage[table]{xcolor}
 \usepackage{amssymb}
-%\usepackage{subfig}
+\usepackage{float}
 \usepackage{booktabs}
 \usepackage{tikz}
 \usepackage{subcaption}
@@ -58,6 +58,7 @@
 \exewidth{(\thexnumi)}
 
 \newcommand{\citepos}[1]{\citeauthor{#1}'s \citeyear{#1}}
+\newcommand{\citetpos}[1]{\citeauthor{#1}'s (\citeyear{#1})}
 
 \newcommand{\6}{\mbox{$[\hspace*{-.6mm}[$}} 
 \newcommand{\9}{\mbox{$]\hspace*{-.6mm}]$}}
@@ -73,87 +74,70 @@
  \begin{document}
   
 \begin{center}
-{\bf The influence of prior event probability on projectivity}
+{\bf Higher-probability content is more projective than lower-probability content}
 \end{center}
 
 \vspace*{-.3cm}
 
 \noindent
-Projection analyses generally predict that the content of the complement of a factive predicate like {\em discover} is more likely to project from (\ref{discover}a) than from (\ref{discover}b) because the event of Sam having a car has a higher prior probability than the event of Sam having a fire engine (e.g., \citealt{heim83,vds92,brst-salt10,abrusan2011,brst-ar}).
-\vspace*{-.15cm}
-\begin{exe}
-\ex\label{discover} Did Kim discover that Sam has {\bf a.} a car  \hspace*{.1cm} / \hspace*{.1cm} {\bf b.} a fire engine?
-\vspace*{-.1cm}
-\ex\label{admit} Did Kim admit that Sam has {\bf a.} a car  \hspace*{.1cm} / \hspace*{.1cm} {\bf b.} a fire engine?
-\end{exe}
-\vspace*{-.15cm}
-This paper presents experimental support for this prediction, but also reveals that non-presupposed content, like the content of the complement of the non-factive predicate {\em admit} in (\ref{admit}), is also projective and that prior event probability influences the projectivity of both presupposed and non-presupposed content. We argue that this finding provides support for constraint-based projection analyses that derive the projectivity of utterance content from the integration of multiple cues, including prior event probability and the meanings of clause-embedding predicates.
+\citealt*{tbd-variability} ({\em Journal of Semantics}) showed that the projectivity of projective content, like the content of the complement of factive {\em know}, is influenced by its lexical content, e.g., whether the complement is {\em Sam has a new hat} or {\em Martha has a new BMW}. The authors hypothesized that ``the projectivity of content may depend on the prior probability'' of the content, such that content is more projective the higher its prior probability (p.500). This paper provides experimental support for this hypothesis for the content of the complement of both factive and non-factive predicates (like {\em think}). We argue that this finding provides support for constraint-based projection analyses that derive the projectivity of utterance content from the integration of multiple cues, including prior event probability and the meanings of clause-embedding predicates.
+
 
 \noindent
-{\bf Predictions of projection analyses}
-
-\noindent
-{\bf $\bullet$} Analyses according to which presuppositions are {\bf lexically triggered} (e.g., \citealt{heim83,vds92}) assume default global accommodation when the presupposition is not already entailed by or satisfied in the common ground when the trigger (e.g., {\em discover} in (\ref{discover})) is uttered. This default is overridden when the presupposition is inconsistent with information already in the common ground. Because Sam owning a car is more likely to be consistent with the common ground than Sam owning a fire engine, such analyses predict that the presupposition that Sam has a car, triggered by (\ref{discover}a), is more likely to be globally accommodated than the presupposition that Sam has a fire engine, triggered by (\ref{discover}b) (e.g., \citealt{gazdar79a}, \citealt{levinson83}). Thus, global accommodation is predicted to be sensitive to the prior probability of the event described by the presupposition.
-
-\noindent
-{\bf $\bullet$} Under {\bf non-lexicalist projection analyses}, content is projective when it is by default backgrounded or not-at-issue with respect to the question addressed by the utterance (e.g., \citealt{abrusan2011,abrusan2016,brst-salt10,brst-ar}; \citealt*{tbd-variability}). In a given utterance,  content is more likely to remain backgrounded or to be not-at-issue if it describes a high-probability (i.e., uncontroversial) event than if it describes a low-probability (i.e., controversial) event (e.g., \citealt[252]{simons2003}). Thus, non-lexicalist projection analyses predict that utterance content is more projective the higher the prior probability of the event described. 
-
-\noindent
-{\bf Speaker commitment to non-presupposed content} 
-\\ Non-presupposed content may also project: e.g., the content of the complement of the non-factive predicates {\em admit, announce} or {\em tell} is not typically analyzed as a presupposition, but semanticists observed that these contents may nevertheless project (see, e.g., \citealt{schlenker10,anand-hacquard2014,spector-egre2015}). A critical factor in whether the speaker is taken to be committed to such content is the prior probability of the event described by the complement (see, e.g., \citealt{schlenker10}): e.g., the content of the complement of {\em Did Mary announce that she is pregnant} is more likely to project if Mary is a responsible 30-year old than if she is a playful 7-year old. 
-
-\noindent
-{\bf Research questions}
-\\ This paper presents the findings of an experiment designed to test the research questions in (\ref{rqs}) by collecting gradient projectivity ratings for the contents of the complements of 20 factive and non-factive predicates from 300 participants recruited on AMT (ages: 21-72; 145 women).
-\vspace*{-.15cm}
-\begin{exe}
-\ex\label{rqs}
-\begin{xlist}
-\ex How projective is the content of the complement of factive and non-factive predicates?
-\vspace*{-.1cm}
-\ex Does prior event probability influence the projectivity of the content of the complement of factive and non-factive predicates?
-\end{xlist}
-\end{exe}
-\vspace*{-.15cm}
-
-\noindent
-{\bf Norming study (n = 95):} Prior event probability was measured for 20 events described by English sentences (e.g., Julian dances salsa) given a fact that made the event more likely (e.g., Julian is from Cuba) and a fact that made the event less likely (e.g., Julian is from Germany). We collected gradient likeliness ratings from participants recruited on AMT by asking them to rate the likeliness of an event given either the high-  or the low-probability fact (e.g., Fact: Julian is from Cuba. How likely is it that Julian dances salsa?) on a scale from `impossible' to `definitely'. The mean likeliness ratings of the events were .7 (high-probability fact) and .16 (low-probability fact).
+{\bf Norming study (n = 95):} Prior probability was measured for 20 contents denoted by English sentences (e.g., Julian dances salsa) given a fact that made the content more likely (e.g., Julian is from Cuba) and a fact that made the content less likely (e.g., Julian is from Germany). Prior probability was measured by asking participants for ratings, on a sliding scale from `impossible' to `definitely', about how likely a content is given a fact (e.g., Fact: Julian is from Cuba. How likely is it that Julian dances salsa?). The mean ratings were .7 for high- and .16 for low-probability contents. Fig.~\ref{f-prior}  reveals variability in prior probability among higher- and lower-probability contents.
 
 \noindent 
-{\bf Experiment (n = 300)} 
+{\bf Experiment} 
 \\
 \noindent
-\underline{Materials:} The 20 sentences describing the normed events were realized as the complements of 20 clause-embedding predicates, for a total of 400 predicate/complement combinations. These combinations were realized as polar questions with a random subject noun phrase. In the target stimuli, the 400 polar questions were combined with one of the two facts that each event was normed with, for a total of 800 target stimuli. As shown in the sample target stimulus in (\ref{stim}), the named speaker (here, Carol) was explicitly stated to be aware of the fact.
+\underline{Participants:} 300 participants were recruited on AMT (ages: 21-72; mean: 36; 145 women).
+\\
+\noindent
+\underline{Materials:} The 20 sentences denoting the normed contents were realized as the complements of 20 clause-embedding predicates, for a total of 400 predicate/complement combinations. These combinations were realized as polar questions with a random subject noun phrase. In the target stimuli, the 400 polar questions were combined with one of the two facts that each content was normed with, for a total of 800 target stimuli. As shown in the sample target stimulus in (\ref{stim}), the named speaker (here, Carol) was explicitly stated to be aware of the fact.
 \vspace*{-.15cm}
 \begin{exe}
 \ex\label{stim}
 {\bf Fact (which Carol knows):} Julian is German.  \\ 
-{\bf Carol:} Did Sandra discover that Julian dances salsa?
+{\bf Carol:} Does Sandra know that Julian dances salsa?
 \end{exe}
 \vspace*{-.15cm}
-The 20 clause-embedding predicates included the 5 factives {\em be annoyed, know, see, discover} and {\em reveal}, as well as 15 non-factives: {\em pretend, suggest, say, think, be right, demonstrate, acknowledge, admit, announce, confess, confirm, establish, hear, inform, prove}.
+The 20 predicates included the 5 factives {\em be annoyed, know, see, discover} and {\em reveal}, as well as 15 non-factives: the content of the complement of 9 of these ({\em acknowledge, admit, announce, confess, confirm, establish, hear, inform, prove}) has been described as being able to project (e.g., \citealt{schlenker10,anand-hacquard2014,spector-egre2015,tbd-variability}), in contrast to that of the remaining 6 predicates ({\em pretend, suggest, say, think, be right, demonstrate}).
 
 \noindent
-\underline{Procedure:} Projectivity was measured with the `certain that' diagnostic (e.g., \citealt{tbd-variability}): in (\ref{stim}), participants were asked whether Carol is certain that Julian dances salsa. Participants responded on a sliding scale from `no' (0; non-projection) to `yes' (1; highly projective).
+\underline{Procedure:} Projectivity was measured with the `certain that' diagnostic, following \citealt{tbd-variability}: in (\ref{stim}), participants were asked whether Carol is certain that Julian dances salsa. Participants rated 20 target items (one for each predicate) and 6 control items used to assess whether they were attending to the task. They responded on a sliding scale from `no' (non-projection, coded as 0) to `yes' (projectivity at ceiling, coded as 1).
 
 \noindent
-{\bf Results and discussion:} 
+{\bf Results:} Mean certainty ratings for the content of the complement were higher when the content had a higher prior probability (mean: .5) than when the content had a lower prior probability (mean: .32). This finding supports \citetpos{tbd-variability} hypothesis that the higher the prior probability of content, the more projective it is. As shown in Fig.~\ref{f-proj}, the influence of prior probability on projectivity was found across all 20 predicates. We also observe by-predicate variability in certainty ratings:  for instance, the mean certainty ratings for factive {\em be annoyed} were higher, at .72 (high) / .53 (low), than those for factive {\em reveal}, at .55 / .37, which in turn were higher than those for non-factive {\em establish}, at .39 / .19. These findings confirm \citetpos{tbd-variability} finding that projectivity is a gradient property of utterance content.
 
-- projectivity is gradient
+Linear mixed-effects model predicting certainty rating from fact (high vs.\ low prior probability) and verb, with a random intercept for participant (5520 data points)
 
-- prior event probability influences projectivity across the predicates (not just factive)
-
-- run model that predicts projectivity from predicate and prior event probability? controls as reference level to show that even some non-presupposed contents are projective?
+{\bf Let's talk about these models...}
 
 \begin{figure}[h!]
+
+\begin{subfigure}{.47\textwidth}
 \centering
+\includegraphics[width=.35\paperwidth]{../results/1-prior/graphs/target-ratings}
+\caption{Prior probability ratings by content and fact: means in black (95\% CIs); individual ratings in red (higher prob.) and green (lower prob.).}\label{f-prior}
+\end{subfigure}%
+\hspace*{.1cm}
+\begin{subfigure}{.47\textwidth}
+\centering
+\includegraphics[width=.4\paperwidth]{../results/3-projectivity/graphs/means-projectivity-by-predicate-and-facttype}
+\caption{Mean certainty rating by predicate and prior probability, with 95\% CIs; factives in blue.}\label{f-proj}
+\end{subfigure}
 
-\includegraphics[width=.5\paperwidth]{../results/3-projectivity/graphs/means-projectivity-by-predicate-and-facttype}
-
-\caption{Mean certainty ratings (and 95\% cis) by predicate and prior event probability}
-\label{f-projectivity}
+\caption{Findings of norming study (a) and experiment (b)}
 \end{figure}
 
+\noindent
+{\bf Discussion}
+\\
+Current projection analyses (e.g., \citealt{heim83,vds92,abrusan2011,brst-salt10,brst-ar}) are limited to the projectivity of the content of the complement of factive predicates, to the exclusion of that of non-factive predicates. {\bf But the content of the complement of non-factives may also project, so these analyses don't make predictions about such contents, sad} Our finding for non-factives confirms intuitions by semanticists that but semanticists observed that these contents may nevertheless project (see, e.g., \citealt{schlenker10,anand-hacquard2014,spector-egre2015}). A critical factor in whether the speaker is taken to be committed to such content is the prior probability of the event described by the complement (see, e.g., \citealt{schlenker10}): e.g., the content of the complement of {\em Did Mary announce that she is pregnant} is more likely to project if Mary is a responsible 30-year old than if she is a 7-year old. 
+
+For factive predicates, such analyses can be taken to predict the finding that prior probability influences projectivity. For instance, lexicalist projection analyses (e.g., \citealt{heim83,vds92}) assume default global accommodation when presupposed is not already entailed by or satisfied in the common ground when the trigger is uttered. This default is overridden when the presupposition is inconsistent with information already in the common ground. If we can assume that Julian dancing salsa is more likely to be consistent with the common ground when Julian is from Cuba than when he is from Germany, lexicalist analyses predict that the presupposition that Julian dances salsa is more projective when it has a higher prior probability. Under {\bf non-lexicalist projection analyses}, content is projective when it is by default backgrounded or not-at-issue with respect to the question addressed by the utterance (e.g., \citealt{abrusan2011,abrusan2016,brst-salt10,brst-ar}; \citealt*{tbd-variability}). In a given utterance,  content is more likely to remain backgrounded or to be not-at-issue if it describes a high-probability (i.e., uncontroversial) event than if it describes a low-probability (i.e., controversial) event (e.g., \citealt[252]{simons2003}).
+
+{\bf Implication still needs to be discussed: analysis that integrates multiple cues, not limited to factives}
 \newpage
 
 \bibliography{../bibliography}

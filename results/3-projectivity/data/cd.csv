@@ -77,6 +77,58 @@
 "76",2,3833,"F","M","Jackson ran 10 miles","admit","Jackson is obese","factL","13","C",0,25,62,"English","Yes","m","m","",2.74925
 "77",2,4512,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.46,26,62,"English","Yes","m","m","",2.74925
 "78",2,3880,"F","M","Frank got a cat","be_right_that","Frank has always wanted a pet","factH","12","C",0.29,27,62,"English","Yes","m","m","",2.74925
+"79",3,15533,"M","F","Isabella ate a steak on Sunday","discover","Isabella is a vegetarian","factL","7","NonProj",0,2,26,"english","No","m","m","",3.10351666666667
+"80",3,4236,"M","F","Grace visited her sister","annoyed","Grace loves her sister","factH","9","NonProj",0.5,3,26,"english","No","m","m","",3.10351666666667
+"81",3,5635,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.36,4,26,"english","No","m","m","",3.10351666666667
+"82",3,3701,"M","F","Josie went on vacation to France","reveal","Josie doesn&quotechart have a passport","factL","2","NonProj",0.62,5,26,"english","No","m","m","",3.10351666666667
+"83",3,1209,"F","M","Jackson ran 10 miles","know","Jackson is training for a marathon","factH","13","NonProj",0.74,6,26,"english","No","m","m","",3.10351666666667
+"84",3,2469,NA,"M","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.53,7,26,"english","No","m","m","",3.10351666666667
+"85",3,4114,NA,"M","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.62,8,26,"english","No","m","m","",3.10351666666667
+"86",3,3985,"F","F","Frank got a cat","acknowledge","Frank is allergic to cats","factL","12","C",0.57,9,26,"english","No","m","m","",3.10351666666667
+"87",3,862,"F","M","Owen shoveled snow last winter","demonstrate","Owen lives in Chicago","factH","17","C",0.55,10,26,"english","No","m","m","",3.10351666666667
+"88",3,2355,"F","M","Jayden rented a car","announce","Jayden&quotechars car is in the shop","factH","14","C",0.48,11,26,"english","No","m","m","",3.10351666666667
+"89",3,2673,NA,"F","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.59,12,26,"english","No","m","m","",3.10351666666667
+"90",3,1735,"F","F","Jon walks to work","suggest","Jon lives 10 miles away from work","factL","19","C",0.56,13,26,"english","No","m","m","",3.10351666666667
+"91",3,3596,"F","F","Tony had a drink last night","inform_Sam","Tony really likes to party with his friends","factH","15","C",0.6,14,26,"english","No","m","m","",3.10351666666667
+"92",3,728,"M","M","Sophia got a tattoo","hear","Sophia is a hipster","factH","5","C",0.58,15,26,"english","No","m","m","",3.10351666666667
+"93",3,727,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.48,16,26,"english","No","m","m","",3.10351666666667
+"94",3,665,"M","F","Olivia sleeps until noon","prove","Olivia has two small children","factL","4","C",0.55,17,26,"english","No","m","m","",3.10351666666667
+"95",3,718,"M","F","Emma studied on Saturday morning","confirm","Emma is in first grade","factL","3","C",0.45,18,26,"english","No","m","m","",3.10351666666667
+"96",3,702,"M","F","Zoe calculated the tip","see","Zoe is 5 years old","factL","10","NonProj",0.55,19,26,"english","No","m","m","",3.10351666666667
+"97",3,1252,"M","F","Emily bought a car yesterday","confess","Emily has been saving for a year","factH","8","C",0.42,20,26,"english","No","m","m","",3.10351666666667
+"98",3,1144,"F","F","Josh learned to ride a bike yesterday","pretend","Josh is a 5-year old boy","factH","16","NonProj",0.55,21,26,"english","No","m","m","",3.10351666666667
+"99",3,828,"F","M","Danny ate the last cupcake","say","Danny is a diabetic","factL","11","C",0.58,22,26,"english","No","m","m","",3.10351666666667
+"100",3,666,"F","M","Julian dances salsa","establish","Julian is Cuban","factH","18","NonProj",0.53,23,26,"english","No","m","m","",3.10351666666667
+"101",3,720,"M","M","Mia drank 2 cocktails last night","be_right_that","Mia is a nun","factL","6","C",0.35,24,26,"english","No","m","m","",3.10351666666667
+"102",3,672,"F","M","Charley speaks Spanish","think","Charley lives in Korea","factL","20","NonProj",0.5,25,26,"english","No","m","m","",3.10351666666667
+"103",3,662,NA,"M","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.58,26,26,"english","No","m","m","",3.10351666666667
+"104",3,1294,"M","F","Mary is pregnant","admit","Mary is taking a prenatal yoga class","factH","1","C",0.55,27,26,"english","No","m","m","",3.10351666666667
+"105",4,4610,"M","M","Isabella ate a steak on Sunday","inform_Sam","Isabella is from Argentina","factH","7","C",0,2,26,"english","No","m","f","",3.11735
+"106",4,3724,"M","M","Mia drank 2 cocktails last night","confess","Mia is a college student","factH","6","C",0.53,3,26,"english","No","m","f","",3.11735
+"107",4,5430,"F","F","Josh learned to ride a bike yesterday","think","Josh is a 5-year old boy","factH","16","NonProj",0.26,4,26,"english","No","m","f","",3.11735
+"108",4,2160,NA,"M","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.5,5,26,"english","No","m","f","",3.11735
+"109",4,3240,"F","M","Jon walks to work","demonstrate","Jon lives 10 miles away from work","factL","19","C",0.66,6,26,"english","No","m","f","",3.11735
+"110",4,3242,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.51,7,26,"english","No","m","f","",3.11735
+"111",4,3016,"M","F","Grace visited her sister","annoyed","Grace loves her sister","factH","9","NonProj",0.54,8,26,"english","No","m","f","",3.11735
+"112",4,2420,NA,"M","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.49,9,26,"english","No","m","f","",3.11735
+"113",4,2407,"M","F","Emma studied on Saturday morning","admit","Emma is in law school","factH","3","C",0.65,10,26,"english","No","m","f","",3.11735
+"114",4,2663,"F","F","Owen shoveled snow last winter","see","Owen lives in Chicago","factH","17","NonProj",0.36,11,26,"english","No","m","f","",3.11735
+"115",4,2333,NA,"M","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.49,12,26,"english","No","m","f","",3.11735
+"116",4,1879,"F","F","Charley speaks Spanish","hear","Charley lives in Korea","factL","20","C",0.39,13,26,"english","No","m","f","",3.11735
+"117",4,15064,"M","F","Zoe calculated the tip","suggest","Zoe is 5 years old","factL","10","C",0.7,14,26,"english","No","m","f","",3.11735
+"118",4,1261,"F","M","Tony had a drink last night","pretend","Tony really likes to party with his friends","factH","15","NonProj",0.43,15,26,"english","No","m","f","",3.11735
+"119",4,647,"M","M","Mary is pregnant","announce","Mary is a middle school student","factL","1","C",0.54,16,26,"english","No","m","f","",3.11735
+"120",4,812,"F","M","Jayden rented a car","acknowledge","Jayden doesn&quotechart have a driver&quotechars license","factL","14","C",0.36,17,26,"english","No","m","f","",3.11735
+"121",4,736,"F","F","Frank got a cat","know","Frank is allergic to cats","factL","12","NonProj",0.61,18,26,"english","No","m","f","",3.11735
+"122",4,585,"M","F","Josie went on vacation to France","say","Josie loves France","factH","2","C",0.5,19,26,"english","No","m","f","",3.11735
+"123",4,1992,"M","F","Sophia got a tattoo","discover","Sophia is a high end fashion model","factL","5","NonProj",0.54,20,26,"english","No","m","f","",3.11735
+"124",4,757,NA,"F","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.58,21,26,"english","No","m","f","",3.11735
+"125",4,720,"F","M","Danny ate the last cupcake","reveal","Danny is a diabetic","factL","11","NonProj",0.55,22,26,"english","No","m","f","",3.11735
+"126",4,1288,"F","F","Jackson ran 10 miles","confirm","Jackson is training for a marathon","factH","13","C",0.54,23,26,"english","No","m","f","",3.11735
+"127",4,876,"F","F","Julian dances salsa","establish","Julian is Cuban","factH","18","NonProj",0.54,24,26,"english","No","m","f","",3.11735
+"128",4,586,"M","F","Emily bought a car yesterday","prove","Emily never has any money","factL","8","C",0.55,25,26,"english","No","m","f","",3.11735
+"129",4,1839,NA,"F","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.56,26,26,"english","No","m","f","",3.11735
+"130",4,1010,"M","M","Olivia sleeps until noon","be_right_that","Olivia has two small children","factL","4","C",0.53,27,26,"english","No","m","f","",3.11735
 "131",5,7535,"M","M","Olivia sleeps until noon","annoyed","Olivia has two small children","factL","4","NonProj",0.25,2,50,"English","Yes","m","m","Like the price but it probably is high. ",3.04093333333333
 "132",5,3905,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.13,3,50,"English","Yes","m","m","Like the price but it probably is high. ",3.04093333333333
 "133",5,3606,"F","F","Charley speaks Spanish","prove","Charley lives in Korea","factL","20","C",0.05,4,50,"English","Yes","m","m","Like the price but it probably is high. ",3.04093333333333
@@ -363,6 +415,32 @@
 "492",18,3951,NA,"M","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.14,25,32,"english","Yes","m","f","n/a",3.18795
 "493",18,4019,"F","F","Jackson ran 10 miles","prove","Jackson is training for a marathon","factH","13","C",0.51,26,32,"english","Yes","m","f","n/a",3.18795
 "494",18,5181,"F","F","Danny ate the last cupcake","reveal","Danny is a diabetic","factL","11","NonProj",0.72,27,32,"english","Yes","m","f","n/a",3.18795
+"495",19,12873,"M","F","Mary is pregnant","annoyed","Mary is a middle school student","factL","1","NonProj",0.02,2,30,"English","Yes","m","m","fair",5.30983333333333
+"496",19,45414,"F","F","Tony had a drink last night","hear","Tony has been sober for 20 years","factL","15","C",0.82,3,30,"English","Yes","m","m","fair",5.30983333333333
+"497",19,6319,"M","F","Emily bought a car yesterday","inform_Sam","Emily never has any money","factL","8","C",0.41,4,30,"English","Yes","m","m","fair",5.30983333333333
+"498",19,1432,NA,"M","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.5,5,30,"English","Yes","m","m","fair",5.30983333333333
+"499",19,11502,"F","M","Jayden rented a car","say","Jayden doesn&quotechart have a driver&quotechars license","factL","14","C",0.27,6,30,"English","Yes","m","m","fair",5.30983333333333
+"500",19,10889,"F","F","Charley speaks Spanish","suggest","Charley lives in Korea","factL","20","C",0.61,7,30,"English","Yes","m","m","fair",5.30983333333333
+"501",19,5687,"F","F","Danny ate the last cupcake","discover","Danny is a diabetic","factL","11","NonProj",0.77,8,30,"English","Yes","m","m","fair",5.30983333333333
+"502",19,4642,"M","F","Emma studied on Saturday morning","think","Emma is in first grade","factL","3","NonProj",0.16,9,30,"English","Yes","m","m","fair",5.30983333333333
+"503",19,7479,"M","F","Josie went on vacation to France","pretend","Josie loves France","factH","2","NonProj",0.81,10,30,"English","Yes","m","m","fair",5.30983333333333
+"504",19,8439,"M","F","Olivia sleeps until noon","confess","Olivia works the third shift","factH","4","C",0.69,11,30,"English","Yes","m","m","fair",5.30983333333333
+"505",19,12720,NA,"M","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.81,12,30,"English","Yes","m","m","fair",5.30983333333333
+"506",19,13023,"M","M","Zoe calculated the tip","know","Zoe is 5 years old","factL","10","NonProj",0.18,13,30,"English","Yes","m","m","fair",5.30983333333333
+"507",19,5208,"F","M","Jon walks to work","demonstrate","Jon lives 2 blocks away from work","factH","19","C",0.86,14,30,"English","Yes","m","m","fair",5.30983333333333
+"508",19,9671,"F","F","Josh learned to ride a bike yesterday","acknowledge","Josh is a 5-year old boy","factH","16","C",0.87,15,30,"English","Yes","m","m","fair",5.30983333333333
+"509",19,6206,"F","F","Frank got a cat","see","Frank has always wanted a pet","factH","12","NonProj",0.8,16,30,"English","Yes","m","m","fair",5.30983333333333
+"510",19,5920,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.86,17,30,"English","Yes","m","m","fair",5.30983333333333
+"511",19,8599,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.77,18,30,"English","Yes","m","m","fair",5.30983333333333
+"512",19,5312,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.86,19,30,"English","Yes","m","m","fair",5.30983333333333
+"513",19,4487,NA,"F","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.81,20,30,"English","Yes","m","m","fair",5.30983333333333
+"514",19,6360,"M","F","Sophia got a tattoo","announce","Sophia is a high end fashion model","factL","5","C",0.8,21,30,"English","Yes","m","m","fair",5.30983333333333
+"515",19,6127,"M","F","Mia drank 2 cocktails last night","prove","Mia is a college student","factH","6","C",0.77,22,30,"English","Yes","m","m","fair",5.30983333333333
+"516",19,5224,"M","F","Grace visited her sister","confirm","Grace loves her sister","factH","9","C",0.84,23,30,"English","Yes","m","m","fair",5.30983333333333
+"517",19,4809,"F","M","Julian dances salsa","establish","Julian is Cuban","factH","18","NonProj",0.77,24,30,"English","Yes","m","m","fair",5.30983333333333
+"518",19,4390,"M","M","Isabella ate a steak on Sunday","admit","Isabella is a vegetarian","factL","7","C",0.25,25,30,"English","Yes","m","m","fair",5.30983333333333
+"519",19,5265,"F","F","Jackson ran 10 miles","reveal","Jackson is training for a marathon","factH","13","NonProj",0.77,26,30,"English","Yes","m","m","fair",5.30983333333333
+"520",19,5040,"F","F","Owen shoveled snow last winter","be_right_that","Owen lives in Chicago","factH","17","C",0.58,27,30,"English","Yes","m","m","fair",5.30983333333333
 "521",20,14246,"F","F","Josh learned to ride a bike yesterday","be_right_that","Josh is a 5-year old boy","factH","16","C",0.18,2,37,"english","Yes","m","f","",4.32138333333333
 "522",20,7914,"F","F","Jayden rented a car","discover","Jayden doesn&quotechart have a driver&quotechars license","factL","14","NonProj",0.25,3,37,"english","Yes","m","f","",4.32138333333333
 "523",20,12519,"F","M","Frank got a cat","pretend","Frank is allergic to cats","factL","12","NonProj",0.09,4,37,"english","Yes","m","f","",4.32138333333333
@@ -1143,6 +1221,32 @@
 "1324",50,11437,"M","M","Grace visited her sister","know","Grace hates her sister","factL","9","NonProj",0.56,25,41,"English","Yes","m","m","$0.85 is pretty good for 5:30, which is about where the timer was when I got to this page. Interesting study... seemed like almost all of the statements implied uncertainty, with the preceding facts rarely having much impact on that.",7.92145
 "1325",50,11459,"M","F","Isabella ate a steak on Sunday","acknowledge","Isabella is from Argentina","factH","7","C",0.26,26,41,"English","Yes","m","m","$0.85 is pretty good for 5:30, which is about where the timer was when I got to this page. Interesting study... seemed like almost all of the statements implied uncertainty, with the preceding facts rarely having much impact on that.",7.92145
 "1326",50,12734,"F","F","Charley speaks Spanish","hear","Charley lives in Mexico","factH","20","C",0.71,27,41,"English","Yes","m","m","$0.85 is pretty good for 5:30, which is about where the timer was when I got to this page. Interesting study... seemed like almost all of the statements implied uncertainty, with the preceding facts rarely having much impact on that.",7.92145
+"1327",51,40939,"M","F","Mary is pregnant","discover","Mary is a middle school student","factL","1","NonProj",0.74,2,36,"English","Yes","m","f","",5.0747
+"1328",51,11515,"F","F","Danny ate the last cupcake","annoyed","Danny loves cake","factH","11","NonProj",0.99,3,36,"English","Yes","m","f","",5.0747
+"1329",51,7320,"M","M","Grace visited her sister","suggest","Grace hates her sister","factL","9","C",0.82,4,36,"English","Yes","m","f","",5.0747
+"1330",51,8178,"M","M","Isabella ate a steak on Sunday","inform_Sam","Isabella is from Argentina","factH","7","C",0.27,5,36,"English","Yes","m","f","",5.0747
+"1331",51,8916,NA,"M","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.33,6,36,"English","Yes","m","f","",5.0747
+"1332",51,12334,"F","F","Julian dances salsa","prove","Julian is German","factL","18","C",0.32,7,36,"English","Yes","m","f","",5.0747
+"1333",51,8098,"M","F","Zoe calculated the tip","confirm","Zoe is 5 years old","factL","10","C",0.36,8,36,"English","Yes","m","f","",5.0747
+"1334",51,10307,"M","F","Josie went on vacation to France","reveal","Josie doesn&quotechart have a passport","factL","2","NonProj",0.38,9,36,"English","Yes","m","f","",5.0747
+"1335",51,7692,"M","M","Sophia got a tattoo","see","Sophia is a hipster","factH","5","NonProj",0.85,10,36,"English","Yes","m","f","",5.0747
+"1336",51,6039,NA,"F","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.24,11,36,"English","Yes","m","f","",5.0747
+"1337",51,6093,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.96,12,36,"English","Yes","m","f","",5.0747
+"1338",51,7509,"F","M","Jackson ran 10 miles","establish","Jackson is obese","factL","13","NonProj",0.34,13,36,"English","Yes","m","f","",5.0747
+"1339",51,7566,"F","M","Charley speaks Spanish","admit","Charley lives in Mexico","factH","20","C",0.25,14,36,"English","Yes","m","f","",5.0747
+"1340",51,8459,"F","F","Josh learned to ride a bike yesterday","demonstrate","Josh is a 5-year old boy","factH","16","C",0.79,15,36,"English","Yes","m","f","",5.0747
+"1341",51,9157,"F","M","Frank got a cat","hear","Frank is allergic to cats","factL","12","C",0.68,16,36,"English","Yes","m","f","",5.0747
+"1342",51,6842,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.34,17,36,"English","Yes","m","f","",5.0747
+"1343",51,9685,"M","F","Mia drank 2 cocktails last night","pretend","Mia is a nun","factL","6","NonProj",0.41,18,36,"English","Yes","m","f","",5.0747
+"1344",51,8202,"M","F","Olivia sleeps until noon","confess","Olivia works the third shift","factH","4","C",0.68,19,36,"English","Yes","m","f","",5.0747
+"1345",51,5114,"F","F","Jon walks to work","announce","Jon lives 2 blocks away from work","factH","19","C",0.72,20,36,"English","Yes","m","f","",5.0747
+"1346",51,6516,"M","M","Emily bought a car yesterday","say","Emily has been saving for a year","factH","8","C",0.72,21,36,"English","Yes","m","f","",5.0747
+"1347",51,6681,"F","F","Jayden rented a car","think","Jayden&quotechars car is in the shop","factH","14","NonProj",0.57,22,36,"English","Yes","m","f","",5.0747
+"1348",51,7198,"F","M","Owen shoveled snow last winter","know","Owen lives in Chicago","factH","17","NonProj",0.39,23,36,"English","Yes","m","f","",5.0747
+"1349",51,6158,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.4,24,36,"English","Yes","m","f","",5.0747
+"1350",51,5400,"F","F","Tony had a drink last night","acknowledge","Tony has been sober for 20 years","factL","15","C",0.57,25,36,"English","Yes","m","f","",5.0747
+"1351",51,5142,"M","F","Emma studied on Saturday morning","be_right_that","Emma is in first grade","factL","3","C",0.45,26,36,"English","Yes","m","f","",5.0747
+"1352",51,5773,NA,"F","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.74,27,36,"English","Yes","m","f","",5.0747
 "1353",52,22797,"M","M","Josie went on vacation to France","hear","Josie doesn&quotechart have a passport","factL","2","C",0.03,2,23,"english","Yes","m","m","",7.24931666666667
 "1354",52,22331,"F","F","Frank got a cat","see","Frank is allergic to cats","factL","12","NonProj",0.36,3,23,"english","Yes","m","m","",7.24931666666667
 "1355",52,11111,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.01,4,23,"english","Yes","m","m","",7.24931666666667
@@ -1221,6 +1325,32 @@
 "1454",55,14239,"M","M","Emily bought a car yesterday","reveal","Emily never has any money","factL","8","NonProj",0.75,25,64,"English","Yes","m","f","",7.02143333333333
 "1455",55,11151,"F","F","Frank got a cat","see","Frank has always wanted a pet","factH","12","NonProj",0.87,26,64,"English","Yes","m","f","",7.02143333333333
 "1456",55,10512,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.4,27,64,"English","Yes","m","f","",7.02143333333333
+"1457",56,1216,"M","M","Emma studied on Saturday morning","reveal","Emma is in first grade","factL","3","NonProj",0.9,2,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1458",56,832,"M","F","Mia drank 2 cocktails last night","demonstrate","Mia is a college student","factH","6","C",0.27,3,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1459",56,1800,"F","M","Charley speaks Spanish","say","Charley lives in Mexico","factH","20","C",0.61,4,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1460",56,1097,NA,"M","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.72,5,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1461",56,734,"M","M","Olivia sleeps until noon","confirm","Olivia works the third shift","factH","4","C",0.3,6,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1462",56,781,"F","F","Tony had a drink last night","suggest","Tony really likes to party with his friends","factH","15","C",0.56,7,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1463",56,1609,"F","M","Josh learned to ride a bike yesterday","prove","Josh is a 75-year old man","factL","16","C",0.26,8,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1464",56,1269,"M","F","Josie went on vacation to France","confess","Josie loves France","factH","2","C",0.9,9,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1465",56,1736,"M","M","Grace visited her sister","see","Grace hates her sister","factL","9","NonProj",0.74,10,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1466",56,865,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.47,11,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1467",56,933,"M","F","Mary is pregnant","pretend","Mary is taking a prenatal yoga class","factH","1","NonProj",0.32,12,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1468",56,1130,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.69,13,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1469",56,5011,"M","F","Isabella ate a steak on Sunday","discover","Isabella is a vegetarian","factL","7","NonProj",0.58,14,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1470",56,1318,"F","M","Jackson ran 10 miles","establish","Jackson is obese","factL","13","NonProj",0.24,15,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1471",56,1549,"F","F","Julian dances salsa","think","Julian is German","factL","18","NonProj",0.8,16,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1472",56,1481,NA,"M","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.62,17,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1473",56,2516,"F","F","Jayden rented a car","inform_Sam","Jayden&quotechars car is in the shop","factH","14","C",0.34,18,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1474",56,1480,NA,"M","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.72,19,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1475",56,1451,"M","F","Emily bought a car yesterday","annoyed","Emily never has any money","factL","8","NonProj",0.42,20,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1476",56,896,"F","M","Frank got a cat","be_right_that","Frank is allergic to cats","factL","12","C",0.68,21,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1477",56,1316,"M","F","Sophia got a tattoo","know","Sophia is a hipster","factH","5","NonProj",0.14,22,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1478",56,1431,"F","F","Jon walks to work","hear","Jon lives 2 blocks away from work","factH","19","C",0.79,23,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1479",56,1282,"F","F","Owen shoveled snow last winter","acknowledge","Owen lives in New Orleans","factL","17","C",0.4,24,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1480",56,934,NA,"M","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.66,25,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1481",56,1397,"F","F","Danny ate the last cupcake","announce","Danny is a diabetic","factL","11","C",0.64,26,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
+"1482",56,883,"M","F","Zoe calculated the tip","admit","Zoe is a math major","factH","10","C",0.65,27,30,"English","Yes","m","m","nice hit and good pay",0.882033333333333
 "1483",57,8670,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0,2,39,"English","Yes","m","m","",6.44091666666667
 "1484",57,10624,"F","F","Charley speaks Spanish","pretend","Charley lives in Mexico","factH","20","NonProj",0,3,39,"English","Yes","m","m","",6.44091666666667
 "1485",57,8831,"F","F","Danny ate the last cupcake","annoyed","Danny is a diabetic","factL","11","NonProj",1,4,39,"English","Yes","m","m","",6.44091666666667
@@ -1273,6 +1403,32 @@
 "1532",58,9352,NA,"M","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.53,25,45,"English","Yes","m","f","",4.65628333333333
 "1533",58,6351,NA,"F","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.45,26,45,"English","Yes","m","f","",4.65628333333333
 "1534",58,7000,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.02,27,45,"English","Yes","m","f","",4.65628333333333
+"1535",59,10765,"M","M","Mary is pregnant","confess","Mary is taking a prenatal yoga class","factH","1","C",0.83,2,55,"english","Yes","m","f","thanx",3.66618333333333
+"1536",59,3665,"M","M","Sophia got a tattoo","see","Sophia is a hipster","factH","5","NonProj",0.82,3,55,"english","Yes","m","f","thanx",3.66618333333333
+"1537",59,7919,"F","F","Josh learned to ride a bike yesterday","think","Josh is a 75-year old man","factL","16","NonProj",0.38,4,55,"english","Yes","m","f","thanx",3.66618333333333
+"1538",59,10017,"F","F","Danny ate the last cupcake","demonstrate","Danny is a diabetic","factL","11","C",0.77,5,55,"english","Yes","m","f","thanx",3.66618333333333
+"1539",59,7647,"F","M","Jayden rented a car","suggest","Jayden doesn&quotechart have a driver&quotechars license","factL","14","C",0.5,6,55,"english","Yes","m","f","thanx",3.66618333333333
+"1540",59,5497,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.22,7,55,"english","Yes","m","f","thanx",3.66618333333333
+"1541",59,24809,"M","M","Josie went on vacation to France","inform_Sam","Josie doesn&quotechart have a passport","factL","2","C",0.44,8,55,"english","Yes","m","f","thanx",3.66618333333333
+"1542",59,6119,"M","F","Olivia sleeps until noon","know","Olivia works the third shift","factH","4","NonProj",0.32,9,55,"english","Yes","m","f","thanx",3.66618333333333
+"1543",59,4272,"M","F","Emily bought a car yesterday","establish","Emily has been saving for a year","factH","8","NonProj",0.65,10,55,"english","Yes","m","f","thanx",3.66618333333333
+"1544",59,6849,NA,"M","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.64,11,55,"english","Yes","m","f","thanx",3.66618333333333
+"1545",59,8351,"M","M","Grace visited her sister","reveal","Grace hates her sister","factL","9","NonProj",0.59,12,55,"english","Yes","m","f","thanx",3.66618333333333
+"1546",59,6649,"F","M","Frank got a cat","admit","Frank is allergic to cats","factL","12","C",0.4,13,55,"english","Yes","m","f","thanx",3.66618333333333
+"1547",59,2439,"M","M","Mia drank 2 cocktails last night","pretend","Mia is a nun","factL","6","NonProj",0.65,14,55,"english","Yes","m","f","thanx",3.66618333333333
+"1548",59,7182,"M","M","Emma studied on Saturday morning","say","Emma is in law school","factH","3","C",0.76,15,55,"english","Yes","m","f","thanx",3.66618333333333
+"1549",59,3743,"F","F","Jackson ran 10 miles","annoyed","Jackson is training for a marathon","factH","13","NonProj",0.77,16,55,"english","Yes","m","f","thanx",3.66618333333333
+"1550",59,5784,"M","F","Isabella ate a steak on Sunday","discover","Isabella is a vegetarian","factL","7","NonProj",0.41,17,55,"english","Yes","m","f","thanx",3.66618333333333
+"1551",59,3463,NA,"M","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.76,18,55,"english","Yes","m","f","thanx",3.66618333333333
+"1552",59,9408,"M","F","Zoe calculated the tip","be_right_that","Zoe is a math major","factH","10","C",0.86,19,55,"english","Yes","m","f","thanx",3.66618333333333
+"1553",59,7216,"F","F","Julian dances salsa","prove","Julian is Cuban","factH","18","C",0.67,20,55,"english","Yes","m","f","thanx",3.66618333333333
+"1554",59,7279,"F","M","Owen shoveled snow last winter","hear","Owen lives in New Orleans","factL","17","C",0.3,21,55,"english","Yes","m","f","thanx",3.66618333333333
+"1555",59,5745,"F","M","Tony had a drink last night","acknowledge","Tony really likes to party with his friends","factH","15","C",0.85,22,55,"english","Yes","m","f","thanx",3.66618333333333
+"1556",59,8207,NA,"M","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.83,23,55,"english","Yes","m","f","thanx",3.66618333333333
+"1557",59,2992,NA,"M","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.78,24,55,"english","Yes","m","f","thanx",3.66618333333333
+"1558",59,2088,NA,"F","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.78,25,55,"english","Yes","m","f","thanx",3.66618333333333
+"1559",59,6553,"F","M","Charley speaks Spanish","confirm","Charley lives in Korea","factL","20","C",0.72,26,55,"english","Yes","m","f","thanx",3.66618333333333
+"1560",59,5095,"F","F","Jon walks to work","announce","Jon lives 2 blocks away from work","factH","19","C",0.73,27,55,"english","Yes","m","f","thanx",3.66618333333333
 "1561",60,4383,"M","F","Mary is pregnant","suggest","Mary is taking a prenatal yoga class","factH","1","C",0.04,2,27,"English","No","m","m","This is a fair price.",8.72821666666667
 "1562",60,2752,NA,"M","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.97,3,27,"English","No","m","m","This is a fair price.",8.72821666666667
 "1563",60,4544,"M","F","Sophia got a tattoo","see","Sophia is a high end fashion model","factL","5","NonProj",0.97,4,27,"English","No","m","m","This is a fair price.",8.72821666666667
@@ -1325,6 +1481,32 @@
 "1610",61,21478,"F","F","Tony had a drink last night","admit","Tony really likes to party with his friends","factH","15","C",0.86,25,31,"English","Yes","m","f","",8.39263333333333
 "1611",61,7328,NA,"M","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.2,26,31,"English","Yes","m","f","",8.39263333333333
 "1612",61,7947,"F","F","Charley speaks Spanish","discover","Charley lives in Korea","factL","20","NonProj",0.89,27,31,"English","Yes","m","f","",8.39263333333333
+"1613",62,21348,"F","M","Josh learned to ride a bike yesterday","establish","Josh is a 5-year old boy","factH","16","NonProj",0.24,2,31,"English","Yes","m","m","",8.8085
+"1614",62,13030,"M","F","Mia drank 2 cocktails last night","announce","Mia is a college student","factH","6","C",0.4,3,31,"English","Yes","m","m","",8.8085
+"1615",62,10936,"F","F","Owen shoveled snow last winter","think","Owen lives in New Orleans","factL","17","NonProj",0.76,4,31,"English","Yes","m","m","",8.8085
+"1616",62,10575,"F","M","Jackson ran 10 miles","say","Jackson is obese","factL","13","C",0.09,5,31,"English","Yes","m","m","",8.8085
+"1617",62,4587,NA,"F","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.08,6,31,"English","Yes","m","m","",8.8085
+"1618",62,6804,"F","M","Danny ate the last cupcake","demonstrate","Danny is a diabetic","factL","11","C",0.15,7,31,"English","Yes","m","m","",8.8085
+"1619",62,8387,"M","F","Grace visited her sister","inform_Sam","Grace hates her sister","factL","9","C",0.06,8,31,"English","Yes","m","m","",8.8085
+"1620",62,12219,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.39,9,31,"English","Yes","m","m","",8.8085
+"1621",62,5148,"M","M","Josie went on vacation to France","confess","Josie doesn&quotechart have a passport","factL","2","C",0.1,10,31,"English","Yes","m","m","",8.8085
+"1622",62,17274,"M","M","Emily bought a car yesterday","know","Emily has been saving for a year","factH","8","NonProj",0.74,11,31,"English","Yes","m","m","",8.8085
+"1623",62,4597,"M","F","Emma studied on Saturday morning","be_right_that","Emma is in law school","factH","3","C",0.88,12,31,"English","Yes","m","m","",8.8085
+"1624",62,3331,NA,"M","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.9,13,31,"English","Yes","m","m","",8.8085
+"1625",62,4181,"F","F","Jayden rented a car","pretend","Jayden&quotechars car is in the shop","factH","14","NonProj",0.68,14,31,"English","Yes","m","m","",8.8085
+"1626",62,4531,"M","F","Olivia sleeps until noon","admit","Olivia has two small children","factL","4","C",0.87,15,31,"English","Yes","m","m","",8.8085
+"1627",62,3950,"M","F","Sophia got a tattoo","suggest","Sophia is a hipster","factH","5","C",0.67,16,31,"English","Yes","m","m","",8.8085
+"1628",62,6894,"F","F","Charley speaks Spanish","annoyed","Charley lives in Korea","factL","20","NonProj",0.09,17,31,"English","Yes","m","m","",8.8085
+"1629",62,5822,"F","F","Frank got a cat","reveal","Frank is allergic to cats","factL","12","NonProj",0.05,18,31,"English","Yes","m","m","",8.8085
+"1630",62,3283,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.67,19,31,"English","Yes","m","m","",8.8085
+"1631",62,5163,"F","F","Tony had a drink last night","acknowledge","Tony really likes to party with his friends","factH","15","C",0.92,20,31,"English","Yes","m","m","",8.8085
+"1632",62,6301,"F","M","Jon walks to work","see","Jon lives 2 blocks away from work","factH","19","NonProj",0.87,21,31,"English","Yes","m","m","",8.8085
+"1633",62,6467,"M","F","Isabella ate a steak on Sunday","discover","Isabella is from Argentina","factH","7","NonProj",0.42,22,31,"English","Yes","m","m","",8.8085
+"1634",62,3469,"F","F","Julian dances salsa","confirm","Julian is Cuban","factH","18","C",0.61,23,31,"English","Yes","m","m","",8.8085
+"1635",62,3731,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.77,24,31,"English","Yes","m","m","",8.8085
+"1636",62,7048,NA,"M","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.43,25,31,"English","Yes","m","m","",8.8085
+"1637",62,7249,"M","M","Mary is pregnant","prove","Mary is a middle school student","factL","1","C",0.04,26,31,"English","Yes","m","m","",8.8085
+"1638",62,6795,"M","F","Zoe calculated the tip","hear","Zoe is 5 years old","factL","10","C",0.44,27,31,"English","Yes","m","m","",8.8085
 "1639",63,23047,"M","M","Zoe calculated the tip","know","Zoe is 5 years old","factL","10","NonProj",0.87,2,39,"English","Yes","m","m","Thanks!",7.80188333333333
 "1640",63,24727,"M","F","Olivia sleeps until noon","think","Olivia works the third shift","factH","4","NonProj",0.39,3,39,"English","Yes","m","m","Thanks!",7.80188333333333
 "1641",63,20590,"M","F","Josie went on vacation to France","acknowledge","Josie doesn&quotechart have a passport","factL","2","C",0.01,4,39,"English","Yes","m","m","Thanks!",7.80188333333333
@@ -1377,6 +1559,58 @@
 "1688",64,7013,"F","F","Frank got a cat","see","Frank has always wanted a pet","factH","12","NonProj",0,25,36,"english","Yes","m","m","",3.55821666666667
 "1689",64,8222,"M","F","Josie went on vacation to France","inform_Sam","Josie doesn&quotechart have a passport","factL","2","C",0,26,36,"english","Yes","m","m","",3.55821666666667
 "1690",64,4683,"M","F","Emily bought a car yesterday","discover","Emily has been saving for a year","factH","8","NonProj",0,27,36,"english","Yes","m","m","",3.55821666666667
+"1691",65,13846,"M","F","Grace visited her sister","know","Grace hates her sister","factL","9","NonProj",0,2,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1692",65,11560,"M","M","Mary is pregnant","be_right_that","Mary is a middle school student","factL","1","C",0,3,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1693",65,17239,"M","M","Emma studied on Saturday morning","announce","Emma is in first grade","factL","3","C",0.14,4,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1694",65,9112,"F","F","Charley speaks Spanish","reveal","Charley lives in Mexico","factH","20","NonProj",0.68,5,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1695",65,5495,"M","F","Isabella ate a steak on Sunday","establish","Isabella is a vegetarian","factL","7","NonProj",0.01,6,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1696",65,6692,"M","M","Mia drank 2 cocktails last night","acknowledge","Mia is a nun","factL","6","C",0.2,7,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1697",65,7020,"M","F","Josie went on vacation to France","think","Josie loves France","factH","2","NonProj",0.66,8,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1698",65,9939,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.62,9,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1699",65,7795,"F","F","Tony had a drink last night","demonstrate","Tony has been sober for 20 years","factL","15","C",0.02,10,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1700",65,8390,"F","M","Jon walks to work","suggest","Jon lives 2 blocks away from work","factH","19","C",0.4,11,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1701",65,8832,"F","F","Frank got a cat","prove","Frank has always wanted a pet","factH","12","C",0.31,12,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1702",65,5875,"F","F","Julian dances salsa","admit","Julian is German","factL","18","C",0.04,13,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1703",65,10923,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.72,14,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1704",65,5606,"F","F","Jackson ran 10 miles","inform_Sam","Jackson is training for a marathon","factH","13","C",0.6,15,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1705",65,4653,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.73,16,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1706",65,8212,NA,"F","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.72,17,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1707",65,7567,"M","M","Emily bought a car yesterday","pretend","Emily has been saving for a year","factH","8","NonProj",0,18,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1708",65,5096,NA,"M","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.6,19,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1709",65,5856,"M","F","Olivia sleeps until noon","confirm","Olivia works the third shift","factH","4","C",0.78,20,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1710",65,7701,NA,"M","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.31,21,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1711",65,6201,"M","F","Sophia got a tattoo","see","Sophia is a high end fashion model","factL","5","NonProj",0.58,22,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1712",65,8890,"F","F","Jayden rented a car","annoyed","Jayden&quotechars car is in the shop","factH","14","NonProj",0.71,23,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1713",65,6879,"F","F","Danny ate the last cupcake","hear","Danny is a diabetic","factL","11","C",0.24,24,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1714",65,8735,"F","M","Josh learned to ride a bike yesterday","confess","Josh is a 5-year old boy","factH","16","C",0.72,25,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1715",65,6872,"F","F","Owen shoveled snow last winter","say","Owen lives in Chicago","factH","17","C",0.68,26,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1716",65,5028,"M","M","Zoe calculated the tip","discover","Zoe is 5 years old","factL","10","NonProj",0.19,27,38,"English","Yes","m","f","Great experiment",4.30903333333333
+"1717",66,13740,"F","F","Jon walks to work","announce","Jon lives 10 miles away from work","factL","19","C",0.01,2,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1718",66,6548,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.75,3,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1719",66,13411,NA,"F","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.67,4,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1720",66,9208,"F","M","Jayden rented a car","suggest","Jayden doesn&quotechart have a driver&quotechars license","factL","14","C",0,5,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1721",66,10894,"M","M","Isabella ate a steak on Sunday","hear","Isabella is from Argentina","factH","7","C",0.31,6,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1722",66,7877,"F","M","Danny ate the last cupcake","confess","Danny loves cake","factH","11","C",0.88,7,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1723",66,10534,"F","F","Owen shoveled snow last winter","discover","Owen lives in Chicago","factH","17","NonProj",0.87,8,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1724",66,8269,"F","F","Josh learned to ride a bike yesterday","think","Josh is a 75-year old man","factL","16","NonProj",0.19,9,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1725",66,9575,"F","F","Tony had a drink last night","inform_Sam","Tony has been sober for 20 years","factL","15","C",0.1,10,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1726",66,9390,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.7,11,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1727",66,5817,NA,"M","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.58,12,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1728",66,16289,"M","F","Olivia sleeps until noon","say","Olivia works the third shift","factH","4","C",0.88,13,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1729",66,6836,NA,"M","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.65,14,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1730",66,7686,"F","F","Charley speaks Spanish","prove","Charley lives in Korea","factL","20","C",0.25,15,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1731",66,9649,"F","M","Julian dances salsa","establish","Julian is German","factL","18","NonProj",0.33,16,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1732",66,4587,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.78,17,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1733",66,11101,"M","F","Mia drank 2 cocktails last night","annoyed","Mia is a college student","factH","6","NonProj",0.45,18,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1734",66,7474,"M","F","Josie went on vacation to France","see","Josie doesn&quotechart have a passport","factL","2","NonProj",0.03,19,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1735",66,5765,"M","F","Zoe calculated the tip","reveal","Zoe is a math major","factH","10","NonProj",0.89,20,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1736",66,10388,"M","F","Emma studied on Saturday morning","know","Emma is in first grade","factL","3","NonProj",0.71,21,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1737",66,6176,"M","F","Mary is pregnant","acknowledge","Mary is taking a prenatal yoga class","factH","1","C",0.99,22,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1738",66,11693,"M","M","Emily bought a car yesterday","be_right_that","Emily never has any money","factL","8","C",0.26,23,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1739",66,8852,"M","M","Grace visited her sister","confirm","Grace loves her sister","factH","9","C",0.89,24,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1740",66,6445,"F","F","Jackson ran 10 miles","demonstrate","Jackson is obese","factL","13","C",0.28,25,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1741",66,8065,"M","M","Sophia got a tattoo","pretend","Sophia is a hipster","factH","5","NonProj",0.88,26,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
+"1742",66,7304,"F","F","Frank got a cat","admit","Frank has always wanted a pet","factH","12","C",0.76,27,34,"english","Yes","m","f","I think .85 is very fair.",5.68161666666667
 "1743",67,4426,"F","M","Frank got a cat","suggest","Frank is allergic to cats","factL","12","C",0.74,2,30,"english","Yes","m","f","",4.82525
 "1744",67,3388,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.75,3,30,"english","Yes","m","f","",4.82525
 "1745",67,5303,"F","F","Julian dances salsa","admit","Julian is German","factL","18","C",0,4,30,"english","Yes","m","f","",4.82525
@@ -2807,6 +3041,32 @@
 "3274",125,13918,"F","F","Jon walks to work","annoyed","Jon lives 2 blocks away from work","factH","19","NonProj",1,25,32,"English","Yes","m","m","",9.89678333333333
 "3275",125,7002,"M","F","Grace visited her sister","suggest","Grace hates her sister","factL","9","C",0.18,26,32,"English","Yes","m","m","",9.89678333333333
 "3276",125,5518,"M","M","Josie went on vacation to France","admit","Josie loves France","factH","2","C",1,27,32,"English","Yes","m","m","",9.89678333333333
+"3277",126,11530,"M","F","Mary is pregnant","suggest","Mary is a middle school student","factL","1","C",0.16,2,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3278",126,7794,"F","M","Josh learned to ride a bike yesterday","think","Josh is a 5-year old boy","factH","16","NonProj",0.89,3,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3279",126,7541,"M","M","Zoe calculated the tip","demonstrate","Zoe is 5 years old","factL","10","C",0.14,4,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3280",126,11343,"F","M","Frank got a cat","pretend","Frank is allergic to cats","factL","12","NonProj",0.31,5,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3281",126,9031,"M","M","Emily bought a car yesterday","reveal","Emily has been saving for a year","factH","8","NonProj",0.78,6,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3282",126,5795,NA,"M","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.99,7,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3283",126,9993,"F","F","Jayden rented a car","confess","Jayden doesn&quotechart have a driver&quotechars license","factL","14","C",0.58,8,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3284",126,11720,"M","M","Olivia sleeps until noon","discover","Olivia works the third shift","factH","4","NonProj",0.21,9,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3285",126,13570,NA,"M","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.8,10,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3286",126,9163,"M","F","Grace visited her sister","prove","Grace hates her sister","factL","9","C",0.15,11,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3287",126,9044,"M","M","Josie went on vacation to France","admit","Josie doesn&quotechart have a passport","factL","2","C",0.68,12,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3288",126,23305,"F","M","Jackson ran 10 miles","inform_Sam","Jackson is training for a marathon","factH","13","C",0.93,13,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3289",126,16429,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.71,14,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3290",126,11206,"F","F","Jon walks to work","acknowledge","Jon lives 10 miles away from work","factL","19","C",0.71,15,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3291",126,5955,"M","F","Emma studied on Saturday morning","be_right_that","Emma is in first grade","factL","3","C",0.74,16,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3292",126,6643,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.71,17,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3293",126,8299,"M","F","Sophia got a tattoo","know","Sophia is a hipster","factH","5","NonProj",0.96,18,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3294",126,9001,"F","F","Julian dances salsa","annoyed","Julian is German","factL","18","NonProj",0.34,19,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3295",126,6618,"M","F","Isabella ate a steak on Sunday","establish","Isabella is from Argentina","factH","7","NonProj",0.33,20,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3296",126,7168,"M","F","Mia drank 2 cocktails last night","announce","Mia is a college student","factH","6","C",0.68,21,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3297",126,7526,"F","F","Tony had a drink last night","hear","Tony really likes to party with his friends","factH","15","C",0.94,22,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3298",126,6379,"F","F","Owen shoveled snow last winter","say","Owen lives in New Orleans","factL","17","C",0,23,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3299",126,8966,NA,"M","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.79,24,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3300",126,14431,"F","F","Charley speaks Spanish","confirm","Charley lives in Mexico","factH","20","C",0.96,25,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3301",126,17652,NA,"F","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.41,26,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
+"3302",126,6994,"F","F","Danny ate the last cupcake","see","Danny loves cake","factH","11","NonProj",0.9,27,35,"English","Yes","m","f","I think this was a little bit more confusing than the other study for some reason. I hope I understood this one correctly! I think this is more than a fair price for this survey. Thanks! ",5.64428333333333
 "3329",128,18445,"F","M","Frank got a cat","acknowledge","Frank is allergic to cats","factL","12","C",0.9,2,48,"english","Yes","m","f","compensation is fair",8.11333333333333
 "3330",128,16504,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.09,3,48,"english","Yes","m","f","compensation is fair",8.11333333333333
 "3331",128,11329,"M","M","Isabella ate a steak on Sunday","see","Isabella is a vegetarian","factL","7","NonProj",0.51,4,48,"english","Yes","m","f","compensation is fair",8.11333333333333
@@ -2859,6 +3119,32 @@
 "3378",129,7988,"F","F","Frank got a cat","see","Frank has always wanted a pet","factH","12","NonProj",0.85,25,49,"English","Yes","m","m","price is fair, thank you",4.86648333333333
 "3379",129,8354,"M","M","Isabella ate a steak on Sunday","think","Isabella is a vegetarian","factL","7","NonProj",0.19,26,49,"English","Yes","m","m","price is fair, thank you",4.86648333333333
 "3380",129,8646,"F","F","Tony had a drink last night","establish","Tony really likes to party with his friends","factH","15","NonProj",0.64,27,49,"English","Yes","m","m","price is fair, thank you",4.86648333333333
+"3381",130,11930,"F","M","Jackson ran 10 miles","establish","Jackson is obese","factL","13","NonProj",0.08,2,30,"english","Yes","m","m","thanks",17.7801333333333
+"3382",130,1922,"M","F","Zoe calculated the tip","be_right_that","Zoe is a math major","factH","10","C",0.44,3,30,"english","Yes","m","m","thanks",17.7801333333333
+"3383",130,1108,"M","F","Mia drank 2 cocktails last night","see","Mia is a nun","factL","6","NonProj",0.71,4,30,"english","Yes","m","m","thanks",17.7801333333333
+"3384",130,1370,"M","F","Sophia got a tattoo","discover","Sophia is a high end fashion model","factL","5","NonProj",0.22,5,30,"english","Yes","m","m","thanks",17.7801333333333
+"3385",130,976,"F","M","Charley speaks Spanish","suggest","Charley lives in Korea","factL","20","C",0.52,6,30,"english","Yes","m","m","thanks",17.7801333333333
+"3386",130,930,"F","M","Josh learned to ride a bike yesterday","reveal","Josh is a 5-year old boy","factH","16","NonProj",0.78,7,30,"english","Yes","m","m","thanks",17.7801333333333
+"3387",130,846,"M","F","Emma studied on Saturday morning","acknowledge","Emma is in law school","factH","3","C",0.14,8,30,"english","Yes","m","m","thanks",17.7801333333333
+"3388",130,890,"M","F","Mary is pregnant","confess","Mary is a middle school student","factL","1","C",0.13,9,30,"english","Yes","m","m","thanks",17.7801333333333
+"3389",130,1124,"F","F","Julian dances salsa","hear","Julian is Cuban","factH","18","C",0.27,10,30,"english","Yes","m","m","thanks",17.7801333333333
+"3390",130,859,"F","M","Jayden rented a car","say","Jayden doesn&quotechart have a driver&quotechars license","factL","14","C",0.74,11,30,"english","Yes","m","m","thanks",17.7801333333333
+"3391",130,1068,"F","M","Tony had a drink last night","prove","Tony really likes to party with his friends","factH","15","C",0.17,12,30,"english","Yes","m","m","thanks",17.7801333333333
+"3392",130,832,NA,"F","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.49,13,30,"english","Yes","m","m","thanks",17.7801333333333
+"3393",130,1156,"M","M","Josie went on vacation to France","annoyed","Josie loves France","factH","2","NonProj",0.22,14,30,"english","Yes","m","m","thanks",17.7801333333333
+"3394",130,1622,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.74,15,30,"english","Yes","m","m","thanks",17.7801333333333
+"3395",130,1476,"F","F","Danny ate the last cupcake","think","Danny is a diabetic","factL","11","NonProj",0.31,16,30,"english","Yes","m","m","thanks",17.7801333333333
+"3396",130,1320,NA,"M","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.63,17,30,"english","Yes","m","m","thanks",17.7801333333333
+"3397",130,842,"M","F","Emily bought a car yesterday","announce","Emily never has any money","factL","8","C",0.31,18,30,"english","Yes","m","m","thanks",17.7801333333333
+"3398",130,1066,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.59,19,30,"english","Yes","m","m","thanks",17.7801333333333
+"3399",130,1492,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.32,20,30,"english","Yes","m","m","thanks",17.7801333333333
+"3400",130,826,"M","F","Grace visited her sister","demonstrate","Grace loves her sister","factH","9","C",0.35,21,30,"english","Yes","m","m","thanks",17.7801333333333
+"3401",130,1639,"F","M","Owen shoveled snow last winter","inform_Sam","Owen lives in Chicago","factH","17","C",0.76,22,30,"english","Yes","m","m","thanks",17.7801333333333
+"3402",130,816,NA,"M","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.52,23,30,"english","Yes","m","m","thanks",17.7801333333333
+"3403",130,1595,"F","F","Frank got a cat","pretend","Frank has always wanted a pet","factH","12","NonProj",0.55,24,30,"english","Yes","m","m","thanks",17.7801333333333
+"3404",130,818,"M","F","Isabella ate a steak on Sunday","know","Isabella is a vegetarian","factL","7","NonProj",0.24,25,30,"english","Yes","m","m","thanks",17.7801333333333
+"3405",130,829,"F","M","Jon walks to work","admit","Jon lives 10 miles away from work","factL","19","C",0.25,26,30,"english","Yes","m","m","thanks",17.7801333333333
+"3406",130,1672,"M","F","Olivia sleeps until noon","confirm","Olivia works the third shift","factH","4","C",0.24,27,30,"english","Yes","m","m","thanks",17.7801333333333
 "3407",131,46926,"M","F","Isabella ate a steak on Sunday","inform_Sam","Isabella is a vegetarian","factL","7","C",0.99,2,53,"English","Yes","m","m",".85 seems fair comparatively to other hits I have done. I think it seems to be a study on how English speakers use questions in to find out information?  Although, I thought that the questions asked by the various people seemed to formal to be believable. Or rather, in my opinion the questions seemed to formal for an average person asking a question. fascinating hit, though.",15.5526333333333
 "3408",131,15951,"M","F","Grace visited her sister","say","Grace hates her sister","factL","9","C",0,3,53,"English","Yes","m","m",".85 seems fair comparatively to other hits I have done. I think it seems to be a study on how English speakers use questions in to find out information?  Although, I thought that the questions asked by the various people seemed to formal to be believable. Or rather, in my opinion the questions seemed to formal for an average person asking a question. fascinating hit, though.",15.5526333333333
 "3409",131,13487,"F","F","Tony had a drink last night","know","Tony really likes to party with his friends","factH","15","NonProj",0.99,4,53,"English","Yes","m","m",".85 seems fair comparatively to other hits I have done. I think it seems to be a study on how English speakers use questions in to find out information?  Although, I thought that the questions asked by the various people seemed to formal to be believable. Or rather, in my opinion the questions seemed to formal for an average person asking a question. fascinating hit, though.",15.5526333333333
@@ -2937,6 +3223,32 @@
 "3482",133,12259,NA,"M","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0,25,29,"English","Yes","m","f","",4.05926666666667
 "3483",133,8583,NA,"M","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0,26,29,"English","Yes","m","f","",4.05926666666667
 "3484",133,17732,"F","F","Charley speaks Spanish","say","Charley lives in Mexico","factH","20","C",0.3,27,29,"English","Yes","m","f","",4.05926666666667
+"3485",134,11819,"M","F","Zoe calculated the tip","inform_Sam","Zoe is 5 years old","factL","10","C",0.34,2,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3486",134,10040,NA,"M","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.33,3,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3487",134,7240,"F","F","Jackson ran 10 miles","establish","Jackson is training for a marathon","factH","13","NonProj",0.6,4,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3488",134,7248,NA,"M","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.77,5,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3489",134,5919,"F","M","Danny ate the last cupcake","say","Danny is a diabetic","factL","11","C",0.22,6,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3490",134,6224,NA,"M","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.47,7,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3491",134,7616,"F","F","Owen shoveled snow last winter","pretend","Owen lives in New Orleans","factL","17","NonProj",0.63,8,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3492",134,7520,"M","M","Isabella ate a steak on Sunday","demonstrate","Isabella is a vegetarian","factL","7","C",0.09,9,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3493",134,9416,"M","M","Grace visited her sister","discover","Grace hates her sister","factL","9","NonProj",0.41,10,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3494",134,5096,"F","M","Julian dances salsa","acknowledge","Julian is Cuban","factH","18","C",0.75,11,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3495",134,4656,"M","F","Sophia got a tattoo","hear","Sophia is a high end fashion model","factL","5","C",0.15,12,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3496",134,6712,"M","F","Josie went on vacation to France","confirm","Josie loves France","factH","2","C",0.75,13,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3497",134,3296,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.82,14,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3498",134,3000,"F","F","Frank got a cat","think","Frank has always wanted a pet","factH","12","NonProj",0.63,15,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3499",134,30608,"F","F","Charley speaks Spanish","know","Charley lives in Mexico","factH","20","NonProj",0.85,16,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3500",134,7215,"F","F","Tony had a drink last night","annoyed","Tony really likes to party with his friends","factH","15","NonProj",0.65,17,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3501",134,6760,"M","F","Emma studied on Saturday morning","reveal","Emma is in first grade","factL","3","NonProj",0.27,18,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3502",134,8999,"M","F","Mary is pregnant","prove","Mary is taking a prenatal yoga class","factH","1","C",0.6,19,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3503",134,5896,"M","M","Olivia sleeps until noon","see","Olivia has two small children","factL","4","NonProj",0.61,20,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3504",134,9831,"F","F","Jayden rented a car","announce","Jayden doesn&quotechart have a driver&quotechars license","factL","14","C",0.51,21,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3505",134,10073,NA,"M","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.68,22,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3506",134,4041,"F","F","Jon walks to work","suggest","Jon lives 2 blocks away from work","factH","19","C",0.78,23,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3507",134,4232,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.31,24,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3508",134,4006,"M","F","Mia drank 2 cocktails last night","confess","Mia is a college student","factH","6","C",0.5,25,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3509",134,4200,"M","M","Emily bought a car yesterday","be_right_that","Emily has been saving for a year","factH","8","C",0.73,26,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
+"3510",134,10112,"F","M","Josh learned to ride a bike yesterday","admit","Josh is a 75-year old man","factL","16","C",0.23,27,35,"English","Yes","m","m","Everything was great, thank you.  ",3.90433333333333
 "3511",135,9252,"F","M","Tony had a drink last night","think","Tony has been sober for 20 years","factL","15","NonProj",0.12,2,34,"English","Yes","m","f","The price was fair. Thank you for the HIT.",7.2626
 "3512",135,12186,NA,"M","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.07,3,34,"English","Yes","m","f","The price was fair. Thank you for the HIT.",7.2626
 "3513",135,8808,"M","F","Mia drank 2 cocktails last night","prove","Mia is a college student","factH","6","C",0.41,4,34,"English","Yes","m","f","The price was fair. Thank you for the HIT.",7.2626
@@ -3691,6 +4003,32 @@
 "4314",165,7798,"M","F","Mia drank 2 cocktails last night","admit","Mia is a college student","factH","6","C",0.82,25,29,"English","Yes","m","m","",3.9545
 "4315",165,6826,NA,"M","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0,26,29,"English","Yes","m","m","",3.9545
 "4316",165,16573,"F","M","Jackson ran 10 miles","inform_Sam","Jackson is obese","factL","13","C",1,27,29,"English","Yes","m","m","",3.9545
+"4317",166,15177,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.7,2,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4318",166,15078,"F","M","Jon walks to work","announce","Jon lives 2 blocks away from work","factH","19","C",0.87,3,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4319",166,11364,"M","M","Isabella ate a steak on Sunday","acknowledge","Isabella is a vegetarian","factL","7","C",0.08,4,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4320",166,13265,NA,"F","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.39,5,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4321",166,19252,"M","F","Josie went on vacation to France","say","Josie loves France","factH","2","C",0.65,6,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4322",166,8086,"M","F","Olivia sleeps until noon","suggest","Olivia has two small children","factL","4","C",0.02,7,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4323",166,12593,"M","F","Mary is pregnant","annoyed","Mary is taking a prenatal yoga class","factH","1","NonProj",0.94,8,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4324",166,7545,"M","F","Zoe calculated the tip","hear","Zoe is 5 years old","factL","10","C",0.04,9,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4325",166,7599,"F","M","Josh learned to ride a bike yesterday","confess","Josh is a 75-year old man","factL","16","C",0,10,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4326",166,9105,"M","M","Mia drank 2 cocktails last night","demonstrate","Mia is a college student","factH","6","C",0.34,11,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4327",166,6423,"F","M","Charley speaks Spanish","inform_Sam","Charley lives in Korea","factL","20","C",0.03,12,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4328",166,6349,"M","F","Emma studied on Saturday morning","know","Emma is in law school","factH","3","NonProj",0.96,13,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4329",166,10595,"M","F","Sophia got a tattoo","prove","Sophia is a high end fashion model","factL","5","C",0.06,14,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4330",166,12334,"F","F","Danny ate the last cupcake","see","Danny loves cake","factH","11","NonProj",0.87,15,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4331",166,6670,"F","F","Frank got a cat","confirm","Frank has always wanted a pet","factH","12","C",0.89,16,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4332",166,5514,"F","F","Jackson ran 10 miles","think","Jackson is obese","factL","13","NonProj",0.21,17,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4333",166,7107,"F","F","Jayden rented a car","reveal","Jayden doesn&quotechart have a driver&quotechars license","factL","14","NonProj",0.02,18,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4334",166,6035,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.92,19,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4335",166,7634,"F","F","Owen shoveled snow last winter","establish","Owen lives in Chicago","factH","17","NonProj",0.93,20,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4336",166,6084,NA,"M","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.7,21,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4337",166,10096,"F","F","Tony had a drink last night","be_right_that","Tony has been sober for 20 years","factL","15","C",0.25,22,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4338",166,9973,NA,"F","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.29,23,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4339",166,10734,"M","F","Grace visited her sister","pretend","Grace hates her sister","factL","9","NonProj",0.27,24,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4340",166,6372,NA,"M","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.5,25,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4341",166,8587,"F","M","Julian dances salsa","admit","Julian is Cuban","factH","18","C",0.91,26,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
+"4342",166,9480,"M","M","Emily bought a car yesterday","discover","Emily has been saving for a year","factH","8","NonProj",0.91,27,46,"english","Yes","m","m","Yes, it was fair and interesting. Thank you!",5.38256666666667
 "4343",167,16404,"M","M","Sophia got a tattoo","know","Sophia is a high end fashion model","factL","5","NonProj",0.99,2,32,"English","Yes","m","m","",5.29513333333333
 "4344",167,17922,"M","F","Josie went on vacation to France","admit","Josie doesn&quotechart have a passport","factL","2","C",0.27,3,32,"English","Yes","m","m","",5.29513333333333
 "4345",167,7899,NA,"M","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0,4,32,"English","Yes","m","m","",5.29513333333333
@@ -3717,6 +4055,58 @@
 "4366",167,12839,"F","M","Danny ate the last cupcake","be_right_that","Danny is a diabetic","factL","11","C",0,25,32,"English","Yes","m","m","",5.29513333333333
 "4367",167,9385,"F","M","Charley speaks Spanish","see","Charley lives in Korea","factL","20","NonProj",0,26,32,"English","Yes","m","m","",5.29513333333333
 "4368",167,12963,"F","F","Jackson ran 10 miles","acknowledge","Jackson is obese","factL","13","C",0.89,27,32,"English","Yes","m","m","",5.29513333333333
+"4369",168,31919,"F","M","Frank got a cat","know","Frank is allergic to cats","factL","12","NonProj",0.77,2,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4370",168,22773,"M","F","Grace visited her sister","admit","Grace loves her sister","factH","9","C",0.66,3,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4371",168,19324,"M","F","Emma studied on Saturday morning","announce","Emma is in first grade","factL","3","C",0.52,4,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4372",168,22601,"M","F","Sophia got a tattoo","prove","Sophia is a hipster","factH","5","C",0.28,5,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4373",168,11622,NA,"F","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.55,6,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4374",168,11682,"F","F","Jackson ran 10 miles","confess","Jackson is training for a marathon","factH","13","C",0.62,7,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4375",168,17325,"M","M","Josie went on vacation to France","see","Josie doesn&quotechart have a passport","factL","2","NonProj",0.24,8,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4376",168,16937,"F","F","Charley speaks Spanish","confirm","Charley lives in Mexico","factH","20","C",0.76,9,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4377",168,11374,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.12,10,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4378",168,8792,"M","F","Emily bought a car yesterday","establish","Emily has been saving for a year","factH","8","NonProj",0.51,11,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4379",168,9457,"F","F","Tony had a drink last night","acknowledge","Tony has been sober for 20 years","factL","15","C",0.25,12,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4380",168,17278,"M","M","Mary is pregnant","annoyed","Mary is taking a prenatal yoga class","factH","1","NonProj",0.78,13,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4381",168,10874,"M","M","Zoe calculated the tip","suggest","Zoe is a math major","factH","10","C",0.52,14,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4382",168,10795,"M","F","Isabella ate a steak on Sunday","demonstrate","Isabella is from Argentina","factH","7","C",0.13,15,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4383",168,7303,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.48,16,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4384",168,11682,"F","M","Josh learned to ride a bike yesterday","pretend","Josh is a 75-year old man","factL","16","NonProj",0.49,17,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4385",168,18395,"F","F","Owen shoveled snow last winter","inform_Sam","Owen lives in New Orleans","factL","17","C",0.48,18,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4386",168,12815,NA,"M","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.71,19,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4387",168,9466,"M","F","Olivia sleeps until noon","hear","Olivia has two small children","factL","4","C",0.28,20,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4388",168,11879,"F","M","Julian dances salsa","reveal","Julian is German","factL","18","NonProj",0.24,21,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4389",168,9765,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.48,22,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4390",168,11066,"F","F","Danny ate the last cupcake","discover","Danny is a diabetic","factL","11","NonProj",0.48,23,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4391",168,12481,NA,"M","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.73,24,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4392",168,8545,"F","M","Jon walks to work","think","Jon lives 10 miles away from work","factL","19","NonProj",0.28,25,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4393",168,7582,"F","M","Jayden rented a car","say","Jayden&quotechars car is in the shop","factH","14","C",0.48,26,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
+"4394",168,8175,"M","M","Mia drank 2 cocktails last night","be_right_that","Mia is a college student","factH","6","C",0.2,27,44,"english","Confused","m","f","maybe a few more examples in instructions would have been good. There are many assumptions that could have been made on the little bit of info that was give.
+pay was fair",9.1275
 "4395",169,14426,"F","F","Charley speaks Spanish","annoyed","Charley lives in Korea","factL","20","NonProj",0.02,2,29,"English","Yes","m","m","",7.09746666666667
 "4396",169,11302,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.04,3,29,"English","Yes","m","m","",7.09746666666667
 "4397",169,22727,"M","M","Josie went on vacation to France","reveal","Josie loves France","factH","2","NonProj",0.83,4,29,"English","Yes","m","m","",7.09746666666667
@@ -3795,6 +4185,32 @@
 "4470",171,4657,"M","M","Olivia sleeps until noon","hear","Olivia works the third shift","factH","4","C",0.97,25,42,"English","Yes","m","m","$.85 is fair.",4.15325
 "4471",171,6411,"M","F","Emma studied on Saturday morning","reveal","Emma is in first grade","factL","3","NonProj",0,26,42,"English","Yes","m","m","$.85 is fair.",4.15325
 "4472",171,5049,NA,"M","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.01,27,42,"English","Yes","m","m","$.85 is fair.",4.15325
+"4499",173,23806,"F","F","Jayden rented a car","prove","Jayden&quotechars car is in the shop","factH","14","C",0.05,2,29,"English","Yes","m","m","",22.3725333333333
+"4500",173,13758,"M","F","Olivia sleeps until noon","demonstrate","Olivia has two small children","factL","4","C",0.04,3,29,"English","Yes","m","m","",22.3725333333333
+"4501",173,9647,NA,"F","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.04,4,29,"English","Yes","m","m","",22.3725333333333
+"4502",173,54152,"M","F","Emma studied on Saturday morning","establish","Emma is in first grade","factL","3","NonProj",0.08,5,29,"English","Yes","m","m","",22.3725333333333
+"4503",173,8766,"F","F","Frank got a cat","say","Frank is allergic to cats","factL","12","C",0.05,6,29,"English","Yes","m","m","",22.3725333333333
+"4504",173,9855,"F","F","Julian dances salsa","acknowledge","Julian is Cuban","factH","18","C",0.51,7,29,"English","Yes","m","m","",22.3725333333333
+"4505",173,12066,"M","F","Zoe calculated the tip","be_right_that","Zoe is a math major","factH","10","C",0.79,8,29,"English","Yes","m","m","",22.3725333333333
+"4506",173,16652,"M","M","Emily bought a car yesterday","confess","Emily never has any money","factL","8","C",0.05,9,29,"English","Yes","m","m","",22.3725333333333
+"4507",173,12247,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.72,10,29,"English","Yes","m","m","",22.3725333333333
+"4508",173,2544,"F","M","Jackson ran 10 miles","pretend","Jackson is obese","factL","13","NonProj",0.1,11,29,"English","Yes","m","m","",22.3725333333333
+"4509",173,6875,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.98,12,29,"English","Yes","m","m","",22.3725333333333
+"4510",173,6355,"F","M","Owen shoveled snow last winter","suggest","Owen lives in Chicago","factH","17","C",0.1,13,29,"English","Yes","m","m","",22.3725333333333
+"4511",173,10478,"M","F","Grace visited her sister","announce","Grace hates her sister","factL","9","C",0.03,14,29,"English","Yes","m","m","",22.3725333333333
+"4512",173,95862,"M","M","Josie went on vacation to France","know","Josie loves France","factH","2","NonProj",0.86,15,29,"English","Yes","m","m","",22.3725333333333
+"4513",173,30601,"F","M","Jon walks to work","admit","Jon lives 2 blocks away from work","factH","19","C",0.92,16,29,"English","Yes","m","m","",22.3725333333333
+"4514",173,7825,"F","M","Tony had a drink last night","reveal","Tony has been sober for 20 years","factL","15","NonProj",0.07,17,29,"English","Yes","m","m","",22.3725333333333
+"4515",173,7068,NA,"M","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.07,18,29,"English","Yes","m","m","",22.3725333333333
+"4516",173,6340,"M","F","Sophia got a tattoo","confirm","Sophia is a hipster","factH","5","C",0.93,19,29,"English","Yes","m","m","",22.3725333333333
+"4517",173,13289,"F","M","Josh learned to ride a bike yesterday","discover","Josh is a 5-year old boy","factH","16","NonProj",0.72,20,29,"English","Yes","m","m","",22.3725333333333
+"4518",173,6527,"F","F","Danny ate the last cupcake","think","Danny loves cake","factH","11","NonProj",0.07,21,29,"English","Yes","m","m","",22.3725333333333
+"4519",173,6675,"M","F","Mary is pregnant","annoyed","Mary is a middle school student","factL","1","NonProj",0.03,22,29,"English","Yes","m","m","",22.3725333333333
+"4520",173,7365,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.86,23,29,"English","Yes","m","m","",22.3725333333333
+"4521",173,5637,"M","F","Isabella ate a steak on Sunday","see","Isabella is a vegetarian","factL","7","NonProj",0.03,24,29,"English","Yes","m","m","",22.3725333333333
+"4522",173,5710,NA,"M","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.65,25,29,"English","Yes","m","m","",22.3725333333333
+"4523",173,37941,"M","M","Mia drank 2 cocktails last night","inform_Sam","Mia is a college student","factH","6","C",0.49,26,29,"English","Yes","m","m","",22.3725333333333
+"4524",173,6529,"F","M","Charley speaks Spanish","hear","Charley lives in Korea","factL","20","C",0.02,27,29,"English","Yes","m","m","",22.3725333333333
 "4525",174,66721,"F","F","Tony had a drink last night","acknowledge","Tony really likes to party with his friends","factH","15","C",1,2,33,"english","Yes","m","m","I hope my answers were okay for the ""attention check&quotechar ones. I tried to think about it logically",8.4391
 "4526",174,10142,"F","F","Josh learned to ride a bike yesterday","annoyed","Josh is a 5-year old boy","factH","16","NonProj",1,3,33,"english","Yes","m","m","I hope my answers were okay for the ""attention check&quotechar ones. I tried to think about it logically",8.4391
 "4527",174,94142,NA,"M","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0,4,33,"english","Yes","m","m","I hope my answers were okay for the ""attention check&quotechar ones. I tried to think about it logically",8.4391
@@ -4237,6 +4653,32 @@
 "4964",190,3516,NA,"M","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.27,25,44,"english","Yes","m","m","",3.60403333333333
 "4965",190,3959,"F","M","Jackson ran 10 miles","suggest","Jackson is obese","factL","13","C",0.07,26,44,"english","Yes","m","m","",3.60403333333333
 "4966",190,3922,"M","F","Mary is pregnant","say","Mary is a middle school student","factL","1","C",0.07,27,44,"english","Yes","m","m","",3.60403333333333
+"4967",191,49682,"F","F","Jackson ran 10 miles","annoyed","Jackson is obese","factL","13","NonProj",0.26,2,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4968",191,62327,"F","M","Josh learned to ride a bike yesterday","confirm","Josh is a 5-year old boy","factH","16","C",0.73,3,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4969",191,24952,"M","F","Isabella ate a steak on Sunday","reveal","Isabella is from Argentina","factH","7","NonProj",0.52,4,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4970",191,16918,"M","F","Mia drank 2 cocktails last night","acknowledge","Mia is a college student","factH","6","C",0.65,5,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4971",191,10201,"M","F","Mary is pregnant","hear","Mary is a middle school student","factL","1","C",0.07,6,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4972",191,80612,"F","F","Charley speaks Spanish","admit","Charley lives in Korea","factL","20","C",0.25,7,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4973",191,8719,"M","M","Zoe calculated the tip","say","Zoe is a math major","factH","10","C",0.74,8,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4974",191,7764,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.78,9,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4975",191,8317,"M","F","Olivia sleeps until noon","demonstrate","Olivia has two small children","factL","4","C",0.17,10,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4976",191,5682,NA,"M","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.82,11,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4977",191,10666,"M","M","Josie went on vacation to France","think","Josie doesn&quotechart have a passport","factL","2","NonProj",0.04,12,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4978",191,33232,NA,"M","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.68,13,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4979",191,12213,NA,"M","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.66,14,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4980",191,12701,"M","F","Emily bought a car yesterday","inform_Sam","Emily never has any money","factL","8","C",0.06,15,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4981",191,9004,"F","F","Jayden rented a car","see","Jayden&quotechars car is in the shop","factH","14","NonProj",0.75,16,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4982",191,12778,"F","F","Frank got a cat","discover","Frank is allergic to cats","factL","12","NonProj",0.02,17,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4983",191,6302,"M","M","Grace visited her sister","suggest","Grace hates her sister","factL","9","C",0.28,18,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4984",191,10782,NA,"F","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.51,19,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4985",191,14784,"F","F","Jon walks to work","pretend","Jon lives 2 blocks away from work","factH","19","NonProj",0.79,20,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4986",191,9129,NA,"M","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.53,21,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4987",191,10035,"M","M","Emma studied on Saturday morning","establish","Emma is in first grade","factL","3","NonProj",0.5,22,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4988",191,8147,"F","F","Owen shoveled snow last winter","announce","Owen lives in Chicago","factH","17","C",0.69,23,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4989",191,5372,"F","M","Danny ate the last cupcake","know","Danny is a diabetic","factL","11","NonProj",0.33,24,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4990",191,6118,"M","F","Sophia got a tattoo","be_right_that","Sophia is a hipster","factH","5","C",0.7,25,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4991",191,6963,"F","M","Julian dances salsa","confess","Julian is Cuban","factH","18","C",0.68,26,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
+"4992",191,13200,"F","F","Tony had a drink last night","prove","Tony really likes to party with his friends","factH","15","C",0.86,27,41,"Englsih","Yes","m","m","A somewhat easy experiment. The pay for the work it is fair.",16.9349833333333
 "4993",192,19768,"M","F","Grace visited her sister","hear","Grace loves her sister","factH","9","C",0.73,2,38,"english","Yes","m","f","Easy survey and very fair comp",7.81618333333333
 "4994",192,25543,"F","M","Jayden rented a car","pretend","Jayden doesn&quotechart have a driver&quotechars license","factL","14","NonProj",0.08,3,38,"english","Yes","m","f","Easy survey and very fair comp",7.81618333333333
 "4995",192,15840,"F","M","Danny ate the last cupcake","prove","Danny loves cake","factH","11","C",0.23,4,38,"english","Yes","m","f","Easy survey and very fair comp",7.81618333333333
@@ -4783,6 +5225,32 @@
 "5588",214,4587,"M","F","Josie went on vacation to France","announce","Josie doesn&quotechart have a passport","factL","2","C",0,25,32,"English","Yes","m","m","None.",6.52116666666667
 "5589",214,4256,"F","F","Tony had a drink last night","inform_Sam","Tony really likes to party with his friends","factH","15","C",0,26,32,"English","Yes","m","m","None.",6.52116666666667
 "5590",214,4536,"M","M","Sophia got a tattoo","hear","Sophia is a hipster","factH","5","C",0,27,32,"English","Yes","m","m","None.",6.52116666666667
+"5591",215,15100,"F","M","Jayden rented a car","demonstrate","Jayden&quotechars car is in the shop","factH","14","C",0.45,2,30,"English","Yes","m","m","",6.64761666666667
+"5592",215,10975,"F","F","Julian dances salsa","suggest","Julian is German","factL","18","C",0.01,3,30,"English","Yes","m","m","",6.64761666666667
+"5593",215,4000,NA,"M","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.39,4,30,"English","Yes","m","m","",6.64761666666667
+"5594",215,72775,NA,"F","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.84,5,30,"English","Yes","m","m","",6.64761666666667
+"5595",215,39928,"M","M","Zoe calculated the tip","know","Zoe is 5 years old","factL","10","NonProj",0.03,6,30,"English","Yes","m","m","",6.64761666666667
+"5596",215,51207,"M","F","Emily bought a car yesterday","reveal","Emily has been saving for a year","factH","8","NonProj",0.24,7,30,"English","Yes","m","m","",6.64761666666667
+"5597",215,1192,"M","F","Josie went on vacation to France","confirm","Josie loves France","factH","2","C",0.39,8,30,"English","Yes","m","m","",6.64761666666667
+"5598",215,2424,"M","M","Sophia got a tattoo","confess","Sophia is a hipster","factH","5","C",0.52,9,30,"English","Yes","m","m","",6.64761666666667
+"5599",215,13424,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.55,10,30,"English","Yes","m","m","",6.64761666666667
+"5600",215,9959,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.52,11,30,"English","Yes","m","m","",6.64761666666667
+"5601",215,6145,"M","M","Olivia sleeps until noon","inform_Sam","Olivia works the third shift","factH","4","C",0.5,12,30,"English","Yes","m","m","",6.64761666666667
+"5602",215,7263,NA,"M","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.28,13,30,"English","Yes","m","m","",6.64761666666667
+"5603",215,7480,"M","F","Isabella ate a steak on Sunday","think","Isabella is a vegetarian","factL","7","NonProj",0.49,14,30,"English","Yes","m","m","",6.64761666666667
+"5604",215,8080,"F","F","Charley speaks Spanish","discover","Charley lives in Mexico","factH","20","NonProj",0.63,15,30,"English","Yes","m","m","",6.64761666666667
+"5605",215,9672,"F","F","Tony had a drink last night","prove","Tony really likes to party with his friends","factH","15","C",0.38,16,30,"English","Yes","m","m","",6.64761666666667
+"5606",215,1840,"M","M","Mia drank 2 cocktails last night","acknowledge","Mia is a nun","factL","6","C",0.34,17,30,"English","Yes","m","m","",6.64761666666667
+"5607",215,1280,"M","F","Emma studied on Saturday morning","announce","Emma is in law school","factH","3","C",0.51,18,30,"English","Yes","m","m","",6.64761666666667
+"5608",215,7664,"M","F","Mary is pregnant","see","Mary is a middle school student","factL","1","NonProj",0.22,19,30,"English","Yes","m","m","",6.64761666666667
+"5609",215,15063,"M","F","Grace visited her sister","annoyed","Grace hates her sister","factL","9","NonProj",0.6,20,30,"English","Yes","m","m","",6.64761666666667
+"5610",215,1921,NA,"M","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.49,21,30,"English","Yes","m","m","",6.64761666666667
+"5611",215,13072,"F","M","Owen shoveled snow last winter","establish","Owen lives in Chicago","factH","17","NonProj",0.12,22,30,"English","Yes","m","m","",6.64761666666667
+"5612",215,22968,"F","M","Danny ate the last cupcake","admit","Danny is a diabetic","factL","11","C",0.34,23,30,"English","Yes","m","m","",6.64761666666667
+"5613",215,7031,"F","M","Jackson ran 10 miles","be_right_that","Jackson is obese","factL","13","C",0.5,24,30,"English","Yes","m","m","",6.64761666666667
+"5614",215,6863,"F","F","Jon walks to work","say","Jon lives 10 miles away from work","factL","19","C",0.31,25,30,"English","Yes","m","m","",6.64761666666667
+"5615",215,6896,"F","M","Josh learned to ride a bike yesterday","hear","Josh is a 5-year old boy","factH","16","C",0.51,26,30,"English","Yes","m","m","",6.64761666666667
+"5616",215,6608,"F","M","Frank got a cat","pretend","Frank is allergic to cats","factL","12","NonProj",0.3,27,30,"English","Yes","m","m","",6.64761666666667
 "5617",216,11294,"M","F","Isabella ate a steak on Sunday","be_right_that","Isabella is from Argentina","factH","7","C",0.01,2,32,"english","Confused","m","f","I didn&quotechart see the attention checks that were mentioned.",4.19491666666667
 "5618",216,6733,"M","F","Emma studied on Saturday morning","announce","Emma is in first grade","factL","3","C",0.01,3,32,"english","Confused","m","f","I didn&quotechart see the attention checks that were mentioned.",4.19491666666667
 "5619",216,8041,"F","F","Josh learned to ride a bike yesterday","hear","Josh is a 75-year old man","factL","16","C",0.01,4,32,"english","Confused","m","f","I didn&quotechart see the attention checks that were mentioned.",4.19491666666667
@@ -5225,6 +5693,32 @@
 "6108",234,13040,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.01,25,35,"english","Yes","m","f","Some statements could have been considered sarcastic, but without hearing it spoken, I can&quotechart be sure. A fair price is not less than ten cents per minute of work. Thank you :)",9.24805
 "6109",234,9680,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.01,26,35,"english","Yes","m","f","Some statements could have been considered sarcastic, but without hearing it spoken, I can&quotechart be sure. A fair price is not less than ten cents per minute of work. Thank you :)",9.24805
 "6110",234,21535,"M","F","Grace visited her sister","suggest","Grace loves her sister","factH","9","C",0.51,27,35,"english","Yes","m","f","Some statements could have been considered sarcastic, but without hearing it spoken, I can&quotechart be sure. A fair price is not less than ten cents per minute of work. Thank you :)",9.24805
+"6111",235,18674,NA,"M","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.03,2,46,"English","Yes","m","m","",3.91871666666667
+"6112",235,11917,"F","M","Jayden rented a car","discover","Jayden&quotechars car is in the shop","factH","14","NonProj",0.96,3,46,"English","Yes","m","m","",3.91871666666667
+"6113",235,15681,"M","F","Zoe calculated the tip","hear","Zoe is a math major","factH","10","C",0.86,4,46,"English","Yes","m","m","",3.91871666666667
+"6114",235,17543,"F","F","Danny ate the last cupcake","see","Danny is a diabetic","factL","11","NonProj",0.75,5,46,"English","Yes","m","m","",3.91871666666667
+"6115",235,24594,NA,"F","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.38,6,46,"English","Yes","m","m","",3.91871666666667
+"6116",235,14943,"F","F","Jackson ran 10 miles","announce","Jackson is obese","factL","13","C",0.76,7,46,"English","Yes","m","m","",3.91871666666667
+"6117",235,19942,"M","F","Emily bought a car yesterday","pretend","Emily never has any money","factL","8","NonProj",0.72,8,46,"English","Yes","m","m","",3.91871666666667
+"6118",235,2606,"M","M","Olivia sleeps until noon","prove","Olivia has two small children","factL","4","C",0.63,9,46,"English","Yes","m","m","",3.91871666666667
+"6119",235,4344,"M","M","Isabella ate a steak on Sunday","demonstrate","Isabella is a vegetarian","factL","7","C",0.6,10,46,"English","Yes","m","m","",3.91871666666667
+"6120",235,11398,"F","F","Tony had a drink last night","be_right_that","Tony really likes to party with his friends","factH","15","C",0.37,11,46,"English","Yes","m","m","",3.91871666666667
+"6121",235,2882,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.64,12,46,"English","Yes","m","m","",3.91871666666667
+"6122",235,3625,"F","M","Owen shoveled snow last winter","annoyed","Owen lives in Chicago","factH","17","NonProj",0.65,13,46,"English","Yes","m","m","",3.91871666666667
+"6123",235,2853,"F","F","Charley speaks Spanish","reveal","Charley lives in Korea","factL","20","NonProj",0.72,14,46,"English","Yes","m","m","",3.91871666666667
+"6124",235,5974,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.64,15,46,"English","Yes","m","m","",3.91871666666667
+"6125",235,1906,"F","M","Julian dances salsa","inform_Sam","Julian is Cuban","factH","18","C",0.4,16,46,"English","Yes","m","m","",3.91871666666667
+"6126",235,2941,NA,"M","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.65,17,46,"English","Yes","m","m","",3.91871666666667
+"6127",235,2666,NA,"M","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.69,18,46,"English","Yes","m","m","",3.91871666666667
+"6128",235,2281,"M","M","Mary is pregnant","say","Mary is a middle school student","factL","1","C",0.57,19,46,"English","Yes","m","m","",3.91871666666667
+"6129",235,5371,"M","F","Emma studied on Saturday morning","confirm","Emma is in first grade","factL","3","C",0.68,20,46,"English","Yes","m","m","",3.91871666666667
+"6130",235,2883,"F","M","Jon walks to work","confess","Jon lives 2 blocks away from work","factH","19","C",0.27,21,46,"English","Yes","m","m","",3.91871666666667
+"6131",235,5821,"F","M","Josh learned to ride a bike yesterday","know","Josh is a 5-year old boy","factH","16","NonProj",0.71,22,46,"English","Yes","m","m","",3.91871666666667
+"6132",235,3841,"M","F","Sophia got a tattoo","think","Sophia is a hipster","factH","5","NonProj",0.75,23,46,"English","Yes","m","m","",3.91871666666667
+"6133",235,2370,"F","F","Frank got a cat","admit","Frank is allergic to cats","factL","12","C",0.54,24,46,"English","Yes","m","m","",3.91871666666667
+"6134",235,2291,"M","F","Grace visited her sister","establish","Grace loves her sister","factH","9","NonProj",0.37,25,46,"English","Yes","m","m","",3.91871666666667
+"6135",235,2764,"M","F","Mia drank 2 cocktails last night","acknowledge","Mia is a nun","factL","6","C",0.68,26,46,"English","Yes","m","m","",3.91871666666667
+"6136",235,2577,"M","F","Josie went on vacation to France","suggest","Josie loves France","factH","2","C",0.69,27,46,"English","Yes","m","m","",3.91871666666667
 "6137",236,10475,"M","F","Grace visited her sister","think","Grace loves her sister","factH","9","NonProj",0,2,32,"ENGLISH","Yes","m","f","",3.6722
 "6138",236,7975,"F","F","Jayden rented a car","annoyed","Jayden doesn&quotechart have a driver&quotechars license","factL","14","NonProj",0,3,32,"ENGLISH","Yes","m","f","",3.6722
 "6139",236,14263,"M","F","Mary is pregnant","reveal","Mary is taking a prenatal yoga class","factH","1","NonProj",0.85,4,32,"ENGLISH","Yes","m","f","",3.6722
@@ -5303,6 +5797,32 @@
 "6212",238,8695,"F","M","Tony had a drink last night","confirm","Tony really likes to party with his friends","factH","15","C",0.36,25,29,"english","Yes","m","m","",5.80476666666667
 "6213",238,9888,"M","M","Emma studied on Saturday morning","confess","Emma is in first grade","factL","3","C",0.75,26,29,"english","Yes","m","m","",5.80476666666667
 "6214",238,10992,"F","F","Josh learned to ride a bike yesterday","reveal","Josh is a 75-year old man","factL","16","NonProj",0.73,27,29,"english","Yes","m","m","",5.80476666666667
+"6215",239,14021,"M","M","Mia drank 2 cocktails last night","say","Mia is a nun","factL","6","C",0.03,2,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6216",239,9934,"F","F","Jayden rented a car","be_right_that","Jayden doesn&quotechart have a driver&quotechars license","factL","14","C",0.02,3,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6217",239,6295,"F","M","Owen shoveled snow last winter","confirm","Owen lives in Chicago","factH","17","C",0.97,4,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6218",239,8208,"F","F","Frank got a cat","know","Frank has always wanted a pet","factH","12","NonProj",0.98,5,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6219",239,8015,"F","F","Jackson ran 10 miles","confess","Jackson is obese","factL","13","C",0.24,6,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6220",239,7876,"M","M","Olivia sleeps until noon","announce","Olivia has two small children","factL","4","C",0.01,7,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6221",239,6351,"F","F","Charley speaks Spanish","pretend","Charley lives in Mexico","factH","20","NonProj",1,8,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6222",239,6381,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.76,9,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6223",239,6443,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.88,10,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6224",239,9423,"M","F","Isabella ate a steak on Sunday","inform_Sam","Isabella is from Argentina","factH","7","C",0.11,11,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6225",239,8488,"F","M","Josh learned to ride a bike yesterday","think","Josh is a 5-year old boy","factH","16","NonProj",0.67,12,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6226",239,7043,"M","M","Mary is pregnant","reveal","Mary is taking a prenatal yoga class","factH","1","NonProj",0.98,13,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6227",239,6947,"M","M","Grace visited her sister","hear","Grace loves her sister","factH","9","C",0.93,14,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6228",239,5931,NA,"F","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.19,15,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6229",239,7395,"M","M","Josie went on vacation to France","discover","Josie doesn&quotechart have a passport","factL","2","NonProj",0.03,16,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6230",239,7229,"M","F","Sophia got a tattoo","establish","Sophia is a high end fashion model","factL","5","NonProj",0.08,17,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6231",239,6469,"M","F","Emily bought a car yesterday","acknowledge","Emily has been saving for a year","factH","8","C",0.97,18,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6232",239,7160,NA,"M","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.15,19,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6233",239,8223,"M","F","Emma studied on Saturday morning","admit","Emma is in first grade","factL","3","C",0.4,20,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6234",239,8423,"M","M","Zoe calculated the tip","see","Zoe is 5 years old","factL","10","NonProj",0,21,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6235",239,7156,"F","F","Tony had a drink last night","demonstrate","Tony really likes to party with his friends","factH","15","C",0.99,22,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6236",239,6422,"F","F","Julian dances salsa","prove","Julian is German","factL","18","C",0.04,23,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6237",239,6865,"F","F","Danny ate the last cupcake","suggest","Danny is a diabetic","factL","11","C",0.15,24,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6238",239,5231,NA,"M","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.97,25,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6239",239,5859,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.14,26,34,"English","Yes","m","f","Easy survey. ",5.41665
+"6240",239,8881,"F","F","Jon walks to work","annoyed","Jon lives 2 blocks away from work","factH","19","NonProj",0.92,27,34,"English","Yes","m","f","Easy survey. ",5.41665
 "6241",240,11965,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0,2,33,"English","Yes","m","m","",6.19133333333333
 "6242",240,12633,"M","M","Sophia got a tattoo","suggest","Sophia is a high end fashion model","factL","5","C",0.1,3,33,"English","Yes","m","m","",6.19133333333333
 "6243",240,9225,NA,"M","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.73,4,33,"English","Yes","m","m","",6.19133333333333
@@ -5485,6 +6005,32 @@
 "6420",246,8766,"F","M","Jayden rented a car","be_right_that","Jayden doesn&quotechart have a driver&quotechars license","factL","14","C",0.1,25,32,"english","Yes","m","f","",3.26408333333333
 "6421",246,5249,"M","M","Zoe calculated the tip","prove","Zoe is a math major","factH","10","C",0.57,26,32,"english","Yes","m","f","",3.26408333333333
 "6422",246,5003,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.31,27,32,"english","Yes","m","f","",3.26408333333333
+"6423",247,199342,"M","M","Sophia got a tattoo","confirm","Sophia is a hipster","factH","5","C",0.59,2,29,"English","Yes","m","m","",9.5977
+"6424",247,2727,NA,"M","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.4,3,29,"English","Yes","m","m","",9.5977
+"6425",247,1208,"M","F","Josie went on vacation to France","confess","Josie loves France","factH","2","C",0.79,4,29,"English","Yes","m","m","",9.5977
+"6426",247,1072,"M","M","Emily bought a car yesterday","announce","Emily has been saving for a year","factH","8","C",0.64,5,29,"English","Yes","m","m","",9.5977
+"6427",247,1239,"F","M","Jayden rented a car","be_right_that","Jayden doesn&quotechart have a driver&quotechars license","factL","14","C",0.38,6,29,"English","Yes","m","m","",9.5977
+"6428",247,952,"F","F","Owen shoveled snow last winter","acknowledge","Owen lives in Chicago","factH","17","C",0.36,7,29,"English","Yes","m","m","",9.5977
+"6429",247,1224,NA,"F","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.68,8,29,"English","Yes","m","m","",9.5977
+"6430",247,1439,"F","F","Jackson ran 10 miles","see","Jackson is training for a marathon","factH","13","NonProj",0.69,9,29,"English","Yes","m","m","",9.5977
+"6431",247,1169,"F","M","Frank got a cat","prove","Frank is allergic to cats","factL","12","C",0.3,10,29,"English","Yes","m","m","",9.5977
+"6432",247,1360,"F","M","Julian dances salsa","hear","Julian is German","factL","18","C",0.69,11,29,"English","Yes","m","m","",9.5977
+"6433",247,1096,"M","F","Emma studied on Saturday morning","know","Emma is in first grade","factL","3","NonProj",0.34,12,29,"English","Yes","m","m","",9.5977
+"6434",247,864,"M","M","Grace visited her sister","establish","Grace hates her sister","factL","9","NonProj",0.3,13,29,"English","Yes","m","m","",9.5977
+"6435",247,1224,"M","F","Isabella ate a steak on Sunday","reveal","Isabella is from Argentina","factH","7","NonProj",0.66,14,29,"English","Yes","m","m","",9.5977
+"6436",247,1072,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.32,15,29,"English","Yes","m","m","",9.5977
+"6437",247,1297,"M","F","Mia drank 2 cocktails last night","think","Mia is a nun","factL","6","NonProj",0.27,16,29,"English","Yes","m","m","",9.5977
+"6438",247,784,"M","F","Zoe calculated the tip","pretend","Zoe is a math major","factH","10","NonProj",0.79,17,29,"English","Yes","m","m","",9.5977
+"6439",247,904,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.64,18,29,"English","Yes","m","m","",9.5977
+"6440",247,904,"F","M","Josh learned to ride a bike yesterday","discover","Josh is a 75-year old man","factL","16","NonProj",0.39,19,29,"English","Yes","m","m","",9.5977
+"6441",247,1040,"F","M","Charley speaks Spanish","demonstrate","Charley lives in Mexico","factH","20","C",0.61,20,29,"English","Yes","m","m","",9.5977
+"6442",247,888,NA,"F","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.78,21,29,"English","Yes","m","m","",9.5977
+"6443",247,1112,"F","F","Danny ate the last cupcake","annoyed","Danny is a diabetic","factL","11","NonProj",0.34,22,29,"English","Yes","m","m","",9.5977
+"6444",247,1328,NA,"M","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.38,23,29,"English","Yes","m","m","",9.5977
+"6445",247,1128,"F","F","Jon walks to work","admit","Jon lives 10 miles away from work","factL","19","C",0.77,24,29,"English","Yes","m","m","",9.5977
+"6446",247,1216,"M","F","Olivia sleeps until noon","inform_Sam","Olivia works the third shift","factH","4","C",0.65,25,29,"English","Yes","m","m","",9.5977
+"6447",247,129028,"F","F","Tony had a drink last night","say","Tony has been sober for 20 years","factL","15","C",0.65,26,29,"English","Yes","m","m","",9.5977
+"6448",247,980,"M","M","Mary is pregnant","suggest","Mary is taking a prenatal yoga class","factH","1","C",0.37,27,29,"English","Yes","m","m","",9.5977
 "6449",248,30259,"F","M","Jayden rented a car","annoyed","Jayden doesn&quotechart have a driver&quotechars license","factL","14","NonProj",0.9,2,30,"english","Yes","m","m","",26.1832833333333
 "6450",248,13530,"M","M","Josie went on vacation to France","know","Josie loves France","factH","2","NonProj",0.53,3,30,"english","Yes","m","m","",26.1832833333333
 "6451",248,13269,"M","M","Mary is pregnant","be_right_that","Mary is a middle school student","factL","1","C",0.01,4,30,"english","Yes","m","m","",26.1832833333333
@@ -5589,6 +6135,32 @@
 "6602",253,2761,"F","M","Jon walks to work","reveal","Jon lives 2 blocks away from work","factH","19","NonProj",0.91,25,42,"english","Yes","m","f",".75",8.97301666666667
 "6603",253,4879,"F","F","Owen shoveled snow last winter","pretend","Owen lives in Chicago","factH","17","NonProj",0,26,42,"english","Yes","m","f",".75",8.97301666666667
 "6604",253,3376,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0,27,42,"english","Yes","m","f",".75",8.97301666666667
+"6605",254,12398,"F","F","Jackson ran 10 miles","know","Jackson is training for a marathon","factH","13","NonProj",0.46,2,32,"ENGLISH","Yes","m","m","",4.225
+"6606",254,3703,"M","M","Mia drank 2 cocktails last night","see","Mia is a college student","factH","6","NonProj",0.52,3,32,"ENGLISH","Yes","m","m","",4.225
+"6607",254,4375,"M","M","Grace visited her sister","acknowledge","Grace hates her sister","factL","9","C",0.27,4,32,"ENGLISH","Yes","m","m","",4.225
+"6608",254,8305,"M","F","Emily bought a car yesterday","announce","Emily has been saving for a year","factH","8","C",0,5,32,"ENGLISH","Yes","m","m","",4.225
+"6609",254,12504,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.3,6,32,"ENGLISH","Yes","m","m","",4.225
+"6610",254,4920,NA,"M","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.83,7,32,"ENGLISH","Yes","m","m","",4.225
+"6611",254,3816,"M","M","Emma studied on Saturday morning","confirm","Emma is in first grade","factL","3","C",0.73,8,32,"ENGLISH","Yes","m","m","",4.225
+"6612",254,4959,"M","M","Isabella ate a steak on Sunday","think","Isabella is a vegetarian","factL","7","NonProj",0.02,9,32,"ENGLISH","Yes","m","m","",4.225
+"6613",254,8169,NA,"M","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.96,10,32,"ENGLISH","Yes","m","m","",4.225
+"6614",254,102719,"F","M","Frank got a cat","say","Frank has always wanted a pet","factH","12","C",0.77,11,32,"ENGLISH","Yes","m","m","",4.225
+"6615",254,9034,"F","F","Julian dances salsa","demonstrate","Julian is German","factL","18","C",0.51,12,32,"ENGLISH","Yes","m","m","",4.225
+"6616",254,2641,"F","F","Josh learned to ride a bike yesterday","be_right_that","Josh is a 5-year old boy","factH","16","C",0.51,13,32,"ENGLISH","Yes","m","m","",4.225
+"6617",254,3176,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.56,14,32,"ENGLISH","Yes","m","m","",4.225
+"6618",254,2766,"F","F","Danny ate the last cupcake","annoyed","Danny loves cake","factH","11","NonProj",0.6,15,32,"ENGLISH","Yes","m","m","",4.225
+"6619",254,3085,"M","F","Olivia sleeps until noon","discover","Olivia works the third shift","factH","4","NonProj",0.63,16,32,"ENGLISH","Yes","m","m","",4.225
+"6620",254,3496,"F","F","Jon walks to work","pretend","Jon lives 10 miles away from work","factL","19","NonProj",0.56,17,32,"ENGLISH","Yes","m","m","",4.225
+"6621",254,7035,"M","M","Zoe calculated the tip","confess","Zoe is 5 years old","factL","10","C",0.53,18,32,"ENGLISH","Yes","m","m","",4.225
+"6622",254,1932,"M","M","Josie went on vacation to France","hear","Josie doesn&quotechart have a passport","factL","2","C",0.52,19,32,"ENGLISH","Yes","m","m","",4.225
+"6623",254,2736,"M","F","Sophia got a tattoo","reveal","Sophia is a high end fashion model","factL","5","NonProj",0.56,20,32,"ENGLISH","Yes","m","m","",4.225
+"6624",254,2213,"F","M","Owen shoveled snow last winter","inform_Sam","Owen lives in New Orleans","factL","17","C",0.59,21,32,"ENGLISH","Yes","m","m","",4.225
+"6625",254,1986,"M","M","Mary is pregnant","admit","Mary is taking a prenatal yoga class","factH","1","C",0.6,22,32,"ENGLISH","Yes","m","m","",4.225
+"6626",254,2532,"F","F","Tony had a drink last night","prove","Tony really likes to party with his friends","factH","15","C",0.83,23,32,"ENGLISH","Yes","m","m","",4.225
+"6627",254,2801,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.66,24,32,"ENGLISH","Yes","m","m","",4.225
+"6628",254,1752,"F","F","Charley speaks Spanish","establish","Charley lives in Korea","factL","20","NonProj",0.78,25,32,"ENGLISH","Yes","m","m","",4.225
+"6629",254,7830,"F","F","Jayden rented a car","suggest","Jayden&quotechars car is in the shop","factH","14","C",0.71,26,32,"ENGLISH","Yes","m","m","",4.225
+"6630",254,2765,NA,"M","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.7,27,32,"ENGLISH","Yes","m","m","",4.225
 "6631",255,11897,"M","F","Isabella ate a steak on Sunday","inform_Sam","Isabella is from Argentina","factH","7","C",0.79,2,34,"English","Yes","m","m","",5.12423333333333
 "6632",255,7134,"F","F","Jon walks to work","announce","Jon lives 10 miles away from work","factL","19","C",0.74,3,34,"English","Yes","m","m","",5.12423333333333
 "6633",255,6151,"M","F","Mia drank 2 cocktails last night","confirm","Mia is a college student","factH","6","C",0.27,4,34,"English","Yes","m","m","",5.12423333333333
@@ -5719,6 +6291,32 @@
 "6758",259,7152,"M","F","Olivia sleeps until noon","know","Olivia has two small children","factL","4","NonProj",0.15,25,28,"English","Yes","m","f","I think it was fair.",3.46688333333333
 "6759",259,5431,NA,"F","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.03,26,28,"English","Yes","m","f","I think it was fair.",3.46688333333333
 "6760",259,5003,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.54,27,28,"English","Yes","m","f","I think it was fair.",3.46688333333333
+"6761",260,38330,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.22,2,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6762",260,33503,"F","F","Josh learned to ride a bike yesterday","discover","Josh is a 5-year old boy","factH","16","NonProj",0.34,3,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6763",260,9284,"F","M","Tony had a drink last night","prove","Tony really likes to party with his friends","factH","15","C",0.43,4,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6764",260,7474,"F","F","Owen shoveled snow last winter","demonstrate","Owen lives in New Orleans","factL","17","C",0.14,5,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6765",260,9933,"F","M","Jackson ran 10 miles","be_right_that","Jackson is obese","factL","13","C",0.24,6,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6766",260,10550,"F","F","Jayden rented a car","suggest","Jayden doesn&quotechart have a driver&quotechars license","factL","14","C",0.09,7,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6767",260,12068,"M","M","Zoe calculated the tip","admit","Zoe is a math major","factH","10","C",0.62,8,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6768",260,10548,"M","M","Emily bought a car yesterday","say","Emily has been saving for a year","factH","8","C",0.66,9,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6769",260,59700,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.89,10,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6770",260,8702,"F","F","Jon walks to work","know","Jon lives 10 miles away from work","factL","19","NonProj",0.47,11,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6771",260,17783,"M","M","Olivia sleeps until noon","acknowledge","Olivia has two small children","factL","4","C",0.09,12,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6772",260,45864,"M","F","Isabella ate a steak on Sunday","hear","Isabella is a vegetarian","factL","7","C",0.03,13,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6773",260,9684,NA,"F","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.66,14,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6774",260,16491,"M","M","Emma studied on Saturday morning","annoyed","Emma is in first grade","factL","3","NonProj",0.03,15,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6775",260,20171,"M","F","Mia drank 2 cocktails last night","see","Mia is a nun","factL","6","NonProj",0.09,16,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6776",260,15554,"M","F","Mary is pregnant","confirm","Mary is taking a prenatal yoga class","factH","1","C",0.84,17,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6777",260,13223,"F","M","Frank got a cat","pretend","Frank is allergic to cats","factL","12","NonProj",0.09,18,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6778",260,7874,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.77,19,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6779",260,8835,"F","M","Charley speaks Spanish","establish","Charley lives in Mexico","factH","20","NonProj",0.76,20,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6780",260,5804,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.22,21,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6781",260,109527,"M","F","Josie went on vacation to France","confess","Josie loves France","factH","2","C",0.73,22,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6782",260,10813,"F","F","Danny ate the last cupcake","reveal","Danny is a diabetic","factL","11","NonProj",0.18,23,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6783",260,3890,"M","F","Sophia got a tattoo","think","Sophia is a hipster","factH","5","NonProj",0.83,24,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6784",260,9933,"M","M","Grace visited her sister","announce","Grace loves her sister","factH","9","C",0.84,25,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6785",260,8878,"F","M","Julian dances salsa","inform_Sam","Julian is Cuban","factH","18","C",0.76,26,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
+"6786",260,3764,NA,"M","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.81,27,31,"English","Yes","m","f","All was clear. Pay was fair. ",9.87633333333333
 "6787",261,21012,NA,"M","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.03,2,56,"English","Yes","m","f","I think the pay was fair.",9.56383333333333
 "6788",261,35308,"F","F","Owen shoveled snow last winter","acknowledge","Owen lives in Chicago","factH","17","C",0.77,3,56,"English","Yes","m","f","I think the pay was fair.",9.56383333333333
 "6789",261,15943,"F","M","Danny ate the last cupcake","prove","Danny is a diabetic","factL","11","C",0.13,4,56,"English","Yes","m","f","I think the pay was fair.",9.56383333333333
@@ -6343,6 +6941,32 @@ The price paid is fair since it didn&quotechart take too long.  Took me around s
 "7460",286,15394,NA,"M","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0,25,35,"English","Yes","m","f","I think this was a good price. I think the last question could be confusing. There are children who are gifted that could complete math problems at a young age. However, this also could be impossible. Sometimes questions can be misinterpreted if you see it on paper or a screen and don&quotechart hear the person&quotechars voice.",16.46335
 "7461",286,10632,"F","M","Danny ate the last cupcake","say","Danny is a diabetic","factL","11","C",0.02,26,35,"English","Yes","m","f","I think this was a good price. I think the last question could be confusing. There are children who are gifted that could complete math problems at a young age. However, this also could be impossible. Sometimes questions can be misinterpreted if you see it on paper or a screen and don&quotechart hear the person&quotechars voice.",16.46335
 "7462",286,20255,"M","F","Zoe calculated the tip","know","Zoe is 5 years old","factL","10","NonProj",0.84,27,35,"English","Yes","m","f","I think this was a good price. I think the last question could be confusing. There are children who are gifted that could complete math problems at a young age. However, this also could be impossible. Sometimes questions can be misinterpreted if you see it on paper or a screen and don&quotechart hear the person&quotechars voice.",16.46335
+"7463",287,5547,"F","F","Jackson ran 10 miles","discover","Jackson is training for a marathon","factH","13","NonProj",0.34,2,53,"english","No","m","m","",1.21105
+"7464",287,1343,"F","M","Julian dances salsa","suggest","Julian is Cuban","factH","18","C",0.55,3,53,"english","No","m","m","",1.21105
+"7465",287,913,"M","F","Olivia sleeps until noon","prove","Olivia has two small children","factL","4","C",0.43,4,53,"english","No","m","m","",1.21105
+"7466",287,1055,NA,"F","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.81,5,53,"english","No","m","m","",1.21105
+"7467",287,1040,"M","M","Emma studied on Saturday morning","demonstrate","Emma is in first grade","factL","3","C",0.43,6,53,"english","No","m","m","",1.21105
+"7468",287,2841,"M","F","Mary is pregnant","hear","Mary is taking a prenatal yoga class","factH","1","C",0.57,7,53,"english","No","m","m","",1.21105
+"7469",287,1311,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.4,8,53,"english","No","m","m","",1.21105
+"7470",287,1525,"F","F","Danny ate the last cupcake","confirm","Danny is a diabetic","factL","11","C",0.57,9,53,"english","No","m","m","",1.21105
+"7471",287,991,"M","F","Grace visited her sister","announce","Grace hates her sister","factL","9","C",0.3,10,53,"english","No","m","m","",1.21105
+"7472",287,1317,"M","M","Emily bought a car yesterday","see","Emily never has any money","factL","8","NonProj",0.7,11,53,"english","No","m","m","",1.21105
+"7473",287,2692,NA,"M","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.68,12,53,"english","No","m","m","",1.21105
+"7474",287,1640,"M","M","Mia drank 2 cocktails last night","reveal","Mia is a college student","factH","6","NonProj",0.68,13,53,"english","No","m","m","",1.21105
+"7475",287,1664,"M","M","Isabella ate a steak on Sunday","annoyed","Isabella is from Argentina","factH","7","NonProj",0.45,14,53,"english","No","m","m","",1.21105
+"7476",287,2368,"F","F","Josh learned to ride a bike yesterday","inform_Sam","Josh is a 75-year old man","factL","16","C",0.71,15,53,"english","No","m","m","",1.21105
+"7477",287,2120,"M","F","Sophia got a tattoo","know","Sophia is a hipster","factH","5","NonProj",0.94,16,53,"english","No","m","m","",1.21105
+"7478",287,2324,"F","M","Owen shoveled snow last winter","acknowledge","Owen lives in Chicago","factH","17","C",0.23,17,53,"english","No","m","m","",1.21105
+"7479",287,2980,"F","F","Jayden rented a car","establish","Jayden&quotechars car is in the shop","factH","14","NonProj",0.34,18,53,"english","No","m","m","",1.21105
+"7480",287,1655,NA,"M","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.49,19,53,"english","No","m","m","",1.21105
+"7481",287,1655,"M","F","Zoe calculated the tip","think","Zoe is a math major","factH","10","NonProj",0.6,20,53,"english","No","m","m","",1.21105
+"7482",287,2072,"F","F","Tony had a drink last night","say","Tony really likes to party with his friends","factH","15","C",0.78,21,53,"english","No","m","m","",1.21105
+"7483",287,1456,"F","M","Jon walks to work","pretend","Jon lives 10 miles away from work","factL","19","NonProj",0.35,22,53,"english","No","m","m","",1.21105
+"7484",287,2556,"F","M","Frank got a cat","admit","Frank is allergic to cats","factL","12","C",0.25,23,53,"english","No","m","m","",1.21105
+"7485",287,1299,"M","M","Josie went on vacation to France","be_right_that","Josie doesn&quotechart have a passport","factL","2","C",0.52,24,53,"english","No","m","m","",1.21105
+"7486",287,1105,"F","F","Charley speaks Spanish","confess","Charley lives in Korea","factL","20","C",0.46,25,53,"english","No","m","m","",1.21105
+"7487",287,2088,NA,"M","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.62,26,53,"english","No","m","m","",1.21105
+"7488",287,2877,NA,"F","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.51,27,53,"english","No","m","m","",1.21105
 "7489",288,46245,"M","M","Zoe calculated the tip","admit","Zoe is 5 years old","factL","10","C",0.01,2,48,"English","Yes","m","m","",18.8580333333333
 "7490",288,39917,"M","F","Josie went on vacation to France","demonstrate","Josie doesn&quotechart have a passport","factL","2","C",0.01,3,48,"English","Yes","m","m","",18.8580333333333
 "7491",288,15895,"M","M","Olivia sleeps until noon","confirm","Olivia has two small children","factL","4","C",0.01,4,48,"English","Yes","m","m","",18.8580333333333
@@ -6603,6 +7227,32 @@ The price paid is fair since it didn&quotechart take too long.  Took me around s
 "7746",297,5488,"F","M","Frank got a cat","be_right_that","Frank is allergic to cats","factL","12","C",0.26,25,39,"English","Yes","m","f","",4.13193333333333
 "7747",297,3648,"F","M","Jon walks to work","confess","Jon lives 2 blocks away from work","factH","19","C",0.63,26,39,"English","Yes","m","f","",4.13193333333333
 "7748",297,4943,"F","F","Julian dances salsa","demonstrate","Julian is Cuban","factH","18","C",0.55,27,39,"English","Yes","m","f","",4.13193333333333
+"7749",298,14916,"F","M","Frank got a cat","pretend","Frank has always wanted a pet","factH","12","NonProj",0.76,2,50,"english","No","m","f","no comments",1.9275
+"7750",298,1518,"F","F","Tony had a drink last night","discover","Tony really likes to party with his friends","factH","15","NonProj",0.58,3,50,"english","No","m","f","no comments",1.9275
+"7751",298,1708,"M","F","Zoe calculated the tip","say","Zoe is a math major","factH","10","C",0.39,4,50,"english","No","m","f","no comments",1.9275
+"7752",298,1560,"F","F","Charley speaks Spanish","annoyed","Charley lives in Korea","factL","20","NonProj",0.61,5,50,"english","No","m","f","no comments",1.9275
+"7753",298,2520,NA,"F","Vanessa is good at math","control","Vanessa won a prize at school",NA,"control4","control",0.74,6,50,"english","No","m","f","no comments",1.9275
+"7754",298,1411,NA,"F","Hendrick&quotechars car was expensive","control","Hendrick just bought a car",NA,"control6","control",0.36,7,50,"english","No","m","f","no comments",1.9275
+"7755",298,1302,"F","M","Danny ate the last cupcake","establish","Danny loves cake","factH","11","NonProj",0.58,8,50,"english","No","m","f","no comments",1.9275
+"7756",298,1489,NA,"M","Madison had a baby","control","Trish sent Madison a card",NA,"control5","control",0.65,9,50,"english","No","m","f","no comments",1.9275
+"7757",298,4352,NA,"F","Todd played football in high school","control","Todd goes to the gym 3 times a week",NA,"control3","control",0.71,10,50,"english","No","m","f","no comments",1.9275
+"7758",298,2560,"M","M","Grace visited her sister","be_right_that","Grace loves her sister","factH","9","C",0.62,11,50,"english","No","m","f","no comments",1.9275
+"7759",298,1252,"F","M","Jayden rented a car","demonstrate","Jayden doesn&quotechart have a driver&quotechars license","factL","14","C",0.41,12,50,"english","No","m","f","no comments",1.9275
+"7760",298,1427,"F","M","Jon walks to work","see","Jon lives 2 blocks away from work","factH","19","NonProj",0.51,13,50,"english","No","m","f","no comments",1.9275
+"7761",298,2314,"M","M","Mary is pregnant","think","Mary is taking a prenatal yoga class","factH","1","NonProj",0.67,14,50,"english","No","m","f","no comments",1.9275
+"7762",298,2276,"M","M","Mia drank 2 cocktails last night","hear","Mia is a college student","factH","6","C",0.68,15,50,"english","No","m","f","no comments",1.9275
+"7763",298,2195,"M","M","Emma studied on Saturday morning","know","Emma is in law school","factH","3","NonProj",0.33,16,50,"english","No","m","f","no comments",1.9275
+"7764",298,8566,"F","F","Jackson ran 10 miles","acknowledge","Jackson is obese","factL","13","C",0.61,17,50,"english","No","m","f","no comments",1.9275
+"7765",298,5648,"M","M","Emily bought a car yesterday","confirm","Emily never has any money","factL","8","C",0.47,18,50,"english","No","m","f","no comments",1.9275
+"7766",298,4418,"F","M","Julian dances salsa","announce","Julian is Cuban","factH","18","C",0.63,19,50,"english","No","m","f","no comments",1.9275
+"7767",298,1535,"F","F","Josh learned to ride a bike yesterday","confess","Josh is a 75-year old man","factL","16","C",0.39,20,50,"english","No","m","f","no comments",1.9275
+"7768",298,2149,"M","F","Olivia sleeps until noon","admit","Olivia has two small children","factL","4","C",0.35,21,50,"english","No","m","f","no comments",1.9275
+"7769",298,1827,"M","M","Isabella ate a steak on Sunday","prove","Isabella is a vegetarian","factL","7","C",0.68,22,50,"english","No","m","f","no comments",1.9275
+"7770",298,7577,"M","F","Josie went on vacation to France","reveal","Josie doesn&quotechart have a passport","factL","2","NonProj",0.67,23,50,"english","No","m","f","no comments",1.9275
+"7771",298,1406,NA,"M","Zack is coming to the meeting tomorrow","control","Zack is a member of the golf club",NA,"control1","control",0.6,24,50,"english","No","m","f","no comments",1.9275
+"7772",298,1898,"M","M","Sophia got a tattoo","inform_Sam","Sophia is a high end fashion model","factL","5","C",0.37,25,50,"english","No","m","f","no comments",1.9275
+"7773",298,1638,"F","F","Owen shoveled snow last winter","suggest","Owen lives in New Orleans","factL","17","C",0.69,26,50,"english","No","m","f","no comments",1.9275
+"7774",298,4626,NA,"M","Mary&quotechars aunt is sick","control","Mary visited her aunt on Sunday",NA,"control2","control",0.14,27,50,"english","No","m","f","no comments",1.9275
 "7775",299,16934,"F","M","Owen shoveled snow last winter","say","Owen lives in New Orleans","factL","17","C",0,2,44,"English","Yes","m","m","85 cents was fair. I was unsure because I thought the instructions mentioned ""questions you already know the answers to"" and assumed you meant there would be some attention checks and I couldn&quotechart find any. For example, questions like Known fact: ""Bob played basketball Monday."" Tom asked: Is Bob a professional athlete?"" Question: Did Bob play basketball on Monday? but didn&quotechart see any like that.",8.1216
 "7776",299,12751,"M","F","Josie went on vacation to France","know","Josie doesn&quotechart have a passport","factL","2","NonProj",0,3,44,"English","Yes","m","m","85 cents was fair. I was unsure because I thought the instructions mentioned ""questions you already know the answers to"" and assumed you meant there would be some attention checks and I couldn&quotechart find any. For example, questions like Known fact: ""Bob played basketball Monday."" Tom asked: Is Bob a professional athlete?"" Question: Did Bob play basketball on Monday? but didn&quotechart see any like that.",8.1216
 "7777",299,14404,"F","F","Charley speaks Spanish","announce","Charley lives in Mexico","factH","20","C",0.95,4,44,"English","Yes","m","m","85 cents was fair. I was unsure because I thought the instructions mentioned ""questions you already know the answers to"" and assumed you meant there would be some attention checks and I couldn&quotechart find any. For example, questions like Known fact: ""Bob played basketball Monday."" Tom asked: Is Bob a professional athlete?"" Question: Did Bob play basketball on Monday? but didn&quotechart see any like that.",8.1216

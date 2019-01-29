@@ -11,6 +11,7 @@
 \usepackage{booktabs}
 \usepackage{tikz}
 \usepackage{subcaption}
+\usepackage{wrapfig}
 
 \usepackage[normalem]{ulem}
 
@@ -80,21 +81,20 @@
 \vspace*{-.3cm}
 
 \noindent
-\citealt*{tbd-variability} ({\em Journal of Semantics}) showed that the projectivity of projective content, like the content of the complement of factive {\em know}, is influenced by its lexical content, e.g., whether the complement is {\em Sam has a new hat} or {\em Martha has a new BMW}. The authors hypothesized that ``the projectivity of content may depend on the prior probability'' of the content, such that content is more projective the higher its prior probability (p.500). This paper provides experimental support for this hypothesis for the content of the complement of both factive and non-factive predicates (like {\em think}). We argue that this finding provides support for constraint-based projection analyses that derive the projectivity of utterance content from the integration of multiple cues, including prior event probability and the meanings of clause-embedding predicates.
+A hallmark of the content of the complement (CC) of factive predicates like {\em know}  is that it projects. For example, in an utterance of the sentence \emph{Does Jane know that Sam has a new hat}, the speaker is typically taken to be committed to Sam having a new hat, despite the predicate and the CC being embedded under an entailment-canceling operator (the polar interrogative). The same is typically not true when replacing \emph{know} with a non-factive predicate like \emph{think}. However,  \citealt*{tbd-variability} ({\em Journal of Semantics})  recently showed that there is substantial variability in the projectivity of CCs. While a lot of this variability was explained by the not-at-issueness of the CC, they also found that the lexical content of the CC itself played a role: e.g., the CC \emph{Martha has a new BMW} was less likely to project than \emph{Sam has a new hat}. The authors hypothesized that the projectivity of a CC may depend on its prior subjective probability, such that a CC is more projective the higher its prior probability. The current work finds support for this hypothesis in an experimental investigation of CCs of both factive and non-factive predicates in which the prior probability of the CC was systematically manipulated. We argue that this finding provides support for constraint-based projection analyses that derive the projectivity of utterance content from the integration of multiple cues, including prior CC probability and the meanings of clause-embedding predicates.
 
 
 \noindent
-{\bf Norming study (n = 95):} Prior probability was measured for 20 contents denoted by English sentences (e.g., Julian dances salsa) given a fact that made the content more likely (e.g., Julian is from Cuba) and a fact that made the content less likely (e.g., Julian is from Germany). Prior probability was measured by asking participants for ratings, on a sliding scale from `impossible' to `definitely', about how likely a content is given a fact (e.g., Fact: Julian is from Cuba. How likely is it that Julian dances salsa?). The mean ratings were .7 for high- and .16 for low-probability contents. Fig.~\ref{f-prior}  reveals variability in prior probability among higher- and lower-probability contents.
+{\bf Prior probability norming experiment (n = 95):} Prior probability was measured for 20 contents denoted by English sentences (e.g., Julian dances salsa) given a fact that made the content more likely (e.g., Julian is from Cuba) and a fact that made it less likely (e.g., Julian is from Germany). Participants were asked how likely a content is given a fact (e.g., Fact: Julian is from Cuba. How likely is it that Julian dances salsa?) and provided ratings on a sliding scale from `impossible' (interpreted as a probability of 0) to `definitely' (interpreted as a probability of 1). The mean ratings were .7 for high- and .16 for low-probability contents, see Fig.~\ref{f-prior} for the full set of items.
 
 \noindent 
-{\bf Experiment} 
-\\
-\noindent
-\underline{Participants:} 300 participants were recruited on AMT (ages: 21-72; mean: 36; 145 women).
-\\
-\noindent
-\underline{Materials:} The 20 sentences denoting the normed contents were realized as the complements of 20 clause-embedding predicates, for a total of 400 predicate/complement combinations. These combinations were realized as polar questions with a random subject noun phrase. In the target stimuli, the 400 polar questions were combined with one of the two facts that each content was normed with, for a total of 800 target stimuli. As shown in the sample target stimulus in (\ref{stim}), the named speaker (here, Carol) was explicitly stated to be aware of the fact.
-\vspace*{-.15cm}
+{\bf Projectivity experiment (n=300):} The 20 sentences denoting the normed contents were realized as the complements of 20 clause-embedding predicates, for a total of 400 predicate/complement combinations. These combinations were realized as polar questions with a random subject noun phrase. In the target stimuli, the 400 polar questions were combined with one of the two facts that each content was normed with, for a total of 800 target stimuli. As shown in the sample target stimulus in (\ref{stim}), the named speaker (here, Carol) was explicitly stated to be aware of the fact.
+\vspace*{-.6cm}
+\begin{wrapfigure}{r}{.31\paperwidth}
+\centering
+\includegraphics[width=.32\paperwidth]{../results/1-prior/graphs/meanprobratings}
+\caption{Histogram of mean prior probability ratings for each item (i.e., content/fact combination). Color indicates whether item was coded as high or low probability in the projectivity analysis.}\label{f-prior}
+\end{wrapfigure}%
 \begin{exe}
 \ex\label{stim}
 {\bf Fact (which Carol knows):} Julian is German.  \\ 
@@ -103,32 +103,23 @@
 \vspace*{-.15cm}
 The 20 predicates included the 5 factives {\em be annoyed, know, see, discover} and {\em reveal}, as well as 15 non-factives: the content of the complement of 9 of these ({\em acknowledge, admit, announce, confess, confirm, establish, hear, inform, prove}) has been described as being able to project (e.g., \citealt{schlenker10,anand-hacquard2014,spector-egre2015,tbd-variability}), in contrast to that of the remaining 6 predicates ({\em pretend, suggest, say, think, be right, demonstrate}).
 
-\noindent
-\underline{Procedure:} Projectivity was measured with the `certain that' diagnostic, following \citealt{tbd-variability}: in (\ref{stim}), participants were asked whether Carol is certain that Julian dances salsa. Participants rated 20 target items (one for each predicate) and 6 control items used to assess whether they were attending to the task. They responded on a sliding scale from `no' (non-projection, coded as 0) to `yes' (projectivity at ceiling, coded as 1).
+
+
+\noindent Projectivity was measured with the `certain that' diagnostic, following \citealt{tbd-variability}: for (\ref{stim}), participants judged whether Carol is certain that Julian dances salsa. Participants rated 20 target items (one for each predicate) and 6 control items (as attention checks). They responded on a sliding scale from `no' (no projection, coded 0) to `yes' (maximal projection, coded 1).
+\begin{wrapfigure}{l}{.45\paperwidth}
+\centering
+\includegraphics[width=.45\paperwidth]{../results/3-projectivity/graphs/means-projectivity-by-predicate-and-facttype}
+\caption{Mean certainty rating by predicate (x-axis) and prior CC probability, with 95\% CIs; factives in green.}\label{f-proj}
+\end{wrapfigure}
 
 \noindent
-{\bf Results:} Mean certainty ratings for the content of the complement were higher when the content had a higher prior probability (mean: .5) than when the content had a lower prior probability (mean: .32). This finding supports \citetpos{tbd-variability} hypothesis that the higher the prior probability of content, the more projective it is. As shown in Fig.~\ref{f-proj}, the influence of prior probability on projectivity was found across all 20 predicates. We also observe by-predicate variability in certainty ratings:  for instance, the mean certainty ratings for factive {\em be annoyed} were higher, at .72 (high) / .53 (low), than those for factive {\em reveal}, at .55 / .37, which in turn were higher than those for non-factive {\em establish}, at .39 / .19. These findings confirm \citetpos{tbd-variability} finding that projectivity is a gradient property of utterance content.
+{\bf Results:} Mean certainty ratings for CCs were higher when the content had a higher prior probability (mean: .5) than when the content had a lower prior probability (mean: .32), as predicted by \citetpos{tbd-variability}. As shown in Fig.~\ref{f-proj}, the effect of prior CC probability on projectivity was present across all 20 predicates. We also observe by-predicate variability in certainty ratings:  for instance, the mean certainty ratings for factive {\em be annoyed} were higher, at .72 (high) / .53 (low), than those for factive {\em reveal}, at .55 / .37, which in turn were higher than those for non-factive {\em establish}, at .39 / .19. These findings replicate \citetpos{tbd-variability} finding that projectivity is a gradient property of utterance content.
+
+
 
 Linear mixed-effects model predicting certainty rating from fact (high vs.\ low prior probability) and verb, with a random intercept for participant (5520 data points)
 
-{\bf Let's talk about these models...}
 
-\begin{figure}[h!]
-
-\begin{subfigure}{.47\textwidth}
-\centering
-\includegraphics[width=.35\paperwidth]{../results/1-prior/graphs/target-ratings}
-\caption{Prior probability ratings by content and fact: means in black (95\% CIs); individual ratings in red (higher prob.) and green (lower prob.).}\label{f-prior}
-\end{subfigure}%
-\hspace*{.1cm}
-\begin{subfigure}{.47\textwidth}
-\centering
-\includegraphics[width=.4\paperwidth]{../results/3-projectivity/graphs/means-projectivity-by-predicate-and-facttype}
-\caption{Mean certainty rating by predicate and prior probability, with 95\% CIs; factives in blue.}\label{f-proj}
-\end{subfigure}
-
-\caption{Findings of norming study (a) and experiment (b)}
-\end{figure}
 
 \noindent
 {\bf Discussion}

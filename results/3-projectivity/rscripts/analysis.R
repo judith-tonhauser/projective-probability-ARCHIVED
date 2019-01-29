@@ -157,7 +157,7 @@ cd = cd %>%
 cd = left_join(cd,pmeans,by=c("fact"))
 
 head(cd)
-View(cd)
+
 
 # mean of non-projecting controls
 table(cd$verb)
@@ -184,7 +184,6 @@ names(t)
 table(t$trigger_class)
 
 head(t)
-View(t)
 
 names(t)
 table(t$itemType)
@@ -263,7 +262,7 @@ summary(model.1)
 # with interaction
 # models with more complex random effects structures did not converge?!?
 # + (1+verb|workerid) + (1|content) + (1|fact)
-model.2 = lmer(response ~ itemType * verb + (1|workerid), data=t, REML=F)
+model.2 = lmer(response ~ itemType * verb + (1+itemType|workerid) + (1|item), data=t, REML=F)
 summary(model)
 
 anova(model.1,model.2)

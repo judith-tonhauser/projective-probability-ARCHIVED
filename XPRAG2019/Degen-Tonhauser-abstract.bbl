@@ -1,17 +1,11 @@
 \newcommand{\noopsort}[1]{}\newcommand{\SortNoop}[1]{}
-\begin{thebibliography}{11}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[Abrus{\'a}n(2011)]{abrusan2011}
 Abrus{\'a}n, M{\'a}rta. 2011.
 \newblock Predicting the presuppositions of soft triggers.
 \newblock {\em Linguistics \& Philosophy\/} 34:491--535.
-
-\bibitem[Abrus{\'a}n(2016)]{abrusan2016}
-Abrus{\'a}n, M{\'a}rta. 2016.
-\newblock Presupposition cancellation: {E}xplaining the `soft-hard' trigger
-  distinction.
-\newblock {\em Natural Language Semantics\/} 24:165--202.
 
 \bibitem[Anand and Hacquard(2014)]{anand-hacquard2014}
 Anand, Pranav and Valentine Hacquard. 2014.
@@ -36,12 +30,6 @@ Schlenker, Philippe. 2010.
 \newblock Local contexts and local meanings.
 \newblock {\em Philosophical Studies\/} 151:115--142.
 
-\bibitem[Simons(2003)]{simons2003}
-Simons, Mandy. 2003.
-\newblock Presupposition and accommodation: {U}nderstanding the stalnakarian
-  picture.
-\newblock {\em Philosophical Studies\/} 112:251--278.
-
 \bibitem[Simons et~al.(2010)Simons, Tonhauser, Beaver, and
   Roberts]{brst-salt10}
 Simons, Mandy, Judith Tonhauser, David Beaver, and Craige Roberts. 2010.
@@ -54,6 +42,12 @@ Spector, Benjamin and Paul Egr\'e. 2015.
 \newblock A uniform semantics for embedding interrogatives: {\em {A}n} answer,
   not necessarily {\em the} answer.
 \newblock {\em Synthese\/} 192:1729--1784.
+
+\bibitem[Tonhauser(2016)]{tonhauser-salt26}
+Tonhauser, Judith. 2016.
+\newblock Prosodic cues to speaker commitment.
+\newblock In {\em Semantics and Linguistic Theory (SALT) XXVI\/}, pages
+  934--960. Ithaca, NY: CLC Publications.
 
 \bibitem[Tonhauser et~al.(2018)Tonhauser, Beaver, and Degen]{tbd-variability}
 Tonhauser, Judith, David Beaver, and Judith Degen. 2018.

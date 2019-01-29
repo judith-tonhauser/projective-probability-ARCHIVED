@@ -196,10 +196,21 @@ names(target)
 table(target$prompt)
 
 # plot for XPRAG abstract (content identified only by number)
+# color-blind-friendly palette
+cbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7") # c("#999999", 
+                
 means = aggregate(response~item+itemType+itemNr, data=target, FUN="mean")
 means$YMin = means$response - aggregate(response~item+itemType+itemNr, data=target, FUN="ci.low")$response
 means$YMax = means$response + aggregate(response~item+itemType+itemNr, data=target, FUN="ci.high")$response
-means
+means$itemType = recode(means$itemType, H="high",L="low")
+
+ggplot(means, aes(x=response,fill=itemType)) +
+  geom_histogram(binwidth=.05,alpha=.8) +
+  scale_fill_manual(values=cbPalette,name="Prior content probability") +
+  xlab("Mean probability rating") +
+  ylab("Number of cases") +
+  theme(legend.position=c(.7,.8))
+ggsave("../graphs/meanprobratings.pdf",height=2.8,width=4.5)
 
 ggplot(target, aes(x=itemNr,y=response)) +
   geom_point(aes(colour = itemType)) +

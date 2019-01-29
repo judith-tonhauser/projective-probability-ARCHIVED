@@ -11,6 +11,7 @@
 \usepackage{booktabs}
 \usepackage{tikz}
 \usepackage{subcaption}
+\usepackage{wrapfig}
 
 \usepackage[normalem]{ulem}
 
@@ -88,7 +89,12 @@ A hallmark of the content of the complement (CC) of factive predicates like {\em
 
 \noindent 
 {\bf Projectivity experiment (n=300):} The 20 sentences denoting the normed contents were realized as the complements of 20 clause-embedding predicates, for a total of 400 predicate/complement combinations. These combinations were realized as polar questions with a random subject noun phrase. In the target stimuli, the 400 polar questions were combined with one of the two facts that each content was normed with, for a total of 800 target stimuli. As shown in the sample target stimulus in (\ref{stim}), the named speaker (here, Carol) was explicitly stated to be aware of the fact.
-\vspace*{-.15cm}
+\vspace*{-.6cm}
+\begin{wrapfigure}{r}{.31\paperwidth}
+\centering
+\includegraphics[width=.32\paperwidth]{../results/1-prior/graphs/meanprobratings}
+\caption{Histogram of mean prior probability ratings for each item (i.e., content/fact combination). Color indicates whether item was coded as high or low probability in the projectivity analysis.}\label{f-prior}
+\end{wrapfigure}%
 \begin{exe}
 \ex\label{stim}
 {\bf Fact (which Carol knows):} Julian is German.  \\ 
@@ -97,31 +103,23 @@ A hallmark of the content of the complement (CC) of factive predicates like {\em
 \vspace*{-.15cm}
 The 20 predicates included the 5 factives {\em be annoyed, know, see, discover} and {\em reveal}, as well as 15 non-factives: the content of the complement of 9 of these ({\em acknowledge, admit, announce, confess, confirm, establish, hear, inform, prove}) has been described as being able to project (e.g., \citealt{schlenker10,anand-hacquard2014,spector-egre2015,tbd-variability}), in contrast to that of the remaining 6 predicates ({\em pretend, suggest, say, think, be right, demonstrate}).
 
+
+
 \noindent Projectivity was measured with the `certain that' diagnostic, following \citealt{tbd-variability}: for (\ref{stim}), participants judged whether Carol is certain that Julian dances salsa. Participants rated 20 target items (one for each predicate) and 6 control items (as attention checks). They responded on a sliding scale from `no' (no projection, coded 0) to `yes' (maximal projection, coded 1).
+\begin{wrapfigure}{l}{.45\paperwidth}
+\centering
+\includegraphics[width=.45\paperwidth]{../results/3-projectivity/graphs/means-projectivity-by-predicate-and-facttype}
+\caption{Mean certainty rating by predicate (x-axis) and prior CC probability, with 95\% CIs; factives in green.}\label{f-proj}
+\end{wrapfigure}
 
 \noindent
 {\bf Results:} Mean certainty ratings for CCs were higher when the content had a higher prior probability (mean: .5) than when the content had a lower prior probability (mean: .32), as predicted by \citetpos{tbd-variability}. As shown in Fig.~\ref{f-proj}, the effect of prior CC probability on projectivity was present across all 20 predicates. We also observe by-predicate variability in certainty ratings:  for instance, the mean certainty ratings for factive {\em be annoyed} were higher, at .72 (high) / .53 (low), than those for factive {\em reveal}, at .55 / .37, which in turn were higher than those for non-factive {\em establish}, at .39 / .19. These findings replicate \citetpos{tbd-variability} finding that projectivity is a gradient property of utterance content.
 
+
+
 Linear mixed-effects model predicting certainty rating from fact (high vs.\ low prior probability) and verb, with a random intercept for participant (5520 data points)
 
-{\bf Let's talk about these models...}
 
-\begin{figure}[h!]
-
-\begin{subfigure}{.47\textwidth}
-\centering
-\includegraphics[width=.35\paperwidth]{../results/1-prior/graphs/target-ratings}
-\caption{Prior probability ratings by content and fact: means in black (95\% CIs); individual ratings in red (higher prob.) and green (lower prob.).}\label{f-prior}
-\end{subfigure}%
-\hspace*{.1cm}
-\begin{subfigure}{.47\textwidth}
-\centering
-\includegraphics[width=.4\paperwidth]{../results/3-projectivity/graphs/means-projectivity-by-predicate-and-facttype}
-\caption{Mean certainty rating by predicate and prior probability, with 95\% CIs; factives in blue.}\label{f-proj}
-\end{subfigure}
-
-\caption{Findings of norming study (a) and experiment (b)}
-\end{figure}
 
 \noindent
 {\bf Discussion}

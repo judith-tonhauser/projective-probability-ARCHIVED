@@ -206,16 +206,19 @@ cols$VeridicalityGroup = as.factor(
          ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
                 ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
 #cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
-cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "#009E73", 
                       ifelse(cols$VeridicalityGroup == "NF", "black", 
                              ifelse(cols$VeridicalityGroup == "VNF","black","black")))
+
+# color-blind-friendly palette
+cbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7") # c("#999999",
 
 ggplot(means, aes(x=Verb, y=Mean, color=fact_type)) + 
   geom_point() +
   geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
   scale_y_continuous(limits = c(-0.05,1.05),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
   scale_color_manual(name="Prior probability of content", breaks=c("factH","factL"),labels=c("high", "low"), 
-                     values=brewer.pal(2,"Dark2")) +
+                     values=cbPalette) +
   scale_alpha(range = c(.3,1)) +
   theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
                                                                  color=cols$Colors)) +

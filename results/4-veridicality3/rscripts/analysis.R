@@ -450,7 +450,10 @@ table(cd$item)
 # CC is entailed
 cd$verb <- relevel(cd$verb, ref = "entailing C")
 
-model = lmer(response ~ verb + (1|workerid) + (1|item), data=cd, REML=F)
+model = lmer(response ~ verb + (1+verb|workerid) + (1+verb|content), data=cd, REML=F)
+summary(model)
+
+model.brms = brm(response ~ verb + (1+verb|workerid) + (1+verb|content), data=cd, REML=F)
 summary(model)
 
 

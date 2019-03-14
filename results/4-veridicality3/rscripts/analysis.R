@@ -1,3 +1,4 @@
+
 # Prior probability work
 # 4-veridicality3 -- Inference ratings
 # What is true: Dan knows that Sophia got a tattoo.
@@ -435,10 +436,12 @@ ggsave("../graphs/gender-collapsed.pdf")
 library(lsmeans)
 library(lme4)
 library(languageR)
+library(brms)
 str(cd$response)
 str(cd$verb)
 str(cd$workerid)
 cd$workerid <- as.factor(cd$workerid)
+cd$verb <- as.factor(as.character(cd$verb))
 
 table(cd$verb)
 table(cd$content)
@@ -450,11 +453,14 @@ table(cd$item)
 # CC is entailed
 cd$verb <- relevel(cd$verb, ref = "entailing C")
 
-model = lmer(response ~ verb + (1+verb|workerid) + (1+verb|content), data=cd, REML=F)
+model = lmer(response ~ verb + (1+verb|workerid) + (1|item), data=cd, REML=F)
 summary(model)
 
-model.brms = brm(response ~ verb + (1+verb|workerid) + (1+verb|content), data=cd, REML=F)
+model.brms = brm(response ~ verb + (verb|workerid) + (verb|content), data=cd, family=gaussian())
 summary(model)
+
+model.brms = brm(response ~ verb + (1|workerid) + (1|content), data=cd, family=gaussian())
+summary(model.brms)
 
 
 ## pairwise comparison to see which predicates differ from one another

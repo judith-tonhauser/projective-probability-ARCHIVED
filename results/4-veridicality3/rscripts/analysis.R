@@ -196,7 +196,7 @@ cd = d
 write.csv(cd, "../data/cd.csv")
 nrow(cd) #7812 / 28 items = 279 participants
 
-# load clean data for analysis
+# load clean data for analysis ----
 cd <- read.csv(file="../data/cd.csv", header=TRUE, sep=",")
 
 # age info
@@ -264,15 +264,19 @@ View(means)
 write.csv(means, file="../data/inference_means.csv",row.names=F,quote=F)
 
 cd$verb <-factor(cd$verb, levels=means[order(means$Mean), "verb"])
+table(cd$verb)
 
 cols = data.frame(V=levels(cd$verb))
 cols$VeridicalityGroup = as.factor(
   ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
          ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
-                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
-cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
-                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
-                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF",
+                       ifelse(cols$V %in% c("entailing C", "non-ent. C"),"MC","V")))))
+
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid", 
+                      ifelse(cols$VeridicalityGroup == "NF", "gray60", 
+                             ifelse(cols$VeridicalityGroup == "VNF","dodgerblue",
+                                    ifelse(cols$VeridicalityGroup == "MC","black","tomato1"))))
 
 ggplot(cd, aes(x=verb, y=response)) + 
   geom_boxplot(width=0.2,position=position_dodge(.9)) +
@@ -426,6 +430,29 @@ ggplot(means, aes(y=Mean, x=gender))+#, alpha=VeridicalityMean)) +
   #ggtitle(title="Rows: speaker gender; Columns: participant gender") +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top") 
 ggsave("../graphs/gender-collapsed.pdf")
+
+## models -----
+library(lsmeans)
+library(lme4)
+library(languageR)
+str(cd$response)
+str(cd$verb)
+str(cd$workerid)
+cd$workerid <- as.factor(cd$workerid)
+
+table(cd$verb)
+table(cd$content)
+# create item as combination of verb and content of complement
+cd$item = as.factor(paste(cd$verb, cd$content))
+table(cd$item)
+
+# predict inference rating from predicate, with entailing controls as reference level, to see which 
+# CC is entailed
+cd$verb <- relevel(cd$verb, ref = "entailing C")
+
+model = lmer(response ~ verb + (1|workerid) + (1|item), data=cd, REML=F)
+summary(model)
+
 
 ## pairwise comparison to see which predicates differ from one another
 library(lsmeans)

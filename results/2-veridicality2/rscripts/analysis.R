@@ -198,7 +198,7 @@ cd = d
 write.csv(cd, "../data/cd.csv")
 nrow(cd) #7532 / 28 items = 269 participants
 
-# load clean data for analysis
+# load clean data for analysis ----
 cd <- read.csv(file="../data/cd.csv", header=TRUE, sep=",")
 
 # age info
@@ -265,6 +265,55 @@ means
 
 write.csv(means, file="../data/veridicality_item_means.csv",row.names=F,quote=F)
 
+
+# plot for SemFest talk
+means = cd %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(as.factor(verb),Mean))
+options(tibble.print_max = Inf)
+means
+levels(means$Verb)
+
+cd$Verb <-factor(cd$verb, levels=levels(means$Verb))
+
+subjmeans = cd %>%
+  group_by(Verb,workerid) %>%
+  summarize(Mean = mean(response))
+levels(subjmeans$Verb)
+
+means$VeridicalityGroup = as.factor(
+  ifelse(means$Verb %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(means$Verb  %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(means$Verb  %in% c("be_right","demonstrate"),"VNF",
+                       ifelse(means$Verb  %in% c("non-contrad. C","contradictory C"),"control","V")))))
+means
+
+keeps <- c("Verb", "VeridicalityGroup")
+cols <- means[keeps]
+cols
+levels(cols$Verb)
+
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid", 
+                      ifelse(cols$VeridicalityGroup == "NF", "gray60", 
+                             ifelse(cols$VeridicalityGroup == "VNF","dodgerblue",
+                                    ifelse(cols$VeridicalityGroup == "control","black","tomato1"))))
+cols = cols[levels(cols$Verb),]
+
+ggplot(means, aes(x=Verb, y=Mean, fill=VeridicalityGroup)) +
+  geom_point(shape=21,fill="gray60",data=subjmeans, alpha=.1, color="gray40") +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
+  geom_point(shape=21,stroke=.5,size=2.5,color="black") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_alpha(range = c(.3,1)) +
+  scale_fill_manual(values=c("black","darkorchid","gray60","tomato1","dodgerblue")) +
+  guides(fill=FALSE) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors)) +
+  ylab("Mean contradictoriness rating") +
+  xlab("Predicate") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
+ggsave("../graphs/means-contradictoriness-by-predicate-variability.pdf",height=4,width=7)
 
 # also used in MIT talk
 # boxplot of contradictoriness by predicate, collapsing over complement clauses

@@ -316,7 +316,7 @@ ggplot(means, aes(x=Verb, y=Mean, fill=VeridicalityGroup)) +
 ggsave("../graphs/means-projectivity-by-predicate-variability.pdf",height=4,width=7)
 
 
-# target data (20 items per Turker)
+# target data (20 items per Turker) ---- 
 names(cd)
 table(cd$verb)
 t <- droplevels(subset(cd, cd$verb != "MC"))
@@ -362,15 +362,18 @@ merged <- cbind(means,infMeans,contrMeans,by="verb")
 merged <- merged[unique(names(merged))]
 View(merged)
 
-cols = data.frame(V=levels(merged$verb))
+cols = data.frame(V=levels(t$verb))
 cols$VeridicalityGroup = as.factor(
   ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
          ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
-                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF",
+                       ifelse(cols$V %in% c("MC"),"MC","V")))))
+
 cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid", 
                       ifelse(cols$VeridicalityGroup == "NF", "gray60", 
-                             ifelse(cols$VeridicalityGroup == "VNF","dodgerblue","tomato1")))
-View(cols)
+                             ifelse(cols$VeridicalityGroup == "VNF","dodgerblue",
+                                    ifelse(cols$VeridicalityGroup == "MC","black","tomato1"))))
+cols
 
 ggplot(merged, aes(x=mean_proj,y=mean_inf)) +
   geom_text_repel(aes(label=verb),alpha=.8,size=4,color=cols$Colors) +
@@ -402,7 +405,7 @@ ggsave(file="../graphs/projection-by-contradictoriness.pdf",width=4.2,height=3.5
 # plots with binary entailment 
 merged$infEnt <- "no"
 merged$infEnt <- ifelse(merged$verb == "be_right" | merged$verb == "see" | merged$verb == "discover" | 
-                          merged$verb == "know" | merged$verb == "be_annoyed" | merged$verb == "prove" | merged$verb == "confirm","yes","no")
+                          merged$verb == "know" | merged$verb == "prove" | merged$verb == "confirm","yes","no")
 merged$contrEnt <- "no"
 merged$contrEnt <- ifelse(merged$verb == "be_right","yes","no")
 

@@ -218,6 +218,7 @@ cd$verb <- gsub("control_bad","non-ent. C",cd$verb)
 # target data (20 items per Turker)
 names(cd)
 table(cd$verb)
+
 t <- subset(cd, cd$verb != "entailing C" & cd$verb != "non-ent. C")
 t <- droplevels(t)
 nrow(t) #5580 / 20 = 279 Turkers
@@ -456,10 +457,7 @@ cd$verb <- relevel(cd$verb, ref = "entailing C")
 model = lmer(response ~ verb + (1+verb|workerid) + (1|item), data=cd, REML=F)
 summary(model)
 
-model.brms = brm(response ~ verb + (verb|workerid) + (verb|content), data=cd, family=gaussian())
-summary(model)
-
-model.brms = brm(response ~ verb + (1|workerid) + (1|content), data=cd, family=gaussian())
+model.brms = brm(response ~ verb + (verb|workerid) + (1|item), data=cd, family=gaussian())
 summary(model.brms)
 
 

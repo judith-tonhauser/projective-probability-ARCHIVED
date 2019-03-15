@@ -289,8 +289,8 @@ means$VeridicalityGroup = as.factor(
                        ifelse(means$Verb  %in% c("non-contrad. C","contradictory C"),"control","V")))))
 means
 
-keeps <- c("Verb", "VeridicalityGroup")
-cols <- means[keeps]
+cols <- means %>%
+  select(Verb,VeridicalityGroup) %>%
 cols
 levels(cols$Verb)
 

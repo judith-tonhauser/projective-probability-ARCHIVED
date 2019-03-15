@@ -351,6 +351,7 @@ View(means)
 infMeans <- read.csv(file="../../4-veridicality3/data/inference_means.csv", header=T, sep=",")
 colnames(infMeans) <- c("verb","mean_inf","infMin","infMax")
 infMeans <- droplevels(subset(infMeans, infMeans$verb != "entailing C" & infMeans$verb != "non-ent. C"))
+infMeans
 View(infMeans)
 
 contrMeans <- read.csv(file="../../2-veridicality2/data/veridicality_means.csv",header=T,sep=",")
@@ -405,7 +406,7 @@ ggsave(file="../graphs/projection-by-contradictoriness.pdf",width=4.2,height=3.5
 # plots with binary entailment 
 merged$infEnt <- "no"
 merged$infEnt <- ifelse(merged$verb == "be_right" | merged$verb == "see" | merged$verb == "discover" | 
-                          merged$verb == "know" | merged$verb == "prove" | merged$verb == "confirm","yes","no")
+                          merged$verb == "prove" | merged$verb == "confirm","yes","no")
 merged$contrEnt <- "no"
 merged$contrEnt <- ifelse(merged$verb == "be_right","yes","no")
 
@@ -431,6 +432,61 @@ ggplot(merged, aes(x=mean_proj,y=contrEnt)) +
                      breaks=c(0,0.25, 0.50, 0.75, 1.00)) +
   ylab("Entailed") 
 ggsave(file="../graphs/projection-by-contradictorinessEntailment.pdf",width=4.2,height=3.5)
+
+# plots with arbitrary dividing lines
+# .85 for entailment, .7 for projection
+
+# projection
+# 1 acknowledge 0.712 0.0362  0.0358  0.676 0.748 acknowledge
+# 4 be_annoyed  0.859 0.0299  0.0247  0.829 0.884 be_annoyed 
+# 10 discover    0.763 0.0342  0.0294  0.729 0.793 discover   
+# 12 hear        0.733 0.0349  0.0381  0.698 0.771 hear       
+# 13 inform      0.789 0.0293  0.0304  0.759 0.819 inform     
+# 14 know        0.841 0.0290  0.0264  0.812 0.867 know       
+# 19 see         0.795 0.0317  0.0307  0.763 0.826 see 
+
+# entailment (inference)
+# 1  acknowledge 0.8980287 0.87877599 0.9164901
+# 2        admit 0.8984946 0.87910305 0.9179704
+# 4   be_annoyed 0.9150896 0.89845699 0.9307912
+# 5     be_right 0.9472043 0.93411738 0.9580681
+# 6      confess 0.8837993 0.86469086 0.9022590
+# 7      confirm 0.9361290 0.92404659 0.9476022
+# 9     discover 0.9394624 0.92787993 0.9497177
+# 11   establish 0.8989247 0.87959588 0.9160224
+# 14        know 0.9251613 0.91013530 0.9390367
+# 17       prove 0.9492832 0.93712993 0.9596774
+# 18      reveal 0.8963082 0.87862814 0.9137509
+# 20         see 0.9426523 0.93171953 0.9517572
+
+
+merged$infArb <- "no"
+merged$infArb <- ifelse(merged$verb == "acknowledge"
+                        | merged$verb == "admit" 
+                        | merged$verb == "be_annoyed" | 
+                          merged$verb == "be_right" 
+                        | merged$verb == "confess" 
+                        | merged$verb == "confirm" 
+                        | merged$verb == "discover"
+                        | merged$verb == "establish"
+                        | merged$verb == "know"
+                        | merged$verb == "prove"
+                        | merged$verb == "reveal"
+                        | merged$verb == "see","yes","no")
+merged$contrEnt <- "no"
+merged$contrEnt <- ifelse(merged$verb == "be_right","yes","no")
+
+ggplot(merged, aes(x=mean_proj,y=infArb)) +
+  geom_text_repel(aes(label=verb),alpha=.8,size=4,color=cols$Colors) +
+  geom_errorbarh(aes(xmin=projMin,xmax=projMax,height = .15),color="gray50",alpha=.5) +
+  #geom_errorbar(aes(ymin=infMin,ymax=infMax),color="gray50",alpha=.5) +
+  theme(axis.text.y = element_text(angle = 90, hjust = 0.5)) +
+  geom_point(color=cols$Colors) +
+  theme(legend.position="none") +
+  scale_x_continuous(name ="Mean certainty rating (higher = more projective)", limits = c(0,1),
+                     breaks=c(0,0.25, 0.50, 0.75, 1.00)) +
+  ylab("Entailed") 
+ggsave(file="../graphs/projection-by-inferenceEntailment-arbitrary.pdf",width=4.2,height=3.5)
 
 
 ### PAIRWISE DIFFERENCES ###

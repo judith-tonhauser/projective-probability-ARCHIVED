@@ -433,6 +433,7 @@ ggsave(file="../graphs/projection-by-contradictorinessEntailment.pdf",width=4.2,
 ### PAIRWISE DIFFERENCES ###
 library(lsmeans)
 library(lme4)
+library(brms)
 str(cd$response)
 str(cd$verb)
 cd$verb <- as.factor(cd$verb)
@@ -658,3 +659,9 @@ comparison
 # know - be_annoyed         -0.01841 0.0204 7075  -0.904  1.0000
 # 
 # P value adjustment: tukey method for comparing a family of 21 estimates 
+
+# brms model
+cd$verb = relevel(cd$verb,ref="MC")
+cd$item = as.factor(paste(cd$verb,cd$content))
+model.brms = brm(response ~ verb + (1|workerid) + (1|item), data=cd, family=gaussian())
+summary(model.brms)

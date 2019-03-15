@@ -279,8 +279,9 @@ View(means)
 
 write.csv(means, file="../data/veridicality_means.csv",row.names=F,quote=F)
 
-cd$verb <-factor(cd$verb, levels=means[order(means$Mean), "verb"])
-te$verb <-factor(te$verb, levels=means[order(means$Mean), "verb"])
+# te$verb <-factor(te$verb, levels=means[order(means$Mean), "verb"])
+
+cd$verb <-factor(cd$verb, levels=levels(means$Verb))
 
 cols = data.frame(V=levels(cd$verb))
 cols$VeridicalityGroup = as.factor(
@@ -299,6 +300,65 @@ ggplot(cd, aes(x=verb, y=response)) +
   xlab("Predicate") +
   theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))
 ggsave("../graphs/boxplot-veridicality.pdf",height=4,width=8)
+
+
+
+# means for semfest talk
+means = cd %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(as.factor(verb),Mean))
+options(tibble.print_max = Inf)
+means
+
+cd$verb <-factor(cd$verb, levels=levels(means$Verb))
+
+cols = data.frame(V=levels(cd$verb))
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF",
+                       ifelse(cols$V %in% c("non-contrad. C","contradictory C"),"control","V")))))
+
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid", 
+                      ifelse(cols$VeridicalityGroup == "NF", "gray60", 
+                             ifelse(cols$VeridicalityGroup == "VNF","dodgerblue",
+                                    ifelse(cols$VeridicalityGroup == "control","black","tomato1"))))
+
+subjmeans = cd %>%
+  group_by(verb,workerid) %>%
+  summarize(Mean = mean(response)) %>%
+  mutate(Verb = fct_reorder(as.factor(verb),Mean))
+
+means$VeridicalityGroup = as.factor(
+  ifelse(means$verb %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(means$verb  %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(means$verb  %in% c("be_right","demonstrate"),"VNF",
+                       ifelse(means$verb  %in% c("non-contrad. C","contradictory C"),"control","V")))))
+
+# means for semfest talk
+
+ggplot(means, aes(x=Verb, y=Mean, fill=VeridicalityGroup)) +
+  #geom_point(color="black", size=4) +
+  geom_point(shape=21,fill="gray60",data=subjmeans, alpha=.1, color="gray40") +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
+  geom_point(shape=21,stroke=.5,size=2.5,color="black") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_alpha(range = c(.3,1)) +
+  scale_fill_manual(values=c("black","darkorchid","gray60","tomato1","dodgerblue")) +
+  guides(fill=FALSE) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors)) +
+  theme(legend.position="top") +
+  ylab("Mean certainty rating") +
+  xlab("Predicate") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
+ggsave("../graphs/means-projectivity-by-predicate-variability.pdf",height=4,width=7)
+
+
+
+
+
 
 # plot of contradictoriness by predicate and complement clauses
 agr_verb = t %>%

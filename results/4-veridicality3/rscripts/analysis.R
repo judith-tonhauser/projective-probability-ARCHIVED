@@ -250,6 +250,42 @@ t <- read.csv(file="../data/t.csv", header=TRUE, sep=",")
 head(t)
 str(t$verb)
 
+# plot for SemFest talk
+means = cd %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(as.factor(verb),Mean))
+options(tibble.print_max = Inf)
+means
+
+cd$Verb <-factor(cd$verb, levels=levels(means$Verb))
+
+subjmeans = cd %>%
+  group_by(Verb,workerid) %>%
+  summarize(Mean = mean(response))
+
+means$VeridicalityGroup = as.factor(
+  ifelse(means$Verb %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(means$Verb  %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(means$Verb  %in% c("be_right","demonstrate"),"VNF",
+                       ifelse(means$Verb  %in% c("non-ent. C","entailing C"),"control","V")))))
+
+ggplot(means, aes(x=Verb, y=Mean, fill=VeridicalityGroup)) +
+  geom_point(shape=21,fill="gray60",data=subjmeans, alpha=.1, color="gray40") +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
+  geom_point(shape=21,stroke=.5,size=2.5,color="black") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_alpha(range = c(.3,1)) +
+  scale_fill_manual(values=c("black","darkorchid","gray60","tomato1","dodgerblue")) +
+  guides(fill=FALSE) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors)) +
+  theme(legend.position="top") +
+  ylab("Mean inference rating") +
+  xlab("Predicate") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
+ggsave("../graphs/means-inference-by-predicate-variability.pdf",height=4,width=7)
+
 # also used in MIT talk
 # boxplot of inference strength by predicate, collapsing over complement clauses, ordered by mean
 # including the two types of control stimuli
@@ -268,17 +304,17 @@ write.csv(means, file="../data/inference_means.csv",row.names=F,quote=F)
 cd$verb <-factor(cd$verb, levels=means[order(means$Mean), "verb"])
 table(cd$verb)
 
-cols = data.frame(V=levels(cd$verb))
+cols = data.frame(V=levels(cd$Verb))
 cols$VeridicalityGroup = as.factor(
   ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
          ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
                 ifelse(cols$V %in% c("be_right","demonstrate"),"VNF",
-                       ifelse(cols$V %in% c("entailing C", "non-ent. C"),"MC","V")))))
+                       ifelse(cols$V %in% c("entailing C", "non-ent. C"),"control","V")))))
 
 cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid", 
                       ifelse(cols$VeridicalityGroup == "NF", "gray60", 
                              ifelse(cols$VeridicalityGroup == "VNF","dodgerblue",
-                                    ifelse(cols$VeridicalityGroup == "MC","black","tomato1"))))
+                                    ifelse(cols$VeridicalityGroup == "control","black","tomato1"))))
 
 ggplot(cd, aes(x=verb, y=response)) + 
   geom_boxplot(width=0.2,position=position_dodge(.9)) +
@@ -300,15 +336,17 @@ means = as.data.frame(means)
 
 cd$verb <-factor(cd$verb, levels=means[order(means$Median), "verb"])
 
-cols = data.frame(V=levels(cd$verb))
+cols = data.frame(V=levels(cd$Verb))
 cols$VeridicalityGroup = as.factor(
   ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
          ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
-                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
-#cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
-cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
-                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
-                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF",
+                       ifelse(cols$V %in% c("entailing C", "non-ent. C"),"control","V")))))
+
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid", 
+                      ifelse(cols$VeridicalityGroup == "NF", "gray60", 
+                             ifelse(cols$VeridicalityGroup == "VNF","dodgerblue",
+                                    ifelse(cols$VeridicalityGroup == "control","black","tomato1"))))
 
 ggplot(cd, aes(x=verb, y=response)) + 
   geom_boxplot(width=0.2,position=position_dodge(.9)) +

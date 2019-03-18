@@ -57,6 +57,15 @@ table(d$american) # 4 declared non-American English
 d <- droplevels(subset(d, d$american == "y"))
 length(unique(d$workerid)) #287 (5 Turkers excluded, 13 excluded in total for language reasons)
 
+## exclude turkers who completed the experiment too quickly??
+# times = d %>% 
+#   select(Answer.time_in_minutes,workerid) %>% 
+#   unique() %>%
+#   mutate(VerySlow = Answer.time_in_minutes > mean(Answer.time_in_minutes) + 2*sd(Answer.time_in_minutes)) %>%
+#   filter(!VerySlow) %>%
+#   mutate(TooFast = Answer.time_in_minutes < mean(Answer.time_in_minutes) - 2*sd(Answer.time_in_minutes))
+# summary(times)
+
 ## exclude Turkers based on fillers
 names(d)
 table(d$contentNr)
@@ -89,21 +98,22 @@ means
 # 5  control5    0.168
 # 6  control6    0.169
 
-# Turkers with response means on controls more than 1.5sd above group mean
+# Turkers with response means on controls more than 2sd above group mean
 c.means = aggregate(response~workerid, data=c, FUN="mean")
 c.means$YMin = c.means$response - aggregate(response~workerid, data=c, FUN="ci.low")$response
 c.means$YMax = c.means$response + aggregate(response~workerid, data=c, FUN="ci.high")$response
 c.means
 
-c.g <- c.means[c.means$response > (mean(c.means$response) + 3*sd(c.means$response)),]
+c.g <- c.means[c.means$response > (mean(c.means$response) + 2*sd(c.means$response)),]
 c.g
-unique(length(c.g$workerid)) #4 Turkers gave high responses
-mean(c.g$response) #.911
+unique(length(c.g$workerid)) #16 Turkers gave high responses
+mean(c.g$response) #.67
+min(c.g$response)
 
 # how many unique Turkers did badly on the controls?
 outliers <- droplevels(subset(c, c$workerid %in% c.g$workerid))
-nrow(outliers) #24 / 6 control items = 4 Turkers
-table(outliers$response)
+nrow(outliers) #96 / 6 control items = 16 Turkers
+outliers[,c("workerid","response")]
 
 # look at the responses to the controls that these "outlier" Turkers did
 
@@ -125,22 +135,77 @@ o.means
 # responses here are supposed to be low but these Turkers
 # gave consistently high responses across the control items
 
-# exclude the 4 Turkers identified above
+# exclude the 16 Turkers identified above
 d <- droplevels(subset(d, !(d$workerid %in% outliers$workerid)))
-length(unique(d$workerid)) #283 Turkers remain (287 - 4)
+length(unique(d$workerid)) #271 Turkers remain (287 - 16)
 
 # resulting group mean on controls
 c <- droplevels(subset(d, d$verb == "control"))
-round(mean(c$response),2) #.13
+round(mean(c$response),2) #.11
+
+# exclude turkers who always clicked on roughly the same point on the scale -- ie turkers whose variance in overall response distribution is lower than 2 sd below mean by-participant variance
+variances = d %>%
+  filter(verb != "control") %>%
+  group_by(workerid) %>%
+  summarize(Variance = var(response)) %>%
+  mutate(TooSmall = Variance < mean(Variance) - 2*sd(Variance))
+
+lowvarworkers = as.character(variances[variances$TooSmall,]$workerid)
+summary(variances)
+lowvarworkers # 5 turkers consistently clicked on the same point on the scale
+
+lvw = d %>%
+  filter(as.character(workerid) %in% lowvarworkers) %>%
+  droplevels() %>%
+  mutate(Participant = as.factor(as.character(workerid)))
+
+ggplot(lvw,aes(x=Participant,y=response)) +
+  geom_point()
+
+# exclude the 5 Turkers identified above
+d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
+length(unique(d$workerid)) #266 Turkers remain
+
+# exclude turkers whose factive mean is not at least X higher than the control mean
+fcmeans = d %>%
+  filter(verb %in% c("control","be_annoyed","see","discover","reveal","know")) %>%
+  mutate(ItemType = ifelse(verb == "control","control","factive")) %>%
+  group_by(workerid,ItemType) %>%
+  summarize(Mean = mean(response)) %>%
+  spread(ItemType,Mean) %>%
+  mutate(FCDiff = factive - control)
+
+# workers with factive mean smaller than control mean to exclude
+negfcdiffworkers = fcmeans[fcmeans$FCDiff <= 0,]$workerid
+length(negfcdiffworkers) # 2
+
+# exclude the 2 Turkers identified above
+d <- droplevels(subset(d, !(d$workerid %in% negfcdiffworkers)))
+length(unique(d$workerid)) #264 Turkers remain
+
+
+# posfcdiffs = fcmeans %>%
+#   filter(FCDiff > 0)
+# 
+# SD = sd(posfcdiffs$FCDiff)
+# Mean = mean(posfcdiffs$FCDiff)
+# Threshold = .1#Mean - 2.5*SD
+# 
+# posfcdiffs = posfcdiffs %>%
+#   mutate(SmallDiff = FCDiff < Threshold) 
+# summary(posfcdiffs)
+# 
+# smallfcdiffworkers = posfcdiffs[posfcdiffs$SmallDiff,]$workerid
+
 
 # clean data
 cd = d
 write.csv(cd, "../data/cd.csv")
-nrow(cd) #7358 / 26 items = 283 participants
+nrow(cd) #6916 / 26 items = 266 participants
 
 # load clean data for analysis ----
 cd = read.csv("../data/cd.csv")
-nrow(cd) #7358
+nrow(cd) #6916
 
 # change cd verb names to match veridicality names
 cd = cd %>%
@@ -359,9 +424,9 @@ colnames(contrMeans) <- c("verb","mean_contr","contrMin","contrMax")
 contrMeans <- droplevels(subset(contrMeans, contrMeans$verb != "non-contrad. C" & contrMeans$verb != "contradictory C"))
 View(contrMeans)
 
-merged <- cbind(means,infMeans,contrMeans,by="verb")
-merged <- merged[unique(names(merged))]
-View(merged)
+merged <- means %>%
+  left_join(infMeans,by=c("verb")) %>%
+  left_join(contrMeans,by="verb")
 
 cols = data.frame(V=levels(t$verb))
 cols$VeridicalityGroup = as.factor(
@@ -389,6 +454,31 @@ ggplot(merged, aes(x=mean_proj,y=mean_inf)) +
   #ylab("Mean inference rating") 
 ggsave(file="../graphs/projection-by-inference.pdf",width=4.2,height=3.5)
 
+ggplot(merged, aes(x=mean_proj,y=mean_inf)) +
+  # geom_text_repel(aes(label=verb),alpha=.8,size=4,color=cols$Colors) +
+  geom_errorbarh(aes(xmin=projMin,xmax=projMax),color="gray50",alpha=.5) +
+  geom_errorbar(aes(ymin=infMin,ymax=infMax),color="gray50",alpha=.5) +
+  geom_point(color=cols$Colors) +
+  theme(legend.position="none") +
+  scale_x_continuous(name ="Mean certainty rating (higher = more projective)", limits = c(0,1),
+                     breaks=c(0,0.25, 0.50, 0.75, 1.00)) +
+  scale_y_continuous(name ="Mean inference rating", limits = c(0,1),
+                     breaks=c(0,0.25, 0.50, 0.75, 1.00))
+#ylab("Mean inference rating") 
+ggsave(file="../graphs/projection-by-inference-nolabels.pdf",width=4.2,height=3.5)
+
+ggplot(merged, aes(x=mean_proj,y=mean_contr)) +
+  # geom_text_repel(aes(label=verb),alpha=.8,size=4,color=cols$Colors) +
+  geom_errorbarh(aes(xmin=projMin,xmax=projMax),color="gray50",alpha=.5) +
+  geom_errorbar(aes(ymin=contrMin,ymax=contrMax),color="gray50",alpha=.5) +
+  geom_point(color=cols$Colors) +
+  theme(legend.position="none") +
+  scale_x_continuous(name ="Mean certainty rating", limits = c(0,1),
+                     breaks=c(0,0.25, 0.50, 0.75, 1.00)) +
+  scale_y_continuous(name ="Mean contradictoriness rating", limits = c(0,1),
+                     breaks=c(0,0.25, 0.50, 0.75, 1.00))
+#ylab("Mean contradictoriness rating") 
+ggsave(file="../graphs/projection-by-contradictoriness-nolabels.pdf",width=4.2,height=3.5)
 
 ggplot(merged, aes(x=mean_proj,y=mean_contr)) +
   geom_text_repel(aes(label=verb),alpha=.8,size=4,color=cols$Colors) +
@@ -487,6 +577,48 @@ ggplot(merged, aes(x=mean_proj,y=infArb)) +
                      breaks=c(0,0.25, 0.50, 0.75, 1.00)) +
   ylab("Entailed") 
 ggsave(file="../graphs/projection-by-inferenceEntailment-arbitrary.pdf",width=4.2,height=3.5)
+
+
+# plot by-participant variability
+cd$PresumedVerbType = as.factor(
+  ifelse(cd$verb %in% c("know", "discover", "reveal", "see", "be_annoyed"), "factive", 
+         ifelse(cd$verb %in% c("pretend", "think", "suggest", "say"), "plain non-factive", 
+                ifelse(cd$verb %in% c("be_right","demonstrate"),"veridical non-factive",
+                       ifelse(cd$verb %in% c("MC"),"MC","projective non-factive")))))
+
+means = cd %>%
+  group_by(PresumedVerbType,workerid) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) 
+nrow(means)
+head(means)
+
+factives = means %>%
+  filter(PresumedVerbType == "factive") %>%
+  mutate(Participant = fct_reorder(as.factor(workerid),Mean))
+
+means$Participant = factor(x=as.character(means$workerid),levels=levels(factives$Participant))
+cd$Participant = factor(x=as.character(cd$workerid),levels=levels(factives$Participant))
+
+# get rid of error bars for all but the "factives"
+means[means$PresumedVerbType != "factive",]$YMin = means[means$PresumedVerbType != "factive",]$Mean
+means[means$PresumedVerbType != "factive",]$YMax = means[means$PresumedVerbType != "factive",]$Mean
+
+p=ggplot(means, aes(x=Participant, y=Mean, fill=PresumedVerbType)) +
+  geom_point(shape=21, data=cd, aes(y=response,fill=PresumedVerbType), alpha=.1) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
+  geom_point(shape=21,stroke=.5,size=2.5,color="black") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_alpha(range = c(.3,1)) +
+  scale_fill_manual(values=c("darkorchid","black","gray60","tomato1","dodgerblue")) +
+  ylab("Mean certainty rating") +
+  xlab("Participant") +
+  theme(axis.text.x = element_text(size = 6, angle = 45, hjust=1,vjust=1 )) 
+ggsave("../graphs/means-projectivity-by-participant.pdf",height=4,width=25)
+
+
+
+
 
 
 ### PAIRWISE DIFFERENCES ###

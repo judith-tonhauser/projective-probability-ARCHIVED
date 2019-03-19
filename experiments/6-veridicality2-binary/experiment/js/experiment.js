@@ -1409,7 +1409,7 @@ console.log(exp.stims_block1);
     };
   //blocks of the experiment:
   exp.structure=["auth", "i0", "practice1", "practice2", "i1", "block1", 'questionaire', 'finished'];
-  //exp.structure=["auth", "i0", "practice1", "practice2", "i1", "block1", 'questionaire', 'finished'];
+  //exp.structure=["i0", "practice1", "practice2", "i1", "block1", 'questionaire', 'finished'];
   
   exp.data_trials = [];
   //make corresponding slides:

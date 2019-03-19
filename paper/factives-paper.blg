@@ -5,42 +5,42 @@ The style file: /Users/tonhauser.1/Library/Latex/cslipubs-natbib.bst
 Database file #1: /Users/tonhauser.1/Documents/bibliography.bib
 You've used 50 entries,
             2811 wiz_defined-function locations,
-            910 strings with 11881 characters,
-and the built_in function-call counts, 24682 in all, are:
-= -- 2383
-> -- 963
+            908 strings with 11797 characters,
+and the built_in function-call counts, 24579 in all, are:
+= -- 2373
+> -- 952
 < -- 64
-+ -- 337
-- -- 269
-* -- 1772
-:= -- 4244
++ -- 334
+- -- 266
+* -- 1752
+:= -- 4232
 add.period$ -- 213
 call.type$ -- 50
-change.case$ -- 370
+change.case$ -- 369
 chr.to.int$ -- 48
 cite$ -- 50
 duplicate$ -- 1155
-empty$ -- 1957
-format.name$ -- 341
-if$ -- 5239
+empty$ -- 1954
+format.name$ -- 336
+if$ -- 5221
 int.to.chr$ -- 3
 int.to.str$ -- 1
 missing$ -- 49
 newline$ -- 255
 num.names$ -- 217
-pop$ -- 348
+pop$ -- 347
 preamble$ -- 2
-purify$ -- 284
+purify$ -- 283
 quote$ -- 0
-skip$ -- 908
+skip$ -- 907
 stack$ -- 0
-substring$ -- 1528
-swap$ -- 292
+substring$ -- 1518
+swap$ -- 289
 text.length$ -- 23
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 435
 warning$ -- 0
-while$ -- 221
+while$ -- 220
 width$ -- 0
 write$ -- 661

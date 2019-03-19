@@ -20,6 +20,11 @@ Abrus{\'a}n, M{\'a}rta. 2016.
   distinction.
 \newblock {\em Natural Language Semantics\/} 24:165--202.
 
+\bibitem[Abusch(2010)]{abusch10}
+Abusch, Dorit. 2010.
+\newblock Presupposition triggering from alternatives.
+\newblock {\em Journal of Semantics\/} 27:37--80.
+
 \bibitem[Anand and Hacquard(2014)]{anand-hacquard2014}
 Anand, Pranav and Valentine Hacquard. 2014.
 \newblock Factivity, belief and discourse.
@@ -59,11 +64,6 @@ de~Marneffe, Marie-Catherine, {Christopher D.} Manning, and Christopher Potts.
   2012.
 \newblock Did it happen? {T}he pragmatic complexity of veridicality assessment.
 \newblock {\em Computational Linguistics\/} 38:301--333.
-
-\bibitem[Degen and Tanenhaus(2015)]{degen-tanenhaus2015}
-Degen, Judith and Michael~K. Tanenhaus. 2015.
-\newblock {Processing scalar implicature A constraint-based approach}.
-\newblock {\em Cognitive Science\/} 39(4):667--710.
 
 \bibitem[Dj\"arv and Bacovcin(2017)]{djaerv-bacovcin-salt27}
 Dj\"arv, Kajsa and {Hezekiah Akiva} Bacovcin. 2017.
@@ -139,7 +139,7 @@ Klein, Ewan. 1975.
 
 \bibitem[Mahler(2019)]{mahler-nels}
 Mahler, Taylor. 2019.
-\newblock Does at-issueness predict projection? it's complicated!
+\newblock Does at-issueness predict projection? {I}t's complicated!
 \newblock In {\em 49th Annual Meeting of the North East Linguistic Society\/}.
 
 \bibitem[Melvold(1991)]{melvold1991}

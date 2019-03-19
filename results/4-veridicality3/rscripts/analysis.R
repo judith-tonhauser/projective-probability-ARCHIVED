@@ -61,7 +61,7 @@ d <- subset(d, d$american == "0")
 d = droplevels(d)
 length(unique(d$workerid)) #286 (14 Turkers excluded for language reasons)
 
-## exclude Turkers based on fillers
+## exclude Turkers based on controls
 names(d)
 table(d$contentNr)
 table(d$verb)
@@ -184,6 +184,52 @@ d <- subset(d, !(d$workerid %in% outliers$workerid))
 d <- droplevels(d)
 length(unique(d$workerid)) #279 Turkers remain (7 excluded for problems with control items)
 
+
+# exclude turkers who always clicked on roughly the same point on the scale 
+# for the target items
+# ie turkers whose variance in overall response distribution is more 
+# than 2 sd below mean by-participant variance
+variances = d %>%
+  filter(verb != "control_good" & verb != "control_bad") %>%
+  group_by(workerid) %>%
+  summarize(Variance = var(response)) %>%
+  mutate(TooSmall = Variance < mean(Variance) - 2*sd(Variance))
+head(variances)
+summary(variances)
+
+lowvarworkers = as.character(variances[variances$TooSmall,]$workerid)
+summary(variances)
+lowvarworkers # 0 turkers consistently clicked on roughly the same point on the scale
+
+# lvw = d %>%
+#   filter(as.character(workerid) %in% lowvarworkers) %>%
+#   droplevels() %>%
+#   mutate(Participant = as.factor(as.character(workerid)))
+# 
+# ggplot(lvw,aes(x=Participant,y=response)) +
+#   geom_point()
+
+# exclude the 0 Turkers identified above
+# d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
+# length(unique(d$workerid)) #266 Turkers remain
+
+# exclude workers with factive and veridical non-factive mean smaller than or equal 
+# to control_bad mean (where p definitely doesn't follow)
+fcmeans = d %>%
+  filter(verb %in% c("control_good","be_annoyed","see","discover","reveal","know")) %>%
+  mutate(ItemType = ifelse(verb == "control","control","factive")) %>%
+  group_by(workerid,ItemType) %>%
+  summarize(Mean = mean(response)) %>%
+  spread(ItemType,Mean) %>%
+  mutate(FCDiff = factive - control)
+
+negfcdiffworkers = fcmeans[fcmeans$FCDiff <= 0,]$workerid
+length(negfcdiffworkers) # 2 turkers
+
+# exclude the 2 Turkers identified above
+d <- droplevels(subset(d, !(d$workerid %in% negfcdiffworkers)))
+length(unique(d$workerid)) #264 Turkers remain
+
 # new group means
 c.bad <- droplevels(subset(d, d$verb == "control_bad"))
 nrow(c.bad) #1116 / 4 contradictory controls = 279 Turkers
@@ -215,6 +261,20 @@ cd$verb <- gsub("annoyed","be_annoyed",cd$verb)
 cd$verb <- gsub("control_good","entailing C",cd$verb)
 cd$verb <- gsub("control_bad","non-ent. C",cd$verb)
 
+# define colors for the predicates
+cols = data.frame(V=levels(cd$verb))
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF",
+                       ifelse(cols$V %in% c("MC"),"MC","V")))))
+
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid", 
+                      ifelse(cols$VeridicalityGroup == "NF", "gray60", 
+                             ifelse(cols$VeridicalityGroup == "VNF","dodgerblue",
+                                    ifelse(cols$VeridicalityGroup == "MC","black","tomato1"))))
+
+
 # target data (20 items per Turker)
 names(cd)
 table(cd$verb)
@@ -222,7 +282,6 @@ table(cd$verb)
 t <- subset(cd, cd$verb != "entailing C" & cd$verb != "non-ent. C")
 t <- droplevels(t)
 nrow(t) #5580 / 20 = 279 Turkers
-table(t$verb,t$content)
 
 # target data plus good (entailing) controls
 te <- droplevels(subset(cd,cd$verb != "control_bad"))
@@ -249,6 +308,47 @@ nrow(t) #5580
 t <- read.csv(file="../data/t.csv", header=TRUE, sep=",")
 head(t)
 str(t$verb)
+
+# plot by-participant variability
+cd$PresumedVerbType = as.factor(
+  ifelse(cd$verb %in% c("know", "discover", "reveal", "see", "be_annoyed"), "factive", 
+         ifelse(cd$verb %in% c("pretend", "think", "suggest", "say"), "plain non-factive", 
+                ifelse(cd$verb %in% c("be_right","demonstrate"),"veridical non-factive",
+                       ifelse(cd$verb %in% c("non-ent. C"),"non-entailing control",
+                              ifelse(cd$verb %in% c("entailing C"),"entailing control",
+                                     "projective non-factive"))))))
+table(cd$PresumedVerbType,cd$verb)
+
+means = cd %>%
+  group_by(PresumedVerbType,workerid) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) 
+nrow(means)
+head(means)
+
+factives = means %>%
+  filter(PresumedVerbType == "factive") %>%
+  mutate(Participant = fct_reorder(as.factor(workerid),Mean))
+
+means$Participant = factor(x=as.character(means$workerid),levels=levels(factives$Participant))
+cd$Participant = factor(x=as.character(cd$workerid),levels=levels(factives$Participant))
+
+# get rid of error bars for all but the "factives"
+means[means$PresumedVerbType != "factive",]$YMin = means[means$PresumedVerbType != "factive",]$Mean
+means[means$PresumedVerbType != "factive",]$YMax = means[means$PresumedVerbType != "factive",]$Mean
+
+ggplot(means, aes(x=Participant, y=Mean, fill=PresumedVerbType)) +
+  geom_point(shape=21, data=cd, aes(y=response,fill=PresumedVerbType), alpha=.1) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
+  geom_point(shape=21,stroke=.5,size=2.5,color="black") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_alpha(range = c(.3,1)) +
+  scale_fill_manual(values=c("black","darkorchid","green","gray60","tomato1","dodgerblue")) +
+  ylab("Mean inference rating") +
+  xlab("Participant") +
+  theme(axis.text.x = element_text(size = 6, angle = 45, hjust=1,vjust=1 )) 
+ggsave("../graphs/means-inference-by-participant.pdf",height=4,width=25)
+
 
 # plot for SemFest talk
 means = cd %>%

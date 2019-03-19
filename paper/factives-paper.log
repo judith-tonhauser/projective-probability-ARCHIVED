@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  31 JAN 2019 09:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  19 MAR 2019 12:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1075,51 +1075,51 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 (./factives-paper.aux)
 \openout1 = `factives-paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 95.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 95.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 96.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 96.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 95.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 95.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 96.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 96.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 95.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 95.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 96.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 96.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 95.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 95.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 96.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 96.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 95.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 95.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 96.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 96.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 95.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 96.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
@@ -1188,7 +1188,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box90
-Package hyperref Info: Link coloring OFF on input line 95.
+Package hyperref Info: Link coloring OFF on input line 96.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1198,9 +1198,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count195
 )
-LaTeX Info: Redefining \ref on input line 95.
-LaTeX Info: Redefining \pageref on input line 95.
-LaTeX Info: Redefining \nameref on input line 95.
+LaTeX Info: Redefining \ref on input line 96.
+LaTeX Info: Redefining \pageref on input line 96.
+LaTeX Info: Redefining \nameref on input line 96.
 
 (./factives-paper.out) (./factives-paper.out)
 \@outlinefile=\write5
@@ -1209,56 +1209,238 @@ LaTeX Info: Redefining \nameref on input line 95.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+txmia on input line 95.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 96.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 95.
+LaTeX Font Info:    Try loading font information for U+msa on input line 96.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 95.
+LaTeX Font Info:    Try loading font information for U+msb on input line 96.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 95.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 96.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-Package xypdf Info: Line width: 0.61319pt on input line 95.
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 100.
+Package xypdf Info: Line width: 0.61319pt on input line 96.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 101.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <12> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 100.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 101.
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <6> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 100.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 101.
+ [1
 
-./factives-paper.tex:110: Misplaced alignment tab character &.
-l.110 -- Early literature (Kiparsky&
-                                    Kiparsky) -- clause embedding verbs fall...
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 
-? 
-./factives-paper.tex:110: Emergency stop.
-l.110 -- Early literature (Kiparsky&
-                                    Kiparsky) -- clause embedding verbs fall...
-End of file on the terminal!
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- 
+[3] [4]
+LaTeX Font Info:    Try loading font information for OT1+txtt on input line 293
+.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/txfonts/ot1txtt.fd
+File: ot1txtt.fd 2000/12/15 v3.1
+)
+[5] [6] [7] <figures/trial-exp1.pdf, id=481, 614.295pt x 292.05594pt>
+File: figures/trial-exp1.pdf Graphic file (type pdf)
+
+<use figures/trial-exp1.pdf>
+Package pdftex.def Info: figures/trial-exp1.pdf used on input line 449.
+(pdftex.def)             Requested size: 284.52756pt x 135.27429pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8]
+<../results/5-projectivity-no-fact/graphs/boxplot-projectivity.pdf, id=513, 578
+.16pt x 289.08pt>
+File: ../results/5-projectivity-no-fact/graphs/boxplot-projectivity.pdf Graphic
+ file (type pdf)
+
+<use ../results/5-projectivity-no-fact/graphs/boxplot-projectivity.pdf>
+Package pdftex.def Info: ../results/5-projectivity-no-fact/graphs/boxplot-proje
+ctivity.pdf used on input line 468.
+(pdftex.def)             Requested size: 460.72124pt x 230.36005pt.
+
+[9 <./figures/trial-exp1.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10 <../results/5-projectivity-no-fact/graphs/boxplot-projectivity.pdf>]
+[11] [12]
+LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 623.
+
+Overfull \hbox (3.77682pt too wide) in paragraph at lines 631--632
+\OT1/txr/m/n/10.95 These two di-ag-nos-tics for en-tail-ment are ap-plied to th
+e con-tent of the com-ple-ment of the 20 clause-embedding
+ []
+
+[13] [14] <figures/inference-trial.pdf, id=635, 794.97pt x 298.52129pt>
+File: figures/inference-trial.pdf Graphic file (type pdf)
+
+<use figures/inference-trial.pdf>
+Package pdftex.def Info: figures/inference-trial.pdf used on input line 691.
+(pdftex.def)             Requested size: 369.88582pt x 138.90205pt.
+ [15 <./figures/inference-trial.pdf, page is rotated 90 degrees>]
+<../results/4-veridicality3/graphs/boxplot-inference.pdf, id=679, 578.16pt x 28
+9.08pt>
+File: ../results/4-veridicality3/graphs/boxplot-inference.pdf Graphic file (typ
+e pdf)
+ <use ../results/4-veridicality3/graphs/boxplot-inference.pdf>
+Package pdftex.def Info: ../results/4-veridicality3/graphs/boxplot-inference.pd
+f used on input line 742.
+(pdftex.def)             Requested size: 460.72124pt x 230.36005pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[16] [17 <../results/4-veridicality3/graphs/boxplot-inference.pdf>] [18]
+<figures/contradictory-trial.pdf, id=729, 685.60236pt x 301.75826pt>
+File: figures/contradictory-trial.pdf Graphic file (type pdf)
+
+<use figures/contradictory-trial.pdf>
+Package pdftex.def Info: figures/contradictory-trial.pdf used on input line 876
+.
+(pdftex.def)             Requested size: 369.88582pt x 162.79968pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[19] [20 <./figures/contradictory-trial.pdf, page is rotated 90 degrees>]
+<../results/2-veridicality2/graphs/boxplot-veridicality.pdf, id=786, 578.16pt x
+ 289.08pt>
+File: ../results/2-veridicality2/graphs/boxplot-veridicality.pdf Graphic file (
+type pdf)
+ <use ../results/2-veridicality2/graphs/boxplot-veridicality.pdf>
+Package pdftex.def Info: ../results/2-veridicality2/graphs/boxplot-veridicality
+.pdf used on input line 950.
+(pdftex.def)             Requested size: 460.72124pt x 230.36005pt.
+
+Overfull \hbox (7.04529pt too wide) in paragraph at lines 965--994
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[21 <../results/2-veridicality2/graphs/boxplot-veridicality.pdf>] [22] [23]
+[24]
+<../results/5-projectivity-no-fact/graphs/projection-by-inferenceEntailment.pdf
+, id=866, 303.1325pt x 252.945pt>
+File: ../results/5-projectivity-no-fact/graphs/projection-by-inferenceEntailmen
+t.pdf Graphic file (type pdf)
+
+<use ../results/5-projectivity-no-fact/graphs/projection-by-inferenceEntailment
+.pdf>
+Package pdftex.def Info: ../results/5-projectivity-no-fact/graphs/projection-by
+-inferenceEntailment.pdf used on input line 1107.
+(pdftex.def)             Requested size: 215.00699pt x 179.4108pt.
+
+<../results/5-projectivity-no-fact/graphs/projection-by-contradictorinessEntail
+ment.pdf, id=867, 303.1325pt x 252.945pt>
+File: ../results/5-projectivity-no-fact/graphs/projection-by-contradictorinessE
+ntailment.pdf Graphic file (type pdf)
+
+<use ../results/5-projectivity-no-fact/graphs/projection-by-contradictorinessEn
+tailment.pdf>
+Package pdftex.def Info: ../results/5-projectivity-no-fact/graphs/projection-by
+-contradictorinessEntailment.pdf used on input line 1112.
+(pdftex.def)             Requested size: 215.00699pt x 179.4108pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[25] [26 <../results/5-projectivity-no-fact/graphs/projection-by-inferenceEntai
+lment.pdf> <../results/5-projectivity-no-fact/graphs/projection-by-contradictor
+inessEntailment.pdf>] [27] [28] [29] (./factives-paper.bbl [30]
+Missing character: There is no Ð in font txr!
+ [31]) [32]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1252.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1252.
+
+(./factives-paper.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1252.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1252.
+
+Package rerunfilecheck Info: File `factives-paper.out' has not changed.
+(rerunfilecheck)             Checksum: C8BE976D1C855ED0F6F3BD2D956D893F;977.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1252.
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 840 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 24259 strings out of 493014
- 415336 string characters out of 6133351
- 535092 words of memory out of 5000000
- 27289 multiletter control sequences out of 15000+600000
- 34215 words of font info for 111 fonts, out of 8000000 for 9000
+ 24819 strings out of 493014
+ 424818 string characters out of 6133351
+ 565120 words of memory out of 5000000
+ 27547 multiletter control sequences out of 15000+600000
+ 60988 words of font info for 159 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 55i,6n,54p,3246b,276s stack positions out of 5000i,500n,10000p,200000b,80000s
-./factives-paper.tex:110:  ==> Fatal error occurred, no output PDF file produce
-d!
+ 55i,15n,77p,3827b,686s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.10} has been referenced b
+ut does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
+
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2016/texmf-
+dist/fonts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/txfonts/txtt.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
+e1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/tim
+es/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a
+.pfb>
+Output written on factives-paper.pdf (32 pages, 311118 bytes).
+PDF statistics:
+ 1121 PDF objects out of 1200 (max. 8388607)
+ 1039 compressed objects within 11 object streams
+ 262 named destinations out of 1000 (max. 500000)
+ 173 words of extra memory for PDF output out of 10000 (max. 10000000)
+

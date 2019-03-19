@@ -28,7 +28,7 @@ mean(d$Answer.time_in_minutes) #5.91
 median(d$Answer.time_in_minutes) #5.17
 
 d = d %>%
-  select(workerid,rt,subjectGender,speakerGender,content,verb,fact,fact_type,contentNr,trigger_class,response,slide_number_in_experiment,age,language,assess,american,gender,comments,Answer.time_in_minutes)
+  select(workerid,rt,subjectGender,speakerGender,content,verb,contentNr,trigger_class,response,slide_number_in_experiment,age,language,assess,american,gender,comments,Answer.time_in_minutes)
 nrow(d) #7800
 
 # look at Turkers' comments
@@ -66,7 +66,7 @@ length(unique(d$workerid)) #287 (5 Turkers excluded, 13 excluded in total for la
 #   mutate(TooFast = Answer.time_in_minutes < mean(Answer.time_in_minutes) - 2*sd(Answer.time_in_minutes))
 # summary(times)
 
-## exclude Turkers based on fillers
+## exclude Turkers based on non-projecting controls
 names(d)
 table(d$contentNr)
 table(d$verb)
@@ -116,7 +116,6 @@ nrow(outliers) #96 / 6 control items = 16 Turkers
 outliers[,c("workerid","response")]
 
 # look at the responses to the controls that these "outlier" Turkers did
-
 ggplot(outliers, aes(x=workerid,y=response)) +
   geom_point(aes(colour = contentNr)) +
   geom_text(aes(label=workerid), vjust = 1, cex= 5,position=position_jitter(h=.01,w=0.02)) +
@@ -139,11 +138,9 @@ o.means
 d <- droplevels(subset(d, !(d$workerid %in% outliers$workerid)))
 length(unique(d$workerid)) #271 Turkers remain (287 - 16)
 
-# resulting group mean on controls
-c <- droplevels(subset(d, d$verb == "control"))
-round(mean(c$response),2) #.11
-
-# exclude turkers who always clicked on roughly the same point on the scale -- ie turkers whose variance in overall response distribution is lower than 2 sd below mean by-participant variance
+# exclude turkers who always clicked on roughly the same point on the scale 
+# ie turkers whose variance in overall response distribution is more 
+# than 2 sd below mean by-participant variance
 variances = d %>%
   filter(verb != "control") %>%
   group_by(workerid) %>%
@@ -152,7 +149,7 @@ variances = d %>%
 
 lowvarworkers = as.character(variances[variances$TooSmall,]$workerid)
 summary(variances)
-lowvarworkers # 5 turkers consistently clicked on the same point on the scale
+lowvarworkers # 5 turkers consistently clicked on roughly the same point on the scale
 
 lvw = d %>%
   filter(as.character(workerid) %in% lowvarworkers) %>%
@@ -166,7 +163,7 @@ ggplot(lvw,aes(x=Participant,y=response)) +
 d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
 length(unique(d$workerid)) #266 Turkers remain
 
-# exclude turkers whose factive mean is not at least X higher than the control mean
+# exclude workers with factive mean smaller than or equal to control mean
 fcmeans = d %>%
   filter(verb %in% c("control","be_annoyed","see","discover","reveal","know")) %>%
   mutate(ItemType = ifelse(verb == "control","control","factive")) %>%
@@ -175,9 +172,8 @@ fcmeans = d %>%
   spread(ItemType,Mean) %>%
   mutate(FCDiff = factive - control)
 
-# workers with factive mean smaller than control mean to exclude
 negfcdiffworkers = fcmeans[fcmeans$FCDiff <= 0,]$workerid
-length(negfcdiffworkers) # 2
+length(negfcdiffworkers) # 2 turkers
 
 # exclude the 2 Turkers identified above
 d <- droplevels(subset(d, !(d$workerid %in% negfcdiffworkers)))
@@ -197,15 +193,18 @@ length(unique(d$workerid)) #264 Turkers remain
 # 
 # smallfcdiffworkers = posfcdiffs[posfcdiffs$SmallDiff,]$workerid
 
+# resulting group mean on controls
+c <- droplevels(subset(d, d$verb == "control"))
+round(mean(c$response),2) #.11
 
 # clean data
 cd = d
 write.csv(cd, "../data/cd.csv")
-nrow(cd) #6916 / 26 items = 266 participants
+nrow(cd) #6864 / 26 items = 264 participants
 
 # load clean data for analysis ----
 cd = read.csv("../data/cd.csv")
-nrow(cd) #6916
+nrow(cd) #6864
 
 # change cd verb names to match veridicality names
 cd = cd %>%
@@ -213,12 +212,25 @@ cd = cd %>%
 
 # age info
 table(cd$age) #20-71
-length(which(is.na(cd$age))) # 26 missing values
+length(which(is.na(cd$age))) # 0 missing values
 median(cd$age,na.rm=TRUE) #36
 table(cd$gender)
-#127 female, 150 male, 2 other
+#118 female, 141 male, 2 other
 
-nrow(cd) #7358
+nrow(cd) #6864
+
+# define colors for the predicates
+cols = data.frame(V=levels(cd$verb))
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF",
+                       ifelse(cols$V %in% c("MC"),"MC","V")))))
+
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid", 
+                      ifelse(cols$VeridicalityGroup == "NF", "gray60", 
+                             ifelse(cols$VeridicalityGroup == "VNF","dodgerblue",
+                                    ifelse(cols$VeridicalityGroup == "MC","black","tomato1"))))
 
 # are the responses bi-modal, as suspected by Dotlacil and wondered by Katsos?
 names(cd)
@@ -231,16 +243,6 @@ options(tibble.print_max = Inf)
 means
 
 cd$verb <-factor(cd$verb, levels=levels(means$Verb))
-
-cols = data.frame(V=levels(cd$verb))
-cols$VeridicalityGroup = as.factor(
-  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
-         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
-                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
-#cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
-cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
-                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
-                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
 
 ggplot(cd, aes(x=verb, y=response)) +
   geom_point(position="jitter") +
@@ -268,16 +270,6 @@ options(tibble.print_max = Inf)
 means
 
 t$verb <-factor(t$verb, levels=levels(means$Verb))
-
-cols = data.frame(V=levels(cd$verb))
-cols$VeridicalityGroup = as.factor(
-  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
-         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
-                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
-#cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
-cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "blue", 
-                      ifelse(cols$VeridicalityGroup == "NF", "brown", 
-                             ifelse(cols$VeridicalityGroup == "VNF","cornflowerblue","black")))
 
 ggplot(means, aes(x=content, y=Mean)) +
   geom_point(position="jitter") +
@@ -309,18 +301,6 @@ means
 
 cd$verb <-factor(cd$verb, levels=levels(means$Verb))
 
-cols = data.frame(V=levels(cd$verb))
-cols$VeridicalityGroup = as.factor(
-  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
-         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
-                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF",
-                       ifelse(cols$V %in% c("MC"),"MC","V")))))
-
-cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid", 
-                      ifelse(cols$VeridicalityGroup == "NF", "gray60", 
-                             ifelse(cols$VeridicalityGroup == "VNF","dodgerblue",
-                                    ifelse(cols$VeridicalityGroup == "MC","black","tomato1"))))
-
 # boxplot
 ggplot(cd, aes(x=verb, y=response)) + 
   geom_boxplot(width=0.2,position=position_dodge(.9)) +
@@ -334,22 +314,7 @@ ggplot(cd, aes(x=verb, y=response)) +
   xlab("Predicate")
 ggsave("../graphs/boxplot-projectivity.pdf",height=4,width=8)
 
-# point plot
-ggplot(means, aes(x=Verb, y=Mean)) +
-  #geom_point(color="black", size=4) +
-  #geom_point(data=agr_subj, aes(color=content)) +
-  geom_point() +
-  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
-  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
-  scale_alpha(range = c(.3,1)) +
-  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
-                                                                 color=cols$Colors)) +
-  theme(legend.position="top") +
-  ylab("Mean certainty rating") +
-  xlab("Predicate") +
-  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
-ggsave("../graphs/means-projectivity-by-predicate.pdf",height=4,width=7)
-
+# plot of means, 95% CIs and participants' ratings (SemFest)
 subjmeans = cd %>%
   group_by(verb,workerid) %>%
   summarize(Mean = mean(response)) %>%
@@ -360,8 +325,6 @@ means$VeridicalityGroup = as.factor(
          ifelse(means$verb  %in% c("pretend", "think", "suggest", "say"), "NF", 
                 ifelse(means$verb  %in% c("be_right","demonstrate"),"VNF",
                        ifelse(means$verb  %in% c("MC"),"MC","V")))))
-
-# means for semfest talk
 
 ggplot(means, aes(x=Verb, y=Mean, fill=VeridicalityGroup)) +
   #geom_point(color="black", size=4) +
@@ -385,23 +348,23 @@ ggsave("../graphs/means-projectivity-by-predicate-variability.pdf",height=4,widt
 names(cd)
 table(cd$verb)
 t <- droplevels(subset(cd, cd$verb != "MC"))
-nrow(t) #5660 / 20 items = 283 Turkers
+nrow(t) #5280 / 20 items = 264 Turkers
 
 # how many ratings per predicate and per predicate-clause combination?
 names(t)
 tmp <- as.data.frame(table(t$verb))
-min(tmp$Freq) #283
-max(tmp$Freq) #283
-mean(tmp$Freq) #283
-# 283 because 283 Turkers and each Turker saw each predicate once
+min(tmp$Freq) #264
+max(tmp$Freq) #264
+mean(tmp$Freq) #264
+# 264 because 264 Turkers and each Turker saw each predicate once
 
 table(t$content)
 t$predicateClause <- interaction(t$verb,t$content)
 tmp <- as.data.frame(table(t$predicateClause))
 head(tmp)
-min(tmp$Freq) #5
-max(tmp$Freq) #27
-mean(tmp$Freq) #14.2
+min(tmp$Freq) #4
+max(tmp$Freq) #25
+mean(tmp$Freq) #13.2
 
 # plot mean projectivity by mean veridicality (2 measures) ----
 head(t)
@@ -410,19 +373,19 @@ means = t %>%
   summarize(mean_proj = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
   ungroup() %>%
   mutate(projMin = mean_proj - CILow, projMax = mean_proj + CIHigh)
-View(means)
+#View(means)
 
 # get veridicality means (2 measures)
 infMeans <- read.csv(file="../../4-veridicality3/data/inference_means.csv", header=T, sep=",")
 colnames(infMeans) <- c("verb","mean_inf","infMin","infMax")
 infMeans <- droplevels(subset(infMeans, infMeans$verb != "entailing C" & infMeans$verb != "non-ent. C"))
 infMeans
-View(infMeans)
+#View(infMeans)
 
 contrMeans <- read.csv(file="../../2-veridicality2/data/veridicality_means.csv",header=T,sep=",")
 colnames(contrMeans) <- c("verb","mean_contr","contrMin","contrMax")
 contrMeans <- droplevels(subset(contrMeans, contrMeans$verb != "non-contrad. C" & contrMeans$verb != "contradictory C"))
-View(contrMeans)
+#View(contrMeans)
 
 merged <- means %>%
   left_join(infMeans,by=c("verb")) %>%
@@ -523,62 +486,6 @@ ggplot(merged, aes(x=mean_proj,y=contrEnt)) +
   ylab("Entailed") 
 ggsave(file="../graphs/projection-by-contradictorinessEntailment.pdf",width=4.2,height=3.5)
 
-# plots with arbitrary dividing lines
-# .85 for entailment, .7 for projection
-
-# projection
-# 1 acknowledge 0.712 0.0362  0.0358  0.676 0.748 acknowledge
-# 4 be_annoyed  0.859 0.0299  0.0247  0.829 0.884 be_annoyed 
-# 10 discover    0.763 0.0342  0.0294  0.729 0.793 discover   
-# 12 hear        0.733 0.0349  0.0381  0.698 0.771 hear       
-# 13 inform      0.789 0.0293  0.0304  0.759 0.819 inform     
-# 14 know        0.841 0.0290  0.0264  0.812 0.867 know       
-# 19 see         0.795 0.0317  0.0307  0.763 0.826 see 
-
-# entailment (inference)
-# 1  acknowledge 0.8980287 0.87877599 0.9164901
-# 2        admit 0.8984946 0.87910305 0.9179704
-# 4   be_annoyed 0.9150896 0.89845699 0.9307912
-# 5     be_right 0.9472043 0.93411738 0.9580681
-# 6      confess 0.8837993 0.86469086 0.9022590
-# 7      confirm 0.9361290 0.92404659 0.9476022
-# 9     discover 0.9394624 0.92787993 0.9497177
-# 11   establish 0.8989247 0.87959588 0.9160224
-# 14        know 0.9251613 0.91013530 0.9390367
-# 17       prove 0.9492832 0.93712993 0.9596774
-# 18      reveal 0.8963082 0.87862814 0.9137509
-# 20         see 0.9426523 0.93171953 0.9517572
-
-
-merged$infArb <- "no"
-merged$infArb <- ifelse(merged$verb == "acknowledge"
-                        | merged$verb == "admit" 
-                        | merged$verb == "be_annoyed" | 
-                          merged$verb == "be_right" 
-                        | merged$verb == "confess" 
-                        | merged$verb == "confirm" 
-                        | merged$verb == "discover"
-                        | merged$verb == "establish"
-                        | merged$verb == "know"
-                        | merged$verb == "prove"
-                        | merged$verb == "reveal"
-                        | merged$verb == "see","yes","no")
-merged$contrEnt <- "no"
-merged$contrEnt <- ifelse(merged$verb == "be_right","yes","no")
-
-ggplot(merged, aes(x=mean_proj,y=infArb)) +
-  geom_text_repel(aes(label=verb),alpha=.8,size=4,color=cols$Colors) +
-  geom_errorbarh(aes(xmin=projMin,xmax=projMax,height = .15),color="gray50",alpha=.5) +
-  #geom_errorbar(aes(ymin=infMin,ymax=infMax),color="gray50",alpha=.5) +
-  theme(axis.text.y = element_text(angle = 90, hjust = 0.5)) +
-  geom_point(color=cols$Colors) +
-  theme(legend.position="none") +
-  scale_x_continuous(name ="Mean certainty rating (higher = more projective)", limits = c(0,1),
-                     breaks=c(0,0.25, 0.50, 0.75, 1.00)) +
-  ylab("Entailed") 
-ggsave(file="../graphs/projection-by-inferenceEntailment-arbitrary.pdf",width=4.2,height=3.5)
-
-
 # plot by-participant variability
 cd$PresumedVerbType = as.factor(
   ifelse(cd$verb %in% c("know", "discover", "reveal", "see", "be_annoyed"), "factive", 
@@ -604,7 +511,7 @@ cd$Participant = factor(x=as.character(cd$workerid),levels=levels(factives$Parti
 means[means$PresumedVerbType != "factive",]$YMin = means[means$PresumedVerbType != "factive",]$Mean
 means[means$PresumedVerbType != "factive",]$YMax = means[means$PresumedVerbType != "factive",]$Mean
 
-p=ggplot(means, aes(x=Participant, y=Mean, fill=PresumedVerbType)) +
+ggplot(means, aes(x=Participant, y=Mean, fill=PresumedVerbType)) +
   geom_point(shape=21, data=cd, aes(y=response,fill=PresumedVerbType), alpha=.1) +
   geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
   geom_point(shape=21,stroke=.5,size=2.5,color="black") +
@@ -616,10 +523,7 @@ p=ggplot(means, aes(x=Participant, y=Mean, fill=PresumedVerbType)) +
   theme(axis.text.x = element_text(size = 6, angle = 45, hjust=1,vjust=1 )) 
 ggsave("../graphs/means-projectivity-by-participant.pdf",height=4,width=25)
 
-
-
-
-
+## updated code up to here (JT), after updating exclusion criteria
 
 ### PAIRWISE DIFFERENCES ###
 library(lsmeans)

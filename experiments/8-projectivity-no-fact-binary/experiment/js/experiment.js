@@ -1,9 +1,9 @@
 function make_slides(f) {
   var   slides = {};
 
-  slides.auth = slide({
-  	name : "auth",
-  });
+//   slides.auth = slide({
+//   	name : "auth",
+//   });
   
   slides.i0 = slide({
      name : "i0",
@@ -1569,8 +1569,9 @@ console.log(exp.stims_block1);
       screenUW: exp.width
     };
   //blocks of the experiment:
-  exp.structure=["auth", "i0", "block1", 'questionaire', 'finished'];
-  
+  //exp.structure=["auth", "i0", "block1", 'questionaire', 'finished'];
+  exp.structure=["i0", "block1", 'questionaire', 'finished'];
+
   exp.data_trials = [];
   //make corresponding slides:
   exp.slides = make_slides(exp);

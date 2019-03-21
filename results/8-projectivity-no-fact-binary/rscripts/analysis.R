@@ -24,6 +24,9 @@ s = read.csv("../data/subject-information.csv")
 
 # load raw data
 d = read.csv("../data/experiment.csv")
+d = d %>%
+  mutate(verb=recode(verb, control = "MC", annoyed = "be_annoyed", be_right_that = "be_right", inform_Sam = "inform"),
+         nResponse = ifelse(response == "Yes",1,0))
 head(d)
 
 # bind the two files by workerid
@@ -42,8 +45,10 @@ tmp <- d %>%
   mutate(Answer.time_in_minutes = Answer.time_in_seconds/60)
 as.data.frame(tmp)
 head(tmp)
-min(tmp$Answer.time_in_minutes)
-max(tmp$Answer.time_in_minutes)
+summary(tmp$Answer.time_in_minutes)
+
+ggplot(tmp, aes(x=Answer.time_in_minutes)) +
+  geom_histogram()
   
 d = left_join(d,tmp)
 head(d)
@@ -69,6 +74,10 @@ table(d$age) #18-81 (plus two nonsense values)
 median(d$age,na.rm=TRUE) #37 (nonsense values not excluded)
 table(d$gender)
 #272 female, 318 male, 2 undeclared
+ages = unique(d[,c("workerid","age"),])
+
+ggplot(ages %>% filter(age < 130),aes(x=age)) +
+  geom_histogram()
 
 ### exclude non-American English speakers
 length(unique(d$workerid)) #600
@@ -107,14 +116,12 @@ table(d$contentNr)
 table(d$verb)
 
 # make control data subset
-c <- subset(d, d$verb == "control")
+c <- subset(d, d$verb == "MC")
 c <- droplevels(c)
 head(c)
 nrow(c) #3180 / 6 controls = 530 Turkers
 
 # responses to controls
-c %>%
-  count(response)
 
 ggplot(c, aes(x=workerid,y=response)) +
   geom_point(aes(colour = content),position=position_jitter(h=.01,w=0.02)) +
@@ -130,95 +137,68 @@ c %>%
   filter(response == "No")
 
 # proportion of "no" responses to controls by participant
-outlier_Turkers = c %>%
+controlresponses = c %>%
   count(workerid, response) %>%
   group_by(workerid) %>%
-  mutate(prop =  n / sum(n)) %>%
-  filter(response == "No") %>%
-  filter(prop != 1)
+  filter(response == "No")
+
+ggplot(controlresponses, aes(x=n)) +
+  geom_histogram()
+
+table(controlresponses$n)
+
+# proportion of "no" responses to controls by participant
+outlier_Turkers = c %>%
+  group_by(workerid) %>%
+  summarize(Prop = mean(nResponse)) %>%
+  filter(Prop == 1)
 outlier_Turkers
 
 # remove participants who gave "yes" response to at least one control
 d <- droplevels(subset(d, !(d$workerid %in% outlier_Turkers$workerid)))
 length(unique(d$workerid)) #495 Turkers (35 excluded)
 
+# exclude turkers who always clicked "No"
 
-# Turkers for which the proportion of "no" responses is more than 2sd over group mean
-c.means = aggregate(response~workerid, data=c, FUN="count")
-c.means$YMin = c.means$response - aggregate(response~workerid, data=c, FUN="ci.low")$response
-c.means$YMax = c.means$response + aggregate(response~workerid, data=c, FUN="ci.high")$response
-c.means
-
-c.g <- c.means[c.means$response > (mean(c.means$response) + 2*sd(c.means$response)),]
-c.g
-unique(length(c.g$workerid)) #16 Turkers gave high responses
-mean(c.g$response) #.67
-min(c.g$response)
-
-# how many unique Turkers did badly on the controls?
-outliers <- droplevels(subset(c, c$workerid %in% c.g$workerid))
-nrow(outliers) #96 / 6 control items = 16 Turkers
-outliers[,c("workerid","response")]
-
-# look at the responses to the controls that these "outlier" Turkers did
-ggplot(outliers, aes(x=workerid,y=response)) +
-  geom_point(aes(colour = contentNr)) +
-  geom_text(aes(label=workerid), vjust = 1, cex= 5,position=position_jitter(h=.01,w=0.02)) +
-  #geom_text(aes(label=response), vjust = 2.5, cex= 5) +
-  scale_y_continuous(breaks = pretty(outliers$response, n = 10)) +
-  ylab("Responses") +
-  xlab("Participants")
-ggsave(f="../graphs/raw-responses-to-controls-by-outliers.pdf",height=6,width=10)
-
-# mean response by outliers
-o.means = aggregate(response~workerid, data=outliers, FUN="mean")
-o.means$YMin = o.means$response - aggregate(response~workerid, data=outliers, FUN="ci.low")$response
-o.means$YMax = o.means$response + aggregate(response~workerid, data=outliers, FUN="ci.high")$response
-o.means
-
-# responses here are supposed to be low but these Turkers
-# gave consistently high responses across the control items
-
-# exclude the 16 Turkers identified above
-d <- droplevels(subset(d, !(d$workerid %in% outliers$workerid)))
-length(unique(d$workerid)) #271 Turkers remain (287 - 16)
-
-# exclude turkers who always clicked on roughly the same point on the scale 
-# ie turkers whose variance in overall response distribution is more 
-# than 2 sd below mean by-participant variance
-variances = d %>%
-  filter(verb != "control") %>%
+noclickers = d %>%
+  filter(verb != "MC") %>%
   group_by(workerid) %>%
-  summarize(Variance = var(response)) %>%
-  mutate(TooSmall = Variance < mean(Variance) - 2*sd(Variance))
+  summarize(Proportion=mean(nResponse))
 
-lowvarworkers = as.character(variances[variances$TooSmall,]$workerid)
-summary(variances)
-lowvarworkers # 5 turkers consistently clicked on roughly the same point on the scale
+ggplot(noclickers, aes(x=Proportion)) +
+  geom_histogram()
 
-lvw = d %>%
-  filter(as.character(workerid) %in% lowvarworkers) %>%
-  droplevels() %>%
-  mutate(Participant = as.factor(as.character(workerid)))
-
-ggplot(lvw,aes(x=Participant,y=response)) +
-  geom_point()
-
-# exclude the 5 Turkers identified above
-d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
-length(unique(d$workerid)) #266 Turkers remain
+# # people who always said No:
+# noclickers %>%
+#   filter(Proportion == 0)
+# 
+# d[d$workerid == 495,c("verb","response")]
+# 
+# 
 
 # exclude workers with factive mean smaller than or equal to control mean
+fcmeans = d %>%
+  filter(verb %in% c("MC","be_annoyed","see","discover","reveal","know")) %>%
+  mutate(ItemType = ifelse(verb == "MC","MC","factive")) %>%
+  group_by(workerid,ItemType) %>%
+  summarize(Mean = mean(nResponse)) %>%
+  spread(ItemType,Mean) %>%
+  mutate(FCDiff = factive - MC)
+
 fcmeans = d %>%
   filter(verb %in% c("control","be_annoyed","see","discover","reveal","know")) %>%
   mutate(ItemType = ifelse(verb == "control","control","factive")) %>%
   group_by(workerid,ItemType) %>%
-  summarize(Mean = mean(response)) %>%
+  count(response)
+  summarize(Mean = mean(nResponse)) %>%
   spread(ItemType,Mean) %>%
   mutate(FCDiff = factive - control)
 
 negfcdiffworkers = fcmeans[fcmeans$FCDiff <= 0,]$workerid
 length(negfcdiffworkers) # 2 turkers
+
+ggplot(negfcdiffworkers, aes(x=FCDiff)) +
+  geom_histogram()
 
 # exclude the 2 Turkers identified above
 d <- droplevels(subset(d, !(d$workerid %in% negfcdiffworkers)))

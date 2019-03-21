@@ -26,11 +26,14 @@ length(unique(s$workerid))
 
 # load raw data
 d = read.csv("../data/experiment.csv")
+length(unique(d$workerid)) #431
 head(d)
 
 # bind the two files by workerid
 d = left_join(d,s)
 head(d)
+
+# 
 
 nrow(d) #15600 = 600 participants x 26 items
 names(d)
@@ -56,7 +59,7 @@ median(d$Answer.time_in_minutes) #3.188783
 summary(d)
 
 d = d %>%
-  select(workerid,rt,content,subjectGender,speakerGender,verb,utterance,contentNr,trigger_class,response,slide_number_in_experiment,age,language,assess,american,gender,comments,Answer.time_in_minutes)
+  select(workerid,rt,content,subjectGender,speakerGender,verb,contentNr,trigger_class,response,slide_number_in_experiment,age,language,american,gender,comments,Answer.time_in_minutes)
 nrow(d) #15600
 
 # look at Turkers' comments
@@ -82,7 +85,7 @@ length(unique(d$workerid)) #569 (31 Turkers excluded)
 # American English
 length(which(is.na(d$american))) #78 (3 Turkers didn't respond)
 table(d$american) # 25 declared non-American English
-d <- droplevels(subset(d, d$american == "y"))
+d <- droplevels(subset(d, d$american == "0"))
 length(unique(d$workerid)) #541 (28 Turkers excluded)
 
 ## exclude turkers who completed the experiment too quickly?

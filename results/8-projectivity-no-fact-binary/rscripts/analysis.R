@@ -24,9 +24,6 @@ s = read.csv("../data/subject-information.csv")
 
 # load raw data
 d = read.csv("../data/experiment.csv")
-d = d %>%
-  mutate(verb=recode(verb, control = "MC", annoyed = "be_annoyed", be_right_that = "be_right", inform_Sam = "inform"),
-         nResponse = ifelse(response == "Yes",1,0))
 head(d)
 
 # bind the two files by workerid
@@ -36,7 +33,6 @@ head(d)
 nrow(d) #15600 = 600 participants x 26 items
 names(d)
 length(unique(d$workerid)) #600 participants
-
 
 tmp <- d %>%
   group_by(workerid) %>%
@@ -53,14 +49,15 @@ ggplot(tmp, aes(x=Answer.time_in_minutes)) +
 d = left_join(d,tmp)
 head(d)
 
-mean(d$Answer.time_in_minutes) #3.690818
-median(d$Answer.time_in_minutes) #3.188783
-
 summary(d)
 
 d = d %>%
   select(workerid,rt,content,subjectGender,speakerGender,verb,utterance,contentNr,trigger_class,response,slide_number_in_experiment,age,language,assess,american,gender,comments,Answer.time_in_minutes)
 nrow(d) #15600
+
+d = d %>%
+  mutate(verb=recode(verb, control = "MC", annoyed = "be_annoyed", be_right_that = "be_right", inform_Sam = "inform"),
+         nResponse = ifelse(response == "Yes",1,0))
 
 # look at Turkers' comments
 unique(d$comments)
@@ -121,15 +118,6 @@ c <- droplevels(c)
 head(c)
 nrow(c) #3180 / 6 controls = 530 Turkers
 
-# responses to controls
-
-ggplot(c, aes(x=workerid,y=response)) +
-  geom_point(aes(colour = content),position=position_jitter(h=.01,w=0.02)) +
-  #scale_y_continuous(breaks = pretty(c$response, n = 10)) +
-  ylab("Responses") +
-  xlab("Participant")
-ggsave(f="../graphs/raw-responses-to-controls.pdf",height=4,width=6.5)
-
 # proportion of "no" responses to controls
 c %>%
   count(response) %>%
@@ -147,26 +135,26 @@ ggplot(controlresponses, aes(x=n)) +
 
 table(controlresponses$n)
 
-# proportion of "no" responses to controls by participant
+# identify outlier Turkers, defined as Turkers who responded "yes/1" to at least one control
 outlier_Turkers = c %>%
   group_by(workerid) %>%
   summarize(Prop = mean(nResponse)) %>%
-  filter(Prop == 1)
+  filter(Prop != 0)
 outlier_Turkers
 
-# remove participants who gave "yes" response to at least one control
+# remove participants who gave "yes/1" response to at least one control
 d <- droplevels(subset(d, !(d$workerid %in% outlier_Turkers$workerid)))
-length(unique(d$workerid)) #495 Turkers (35 excluded)
+length(unique(d$workerid)) #482 Turkers (530-482 = 48 excluded)
 
 # exclude turkers who always clicked "No"
 
-noclickers = d %>%
-  filter(verb != "MC") %>%
-  group_by(workerid) %>%
-  summarize(Proportion=mean(nResponse))
-
-ggplot(noclickers, aes(x=Proportion)) +
-  geom_histogram()
+# noclickers = d %>%
+#   filter(verb != "MC") %>%
+#   group_by(workerid) %>%
+#   summarize(Proportion=mean(nResponse))
+# 
+# ggplot(noclickers, aes(x=Proportion)) +
+#   geom_histogram()
 
 # # people who always said No:
 # noclickers %>%
@@ -177,6 +165,8 @@ ggplot(noclickers, aes(x=Proportion)) +
 # 
 
 # exclude workers with factive mean smaller than or equal to control mean
+# given that control mean is 0, this means that they only responded "no/0" to factives
+
 fcmeans = d %>%
   filter(verb %in% c("MC","be_annoyed","see","discover","reveal","know")) %>%
   mutate(ItemType = ifelse(verb == "MC","MC","factive")) %>%
@@ -184,65 +174,31 @@ fcmeans = d %>%
   summarize(Mean = mean(nResponse)) %>%
   spread(ItemType,Mean) %>%
   mutate(FCDiff = factive - MC)
-
-fcmeans = d %>%
-  filter(verb %in% c("control","be_annoyed","see","discover","reveal","know")) %>%
-  mutate(ItemType = ifelse(verb == "control","control","factive")) %>%
-  group_by(workerid,ItemType) %>%
-  count(response)
-  summarize(Mean = mean(nResponse)) %>%
-  spread(ItemType,Mean) %>%
-  mutate(FCDiff = factive - control)
+fcmeans
 
 negfcdiffworkers = fcmeans[fcmeans$FCDiff <= 0,]$workerid
-length(negfcdiffworkers) # 2 turkers
-
-ggplot(negfcdiffworkers, aes(x=FCDiff)) +
-  geom_histogram()
+length(negfcdiffworkers) # 11 turkers
 
 # exclude the 2 Turkers identified above
 d <- droplevels(subset(d, !(d$workerid %in% negfcdiffworkers)))
-length(unique(d$workerid)) #264 Turkers remain
-
-
-# posfcdiffs = fcmeans %>%
-#   filter(FCDiff > 0)
-# 
-# SD = sd(posfcdiffs$FCDiff)
-# Mean = mean(posfcdiffs$FCDiff)
-# Threshold = .1#Mean - 2.5*SD
-# 
-# posfcdiffs = posfcdiffs %>%
-#   mutate(SmallDiff = FCDiff < Threshold) 
-# summary(posfcdiffs)
-# 
-# smallfcdiffworkers = posfcdiffs[posfcdiffs$SmallDiff,]$workerid
-
-# resulting group mean on controls
-c <- droplevels(subset(d, d$verb == "control"))
-round(mean(c$response),2) #.11
+length(unique(d$workerid)) #471 Turkers remain (482-11 = 471)
+table(d$nResponse)
 
 # clean data
 cd = d
 write.csv(cd, "../data/cd.csv")
-nrow(cd) #14092 / 26 items = 542 participants
+nrow(cd) #12246 / 26 items = 471 participants
 
 # load clean data for analysis ----
 cd = read.csv("../data/cd.csv")
-nrow(cd) #14092
-
-# change cd verb names to match veridicality names
-cd = cd %>%
-  mutate(verb=recode(verb, control = "MC", annoyed = "be_annoyed", be_right_that = "be_right", inform_Sam = "inform"))
+nrow(cd) #12246
 
 # age info
-table(cd$age) #20-71
-length(which(is.na(cd$age))) # 0 missing values
-median(cd$age,na.rm=TRUE) #36
+table(cd$age) #18-81
+length(which(is.na(cd$age))) # 26 missing values = 1 Turker
+median(cd$age,na.rm=TRUE) #37
 table(cd$gender)
-#118 female, 141 male, 2 other
-
-nrow(cd) #6864
+#225 female, 240 male, 2 other
 
 # define colors for the predicates
 cols = data.frame(V=levels(cd$verb))
@@ -259,13 +215,13 @@ cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid",
 
 # mean projectivity by predicate, including the main clause controls
 prop = cd %>%
-  count(verb, response) %>%
   group_by(verb) %>%
-  mutate(prop =  n / sum(n)) %>%
-  filter(response == "Yes") %>%
-  ungroup() %>% 
-  mutate(Verb = fct_reorder(verb,prop))
+  summarize(Mean = mean(nResponse), CILow = ci.low(nResponse), CIHigh = ci.high(nResponse)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(as.factor(verb),Mean))
+  # ungroup() %>% 
+  # mutate(Verb = fct_reorder(verb,-prop))
 prop
+
 str(prop$Verb)
 str(prop$prop)
 levels(prop$Verb)
@@ -278,9 +234,13 @@ prop$VeridicalityGroup = as.factor(
                 ifelse(prop$Verb  %in% c("be_right","demonstrate"),"VNF",
                        ifelse(prop$Verb  %in% c("MC"),"MC","V")))))
 
-ggplot(prop, aes(x=Verb, y=prop, fill=VeridicalityGroup)) +
+levels(prop$VeridicalityGroup)
+cols$Colors
+
+ggplot(prop, aes(x=Verb, y=Mean, fill=VeridicalityGroup)) +
   #geom_point(color="black", size=4) +
   #geom_point(shape=21,fill="gray60",data=subjmeans, alpha=.1, color="gray40") +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
   #geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
   geom_point(shape=21,stroke=.5,size=2.5,color="black") +
   scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
@@ -290,9 +250,8 @@ ggplot(prop, aes(x=Verb, y=prop, fill=VeridicalityGroup)) +
   theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
                                                                  color=cols$Colors)) +
   theme(legend.position="top") +
-  ylab("Proporition of 'yes' answers") +
-  xlab("Predicate") +
-  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
+  ylab("Proportion of 'yes' answers") +
+  xlab("Predicate") 
 ggsave("../graphs/proportion-by-predicate-variability.pdf",height=4,width=7)
 
 

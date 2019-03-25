@@ -24,11 +24,13 @@ d_proj_nb = read.csv("../../5-projectivity-no-fact/data/cd.csv") %>%
   mutate(verb=recode(verb, control = "MC", annoyed = "be_annoyed", be_right_that = "be_right", inform_Sam = "inform"))
 
 # load clean binary inference entailment data for analysis
-d_inf_b = read.csv("../../7-veridicality3-binary/data/cd.csv")
+d_inf_b = read.csv("../../7-veridicality3-binary/data/cd.csv") %>%
+  mutate(nResponse = ifelse(response == "Yes",1,0))
 d_inf_nb = read.csv("../../4-veridicality3/data/cd.csv")
 
 # load clean binary contradictoriness entailment data for analysis
-d_contr_b = read.csv("../../6-veridicality2-binary/data/cd.csv")
+d_contr_b = read.csv("../../6-veridicality2-binary/data/cd.csv") %>%
+  mutate(nResponse = ifelse(response == "Yes",1,0))
 d_contr_nb = read.csv("../../2-veridicality2/data/cd.csv")
 
 
@@ -71,4 +73,96 @@ ggplot(pd, aes(x=Mean, y=Prop, fill=VeridicalityGroup)) +
   ylim(c(0,1))
 ggsave("../graphs/projectivity.pdf",height=4,width=6)
 
-cor(pd$Prop,pd$Mean,method="spearman")
+pd %>%
+  filter(verb != "MC") %>%
+  summarize(Cor=cor(Prop,Mean,method="spearman"))
+
+
+# for inference entailment data, plot proportions against mean slider ratings
+einf_prop = d_inf_b %>%
+  group_by(verb) %>%
+  summarize(Prop = mean(nResponse), CILow = ci.low(nResponse), CIHigh = ci.high(nResponse)) %>%
+  mutate(YMinP = Prop - CILow, YMaxP = Prop + CIHigh, Verb = fct_reorder(as.factor(verb),Prop))
+
+einf_means = d_inf_nb %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMinM = Mean - CILow, YMaxM = Mean + CIHigh) %>%
+  select(-CILow,-CIHigh)
+
+einfd = einf_prop %>%
+  left_join(einf_means) %>%
+  mutate(verb=recode(verb, control = "control_good", control = "control_bad", annoyed = "be_annoyed", be_right_that = "be_right", inform_Sam = "inform")) %>%
+  mutate(VeridicalityGroup = factor(case_when(
+    verb %in% c("know", "discover", "reveal", "see", "be_annoyed") ~ "F", 
+    verb %in% c("pretend", "think", "suggest", "say") ~ "NF", 
+    verb %in% c("be_right","demonstrate") ~ "VNF",
+    verb %in% c("control_good","control_bad") ~ "control",
+    TRUE ~ "V")))
+
+ggplot(einfd, aes(x=Mean, y=Prop, fill=VeridicalityGroup)) +
+  geom_errorbar(aes(ymin=YMinP,ymax=YMaxP),width=0) +
+  geom_errorbarh(aes(xmin=YMinM,xmax=YMaxM),width=0) +
+  geom_point(shape=21,stroke=.5,size=2.5,color="black") +
+  # scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  # scale_alpha(range = c(.3,1)) +
+  scale_fill_manual(values=c("darkorchid","black","gray60","tomato1","dodgerblue")) +
+  geom_abline(intercept=0,slope=1,color="gray70",linetype="dashed") +
+  # guides(fill=FALSE) +
+  # theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+  # color=cols$Colors)) +
+  # theme(legend.position="top") +
+  ylab("Proportion of 'yes' answers") +
+  xlab("Mean certainty rating") +
+  xlim(c(0,1)) +
+  ylim(c(0,1))
+ggsave("../graphs/entailment_inference.pdf",height=4,width=6)
+
+einfd %>%
+  filter(verb != "control") %>%
+  summarize(Cor=cor(Prop,Mean,method="spearman"))
+
+
+# for inference entailment data, plot proportions against mean slider ratings
+econtr_prop = d_contr_b %>%
+  group_by(verb) %>%
+  summarize(Prop = mean(nResponse), CILow = ci.low(nResponse), CIHigh = ci.high(nResponse)) %>%
+  mutate(YMinP = Prop - CILow, YMaxP = Prop + CIHigh, Verb = fct_reorder(as.factor(verb),Prop))
+
+econtr_means = d_contr_nb %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMinM = Mean - CILow, YMaxM = Mean + CIHigh) %>%
+  select(-CILow,-CIHigh)
+
+econtrd = econtr_prop %>%
+  left_join(econtr_means) %>%
+  mutate(verb=recode(verb, control = "control_good", control = "control_bad", annoyed = "be_annoyed", be_right_that = "be_right", inform_Sam = "inform")) %>%
+  mutate(VeridicalityGroup = factor(case_when(
+    verb %in% c("know", "discover", "reveal", "see", "be_annoyed") ~ "F", 
+    verb %in% c("pretend", "think", "suggest", "say") ~ "NF", 
+    verb %in% c("be_right","demonstrate") ~ "VNF",
+    verb %in% c("control_good","control_bad") ~ "control",
+    TRUE ~ "V")))
+
+ggplot(econtrd, aes(x=Mean, y=Prop, fill=VeridicalityGroup)) +
+  geom_errorbar(aes(ymin=YMinP,ymax=YMaxP),width=0) +
+  geom_errorbarh(aes(xmin=YMinM,xmax=YMaxM),width=0) +
+  geom_point(shape=21,stroke=.5,size=2.5,color="black") +
+  # scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  # scale_alpha(range = c(.3,1)) +
+  scale_fill_manual(values=c("darkorchid","black","gray60","tomato1","dodgerblue")) +
+  geom_abline(intercept=0,slope=1,color="gray70",linetype="dashed") +
+  # guides(fill=FALSE) +
+  # theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+  # color=cols$Colors)) +
+  # theme(legend.position="top") +
+  ylab("Proportion of 'yes' answers") +
+  xlab("Mean certainty rating") +
+  xlim(c(0,1)) +
+  ylim(c(0,1))
+ggsave("../graphs/entailment_contradictory.pdf",height=4,width=6)
+
+econtrd %>%
+  filter(verb != "control") %>%
+  summarize(Cor=cor(Prop,Mean,method="spearman"))

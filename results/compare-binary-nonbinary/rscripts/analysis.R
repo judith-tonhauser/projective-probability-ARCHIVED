@@ -1,5 +1,5 @@
 # Prior probability work
-# 8-projectivity-no-fact-binary
+# compare binary and gradient
 
 # set working directory to directory of script
 this.dir <- dirname(rstudioapi::getSourceEditorContext()$path)

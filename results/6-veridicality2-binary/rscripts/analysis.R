@@ -19,36 +19,36 @@ theme_set(theme_bw())
 ## SEARCH FOR "load clean data for analysis"
 
 # load subject information
-s = read.csv("../data/subject-information.csv")
-names(s)
-length(unique(s$workerid))
+# s = read.csv("../data/subject-information.csv")
+# names(s)
+# length(unique(s$workerid))
 #View(s)
 
 # load raw data
-d = read.csv("../data/experiment.csv")
+d = read.csv("../data/experiment_noreps.csv")
 head(d)
 
 # bind the two files by workerid
-d = left_join(d,s)
-head(d)
+# d = left_join(d,s)
+# head(d)
 
 nrow(d) #16800 = 600 participants x 28 items
 names(d)
 length(unique(d$workerid)) #600 participants
 
-
-tmp <- d %>%
-  group_by(workerid) %>%
-  summarize(Answer.time = sum(rt, na.rm = TRUE)) %>%
-  mutate(Answer.time_in_seconds = Answer.time/1000) %>%
-  mutate(Answer.time_in_minutes = Answer.time_in_seconds/60)
-as.data.frame(tmp)
-head(tmp)
-min(tmp$Answer.time_in_minutes)
-max(tmp$Answer.time_in_minutes)
-  
-d = left_join(d,tmp)
-head(d)
+# 
+# tmp <- d %>%
+#   group_by(workerid) %>%
+#   summarize(Answer.time = sum(rt, na.rm = TRUE)) %>%
+#   mutate(Answer.time_in_seconds = Answer.time/1000) %>%
+#   mutate(Answer.time_in_minutes = Answer.time_in_seconds/60)
+# as.data.frame(tmp)
+# head(tmp)
+# min(tmp$Answer.time_in_minutes)
+# max(tmp$Answer.time_in_minutes)
+#   
+# d = left_join(d,tmp)
+# head(d)
 
 mean(d$Answer.time_in_minutes) #3.02
 median(d$Answer.time_in_minutes) #2.69
@@ -71,18 +71,18 @@ table(d$gender)
 #263 female, 336 male, 1 undeclared
 
 ### exclude non-American English speakers
-length(unique(d$workerid)) #600
+length(unique(d$workerid)) #430
 length(which(is.na(d$language))) #no missing responses
 table(d$language) 
 d$language <- trimws(d$language)
 d <- droplevels(subset(d, (d$language != "https://worker.mturk.com/projects/3QKP95RWQZKZ26DSGGU04VYNWZJX5H/tasks/accept_random" & d$language != "polish" & d$language != "United States" & d$language != "spanish" & d$language != "West Virginia" & d$language != "Arabic " & d$language != "Tamil" & d$language != "Chinese" & d$language != "Turkish")))
-length(unique(d$workerid)) #577 (23 Turkers excluded)
+length(unique(d$workerid)) #422 (8 Turkers excluded)
 
 # American English
 length(which(is.na(d$american))) #0
 table(d$american) 
 d <- droplevels(subset(d, d$american == "0"))
-length(unique(d$workerid)) #562 (15 Turkers excluded)
+length(unique(d$workerid)) #404 (18 Turkers excluded)
 
 ## exclude turkers who completed the experiment too quickly?
 
@@ -97,9 +97,9 @@ table(times$TooFast)
 # nobody did the experiment too fast
 
 # exclude participants who did the experiment in under 1 minute
-table(d$Answer.time_in_minutes) 
-d <- droplevels(subset(d, d$Answer.time_in_minutes >= 1))
-length(unique(d$workerid)) # 495 participants (67 Turkers excluded)
+# table(d$Answer.time_in_minutes) 
+# d <- droplevels(subset(d, d$Answer.time_in_minutes >= 1))
+# length(unique(d$workerid)) # 495 participants (67 Turkers excluded)
 
 min(d$Answer.time_in_minutes)
 

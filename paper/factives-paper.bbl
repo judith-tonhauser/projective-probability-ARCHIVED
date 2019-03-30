@@ -20,11 +20,6 @@ Abrus{\'a}n, M{\'a}rta. 2016.
   distinction.
 \newblock {\em Natural Language Semantics\/} 24:165--202.
 
-\bibitem[Abusch(2010)]{abusch10}
-Abusch, Dorit. 2010.
-\newblock Presupposition triggering from alternatives.
-\newblock {\em Journal of Semantics\/} 27:37--80.
-
 \bibitem[Anand and Hacquard(2014)]{anand-hacquard2014}
 Anand, Pranav and Valentine Hacquard. 2014.
 \newblock Factivity, belief and discourse.
@@ -114,8 +109,13 @@ Hothorn, Torsten, Frank Bretz, and Peter Westfall. 2008.
 \newblock Simultaneous inference in general parametric models.
 \newblock {\em Biometrical Journal\/} 50(3):346--363.
 
-\bibitem[Karttunen(1971)]{karttunen71b}
-Karttunen, Lauri. 1971.
+\bibitem[Karttunen(1971{\natexlab{a}})]{karttunen71-implicative}
+Karttunen, Lauri. 1971{\natexlab{a}}.
+\newblock Implicative verbs.
+\newblock {\em Language\/} 47:340--358.
+
+\bibitem[Karttunen(1971{\natexlab{b}})]{karttunen71b}
+Karttunen, Lauri. 1971{\natexlab{b}}.
 \newblock Some observations on factivity.
 \newblock {\em Papers in Linguistics\/} 4:55--69.
 
@@ -125,12 +125,10 @@ Karttunen, Lauri. 2016.
 \newblock In {\em Proceedings of {Semantics and Linguistic Theory (SALT)
   XXVI}\/}, pages 705--731. Ithaca, NY: CLC Publications.
 
-\bibitem[Kiparsky and Kiparsky(1971)]{kiparsky-kiparsky71}
-Kiparsky, Paul and Carol Kiparsky. 1971.
+\bibitem[Kiparsky and Kiparsky(1970)]{kiparsky-kiparsky70}
+Kiparsky, Paul and Carol Kiparsky. 1970.
 \newblock Fact.
-\newblock In D.~Steinberg and L.~Jakobovits, eds., {\em Semantics. An
-  Interdisciplinary Reader in Philosophy, Linguistics and Psychology\/}, pages
-  345--369. Cambridge: Cambridge University Press.
+\newblock {\em Progress in Linguistics\/} pages 143--173.
 
 \bibitem[Klein(1975)]{klein1975}
 Klein, Ewan. 1975.

@@ -44,8 +44,12 @@ table(d$asses)
 length(which(is.na(d$age))) #0
 table(d$age) #19-69
 median(d$age,na.rm=TRUE) #36
-table(d$gender)
-#152 female, 148 male
+d %>% 
+  select(gender, workerid) %>% 
+  unique() %>% 
+  group_by(gender) %>% 
+  summarize(count=n())
+# 152 female, 148 male
 
 ### exclude non-American English speakers
 length(unique(d$workerid)) #300
@@ -120,39 +124,39 @@ means
 c <- rbind(c.bad,c.good)
 nrow(c) #2288 / 8 items = 286 Turkers
 
-# Turkers with response means on "follow" (1) more than 3sd below group mean
+# Turkers with response means on "follow" (1) more than 2sd below group mean
 cg.means = aggregate(response~workerid, data=c.good, FUN="mean")
 cg.means$YMin = cg.means$response - aggregate(response~workerid, data=c.good, FUN="ci.low")$response
 cg.means$YMax = cg.means$response + aggregate(response~workerid, data=c.good, FUN="ci.high")$response
 cg.means
 
-c.g <- cg.means[cg.means$response < (mean(cg.means$response) - 3*sd(cg.means$response)),]
+c.g <- cg.means[cg.means$response < (mean(cg.means$response) - 2*sd(cg.means$response)),]
 c.g
-unique(length(c.g$workerid)) #5 Turkers gave low responses
-mean(c.g$response) #.51
+unique(length(c.g$workerid)) #14 Turkers gave low responses
+mean(c.g$response) #.66
 
-# Turkers with response means on "no follow" controls (0) more than 3sd above group mean
+# Turkers with response means on "no follow" controls (0) more than 2sd above group mean
 cb.means = aggregate(response~workerid, data=c.bad, FUN="mean")
 cb.means$YMin = cb.means$response - aggregate(response~workerid, data=c.bad, FUN="ci.low")$response
 cb.means$YMax = cb.means$response + aggregate(response~workerid, data=c.bad, FUN="ci.high")$response
 cb.means
 
-c.b <- cb.means[cb.means$response > (mean(cb.means$response) + 3*sd(cb.means$response)),]
+c.b <- cb.means[cb.means$response > (mean(cb.means$response) + 2*sd(cb.means$response)),]
 c.b
-unique(length(c.b$workerid)) #4 Turkers gave low responses
-mean(c.b$response) #.43
+unique(length(c.b$workerid)) #19 Turkers gave low responses
+mean(c.b$response) #.29
 
 # how many unique Turkers did badly on the controls?
 outliers <- subset(c, c$workerid %in% c.g$workerid | c$workerid %in% c.b$workerid)
 outliers = droplevels(outliers)
-nrow(outliers) #56 / 8 control items = 7 Turkers
+nrow(outliers) #216 / 8 control items = 27 Turkers
 table(outliers$workerid)
 
 # look at the responses to the controls that these "outlier" Turkers did
 # outliers to "no follow" items (0)
 outliers.g <- subset(c.good, c.good$workerid %in% c.g$workerid)
 outliers.g = droplevels(outliers.g)
-nrow(outliers.g) #20 / 4 control items = 5 Turkers
+nrow(outliers.g) #56 / 4 control items = 14 Turkers
 
 ggplot(outliers.g, aes(x=workerid,y=response)) +
   geom_point(aes(colour = contentNr)) +
@@ -161,13 +165,13 @@ ggplot(outliers.g, aes(x=workerid,y=response)) +
   scale_y_continuous(breaks = pretty(outliers.g$response, n = 10)) +
   ylab("Responses") +
   xlab("Participants")
-# responses here are supposed to be 0 but these 5 Turkers
+# responses here are supposed to be 0 but these 14 Turkers
 # gave consistently higher responses across the control items
 
 # outliers to "follow" items (1)
 outliers.b <- subset(c.bad, c.bad$workerid %in% c.b$workerid)
 outliers.b = droplevels(outliers.b)
-nrow(outliers.b) #16 / 4 control items = 4 Turkers
+nrow(outliers.b) #76 / 4 control items = 19 Turkers
 
 ggplot(outliers.b, aes(x=workerid,y=response)) +
   geom_point(aes(colour = contentNr)) +
@@ -176,13 +180,13 @@ ggplot(outliers.b, aes(x=workerid,y=response)) +
   scale_y_continuous(breaks = pretty(outliers.b$response, n = 10)) +
   ylab("Responses") +
   xlab("Participants")
-# responses here are supposed to be 1 but these 4 Turkers
+# responses here are supposed to be 1 but these 19 Turkers
 # gave consistently lower responses across the control items 
 
-# exclude the 7 Turkers identified above
+# exclude the 27 Turkers identified above
 d <- subset(d, !(d$workerid %in% outliers$workerid))
 d <- droplevels(d)
-length(unique(d$workerid)) #279 Turkers remain (7 excluded for problems with control items)
+length(unique(d$workerid)) #259 Turkers remain (27 excluded for problems with control items)
 
 
 # exclude turkers who always clicked on roughly the same point on the scale 
@@ -213,45 +217,50 @@ lowvarworkers # 0 turkers consistently clicked on roughly the same point on the 
 # d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
 # length(unique(d$workerid)) #266 Turkers remain
 
-# exclude workers with factive and veridical non-factive mean smaller than or equal 
-# to control_bad mean (where p definitely doesn't follow)
-fcmeans = d %>%
-  filter(verb %in% c("control_good","be_annoyed","see","discover","reveal","know")) %>%
-  mutate(ItemType = ifelse(verb == "control","control","factive")) %>%
-  group_by(workerid,ItemType) %>%
-  summarize(Mean = mean(response)) %>%
-  spread(ItemType,Mean) %>%
-  mutate(FCDiff = factive - control)
-
-negfcdiffworkers = fcmeans[fcmeans$FCDiff <= 0,]$workerid
-length(negfcdiffworkers) # 2 turkers
+# # exclude workers with factive and veridical non-factive mean smaller than or equal 
+# # to control_bad mean (where p definitely doesn't follow)
+# fcmeans = d %>%
+#   filter(verb %in% c("control_good","be_annoyed","see","discover","reveal","know")) %>%
+#   mutate(ItemType = ifelse(verb == "control","control","factive")) %>%
+#   group_by(workerid,ItemType) %>%
+#   summarize(Mean = mean(response)) %>%
+#   spread(ItemType,Mean) %>%
+#   mutate(FCDiff = factive - control)
+# 
+# negfcdiffworkers = fcmeans[fcmeans$FCDiff <= 0,]$workerid
+# length(negfcdiffworkers) # 2 turkers
 
 # exclude the 2 Turkers identified above
-d <- droplevels(subset(d, !(d$workerid %in% negfcdiffworkers)))
-length(unique(d$workerid)) #264 Turkers remain
+# d <- droplevels(subset(d, !(d$workerid %in% negfcdiffworkers)))
+# length(unique(d$workerid)) #264 Turkers remain
 
 # new group means
 c.bad <- droplevels(subset(d, d$verb == "control_bad"))
-nrow(c.bad) #1116 / 4 contradictory controls = 279 Turkers
+nrow(c.bad) #1036 / 4 contradictory controls = 259 Turkers
 c.good <- droplevels(subset(d, d$verb == "control_good"))
-nrow(c.good) #1116
-round(mean(c.bad$response),2) #.04
-round(mean(c.good$response),2) #.95
+nrow(c.good) #1036
+round(mean(c.bad$response),2) #.03
+round(mean(c.good$response),2) #.96
 
 # clean data = cd
 cd = d
 write.csv(cd, "../data/cd.csv")
-nrow(cd) #7812 / 28 items = 279 participants
+nrow(cd) #7252 / 28 items = 259 participants
 
 # load clean data for analysis ----
 cd <- read.csv(file="../data/cd.csv", header=TRUE, sep=",")
+str(cd$verb)
 
 # age info
 table(cd$age) #19-69
 length(which(is.na(cd$age))) #0 missing values
 median(cd$age,na.rm=TRUE) #36
-table(cd$gender)
-#142 female, 137 male
+cd %>% 
+  select(gender, workerid) %>% 
+  unique() %>% 
+  group_by(gender) %>% 
+  summarize(count=n())
+# 132 female, 128 male
 
 # change the name of the predicates
 table(cd$verb)
@@ -260,20 +269,18 @@ cd$verb <- gsub("inform_Sam","inform",cd$verb)
 cd$verb <- gsub("annoyed","be_annoyed",cd$verb)
 cd$verb <- gsub("control_good","entailing C",cd$verb)
 cd$verb <- gsub("control_bad","non-ent. C",cd$verb)
+cd$verb <- as.factor(cd$verb)
 
-# define colors for the predicates
-cols = data.frame(V=levels(cd$verb))
-cols$VeridicalityGroup = as.factor(
-  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
-         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
-                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF",
-                       ifelse(cols$V %in% c("MC"),"MC","V")))))
+# write means and sd to separate file 
+means = cd %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
+  select(verb,Mean,YMin,YMax)
+means = as.data.frame(means)
+names(means)
 
-cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid", 
-                      ifelse(cols$VeridicalityGroup == "NF", "gray60", 
-                             ifelse(cols$VeridicalityGroup == "VNF","dodgerblue",
-                                    ifelse(cols$VeridicalityGroup == "MC","black","tomato1"))))
-
+write.csv(means, file="../data/inference_means.csv",row.names=F,quote=F)
 
 # target data (20 items per Turker)
 names(cd)
@@ -281,33 +288,95 @@ table(cd$verb)
 
 t <- subset(cd, cd$verb != "entailing C" & cd$verb != "non-ent. C")
 t <- droplevels(t)
-nrow(t) #5580 / 20 = 279 Turkers
+nrow(t) #5180 / 20 = 259 Turkers
 
 # target data plus good (entailing) controls
-te <- droplevels(subset(cd,cd$verb != "control_bad"))
-nrow(te) #6696 / 24 = 279 Turkers
+te <- droplevels(subset(cd,cd$verb != "non-ent. C"))
+nrow(te) #6216/24 = 259 Turkers
 
 # how many ratings per predicate and per predicate-clause combination?
 names(t)
 tmp <- as.data.frame(table(t$verb))
-min(tmp$Freq) #279 because 279 Turkers and each Turker saw each predicate once
+min(tmp$Freq) #259 because 259 Turkers and each Turker saw each predicate once
 
 table(t$content)
 t$predicateClause <- interaction(t$verb,t$content)
 tmp <- as.data.frame(table(t$predicateClause))
 head(tmp)
-min(tmp$Freq) #5
-max(tmp$Freq) #24
-mean(tmp$Freq) #13.9
+min(tmp$Freq) #3
+max(tmp$Freq) #23
+mean(tmp$Freq) #13
 
 # save target data
 write.csv(t, "../data/t.csv")
-nrow(t) #5580
+nrow(t) #5180
 
 # load target data for analysis
 t <- read.csv(file="../data/t.csv", header=TRUE, sep=",")
 head(t)
 str(t$verb)
+
+## plots ----
+
+# plot of means with participant ratings
+means = cd %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, verb = fct_reorder(as.factor(verb),Mean))
+options(tibble.print_max = Inf)
+means
+levels(means$verb)
+
+cd$verb <-factor(cd$verb, levels=levels(means$verb))
+
+# define colors for the predicates
+cols = data.frame(V=levels(cd$verb))
+cols
+
+levels(cols$V)
+#cols$V <- factor(cols$V, levels = cols[order(as.character(means$verb)),]$V, ordered = TRUE)
+
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF",
+                       ifelse(cols$V %in% c("non-ent. C","entailing C"),"MC","V")))))
+
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid", 
+                      ifelse(cols$VeridicalityGroup == "NF", "gray60", 
+                             ifelse(cols$VeridicalityGroup == "VNF","dodgerblue",
+                                    ifelse(cols$VeridicalityGroup == "MC","black","tomato1"))))
+
+cols$Colors
+levels(cols$VeridicalityGroup)
+
+
+subjmeans = cd %>%
+  group_by(verb,workerid) %>%
+  summarize(Mean = mean(response)) 
+subjmeans$verb <- factor(subjmeans$verb, levels = unique(levels(means$verb)))
+levels(subjmeans$verb)
+
+means$VeridicalityGroup = as.factor(
+  ifelse(means$verb %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(means$verb  %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(means$verb  %in% c("be_right","demonstrate"),"VNF",
+                       ifelse(means$verb  %in% c("non-ent. C","entailing C"),"control","V")))))
+
+ggplot(means, aes(x=verb, y=Mean, fill=VeridicalityGroup)) +
+  geom_point(shape=21,fill="gray60",data=subjmeans, alpha=.1, color="gray40") +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
+  geom_point(shape=21,stroke=.5,size=2.5,color="black") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_alpha(range = c(.3,1)) +
+  scale_fill_manual(values=c("black","darkorchid","gray60","tomato1","dodgerblue")) +
+  guides(fill=FALSE) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors)) +
+  ylab("Mean inference rating") +
+  xlab("Predicate") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
+ggsave("../graphs/means-inference-by-predicate-variability.pdf",height=4,width=7)
 
 # plot by-participant variability
 cd$PresumedVerbType = as.factor(
@@ -349,42 +418,6 @@ ggplot(means, aes(x=Participant, y=Mean, fill=PresumedVerbType)) +
   theme(axis.text.x = element_text(size = 6, angle = 45, hjust=1,vjust=1 )) 
 ggsave("../graphs/means-inference-by-participant.pdf",height=4,width=25)
 
-
-# plot for SemFest talk
-means = cd %>%
-  group_by(verb) %>%
-  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
-  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(as.factor(verb),Mean))
-options(tibble.print_max = Inf)
-means
-
-cd$Verb <-factor(cd$verb, levels=levels(means$Verb))
-
-subjmeans = cd %>%
-  group_by(Verb,workerid) %>%
-  summarize(Mean = mean(response))
-
-means$VeridicalityGroup = as.factor(
-  ifelse(means$Verb %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
-         ifelse(means$Verb  %in% c("pretend", "think", "suggest", "say"), "NF", 
-                ifelse(means$Verb  %in% c("be_right","demonstrate"),"VNF",
-                       ifelse(means$Verb  %in% c("non-ent. C","entailing C"),"control","V")))))
-
-ggplot(means, aes(x=Verb, y=Mean, fill=VeridicalityGroup)) +
-  geom_point(shape=21,fill="gray60",data=subjmeans, alpha=.1, color="gray40") +
-  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
-  geom_point(shape=21,stroke=.5,size=2.5,color="black") +
-  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
-  scale_alpha(range = c(.3,1)) +
-  scale_fill_manual(values=c("black","darkorchid","gray60","tomato1","dodgerblue")) +
-  guides(fill=FALSE) +
-  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
-                                                                 color=cols$Colors)) +
-  theme(legend.position="top") +
-  ylab("Mean inference rating") +
-  xlab("Predicate") +
-  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
-ggsave("../graphs/means-inference-by-predicate-variability.pdf",height=4,width=7)
 
 # also used in MIT talk
 # boxplot of inference strength by predicate, collapsing over complement clauses, ordered by mean
@@ -592,11 +625,13 @@ table(cd$item)
 # CC is entailed
 cd$verb <- relevel(cd$verb, ref = "entailing C")
 
-model = lmer(response ~ verb + (1+verb|workerid) + (1|item), data=cd, REML=F)
-summary(model)
+# without slope
+model.bmrs.inf.nb = brm(response ~ verb + (1|workerid) + (1|item), data=cd, family=gaussian())
+summary(model.bmrs.inf.nb)
 
-model.brms = brm(response ~ verb + (verb|workerid) + (1|item), data=cd, family=gaussian())
-summary(model.brms)
+# with slope
+model.brms.inf.nb2 = brm(response ~ verb + (verb|workerid) + (1|item), data=cd, family=gaussian())
+summary(model.brms.inf.nb2)
 
 
 ## pairwise comparison to see which predicates differ from one another

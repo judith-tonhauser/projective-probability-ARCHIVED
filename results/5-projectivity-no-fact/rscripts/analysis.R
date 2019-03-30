@@ -41,8 +41,12 @@ table(d$assess)
 length(which(is.na(d$age))) #52 missing values (2 Turkers)
 table(d$age) #20-71
 median(d$age,na.rm=TRUE) #36
-table(d$gender)
-#136 female, 157 male, 2 undeclared
+d %>% 
+  select(gender, workerid) %>% 
+  unique() %>% 
+  group_by(gender) %>% 
+  summarize(count=n())
+#136 female, 157 male, 2 other, 5 undeclared
 
 ### exclude non-American English speakers
 length(unique(d$workerid)) #300
@@ -164,20 +168,20 @@ d <- droplevels(subset(d, !(d$workerid %in% lowvarworkers)))
 length(unique(d$workerid)) #266 Turkers remain
 
 # exclude workers with factive mean smaller than or equal to control mean
-fcmeans = d %>%
-  filter(verb %in% c("control","be_annoyed","see","discover","reveal","know")) %>%
-  mutate(ItemType = ifelse(verb == "control","control","factive")) %>%
-  group_by(workerid,ItemType) %>%
-  summarize(Mean = mean(response)) %>%
-  spread(ItemType,Mean) %>%
-  mutate(FCDiff = factive - control)
-
-negfcdiffworkers = fcmeans[fcmeans$FCDiff <= 0,]$workerid
-length(negfcdiffworkers) # 2 turkers
+# fcmeans = d %>%
+#   filter(verb %in% c("control","be_annoyed","see","discover","reveal","know")) %>%
+#   mutate(ItemType = ifelse(verb == "control","control","factive")) %>%
+#   group_by(workerid,ItemType) %>%
+#   summarize(Mean = mean(response)) %>%
+#   spread(ItemType,Mean) %>%
+#   mutate(FCDiff = factive - control)
+# 
+# negfcdiffworkers = fcmeans[fcmeans$FCDiff <= 0,]$workerid
+# length(negfcdiffworkers) # 2 turkers
 
 # exclude the 2 Turkers identified above
-d <- droplevels(subset(d, !(d$workerid %in% negfcdiffworkers)))
-length(unique(d$workerid)) #264 Turkers remain
+# d <- droplevels(subset(d, !(d$workerid %in% negfcdiffworkers)))
+# length(unique(d$workerid)) #264 Turkers remain
 
 
 # posfcdiffs = fcmeans %>%
@@ -200,11 +204,11 @@ round(mean(c$response),2) #.11
 # clean data
 cd = d
 write.csv(cd, "../data/cd.csv")
-nrow(cd) #6864 / 26 items = 264 participants
+nrow(cd) #6916 / 26 items = 266 participants
 
 # load clean data for analysis ----
 cd = read.csv("../data/cd.csv")
-nrow(cd) #6864
+nrow(cd) #6916
 
 # change cd verb names to match veridicality names
 cd = cd %>%
@@ -214,23 +218,111 @@ cd = cd %>%
 table(cd$age) #20-71
 length(which(is.na(cd$age))) # 0 missing values
 median(cd$age,na.rm=TRUE) #36
-table(cd$gender)
-#118 female, 141 male, 2 other
 
-nrow(cd) #6864
+cd %>% 
+  select(gender, workerid) %>% 
+  unique() %>% 
+  group_by(gender) %>% 
+  summarize(count=n())
+#118 female, 143 male, 2 other, 3 undeclared
+
+# how many ratings per predicate and per predicate-clause combination?
+
+# target data (20 items per Turker) 
+names(cd)
+table(cd$verb)
+t <- droplevels(subset(cd, cd$verb != "MC"))
+nrow(t) #5320 / 20 items = 266 Turkers
+
+names(t)
+tmp <- as.data.frame(table(t$verb))
+min(tmp$Freq) #266
+max(tmp$Freq) #266
+mean(tmp$Freq) #266
+# 266 because 266 Turkers and each Turker saw each predicate once
+
+table(t$content)
+t$predicateClause <- interaction(t$verb,t$content)
+tmp <- as.data.frame(table(t$predicateClause))
+head(tmp)
+min(tmp$Freq) #4
+max(tmp$Freq) #25
+mean(tmp$Freq) #13.3
+
+# plots ----
+
+# mean projectivity by predicate, including the main clause controls
+means = cd %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, verb = fct_reorder(as.factor(verb),Mean))
+means
+levels(means$verb)
 
 # define colors for the predicates
-cols = data.frame(V=levels(cd$verb))
+cols = data.frame(V=levels(means$verb))
+
 cols$VeridicalityGroup = as.factor(
   ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
          ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
                 ifelse(cols$V %in% c("be_right","demonstrate"),"VNF",
                        ifelse(cols$V %in% c("MC"),"MC","V")))))
 
+levels(cols$V)
+cols$V <- factor(cols$V, levels = cols[order(as.character(means$verb)),]$V, ordered = TRUE)
+
 cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid", 
                       ifelse(cols$VeridicalityGroup == "NF", "gray60", 
                              ifelse(cols$VeridicalityGroup == "VNF","dodgerblue",
                                     ifelse(cols$VeridicalityGroup == "MC","black","tomato1"))))
+
+
+cols$Colors
+cols$V <- factor(cols$V, levels = cols[order(as.character(means$verb)),]$V, ordered = TRUE)
+levels(cols$V)
+
+means$VeridicalityGroup = as.factor(
+  ifelse(means$verb %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(means$verb  %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(means$verb  %in% c("be_right","demonstrate"),"VNF",
+                       ifelse(means$verb  %in% c("MC"),"MC","V")))))
+
+subjmeans = cd %>%
+  group_by(verb,workerid) %>%
+  summarize(Mean = mean(response)) 
+subjmeans$verb <- factor(subjmeans$verb, levels = unique(levels(means$verb)))
+levels(subjmeans$verb)
+
+
+# plot of means, 95% CIs and participants' ratings 
+ggplot(means, aes(x=verb, y=Mean, fill=VeridicalityGroup)) +
+  geom_point(shape=21,fill="gray60",data=subjmeans, alpha=.1, color="gray40") +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
+  geom_point(shape=21,stroke=.5,size=2.5,color="black") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_alpha(range = c(.3,1)) +
+  scale_fill_manual(values=c("darkorchid","black","gray60","tomato1","dodgerblue")) +
+  guides(fill=FALSE) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors)) +
+  theme(legend.position="top") +
+  ylab("Mean certainty rating") +
+  xlab("Predicate") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
+ggsave("../graphs/means-projectivity-by-predicate-variability.pdf",height=4,width=7)
+
+# boxplot
+ggplot(cd, aes(x=verb, y=response)) + 
+  geom_boxplot(width=0.2,position=position_dodge(.9)) +
+  stat_summary(fun.y=mean, geom="point", color="black",fill="gray70", shape=21, size=3,position=position_dodge(.9)) +
+  theme(text = element_text(size=12)) +
+  theme(axis.text.x = element_text(size = 12, angle = 75, hjust = 1)) +
+  scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors)) +
+  ylab("Certainty rating")+
+  xlab("Predicate")
+ggsave("../graphs/boxplot-projectivity.pdf",height=4,width=8)
 
 # are the responses bi-modal, as suspected by Dotlacil and wondered by Katsos?
 names(cd)
@@ -291,82 +383,8 @@ options(tibble.print_max = Inf)
 options(tibble.width = Inf)
 medians
 
-# mean projectivity by predicate, including the main clause controls
-means = cd %>%
-  group_by(verb) %>%
-  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
-  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(as.factor(verb),Mean))
-options(tibble.print_max = Inf)
-means
-
-cd$verb <-factor(cd$verb, levels=levels(means$Verb))
-
-# boxplot
-ggplot(cd, aes(x=verb, y=response)) + 
-  geom_boxplot(width=0.2,position=position_dodge(.9)) +
-  stat_summary(fun.y=mean, geom="point", color="black",fill="gray70", shape=21, size=3,position=position_dodge(.9)) +
-  theme(text = element_text(size=12)) +
-  theme(axis.text.x = element_text(size = 12, angle = 75, hjust = 1)) +
-  scale_y_continuous(breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
-  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
-                                                                 color=cols$Colors)) +
-  ylab("Certainty rating")+
-  xlab("Predicate")
-ggsave("../graphs/boxplot-projectivity.pdf",height=4,width=8)
-
-# plot of means, 95% CIs and participants' ratings (SemFest)
-subjmeans = cd %>%
-  group_by(verb,workerid) %>%
-  summarize(Mean = mean(response)) %>%
-  mutate(Verb = fct_reorder(as.factor(verb),Mean))
-
-means$VeridicalityGroup = as.factor(
-  ifelse(means$verb %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
-         ifelse(means$verb  %in% c("pretend", "think", "suggest", "say"), "NF", 
-                ifelse(means$verb  %in% c("be_right","demonstrate"),"VNF",
-                       ifelse(means$verb  %in% c("MC"),"MC","V")))))
-
-ggplot(means, aes(x=Verb, y=Mean, fill=VeridicalityGroup)) +
-  #geom_point(color="black", size=4) +
-  geom_point(shape=21,fill="gray60",data=subjmeans, alpha=.1, color="gray40") +
-  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0.1,color="black") +
-  geom_point(shape=21,stroke=.5,size=2.5,color="black") +
-  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
-  scale_alpha(range = c(.3,1)) +
-  scale_fill_manual(values=c("darkorchid","black","gray60","tomato1","dodgerblue")) +
-  guides(fill=FALSE) +
-  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
-                                                                 color=cols$Colors)) +
-  theme(legend.position="top") +
-  ylab("Mean certainty rating") +
-  xlab("Predicate") +
-  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
-ggsave("../graphs/means-projectivity-by-predicate-variability.pdf",height=4,width=7)
-
-
-# target data (20 items per Turker) ---- 
-names(cd)
-table(cd$verb)
-t <- droplevels(subset(cd, cd$verb != "MC"))
-nrow(t) #5280 / 20 items = 264 Turkers
-
-# how many ratings per predicate and per predicate-clause combination?
-names(t)
-tmp <- as.data.frame(table(t$verb))
-min(tmp$Freq) #264
-max(tmp$Freq) #264
-mean(tmp$Freq) #264
-# 264 because 264 Turkers and each Turker saw each predicate once
-
-table(t$content)
-t$predicateClause <- interaction(t$verb,t$content)
-tmp <- as.data.frame(table(t$predicateClause))
-head(tmp)
-min(tmp$Freq) #4
-max(tmp$Freq) #25
-mean(tmp$Freq) #13.2
-
 # plot mean projectivity by mean veridicality (2 measures) ----
+
 head(t)
 means = t %>%
   group_by(verb) %>%
@@ -523,240 +541,257 @@ ggplot(means, aes(x=Participant, y=Mean, fill=PresumedVerbType)) +
   theme(axis.text.x = element_text(size = 6, angle = 45, hjust=1,vjust=1 )) 
 ggsave("../graphs/means-projectivity-by-participant.pdf",height=4,width=25)
 
-## updated code up to here (JT), after updating exclusion criteria
-
-### PAIRWISE DIFFERENCES ###
+## models ----
 library(lsmeans)
 library(lme4)
 library(brms)
+
+# create item as combination of predicate and complement clause
+cd$item = as.factor(paste(cd$verb,cd$content))
+
+# reorder verb by mean
+means = cd %>%
+  group_by(verb) %>%
+  summarize(Mean = mean(response)) %>%
+  mutate(verb = fct_reorder(as.factor(verb),Mean))
+means
+levels(means$verb)
+
+cd$verb <- factor(cd$verb, levels = unique(levels(means$verb)))
+levels(cd$verb) 
+
+# pairwise comparison
 str(cd$response)
 str(cd$verb)
 cd$verb <- as.factor(cd$verb)
 str(cd$workerid)
 cd$workerid <- as.factor(cd$workerid)
-model = lmer(response ~ verb + (1|workerid), data=cd, REML=F)
+model = lmer(response ~ verb + (1|workerid) + (1|item), data=cd, REML=F)
 summary(model)
 
 comparison = lsmeans(model, pairwise~verb,adjust="tukey")
 options(max.print=10000)
 comparison
 
-# contrast                  estimate     SE   df t.ratio p.value
-# MC - pretend              -0.03286 0.0155 7075  -2.113  0.8678
-# MC - be_right             -0.06541 0.0155 7075  -4.206  0.0047
-# MC - think                -0.07163 0.0155 7075  -4.606  0.0008
-# MC - suggest              -0.10445 0.0155 7075  -6.717  <.0001
-# MC - say                  -0.12071 0.0155 7075  -7.763  <.0001
-# MC - prove                -0.17459 0.0155 7075 -11.228  <.0001
-# MC - confirm              -0.21643 0.0155 7075 -13.918  <.0001
-# MC - establish            -0.23180 0.0155 7075 -14.907  <.0001
-# MC - demonstrate          -0.35141 0.0155 7075 -22.599  <.0001
-# MC - announce             -0.44141 0.0155 7075 -28.387  <.0001
-# MC - confess              -0.49304 0.0155 7075 -31.707  <.0001
-# MC - admit                -0.51406 0.0155 7075 -33.059  <.0001
-# MC - reveal               -0.55516 0.0155 7075 -35.702  <.0001
-# MC - acknowledge          -0.57887 0.0155 7075 -37.226  <.0001
-# MC - hear                 -0.59989 0.0155 7075 -38.579  <.0001
-# MC - discover             -0.62989 0.0155 7075 -40.508  <.0001
-# MC - inform               -0.65544 0.0155 7075 -42.151  <.0001
-# MC - see                  -0.66163 0.0155 7075 -42.548  <.0001
-# MC - know                 -0.70746 0.0155 7075 -45.496  <.0001
-# MC - be_annoyed           -0.72587 0.0155 7075 -46.680  <.0001
-# pretend - be_right        -0.03254 0.0204 7075  -1.598  0.9921
-# pretend - think           -0.03876 0.0204 7075  -1.904  0.9469
-# pretend - suggest         -0.07159 0.0204 7075  -3.516  0.0596
-# pretend - say             -0.08784 0.0204 7075  -4.315  0.0029
-# pretend - prove           -0.14173 0.0204 7075  -6.961  <.0001
-# pretend - confirm         -0.18357 0.0204 7075  -9.016  <.0001
-# pretend - establish       -0.19894 0.0204 7075  -9.771  <.0001
-# pretend - demonstrate     -0.31855 0.0204 7075 -15.646  <.0001
-# pretend - announce        -0.40855 0.0204 7075 -20.067  <.0001
-# pretend - confess         -0.46018 0.0204 7075 -22.602  <.0001
-# pretend - admit           -0.48120 0.0204 7075 -23.635  <.0001
-# pretend - reveal          -0.52230 0.0204 7075 -25.654  <.0001
-# pretend - acknowledge     -0.54601 0.0204 7075 -26.818  <.0001
-# pretend - hear            -0.56703 0.0204 7075 -27.851  <.0001
-# pretend - discover        -0.59703 0.0204 7075 -29.324  <.0001
-# pretend - inform          -0.62258 0.0204 7075 -30.579  <.0001
-# pretend - see             -0.62876 0.0204 7075 -30.883  <.0001
-# pretend - know            -0.67459 0.0204 7075 -33.134  <.0001
-# pretend - be_annoyed      -0.69300 0.0204 7075 -34.038  <.0001
-# be_right - think          -0.00622 0.0204 7075  -0.305  1.0000
-# be_right - suggest        -0.03905 0.0204 7075  -1.918  0.9431
-# be_right - say            -0.05530 0.0204 7075  -2.716  0.4388
-# be_right - prove          -0.10919 0.0204 7075  -5.363  <.0001
-# be_right - confirm        -0.15102 0.0204 7075  -7.418  <.0001
-# be_right - establish      -0.16640 0.0204 7075  -8.173  <.0001
-# be_right - demonstrate    -0.28601 0.0204 7075 -14.048  <.0001
-# be_right - announce       -0.37601 0.0204 7075 -18.468  <.0001
-# be_right - confess        -0.42763 0.0204 7075 -21.004  <.0001
-# be_right - admit          -0.44866 0.0204 7075 -22.037  <.0001
-# be_right - reveal         -0.48975 0.0204 7075 -24.055  <.0001
-# be_right - acknowledge    -0.51346 0.0204 7075 -25.220  <.0001
-# be_right - hear           -0.53449 0.0204 7075 -26.252  <.0001
-# be_right - discover       -0.56449 0.0204 7075 -27.726  <.0001
-# be_right - inform         -0.59004 0.0204 7075 -28.981  <.0001
-# be_right - see            -0.59622 0.0204 7075 -29.284  <.0001
-# be_right - know           -0.64205 0.0204 7075 -31.535  <.0001
-# be_right - be_annoyed     -0.66046 0.0204 7075 -32.440  <.0001
-# think - suggest           -0.03283 0.0204 7075  -1.612  0.9912
-# think - say               -0.04908 0.0204 7075  -2.411  0.6778
-# think - prove             -0.10297 0.0204 7075  -5.057  0.0001
-# think - confirm           -0.14481 0.0204 7075  -7.112  <.0001
-# think - establish         -0.16018 0.0204 7075  -7.867  <.0001
-# think - demonstrate       -0.27979 0.0204 7075 -13.742  <.0001
-# think - announce          -0.36979 0.0204 7075 -18.163  <.0001
-# think - confess           -0.42141 0.0204 7075 -20.698  <.0001
-# think - admit             -0.44244 0.0204 7075 -21.731  <.0001
-# think - reveal            -0.48353 0.0204 7075 -23.750  <.0001
-# think - acknowledge       -0.50724 0.0204 7075 -24.914  <.0001
-# think - hear              -0.52827 0.0204 7075 -25.947  <.0001
-# think - discover          -0.55827 0.0204 7075 -27.420  <.0001
-# think - inform            -0.58382 0.0204 7075 -28.675  <.0001
-# think - see               -0.59000 0.0204 7075 -28.979  <.0001
-# think - know              -0.63583 0.0204 7075 -31.230  <.0001
-# think - be_annoyed        -0.65424 0.0204 7075 -32.134  <.0001
-# suggest - say             -0.01625 0.0204 7075  -0.798  1.0000
-# suggest - prove           -0.07014 0.0204 7075  -3.445  0.0745
-# suggest - confirm         -0.11198 0.0204 7075  -5.500  <.0001
-# suggest - establish       -0.12735 0.0204 7075  -6.255  <.0001
-# suggest - demonstrate     -0.24696 0.0204 7075 -12.130  <.0001
-# suggest - announce        -0.33696 0.0204 7075 -16.550  <.0001
-# suggest - confess         -0.38859 0.0204 7075 -19.086  <.0001
-# suggest - admit           -0.40961 0.0204 7075 -20.119  <.0001
-# suggest - reveal          -0.45071 0.0204 7075 -22.137  <.0001
-# suggest - acknowledge     -0.47442 0.0204 7075 -23.302  <.0001
-# suggest - hear            -0.49544 0.0204 7075 -24.335  <.0001
-# suggest - discover        -0.52544 0.0204 7075 -25.808  <.0001
-# suggest - inform          -0.55099 0.0204 7075 -27.063  <.0001
-# suggest - see             -0.55717 0.0204 7075 -27.367  <.0001
-# suggest - know            -0.60300 0.0204 7075 -29.618  <.0001
-# suggest - be_annoyed      -0.62141 0.0204 7075 -30.522  <.0001
-# say - prove               -0.05389 0.0204 7075  -2.647  0.4925
-# say - confirm             -0.09572 0.0204 7075  -4.702  0.0005
-# say - establish           -0.11110 0.0204 7075  -5.457  <.0001
-# say - demonstrate         -0.23071 0.0204 7075 -11.332  <.0001
-# say - announce            -0.32071 0.0204 7075 -15.752  <.0001
-# say - confess             -0.37233 0.0204 7075 -18.288  <.0001
-# say - admit               -0.39336 0.0204 7075 -19.320  <.0001
-# say - reveal              -0.43445 0.0204 7075 -21.339  <.0001
-# say - acknowledge         -0.45816 0.0204 7075 -22.503  <.0001
-# say - hear                -0.47919 0.0204 7075 -23.536  <.0001
-# say - discover            -0.50919 0.0204 7075 -25.010  <.0001
-# say - inform              -0.53473 0.0204 7075 -26.264  <.0001
-# say - see                 -0.54092 0.0204 7075 -26.568  <.0001
-# say - know                -0.58675 0.0204 7075 -28.819  <.0001
-# say - be_annoyed          -0.60516 0.0204 7075 -29.723  <.0001
-# prove - confirm           -0.04184 0.0204 7075  -2.055  0.8947
-# prove - establish         -0.05721 0.0204 7075  -2.810  0.3696
-# prove - demonstrate       -0.17682 0.0204 7075  -8.685  <.0001
-# prove - announce          -0.26682 0.0204 7075 -13.105  <.0001
-# prove - confess           -0.31845 0.0204 7075 -15.641  <.0001
-# prove - admit             -0.33947 0.0204 7075 -16.674  <.0001
-# prove - reveal            -0.38057 0.0204 7075 -18.692  <.0001
-# prove - acknowledge       -0.40428 0.0204 7075 -19.857  <.0001
-# prove - hear              -0.42530 0.0204 7075 -20.889  <.0001
-# prove - discover          -0.45530 0.0204 7075 -22.363  <.0001
-# prove - inform            -0.48085 0.0204 7075 -23.618  <.0001
-# prove - see               -0.48703 0.0204 7075 -23.921  <.0001
-# prove - know              -0.53286 0.0204 7075 -26.172  <.0001
-# prove - be_annoyed        -0.55127 0.0204 7075 -27.077  <.0001
-# confirm - establish       -0.01537 0.0204 7075  -0.755  1.0000
-# confirm - demonstrate     -0.13498 0.0204 7075  -6.630  <.0001
-# confirm - announce        -0.22498 0.0204 7075 -11.050  <.0001
-# confirm - confess         -0.27661 0.0204 7075 -13.586  <.0001
-# confirm - admit           -0.29763 0.0204 7075 -14.619  <.0001
-# confirm - reveal          -0.33873 0.0204 7075 -16.637  <.0001
-# confirm - acknowledge     -0.36244 0.0204 7075 -17.802  <.0001
-# confirm - hear            -0.38346 0.0204 7075 -18.834  <.0001
-# confirm - discover        -0.41346 0.0204 7075 -20.308  <.0001
-# confirm - inform          -0.43901 0.0204 7075 -21.563  <.0001
-# confirm - see             -0.44519 0.0204 7075 -21.867  <.0001
-# confirm - know            -0.49102 0.0204 7075 -24.118  <.0001
-# confirm - be_annoyed      -0.50943 0.0204 7075 -25.022  <.0001
-# establish - demonstrate   -0.11961 0.0204 7075  -5.875  <.0001
-# establish - announce      -0.20961 0.0204 7075 -10.295  <.0001
-# establish - confess       -0.26124 0.0204 7075 -12.831  <.0001
-# establish - admit         -0.28226 0.0204 7075 -13.864  <.0001
-# establish - reveal        -0.32336 0.0204 7075 -15.882  <.0001
-# establish - acknowledge   -0.34707 0.0204 7075 -17.047  <.0001
-# establish - hear          -0.36809 0.0204 7075 -18.079  <.0001
-# establish - discover      -0.39809 0.0204 7075 -19.553  <.0001
-# establish - inform        -0.42364 0.0204 7075 -20.808  <.0001
-# establish - see           -0.42982 0.0204 7075 -21.112  <.0001
-# establish - know          -0.47565 0.0204 7075 -23.363  <.0001
-# establish - be_annoyed    -0.49406 0.0204 7075 -24.267  <.0001
-# demonstrate - announce    -0.09000 0.0204 7075  -4.421  0.0019
-# demonstrate - confess     -0.14163 0.0204 7075  -6.956  <.0001
-# demonstrate - admit       -0.16265 0.0204 7075  -7.989  <.0001
-# demonstrate - reveal      -0.20375 0.0204 7075 -10.007  <.0001
-# demonstrate - acknowledge -0.22746 0.0204 7075 -11.172  <.0001
-# demonstrate - hear        -0.24848 0.0204 7075 -12.205  <.0001
-# demonstrate - discover    -0.27848 0.0204 7075 -13.678  <.0001
-# demonstrate - inform      -0.30403 0.0204 7075 -14.933  <.0001
-# demonstrate - see         -0.31021 0.0204 7075 -15.237  <.0001
-# demonstrate - know        -0.35604 0.0204 7075 -17.488  <.0001
-# demonstrate - be_annoyed  -0.37445 0.0204 7075 -18.392  <.0001
-# announce - confess        -0.05163 0.0204 7075  -2.536  0.5806
-# announce - admit          -0.07265 0.0204 7075  -3.568  0.0503
-# announce - reveal         -0.11375 0.0204 7075  -5.587  <.0001
-# announce - acknowledge    -0.13746 0.0204 7075  -6.751  <.0001
-# announce - hear           -0.15848 0.0204 7075  -7.784  <.0001
-# announce - discover       -0.18848 0.0204 7075  -9.258  <.0001
-# announce - inform         -0.21403 0.0204 7075 -10.512  <.0001
-# announce - see            -0.22021 0.0204 7075 -10.816  <.0001
-# announce - know           -0.26604 0.0204 7075 -13.067  <.0001
-# announce - be_annoyed     -0.28445 0.0204 7075 -13.971  <.0001
-# confess - admit           -0.02102 0.0204 7075  -1.033  1.0000
-# confess - reveal          -0.06212 0.0204 7075  -3.051  0.2194
-# confess - acknowledge     -0.08583 0.0204 7075  -4.216  0.0045
-# confess - hear            -0.10686 0.0204 7075  -5.248  <.0001
-# confess - discover        -0.13686 0.0204 7075  -6.722  <.0001
-# confess - inform          -0.16240 0.0204 7075  -7.977  <.0001
-# confess - see             -0.16859 0.0204 7075  -8.280  <.0001
-# confess - know            -0.21442 0.0204 7075 -10.531  <.0001
-# confess - be_annoyed      -0.23283 0.0204 7075 -11.436  <.0001
-# admit - reveal            -0.04110 0.0204 7075  -2.018  0.9096
-# admit - acknowledge       -0.06481 0.0204 7075  -3.183  0.1575
-# admit - hear              -0.08583 0.0204 7075  -4.216  0.0045
-# admit - discover          -0.11583 0.0204 7075  -5.689  <.0001
-# admit - inform            -0.14138 0.0204 7075  -6.944  <.0001
-# admit - see               -0.14756 0.0204 7075  -7.248  <.0001
-# admit - know              -0.19339 0.0204 7075  -9.499  <.0001
-# admit - be_annoyed        -0.21180 0.0204 7075 -10.403  <.0001
-# reveal - acknowledge      -0.02371 0.0204 7075  -1.165  0.9999
-# reveal - hear             -0.04473 0.0204 7075  -2.197  0.8226
-# reveal - discover         -0.07473 0.0204 7075  -3.671  0.0357
-# reveal - inform           -0.10028 0.0204 7075  -4.926  0.0002
-# reveal - see              -0.10647 0.0204 7075  -5.229  <.0001
-# reveal - know             -0.15230 0.0204 7075  -7.480  <.0001
-# reveal - be_annoyed       -0.17071 0.0204 7075  -8.385  <.0001
-# acknowledge - hear        -0.02102 0.0204 7075  -1.033  1.0000
-# acknowledge - discover    -0.05102 0.0204 7075  -2.506  0.6039
-# acknowledge - inform      -0.07657 0.0204 7075  -3.761  0.0261
-# acknowledge - see         -0.08276 0.0204 7075  -4.065  0.0083
-# acknowledge - know        -0.12859 0.0204 7075  -6.316  <.0001
-# acknowledge - be_annoyed  -0.14700 0.0204 7075  -7.220  <.0001
-# hear - discover           -0.03000 0.0204 7075  -1.474  0.9972
-# hear - inform             -0.05555 0.0204 7075  -2.728  0.4296
-# hear - see                -0.06173 0.0204 7075  -3.032  0.2296
-# hear - know               -0.10756 0.0204 7075  -5.283  <.0001
-# hear - be_annoyed         -0.12597 0.0204 7075  -6.187  <.0001
-# discover - inform         -0.02555 0.0204 7075  -1.255  0.9997
-# discover - see            -0.03173 0.0204 7075  -1.559  0.9942
-# discover - know           -0.07756 0.0204 7075  -3.810  0.0219
-# discover - be_annoyed     -0.09597 0.0204 7075  -4.714  0.0005
-# inform - see              -0.00618 0.0204 7075  -0.304  1.0000
-# inform - know             -0.05201 0.0204 7075  -2.555  0.5654
-# inform - be_annoyed       -0.07042 0.0204 7075  -3.459  0.0713
-# see - know                -0.04583 0.0204 7075  -2.251  0.7898
-# see - be_annoyed          -0.06424 0.0204 7075  -3.155  0.1693
-# know - be_annoyed         -0.01841 0.0204 7075  -0.904  1.0000
-# 
-# P value adjustment: tukey method for comparing a family of 21 estimates 
+# $contrasts
+# contrast                      estimate         SE     df t.ratio p.value
+# MC - pretend              -0.042020639 0.01916977  49.97  -2.192  0.8098
+# MC - be_right             -0.071607572 0.01916501  50.13  -3.736  0.0542
+# MC - think                -0.083783582 0.01916492  50.07  -4.372  0.0089
+# MC - suggest              -0.111608001 0.01912903  50.69  -5.834  0.0001
+# MC - say                  -0.133890950 0.01912899  50.72  -6.999  <.0001
+# MC - prove                -0.193307193 0.01914129  50.50 -10.099  <.0001
+# MC - confirm              -0.231812154 0.01917434  50.04 -12.090  <.0001
+# MC - establish            -0.251595754 0.01913785  50.56 -13.146  <.0001
+# MC - demonstrate          -0.381538510 0.01913109  50.66 -19.943  <.0001
+# MC - announce             -0.471695123 0.01912825  50.73 -24.660  <.0001
+# MC - confess              -0.527021744 0.01916157  50.13 -27.504  <.0001
+# MC - admit                -0.544807503 0.01912812  50.71 -28.482  <.0001
+# MC - reveal               -0.592362151 0.01912462  50.78 -30.974  <.0001
+# MC - acknowledge          -0.613560616 0.01916529  50.13 -32.014  <.0001
+# MC - hear                 -0.634910506 0.01912981  50.72 -33.190  <.0001
+# MC - discover             -0.667312302 0.01913513  50.63 -34.874  <.0001
+# MC - inform               -0.693266524 0.01915643  50.26 -36.190  <.0001
+# MC - see                  -0.697664502 0.01914503  50.43 -36.441  <.0001
+# MC - know                 -0.752791183 0.01913805  50.55 -39.335  <.0001
+# MC - be_annoyed           -0.773522289 0.01915574  50.30 -40.381  <.0001
+# pretend - be_right        -0.029586933 0.02175318 352.08  -1.360  0.9989
+# pretend - think           -0.041762942 0.02175315 351.11  -1.920  0.9404
+# pretend - suggest         -0.069587361 0.02172153 363.43  -3.204  0.1553
+# pretend - say             -0.091870311 0.02172148 363.91  -4.229  0.0051
+# pretend - prove           -0.151286554 0.02173230 359.55  -6.961  <.0001
+# pretend - confirm         -0.189791515 0.02176139 349.96  -8.721  <.0001
+# pretend - establish       -0.209575115 0.02172928 360.73  -9.645  <.0001
+# pretend - demonstrate     -0.339517871 0.02172331 362.84 -15.629  <.0001
+# pretend - announce        -0.429674484 0.02172086 363.99 -19.782  <.0001
+# pretend - confess         -0.485001104 0.02175018 352.32 -22.299  <.0001
+# pretend - admit           -0.502786864 0.02172074 363.80 -23.148  <.0001
+# pretend - reveal          -0.550341512 0.02171763 365.20 -25.341  <.0001
+# pretend - acknowledge     -0.571539977 0.02175347 351.98 -26.274  <.0001
+# pretend - hear            -0.592889867 0.02172222 363.73 -27.294  <.0001
+# pretend - discover        -0.625291662 0.02172689 361.93 -28.780  <.0001
+# pretend - inform          -0.651245884 0.02174563 354.69 -29.948  <.0001
+# pretend - see             -0.655643862 0.02173562 358.16 -30.164  <.0001
+# pretend - know            -0.710770543 0.02172942 360.62 -32.710  <.0001
+# pretend - be_annoyed      -0.731501649 0.02174507 355.26 -33.640  <.0001
+# be_right - think          -0.012176009 0.02174894 353.91  -0.560  1.0000
+# be_right - suggest        -0.040000428 0.02171732 366.37  -1.842  0.9600
+# be_right - say            -0.062283378 0.02171730 366.84  -2.868  0.3344
+# be_right - prove          -0.121699621 0.02172813 362.42  -5.601  <.0001
+# be_right - confirm        -0.160204582 0.02175720 352.72  -7.363  <.0001
+# be_right - establish      -0.179988182 0.02172509 363.62  -8.285  <.0001
+# be_right - demonstrate    -0.309930938 0.02171914 365.74 -14.270  <.0001
+# be_right - announce       -0.400087551 0.02171664 366.95 -18.423  <.0001
+# be_right - confess        -0.455414171 0.02174594 355.15 -20.942  <.0001
+# be_right - admit          -0.473199931 0.02171652 366.75 -21.790  <.0001
+# be_right - reveal         -0.520754579 0.02171338 368.20 -23.983  <.0001
+# be_right - acknowledge    -0.541953044 0.02174927 354.77 -24.918  <.0001
+# be_right - hear           -0.563302934 0.02171802 366.67 -25.937  <.0001
+# be_right - discover       -0.595704730 0.02172270 364.85 -27.423  <.0001
+# be_right - inform         -0.621658951 0.02174146 357.50 -28.593  <.0001
+# be_right - see            -0.626056929 0.02173140 361.04 -28.809  <.0001
+# be_right - know           -0.681183610 0.02172529 363.46 -31.354  <.0001
+# be_right - be_annoyed     -0.701914716 0.02174087 358.10 -32.285  <.0001
+# think - suggest           -0.027824419 0.02171720 365.42  -1.281  0.9995
+# think - say               -0.050107369 0.02171718 365.89  -2.307  0.7508
+# think - prove             -0.109523612 0.02172804 361.46  -5.041  0.0001
+# think - confirm           -0.148028572 0.02175712 351.80  -6.804  <.0001
+# think - establish         -0.167812173 0.02172500 362.66  -7.724  <.0001
+# think - demonstrate       -0.297754928 0.02171905 364.77 -13.709  <.0001
+# think - announce          -0.387911542 0.02171658 365.95 -17.862  <.0001
+# think - confess           -0.443238162 0.02174589 354.19 -20.383  <.0001
+# think - admit             -0.461023921 0.02171643 365.78 -21.229  <.0001
+# think - reveal            -0.508578569 0.02171334 367.18 -23.422  <.0001
+# think - acknowledge       -0.529777035 0.02174921 353.82 -24.358  <.0001
+# think - hear              -0.551126924 0.02171787 365.74 -25.377  <.0001
+# think - discover          -0.583528720 0.02172260 363.89 -26.863  <.0001
+# think - inform            -0.609482942 0.02174134 356.58 -28.033  <.0001
+# think - see               -0.613880920 0.02173129 360.11 -28.249  <.0001
+# think - know              -0.669007601 0.02172518 362.52 -30.794  <.0001
+# think - be_annoyed        -0.689738707 0.02174078 357.16 -31.726  <.0001
+# suggest - say             -0.022282950 0.02168553 379.04  -1.028  1.0000
+# suggest - prove           -0.081699192 0.02169639 374.37  -3.766  0.0285
+# suggest - confirm         -0.120204153 0.02172556 364.09  -5.533  <.0001
+# suggest - establish       -0.139987753 0.02169334 375.64  -6.453  <.0001
+# suggest - demonstrate     -0.269930509 0.02168737 377.89 -12.446  <.0001
+# suggest - announce        -0.360087123 0.02168490 379.13 -16.605  <.0001
+# suggest - confess         -0.415413743 0.02171425 366.68 -19.131  <.0001
+# suggest - admit           -0.433199502 0.02168475 378.95 -19.977  <.0001
+# suggest - reveal          -0.480754150 0.02168168 380.41 -22.173  <.0001
+# suggest - acknowledge     -0.501952616 0.02171755 366.31 -23.113  <.0001
+# suggest - hear            -0.523302505 0.02168625 378.86 -24.131  <.0001
+# suggest - discover        -0.555704301 0.02169097 376.91 -25.619  <.0001
+# suggest - inform          -0.581658523 0.02170974 369.17 -26.793  <.0001
+# suggest - see             -0.586056501 0.02169969 372.89 -27.008  <.0001
+# suggest - know            -0.641183182 0.02169352 375.49 -29.556  <.0001
+# suggest - be_annoyed      -0.661914288 0.02170912 369.83 -30.490  <.0001
+# say - prove               -0.059416243 0.02169635 374.86  -2.739  0.4254
+# say - confirm             -0.097921204 0.02172555 364.55  -4.507  0.0016
+# say - establish           -0.117704804 0.02169334 376.11  -5.426  <.0001
+# say - demonstrate         -0.247647560 0.02168737 378.36 -11.419  <.0001
+# say - announce            -0.337804173 0.02168484 379.66 -15.578  <.0001
+# say - confess             -0.393130793 0.02171422 367.16 -18.105  <.0001
+# say - admit               -0.410916553 0.02168471 379.46 -18.950  <.0001
+# say - reveal              -0.458471201 0.02168165 380.91 -21.146  <.0001
+# say - acknowledge         -0.479669666 0.02171752 366.79 -22.087  <.0001
+# say - hear                -0.501019556 0.02168617 379.41 -23.103  <.0001
+# say - discover            -0.533421352 0.02169092 377.43 -24.592  <.0001
+# say - inform              -0.559375573 0.02170970 369.66 -25.766  <.0001
+# say - see                 -0.563773551 0.02169966 373.39 -25.981  <.0001
+# say - know                -0.618900232 0.02169349 375.98 -28.529  <.0001
+# say - be_annoyed          -0.639631338 0.02170909 370.31 -29.464  <.0001
+# prove - confirm           -0.038504961 0.02173640 360.15  -1.771  0.9731
+# prove - establish         -0.058288561 0.02170419 371.50  -2.686  0.4651
+# prove - demonstrate       -0.188231317 0.02169820 373.73  -8.675  <.0001
+# prove - announce          -0.278387930 0.02169568 374.99 -12.831  <.0001
+# prove - confess           -0.333714550 0.02172508 362.71 -15.361  <.0001
+# prove - admit             -0.351500310 0.02169558 374.77 -16.201  <.0001
+# prove - reveal            -0.399054958 0.02169251 376.20 -18.396  <.0001
+# prove - acknowledge       -0.420253423 0.02172836 362.36 -19.341  <.0001
+# prove - hear              -0.441603313 0.02169707 374.69 -20.353  <.0001
+# prove - discover          -0.474005109 0.02170182 372.75 -21.842  <.0001
+# prove - inform            -0.499959330 0.02172053 365.19 -23.018  <.0001
+# prove - see               -0.504357308 0.02171049 368.84 -23.231  <.0001
+# prove - know              -0.559483989 0.02170436 371.35 -25.777  <.0001
+# prove - be_annoyed        -0.580215095 0.02171994 365.81 -26.713  <.0001
+# confirm - establish       -0.019783600 0.02173331 361.39  -0.910  1.0000
+# confirm - demonstrate     -0.149726356 0.02172736 363.49  -6.891  <.0001
+# confirm - announce        -0.239882969 0.02172486 364.68 -11.042  <.0001
+# confirm - confess         -0.295209590 0.02175419 352.98 -13.570  <.0001
+# confirm - admit           -0.312995349 0.02172471 364.51 -14.407  <.0001
+# confirm - reveal          -0.360549997 0.02172167 365.86 -16.599  <.0001
+# confirm - acknowledge     -0.381748462 0.02175744 352.66 -17.546  <.0001
+# confirm - hear            -0.403098352 0.02172625 364.40 -18.554  <.0001
+# confirm - discover        -0.435500148 0.02173092 362.60 -20.041  <.0001
+# confirm - inform          -0.461454369 0.02174966 355.33 -21.217  <.0001
+# confirm - see             -0.465852348 0.02173966 358.81 -21.429  <.0001
+# confirm - know            -0.520979028 0.02173343 361.29 -23.971  <.0001
+# confirm - be_annoyed      -0.541710134 0.02174904 355.95 -24.907  <.0001
+# establish - demonstrate   -0.129942756 0.02169515 375.00  -5.989  <.0001
+# establish - announce      -0.220099369 0.02169266 376.24 -10.146  <.0001
+# establish - confess       -0.275425990 0.02172202 363.93 -12.680  <.0001
+# establish - admit         -0.293211749 0.02169254 376.04 -13.517  <.0001
+# establish - reveal        -0.340766397 0.02168946 377.49 -15.711  <.0001
+# establish - acknowledge   -0.361964862 0.02172535 363.54 -16.661  <.0001
+# establish - hear          -0.383314752 0.02169403 375.97 -17.669  <.0001
+# establish - discover      -0.415716548 0.02169871 374.07 -19.159  <.0001
+# establish - inform        -0.441670769 0.02171751 366.39 -20.337  <.0001
+# establish - see           -0.446068748 0.02170745 370.08 -20.549  <.0001
+# establish - know          -0.501195428 0.02170132 372.61 -23.095  <.0001
+# establish - be_annoyed    -0.521926534 0.02171688 367.05 -24.033  <.0001
+# demonstrate - announce    -0.090156613 0.02168671 378.48  -4.157  0.0068
+# demonstrate - confess     -0.145483234 0.02171609 366.04  -6.699  <.0001
+# demonstrate - admit       -0.163268993 0.02168659 378.27  -7.529  <.0001
+# demonstrate - reveal      -0.210823641 0.02168350 379.75  -9.723  <.0001
+# demonstrate - acknowledge -0.232022106 0.02171937 365.68 -10.683  <.0001
+# demonstrate - hear        -0.253371996 0.02168808 378.19 -11.683  <.0001
+# demonstrate - discover    -0.285773792 0.02169275 376.29 -13.174  <.0001
+# demonstrate - inform      -0.311728014 0.02171154 368.55 -14.358  <.0001
+# demonstrate - see         -0.316125992 0.02170150 372.26 -14.567  <.0001
+# demonstrate - know        -0.371252672 0.02169533 374.84 -17.112  <.0001
+# demonstrate - be_annoyed  -0.391983778 0.02171092 369.20 -18.055  <.0001
+# announce - confess        -0.055326620 0.02171357 367.26  -2.548  0.5718
+# announce - admit          -0.073112380 0.02168406 379.57  -3.372  0.0981
+# announce - reveal         -0.120667028 0.02168102 381.01  -5.566  <.0001
+# announce - acknowledge    -0.141865493 0.02171682 366.93  -6.533  <.0001
+# announce - hear           -0.163215383 0.02168556 379.49  -7.526  <.0001
+# announce - discover       -0.195617179 0.02169026 377.55  -9.019  <.0001
+# announce - inform         -0.221571400 0.02170904 369.77 -10.206  <.0001
+# announce - see            -0.225969378 0.02169903 373.47 -10.414  <.0001
+# announce - know           -0.281096059 0.02169282 376.11 -12.958  <.0001
+# announce - be_annoyed     -0.301827165 0.02170843 370.42 -13.904  <.0001
+# confess - admit           -0.017785759 0.02171345 367.07  -0.819  1.0000
+# confess - reveal          -0.065340407 0.02171039 368.45  -3.010  0.2478
+# confess - acknowledge     -0.086538873 0.02174624 355.04  -3.979  0.0134
+# confess - hear            -0.107888762 0.02171498 366.96  -4.968  0.0002
+# confess - discover        -0.140290558 0.02171962 365.17  -6.459  <.0001
+# confess - inform          -0.166244780 0.02173840 357.79  -7.648  <.0001
+# confess - see             -0.170642758 0.02172837 361.32  -7.853  <.0001
+# confess - know            -0.225769439 0.02172222 363.77 -10.393  <.0001
+# confess - be_annoyed      -0.246500545 0.02173779 358.41 -11.340  <.0001
+# admit - reveal            -0.047554648 0.02168088 380.81  -2.193  0.8226
+# admit - acknowledge       -0.068753113 0.02171675 366.70  -3.166  0.1709
+# admit - hear              -0.090103003 0.02168545 379.27  -4.155  0.0068
+# admit - discover          -0.122504799 0.02169011 377.37  -5.648  <.0001
+# admit - inform            -0.148459021 0.02170898 369.52  -6.839  <.0001
+# admit - see               -0.152856999 0.02169890 373.28  -7.044  <.0001
+# admit - know              -0.207983680 0.02169272 375.88  -9.588  <.0001
+# admit - be_annoyed        -0.228714786 0.02170827 370.26 -10.536  <.0001
+# reveal - acknowledge      -0.021198465 0.02171367 368.09  -0.976  1.0000
+# reveal - hear             -0.042548355 0.02168234 380.77  -1.962  0.9275
+# reveal - discover         -0.074950151 0.02168705 378.81  -3.456  0.0768
+# reveal - inform           -0.100904373 0.02170584 370.99  -4.649  0.0009
+# reveal - see              -0.105302351 0.02169580 374.73  -4.854  0.0003
+# reveal - know             -0.160429031 0.02168964 377.33  -7.397  <.0001
+# reveal - be_annoyed       -0.181160138 0.02170524 371.63  -8.346  <.0001
+# acknowledge - hear        -0.021349890 0.02171823 366.62  -0.983  1.0000
+# acknowledge - discover    -0.053751686 0.02172293 364.79  -2.474  0.6289
+# acknowledge - inform      -0.079705907 0.02174171 357.42  -3.666  0.0400
+# acknowledge - see         -0.084103885 0.02173165 360.97  -3.870  0.0199
+# acknowledge - know        -0.139230566 0.02172545 363.46  -6.409  <.0001
+# acknowledge - be_annoyed  -0.159961672 0.02174108 358.05  -7.358  <.0001
+# hear - discover           -0.032401796 0.02169165 377.25  -1.494  0.9963
+# hear - inform             -0.058356018 0.02171044 369.47  -2.688  0.4634
+# hear - see                -0.062753996 0.02170037 373.22  -2.892  0.3186
+# hear - know               -0.117880676 0.02169422 375.79  -5.434  <.0001
+# hear - be_annoyed         -0.138611782 0.02170981 370.14  -6.385  <.0001
+# discover - inform         -0.025954222 0.02171514 367.61  -1.195  0.9998
+# discover - see            -0.030352200 0.02170507 371.33  -1.398  0.9985
+# discover - know           -0.085478881 0.02169893 373.88  -3.939  0.0154
+# discover - be_annoyed     -0.106209987 0.02171446 368.32  -4.891  0.0003
+# inform - see              -0.004397978 0.02172387 363.74  -0.202  1.0000
+# inform - know             -0.059524659 0.02171765 366.27  -2.741  0.4237
+# inform - be_annoyed       -0.080255765 0.02173323 360.85  -3.693  0.0366
+# see - know                -0.055126681 0.02170760 369.95  -2.540  0.5784
+# see - be_annoyed          -0.075857787 0.02172323 364.40  -3.492  0.0691
+# know - be_annoyed         -0.020731106 0.02171705 366.90  -0.955  1.0000
 
-# brms model
+# brms models
 cd$verb = relevel(cd$verb,ref="MC")
-cd$item = as.factor(paste(cd$verb,cd$content))
-model.brms = brm(response ~ verb + (1|workerid) + (1|item), data=cd, family=gaussian())
-summary(model.brms)
+
+# no slope
+model.brms.proj.nb = brm(response ~ verb + (1|workerid) + (1|item), data=cd, family=gaussian())
+summary(model.brms.proj.nb) # pretend is not significantly different
+
+model.brms.proj.nb2 = brm(response ~ verb + (1+verb|workerid) + (1|item), data=cd, family=gaussian())
+summary(model.brms.proj.nb2) # crashed

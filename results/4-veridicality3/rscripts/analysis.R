@@ -627,12 +627,14 @@ cd$verb <- relevel(cd$verb, ref = "entailing C")
 
 # without slope
 model.bmrs.inf.nb = brm(response ~ verb + (1|workerid) + (1|item), data=cd, family=gaussian())
-summary(model.bmrs.inf.nb)
+summary(model.bmrs.inf.nb) 
+# not different: be_annoyed, be_right, confirm, discover, know, prove, see
 
 # with slope
 model.brms.inf.nb2 = brm(response ~ verb + (verb|workerid) + (1|item), data=cd, family=gaussian())
 summary(model.brms.inf.nb2)
-
+# warning in summary of model
+# not different: be_right, confirm, discover, prove, see
 
 ## pairwise comparison to see which predicates differ from one another
 library(lsmeans)

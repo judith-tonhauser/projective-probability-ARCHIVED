@@ -609,11 +609,11 @@ cd$verb <- relevel(cd$verb, ref = "contradictory C")
 
 # without slope
 model.bmrs.contrd.nb = brm(response ~ verb + (1|workerid) + (1|item), data=cd, family=gaussian())
-summary(model.bmrs.contrd.nb)
+summary(model.bmrs.contrd.nb) # be_right is not different
 
 # with slope
 model.brms.contrd.nb2 = brm(response ~ verb + (verb|workerid) + (1|item), data=cd, family=gaussian())
-summary(model.brms.contrd.nb2)
+summary(model.brms.contrd.nb2) # be_right is not different
 
 ## pairwise comparison to see which predicates differ from one another
 library(lsmeans)

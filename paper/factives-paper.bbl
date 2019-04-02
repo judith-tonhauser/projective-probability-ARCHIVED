@@ -1,5 +1,5 @@
 \newcommand{\noopsort}[1]{}\newcommand{\SortNoop}[1]{}
-\begin{thebibliography}{50}
+\begin{thebibliography}{51}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[Abbott(2006)]{abbott06}
@@ -33,6 +33,11 @@ Anderson, Lloyd~B. 1986.
 \newblock In W.~Chafe and J.~Nichols, eds., {\em Evidentiality: {T}he
   Linguistic Coding of Epistemology\/}, pages 273--312. New Jersey: Ablex
   Publishing Corporation.
+
+\bibitem[Beaver(2001)]{beaver01}
+Beaver, David. 2001.
+\newblock {\em Presupposition and Assertion in Dynamic Semantics\/}.
+\newblock Stanford, CA: CSLI Publications.
 
 \bibitem[Beaver(2010)]{beaver-belly}
 Beaver, David. 2010.

@@ -223,11 +223,18 @@ ggplot(prop, aes(x=verb, y=Mean, fill=VeridicalityGroup)) +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) 
 ggsave("../graphs/proportion-by-predicate-variability.pdf",height=4,width=7)
 
+## models -----
+library(lsmeans)
+library(lme4)
+library(languageR)
+library(brms)
 
 # brms model ----
 table(cd$verb)
 cd$verb = relevel(cd$verb,ref="entailing C")
 cd$item = as.factor(paste(cd$verb,cd$content))
-model.brms.inf.b = brm(nResponse ~ verb + (1|workerid) + (1|item), data=cd, family=gaussian())
-summary(model.brms.inf.b)
+
+# with slope
+model.brms.inf.b2 = brm(nResponse ~ verb + (verb|workerid) + (1|item), data=cd, family=bernoulli())
+summary(model.brms.inf.b2)
 

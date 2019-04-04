@@ -1,5 +1,5 @@
 \newcommand{\noopsort}[1]{}\newcommand{\SortNoop}[1]{}
-\begin{thebibliography}{51}
+\begin{thebibliography}{53}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[Abbott(2006)]{abbott06}
@@ -109,6 +109,11 @@ Heim, Irene. 1983.
 \newblock In M.~Barlow, D.~Flickinger, and M.~Westcoat, eds., {\em {West Coast
   Conference on Formal Linguistics (WCCFL)} 2\/}, pages 114--125.
 
+\bibitem[Heim(1992)]{heim92}
+Heim, Irene. 1992.
+\newblock Presupposition projection and the semantics of attitude verbs.
+\newblock {\em Journal of Semantics\/} 9:183--221.
+
 \bibitem[Hothorn et~al.(2008)Hothorn, Bretz, and Westfall]{tukey}
 Hothorn, Torsten, Frank Bretz, and Peter Westfall. 2008.
 \newblock Simultaneous inference in general parametric models.
@@ -150,11 +155,6 @@ Melvold, Janis. 1991.
 \newblock Factivity and definiteness.
 \newblock In L.~Cheng and H.~Demirdache, eds., {\em More Papers on
   Wh-movement\/}, vol.~5, pages 97--117. MIT Working Papers in Linguistics.
-
-\bibitem[Potts(2005)]{potts05}
-Potts, Christopher. 2005.
-\newblock {\em The {L}ogic of {C}onventional {I}mplicatures\/}.
-\newblock Oxford: OUP.
 
 \bibitem[{R Core Team}(2016)]{r}
 {R Core Team}. 2016.
@@ -275,6 +275,16 @@ Tonhauser, Judith, Judith Degen, Marie-Catherine de~Marneffe, and Mandy Simons.
 van~der Sandt, Rob. 1992.
 \newblock Presupposition projection as anaphora resolution.
 \newblock {\em Journal of Semantics\/} 9:333--377.
+
+\bibitem[White et~al.(2018)White, Hacquard, and Lidz]{white-etal2018}
+White, Aaron~S., Valentine Hacquard, and Jeffrey Lidz. 2018.
+\newblock Semantic information and the syntax of propositional attitude verbs.
+\newblock {\em Cognitive Science\/} 42:416--456.
+
+\bibitem[White and Rawlins(2018)]{white-rawlins-nels2018}
+White, Aaron~S. and Kyle Rawlins. 2018.
+\newblock The role of veridicality and factivity in clause selection.
+\newblock In {\em 48th Meeting of the North East Linguistic Society\/}, page~??
 
 \bibitem[Wyse(2010)]{wyse}
 Wyse, Brendan. 2010.

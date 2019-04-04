@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  31 JAN 2019 09:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 APR 2019 16:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1160,21 +1160,21 @@ File: ../results/1-prior/graphs/meanprobratings.pdf Graphic file (type pdf)
 
 <use ../results/1-prior/graphs/meanprobratings.pdf>
 Package pdftex.def Info: ../results/1-prior/graphs/meanprobratings.pdf used on 
-input line 99.
+input line 100.
 (pdftex.def)             Requested size: 196.57889pt x 121.95518pt.
 
-Overfull \hbox (6.14894pt too wide) in paragraph at lines 99--100
+Overfull \hbox (6.14894pt too wide) in paragraph at lines 100--101
  [][] 
  []
 
 
-Underfull \hbox (badness 1024) in paragraph at lines 108--109
+Underfull \hbox (badness 1024) in paragraph at lines 109--110
 \OT1/txr/m/it/12 an-nounce, con-fess, con-firm, es-tab-lish, hear, in-form,
  []
 
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
-113.
+114.
 
 
 <../results/3-projectivity/graphs/means-projectivity-by-predicate-and-facttype.
@@ -1185,7 +1185,7 @@ type.pdf Graphic file (type pdf)
 <use ../results/3-projectivity/graphs/means-projectivity-by-predicate-and-factt
 ype.pdf>
 Package pdftex.def Info: ../results/3-projectivity/graphs/means-projectivity-by
--predicate-and-facttype.pdf used on input line 115.
+-predicate-and-facttype.pdf used on input line 116.
 (pdftex.def)             Requested size: 276.43086pt x 138.22198pt.
  [1
 
@@ -1193,10 +1193,10 @@ Package pdftex.def Info: ../results/3-projectivity/graphs/means-projectivity-by
 lts/1-prior/graphs/meanprobratings.pdf>]
 
 Package wrapfig Warning: Stationary wrapfigure forced to float on input line 11
-7.
+8.
 
 
-Underfull \hbox (badness 1831) in paragraph at lines 119--121
+Underfull \hbox (badness 1831) in paragraph at lines 120--122
 \OT1/txr/m/n/12 Ton-hauser et al. (2018). Fur-ther-
  []
 
@@ -1205,7 +1205,7 @@ pe.pdf>] (./Tonhauser-Degen-abstract.aux) )
 Here is how much of TeX's memory you used:
  21070 strings out of 493014
  366432 string characters out of 6133351
- 460782 words of memory out of 5000000
+ 461782 words of memory out of 5000000
  24116 multiletter control sequences out of 15000+600000
  22198 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1217,7 +1217,7 @@ onts/rtxmi.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/txfonts/r
 txr.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></
 usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/
 texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Tonhauser-Degen-abstract.pdf (2 pages, 65484 bytes).
+Output written on Tonhauser-Degen-abstract.pdf (2 pages, 66221 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  40 compressed objects within 1 object stream

@@ -227,13 +227,16 @@ library(languageR)
 library(brms)
 
 # brms model
+table(cd$verb)
+cd$verb = relevel(cd$verb,ref="contradictory C")
+cd$item = as.factor(paste(cd$verb,cd$content))
 
 # no slope
-model.brms.contrd.b = brm(nResponse ~ verb + (1|workerid) + (1|item), data=cd, family=gaussian())
+model.brms.contrd.b = brm(nResponse ~ verb + (1|workerid) + (1|item), data=cd, family=bernoulli())
 summary(model.brms.contrd.b)
 # not different: be_right
 
 # with slope
-model.brms.contrd.b2 = brm(nResponse ~ verb + (verb|workerid) + (1|item), data=cd, family=gaussian())
+model.brms.contrd.b2 = brm(nResponse ~ verb + (verb|workerid) + (1|item), data=cd, family=bernoulli())
 summary(model.brms.contrd.b2)
 # problems running this model

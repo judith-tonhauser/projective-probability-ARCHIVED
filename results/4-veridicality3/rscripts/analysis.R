@@ -1094,8 +1094,10 @@ comparison
 
 # load contradictoriness means by verb
 cmeans = read.csv("../../2-veridicality2/data/veridicality_means.csv")
+cmeans
 colnames(cmeans) = c("verb","ContradictorinessMean","ContradictorinessCILow","ContradictorinessCIHigh")
 head(cmeans)
+cmeans <- droplevels(subset(cmeans,cmeans$verb != "contradictory C" & cmeans$verb != "non-contrad. C"))
 nrow(cmeans) #20 verbs
 
 # merge contradictoriness item means into target data
@@ -1130,7 +1132,7 @@ ggplot(means, aes(x=InferenceMean, y=ContradictorinessMean)) +
   ylab("Item mean contradictoriness rating") +
   xlab("Item mean inference rating") #+
   #theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1, color=cols$Colors))#, legend.position = "top")
-  ggsave("../graphs/mean-inference-by-mean-contradictoriness.pdf",height=4,width=9)
+  ggsave("../graphs/mean-inference-by-mean-contradictoriness.pdf",height=4,width=4)
 
 # load contradictoriness item means
 cItemMeans = read.csv("../../2-veridicality2/data/veridicality_item_means.csv")

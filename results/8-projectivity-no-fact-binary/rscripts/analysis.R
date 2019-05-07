@@ -250,8 +250,18 @@ ggplot(prop, aes(x=verb, y=Mean, fill=VeridicalityGroup)) +
   xlab("Predicate") 
 ggsave("../graphs/proportion-by-predicate-variability.pdf",height=4,width=7)
 
-# brms model ----
+# models ----
+head(cd)
+
+# brms model 
 cd$verb = relevel(cd$verb,ref="MC")
 cd$item = as.factor(paste(cd$verb,cd$content))
-model.brms.proj.b = brm(nResponse ~ verb + (1|workerid) + (1|item), data=cd, family=gaussian())
-summary(model.brms.proj.b)
+
+model.brms.proj.b = brm(nResponse ~ verb + (1|workerid) + (1|item), data=cd, family=bernoulli())
+summary(model.brms.proj.b) #did not converge
+
+model.proj.b = glmer(nResponse ~ verb + (1+verb|workerid) + (1|item), nAGQ=0, data=cd,family = binomial)
+summary(model.proj.b) # did not converge without nAGQ=0
+
+model.proj.b = glmer(response ~ verb + (1|workerid) + (1|item), data=cd, family = binomial)
+summary(model.proj.b) # did not converge

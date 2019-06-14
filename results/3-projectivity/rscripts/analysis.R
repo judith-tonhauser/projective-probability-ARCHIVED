@@ -27,7 +27,7 @@ mean(d$Answer.time_in_minutes) #7.1
 median(d$Answer.time_in_minutes) #6
 
 d = d %>%
-  select(workerid,rt,subjectGender,speakerGender,content,verb,fact,fact_type,contentNr,trigger_class,response,slide_number_in_experiment,age,language,assess,american,gender,comments,Answer.time_in_minutes)
+  dplyr::select(workerid,rt,subjectGender,speakerGender,content,verb,fact,fact_type,contentNr,trigger_class,response,slide_number_in_experiment,age,language,assess,american,gender,comments,Answer.time_in_minutes)
 nrow(d) #7800
 
 # look at Turkers' comments
@@ -91,23 +91,20 @@ means
 # 5  control5 0.1886282
 # 6  control6 0.2560289
 
-# Turkers with response means on controls more than 3sd above group mean
-# this is the exclusion criterion used in Tonhauser, Beaver, Degen (2018)
+# Turkers with response means on controls more than 2sd above group mean
+# this is the exclusion criterion we decided on for factivity paper
 c.means = aggregate(response~workerid, data=c, FUN="mean")
 c.means$YMin = c.means$response - aggregate(response~workerid, data=c, FUN="ci.low")$response
 c.means$YMax = c.means$response + aggregate(response~workerid, data=c, FUN="ci.high")$response
 c.means
 
-c.g <- c.means[c.means$response > (mean(c.means$response) + 3*sd(c.means$response)),]
+c.g <- c.means[c.means$response > (mean(c.means$response) + 2*sd(c.means$response)),]
 c.g 
-unique(length(c.g$workerid)) #only 1 Turker gave high response
-mean(c.g$response) #.92
+unique(length(c.g$workerid)) #11 Turkers gave high response
+mean(c.g$response) #.69
 
-# how many unique Turkers did badly on the controls?
 outliers <- subset(c, c$workerid %in% c.g$workerid)
 outliers = droplevels(outliers)
-nrow(outliers) #6 / 6 control items = 1 Turker
-table(outliers$response)
 
 # look at the responses to the controls that these "outlier" Turkers did
 
@@ -120,22 +117,22 @@ ggplot(outliers, aes(x=workerid,y=response)) +
   xlab("Participants")
 ggsave(f="../graphs/raw-responses-to-controls-by-outliers.pdf",height=6,width=10)
 
-# responses here are supposed to be low but this Turker
+# responses here are supposed to be low but these Turkers
 # gave high response to most control items
 
 # exclude the Turker identified above
 d <- subset(d, !(d$workerid %in% outliers$workerid))
 d <- droplevels(d)
-length(unique(d$workerid)) #276 Turkers remain (277 - 1)
+length(unique(d$workerid)) #266 Turkers remain (277 - 11)
 
 # clean data
 cd = d
 write.csv(cd, "../data/cd.csv")
-nrow(cd) #7176 / 26 items = 276 participants
+nrow(cd) #6916 / 26 items = 266 participants
 
 # load clean data for analysis ----
 cd = read.csv("../data/cd.csv")
-nrow(cd) #7176
+nrow(cd) #6916
 
 # # load contradictoriness means
 # vmeans = read.csv("../../2-veridicality2/data/veridicality_means.csv")
@@ -161,8 +158,8 @@ head(cd)
 
 # mean of non-projecting controls
 table(cd$verb)
-mean(cd[cd$verb == "control",]$response) #.20
-ci.low(cd[cd$verb == "control",]$response) #.01
+mean(cd[cd$verb == "control",]$response) #.19
+ci.low(cd[cd$verb == "control",]$response) #.19
 ci.high(cd[cd$verb == "control",]$response) #.01
 
 # age info of remaining Turkers
@@ -170,14 +167,14 @@ table(cd$age) #21-72
 length(which(is.na(cd$age))) #0 missing values
 median(cd$age,na.rm=TRUE) #36
 table(cd$gender)
-#134 female, 141 male
+#129 female, 136 male
 
 # target data (20 items per Turker)
 names(cd)
 table(cd$verb)
 t <- subset(cd, cd$verb != "control")
 t <- droplevels(t)
-nrow(t) #5520 / 20 items = 276 Turkers
+nrow(t) #5320 / 20 items = 266 Turkers
 table(t$verb,t$content)
 
 names(t)
@@ -197,21 +194,38 @@ means = t %>%
   summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
   ungroup() %>%
   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(verb,Mean))
-View(means)
+means
+levels(means$Verb)
 
 cols = data.frame(V=levels(means$Verb))
+cols
+
 cols$VeridicalityGroup = as.factor(
   ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
          ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
-                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF","V"))))
-#cols$Colors =  ifelse(cols$VeridicalityGroup == "E", brewer.pal(3,"Paired")[2], ifelse(cols$VeridicalityGroup == "NE", brewer.pal(3,"Paired")[1],brewer.pal(3,"Paired")[3]))
-cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "#009E73", 
-                      ifelse(cols$VeridicalityGroup == "NF", "black", 
-                             ifelse(cols$VeridicalityGroup == "VNF","black","black")))
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF",
+                       ifelse(cols$V %in% c("MC"),"MC","PNF")))))
+
+levels(cols$V)
+cols
+
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid", 
+                      ifelse(cols$VeridicalityGroup == "NF", "gray60", 
+                             ifelse(cols$VeridicalityGroup == "VNF","dodgerblue",
+                                    ifelse(cols$VeridicalityGroup == "MC","black","tomato1"))))
+
+cols
+cols$V <- factor(cols$V, levels = cols[order(as.character(means$Verb)),]$V, ordered = TRUE)
+levels(cols$V)
+
+#cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "#009E73", 
+#                      ifelse(cols$VeridicalityGroup == "NF", "black", 
+#                             ifelse(cols$VeridicalityGroup == "VNF","black","black")))
 
 # color-blind-friendly palette
 cbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7") # c("#999999",
 
+# xprag abstract
 ggplot(means, aes(x=Verb, y=Mean, color=fact_type)) + 
   geom_point() +
   geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
@@ -224,12 +238,119 @@ ggplot(means, aes(x=Verb, y=Mean, color=fact_type)) +
   theme(legend.position = c(0.2, 0.8)) +
   ylab("Mean certainty rating \n (higher is more projective)") +
   xlab("Predicate") +
-  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1)) # color=cols$Colors)), legend.position = "top")
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1))
+ggsave("../graphs/means-projectivity-by-predicate-and-facttype.pdf",height=3.2,width=6)
+
+# xprag talk 
+ggplot(means, aes(x=Verb, y=Mean, color=fact_type)) + 
+  geom_point() +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
+  scale_y_continuous(limits = c(-0.05,1.05),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_color_manual(name="Prior probability of content", breaks=c("factH","factL"),labels=c("high", "low"), 
+                     values=cbPalette) +
+  scale_alpha(range = c(.3,1)) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors)) +
+  theme(legend.position = c(0.2, 0.75)) +
+  ylab("Mean certainty rating") +
+  xlab("Predicate") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1))
+ggsave("../graphs/means-projectivity-by-predicate-and-facttype.pdf",height=3.2,width=6)
+
+# xprag talk wit main clause constrols
+table(cd$verb)
+
+means = cd %>%
+  group_by(verb, fact_type) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  ungroup() %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(verb,Mean))
+means
+levels(means$Verb)
+
+means[means$Verb == "control",]
+
+cols = data.frame(V=levels(means$Verb))
+cols
+
+cols$VeridicalityGroup = as.factor(
+  ifelse(cols$V %in% c("know", "discover", "reveal", "see", "be_annoyed"), "F", 
+         ifelse(cols$V %in% c("pretend", "think", "suggest", "say"), "NF", 
+                ifelse(cols$V %in% c("be_right","demonstrate"),"VNF",
+                       ifelse(cols$V %in% c("control"),"MC","PNF")))))
+
+levels(cols$V)
+cols
+
+cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "darkorchid", 
+                      ifelse(cols$VeridicalityGroup == "NF", "gray60", 
+                             ifelse(cols$VeridicalityGroup == "VNF","dodgerblue",
+                                    ifelse(cols$VeridicalityGroup == "MC","black","tomato1"))))
+
+cols
+cols$V <- factor(cols$V, levels = cols[order(as.character(means$Verb)),]$V, ordered = TRUE)
+levels(cols$V)
+
+#cols$Colors =  ifelse(cols$VeridicalityGroup == "F", "#009E73", 
+#                      ifelse(cols$VeridicalityGroup == "NF", "black", 
+#                             ifelse(cols$VeridicalityGroup == "VNF","black","black")))
+
+# color-blind-friendly palette
+cbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7") # c("#999999",
+
+
+ggplot(means, aes(x=Verb, y=Mean, color=fact_type)) + 
+  geom_point() +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
+  scale_y_continuous(limits = c(-0.05,1.05),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_color_manual(name="Prior probability of content", breaks=c("factH","factL"),labels=c("high", "low"), 
+                     values=cbPalette) +
+  scale_alpha(range = c(.3,1)) +
+  theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
+                                                                 color=cols$Colors)) +
+  theme(legend.position = c(0.2, 0.75)) +
+  geom_point(aes(x=1,y=means[means$Verb == "control",]$Mean), color="black") +
+  geom_errorbar(aes(x=1,ymin=means[means$Verb == "control",]$YMin,ymax=means[means$Verb == "control",]$YMax,width=.25),color="black") +
+  ylab("Mean certainty rating") +
+  xlab("Predicate") +
+  theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1))
 ggsave("../graphs/means-projectivity-by-predicate-and-facttype.pdf",height=3.2,width=6)
 
 
 # models ----
 library(lmerTest)
+
+# model on full data, with controls as reference level
+names(cd)
+
+str(cd$response)
+str(cd$verb)
+cd$verb <- as.factor(cd$verb)
+str(cd$workerid)
+cd$workerid <- as.factor(cd$workerid)
+
+# set reference levels
+cd$itemType <- relevel(cd$itemType, ref="factL")
+cd$verb <- relevel(cd$verb, ref="control")
+
+# make item variable
+cd$item = as.factor(paste(cd$verb, cd$content, cd$fact))
+table(cd$item)
+
+contrasts(cd$verb)
+
+# no interaction
+model.1 = lmer(response ~ itemType + verb + (1+itemType|workerid) + (1|item), data=cd, REML=F)
+summary(model.1)
+
+# with interaction
+model.2 = lmer(response ~ itemType * verb + (1+itemType|workerid) + (1|item), data=cd, REML=F)
+summary(model)
+
+anova(model.1,model.2) # model with interaction is not better
+
+
+# model only on target data, with pretend, low prior as reference level
 names(t)
 table(t$verb)
 table(t$content)
@@ -253,15 +374,12 @@ t$item = as.factor(paste(t$verb, t$content, t$fact))
 table(t$item)
 
 contrasts(t$verb)
+
 # no interaction
-# models with more complex random effects structures did not converge?!?
-# + (1+verb|workerid) + (1|content) + (1|fact)
 model.1 = lmer(response ~ itemType + verb + (1+itemType|workerid) + (1|item), data=t, REML=F)
 summary(model.1)
 
 # with interaction
-# models with more complex random effects structures did not converge?!?
-# + (1+verb|workerid) + (1|content) + (1|fact)
 model.2 = lmer(response ~ itemType * verb + (1+itemType|workerid) + (1|item), data=t, REML=F)
 summary(model)
 

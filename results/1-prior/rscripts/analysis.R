@@ -23,7 +23,7 @@ names(d)
 length(unique(d$workerid)) #95 participants
 
 d = d %>%
-  select(workerid,rt,prompt,itemType,itemNr,list,item,response,fact,slide_number_in_experiment,gender,american,age,language,comments,Answer.time_in_minutes)
+  dplyr::select(workerid,rt,prompt,itemType,itemNr,list,item,response,fact,slide_number_in_experiment,gender,american,age,language,comments,Answer.time_in_minutes)
 nrow(d) #2090
 
 # look at Turkers' comments
@@ -66,7 +66,7 @@ d.f2 <- subset(d, d$item == "F2")
 d.f2 <- droplevels(d.f2)
 nrow(d.f2) #87
 
-# both fillers
+# data on both controls/fillers
 d.f12 <- rbind(d.f1,d.f2)
 nrow(d.f12) #174
 
@@ -84,50 +84,75 @@ ggplot(d.f12, aes(x=workerid,y=response)) +
   xlab("Participant")
 ggsave(f="../graphs/filler-ratings.pdf",height=4,width=20)
 
-# Turkers who gave responses to F1 lower than .8
-# this is a bit arbitrary, I don't remember how we came to this number
-f1 <- d.f1[d.f1$response < .8,]
-f1
-nrow(f1) #17
+# Turkers with response to filler 1 that is more than 2sd below group mean
+# this is the exclusion criterion we decided on for the factivity paper
+c.means = aggregate(response~workerid, data=d.f1, FUN="mean")
+c.means$YMin = c.means$response - aggregate(response~workerid, data=d.f1, FUN="ci.low")$response
+c.means$YMax = c.means$response + aggregate(response~workerid, data=d.f1, FUN="ci.high")$response
+c.means
 
-ggplot(f1, aes(x=workerid,y=response)) +
-  geom_point(aes(colour = item)) +
-  geom_text(aes(label=workerid), vjust = 1, cex= 5) +
-  geom_text(aes(label=response), vjust = 2.5, cex= 5) +
-  scale_y_continuous(breaks = pretty(f1$response, n = 10)) +
-  ylab("Responses to filler 1") +
-  xlab("Participants who gave bad responses (expected high)")
+c.f1 <- c.means[c.means$response < (mean(c.means$response) - 2*sd(c.means$response)),]
+c.f1
+unique(length(c.f1$workerid)) #9 Turkers
+mean(c.f1$response)
 
-# Turkers who gave responses to F2 higher than .2
-f2 <- d.f2[d.f2$response > .2,]
-nrow(f2) #3
+# Turkers with response to filler 2 that is more than 2sd above group mean
+# this is the exclusion criterion we decided on for the factivity paper
+c.means = aggregate(response~workerid, data=d.f2, FUN="mean")
+c.means$YMin = c.means$response - aggregate(response~workerid, data=d.f2, FUN="ci.low")$response
+c.means$YMax = c.means$response + aggregate(response~workerid, data=d.f2, FUN="ci.high")$response
+c.means
 
-ggplot(f2, aes(x=workerid,y=response)) +
-  geom_point(aes(colour = item)) +
-  geom_text(aes(label=workerid), vjust = 1, cex= 5) +
-  geom_text(aes(label=response), vjust = -2.5, cex= 5) +
-  scale_y_continuous(breaks = pretty(f2$response, n = 10)) +
-  ylab("Responses to filler 2") +
-  xlab("Participants who gave bad responses (expected low)")
+c.f2 <- c.means[c.means$response > (mean(c.means$response) + 2*sd(c.means$response)),]
+c.f2
+unique(length(c.f2$workerid)) #3 Turkers
+mean(c.f2$response)
 
-f <- rbind(f1,f2)
-nrow(f) #22
+# # Turkers who gave responses to F1 lower than .8
+# # this is a bit arbitrary, I don't remember how we came to this number
+# f1 <- d.f1[d.f1$response < .8,]
+# f1
+# nrow(f1) #17
+# 
+# ggplot(f1, aes(x=workerid,y=response)) +
+#   geom_point(aes(colour = item)) +
+#   geom_text(aes(label=workerid), vjust = 1, cex= 5) +
+#   geom_text(aes(label=response), vjust = 2.5, cex= 5) +
+#   scale_y_continuous(breaks = pretty(f1$response, n = 10)) +
+#   ylab("Responses to filler 1") +
+#   xlab("Participants who gave bad responses (expected high)")
+# 
+# # Turkers who gave responses to F2 higher than .2
+# f2 <- d.f2[d.f2$response > .2,]
+# nrow(f2) #3
+# 
+# ggplot(f2, aes(x=workerid,y=response)) +
+#   geom_point(aes(colour = item)) +
+#   geom_text(aes(label=workerid), vjust = 1, cex= 5) +
+#   geom_text(aes(label=response), vjust = -2.5, cex= 5) +
+#   scale_y_continuous(breaks = pretty(f2$response, n = 10)) +
+#   ylab("Responses to filler 2") +
+#   xlab("Participants who gave bad responses (expected low)")
 
-ggplot(f, aes(x=workerid,y=response)) +
-  geom_point(aes(colour = item)) +
-  geom_text(aes(label=workerid), vjust = 1, cex= 5)+
-  #geom_text(aes(label=response), vjust = -1, cex= 5) +
-  scale_y_continuous(breaks = pretty(f$response, n = 10)) +
-  ylab("Responses to fillers") +
-  xlab("Participants who gave bad responses (red/F1 expected high, blue/F2 expected low)")
-ggsave(f="../graphs/bad-filler-ratings.pdf",height=4,width=20)
+# f <- rbind(c.f1,c.f2)
+# f
+# nrow(f) #22
+# 
+# ggplot(f, aes(x=workerid,y=response)) +
+#   geom_point(aes(colour = item)) +
+#   geom_text(aes(label=workerid), vjust = 1, cex= 5)+
+#   #geom_text(aes(label=response), vjust = -1, cex= 5) +
+#   scale_y_continuous(breaks = pretty(f$response, n = 10)) +
+#   ylab("Responses to fillers") +
+#   xlab("Participants who gave bad responses (red/F1 expected high, blue/F2 expected low)")
+# ggsave(f="../graphs/bad-filler-ratings.pdf",height=4,width=20)
 
-length(unique(f$workerid)) #19 Turkers
+# length(unique(f$workerid)) #19 Turkers
 
-# exclude the 19 Turkers identified above
-d <- subset(d, !(d$workerid %in% f1$workerid | d$workerid %in% f2$workerid))
+# exclude the Turkers identified above
+d <- subset(d, !(d$workerid %in% c.f1$workerid | d$workerid %in% c.f2$workerid))
 d <- droplevels(d)
-length(unique(d$workerid)) #68 Turkers remain
+length(unique(d$workerid)) #75 Turkers remain
 
 filler <- droplevels(subset(d,d$itemType == "F"))
 nrow(filler)
@@ -144,43 +169,54 @@ ggsave(f="../graphs/filler-ratings-good-participants.pdf",height=4,width=20)
 cd = d
 write.csv(cd, file = "../data/cd.csv")
 head(cd)
-nrow(cd) #1496 / 22 items = 68 participants
-view(cd)
+nrow(cd) #1650 / 22 items = 75 participants
+table(cd$fact,cd$itemNr)
 
 # load clean data for analysis ----
 cd <- read.csv(file="../data/cd.csv", header=TRUE, sep=",")
-nrow(cd) #1496
+nrow(cd) #1650
 
 # age info
 table(cd$age) #21-75
-median(cd$age) #36
+median(cd$age) #35
 table(cd$gender)
-#31 female, 37 male
+#34 female, 41 male
 
 # look at responses to fillers in clean data
 # filler/control 1 (high responses expected)
 cd.f1 <- subset(cd, cd$item == "F1")
 cd.f1 <- droplevels(cd.f1)
-nrow(cd.f1) #68
+nrow(cd.f1) #75
 
 # filler/control 2 (low responses expected)
 cd.f2 <- subset(cd, cd$item == "F2")
 cd.f2 <- droplevels(cd.f2)
-nrow(cd.f2) #87
+nrow(cd.f2) #75
 
 # group mean on filler 1
-round(mean(cd.f1$response),2) #.99
-round(sd(cd.f1$response),2) #.01
+round(mean(cd.f1$response),2) #.95
+round(sd(cd.f1$response),2) #.14
 
 # group mean on filler 2
 round(mean(cd.f2$response),2) #.01
-round(sd(cd.f2$response),2) #.01
+round(sd(cd.f2$response),2) #.03
 
 # target data
 target <- subset(cd, cd$item != "F1" & cd$item != "F2")
 target <- droplevels(target)
-nrow(target) #1360 = 68 participants x 20 items
+nrow(target) #1500 = 75 participants x 20 items
 table(target$item)
+
+# add content information
+target$event <- target$prompt
+target$event <- gsub("How likely is it that","",target$event)
+target$event <- gsub("\\?","",target$event)
+table(target$event)
+
+cols <- c("itemNr","event")
+cols
+target$eventItemNr <- do.call(paste, c(target[cols], sep=": "))
+table(target$eventItemNr)
 
 # mean responses and standard deviations of responses to H and L items
 mean.HL = aggregate(response~itemType, data=target, FUN="mean")
@@ -203,6 +239,8 @@ means = aggregate(response~item+itemType+itemNr, data=target, FUN="mean")
 means$YMin = means$response - aggregate(response~item+itemType+itemNr, data=target, FUN="ci.low")$response
 means$YMax = means$response + aggregate(response~item+itemType+itemNr, data=target, FUN="ci.high")$response
 means$itemType = recode(means$itemType, H="high",L="low")
+means
+
 
 ggplot(means, aes(x=response,fill=itemType)) +
   geom_histogram(binwidth=.05,alpha=.8) +
@@ -212,8 +250,22 @@ ggplot(means, aes(x=response,fill=itemType)) +
   theme(legend.position=c(.7,.8))
 ggsave("../graphs/meanprobratings.pdf",height=2.8,width=4.5)
 
-ggplot(target, aes(x=itemNr,y=response)) +
+ggplot(means, aes(x=as.numeric(as.character(itemNr)), y=response, color=itemType)) + 
+  geom_point() +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
+  scale_x_continuous(breaks=seq(1,20,1)) +
+  scale_y_continuous(limits = c(-0.05,1.05),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  scale_color_manual(name="Fact", breaks=c("high","low"),labels=c("high", "low"), 
+                     values=cbPalette) +
+  theme(legend.position = "top") +
+  #theme(legend.position = c(0.3, 0.8)) +
+  ylab("Mean prior probability") +
+  xlab("Content of complement") 
+ggsave(f="../graphs/ratings-for-CCs.pdf",height=3.2,width=6)
+
+ggplot(target, aes(x=itemNr,y=response,color=itemType)) +
   geom_point(aes(colour = itemType)) +
+  scale_fill_manual(values=cbPalette,name="Prior content probability") +
   geom_point(data = means, size = 3) +
   geom_errorbar(data = means, aes(ymin=YMin, ymax=YMax)) +
   geom_point(alpha = 0.1) +
@@ -225,7 +277,7 @@ ggplot(target, aes(x=itemNr,y=response)) +
   theme(axis.title=element_text(size=14)) +
   theme(legend.position="none") +
   ylab("Mean prior probability \n rating by fact") +
-  xlab("Content (identified by number for space reasons)") 
+  xlab("Content of complement") 
 ggsave(f="../graphs/target-ratings.pdf",height=3.2,width=6)
 
 # plot that also displays content 
@@ -243,14 +295,11 @@ means = aggregate(response~item+itemType+eventItemNr, data=target, FUN="mean")
 means$YMin = means$response - aggregate(response~item+itemType+eventItemNr, data=target, FUN="ci.low")$response
 means$YMax = means$response + aggregate(response~item+itemType+eventItemNr, data=target, FUN="ci.high")$response
 means
-View(means)
+
 
 sd = aggregate(response~item+itemType+eventItemNr, data=target, FUN="sd")
 sd
-View(sd)
 
-table(target$item) #33 or 35 responses for each item
-table(target$event) #68 responses for each event (33 + 35)
 print(unique(target$eventItemNr))
 
 target$eventItemNr  = factor(target$eventItemNr, 
@@ -276,7 +325,7 @@ target$eventItemNr  = factor(target$eventItemNr,
                                       "20:  Charley speaks Spanish"))
 
 
-ggplot(target, aes(x=itemNr,y=response)) +
+ggplot(target, aes(x=eventItemNr,y=response)) +
   geom_point(aes(colour = itemType)) +
   geom_point(data = means, size = 3) +
   geom_errorbar(data = means, aes(ymin=YMin, ymax=YMax)) +

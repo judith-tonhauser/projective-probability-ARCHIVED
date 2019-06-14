@@ -1,4 +1,26 @@
 "","workerid","rt","prompt","itemType","itemNr","list","item","response","fact","slide_number_in_experiment","gender","american","age","language","comments","Answer.time_in_minutes"
+"1",0,8398,"How likely is it that Frank got a cat?","H","12",1,"12H",0.83,"Frank has always wanted a pet.",2,"Male",0,29,"english","",2.0863
+"2",0,3505,"How likely is it that Isabella ate a steak on Sunday?","L","7",1,"7L",0.14,"Isabella is a vegetarian.",3,"Male",0,29,"english","",2.0863
+"3",0,3526,"How likely is it that Zoe calculated the tip?","H","10",1,"10H",0.93,"Zoe is a math major.",4,"Male",0,29,"english","",2.0863
+"4",0,2893,"How likely is it that Tammy speaks Italian and Greek?","F","F",1,"F2",0.2,"Tammy is a rabbit.",5,"Male",0,29,"english","",2.0863
+"5",0,2414,"How likely is it that Emma studied on Saturday morning?","L","3",1,"3L",0.64,"Emma is in first grade.",6,"Male",0,29,"english","",2.0863
+"6",0,2540,"How likely is it that Jackson ran 10 miles?","L","13",1,"13L",0.25,"Jackson is obese.",7,"Male",0,29,"english","",2.0863
+"7",0,2408,"How likely is it that Tony had a drink last night?","L","15",1,"15L",0.12,"Tony has been sober for 20 years.",8,"Male",0,29,"english","",2.0863
+"8",0,2512,"How likely is it that Charley speaks Spanish?","H","20",1,"20H",0.64,"Charley lives in Mexico.",9,"Male",0,29,"english","",2.0863
+"9",0,2745,"How likely is it that Barry lives in Europe?","F","F",1,"F1",0.31,"Barry lives in Germany.",10,"Male",0,29,"english","",2.0863
+"10",0,2991,"How likely is it that Mary is pregnant?","L","1",1,"1L",0.25,"Mary is a middle school student.",11,"Male",0,29,"english","",2.0863
+"11",0,2256,"How likely is it that Jayden rented a car?","H","14",1,"14H",0.7,"Jayden&quotechars car is in the shop.",12,"Male",0,29,"english","",2.0863
+"12",0,10631,"How likely is it that Grace visited her sister?","L","9",1,"9L",0.21,"Grace hates her sister.",13,"Male",0,29,"english","",2.0863
+"13",0,3800,"How likely is it that Mia drank 2 cocktails last night?","H","6",1,"6H",0.84,"Mia is a college student.",14,"Male",0,29,"english","",2.0863
+"14",0,3769,"How likely is it that Emily bought a car yesterday?","H","8",1,"8H",0.72,"Emily has been saving for a year.",15,"Male",0,29,"english","",2.0863
+"15",0,3007,"How likely is it that Danny ate the last cupcake?","L","11",1,"11L",0.74,"Danny is a diabetic.",16,"Male",0,29,"english","",2.0863
+"16",0,3200,"How likely is it that Julian dances salsa?","H","18",1,"18H",0.67,"Julian is Cuban.",17,"Male",0,29,"english","",2.0863
+"17",0,2752,"How likely is it that Josh learned to ride a bike yesterday?","H","16",1,"16H",0.7,"Josh is a 5-year old boy.",18,"Male",0,29,"english","",2.0863
+"18",0,3288,"How likely is it that Olivia sleeps until noon?","H","4",1,"4H",0.78,"Olivia works the third shift.",19,"Male",0,29,"english","",2.0863
+"19",0,3640,"How likely is it that Jon walks to work?","L","19",1,"19L",0.27,"Jon lives 10 miles away from work.",20,"Male",0,29,"english","",2.0863
+"20",0,4009,"How likely is it that Owen shoveled snow last winter?","L","17",1,"17L",0.44,"Owen lives in New Orleans.",21,"Male",0,29,"english","",2.0863
+"21",0,4000,"How likely is it that Josie went on vacation to France?","H","2",1,"2H",0.79,"Josie loves France.",22,"Male",0,29,"english","",2.0863
+"22",0,2952,"How likely is it that Sophia got a tattoo?","L","5",1,"5L",0.74,"Sophia is a high end fashion model.",23,"Male",0,29,"english","",2.0863
 "23",1,4571,"How likely is it that Charley speaks Spanish?","L","20",2,"20L",0.12,"Charley lives in Korea.",2,"Female",0,69,"en","$0.60",2.00643333333333
 "24",1,3767,"How likely is it that Owen shoveled snow last winter?","H","17",2,"17H",0.85,"Owen lives in Chicago.",3,"Female",0,69,"en","$0.60",2.00643333333333
 "25",1,4688,"How likely is it that Mary is pregnant?","H","1",2,"1H",0.9,"Mary is taking a prenatal yoga class.",4,"Female",0,69,"en","$0.60",2.00643333333333
@@ -571,6 +593,50 @@
 "724",32,20743,"How likely is it that Emily bought a car yesterday?","L","8",2,"8L",0.14,"Emily never has any money.",21,"Male",0,52,"english","i think you are paying a fair price for this hit - thanks",10.4518333333333
 "725",32,4760,"How likely is it that Emma studied on Saturday morning?","H","3",2,"3H",0.87,"Emma is in law school.",22,"Male",0,52,"english","i think you are paying a fair price for this hit - thanks",10.4518333333333
 "726",32,7304,"How likely is it that Josh learned to ride a bike yesterday?","L","16",2,"16L",0.05,"Josh is a 75-year old man.",23,"Male",0,52,"english","i think you are paying a fair price for this hit - thanks",10.4518333333333
+"727",33,7233,"How likely is it that Barry lives in Europe?","F","F",1,"F1",0.36,"Barry lives in Germany.",2,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"728",33,15841,"How likely is it that Zoe calculated the tip?","H","10",1,"10H",0.82,"Zoe is a math major.",3,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"729",33,5583,"How likely is it that Mia drank 2 cocktails last night?","H","6",1,"6H",0.27,"Mia is a college student.",4,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"730",33,4783,"How likely is it that Julian dances salsa?","H","18",1,"18H",0.39,"Julian is Cuban.",5,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"731",33,3944,"How likely is it that Olivia sleeps until noon?","H","4",1,"4H",0.74,"Olivia works the third shift.",6,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"732",33,17151,"How likely is it that Emily bought a car yesterday?","H","8",1,"8H",0.33,"Emily has been saving for a year.",7,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"733",33,3810,"How likely is it that Mary is pregnant?","L","1",1,"1L",0.06,"Mary is a middle school student.",8,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"734",33,7113,"How likely is it that Isabella ate a steak on Sunday?","L","7",1,"7L",0.15,"Isabella is a vegetarian.",9,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"735",33,9385,"How likely is it that Sophia got a tattoo?","L","5",1,"5L",0.37,"Sophia is a high end fashion model.",10,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"736",33,8626,"How likely is it that Josie went on vacation to France?","H","2",1,"2H",0.61,"Josie loves France.",11,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"737",33,6060,"How likely is it that Owen shoveled snow last winter?","L","17",1,"17L",0.04,"Owen lives in New Orleans.",12,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"738",33,4710,"How likely is it that Tammy speaks Italian and Greek?","F","F",1,"F2",0,"Tammy is a rabbit.",13,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"739",33,5017,"How likely is it that Frank got a cat?","H","12",1,"12H",0.59,"Frank has always wanted a pet.",14,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"740",33,10163,"How likely is it that Jon walks to work?","L","19",1,"19L",0.08,"Jon lives 10 miles away from work.",15,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"741",33,6296,"How likely is it that Jackson ran 10 miles?","L","13",1,"13L",0.08,"Jackson is obese.",16,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"742",33,4016,"How likely is it that Emma studied on Saturday morning?","L","3",1,"3L",0.23,"Emma is in first grade.",17,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"743",33,3285,"How likely is it that Josh learned to ride a bike yesterday?","H","16",1,"16H",0.51,"Josh is a 5-year old boy.",18,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"744",33,10256,"How likely is it that Jayden rented a car?","H","14",1,"14H",0.51,"Jayden&quotechars car is in the shop.",19,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"745",33,5079,"How likely is it that Danny ate the last cupcake?","L","11",1,"11L",0.35,"Danny is a diabetic.",20,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"746",33,9974,"How likely is it that Tony had a drink last night?","L","15",1,"15L",0.08,"Tony has been sober for 20 years.",21,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"747",33,6938,"How likely is it that Charley speaks Spanish?","H","20",1,"20H",0.82,"Charley lives in Mexico.",22,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"748",33,12696,"How likely is it that Grace visited her sister?","L","9",1,"9L",0.14,"Grace hates her sister.",23,"Female",0,28,"English","I think this is a fair price. On the first question, about Barry living in Germany / Europe, I put unlikely instead of likely. That was an error on my part.",11.5892333333333
+"815",37,4736,"How likely is it that Jayden rented a car?","L","14",2,"14L",0.02,"Jayden doesn&quotechart have a driver&quotechars license.",2,"Female",0,49,"English","",3.67216666666667
+"816",37,4787,"How likely is it that Grace visited her sister?","H","9",2,"9H",0.88,"Grace loves her sister.",3,"Female",0,49,"English","",3.67216666666667
+"817",37,4904,"How likely is it that Charley speaks Spanish?","L","20",2,"20L",0.23,"Charley lives in Korea.",4,"Female",0,49,"English","",3.67216666666667
+"818",37,3739,"How likely is it that Jon walks to work?","H","19",2,"19H",0.8,"Jon lives 2 blocks away from work.",5,"Female",0,49,"English","",3.67216666666667
+"819",37,3299,"How likely is it that Julian dances salsa?","L","18",2,"18L",0.11,"Julian is German.",6,"Female",0,49,"English","",3.67216666666667
+"820",37,4166,"How likely is it that Danny ate the last cupcake?","H","11",2,"11H",0.91,"Danny loves cake.",7,"Female",0,49,"English","",3.67216666666667
+"821",37,4280,"How likely is it that Olivia sleeps until noon?","L","4",2,"4L",0.03,"Olivia has two small children.",8,"Female",0,49,"English","",3.67216666666667
+"822",37,5152,"How likely is it that Owen shoveled snow last winter?","H","17",2,"17H",0.84,"Owen lives in Chicago.",9,"Female",0,49,"English","",3.67216666666667
+"823",37,4398,"How likely is it that Emma studied on Saturday morning?","H","3",2,"3H",0.92,"Emma is in law school.",10,"Female",0,49,"English","",3.67216666666667
+"824",37,3858,"How likely is it that Sophia got a tattoo?","H","5",2,"5H",0.8,"Sophia is a hipster.",11,"Female",0,49,"English","",3.67216666666667
+"825",37,5619,"How likely is it that Jackson ran 10 miles?","H","13",2,"13H",0.71,"Jackson is training for a marathon.",12,"Female",0,49,"English","",3.67216666666667
+"826",37,4327,"How likely is it that Frank got a cat?","L","12",2,"12L",0,"Frank is allergic to cats.",13,"Female",0,49,"English","",3.67216666666667
+"827",37,16050,"How likely is it that Emily bought a car yesterday?","L","8",2,"8L",0.02,"Emily never has any money.",14,"Female",0,49,"English","",3.67216666666667
+"828",37,6454,"How likely is it that Zoe calculated the tip?","L","10",2,"10L",0.08,"Zoe is 5 years old.",15,"Female",0,49,"English","",3.67216666666667
+"829",37,14707,"How likely is it that Josh learned to ride a bike yesterday?","L","16",2,"16L",0.17,"Josh is a 75-year old man.",16,"Female",0,49,"English","",3.67216666666667
+"830",37,4530,"How likely is it that Mary is pregnant?","H","1",2,"1H",0.8,"Mary is taking a prenatal yoga class.",17,"Female",0,49,"English","",3.67216666666667
+"831",37,6932,"How likely is it that Isabella ate a steak on Sunday?","H","7",2,"7H",0.47,"Isabella is from Argentina.",18,"Female",0,49,"English","",3.67216666666667
+"832",37,4064,"How likely is it that Mia drank 2 cocktails last night?","L","6",2,"6L",0.02,"Mia is a nun.",19,"Female",0,49,"English","",3.67216666666667
+"833",37,5691,"How likely is it that Josie went on vacation to France?","L","2",2,"2L",0.01,"Josie doesn&quotechart have a passport.",20,"Female",0,49,"English","",3.67216666666667
+"834",37,5174,"How likely is it that Tammy speaks Italian and Greek?","F","F",2,"F2",0.01,"Tammy is a rabbit.",21,"Female",0,49,"English","",3.67216666666667
+"835",37,11901,"How likely is it that Tony had a drink last night?","H","15",2,"15H",0.8,"Tony really likes to party with his friends.",22,"Female",0,49,"English","",3.67216666666667
+"836",37,5906,"How likely is it that Barry lives in Europe?","F","F",2,"F1",0.66,"Barry lives in Germany.",23,"Female",0,49,"English","",3.67216666666667
 "837",38,5077,"How likely is it that Tony had a drink last night?","L","15",1,"15L",0,"Tony has been sober for 20 years.",2,"Male",0,36,"English","I think you need to remove or change more than half of the questions, for people who are native speakers of the English language - due to the sheer amount of errors.",5.87758333333333
 "838",38,7769,"How likely is it that Jon walks to work?","L","19",1,"19L",0,"Jon lives 10 miles away from work.",3,"Male",0,36,"English","I think you need to remove or change more than half of the questions, for people who are native speakers of the English language - due to the sheer amount of errors.",5.87758333333333
 "839",38,5253,"How likely is it that Charley speaks Spanish?","H","20",1,"20H",1,"Charley lives in Mexico.",4,"Male",0,36,"English","I think you need to remove or change more than half of the questions, for people who are native speakers of the English language - due to the sheer amount of errors.",5.87758333333333
@@ -659,6 +725,28 @@
 "966",43,4872,"How likely is it that Julian dances salsa?","H","18",1,"18H",0.5,"Julian is Cuban.",21,"Male",0,27,"English","",2.38838333333333
 "967",43,3797,"How likely is it that Jackson ran 10 miles?","L","13",1,"13L",0.18,"Jackson is obese.",22,"Male",0,27,"English","",2.38838333333333
 "968",43,3349,"How likely is it that Tony had a drink last night?","L","15",1,"15L",0.18,"Tony has been sober for 20 years.",23,"Male",0,27,"English","",2.38838333333333
+"969",44,8323,"How likely is it that Owen shoveled snow last winter?","L","17",1,"17L",0.14,"Owen lives in New Orleans.",2,"Male",0,35,"English","price is fair.",2.40583333333333
+"970",44,3617,"How likely is it that Tony had a drink last night?","L","15",1,"15L",0.17,"Tony has been sober for 20 years.",3,"Male",0,35,"English","price is fair.",2.40583333333333
+"971",44,3998,"How likely is it that Mary is pregnant?","L","1",1,"1L",0.16,"Mary is a middle school student.",4,"Male",0,35,"English","price is fair.",2.40583333333333
+"972",44,5042,"How likely is it that Zoe calculated the tip?","H","10",1,"10H",0.52,"Zoe is a math major.",5,"Male",0,35,"English","price is fair.",2.40583333333333
+"973",44,4299,"How likely is it that Josh learned to ride a bike yesterday?","H","16",1,"16H",0.52,"Josh is a 5-year old boy.",6,"Male",0,35,"English","price is fair.",2.40583333333333
+"974",44,3631,"How likely is it that Emma studied on Saturday morning?","L","3",1,"3L",0.36,"Emma is in first grade.",7,"Male",0,35,"English","price is fair.",2.40583333333333
+"975",44,4278,"How likely is it that Barry lives in Europe?","F","F",1,"F1",0.78,"Barry lives in Germany.",8,"Male",0,35,"English","price is fair.",2.40583333333333
+"976",44,4069,"How likely is it that Jon walks to work?","L","19",1,"19L",0.27,"Jon lives 10 miles away from work.",9,"Male",0,35,"English","price is fair.",2.40583333333333
+"977",44,3152,"How likely is it that Charley speaks Spanish?","H","20",1,"20H",0.74,"Charley lives in Mexico.",10,"Male",0,35,"English","price is fair.",2.40583333333333
+"978",44,4885,"How likely is it that Olivia sleeps until noon?","H","4",1,"4H",0.29,"Olivia works the third shift.",11,"Male",0,35,"English","price is fair.",2.40583333333333
+"979",44,5953,"How likely is it that Grace visited her sister?","L","9",1,"9L",0.48,"Grace hates her sister.",12,"Male",0,35,"English","price is fair.",2.40583333333333
+"980",44,3973,"How likely is it that Julian dances salsa?","H","18",1,"18H",0.39,"Julian is Cuban.",13,"Male",0,35,"English","price is fair.",2.40583333333333
+"981",44,5240,"How likely is it that Emily bought a car yesterday?","H","8",1,"8H",0.23,"Emily has been saving for a year.",14,"Male",0,35,"English","price is fair.",2.40583333333333
+"982",44,2400,"How likely is it that Jackson ran 10 miles?","L","13",1,"13L",0.28,"Jackson is obese.",15,"Male",0,35,"English","price is fair.",2.40583333333333
+"983",44,4096,"How likely is it that Danny ate the last cupcake?","L","11",1,"11L",0.39,"Danny is a diabetic.",16,"Male",0,35,"English","price is fair.",2.40583333333333
+"984",44,3967,"How likely is it that Isabella ate a steak on Sunday?","L","7",1,"7L",0.2,"Isabella is a vegetarian.",17,"Male",0,35,"English","price is fair.",2.40583333333333
+"985",44,9663,"How likely is it that Jayden rented a car?","H","14",1,"14H",0.55,"Jayden&quotechars car is in the shop.",18,"Male",0,35,"English","price is fair.",2.40583333333333
+"986",44,3981,"How likely is it that Tammy speaks Italian and Greek?","F","F",1,"F2",0,"Tammy is a rabbit.",19,"Male",0,35,"English","price is fair.",2.40583333333333
+"987",44,4157,"How likely is it that Sophia got a tattoo?","L","5",1,"5L",0.16,"Sophia is a high end fashion model.",20,"Male",0,35,"English","price is fair.",2.40583333333333
+"988",44,4727,"How likely is it that Josie went on vacation to France?","H","2",1,"2H",0.46,"Josie loves France.",21,"Male",0,35,"English","price is fair.",2.40583333333333
+"989",44,4063,"How likely is it that Mia drank 2 cocktails last night?","H","6",1,"6H",0.25,"Mia is a college student.",22,"Male",0,35,"English","price is fair.",2.40583333333333
+"990",44,6179,"How likely is it that Frank got a cat?","H","12",1,"12H",0.31,"Frank has always wanted a pet.",23,"Male",0,35,"English","price is fair.",2.40583333333333
 "991",45,8476,"How likely is it that Zoe calculated the tip?","L","10",2,"10L",0,"Zoe is 5 years old.",2,"Female",0,28,"English","I think the .55 is a fair price for what I did. Thank you!",3.19053333333333
 "992",45,10051,"How likely is it that Danny ate the last cupcake?","H","11",2,"11H",0.49,"Danny loves cake.",3,"Female",0,28,"English","I think the .55 is a fair price for what I did. Thank you!",3.19053333333333
 "993",45,6229,"How likely is it that Mia drank 2 cocktails last night?","L","6",2,"6L",0.49,"Mia is a nun.",4,"Female",0,28,"English","I think the .55 is a fair price for what I did. Thank you!",3.19053333333333
@@ -1099,6 +1187,28 @@
 "1494",67,4106,"How likely is it that Mary is pregnant?","L","1",1,"1L",0.13,"Mary is a middle school student.",21,"Female",0,36,"english","price is fair",3.94251666666667
 "1495",67,3630,"How likely is it that Jon walks to work?","L","19",1,"19L",0.06,"Jon lives 10 miles away from work.",22,"Female",0,36,"english","price is fair",3.94251666666667
 "1496",67,4686,"How likely is it that Tammy speaks Italian and Greek?","F","F",1,"F2",0,"Tammy is a rabbit.",23,"Female",0,36,"english","price is fair",3.94251666666667
+"1497",68,7970,"How likely is it that Owen shoveled snow last winter?","L","17",1,"17L",0.03,"Owen lives in New Orleans.",2,"Male",0,21,"English","0.40 fair.",3.2708
+"1498",68,5995,"How likely is it that Jayden rented a car?","H","14",1,"14H",0.04,"Jayden&quotechars car is in the shop.",3,"Male",0,21,"English","0.40 fair.",3.2708
+"1499",68,6005,"How likely is it that Isabella ate a steak on Sunday?","L","7",1,"7L",0.07,"Isabella is a vegetarian.",4,"Male",0,21,"English","0.40 fair.",3.2708
+"1500",68,3989,"How likely is it that Danny ate the last cupcake?","L","11",1,"11L",0.09,"Danny is a diabetic.",5,"Male",0,21,"English","0.40 fair.",3.2708
+"1501",68,9823,"How likely is it that Charley speaks Spanish?","H","20",1,"20H",0.62,"Charley lives in Mexico.",6,"Male",0,21,"English","0.40 fair.",3.2708
+"1502",68,4881,"How likely is it that Josie went on vacation to France?","H","2",1,"2H",0.14,"Josie loves France.",7,"Male",0,21,"English","0.40 fair.",3.2708
+"1503",68,7314,"How likely is it that Emily bought a car yesterday?","H","8",1,"8H",0.08,"Emily has been saving for a year.",8,"Male",0,21,"English","0.40 fair.",3.2708
+"1504",68,3753,"How likely is it that Jackson ran 10 miles?","L","13",1,"13L",0.02,"Jackson is obese.",9,"Male",0,21,"English","0.40 fair.",3.2708
+"1505",68,4496,"How likely is it that Grace visited her sister?","L","9",1,"9L",0.68,"Grace hates her sister.",10,"Male",0,21,"English","0.40 fair.",3.2708
+"1506",68,8397,"How likely is it that Mia drank 2 cocktails last night?","H","6",1,"6H",0.07,"Mia is a college student.",11,"Male",0,21,"English","0.40 fair.",3.2708
+"1507",68,3597,"How likely is it that Julian dances salsa?","H","18",1,"18H",0.14,"Julian is Cuban.",12,"Male",0,21,"English","0.40 fair.",3.2708
+"1508",68,32299,"How likely is it that Frank got a cat?","H","12",1,"12H",0.41,"Frank has always wanted a pet.",13,"Male",0,21,"English","0.40 fair.",3.2708
+"1509",68,4217,"How likely is it that Olivia sleeps until noon?","H","4",1,"4H",0.56,"Olivia works the third shift.",14,"Male",0,21,"English","0.40 fair.",3.2708
+"1510",68,6472,"How likely is it that Jon walks to work?","L","19",1,"19L",0.3,"Jon lives 10 miles away from work.",15,"Male",0,21,"English","0.40 fair.",3.2708
+"1511",68,8096,"How likely is it that Zoe calculated the tip?","H","10",1,"10H",0.58,"Zoe is a math major.",16,"Male",0,21,"English","0.40 fair.",3.2708
+"1512",68,5733,"How likely is it that Sophia got a tattoo?","L","5",1,"5L",0.06,"Sophia is a high end fashion model.",17,"Male",0,21,"English","0.40 fair.",3.2708
+"1513",68,10367,"How likely is it that Josh learned to ride a bike yesterday?","H","16",1,"16H",0.29,"Josh is a 5-year old boy.",18,"Male",0,21,"English","0.40 fair.",3.2708
+"1514",68,4887,"How likely is it that Mary is pregnant?","L","1",1,"1L",0.09,"Mary is a middle school student.",19,"Male",0,21,"English","0.40 fair.",3.2708
+"1515",68,5531,"How likely is it that Barry lives in Europe?","F","F",1,"F1",0.74,"Barry lives in Germany.",20,"Male",0,21,"English","0.40 fair.",3.2708
+"1516",68,5324,"How likely is it that Emma studied on Saturday morning?","L","3",1,"3L",0.13,"Emma is in first grade.",21,"Male",0,21,"English","0.40 fair.",3.2708
+"1517",68,5017,"How likely is it that Tammy speaks Italian and Greek?","F","F",1,"F2",0,"Tammy is a rabbit.",22,"Male",0,21,"English","0.40 fair.",3.2708
+"1518",68,4880,"How likely is it that Tony had a drink last night?","L","15",1,"15L",0.35,"Tony has been sober for 20 years.",23,"Male",0,21,"English","0.40 fair.",3.2708
 "1519",69,5506,"How likely is it that Grace visited her sister?","L","9",1,"9L",0.8,"Grace hates her sister.",2,"Female",0,46,"English","",1.54568333333333
 "1520",69,1860,"How likely is it that Mia drank 2 cocktails last night?","H","6",1,"6H",0.49,"Mia is a college student.",3,"Female",0,46,"English","",1.54568333333333
 "1521",69,3312,"How likely is it that Josh learned to ride a bike yesterday?","H","16",1,"16H",0.59,"Josh is a 5-year old boy.",4,"Female",0,46,"English","",1.54568333333333
@@ -1407,6 +1517,50 @@
 "1956",88,9790,"How likely is it that Grace visited her sister?","H","9",2,"9H",0.94,"Grace loves her sister.",21,"Male",0,28,"English","No comemnts.",2.77065
 "1957",88,11367,"How likely is it that Olivia sleeps until noon?","L","4",2,"4L",0.02,"Olivia has two small children.",22,"Male",0,28,"English","No comemnts.",2.77065
 "1958",88,10151,"How likely is it that Jackson ran 10 miles?","H","13",2,"13H",0.86,"Jackson is training for a marathon.",23,"Male",0,28,"English","No comemnts.",2.77065
+"1959",89,8457,"How likely is it that Jon walks to work?","H","19",2,"19H",0.76,"Jon lives 2 blocks away from work.",2,"Male",0,36,"english","",2.1594
+"1960",89,7836,"How likely is it that Julian dances salsa?","L","18",2,"18L",0.23,"Julian is German.",3,"Male",0,36,"english","",2.1594
+"1961",89,5743,"How likely is it that Mia drank 2 cocktails last night?","L","6",2,"6L",0.03,"Mia is a nun.",4,"Male",0,36,"english","",2.1594
+"1962",89,3974,"How likely is it that Isabella ate a steak on Sunday?","H","7",2,"7H",0.56,"Isabella is from Argentina.",5,"Male",0,36,"english","",2.1594
+"1963",89,7276,"How likely is it that Olivia sleeps until noon?","L","4",2,"4L",0.13,"Olivia has two small children.",6,"Male",0,36,"english","",2.1594
+"1964",89,4417,"How likely is it that Emily bought a car yesterday?","L","8",2,"8L",0.06,"Emily never has any money.",7,"Male",0,36,"english","",2.1594
+"1965",89,2786,"How likely is it that Tony had a drink last night?","H","15",2,"15H",0.76,"Tony really likes to party with his friends.",8,"Male",0,36,"english","",2.1594
+"1966",89,3018,"How likely is it that Mary is pregnant?","H","1",2,"1H",0.93,"Mary is taking a prenatal yoga class.",9,"Male",0,36,"english","",2.1594
+"1967",89,2380,"How likely is it that Danny ate the last cupcake?","H","11",2,"11H",0.81,"Danny loves cake.",10,"Male",0,36,"english","",2.1594
+"1968",89,2551,"How likely is it that Jayden rented a car?","L","14",2,"14L",0.48,"Jayden doesn&quotechart have a driver&quotechars license.",11,"Male",0,36,"english","",2.1594
+"1969",89,2576,"How likely is it that Charley speaks Spanish?","L","20",2,"20L",0.13,"Charley lives in Korea.",12,"Male",0,36,"english","",2.1594
+"1970",89,3037,"How likely is it that Sophia got a tattoo?","H","5",2,"5H",0.69,"Sophia is a hipster.",13,"Male",0,36,"english","",2.1594
+"1971",89,2365,"How likely is it that Josie went on vacation to France?","L","2",2,"2L",0.38,"Josie doesn&quotechart have a passport.",14,"Male",0,36,"english","",2.1594
+"1972",89,1792,"How likely is it that Barry lives in Europe?","F","F",2,"F1",0.52,"Barry lives in Germany.",15,"Male",0,36,"english","",2.1594
+"1973",89,2375,"How likely is it that Owen shoveled snow last winter?","H","17",2,"17H",0.72,"Owen lives in Chicago.",16,"Male",0,36,"english","",2.1594
+"1974",89,3220,"How likely is it that Jackson ran 10 miles?","H","13",2,"13H",0.85,"Jackson is training for a marathon.",17,"Male",0,36,"english","",2.1594
+"1975",89,3064,"How likely is it that Emma studied on Saturday morning?","H","3",2,"3H",0.9,"Emma is in law school.",18,"Male",0,36,"english","",2.1594
+"1976",89,2246,"How likely is it that Grace visited her sister?","H","9",2,"9H",0.81,"Grace loves her sister.",19,"Male",0,36,"english","",2.1594
+"1977",89,3514,"How likely is it that Zoe calculated the tip?","L","10",2,"10L",0.08,"Zoe is 5 years old.",20,"Male",0,36,"english","",2.1594
+"1978",89,3912,"How likely is it that Frank got a cat?","L","12",2,"12L",0.03,"Frank is allergic to cats.",21,"Male",0,36,"english","",2.1594
+"1979",89,11808,"How likely is it that Tammy speaks Italian and Greek?","F","F",2,"F2",0.03,"Tammy is a rabbit.",22,"Male",0,36,"english","",2.1594
+"1980",89,3141,"How likely is it that Josh learned to ride a bike yesterday?","L","16",2,"16L",0,"Josh is a 75-year old man.",23,"Male",0,36,"english","",2.1594
+"1981",90,7891,"How likely is it that Zoe calculated the tip?","L","10",2,"10L",0.12,"Zoe is 5 years old.",2,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1982",90,3631,"How likely is it that Jayden rented a car?","L","14",2,"14L",0.01,"Jayden doesn&quotechart have a driver&quotechars license.",3,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1983",90,3534,"How likely is it that Tony had a drink last night?","H","15",2,"15H",0.99,"Tony really likes to party with his friends.",4,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1984",90,3035,"How likely is it that Mia drank 2 cocktails last night?","L","6",2,"6L",0.02,"Mia is a nun.",5,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1985",90,4608,"How likely is it that Danny ate the last cupcake?","H","11",2,"11H",0.91,"Danny loves cake.",6,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1986",90,3688,"How likely is it that Sophia got a tattoo?","H","5",2,"5H",0.95,"Sophia is a hipster.",7,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1987",90,3010,"How likely is it that Owen shoveled snow last winter?","H","17",2,"17H",0.87,"Owen lives in Chicago.",8,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1988",90,3280,"How likely is it that Josie went on vacation to France?","L","2",2,"2L",0,"Josie doesn&quotechart have a passport.",9,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1989",90,3695,"How likely is it that Josh learned to ride a bike yesterday?","L","16",2,"16L",0.48,"Josh is a 75-year old man.",10,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1990",90,4068,"How likely is it that Julian dances salsa?","L","18",2,"18L",0.53,"Julian is German.",11,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1991",90,3408,"How likely is it that Frank got a cat?","L","12",2,"12L",0.19,"Frank is allergic to cats.",12,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1992",90,3128,"How likely is it that Barry lives in Europe?","F","F",2,"F1",0.58,"Barry lives in Germany.",13,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1993",90,10217,"How likely is it that Grace visited her sister?","H","9",2,"9H",0.98,"Grace loves her sister.",14,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1994",90,4277,"How likely is it that Olivia sleeps until noon?","L","4",2,"4L",0.01,"Olivia has two small children.",15,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1995",90,3961,"How likely is it that Isabella ate a steak on Sunday?","H","7",2,"7H",0.68,"Isabella is from Argentina.",16,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1996",90,3085,"How likely is it that Jackson ran 10 miles?","H","13",2,"13H",0.98,"Jackson is training for a marathon.",17,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1997",90,3302,"How likely is it that Emily bought a car yesterday?","L","8",2,"8L",0.02,"Emily never has any money.",18,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1998",90,3579,"How likely is it that Tammy speaks Italian and Greek?","F","F",2,"F2",0.02,"Tammy is a rabbit.",19,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"1999",90,3562,"How likely is it that Jon walks to work?","H","19",2,"19H",1,"Jon lives 2 blocks away from work.",20,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"2000",90,4953,"How likely is it that Emma studied on Saturday morning?","H","3",2,"3H",0.99,"Emma is in law school.",21,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"2001",90,2850,"How likely is it that Mary is pregnant?","H","1",2,"1H",0.98,"Mary is taking a prenatal yoga class.",22,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
+"2002",90,4614,"How likely is it that Charley speaks Spanish?","L","20",2,"20L",0.41,"Charley lives in Korea.",23,"Female",0,25,"english","i think .55 is fair. ",2.34756666666667
 "2003",91,4824,"How likely is it that Josie went on vacation to France?","L","2",2,"2L",0.19,"Josie doesn&quotechart have a passport.",2,"Male",0,40,"English","",1.58053333333333
 "2004",91,4422,"How likely is it that Emma studied on Saturday morning?","H","3",2,"3H",0.63,"Emma is in law school.",3,"Male",0,40,"English","",1.58053333333333
 "2005",91,3412,"How likely is it that Olivia sleeps until noon?","L","4",2,"4L",0.12,"Olivia has two small children.",4,"Male",0,40,"English","",1.58053333333333

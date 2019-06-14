@@ -235,25 +235,32 @@ table(target$prompt)
 # color-blind-friendly palette
 cbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7") # c("#999999", 
                 
-means = aggregate(response~item+itemType+itemNr, data=target, FUN="mean")
-means$YMin = means$response - aggregate(response~item+itemType+itemNr, data=target, FUN="ci.low")$response
-means$YMax = means$response + aggregate(response~item+itemType+itemNr, data=target, FUN="ci.high")$response
-means$itemType = recode(means$itemType, H="high",L="low")
-means
+means = target %>%
+  group_by(itemNr,itemType) %>%
+  summarise(Mean = mean(response),CILow=ci.low(response),CIHigh=ci.high(response)) %>%
+  ungroup() %>%
+  mutate(YMin=Mean-CILow,YMax=Mean+CIHigh) %>%
+  mutate(itemType = fct_recode(itemType,high="H",low="L"))
 
+high = means %>%
+  filter(itemType == "high") %>%
+  mutate(itemNr = fct_reorder(itemNr,Mean))
 
-ggplot(means, aes(x=response,fill=itemType)) +
-  geom_histogram(binwidth=.05,alpha=.8) +
-  scale_fill_manual(values=cbPalette,name="Prior content probability") +
-  xlab("Mean probability rating") +
-  ylab("Number of cases") +
-  theme(legend.position=c(.7,.8))
-ggsave("../graphs/meanprobratings.pdf",height=2.8,width=4.5)
+means = means %>%
+  mutate(item = fct_relevel(itemNr,levels(high$itemNr)))
 
-ggplot(means, aes(x=as.numeric(as.character(itemNr)), y=response, color=itemType)) + 
+# ggplot(means, aes(x=response,fill=itemType)) +
+#   geom_histogram(binwidth=.05,alpha=.8) +
+#   scale_fill_manual(values=cbPalette,name="Prior content probability") +
+#   xlab("Mean probability rating") +
+#   ylab("Number of cases") +
+#   theme(legend.position=c(.7,.8))
+# ggsave("../graphs/meanprobratings.pdf",height=2.8,width=4.5)
+
+ggplot(means, aes(x=item, y=Mean, color=itemType)) + 
   geom_point() +
   geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
-  scale_x_continuous(breaks=seq(1,20,1)) +
+  # scale_x_continuous(breaks=seq(1,20,1)) +
   scale_y_continuous(limits = c(-0.05,1.05),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
   scale_color_manual(name="Fact", breaks=c("high","low"),labels=c("high", "low"), 
                      values=cbPalette) +

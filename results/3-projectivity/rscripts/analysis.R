@@ -270,6 +270,12 @@ levels(means$Verb)
 
 means[means$Verb == "control",]
 
+means_subj = cd %>%
+  group_by(verb, fact_type,workerid) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  ungroup() %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(verb,Mean))
+
 cols = data.frame(V=levels(means$Verb))
 cols
 
@@ -299,23 +305,25 @@ levels(cols$V)
 cbPalette <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7") # c("#999999",
 
 
-ggplot(means, aes(x=Verb, y=Mean, color=fact_type)) + 
-  geom_point() +
-  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=.25) +
+ggplot(means, aes(x=Verb, y=Mean, fill=fact_type)) + 
+  # geom_point(data=means_subj,aes(color=fact_type),alpha=.3) +
+  geom_errorbar(aes(ymin=YMin,ymax=YMax),width=0) +
+  geom_point(pch = 21, colour = "black", size = 3) +
   scale_y_continuous(limits = c(-0.05,1.05),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
-  scale_color_manual(name="Prior probability of content", breaks=c("factH","factL"),labels=c("high", "low"), 
+  scale_fill_manual(name="Prior probability of content", breaks=c("factH","factL"),labels=c("high", "low"), 
                      values=cbPalette) +
+  scale_color_manual(name="Prior probability of content", breaks=c("factH","factL"),labels=c("high", "low"), 
+                    values=cbPalette) +  
   scale_alpha(range = c(.3,1)) +
   theme(text = element_text(size=12), axis.text.x = element_text(size = 12, angle = 45, hjust = 1, 
                                                                  color=cols$Colors)) +
-  theme(legend.position = c(0.2, 0.75)) +
-  geom_point(aes(x=1,y=means[means$Verb == "control",]$Mean), color="black") +
+  theme(legend.position = "top") +
   geom_errorbar(aes(x=1,ymin=means[means$Verb == "control",]$YMin,ymax=means[means$Verb == "control",]$YMax,width=.25),color="black") +
+  geom_point(aes(x=1,y=means[means$Verb == "control",]$Mean), color="black",show.legend = FALSE ) +
   ylab("Mean certainty rating") +
   xlab("Predicate") +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1))
-ggsave("../graphs/means-projectivity-by-predicate-and-facttype.pdf",height=3.2,width=6)
-
+ggsave("../graphs/means-projectivity-by-predicate-and-facttype.pdf",height=4,width=6)
 
 # models ----
 library(lmerTest)
@@ -384,6 +392,30 @@ model.2 = lmer(response ~ itemType * verb + (1+itemType|workerid) + (1|item), da
 summary(model)
 
 anova(model.1,model.2)
+
+
+# models for xprag talk  ----
+
+# first model: testing for effect of prior
+# results: big main effect of prior, no interactions. means: effect of prior regardless of verb
+t = droplevels(t)
+t$item = as.factor(paste(t$verb, t$content,t$fact))
+m = lmer(response ~ PriorMean*verb + (1+PriorMean|workerid) + (1|item), data=t)
+summary(m)
+
+m.main = lmer(response ~ PriorMean+verb + (1+PriorMean|workerid) + (1|item), data=t)
+summary(m.main)
+
+anova(m.main,m)
+
+# second model: testing for projectivity compared to control
+# results: almost all verb/fact combinations are significantly different from the control, suggesting they are all more projective than the controls. none of the what look like anti-projective cases in the plot are actually different from the control
+cd$verbfact = as.factor(paste(cd$verb,cd$fact_type))
+# cd$item = as.factor(paste(cd$verb, cd$content,cd$fact))
+cd = cd %>%
+  mutate(verbfact = fct_relevel(verbfact,"control NA"))
+m = lmer(response ~ verbfact + (1|workerid) + (1|item), data=cd)
+summary(m)
 
 ### comparing projection with and without prior probability manipulation ----
 

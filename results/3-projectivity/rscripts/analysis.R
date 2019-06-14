@@ -385,6 +385,66 @@ summary(model)
 
 anova(model.1,model.2)
 
+### comparing projection with and without prior probability manipulation ----
+
+nrow(cd) #6919
+table(cd$verb)
+
+# load data from projection experiment without manipulation
+cd.noPrior = read.csv("../../5-projectivity-no-fact/data/cd.csv")
+nrow(cd.noPrior) #6919 (I double-checked: yes, it is really the same)
+table(cd.noPrior$verb)
+cd.noPrior = cd.noPrior %>%
+  mutate(verb=recode(verb, control = "control", annoyed = "be_annoyed", be_right_that = "be_right", inform_Sam = "inform"))
+
+# plot mean slider ratings against mean slider ratings
+p_means_Prior = cd %>%
+  group_by(verb) %>%
+  summarize(MeanP = mean(response), CILowP = ci.low(response), CIHighP = ci.high(response)) %>%
+  mutate(YMinP = MeanP - CILowP, YMaxP = MeanP + CIHighP) %>%
+  dplyr::select(-CILowP,-CIHighP)
+levels(p_means_Prior$verb)
+p_means_Prior
+
+p_means_noPrior = cd.noPrior %>%
+  group_by(verb) %>%
+  summarize(MeanNP = mean(response), CILowNP = ci.low(response), CIHighNP = ci.high(response)) %>%
+  mutate(YMinNP = MeanNP - CILowNP, YMaxNP = MeanNP + CIHighNP) %>%
+  dplyr::select(-CILowNP,-CIHighNP)
+levels(p_means_noPrior$verb)
+p_means_noPrior
+
+p_comp = p_means_Prior %>%
+  left_join(p_means_noPrior) %>%
+  mutate(VeridicalityGroup = factor(case_when(
+    verb %in% c("know", "discover", "reveal", "see", "be_annoyed") ~ "F", 
+    verb %in% c("pretend", "think", "suggest", "say") ~ "NF", 
+    verb %in% c("be_right","demonstrate") ~ "VNF",
+    verb %in% c("control") ~ "control",
+    TRUE ~ "V")))
+p_comp
+
+ggplot(p_comp, aes(x=MeanP, y=MeanNP, fill=VeridicalityGroup)) +
+  geom_point(shape=21,stroke=.5,size=2.5,color="black") +
+  geom_errorbar(aes(ymin=YMinNP,ymax=YMaxNP),width=0) +
+  geom_errorbarh(aes(xmin=YMinP,xmax=YMaxP),width=0) +
+  # scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
+  # scale_alpha(range = c(.3,1)) +
+  scale_fill_manual(values=c("darkorchid","black","gray60","tomato1","dodgerblue")) +
+  geom_abline(intercept=0,slope=1,color="gray70",linetype="dashed") +
+  ylab("Mean certainty rating (no prior)") +
+  xlab("Mean certainty rating (with prior)") +
+  guides(fill=FALSE) +
+  coord_fixed(ratio = 1) +
+  xlim(c(0,1)) +
+  ylim(c(0,1))
+ggsave("../graphs/projectivity-comparison.pdf",height=3,width=3)
+
+corr_proj = p_comp %>%
+  filter(verb != "control") %>%
+  summarize(Cor=cor(MeanP,MeanNP,method="spearman"))
+corr_proj
+
 ################### nothing below here relevant for XPRAG abstract #########
 
 

@@ -248,6 +248,7 @@ high = means %>%
 
 means = means %>%
   mutate(item = fct_relevel(itemNr,levels(high$itemNr)))
+means
 
 # ggplot(means, aes(x=response,fill=itemType)) +
 #   geom_histogram(binwidth=.05,alpha=.8) +

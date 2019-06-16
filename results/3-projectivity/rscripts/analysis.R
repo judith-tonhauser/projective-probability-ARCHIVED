@@ -134,11 +134,6 @@ nrow(cd) #6916 / 26 items = 266 participants
 cd = read.csv("../data/cd.csv")
 nrow(cd) #6916
 
-# # load contradictoriness means
-# vmeans = read.csv("../../2-veridicality2/data/veridicality_means.csv")
-# colnames(vmeans) = c("verb","VeridicalityMean","VeridicalityCILow","VeridicalityCIHigh")
-# vmeans
-# 
 # load prior means
 pmeans = read.csv("../../1-prior/data/prior_means.csv")
 pmeans$fact = gsub(".","",as.character(pmeans$fact),fixed=T)
@@ -257,7 +252,7 @@ ggplot(means, aes(x=Verb, y=Mean, color=fact_type)) +
   theme(axis.text.x = element_text(size = 12, angle = 45, hjust = 1))
 ggsave("../graphs/means-projectivity-by-predicate-and-facttype.pdf",height=3.2,width=6)
 
-# xprag talk wit main clause constrols
+# xprag talk with main clause controls
 table(cd$verb)
 
 means = cd %>%
@@ -270,11 +265,11 @@ levels(means$Verb)
 
 means[means$Verb == "control",]
 
-means_subj = cd %>%
-  group_by(verb, fact_type,workerid) %>%
-  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
-  ungroup() %>%
-  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(verb,Mean))
+# means_subj = cd %>%
+#   group_by(verb,fact_type,workerid) %>%
+#   summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+#   ungroup() %>%
+#   mutate(YMin = Mean - CILow, YMax = Mean + CIHigh, Verb = fct_reorder(verb,Mean))
 
 cols = data.frame(V=levels(means$Verb))
 cols
@@ -397,21 +392,24 @@ anova(model.1,model.2)
 # models for xprag talk  ----
 
 # first model: testing for effect of prior
-# results: big main effect of prior, no interactions. means: effect of prior regardless of verb
+# results: big main effect of prior, no interactions; this means: effect of prior regardless of verb
 t = droplevels(t)
 t$item = as.factor(paste(t$verb, t$content,t$fact))
 m = lmer(response ~ PriorMean*verb + (1+PriorMean|workerid) + (1|item), data=t)
+# adding by-participant slope for "verb" doesn't work
 summary(m)
 
 m.main = lmer(response ~ PriorMean+verb + (1+PriorMean|workerid) + (1|item), data=t)
 summary(m.main)
 
-anova(m.main,m)
+anova(m.main,m) # interaction model not better
 
 # second model: testing for projectivity compared to control
 # results: almost all verb/fact combinations are significantly different from the control, suggesting they are all more projective than the controls. none of the what look like anti-projective cases in the plot are actually different from the control
 cd$verbfact = as.factor(paste(cd$verb,cd$fact_type))
-# cd$item = as.factor(paste(cd$verb, cd$content,cd$fact))
+table(cd$verbfact)
+cd$item = as.factor(paste(cd$verb, cd$content,cd$fact))
+
 cd = cd %>%
   mutate(verbfact = fct_relevel(verbfact,"control NA"))
 m = lmer(response ~ verbfact + (1|workerid) + (1|item), data=cd)
@@ -453,8 +451,15 @@ p_comp = p_means_Prior %>%
     verb %in% c("pretend", "think", "suggest", "say") ~ "NF", 
     verb %in% c("be_right","demonstrate") ~ "VNF",
     verb %in% c("control") ~ "control",
-    TRUE ~ "V")))
+    TRUE ~ "PNF")))
 p_comp
+levels(p_comp$verb)
+
+p_comp = p_comp %>%
+  mutate(verb = fct_reorder(verb,MeanP))
+p_comp
+levels(p_comp$verb)
+levels(p_comp$VeridicalityGroup)
 
 ggplot(p_comp, aes(x=MeanP, y=MeanNP, fill=VeridicalityGroup)) +
   geom_point(shape=21,stroke=.5,size=2.5,color="black") +
@@ -462,7 +467,7 @@ ggplot(p_comp, aes(x=MeanP, y=MeanNP, fill=VeridicalityGroup)) +
   geom_errorbarh(aes(xmin=YMinP,xmax=YMaxP),width=0) +
   # scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0)) +
   # scale_alpha(range = c(.3,1)) +
-  scale_fill_manual(values=c("darkorchid","black","gray60","tomato1","dodgerblue")) +
+  scale_fill_manual(values=c("darkorchid","gray60","tomato1","dodgerblue","black")) +
   geom_abline(intercept=0,slope=1,color="gray70",linetype="dashed") +
   ylab("Mean certainty rating (no prior)") +
   xlab("Mean certainty rating (with prior)") +
